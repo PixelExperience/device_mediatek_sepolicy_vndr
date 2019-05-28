@@ -6,3 +6,5 @@
 # wmtWifi is wifi char device file to control wifi driver.
 allow hal_wifi wmtWifi_device:chr_file w_file_perms;
 
+# Write wlan driver/fw version into property
+set_prop(hal_wifi_default, vendor_wifi_version)

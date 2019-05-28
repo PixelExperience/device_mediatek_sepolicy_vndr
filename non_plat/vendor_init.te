@@ -79,3 +79,6 @@ set_prop(vendor_init, mtk_powerhal_prop)
 # mmstat tracer
 allow vendor_init debugfs_tracing_instances:dir create_dir_perms;
 allow vendor_init debugfs_tracing_instances:file w_file_perms;
+
+# Wifi version recorder
+set_prop(vendor_init, vendor_wifi_version)

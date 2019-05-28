@@ -367,3 +367,6 @@ ro.vendor.mtk_nn.option u:object_r:mtk_nn_option_prop:s0
 #============system wfc service property===========
 persist.vendor.wfc. u:object_r:mtk_wfc_serv_prop:s0
 
+# Wifi version recorder
+vendor.wlan.driver.version       u:object_r:vendor_wifi_version:s0
+vendor.wlan.firmware.version     u:object_r:vendor_wifi_version:s0
