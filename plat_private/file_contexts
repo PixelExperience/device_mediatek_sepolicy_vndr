@@ -34,7 +34,7 @@
 
 # storagemanager daemon
 # it is used to mount all storages in meta/factory mode
-/system/bin/storagemanagerd u:object_r:storagemanagerd_exec:s0
+/system/bin/storagemanagerd u:object_r:vold_exec:s0
 
 #MTK Bootanim
 /system/bin/mtkbootanimation u:object_r:mtkbootanimation_exec:s0
