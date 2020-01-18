@@ -23,6 +23,8 @@ allow ccci_fsd nvdata_file:dir create_dir_perms;
 allow ccci_fsd nvdata_file:file create_file_perms;
 allow ccci_fsd nvram_device:chr_file rw_file_perms;
 allow ccci_fsd system_data_file:lnk_file read;
+allow ccci_fsd vendor_configs_file:file r_file_perms;
+allow ccci_fsd vendor_configs_file:dir r_dir_perms;
 
 #============= ccci_fsd device/path/data access==============
 allow ccci_fsd ccci_device:chr_file rw_file_perms;
