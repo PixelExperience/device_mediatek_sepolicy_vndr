@@ -628,3 +628,10 @@
 # Date: 2018/07/06
 # Purpose for same-process HAL files and their dependencies: libGLES_mali.so need libm4u.so on mali GPU.
 /vendor/lib(64)?/libm4u\.so   u:object_r:same_process_hal_file:s0
+
+# Purpose dump not exit file
+/proc/isp_p2/isp_p2_dump u:object_r:proc_isp_p2_dump:s0
+/proc/isp_p2/isp_p2_kedump u:object_r:proc_isp_p2_kedump:s0
+/proc/mali/memory_usage u:object_r:proc_memory_usage:s0
+/proc/mtk_es_reg_dump u:object_r:proc_mtk_es_reg_dump:s0
+/sys/power/mtkpasr/execstate u:object_r:sysfs_execstate:s0

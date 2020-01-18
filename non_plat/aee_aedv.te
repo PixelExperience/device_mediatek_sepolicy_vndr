@@ -388,9 +388,9 @@ allow aee_aedv sysfs_vcore_debug:file r_file_perms;
 allow aee_aedv sysfs_boot_mode:file r_file_perms;
 
 #Purpose: Allow aee_aedv to read/write /sys/kernel/debug/tracing/buffer_total_size_kb
-#userdebug_or_eng(`
-#  allow aee_aedv debugfs_tracing_debug:file { r_file_perms write };
-#')
+userdebug_or_eng(`
+allow aee_aedv debugfs_tracing_debug:file { rw_file_perms };
+')
 
 #Purpose: Allow aee_aedv to read /sys/mtk_memcfg/slabtrace
 allow aee_aedv proc_slabtrace:file r_file_perms;
