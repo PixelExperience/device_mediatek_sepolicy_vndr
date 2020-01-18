@@ -114,8 +114,8 @@ allow dumpstate debugfs_rcu:file r_file_perms;
 # Purpose: Allow dumpstate to read /proc/msdc_debug
 allow dumpstate proc_msdc_debug:file r_file_perms;
 
-# Purpose: Allow dumpstate to read /proc/pidmap
-allow dumpstate proc_pidmap:file r_file_perms;
+# Purpose: Allow dumpstate to r/w /proc/pidmap
+allow dumpstate proc_pidmap:file rw_file_perms;
 
 # Purpose: Allow dumpstate to read /sys/power/vcorefs/vcore_debug
 allow dumpstate sysfs_vcore_debug:file r_file_perms;
@@ -128,3 +128,6 @@ allow dumpstate proc_slabtrace:file r_file_perms;
 
 #Purpose: Allow dumpstate to read /proc/mtk_cmdq_debug/status
 allow dumpstate proc_cmdq_debug:file r_file_perms;
+
+#Purpose: Allow dumpstate to read /proc/cpuhvfs/dbg_repo
+allow dumpstate proc_dbg_repo:file r_file_perms;
