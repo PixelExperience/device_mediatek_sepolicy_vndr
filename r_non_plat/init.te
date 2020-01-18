@@ -41,9 +41,9 @@ allow init para_block_device:blk_file w_file_perms;
 # Date : WK15.32
 # Operation : Migration
 # Purpose : disable AT_SECURE for LD_PRELOAD
-userdebug_or_eng(`
-  allow init { domain -lmkd -crash_dump -llkd -mediaswcodec }:process noatsecure;
-')
+#userdebug_or_eng(`
+#  allow init { domain -lmkd -crash_dump -llkd -mediaswcodec }:process noatsecure;
+#')
 
 # Date : WK16.26
 # Operation : Access dynamic_debug control file
