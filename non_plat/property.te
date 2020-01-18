@@ -121,20 +121,11 @@ type mtk_em_prop, property_type, mtk_core_property_type;
 #=============allow mediatek_prop ==============
 type mediatek_prop, property_type, mtk_core_property_type;
 
-#============= allow em set protocol ===============
-type mtk_em_pdn_prop, property_type, mtk_core_property_type;
-
-#============= allow em set protocol ===============
-type mtk_em_ims_simulate_prop, property_type, mtk_core_property_type;
-
 #============= allow em set property ===============
 type mtk_em_auto_answer_prop, property_type, mtk_core_property_type;
 
 #============= allow em set protocol ===============
 type mtk_em_bt_sspdebug_prop, property_type, mtk_core_property_type;
-
-#============= allow em set mtk_em_ril_apnchange_prop property ===============
-type mtk_em_ril_apnchange_prop, property_type;
 
 #============= allow em set protocol ===============
 type mtk_em_net_auto_tethering_prop, property_type, mtk_core_property_type;
