@@ -19,4 +19,9 @@ dontaudit vold proc_mtkcooler:dir { read open };
 dontaudit vold proc_mtktz:dir { read open };
 dontaudit vold proc_thermal:dir { read open };
 
+# Date : WK18.30
+# Operation : Migration
+# Purpose : vold create mdlog folder in data for meta mode.
+allow vold mdlog_data_file:dir { create_dir_perms };
+
 allow vold mtd_device:blk_file rw_file_perms;
