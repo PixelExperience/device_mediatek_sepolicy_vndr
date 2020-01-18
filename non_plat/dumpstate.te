@@ -38,6 +38,7 @@ allow dumpstate debugfs_ion_mm_heap:file { read open };
 allow dumpstate debugfs_ion_mm_heap:lnk_file read;
 allow dumpstate debugfs_cpuhvfs:dir search;
 allow dumpstate debugfs_cpuhvfs:file { read open };
+allow dumpstate debugfs_vpu_device_dbg:file { read open };
 
 # Purpose: /sys/kernel/ccci/md_chn
 allow dumpstate sysfs_ccci:dir search;

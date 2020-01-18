@@ -152,6 +152,7 @@ allow aee_aedv debugfs_ion_mm_heap:lnk_file read;
 allow aee_aedv debugfs_cpuhvfs:dir search;
 allow aee_aedv debugfs_cpuhvfs:file { read open };
 allow aee_aedv debugfs_emi_mbw_buf:file { read open };
+allow aee_aedv debugfs_vpu_device_dbg:file { read open };
 
 # Purpose:
 # 01-01 00:02:46.390  3315  3315 W aee_dumpstatev: type=1400 audit(0.0:4728):
