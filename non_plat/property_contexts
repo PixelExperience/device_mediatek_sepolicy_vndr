@@ -55,6 +55,8 @@ ctl.vendor.ccci_fsd u:object_r:ctl_ccci_fsd_prop:s0
 ctl.vendor.ccci2_fsd u:object_r:ctl_ccci2_fsd_prop:s0
 ctl.vendor.ccci3_fsd u:object_r:ctl_ccci3_fsd_prop:s0
 
+init.svc.emdlogger1 u:object_r:init_svc_emdlogger1_prop:s0
+
 vendor.ril.active.md        u:object_r:ril_active_md_prop:s0
 vendor.ril.mux.report.case  u:object_r:ril_mux_report_case_prop:s0
 vendor.ril.cdma.report      u:object_r:ril_cdma_report_prop:s0

@@ -98,6 +98,7 @@ allow ccci_mdinit sysfs_ccci:file rw_file_perms;
 allow ccci_mdinit sysfs_ssw:dir search;
 allow ccci_mdinit sysfs_ssw:file r_file_perms;
 allow ccci_mdinit sysfs:file r_file_perms;
+allow ccci_mdinit sysfs_boot_mode:file { read open };
 
 # Purpose : Allow ccci_mdinit to open and read/write /proc/bootprof
 allow ccci_mdinit proc:file rw_file_perms;
