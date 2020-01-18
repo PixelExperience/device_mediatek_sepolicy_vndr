@@ -45,3 +45,9 @@ attribute mtk_hal_keyattestation_server;
 attribute hal_nvramagent;
 attribute hal_nvramagent_client;
 attribute hal_nvramagent_server;
+
+# Date: 2018/05/25
+# FM HIDL
+attribute mtk_hal_fm;
+attribute mtk_hal_fm_client;
+attribute mtk_hal_fm_server;

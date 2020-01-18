@@ -37,3 +37,7 @@ vendor.mediatek.hardware.pq::IPictureQuality u:object_r:mtk_hal_pq_hwservice:s0
 # Date: 2017/07/20
 # keymaster attestation hidl
 vendor.mediatek.hardware.keymaster_attestation::IKeymasterDevice u:object_r:mtk_hal_keyattestation_hwservice:s0
+
+# Date: 2018/05/25
+# FM HIDL
+vendor.mediatek.hardware.fm::IFmRadio u:object_r:mtk_hal_fm_hwservice:s0
