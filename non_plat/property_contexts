@@ -333,3 +333,11 @@ persist.vendor.mtk.xcap.rawurl  u:object_r:persist_xcap_rawurl_prop:s0
 
 #=============mtk bt enable SAP profile property=============#
 ro.vendor.mtk.bt_sap_enable u:object_r:mtk_bt_sap_enable_prop:s0
+
+#============lmkd properties========#
+ro.lmk.use_minfree_levels u:object_r:exported3_default_prop:s0 exact bool
+ro.lmk.low u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.medium u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.critical u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.kill_timeout_ms u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.swap_free_low_percentage u:object_r:exported3_default_prop:s0 exact int
