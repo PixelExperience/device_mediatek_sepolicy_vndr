@@ -100,3 +100,9 @@ allow ccci_mdinit sysfs:file r_file_perms;
 # Purpose : Allow ccci_mdinit to open and read/write /proc/bootprof
 allow ccci_mdinit proc:file rw_file_perms;
 allow ccci_mdinit proc:file getattr;
+
+# Date : WK18.21
+# Operation: P migration
+# Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
+allow ccci_mdinit mnt_vendor_file:dir search;
+

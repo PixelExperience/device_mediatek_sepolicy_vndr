@@ -89,3 +89,8 @@ allow fuelgauged nvcfg_file:file { read write getattr open create };
 # Purpose : add fuelgauged could access
 r_dir_file(fuelgauged, sysfs_batteryinfo);
 
+# Date : WK18.21
+# Operation: P migration
+# Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
+allow fuelgauged mnt_vendor_file:dir search;
+
