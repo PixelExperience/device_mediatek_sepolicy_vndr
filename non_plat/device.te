@@ -228,6 +228,7 @@ type mtk_dfrc_device, dev_type;
 type vbmeta_block_device, dev_type;
 type alarm_device, dev_type;
 type mdp_device, dev_type;
+type mrdump_device, dev_type;
 
 ##########################
 # Sensor common Devices Start

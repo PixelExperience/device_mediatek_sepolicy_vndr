@@ -405,6 +405,7 @@ get_prop(aee_aedv, vendor_default_prop)
 allow aee_aedv para_block_device:blk_file rw_file_perms;
 allow aee_aedv aee_dumpsys_vendor_file:file ioctl;
 allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl FS_IOC_FIEMAP;
+allow aee_aedv mrdump_device:blk_file rw_file_perms;
 
 #data/dipdebug
 allow aee_aedv aee_dipdebug_vendor_file:dir r_dir_perms;

@@ -664,3 +664,6 @@
 # Purpose: OpenCL feature requirments
 /vendor/lib(64)?/libOpenCL\.so                                  u:object_r:same_process_hal_file:s0
 
+#MRDUMP
+/dev/block/platform/bootdevice/by-name/mrdump(/.*)? u:object_r:mrdump_device:s0
+
