@@ -367,3 +367,8 @@ set_prop(meta_tst, atm_mdmode_prop);
 #Date: W17.51
 #Purpose : Allow meta_tst to access pesist.atm.ipaddress in ATM.
 set_prop(meta_tst, atm_ipaddr_prop);
+
+# Date : WK18.16
+# Operation: P migration
+# Purpose: Allow meta_tst to get tel_switch_prop
+get_prop(meta_tst, tel_switch_prop)

@@ -37,6 +37,8 @@ set_prop(ccci_mdinit, ril_active_md_prop)
 set_prop(ccci_mdinit, mtk_md_prop)
 set_prop(ccci_mdinit, radio_prop)
 set_prop(ccci_mdinit, net_cdma_mdmstat)
+#=============allow ccci_mdinit to get tel_switch_prop==============
+get_prop(ccci_mdinit, tel_switch_prop)
 
 #=============allow ccci_mdinit to start/stop fsd==============
 set_prop(ccci_mdinit, ctl_ccci_fsd_prop)

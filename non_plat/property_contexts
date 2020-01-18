@@ -64,6 +64,19 @@ vendor.ril.active.md        u:object_r:ril_active_md_prop:s0
 vendor.ril.mux.report.case  u:object_r:ril_mux_report_case_prop:s0
 ril.cdma.report      u:object_r:ril_cdma_report_prop:s0
 
+#=============allow dynamic telephony switch==============
+ro.boot.opt_c2k_lte_mode    u:object_r:tel_switch_prop:s0
+ro.boot.opt_c2k_support     u:object_r:tel_switch_prop:s0
+ro.boot.opt_eccci_c2k       u:object_r:tel_switch_prop:s0
+ro.boot.opt_lte_support     u:object_r:tel_switch_prop:s0
+ro.boot.opt_md1_support     u:object_r:tel_switch_prop:s0
+ro.boot.opt_md2_support     u:object_r:tel_switch_prop:s0
+ro.boot.opt_md3_support     u:object_r:tel_switch_prop:s0
+ro.boot.opt_md5_support     u:object_r:tel_switch_prop:s0
+ro.boot.opt_ps1_rat         u:object_r:tel_switch_prop:s0
+ro.boot.opt_sim_count       u:object_r:tel_switch_prop:s0
+ro.boot.opt_using_default   u:object_r:tel_switch_prop:s0
+
 #=============allow bootanim==============
 persist.bootanim.     u:object_r:bootani_prop:s0
 

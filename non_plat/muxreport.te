@@ -29,3 +29,7 @@ allow muxreport sysfs_ccci:dir search;
 allow muxreport sysfs_ccci:file r_file_perms;
 set_prop(muxreport, radio_prop)
 
+# Date : WK18.16
+# Operation: P migration
+# Purpose: Allow muxreport to get tel_switch_prop
+get_prop(muxreport, tel_switch_prop)

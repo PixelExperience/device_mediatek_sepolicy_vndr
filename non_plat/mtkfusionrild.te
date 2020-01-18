@@ -135,3 +135,8 @@ allow rild usp_prop:property_service set;
 #Purpose: allow set the RS times for /proc/sys/net/ipv6/conf/ccmniX/router_solicitations
 allow rild vendor_shell_exec:file {execute_no_trans};
 allow rild vendor_toolbox_exec:file {execute_no_trans};
+
+# Date : WK18.16
+# Operation: P migration
+# Purpose: Allow rild to get tel_switch_prop
+get_prop(rild, tel_switch_prop)
