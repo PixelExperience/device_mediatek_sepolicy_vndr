@@ -538,7 +538,8 @@
 /(system\/vendor|vendor)/bin/thermal_manager u:object_r:thermal_manager_exec:s0
 /(system\/vendor|vendor)/bin/thermalloadalgod u:object_r:thermalloadalgod_exec:s0
 /(system\/vendor|vendor)/bin/lbs_hidl_service u:object_r:lbs_hidl_service_exec:s0
-
+/(system\/vendor|vendor)/bin/meta_tst u:object_r:meta_tst_exec:s0
+/(system\/vendor|vendor)/bin/pre_meta u:object_r:pre_meta_exec:s0
 /(system\/vendor|vendor)/bin/wmt_loader u:object_r:wmt_loader_exec:s0
 /(system\/vendor|vendor)/bin/spm_loader u:object_r:spm_loader_exec:s0
 /(system\/vendor|vendor)/bin/ccci_mdinit u:object_r:ccci_mdinit_exec:s0
