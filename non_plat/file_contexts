@@ -526,6 +526,7 @@
 /(system\/vendor|vendor)/bin/muxreport u:object_r:muxreport_exec:s0
 /(system\/vendor|vendor)/bin/nvram_agent_binder u:object_r:nvram_agent_binder_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.nvram@(.*)-service u:object_r:nvram_agent_binder_exec:s0
+/(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.nvram@(.*)-service-lazy u:object_r:nvram_agent_binder_exec:s0
 /(system\/vendor|vendor)/bin/nvram_daemon u:object_r:nvram_daemon_exec:s0
 /(system\/vendor|vendor)/bin/slpd u:object_r:slpd_exec:s0
 /(system\/vendor|vendor)/bin/thermal_manager u:object_r:thermal_manager_exec:s0
