@@ -139,6 +139,8 @@ allow init mnt_vendor_file:dir mounton;
 # Date : W19.28
 # Purpose: Allow to setattr /proc/last_kmsg
 allow init proc_last_kmsg:file setattr;
+# Purpose: Allow to write /proc/cpu/alignment
+allow init proc_cpu_alignment:file w_file_perms;
 
 # Purpose: Allow to relabelto for selinux_android_restorecon
 allow init boot_block_device:lnk_file relabelto;
