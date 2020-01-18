@@ -73,7 +73,6 @@ allow factory storage_file:dir { write create add_name search mounton };
 
 # Date: WK15.44
 # Purpose: factory idle current status
-typeattribute factory system_writes_vendor_properties_violators;
 allow factory vendor_factory_idle_state_prop:property_service set;
 
 # Date: WK15.46
