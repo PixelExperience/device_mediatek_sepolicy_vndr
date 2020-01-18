@@ -45,13 +45,20 @@ set_prop(aee_aed, debug_mtk_aee_prop);
 # /proc/lk_env
 allow aee_aed proc_lk_env:file rw_file_perms;
 
-# Purpose: Allow aee_aedv to read /proc/pid/exe
+# Purpose: Allow aee_aed to read /proc/pid/exe
 allow aee_aed exec_type:file r_file_perms;
 
-# Purpose: Allow aee_aedv to read /proc/cpu/alignment
+# Purpose: Allow aee_aed to read /proc/cpu/alignment
 allow aee_aed proc_cpu_alignment:file { write open };
 
 # Date : WK18.20
 # Operation : Migration
 # Purpose : no permission for vendor_default_prop
 get_prop(aee_aed, vendor_default_prop)
+
+# Purpose: Allow aee_aed to access /sys/devices/virtual/timed_output/vibrator/enable
+allow aee_aed sysfs_vibrator_setting:dir search;
+allow aee_aed sysfs_vibrator_setting:file w_file_perms;
+
+# Purpose: Allow aee_aed to read /proc/kpageflags
+allow aee_aed proc_kpageflags:file r_file_perms;

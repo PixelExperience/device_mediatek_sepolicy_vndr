@@ -41,3 +41,9 @@ allow dumpstate gpu_device:dir search;
 # android.hardware.camera.provider::ICameraProvider pid=3133 scontext=u:r:dumpstate:s0 tcontext=
 # u:object_r:hal_camera_hwservice:s0 tclass=hwservice_manager
 allow dumpstate hal_camera_hwservice:hwservice_manager find;
+
+#Purpose: Allow dumpstate to read/write /sys/kernel/debug/tracing/buffer_total_size_kb
+userdebug_or_eng(`allow dumpstate debugfs_tracing_debug:file { r_file_perms write };')
+
+# Purpose: Allow aee_dumpstate to write /sys/devices/virtual/timed_output/vibrator/enable
+allow dumpstate sysfs_vibrator:file write;

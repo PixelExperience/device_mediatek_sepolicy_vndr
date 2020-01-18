@@ -30,6 +30,11 @@ genfscon proc /gz_log u:object_r:proc_gz_log:s0
 genfscon proc /last_kmsg u:object_r:proc_last_kmsg:s0
 genfscon proc /bootprof u:object_r:proc_bootprof:s0
 genfscon proc /pl_lk u:object_r:proc_pl_lk:s0
+genfscon proc /msdc_debug u:object_r:proc_msdc_debug:s0
+genfscon proc /kpageflags u:object_r:proc_kpageflags:s0
+genfscon proc /mtk_memcfg/slabtrace u:object_r:proc_slabtrace:s0
+genfscon proc /mtk_cmdq_debug/status u:object_r:proc_cmqd_debug:s0
+
 
 genfscon iso9660 / u:object_r:iso9660:s0
 genfscon rawfs / u:object_r:rawfs:s0
@@ -37,3 +42,5 @@ genfscon fuseblk / u:object_r:fuseblk:s0
 
 genfscon sysfs /devices/platform/battery    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/mt_charger/power_supply u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /power/vcorefs/vcore_debug    u:object_r:sysfs_vcore_debug:s0
+genfscon sysfs /power/vcorefs/opp_table    u:object_r:sysfs_vcore_debug:s0

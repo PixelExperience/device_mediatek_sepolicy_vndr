@@ -361,39 +361,66 @@ allow aee_aedv sysfs_scp:file r_file_perms;
 allow aee_aedv self:capability { fsetid sys_nice chown fowner };
 
 # Purpose: allow aee_aedv to read /proc/buddyinfo
-allow aee_aedv proc_buddyinfo:file { read open };
+allow aee_aedv proc_buddyinfo:file r_file_perms;
 
 # Purpose: allow aee_aedv to read /proc/cmdline
-allow aee_aedv proc_cmdline:file { read open };
+allow aee_aedv proc_cmdline:file r_file_perms;
 
 # Purpose: allow aee_aedv to read /proc/slabinfo
-allow aee_aedv proc_slabinfo:file { read open };
+allow aee_aedv proc_slabinfo:file r_file_perms;
 
 # Purpose: allow aee_aedv to read /proc/stat
-allow aee_aedv proc_stat:file { read open };
+allow aee_aedv proc_stat:file r_file_perms;
 
 # Purpose: allow aee_aedv to read /proc/version
-allow aee_aedv proc_version:file { read open };
+allow aee_aedv proc_version:file r_file_perms;
 
 # Purpose: allow aee_aedv to read /proc/vmallocinfo
-allow aee_aedv proc_vmallocinfo:file { read open };
+allow aee_aedv proc_vmallocinfo:file r_file_perms;
 
 # Purpose: allow aee_aedv to read /proc/vmstat
-allow aee_aedv proc_vmstat:file { read open };
+allow aee_aedv proc_vmstat:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/cpu/alignment
-allow aee_aedv proc_cpu_alignment:file { write open };
+allow aee_aedv proc_cpu_alignment:file w_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/gpulog
-allow aee_aedv proc_gpulog:file { read open };
+allow aee_aedv proc_gpulog:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/chip/hw_ver
-allow aee_aedv proc_hw_ver:file { read open };
+allow aee_aedv proc_hw_ver:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/sched_debug
-allow aee_aedv proc_sched_debug:file { read open };
+allow aee_aedv proc_sched_debug:file r_file_perms;
 
 # Date : WK18.20
 # Operation : Migration
 # Purpose : no permission for vendor_default_prop
 get_prop(aee_aedv, vendor_default_prop)
+
+# Purpose: Allow aee_aedv to read /proc/atf_log
+allow aee_aedv proc_atf_log:dir search;
+
+# Purpose: Allow aee_aedv to read /proc/last_kmsg
+allow aee_aedv proc_last_kmsg:file r_file_perms;
+
+# Purpose: Allow aee_aedv to access /sys/devices/virtual/timed_output/vibrator/enable
+allow aee_aedv sysfs_vibrator_setting:dir search;
+allow aee_aedv sysfs_vibrator_setting:file w_file_perms;
+
+# Purpose: Allow aee_aedv to read /sys/kernel/debug/rcu/rcu_callback_log
+allow aee_aedv debugfs_rcu:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /proc/msdc_debug
+allow aee_aedv proc_msdc_debug:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /sys/power/vcorefs/vcore_debug
+allow aee_aedv sysfs_vcore_debug:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /sys/devices/virtual/BOOT/BOOT/boot/boot_mode
+allow aee_aedv sysfs_boot:file r_file_perms;
+
+#Purpose: Allow aee_aedv to read/write /sys/kernel/debug/tracing/buffer_total_size_kb
+userdebug_or_eng(`
+  allow aee_aedv debugfs_tracing_debug:file { r_file_perms write };
+')
