@@ -90,6 +90,8 @@ genfscon sysfs /devices/platform/charger/Pump_Express u:object_r:sysfs_pump_expr
 genfscon sysfs /devices/platform/battery/Pump_Express u:object_r:sysfs_pump_express:s0
 genfscon sysfs /devices/platform/mt_charger/power_supply u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/mt-rtc/rtc    u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6359-pmic/mt6359-rtc/rtc u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6358-pmic/mt6358-rtc/rtc u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/mt-pmic u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/1000d000.pwrap/mt-pmic u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6358-pmic/mt-pmic u:object_r:sysfs_pmu:s0
