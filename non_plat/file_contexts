@@ -556,9 +556,12 @@
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.light@2\.0-service-mediatek u:object_r:mtk_hal_light_exec:s0
 /(system\/vendor|vendor)/bin/hw/camerahalserver u:object_r:mtk_hal_camera_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.imsa@1\.0-service u:object_r:mtk_hal_imsa_exec:s0
+
+# Google Trusty system files
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service\.trusty u:object_r:hal_keymaster_default_exec:s0
+
 #Widevine drm hal
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service.widevine           u:object_r:hal_drm_widevine_exec:s0
-
 #PQ hal
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.pq@2\.2-service u:object_r:mtk_hal_pq_exec:s0
 #MMS hal
