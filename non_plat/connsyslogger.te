@@ -21,8 +21,8 @@ allow connsyslogger consyslog_data_file:file { create_file_perms };
 allow connsyslogger system_data_file:dir { create_dir_perms relabelfrom};
 
 #consys logger socket access
-allow connsyslogger property_socket:sock_file write;
-allow connsyslogger init:unix_stream_socket connectto;
+#allow connsyslogger property_socket:sock_file write;
+#allow connsyslogger init:unix_stream_socket connectto;
 
 allow connsyslogger tmpfs:lnk_file { create_file_perms };
 

@@ -1,7 +1,6 @@
 #allow mdlogger to set property
-allow mdlogger debug_mdlogger_prop:property_service set;
-allow mdlogger debug_prop:property_service set;
-
+set_prop(mdlogger, debug_mdlogger_prop)
+set_prop(mdlogger, debug_prop)
 # ccci device for internal modem
 allow mdlogger ccci_device:chr_file { rw_file_perms };
 
