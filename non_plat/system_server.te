@@ -19,9 +19,6 @@ allow system_server wmtWifi_device:chr_file w_file_perms;
 # /data/dontpanic access.
 allow system_server dontpanic_data_file:dir search;
 
-# /data/agps_supl access.
-allow system_server agpsd_data_file:dir r_dir_perms;
-
 # /data/core access.
 allow system_server aee_core_data_file:dir r_dir_perms;
 
