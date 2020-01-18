@@ -227,7 +227,8 @@ allow factory sysfs_ccci:file r_file_perms;
 # avc: denied { read } for name="boot_mode" dev="sysfs" ino=117
 # scontext=u:r:factory:s0 tcontext=u:object_r:sysfs:s0
 # tclass=file permissive=0
-allow factory sysfs_boot:file rw_file_perms;
+allow factory sysfs_boot_mode:file { read open };
+allow factory sysfs_boot_type:file { read open };
 
 # Date: WK16.30
 #Purpose: For gps test

@@ -479,7 +479,8 @@
 /sys/firmware/devicetree/base/chosen/atag\,devinfo u:object_r:sysfs_devinfo:s0
 /sys/devices/virtual/thermal(/.*)? u:object_r:sysfs_therm:s0
 /sys/devices/virtual/switch/fps(/.*)? u:object_r:sysfs_fps:s0
-/sys/devices/virtual/BOOT/BOOT/boot/boot_mode(/.*)? u:object_r:sysfs_boot:s0
+/sys/devices/virtual/BOOT/BOOT/boot/boot_mode(/.*)? u:object_r:sysfs_boot_mode:s0
+/sys/devices/virtual/BOOT/BOOT/boot/boot_type(/.*)? u:object_r:sysfs_boot_type:s0
 /sys/bus/platform/drivers/meta_com_type_info/meta_com_type_info(/.*)? u:object_r:sysfs_comport_type:s0
 /sys/bus/platform/drivers/meta_uart_port_info/meta_uart_port_info(/.*)? u:object_r:sysfs_uart_info:s0
 /sys/devices/platform/(charger|battery)/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0

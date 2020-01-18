@@ -414,7 +414,7 @@ allow aee_aedv proc_msdc_debug:file r_file_perms;
 allow aee_aedv sysfs_vcore_debug:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /sys/devices/virtual/BOOT/BOOT/boot/boot_mode
-allow aee_aedv sysfs_boot:file r_file_perms;
+allow aee_aedv sysfs_boot_mode:file r_file_perms;
 
 #Purpose: Allow aee_aedv to read/write /sys/kernel/debug/tracing/buffer_total_size_kb
 userdebug_or_eng(`

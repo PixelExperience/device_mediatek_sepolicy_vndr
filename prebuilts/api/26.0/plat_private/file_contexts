@@ -39,3 +39,6 @@
 
 # For drmserver
 /sys/block/mmcblk0rpmb/size u:object_r:access_sys_file:s0
+
+# For boot type
+/sys/devices/virtual/BOOT/BOOT/boot/boot_type(/.*)? u:object_r:sysfs_boot_type:s0
