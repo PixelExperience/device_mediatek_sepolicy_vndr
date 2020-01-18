@@ -5,7 +5,7 @@ type audiocmdservice_atci_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(audiocmdservice_atci)
 
-unix_socket_connect(atci_service, atci-audio, audiocmdservice_atci);
+unix_socket_connect(atcid, atci-audio, audiocmdservice_atci);
 allow audiocmdservice_atci self:unix_stream_socket { create_socket_perms read write };
 
 # Access to storages for audio tuning tool to read/write tuning result
