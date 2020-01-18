@@ -311,9 +311,7 @@ allow cameraserver gpu_device:dir search;
 allow cameraserver property_socket:sock_file write;
 allow cameraserver proc:file getattr;
 allow cameraserver shell_exec:file { execute read getattr open};
-domain_auto_trans(cameraserver, thermal_manager_exec, thermal_manager)
 typeattribute cameraserver system_executes_vendor_violators;
-allow cameraserver thermal_manager_exec:file { read getattr open execute};
 allow cameraserver init:unix_stream_socket connectto;
 
 # Date : WK16.32
