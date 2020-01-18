@@ -5,4 +5,3 @@
 type kb_block_device,dev_type;
 type dkb_block_device,dev_type;
 type mtd_device, dev_type;
-type mnld_device, dev_type;
