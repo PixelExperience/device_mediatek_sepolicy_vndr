@@ -81,7 +81,7 @@ allow dumpstate sf_bqdump_data_file:file r_file_perms;
 # avc: denied { open } for path="/sys/kernel/debug/tracing/tracing_on" dev=
 # "debugfs" ino=2087 scontext=u:r:dumpstate:s0 tcontext=u:object_r:
 # tracing_shell_writable:s0 tclass=file permissive=1
-allow dumpstate debugfs_tracing:file { write read open };
+allow dumpstate debugfs_tracing:file rw_file_perms;
 
 # Data : WK17.03
 # Purpose: Allow to access gpu
