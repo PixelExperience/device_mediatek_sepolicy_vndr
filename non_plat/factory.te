@@ -341,3 +341,11 @@ allow factory factory:capability { sys_module net_admin net_raw };
 # For power_supply and switch permission
 r_dir_file(factory, sysfs_batteryinfo)
 r_dir_file(factory, sysfs_switch)
+
+# Date : WK18.27
+# Operation: P migration
+# Purpose : Allow factory to save test report to /data/vendor
+allow factory vendor_data_file:dir { add_name read write};
+allow factory vendor_data_file:file { create read write open };
+
+
