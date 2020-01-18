@@ -19,7 +19,7 @@ allow mobile_log_d scp_device:chr_file { read open };
 #adsp
 allow mobile_log_d sysfs_adsp:file { open write };
 allow mobile_log_d sysfs_adsp:dir search;
-allow mobile_log_d adsp_device:chr_file { read open };
+allow mobile_log_d adsp_device:chr_file r_file_perms;
 
 #sspm
 allow mobile_log_d sysfs_sspm:file { open write };

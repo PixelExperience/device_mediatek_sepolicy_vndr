@@ -410,6 +410,11 @@ allow meta_tst fwmarkd_socket:sock_file write;
 # Purpose : Add ATM meta mvram sepolicy
 allow meta_tst mnt_vendor_file:dir search;
 
+# Date : WK18.44
+# Operation: P migration
+# Purpose : adsp
+allow meta_tst adsp_device:chr_file rw_file_perms;
+
 # Date : WK19.08
 # Operation: P migration
 # Purpose : audio scp recovery
