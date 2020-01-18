@@ -3,6 +3,7 @@
 # ==============================================
 
 # Purpose: aee_dumpstate set surfaceflinger property
+typeattribute dumpstate system_writes_vendor_properties_violators;
 set_prop(dumpstate, debug_bq_dump_prop);
 
 # Purpose: access dev/aed0

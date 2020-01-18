@@ -14,6 +14,8 @@ allow radio surfaceflinger:fifo_file { rw_file_perms };
 # Date : WK16.14 2016/03/30
 # Operation : IT
 # Purpose : for engineermode camera app mode
+
+typeattribute radio system_writes_vendor_properties_violators;
 allow radio mtk_em_prop:property_service set;
 
 # Date : WK16.24 2016/06/10

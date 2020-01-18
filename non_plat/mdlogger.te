@@ -1,4 +1,5 @@
 #allow mdlogger to set property
+typeattribute mdlogger system_writes_vendor_properties_violators;
 allow mdlogger debug_mdlogger_prop:property_service set;
 allow mdlogger debug_prop:property_service set;
 
