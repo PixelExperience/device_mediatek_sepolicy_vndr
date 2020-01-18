@@ -332,3 +332,11 @@ allow factory sysfs_wake_lock:file rw_file_perms;
 ##allow factory system_data_file:dir w_dir_perms;
 ##allow factory system_data_file:sock_file create_file_perms;
 allow factory system_file:file x_file_perms;
+
+# For Light HIDL permission
+allow factory hal_light_hwservice:hwservice_manager find;
+allow factory mtk_hal_light:binder call;
+# For vibrator test permission
+allow factory sysfs_vibrator:file rw_file_perms;
+allow factory sysfs_vibrator:dir search;
+
