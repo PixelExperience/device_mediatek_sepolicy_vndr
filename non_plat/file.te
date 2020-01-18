@@ -355,3 +355,7 @@ type sysfs_mmcblk, fs_type, sysfs_type;
 type aee_dipdebug_vendor_file, file_type, data_file_type;
 
 type netd_socket, file_type, coredomain_socket;
+
+# Date : WK19.27
+# Purpose: Android Migration for SVP
+type proc_m4u, fs_type, proc_type;

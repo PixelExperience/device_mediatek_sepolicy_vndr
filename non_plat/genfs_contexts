@@ -128,3 +128,6 @@ genfscon sysfs /devices/platform/battery/Power_Off_Voltage u:object_r:sysfs_powe
 genfscon sysfs /devices/platform/battery/FG_daemon_disable u:object_r:sysfs_fg_disable:s0
 genfscon sysfs /devices/platform/battery/disable_nafg u:object_r:sysfs_dis_nafg:s0
 
+# Date : WK19.27
+# Purpose: Android Migration for SVP
+genfscon proc /m4u u:object_r:proc_m4u:s0
