@@ -396,3 +396,7 @@ allow factory vendor_nfc_socket:sock_file { create write unlink setattr };
 # Allow to get AOSP property persist.radio.multisim.config
 get_prop(factory, exported3_radio_prop)
 
+# Date : WK19.38
+# Operation : Q Migration
+# Purpose: Allow clear eMMC
+allow factory ctl_mdlogger_prop:property_service set;
