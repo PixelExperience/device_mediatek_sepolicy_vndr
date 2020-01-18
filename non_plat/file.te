@@ -381,3 +381,6 @@ type debugfs_smi_mon, fs_type, debugfs_type;
 # Date : WK19.34
 # Purpose: Android Migration for video codec driver
 type vcodec_file, file_type, data_file_type;
+
+# Date : 2019/08/24
+type sysfs_sensor, fs_type, sysfs_type;
