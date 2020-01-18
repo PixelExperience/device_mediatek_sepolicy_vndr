@@ -304,3 +304,6 @@ type mtk_amslog_prop, property_type, extended_core_property_type;
 
 #=============allow android log much property==============
 type logmuch_prop, property_type, extended_core_property_type;
+
+#=============mtk bt enable SAP profile property=============
+type mtk_bt_sap_enable_prop, property_type, mtk_core_property_type;
