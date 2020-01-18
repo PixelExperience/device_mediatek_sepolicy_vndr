@@ -14,9 +14,6 @@ r_dir_file(mtk_hal_bluetooth, bluetooth_efs_file)
 
 allow mtk_hal_bluetooth { uhid_device hci_attach_dev }:chr_file rw_file_perms;
 
-# Access to config files to look for a Bluetooth address
-r_dir_file(mtk_hal_bluetooth, bluetooth_data_file)
-
 # sysfs access.
 r_dir_file(mtk_hal_bluetooth, sysfs_type)
 allow mtk_hal_bluetooth sysfs_bluetooth_writable:file rw_file_perms;
@@ -29,14 +26,7 @@ set_prop(mtk_hal_bluetooth, bluetooth_prop)
 allow mtk_hal_bluetooth proc_bluetooth_writable:file rw_file_perms;
 
 # VTS tests need to be able to toggle rfkill
-userdebug_or_eng(`
-  allow mtk_hal_bluetooth self:capability net_admin;
-')
-
-# Logging for backward compatibility
-typeattribute mtk_hal_bluetooth data_between_core_and_vendor_violators;
-allow mtk_hal_bluetooth bluetooth_data_file:dir ra_dir_perms;
-allow mtk_hal_bluetooth bluetooth_data_file:file create_file_perms;
+allow mtk_hal_bluetooth self:capability net_admin;
 
 # Purpose : Set to access stpbt driver & NVRAM
 allow mtk_hal_bluetooth stpbt_device:chr_file rw_file_perms;
