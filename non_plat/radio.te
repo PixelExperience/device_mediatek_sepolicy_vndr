@@ -197,11 +197,6 @@ set_prop(radio, mtk_debug_wifi_level_prop)
 # Purpose: Allow EM to set BT ssp debug mode property
 set_prop(radio, mtk_bt_sspdebug_prop)
 
-# Date : 2018/05/29
-# Operation : P migration
-# Purpose : For EM access vendor property
-allow radio vendor_default_prop:file { read getattr open };
-
 # Date : 2018/06/01
 # Operation : P migration
 # Purpose : For EM access battery info
