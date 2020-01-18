@@ -68,4 +68,10 @@ allow surfaceflinger hal_graphics_composer_default:lnk_file read;
 get_prop(surfaceflinger, debug_bq_dump_prop)
 
 allowxperm surfaceflinger proc_perfmgr:file ioctl {GED_BRIDGE_IO_LOG_BUF_GET GED_BRIDGE_IO_BOOST_GPU_FREQ GED_BRIDGE_IO_QUERY_INFO};
-
+allowxperm surfaceflinger proc_ged:file ioctl {
+GED_BRIDGE_IO_LOG_BUF_GET
+GED_BRIDGE_IO_BOOST_GPU_FREQ
+GED_BRIDGE_IO_QUERY_INFO
+GED_BRIDGE_IO_GE_GET
+GED_BRIDGE_IO_LOG_BUF_WRITE
+};
