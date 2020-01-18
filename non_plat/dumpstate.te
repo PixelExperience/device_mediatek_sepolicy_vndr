@@ -91,19 +91,37 @@ allow dumpstate gpu_device:dir search;
 allow dumpstate mtk_hal_camera:binder { call };
 
 # Purpose: Allow aee_dumpstate to read /proc/slabinfo
-allow dumpstate proc_slabinfo:file { read open };
+allow dumpstate proc_slabinfo:file r_file_perms;
 
 # Purpose: Allow aee_dumpstate to read /proc/zraminfo
-allow dumpstate proc_zraminfo:file { read open };
-
-# Purpose: Allow aee_dumpstate to write /sys/devices/virtual/timed_output/vibrator/enable
-allow dumpstate sysfs_vibrator:file write;
+allow dumpstate proc_zraminfo:file r_file_perms;
 
 # Purpose: Allow aee_dumpstate to read /proc/gpulog
-allow dumpstate proc_gpulog:file { read open };
+allow dumpstate proc_gpulog:file r_file_perms;
 
 # Purpose: Allow aee_dumpstate to read /proc/sched_debug
-allow dumpstate proc_sched_debug:file { read open };
+allow dumpstate proc_sched_debug:file r_file_perms;
 
 # Purpose: Allow aee_dumpstate to read /proc/chip/hw_ver
-allow dumpstate proc_hw_ver:file { read open };
+allow dumpstate proc_hw_ver:file r_file_perms;
+
+# Purpose: Allow aee_dumpstate to write /sys/devices/virtual/timed_output/vibrator/enable
+allow dumpstate sysfs_vibrator_setting:file write;
+
+# Purpose: Allow dumpstate to read /sys/kernel/debug/rcu/rcu_callback_log
+allow dumpstate debugfs_rcu:file r_file_perms;
+
+# Purpose: Allow dumpstate to read /proc/msdc_debug
+allow dumpstate proc_msdc_debug:file r_file_perms;
+
+# Purpose: Allow dumpstate to read /sys/power/vcorefs/vcore_debug
+allow dumpstate sysfs_vcore_debug:file r_file_perms;
+
+# Purpose: Allow dumpstate to read /data/anr/SF_RTT/rtt_dump.txt
+allow dumpstate sf_rtt_file:file r_file_perms;
+
+#Purpose: Allow dumpstate to read/write /sys/mtk_memcfg/slabtrace
+allow dumpstate proc_slabtrace:file r_file_perms;
+
+#Purpose: Allow dumpstate to read/write /sys/mtk_cmdq_debug/status
+allow dumpstate proc_cmqd_debug:file r_file_perms;

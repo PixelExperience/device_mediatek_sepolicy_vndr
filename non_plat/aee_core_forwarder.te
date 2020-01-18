@@ -1,0 +1,9 @@
+# ==============================================
+# Policy File of /system/bin/aee_core_forwarder Executable File
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+allow aee_core_forwarder aee_exp_data_file:dir { write add_name search };
+allow aee_core_forwarder aee_exp_data_file:file { write create open getattr };
