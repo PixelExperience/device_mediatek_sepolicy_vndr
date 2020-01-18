@@ -29,15 +29,3 @@ allow system_app mtk_thermal_config_prop:property_service set;
 # Package: CAT tool
 allow system_app aee_exp_data_file:file r_file_perms;
 allow system_app aee_exp_data_file:dir r_dir_perms;
-
-# Date : 2017/12/21
-# Purpose : Allow system app to set persist.meta.connecttype for ATM
-set_prop(system_app,meta_connecttype_prop);
-
-# Date : 2017/12/21
-# Purpose : Allow system app to set persist.atm.mdmode for ATM
-set_prop(system_app,atm_mdmode_prop);
-
-# Date : 2017/12/21
-# Purpose : Allow system app to set persist.atm.ipaddress for ATM
-set_prop(system_app,atm_ipaddr_prop);
