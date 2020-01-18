@@ -92,6 +92,7 @@ persist.vendor.audiohal.  u:object_r:audiohal_prop:s0
 persist.vendor.vow.       u:object_r:audiohal_prop:s0
 
 #=============allow wmt ==============
+persist.vendor.connsys.coredump.mode u:object_r:coredump_prop:s0
 persist.vendor.connsys. u:object_r:wmt_prop:s0
 vendor.connsys. u:object_r:wmt_prop:s0
 
