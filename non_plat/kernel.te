@@ -82,3 +82,7 @@ allow kernel mtk_hal_audio:fd use;
 # Purpose: Allow kernel read firmware binary on vendor partition
 allow kernel vendor_file:file r_file_perms;
 
+# Date : WK18.35
+# Operation: SQC
+# Purpose: Allow VOW kthread to write debug PCM dump
+allow kernel mtk_audiohal_data_file:file write;
