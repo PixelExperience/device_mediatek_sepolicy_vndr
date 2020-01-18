@@ -20,14 +20,6 @@ allow {
   -isolated_app
 } sysfs_devinfo:file r_file_perms;
 
-# Date:20170519
-# Purpose: Full treble bootup issue, coredomain need to access libudf.so where
-# located on /vendor.
-# TODO:: In O MR1 may need to change design
-allow coredomain vendor_file:dir r_dir_perms;
-#allow coredomain vendor_file:file { read open getattr execute };
-allow coredomain vendor_file:lnk_file { getattr read };
-
 # Date:20170630
 # Purpose: allow trusted process to connect aee daemon
 #allow {
