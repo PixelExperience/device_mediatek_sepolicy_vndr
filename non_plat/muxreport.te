@@ -27,9 +27,13 @@ allow muxreport emd_device:chr_file { rw_file_perms };
 # Allow read to sys/kernel/ccci/* files
 allow muxreport sysfs_ccci:dir search;
 allow muxreport sysfs_ccci:file r_file_perms;
-#set_prop(muxreport, radio_prop)
 
 # Date : WK18.16
 # Operation: P migration
 # Purpose: Allow muxreport to get tel_switch_prop
 get_prop(muxreport, tel_switch_prop)
+
+#Date: W1824
+#Purpose: allow muxreport access property of vendor_radio_prop
+set_prop(muxreport, vendor_radio_prop)
+
