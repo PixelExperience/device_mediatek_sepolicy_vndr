@@ -135,3 +135,14 @@ allow init proc_wmtdbg:file w_file_perms;
 # Date : W18.20
 # Operation : mount soc vendor's partition when booting
 allow init mnt_vendor_file:dir mounton;
+
+# Date : W19.28
+# Purpose: Allow to setattr /proc/last_kmsg
+allow init proc_last_kmsg:file setattr;
+
+# Purpose: Allow to setattr for duraspeed.rc
+allow init proc_cpu_loading:file setattr;
+
+# Purpose: Allow to relabelto for selinux_android_restorecon
+allow init boot_block_device:lnk_file relabelto;
+allow init vbmeta_block_device:lnk_file relabelto;
