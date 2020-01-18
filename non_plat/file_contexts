@@ -646,3 +646,11 @@
 # Date: 2019/07/16
 # hdmi hal
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.hdmi@1\.0-service u:object_r:mtk_hal_hdmi_exec:s0
+
+#Widevine drm hal(include lazy hal)
+/vendor/bin/hw/android\.hardware\.drm@1\.2-service\.widevine           u:object_r:hal_drm_widevine_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.2-service-lazy\.widevine      u:object_r:hal_drm_widevine_exec:s0
+#Cleaarkey hal(include lazy hal)
+/vendor/bin/hw/android\.hardware\.drm@1\.2-service\.clearkey           u:object_r:hal_drm_clearkey_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.2-service-lazy\.clearkey      u:object_r:hal_drm_clearkey_exec:s0
+
