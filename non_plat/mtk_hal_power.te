@@ -84,8 +84,9 @@ set_prop(mtk_hal_power, mtk_thermal_config_prop)
 # Date : 2018/01/31
 # Operation: SQC
 # Purpose : Allow powerHAL to access /proc/[pid]
-allow mtk_hal_power su:dir { search getattr };
-allow mtk_hal_power su:file { read open };
+# 2019/04/24 : redundant setting
+# allow mtk_hal_power su:dir { search getattr };
+# allow mtk_hal_power su:file { read open };
 
 # Date : 2018/03/16
 # Operation: SQC
