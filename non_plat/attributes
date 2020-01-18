@@ -57,3 +57,10 @@ attribute mtk_hal_fm_server;
 attribute mtk_hal_log;
 attribute mtk_hal_log_client;
 attribute mtk_hal_log_server;
+
+# Date: 2018/06/26
+# em hidl
+attribute mtk_hal_em;
+attribute mtk_hal_em_client;
+attribute mtk_hal_em_server;
+

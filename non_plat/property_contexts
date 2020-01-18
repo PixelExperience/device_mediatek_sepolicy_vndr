@@ -118,11 +118,60 @@ vendor.client.      u:object_r:mtk_em_prop:s0
 vendor.debug.camera.p2plug.log u:object_r:mediatek_prop:s0
 vendor.client.em.appmode u:object_r:mediatek_prop:s0
 
-#=============allow em set protocol================
-persist.vendor.auto_answer   u:object_r:mtk_em_auto_answer_prop:s0
+#=============allow em set auto_answer protocol================
+persist.vendor.auto_answer  u:object_r:mtk_em_auto_answer_prop:s0
 
-#=============allow em set protocol================
+#=============allow em set tethering protocol================
 persist.vendor.net.auto.tethering   u:object_r:mtk_em_net_auto_tethering_prop:s0
+
+#=============allow em set ims operator property===========
+vendor.ril.volte.mal.pctid u:object_r:mtk_operator_id_prop:s0
+
+#=============allow em set simswitch property===========
+persist.vendor.radio.simswitch.emmode u:object_r:mtk_simswitch_emmode_prop:s0
+
+#=============allow em set mtk_dsbp_support property===========
+persist.vendor.radio.mtk_dsbp_support u:object_r:mtk_dsbp_support_prop:s0
+
+#=============allow em set imstestmode property===========
+persist.vendor.radio.imstestmode u:object_r:mtk_imstestmode_prop:s0
+
+#=============allow em set smsformat property===========
+persist.vendor.radio.smsformat u:object_r:mtk_smsformat_prop:s0
+
+#=============allow em set gprs.prefer property===========
+persist.vendor.radio.gprs.prefer u:object_r:mtk_gprs_prefer_prop:s0
+
+#=============allow em set testsim.cardtype property===========
+persist.vendor.radio.testsim.cardtype u:object_r:mtk_testsim_cardtype_prop:s0
+
+#=============allow em set ct.ir.engmode property===========
+persist.vendor.radio.ct.ir.engmode u:object_r:mtk_ct_ir_engmode_prop:s0
+
+#=============allow em set disable_c2k_cap property===========
+persist.vendor.radio.disable_c2k_cap u:object_r:mtk_disable_c2k_cap_prop:s0
+
+#=============allow em to set modem reset delay property================
+vendor.mediatek.debug.md.reset.wait u:object_r:mtk_debug_md_reset_prop:s0
+
+#=============allow em to set wcn core dump mode property================
+persist.vendor.connsys.coredump.mode u:object_r:mtk_connsys_coredump_mode_prop:s0
+
+#=============allow em to set video log omx.* property================
+vendor.mtk.omx. u:object_r:mtk_omx_log_prop:s0
+
+#=============allow em to set vdec log property================
+vendor.mtk.vdec.log u:object_r:mtk_vdec_log_prop:s0
+
+#=============allow em to set vdectlc logproperty================
+vendor.mtk.vdectlc.log u:object_r:mtk_vdectlc_log_prop:s0
+
+#=============allow em to set venc h264 showlog property================
+vendor.mtk.venc.h264.showlog u:object_r:mtk_venc_h264_showlog_prop:s0
+
+#=============allow em to set modem warning property================
+persist.vendor.radio.modem.warning u:object_r:mtk_modem_warning_prop:s0
+
 
 #=============allow system server to set meta_connecttype property  ==============
 persist.vendor.meta.connecttype u:object_r:meta_connecttype_prop:s0
@@ -160,13 +209,8 @@ persist.vendor.radio. u:object_r:vendor_radio_prop:s0
 #=============allow bluetooth==============
 vendor.bthcisnoop u:object_r:vendor_bluetooth_prop:s0
 
-#=============allow EM to set modem reset delay property================
-vendor.mediatek.debug.md.reset.wait u:object_r:mtk_debug_md_reset_prop:s0
-
 #=============em camera property==============
 vendor.debug. u:object_r:vendor_debug_prop:s0
-
-
 
 #=============allow ct volte==============
 persist.vendor.mtk_ct_volte_support u:object_r:mtk_ct_volte_prop:s0

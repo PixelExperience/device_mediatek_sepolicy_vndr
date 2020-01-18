@@ -128,6 +128,54 @@ type mtk_em_auto_answer_prop, property_type, extended_core_property_type;
 #============= allow em set protocol ===============
 type mtk_em_net_auto_tethering_prop, property_type, extended_core_property_type;
 
+#=============allow em set property=============
+type mtk_operator_id_prop, property_type, mtk_core_property_type;
+
+#=============allow em set testsim.cardtype property===========
+type mtk_simswitch_emmode_prop, property_type, mtk_core_property_type;
+
+#=============allow em set property=============
+type mtk_dsbp_support_prop, property_type, mtk_core_property_type;
+
+#=============allow em set property=============
+type mtk_imstestmode_prop, property_type, mtk_core_property_type;
+
+#=============allow em set property=============
+type mtk_smsformat_prop, property_type, mtk_core_property_type;
+
+#=============allow em set property=============
+type mtk_gprs_prefer_prop, property_type, mtk_core_property_type;
+
+#=============allow em set property=============
+type mtk_testsim_cardtype_prop, property_type, mtk_core_property_type;
+
+#=============allow em set property=============
+type mtk_ct_ir_engmode_prop, property_type, mtk_core_property_type;
+
+#=============allow em set property=============
+type mtk_disable_c2k_cap_prop, property_type, mtk_core_property_type;
+
+#=============allow em to set modem reset delay property================
+type mtk_debug_md_reset_prop, property_type, mtk_core_property_type;
+
+#=============allow em to set wcn core dump mode property================
+type mtk_connsys_coredump_mode_prop, property_type, mtk_core_property_type;
+
+#=============allow em to set video log omx.* property================
+type mtk_omx_log_prop, property_type, mtk_core_property_type;
+
+#=============allow em to set vdec log property================
+type mtk_vdec_log_prop, property_type, mtk_core_property_type;
+
+#=============allow em to set vdectlc log property================
+type mtk_vdectlc_log_prop, property_type, mtk_core_property_type;
+
+#=============allow em to set venc h264 showlog property================
+type mtk_venc_h264_showlog_prop, property_type, mtk_core_property_type;
+
+#=============allow em to set modem warning_prop property================
+type mtk_modem_warning_prop, property_type, mtk_core_property_type;
+
 #=============allow meta_tst to stop specific service ===============
 type ctl_mobile_log_d_prop, property_type;
 type ctl_mnld_prop, property_type;
@@ -164,8 +212,7 @@ type vendor_radio_prop, property_type, mtk_core_property_type;
 #=============allow bluetooth==============
 type vendor_bluetooth_prop, property_type, extended_core_property_type;
 
-#=============allow EM to set modem reset delay property================
-type mtk_debug_md_reset_prop, property_type, mtk_core_property_type;
+
 
 #=============em camera property==============
 type vendor_debug_prop, property_type, mtk_core_property_type;

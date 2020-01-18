@@ -185,3 +185,7 @@ get_prop(radio, mtk_aal_prop)
 # Purpose: Allow EM detect Audio headset status
 allow radio sysfs_headset:file { read open };
 
+# Date : 2018/06/26
+# Operation : IT
+# Purpose : Allow to use HAL em
+hal_client_domain(radio, mtk_hal_em)
