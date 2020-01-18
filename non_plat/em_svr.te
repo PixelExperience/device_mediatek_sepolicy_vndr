@@ -30,8 +30,3 @@ allow em_svr nvram_device:blk_file { open read write };
 # Date: WK1812
 # Purpose: add for Gyroscope sensor
 allow em_svr gyroscope_device:chr_file { read ioctl open };
-
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(em_svr, vendor_default_prop)

@@ -56,8 +56,3 @@ allow mobile_log_d port:tcp_socket { name_connect name_bind };
 allow mobile_log_d mobile_log_d:tcp_socket { create connect setopt bind };
 allow mobile_log_d mobile_log_d:tcp_socket { bind setopt listen accept read write };
 allow mobile_log_d node:tcp_socket node_bind;
-
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(mobile_log_d, vendor_default_prop)

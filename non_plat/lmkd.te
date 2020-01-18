@@ -17,8 +17,3 @@ dontaudit lmkd zygote:dir rw_dir_perms;
 #           path=2F6465762F6173686D656D2F4469736361726461626C654D656D6F72794173686D656D416C6C6F6361746F72202864656C6574656429
 #           dev="tmpfs" ino=14475 scontext=u:r:lmkd:s0 tcontext=u:r:platform_app:s0 tclass=fd permissive=0
 dontaudit lmkd platform_app:fd use;
-
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(lmkd, vendor_default_prop)

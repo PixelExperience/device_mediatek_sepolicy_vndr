@@ -63,8 +63,3 @@ allow audioserver aee_aed:unix_stream_socket connectto;
 # Purpose : Change thermal config
 allow audioserver mtk_thermal_config_prop:file { getattr open read };
 allow audioserver mtk_thermal_config_prop:property_service set;
-
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(audioserver, vendor_default_prop)

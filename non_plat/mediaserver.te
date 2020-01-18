@@ -391,8 +391,3 @@ allow mediaserver  mtk_hal_keymanage:binder call;
 # Purpose : Allow mediadrmserver  to call vendor.mediatek.hardware.keymanage@1.0-service.
 hal_client_domain(mediaserver , hal_keymaster)
 allow mediaserver mtk_hal_keymanage_hwservice:hwservice_manager find;
-
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(mediaserver, vendor_default_prop)
