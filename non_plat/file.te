@@ -377,3 +377,7 @@ type proc_m4u, fs_type, proc_type;
 
 # Date : 2019/08/15
 type debugfs_smi_mon, fs_type, debugfs_type;
+
+# Date : WK19.34
+# Purpose: Android Migration for video codec driver
+type vcodec_file, file_type, data_file_type;

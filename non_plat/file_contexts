@@ -66,6 +66,7 @@
 /data/vendor/mediadrm(/.*)?      u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/dipdebug(/.*)?    u:object_r:aee_dipdebug_vendor_file:s0
 /data/vendor/key_provisioning(/.*)?   u:object_r:key_install_data_file:s0
+/data/vendor/vcodec(/.*)? u:object_r:vcodec_file:s0
 
 # Misc data
 #/data/misc/acdapi(/.*)? u:object_r:acdapi_data_file:s0
