@@ -22,7 +22,6 @@ allow mediaserver lens_device:chr_file rw_file_perms;
 # Purpose : Set audio driver permission to access SD card for debug purpose and accss NVRam.
 allow mediaserver sdcard_type:dir { w_dir_perms create };
 allow mediaserver sdcard_type:file create;
-typeattribute mediaserver data_between_core_and_vendor_violators;
 #allow mediaserver nvram_data_file:dir w_dir_perms;
 #allow mediaserver nvram_data_file:file create_file_perms;
 allow mediaserver nvram_data_file:lnk_file read;
