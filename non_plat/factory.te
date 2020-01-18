@@ -373,3 +373,6 @@ allow factory mtk_audiohal_data_file:file { write create unlink r_file_perms };
 # Operation: P migration
 # Purpose : Allow factory to open /proc/version
 allow factory proc_version:file {read open getattr};
+
+# Allow to use persist.radio.multisim.config
+allow factory exported3_radio_prop:file { read open getattr };
