@@ -157,11 +157,6 @@ set_prop(radio, system_prop)
 allow radio mtk_hal_power_hwservice:hwservice_manager find;
 binder_call(radio, mtk_hal_power)
 
-#Date : 2017/09/12
-# Operation : Allow radio mtk_em_ril_xcapset_prop:property_service set;
-# Purpose : for set telephony xcap system property in Engineer Mode
-set_prop(radio, mtk_em_ril_xcapset_prop)
-
 # Date : WK1738 2017/09/21
 # Purpose : Allow YGPS trigger mnld NE
 set_prop(radio, mnld_prop)

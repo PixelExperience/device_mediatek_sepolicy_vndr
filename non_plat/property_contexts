@@ -156,10 +156,6 @@ debug.sf.hwc_pid u:object_r:graphics_hwc_pid_prop:s0
 persist.mtkcam. u:object_r:mtkcam_prop:s0
 mtkcam. u:object_r:mtkcam_prop:s0
 
-#=============allow radio  to set em xcap config================
-persist.ss. u:object_r:mtk_em_ril_xcapset_prop:s0
-persist.gba. u:object_r:mtk_em_ril_xcapset_prop:s0
-
 #=============allow radio to set presence config================
 persist.vendor.mtk_uce_ua_support u:object_r:persist_uce_prop:s0
 

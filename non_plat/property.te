@@ -150,9 +150,6 @@ type graphics_hwc_pid_prop, property_type;
 #============= mtkcam property ============================
 type mtkcam_prop, property_type;
 
-#============= allow em set xcap property ===============
-type mtk_em_ril_xcapset_prop, property_type, mtk_core_property_type;
-
 #============= allow em set UCE property ===============
 type persist_uce_prop, property_type;
 
