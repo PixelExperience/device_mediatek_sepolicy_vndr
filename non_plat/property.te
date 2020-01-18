@@ -104,7 +104,6 @@ type ctl_eemcs_fsd_prop, property_type;
 type net_cdma_mdmstat, property_type, mtk_core_property_type;
 
 #=============allow bt==============
-type bt_prop, property_type, mtk_core_property_type;
 type persist_bt_prop, property_type, mtk_core_property_type;
 
 #============= allow factory idle current prop ==============
