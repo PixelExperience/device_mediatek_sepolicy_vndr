@@ -273,4 +273,4 @@ genfscon sysfs /firmware/devicetree/base/chosen/atag,chipid u:object_r:sysfs_chi
 # Purpose : allow system_server to access rt5509 param and calib node
 genfscon sysfs /devices/platform/rt5509_param.0 u:object_r:sysfs_rt_param:s0
 genfscon sysfs /devices/virtual/rt5509_cal/rt5509.0 u:object_r:sysfs_rt_calib:s0
-
+genfscon sysfs /devices/platform/11270000.usb3/musb-hdrc/cmode u:object_r:sysfs_usb_cmode:s0
