@@ -15,6 +15,11 @@ allow meta_tst ttyGS_device:chr_file rw_file_perms;
 # Purpose : for meta mode device node UART
 allow meta_tst ttyMT_device:chr_file rw_file_perms;
 
+# Date: WK17.12
+# Operation : Migration
+# Purpose : for meta mode device node UART
+allow meta_tst ttyS_device:chr_file rw_file_perms;
+
 # Date: WK16.12
 # Operation : Migration
 # Purpose : for meta mode device node CCCI

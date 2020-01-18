@@ -4,6 +4,7 @@
 
 type devmap_device, dev_type;
 type ttyMT_device, dev_type;
+type ttyS_device, dev_type;
 type ttySDIO_device, dev_type;
 type vmodem_device, dev_type;
 type stpwmt_device, dev_type;

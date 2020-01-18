@@ -70,6 +70,10 @@ allow system_server sw_sync_device:chr_file { read write getattr open ioctl };
 # Purpose: Allow to access UART1 ttyMT1
 allow system_server ttyMT_device:chr_file rw_file_perms;
 
+# Date : WK17.52
+# Purpose: Allow to access UART1 ttyS
+allow system_server ttyS_device:chr_file rw_file_perms;
+
 # Date : WK16.44
 # Purpose: Allow to access gpsonly driver
 #allow system_server gps_device:chr_file rw_file_perms;

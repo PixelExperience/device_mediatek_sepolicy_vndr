@@ -302,6 +302,7 @@
 /dev/ttyC3 u:object_r:icusb_device:s0
 /dev/ttyGS.* u:object_r:ttyGS_device:s0
 /dev/ttyMT.* u:object_r:ttyMT_device:s0
+/dev/ttyS.* u:object_r:ttyS_device:s0
 /dev/ttyp.* u:object_r:ttyp_device:s0
 /dev/ttySDIO.* u:object_r:ttySDIO_device:s0
 /dev/ttyUSB0         u:object_r:tty_device:s0

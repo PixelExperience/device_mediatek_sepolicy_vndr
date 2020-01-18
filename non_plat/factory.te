@@ -38,6 +38,7 @@ allow factory ttySDIO_device:chr_file rw_file_perms;
 
 #Purpose: USB
 allow factory ttyMT_device:chr_file rw_file_perms;
+allow factory ttyS_device:chr_file rw_file_perms;
 allow factory ttyGS_device:chr_file rw_file_perms;
 
 # Date: WK15.01
