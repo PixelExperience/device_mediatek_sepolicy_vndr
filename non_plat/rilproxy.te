@@ -53,3 +53,7 @@ allow rild hal_audio_hwservice:hwservice_manager find;
 #Purpose: allow rild access to vendor.ril.ipo system property
 set_prop(mtkrild, vendor_ril_ipo_prop)
 
+# Date : WK18.26
+# Operation: P migration
+# Purpose: Allow carrier express HIDL to set vendor property
+set_prop(mtkrild, mtk_cxp_vendor_prop)
