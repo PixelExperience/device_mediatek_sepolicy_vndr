@@ -92,3 +92,15 @@ allow netdiag self:netlink_route_socket { write getattr setopt read bind create 
 allow netdiag kernel:system module_request;
 allow netdiag self:rawip_socket { getopt create };
 allow netdiag self:udp_socket { ioctl create };
+
+## Android P migration
+#avc: denied { open } for path="/dev/__properties__/u:object_r:atm_ipaddr_prop:s0"
+#avc: denied { getattr } for path="/dev/__properties__/u:object_r:atm_ipaddr_prop:s0"
+#avc: denied { open } for path="/dev/__properties__/u:object_r:atm_mdmode_prop:s0"
+#allow netdiag atm_ipaddr_prop:file { getattr open };
+#allow netdiag atm_mdmode_prop:file { getattr open };
+#allow netdiag bluetooth_a2dp_offload_prop:file { getattr open };
+#allow netdiag bluetooth_prop:file open;
+allow netdiag proc_qtaguid_stat:dir { read open };
+allow netdiag proc_qtaguid_stat:file { read getattr open };
+allow netdiag vendor_default_prop:file  { read getattr open };
