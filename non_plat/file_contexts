@@ -81,8 +81,8 @@
 # protected data file
 #/(vendor|system/vendor)/protect_f(/.*)?         u:object_r:protect_f_data_file:s0
 #/(vendor|system/vendor)/protect_s(/.*)?         u:object_r:protect_s_data_file:s0
-#/(vendor|system/vendor)/persist(/.*)?         u:object_r:persist_data_file:s0
-
+#/(vendor|system/vendor)/persist(/.*)?        u:object_r:persist_data_file:s0
+/data/vendor/persist(/.*)?        u:object_r:persist_data_file:s0
 
 #fat on nand image
 /fat(/.*)?  u:object_r:fon_image_data_file:s0
