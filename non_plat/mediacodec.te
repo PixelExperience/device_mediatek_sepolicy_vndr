@@ -95,7 +95,7 @@ allow mediacodec proc_mtktz:dir search;
 allow mediacodec proc_thermal:dir search;
 allow mediacodec proc_mtkcooler:file { read write open };
 allow mediacodec proc_mtktz:file { read write open getattr };
-allow mediacodec proc_thermal:file { read write open };
+allow mediacodec proc_thermal:file { read write open getattr};
 allow mediacodec thermal_manager_data_file:file create_file_perms;
 allow mediacodec thermal_manager_data_file:dir { rw_dir_perms setattr };
 allow mediacodec thermal_manager_data_file:dir search;
