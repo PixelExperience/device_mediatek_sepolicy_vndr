@@ -71,11 +71,6 @@ allow radio ttyGS_device:chr_file { open read write ioctl };
 # Purpose: for set auto answer
 allow radio mtk_em_auto_answer_prop:property_service set;
 
-#Date : 2016/07/19
-#Operation: IT
-# Purpose: for set bt.sspdebug
-allow radio mtk_em_bt_sspdebug_prop:property_service set;
-
 # Date : 2016/07/05
 # Purpose :
 #   Write IMEI - presanity item write imei should read the file on storage
@@ -186,11 +181,6 @@ set_prop(radio, vendor_radio_prop)
 # Operation: P migration
 # Purpose: allow EM to set modem reset delay property
 set_prop(radio, mtk_debug_md_reset_prop)
-
-# Date : 2018/05/09
-# Operation: P migration
-# Purpose: Allow EM store wifi log level in system property
-set_prop(radio, mtk_debug_wifi_level_prop)
 
 # Date : 2018/05/10
 # Operation: P migration
