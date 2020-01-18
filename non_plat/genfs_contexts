@@ -115,3 +115,7 @@ genfscon sysfs /devices/virtual/usb_rawbulk u:object_r:sys_usb_rawbulk:s0
 #Purpose: allow mdlogger to read mdinfo file
 genfscon sysfs /kernel/md/mdee u:object_r:sysfs_mdinfo:s0
 
+# Date : 2019/04/09
+# Purpose: mtk EM battery temprature settings
+genfscon sysfs /devices/platform/battery/Battery_Temperature u:object_r:sysfs_battery_temp:s0
+

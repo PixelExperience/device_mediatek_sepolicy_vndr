@@ -55,3 +55,7 @@ allow em_svr sysfs_pmu:lnk_file { read };
 # Purpose : EM Power debug_log setting
 allow em_svr sysfs_spm:dir { search };
 allow em_svr sysfs_spm:file { open read write };
+
+# Date: 2019/04/09
+# Purpose: battery temprature setting
+allow em_svr sysfs_battery_temp:file w_file_perms;

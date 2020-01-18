@@ -330,3 +330,7 @@ type sysfs_mmcblk, fs_type, sysfs_type;
 
 # Vibrator vibrate file
 type sysfs_leds_setting, fs_type, sysfs_type;
+
+# Date : 2019/04/09
+# Purpose: mtk EM battery temprature settings
+type sysfs_battery_temp, fs_type, sysfs_type;
