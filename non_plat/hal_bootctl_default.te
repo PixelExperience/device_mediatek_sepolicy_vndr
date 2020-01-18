@@ -7,6 +7,7 @@ allow hal_bootctl_default block_device:dir search;
 allow hal_bootctl_default misc_sd_device:chr_file rw_file_perms;
 allow hal_bootctl_default bootdevice_block_device:blk_file { read write ioctl open };
 allow hal_bootctl_default proc_cmdline:file r_file_perms;
+allow hal_bootctl_default sysfs_boot_type:file r_file_perms;
 userdebug_or_eng(`
 allow hal_bootctl_default self:capability sys_rawio;
 ')
