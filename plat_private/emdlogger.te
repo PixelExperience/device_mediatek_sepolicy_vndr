@@ -64,3 +64,18 @@ allow emdlogger media_rw_data_file:dir { create_dir_perms };
 
 ## purpose: avc: denied { read } for name="plat_file_contexts"
 allow emdlogger file_contexts_file:file { read getattr open };
+
+## Android P migration
+## purpose:  denied { read } for name="cmdline" dev="proc"
+#denied { search } for name="android" dev="sysfs"
+#for name="compatible" dev="sysfs" ino=2985 scontext=u
+#:r:emdlogger:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0
+#avc: denied { open } for path="/system/etc/mddb"
+#avc: denied { read } for name="u:object_r:vendor_default_prop:s0"
+allow emdlogger proc_cmdline:file { read getattr open };
+allow emdlogger sysfs_dt_firmware_android:dir search;
+allow emdlogger sysfs_dt_firmware_android:file read;
+allow emdlogger system_file:dir open;
+allow emdlogger vendor_default_prop:file { read getattr open };
+
+
