@@ -66,3 +66,5 @@ allow vendor_init kernel:key search;
 
 # Purpose: /dev/block/mmcblk0p10
 allow vendor_init expdb_block_device:blk_file rw_file_perms;
+
+set_prop(vendor_init, mtk_wifi_hotspot_prop)
