@@ -223,7 +223,6 @@
 (typeattributeset bufferhubd_26_0 (bufferhubd))
 (typeattributeset sysfs_devices_system_cpu_26_0 (sysfs_devices_system_cpu))
 (typeattributeset untrusted_app_26_0 (untrusted_app))
-(typeattributeset thermalindicator_26_0 (thermalindicator))
 (typeattributeset shared_relro_26_0 (shared_relro))
 (typeattributeset hal_wifi_hwservice_26_0 (hal_wifi_hwservice))
 (typeattributeset alarm_device_26_0 (alarm_device))
