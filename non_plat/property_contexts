@@ -282,3 +282,7 @@ persist.vendor.usb.otg.switch u:object_r:vendor_usb_otg_switch:s0
 #============mtk rsc========#
 ro.boot.rsc u:object_r:mtk_default_prop:s0
 
+#=============mtk anr property=============
+persist.vendor.dbg.anrflow u:object_r:mtk_anr_support_prop:s0
+persist.vendor.anr. u:object_r:mtk_anr_support_prop:s0
+vendor.anr.autotest u:object_r:mtk_anr_support_prop:s0
