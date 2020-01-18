@@ -29,7 +29,6 @@ allow meta_tst self:capability { sys_boot ipc_lock };
 allow meta_tst sysfs_wake_lock:file rw_file_perms;
 #allow meta_tst sysfs:file write;
 allow meta_tst property_socket:sock_file w_file_perms;
-#allow meta_tst vold_socket:sock_file w_file_perms;
 allow meta_tst init:unix_stream_socket connectto;
 allow meta_tst vold:unix_stream_socket connectto;
 allow meta_tst node:tcp_socket node_bind;
