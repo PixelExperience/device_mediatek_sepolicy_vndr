@@ -6,7 +6,7 @@ allow system_server zygote:binder impersonate;
 # Property service.
 allow system_server ctl_bootanim_prop:property_service set;
 # After connected to DHCPv6, enabled 6to4 IPv6 AP to get property.
-#allow system_server proc_net:file w_file_perms;
+allow system_server proc_net:file w_file_perms;
 # Querying zygote socket.
 allow system_server zygote:unix_stream_socket { getopt getattr };
 # Date : WK16.36

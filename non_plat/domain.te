@@ -15,7 +15,10 @@ allow domain debugfs_binder:dir search;
 
 # Allow all processes to read /sys/bus/platform/drivers/dev_info/dev_info
 # as it is a public interface for all processes to read some OTP data.
-#allow domain sysfs_devinfo:file r_file_perms;
+allow {
+  domain
+  -isolated_app
+} sysfs_devinfo:file r_file_perms;
 
 # Date:20170519
 # Purpose: Full treble bootup issue, coredomain need to access libudf.so where

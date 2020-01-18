@@ -56,7 +56,7 @@ allow factory pro_info_device:chr_file rw_file_perms;
 
 # Data: WK15.28
 # Purpose: for mt-ramdump reset
-#allow factory proc_mrdump_rst:file w_file_perms;
+allow factory proc_mrdump_rst:file w_file_perms;
 
 #Date: WK15.31
 #Purpose: define factory_data_file instead of system_data_file
@@ -219,7 +219,7 @@ allow factory input_device:dir rw_dir_perms;
 # Purpose:  N Migration For ccci sysfs node
 # Allow read to sys/kernel/ccci/* files
 allow factory sysfs_ccci:dir search;
-#allow factory sysfs_ccci:file r_file_perms;
+allow factory sysfs_ccci:file r_file_perms;
 
 # Date: WK16.18
 # Purpose: N Migration For boot_mode
@@ -269,7 +269,7 @@ allow factory tmpfs:filesystem unmount;
 allow factory sysfs:dir { read open };
 allow factory sysfs_leds:dir search;
 allow factory sysfs_leds:lnk_file read;
-#allow factory sysfs_vibrator:file {open read write};
+allow factory sysfs_vibrator:file {open read write};
 allow factory ion_device:chr_file { read open ioctl };
 allow factory debugfs_ion:dir search;
 #allow factory proc:file ioctl;
@@ -296,5 +296,5 @@ set_prop(factory,ctl_ccci_fsd_prop);
 # Operation : O Migration
 # Purpose: Allow to access sysfs
 allow factory sysfs_therm:dir search;
-#allow factory sysfs_therm:file {open read write};
+allow factory sysfs_therm:file {open read write};
 

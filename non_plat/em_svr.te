@@ -19,25 +19,25 @@ allow em_svr nvram_device:chr_file { open read write ioctl };
 typeattribute em_svr system_executes_vendor_violators;
 allow em_svr thermal_manager_exec:file { getattr execute read open execute_no_trans };
 allow em_svr proc_mtkcooler:dir search;
-#allow em_svr proc_mtkcooler:file { read getattr open write };
+allow em_svr proc_mtkcooler:file { read getattr open write };
 allow em_svr proc_thermal:dir search;
-#allow em_svr proc_thermal:file { read getattr open write };
+allow em_svr proc_thermal:file { read getattr open write };
 allow em_svr proc_mtktz:dir search;
-#allow em_svr proc_mtktz:file  { read getattr open write };
-#allow em_svr proc_slogger:file { read getattr open write };
-#allow em_svr proc_lk_env:file { read getattr open write ioctl};
+allow em_svr proc_mtktz:file  { read getattr open write };
+allow em_svr proc_slogger:file { read getattr open write };
+allow em_svr proc_lk_env:file { read getattr open write ioctl};
 allow em_svr para_block_device:blk_file { read open };
 # Date: 2015/12/22
 # Operation : M Migration
 # Purpose : Battery Log can change temperature
 userdebug_or_eng(`
 allow em_svr proc_battery_cmd:dir search;
-#allow em_svr proc_battery_cmd:file { read getattr open write };
+allow em_svr proc_battery_cmd:file { read getattr open write };
 ')
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-#allow em_svr proc_ged:file {open read write ioctl getattr};
+allow em_svr proc_ged:file {open read write ioctl getattr};
 
 # Date : WK17.42
 # Purpose: Allow to query md log filter bin

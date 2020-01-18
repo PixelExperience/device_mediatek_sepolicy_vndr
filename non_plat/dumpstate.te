@@ -41,13 +41,13 @@ allow dumpstate debugfs_cpuhvfs:file { read open };
 
 # Purpose: /sys/kernel/ccci/md_chn
 allow dumpstate sysfs_ccci:dir search;
-#allow dumpstate sysfs_ccci:file { read open };
+allow dumpstate sysfs_ccci:file { read open };
 
 # Purpose: leds status
 allow dumpstate sysfs_leds:lnk_file read;
 
 # Purpose: /sys/module/lowmemorykiller/parameters/adj
-#allow dumpstate sysfs_lowmemorykiller:file { read open };
+allow dumpstate sysfs_lowmemorykiller:file { read open };
 allow dumpstate sysfs_lowmemorykiller:dir search;
 
 # Purpose: /dev/block/mmcblk0p10

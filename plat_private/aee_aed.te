@@ -106,7 +106,7 @@ allow aee_aed logd:unix_stream_socket connectto;
 # allow aee_aed system_ndebug_socket:sock_file write; mask for never allow rule
 
 # vibrator
-#allow aee_aed sysfs_vibrator:file w_file_perms;
+allow aee_aed sysfs_vibrator:file w_file_perms;
 
 # Data : 2017/03/22
 # Operation : add NE flow rule for Android O

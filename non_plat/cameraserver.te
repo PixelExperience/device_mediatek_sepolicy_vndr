@@ -37,7 +37,7 @@ allow cameraserver vpu_device:chr_file rw_file_perms;
 allow cameraserver kd_camera_hw_device:chr_file rw_file_perms;
 allow cameraserver seninf_device:chr_file rw_file_perms;
 allow cameraserver self:capability { setuid ipc_lock sys_nice };
-#allow cameraserver sysfs_wake_lock:file rw_file_perms;
+allow cameraserver sysfs_wake_lock:file rw_file_perms;
 allow cameraserver MTK_SMI_device:chr_file r_file_perms;
 allow cameraserver camera_pipemgr_device:chr_file r_file_perms;
 allow cameraserver kd_camera_flashlight_device:chr_file rw_file_perms;
@@ -51,7 +51,7 @@ allow cameraserver nvram_data_file:file create_file_perms;
 allow cameraserver nvram_data_file:lnk_file read;
 allow cameraserver nvdata_file:lnk_file read;
 #allow cameraserver proc:file { read ioctl open };
-#allow cameraserver proc_meminfo:file { read getattr open };
+allow cameraserver proc_meminfo:file { read getattr open };
 #allow cameraserver sysfs:file { read write open };
 
 # Date : WK14.34
@@ -218,7 +218,7 @@ allow cameraserver surfaceflinger:file getattr;
 # Data: WK14.44
 # Operation : Migration
 # Purpose : for low SD card latency issue
-#allow cameraserver sysfs_lowmemorykiller:file { read open };
+allow cameraserver sysfs_lowmemorykiller:file { read open };
 
 # Data: WK14.45
 # Operation : Migration
@@ -309,7 +309,7 @@ allow cameraserver gpu_device:dir search;
 # Operation : Migration
 # Purpose :  Use file_type_auto_trans to specify label to avoid violated(never allow)
 allow cameraserver property_socket:sock_file write;
-#allow cameraserver proc:file getattr;
+allow cameraserver proc:file getattr;
 allow cameraserver shell_exec:file { execute read getattr open};
 domain_auto_trans(cameraserver, thermal_manager_exec, thermal_manager)
 typeattribute cameraserver system_executes_vendor_violators;
@@ -323,7 +323,7 @@ allow cameraserver camera_rsc_device:chr_file rw_file_perms;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-#allow cameraserver proc_ged:file {open read write ioctl getattr};
+allow cameraserver proc_ged:file {open read write ioctl getattr};
 
 # Date : WK16.33
 # Operation : Migration
@@ -393,4 +393,4 @@ allow cameraserver camera_mfb_device:chr_file rw_file_perms;
 # Operation : MT6771 SQC
 # Purpose: Allow permgr access
 allow cameraserver proc_perfmgr:dir {read search};
-#allow cameraserver proc_perfmgr:file {open read ioctl};
+allow cameraserver proc_perfmgr:file {open read ioctl};

@@ -61,7 +61,7 @@ allow emdlogger storage_file:file { create_file_perms };
 
 # Allow read to sys/kernel/ccci/* files
 allow emdlogger sysfs_ccci:dir search;
-#allow emdlogger sysfs_ccci:file r_file_perms;
+allow emdlogger sysfs_ccci:file r_file_perms;
 
 # Allow read avc: denied { read } for name="mddb" dev="mmcblk0p25" ino=681 
 # scontext=u:r:emdlogger:s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=0

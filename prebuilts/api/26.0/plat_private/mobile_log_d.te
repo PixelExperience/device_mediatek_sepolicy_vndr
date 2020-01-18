@@ -73,4 +73,4 @@ allow mobile_log_d media_rw_data_file:dir create_dir_perms;
 allow mobile_log_d debugfs_tracing:dir create_dir_perms;
 #allow mobile_log_d debugfs_tracing:file create_file_perms;
 allow mobile_log_d debugfs_tracing_instances:dir create_dir_perms;
-#allow mobile_log_d debugfs_tracing_instances:file create_file_perms;
+allow mobile_log_d debugfs_tracing_instances:file create_file_perms;

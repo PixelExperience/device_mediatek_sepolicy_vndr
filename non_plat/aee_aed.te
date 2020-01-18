@@ -44,7 +44,7 @@ set_prop(aee_aed, persist_aee_prop);
 set_prop(aee_aed, debug_mtk_aee_prop);
 
 # /proc/lk_env
-#allow aee_aed proc_lk_env:file rw_file_perms;
+allow aee_aed proc_lk_env:file rw_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/pid/exe
 allow aee_aed exec_type:file r_file_perms;
