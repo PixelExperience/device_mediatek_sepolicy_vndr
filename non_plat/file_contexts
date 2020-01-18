@@ -658,3 +658,7 @@
 /sys/devices/virtual/timed_output/vibrator(/.*)? u:object_r:sysfs_vibrator:s0
 /sys/devices/platform/leds-mt65xx/leds(/.*)? u:object_r:sysfs_leds:s0
 /sys/devices/platform/odm/odm:vibrator@0/leds/vibrator(/.*)? u:object_r:sysfs_vibrator:s0
+
+# Date: 2018/07/06
+# Purpose for same-process HAL files and their dependencies: libGLES_mali.so need libm4u.so on mali GPU.
+/vendor/lib(64)?/libm4u\.so   u:object_r:same_process_hal_file:s0
