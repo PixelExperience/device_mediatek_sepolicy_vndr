@@ -23,3 +23,6 @@ genfscon proc /perfmgr u:object_r:proc_perfmgr:s0
 genfscon iso9660 / u:object_r:iso9660:s0
 genfscon rawfs / u:object_r:rawfs:s0
 genfscon fuseblk / u:object_r:fuseblk:s0
+
+genfscon sysfs /devices/platform/battery/power_supply    u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/mt_charger/power_supply u:object_r:sysfs_batteryinfo:s0
