@@ -62,3 +62,10 @@ allow mtk_hal_sensors sensor_data_file:dir create_dir_perms;
 # for nvcfg
 allow mtk_hal_sensors nvcfg_file:file create_file_perms;
 allow mtk_hal_sensors nvcfg_file:dir create_dir_perms;
+
+
+# Date : WK18.21
+# Operation: P migration
+# Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
+allow mtk_hal_sensors mnt_vendor_file:dir search;
+

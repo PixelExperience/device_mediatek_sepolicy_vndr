@@ -232,3 +232,8 @@ binder_call(mtk_hal_audio, mtk_hal_power)
 binder_call(mtk_hal_audio, merged_hal_service)
 # cm4 smartpa
 allow mtk_hal_audio audio_ipi_device:chr_file { read write ioctl open };
+
+# Date : WK18.21
+# Operation: P migration
+# Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
+allow mtk_hal_audio mnt_vendor_file:dir search;
