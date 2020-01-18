@@ -274,3 +274,10 @@ ro.vendor.mtk_emmc_support u:object_r:mtk_emmc_support_prop:s0
 
 # MTK connsys log feature
 ro.vendor.connsys.dedicated.log u:object_r:mtk_default_prop:s0
+
+#=============em usb property==============
+vendor.usb.port.mode u:object_r:vendor_em_usb_prop:s0
+vendor.em.usb. u:object_r:vendor_em_usb_prop:s0
+
+#=============allow em to set usb otg switch property  ==============
+persist.vendor.usb.otg.switch u:object_r:vendor_usb_otg_switch:s0

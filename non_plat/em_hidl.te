@@ -92,3 +92,12 @@ set_prop(em_hidl, mtk_venc_h264_showlog_prop)
 # Purpose: EM should video log mtk_modem_warning_prop
 set_prop(em_hidl, mtk_modem_warning_prop)
 
+# Date :  2018/07/06
+# Operation : EM DEBUG
+# Purpose: EM allow usb vendor_em_usb_prop
+set_prop(em_hidl, vendor_em_usb_prop)
+
+# Date :  2018/07/06
+# Operation : EM DEBUG
+# Purpose: for setting usb otg enable property
+set_prop(em_hidl, vendor_usb_otg_switch)

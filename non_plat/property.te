@@ -252,3 +252,8 @@ type mtk_emmc_support_prop, property_type, mtk_core_property_type;
 #=============sim system property=============
 type vendor_sim_system_prop, property_type, extended_core_property_type;
 
+#=============em usb property==============
+type vendor_em_usb_prop, property_type, mtk_core_property_type;
+
+#=============allow em to set usb otg enable property  ==============
+type vendor_usb_otg_switch, property_type, mtk_core_property_type;
