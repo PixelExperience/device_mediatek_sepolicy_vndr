@@ -77,12 +77,6 @@ allow platform_app aee_aed:unix_stream_socket connectto;
 # Purpose : m4u Driver
 #allow platform_app proc:file r_file_perms;
 
-# Date : WK17.44
-# Operation : O Migration
-# Purpose : allow LocationEM to set mnld property
-typeattribute platform_app system_writes_vendor_properties_violators;
-set_prop(platform_app, mnld_prop)
-
 # Date : WK17.46
 # Operation : Migration
 # Purpose : allow MTKLogger to read KE DB
