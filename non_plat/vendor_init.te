@@ -31,3 +31,6 @@ set_prop(vendor_init, mtk_pq_ro_prop)
 set_prop(vendor_init, mtk_default_prop)
 
 set_prop(vendor_init, mtk_emmc_support_prop)
+
+# allow create symbolic link, /mnt/sdcard, for meta/factory mode
+allow vendor_init tmpfs:lnk_file create;
