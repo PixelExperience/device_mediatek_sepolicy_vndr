@@ -45,3 +45,4 @@
 /dev/ubi[_0-9]* u:object_r:mtd_device:s0
 /dev/block/mtd(.*)?     u:object_r:mtd_device:s0
 /dev/block/mntlblk(.*)?     u:object_r:mtd_device:s0
+/dev/mcupm(/.*)? u:object_r:mcupm_device:s0
