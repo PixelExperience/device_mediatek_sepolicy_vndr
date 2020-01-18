@@ -258,6 +258,7 @@ allow factory sysfs_leds:file rw_file_perms;
 allow factory sysfs_leds:dir r_dir_perms;
 allow factory sysfs_power:file rw_file_perms;
 allow factory sysfs_power:dir r_dir_perms;
+allow factory self:capability2 {block_suspend};
 allow factory sysfs_vibrator:file {open read write};
 allow factory ion_device:chr_file { read open ioctl };
 allow factory debugfs_ion:dir search;
