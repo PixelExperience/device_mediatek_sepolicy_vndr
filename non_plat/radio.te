@@ -103,7 +103,7 @@ allow radio mtk_em_net_auto_tethering_prop:property_service set;
 # Date : WK17.06 2017/02/06
 # Operation : IT
 # Purpose : for engineermode camera
-allow radio debug_prop:property_service set;
+allow radio vendor_debug_prop:property_service set;
 
 # Date : WK17.03
 # Operation : O Migration
