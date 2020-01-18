@@ -18,70 +18,70 @@
 #############################
 # Data files
 #
-/data/misc/mddb(/.*)?    u:object_r:mddb_data_file:s0
-/data/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
-/data/vendor/mtklog/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
-/data/agps_supl(/.*)?    u:object_r:agpsd_data_file:s0
-/data/mnl_flp(/.*)?    u:object_r:mnld_data_file:s0
-/data/mnl_gfc(/.*)?    u:object_r:mnld_data_file:s0
-/data/misc/gps(/.*)?   u:object_r:gps_data_file:s0
-/data/anr/SF_RTT(/.*)? u:object_r:sf_rtt_file:s0
-/data/ccci_cfg(/.*)? u:object_r:ccci_cfg_file:s0
-/data/flashless(/.*)? u:object_r:c2k_file:s0
-/data/core(/.*)? u:object_r:aee_core_data_file:s0
-/data/vendor/core(/.*)? u:object_r:aee_core_data_file:s0
+#/data/misc/mddb(/.*)?    u:object_r:mddb_data_file:s0
+#/data/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
+#/data/vendor/mtklog/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
+#/data/agps_supl(/.*)?    u:object_r:agpsd_data_file:s0
+#/data/mnl_flp(/.*)?    u:object_r:mnld_data_file:s0
+#/data/mnl_gfc(/.*)?    u:object_r:mnld_data_file:s0
+#/data/misc/gps(/.*)?   u:object_r:gps_data_file:s0
+#/data/anr/SF_RTT(/.*)? u:object_r:sf_rtt_file:s0
+#/data/ccci_cfg(/.*)? u:object_r:ccci_cfg_file:s0
+#/data/flashless(/.*)? u:object_r:c2k_file:s0
+#/data/core(/.*)? u:object_r:aee_core_data_file:s0
+#/data/vendor/core(/.*)? u:object_r:aee_core_data_file:s0
 /data/vendor/tombstones(/.*)? u:object_r:aee_tombstone_data_file:s0
-/data/dontpanic(/.*)? u:object_r:dontpanic_data_file:s0
-/data/dumpsys(/.*)?    u:object_r:aee_dumpsys_data_file:s0
-/data/vendor/dumpsys(/.*)?    u:object_r:aee_dumpsys_data_file:s0
+#/data/dontpanic(/.*)? u:object_r:dontpanic_data_file:s0
+#/data/dumpsys(/.*)?    u:object_r:aee_dumpsys_data_file:s0
+#/data/vendor/dumpsys(/.*)?    u:object_r:aee_dumpsys_data_file:s0
 /data/extmdl(/.*)? u:object_r:mdlog_data_file:s0
-/data/http-proxy-cfg(/.*)? u:object_r:http_proxy_cfg_data_file:s0
-/data/log_temp(/.*)? u:object_r:logtemp_data_file:s0
-/data/lost\+found(/.*)? u:object_r:lost_found_data_file:s0
+#/data/http-proxy-cfg(/.*)? u:object_r:http_proxy_cfg_data_file:s0
+#/data/log_temp(/.*)? u:object_r:logtemp_data_file:s0
+#/data/lost\+found(/.*)? u:object_r:lost_found_data_file:s0
 /data/mdlog(/.*)? u:object_r:mdlog_data_file:s0
 /data/mdl(/.*)? u:object_r:mdlog_data_file:s0
 /data/mdl3(/.*)? u:object_r:mdlog_data_file:s0
-/data/mediaserver(/.*)? u:object_r:mediaserver_data_file:s0
-/data/mediacodec(/.*)? u:object_r:mediacodec_data_file:s0
-/data/.tp(/.*)? u:object_r:thermal_manager_data_file:s0
+#/data/mediaserver(/.*)? u:object_r:mediaserver_data_file:s0
+#/data/mediacodec(/.*)? u:object_r:mediacodec_data_file:s0
+#/data/.tp(/.*)? u:object_r:thermal_manager_data_file:s0
 /data/nfc_socket(/.*)? u:object_r:nfc_socket:s0
-/data/nvram(/.*)? u:object_r:nvram_data_file:s0
-/data/cct(/.*)? u:object_r:cct_data_file:s0
-/data/md3(/.*)? u:object_r:c2k_file:s0
-/data/mal(/.*)? u:object_r:mal_data_file:s0
+#/data/nvram(/.*)? u:object_r:nvram_data_file:s0
+#/data/cct(/.*)? u:object_r:cct_data_file:s0
+#/data/md3(/.*)? u:object_r:c2k_file:s0
+#/data/mal(/.*)? u:object_r:mal_data_file:s0
 /data/SF_dump(./*)? u:object_r:sf_bqdump_data_file:s0
-/data/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
-/data/vendor/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
-/data/tmp_mnt/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
-/data/tmp_mnt/vendor/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
-/data/setkey.conf        u:object_r:ims_ipsec_data_file:s0
-/data/setkey_bak.conf    u:object_r:ims_ipsec_data_file:s0
-/data/setkey_latest.conf u:object_r:ims_ipsec_data_file:s0
+#/data/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
+#/data/vendor/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
+#/data/tmp_mnt/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
+#/data/tmp_mnt/vendor/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
+#/data/setkey.conf        u:object_r:ims_ipsec_data_file:s0
+#/data/setkey_bak.conf    u:object_r:ims_ipsec_data_file:s0
+#/data/setkey_latest.conf u:object_r:ims_ipsec_data_file:s0
 /data/vendor/audiohal(/.*)? u:object_r:mtk_audiohal_data_file:s0
 /data/vendor/powerhal(/.*)? u:object_r:mtk_powerhal_data_file:s0
-/data/vendor/nfc(/.*)? u:object_r:nfc_data_file:s0
+#/data/vendor/nfc(/.*)? u:object_r:nfc_data_file:s0
 
 # Misc data
-/data/misc/acdapi(/.*)? u:object_r:acdapi_data_file:s0
-/data/misc/mblog(/.*)? u:object_r:logmisc_data_file:s0
-/data/misc/ppp(/.*)? u:object_r:ppp_data_file:s0
-/data/misc/radvd(/.*)? u:object_r:radvd_data_file:s0
-/data/misc/sensor(/.*)?         u:object_r:sensor_data_file:s0
-/data/misc/stp_dump(/.*)? u:object_r:stp_dump_data_file:s0
-/data/misc/wide-dhcpv6(/.*)? u:object_r:wide_dhcpv6_data_file:s0
-/data/misc/wpa_supplicant(/.*)? u:object_r:wpa_supplicant_data_file:s0
+#/data/misc/acdapi(/.*)? u:object_r:acdapi_data_file:s0
+#/data/misc/mblog(/.*)? u:object_r:logmisc_data_file:s0
+#/data/misc/ppp(/.*)? u:object_r:ppp_data_file:s0
+#/data/misc/radvd(/.*)? u:object_r:radvd_data_file:s0
+#/data/misc/sensor(/.*)?         u:object_r:sensor_data_file:s0
+#/data/misc/stp_dump(/.*)? u:object_r:stp_dump_data_file:s0
+#/data/misc/wide-dhcpv6(/.*)? u:object_r:wide_dhcpv6_data_file:s0
+#/data/misc/wpa_supplicant(/.*)? u:object_r:wpa_supplicant_data_file:s0
 
 # Wallpaper file for smartbook
 /data/system/users/[0-9]+/smartbook_wallpaper   u:object_r:wallpaper_file:s0
 
 # nvdata
-/(vendor|system/vendor)/nvdata(/.*)? u:object_r:nvdata_file:s0
-/(vendor|system/vendor)/nvcfg(/.*)? u:object_r:nvcfg_file:s0
+#/(vendor|system/vendor)/nvdata(/.*)? u:object_r:nvdata_file:s0
+#/(vendor|system/vendor)/nvcfg(/.*)? u:object_r:nvcfg_file:s0
 
 # protected data file
-/(vendor|system/vendor)/protect_f(/.*)?         u:object_r:protect_f_data_file:s0
-/(vendor|system/vendor)/protect_s(/.*)?         u:object_r:protect_s_data_file:s0
-/(vendor|system/vendor)/persist(/.*)?         u:object_r:persist_data_file:s0
+#/(vendor|system/vendor)/protect_f(/.*)?         u:object_r:protect_f_data_file:s0
+#/(vendor|system/vendor)/protect_s(/.*)?         u:object_r:protect_s_data_file:s0
+#/(vendor|system/vendor)/persist(/.*)?         u:object_r:persist_data_file:s0
 
 
 #fat on nand image
