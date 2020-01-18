@@ -83,3 +83,5 @@ allow emdlogger mddb_filter_data_file:file { r_file_perms };
 allow emdlogger debuglog_data_file:dir {relabelto create_dir_perms};
 allow emdlogger debuglog_data_file:file create_file_perms;
 allow emdlogger system_data_file:dir create_dir_perms;
+# get persist.sys. proeprty
+get_prop(emdlogger, system_prop)
