@@ -354,3 +354,13 @@ allow meta_tst sysfs_dt_firmware_android:dir { read open search };
 allow meta_tst meta_tst:capability { sys_module net_admin net_raw };
 allow meta_tst self:udp_socket { create ioctl };
 allowxperm meta_tst self:udp_socket ioctl priv_sock_ioctls;
+
+# Date : WK18.25
+# Operation: P migration
+# Purpose : GPS test, Allow meta_tst to write/connect tcp socket
+allow meta_tst node:tcp_socket node_bind;
+allow meta_tst port:tcp_socket { name_bind name_connect };
+allow meta_tst self:capability net_raw;
+allow meta_tst self:tcp_socket { setopt bind create listen accept connect };
+allow meta_tst self:tcp_socket { read write };
+allow meta_tst self:udp_socket { write connect };
