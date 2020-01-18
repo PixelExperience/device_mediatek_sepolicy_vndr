@@ -349,11 +349,6 @@ allow mediaserver camera_owe_device:chr_file rw_file_perms;
 # Purpose : m4u Driver
 #allow mediaserver proc:file r_file_perms;
 
-# Date : WK17.29
-# Operation : O Migration
-# Purpose : hdcp
-allow mediaserver kisd:unix_stream_socket connectto;
-
 # Date : WK17.30
 # Operation : O Migration
 # Purpose: Allow to access cmdq driver
@@ -386,3 +381,12 @@ allow mediaserver camera_mfb_device:chr_file rw_file_perms;
 # Purpose : Allow permgr access
 allow mediaserver proc_perfmgr:dir {read search};
 allow mediaserver proc_perfmgr:file {open read ioctl};
+
+# Date : WK18.18
+# Operation : Migration
+# Purpose : wifidisplay hdcp
+# DRM Key Manage HIDL
+allow mediaserver  mtk_hal_keymanage:binder call;
+# Purpose : Allow mediadrmserver  to call vendor.mediatek.hardware.keymanage@1.0-service.
+hal_client_domain(mediaserver , hal_keymaster)
+allow mediaserver mtk_hal_keymanage_hwservice:hwservice_manager find;

@@ -22,7 +22,7 @@
 /system/bin/audiocmdservice_atci u:object_r:audiocmdservice_atci_exec:s0
 /system/bin/boot_logo_updater u:object_r:boot_logo_updater_exec:s0
 /system/bin/meta_tst u:object_r:meta_tst_exec:s0
-/system/bin/kisd u:object_r:kisd_exec:s0
+/(system\/vendor|vendor)/bin/kisd u:object_r:kisd_exec:s0
 /system/bin/pre_meta u:object_r:pre_meta_exec:s0
 /system/bin/factory u:object_r:factory_exec:s0
 

@@ -23,7 +23,7 @@
 /system/bin/aee_dumpstate u:object_r:dumpstate_exec:s0
 /system/bin/audiocmdservice_atci u:object_r:audiocmdservice_atci_exec:s0
 /system/bin/meta_tst u:object_r:meta_tst_exec:s0
-/system/bin/kisd u:object_r:kisd_exec:s0
+/(system\/vendor|vendor)/bin/kisd u:object_r:kisd_exec:s0
 /system/bin/factory u:object_r:factory_exec:s0
 /system/bin/pre_meta u:object_r:pre_meta_exec:s0
 
@@ -32,7 +32,7 @@
 /(system\/vendor|vendor)/bin/aee_aedv64 u:object_r:aee_aedv_exec:s0
 
 # kisd for Key Manager
-#/data/key_provisioning(/.*)?   u:object_r:key_install_data_file:s0
+/data/vendor/key_provisioning(/.*)?   u:object_r:key_install_data_file:s0
 
 # storagemanager daemon
 # it is used to mount all storages in meta/factory mode

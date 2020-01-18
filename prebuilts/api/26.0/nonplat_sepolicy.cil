@@ -8580,7 +8580,6 @@
 (allow mediaserver_26_0 sw_sync_device (chr_file (ioctl read write getattr lock append open)))
 (allow mediaserver_26_0 camera_owe_device (chr_file (ioctl read write getattr lock append open)))
 (allow mediaserver_26_0 proc_26_0 (file (ioctl read getattr lock open)))
-(allow mediaserver_26_0 kisd_26_0 (unix_stream_socket (connectto)))
 (allow mediaserver_26_0 mtk_cmdq_device (chr_file (ioctl read open)))
 (allow meta_tst_26_0 ttyGS_device (chr_file (ioctl read write getattr lock append open)))
 (allow meta_tst_26_0 ttyMT_device (chr_file (ioctl read write getattr lock append open)))
