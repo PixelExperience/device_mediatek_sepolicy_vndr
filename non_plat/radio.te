@@ -206,3 +206,4 @@ set_prop(radio, mtk_gprs_attach_type)
 binder_call(radio, lbs_hidl_service)
 allow radio mtk_hal_lbs_hwservice:hwservice_manager find;
 
+get_prop(radio, persist_mtk_aeev_prop);

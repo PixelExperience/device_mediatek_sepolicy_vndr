@@ -63,3 +63,8 @@ allow aee_aed proc_kpageflags:file r_file_perms;
 get_prop(aee_aed, vendor_default_prop)
 
 hal_client_domain(aee_aed, mtk_hal_log)
+
+# Purpose: create /data/aee_exp at runtime
+allow aee_aed file_contexts_file:file r_file_perms;
+allow aee_aed system_data_file:dir { relabelfrom setattr };
+allow aee_aed aee_exp_data_file:dir relabelto;
