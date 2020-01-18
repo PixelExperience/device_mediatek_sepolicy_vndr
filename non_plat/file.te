@@ -74,6 +74,7 @@ type proc_cmdq_debug, fs_type, proc_type;
 type sysfs_therm, fs_type, sysfs_type;
 type sysfs_fps, fs_type, sysfs_type;
 type sysfs_ccci, fs_type, sysfs_type;
+type sysfs_mdinfo, fs_type,sysfs_type;
 type sysfs_ssw, fs_type,sysfs_type;
 type sysfs_vcorefs_pwrctrl, fs_type, sysfs_type;
 type sysfs_md32, fs_type, sysfs_type;

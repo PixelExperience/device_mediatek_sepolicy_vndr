@@ -61,6 +61,9 @@ allow emdlogger sysfs_boot_mode:file { read open };
 allow emdlogger sysfs_ccci:dir search;
 allow emdlogger sysfs_ccci:file r_file_perms;
 
+allow emdlogger sysfs_mdinfo:file r_file_perms;
+allow emdlogger sysfs_mdinfo:dir search;
+
 # Allow read avc: denied { read } for name="mddb" dev="mmcblk0p25" ino=681
 # scontext=u:r:emdlogger:s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=0
 allow emdlogger system_file:dir read;
