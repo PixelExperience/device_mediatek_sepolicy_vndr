@@ -54,3 +54,5 @@ allowxperm mtk_hal_mms proc_mtk_jpeg:file ioctl {
      };
 # Allow to use mms by JPEG with handle
 allow mtk_hal_mms platform_app:fd use;
+# Purpose : Allow Miravision to set Sharpness
+allow mtk_hal_mms system_app:fd use;
