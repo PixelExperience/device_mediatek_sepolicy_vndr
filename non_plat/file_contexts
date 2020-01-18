@@ -477,6 +477,8 @@
 /sys/devices/virtual/thermal(/.*)? u:object_r:sysfs_therm:s0
 /sys/devices/virtual/switch/fps(/.*)? u:object_r:sysfs_fps:s0
 /sys/class/BOOT/BOOT/boot/boot_mode(/.*)? u:object_r:sysfs_boot:s0
+/sys/bus/platform/drivers/meta_com_type_info/meta_com_type_info(/.*)? u:object_r:sysfs_comport_type:s0
+/sys/bus/platform/drivers/meta_uart_port_info/meta_uart_port_info(/.*)? u:object_r:sysfs_uart_info:s0
 
 #############################
 # debugfs files
