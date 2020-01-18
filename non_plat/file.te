@@ -94,14 +94,18 @@ type logmisc_data_file, file_type, data_file_type;
 type logtemp_data_file, file_type, data_file_type;
 
 # NE core_forwarder
-type aee_core_data_file, file_type, data_file_type;
+type aee_core_data_file, file_type, data_file_type, core_data_file_type;
+type aee_core_vendor_file, file_type, data_file_type;
 
 # NE tombstone
 type aee_tombstone_data_file, file_type, data_file_type;
 
 # AEE exp
-type aee_exp_data_file, file_type, data_file_type;
-type aee_dumpsys_data_file, file_type, data_file_type;
+#type aee_exp_data_file, file_type, data_file_type;
+type aee_exp_data_file, file_type, data_file_type, core_data_file_type;
+type aee_exp_vendor_file, file_type, data_file_type;
+type aee_dumpsys_data_file, file_type, data_file_type, core_data_file_type;
+type aee_dumpsys_vendor_file, file_type, data_file_type;
 
 # SF rtt dump
 type sf_rtt_file, file_type, data_file_type;
@@ -125,7 +129,8 @@ type proc_icusb, fs_type;
 type iso9660, fs_type;
 
 # data_tmpfs_log
-type data_tmpfs_log_file, file_type, data_file_type;
+type data_tmpfs_log_file, file_type, data_file_type, core_data_file_type;
+type vendor_tmpfs_log_file, file_type, data_file_type;
 
 # rawfs for /protect_f on NAND projects
 type rawfs, fs_type, mlstrustedobject;

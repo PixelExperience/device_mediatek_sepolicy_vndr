@@ -31,25 +31,24 @@ allow aee_aedv sdcard_type:dir create_dir_perms;
 allow aee_aedv sdcard_type:file create_file_perms;
 
 #data/anr
-typeattribute aee_aedv data_between_core_and_vendor_violators;
-allow aee_aedv anr_data_file:dir create_dir_perms;
-allow aee_aedv anr_data_file:file create_file_perms;
+#allow aee_aedv anr_data_file:dir create_dir_perms;
+#allow aee_aedv anr_data_file:file create_file_perms;
 
 #data/aee_exp
-allow aee_aedv aee_exp_data_file:dir create_dir_perms;
-allow aee_aedv aee_exp_data_file:file create_file_perms;
+allow aee_aedv aee_exp_vendor_file:dir create_dir_perms;
+allow aee_aedv aee_exp_vendor_file:file create_file_perms;
 
 #data/dumpsys
-allow aee_aedv aee_dumpsys_data_file:dir create_dir_perms;
-allow aee_aedv aee_dumpsys_data_file:file create_file_perms;
+allow aee_aedv aee_dumpsys_vendor_file:dir create_dir_perms;
+allow aee_aedv aee_dumpsys_vendor_file:file create_file_perms;
 
 #/data/core
-allow aee_aedv aee_core_data_file:dir create_dir_perms;
-allow aee_aedv aee_core_data_file:file create_file_perms;
+allow aee_aedv aee_core_vendor_file:dir create_dir_perms;
+allow aee_aedv aee_core_vendor_file:file create_file_perms;
 
 # /data/data_tmpfs_log
-allow aee_aedv data_tmpfs_log_file:dir create_dir_perms;
-allow aee_aedv data_tmpfs_log_file:file create_file_perms;
+allow aee_aedv vendor_tmpfs_log_file:dir create_dir_perms;
+allow aee_aedv vendor_tmpfs_log_file:file create_file_perms;
 
 allow aee_aedv domain:process { sigkill getattr getsched};
 allow aee_aedv domain:lnk_file getattr;
@@ -78,7 +77,7 @@ userdebug_or_eng(`allow aee_aedv self:capability sys_admin;')
 # Date: W16.17
 # Operation: N0 Migeration
 # Purpose: creat dir "aee_exp" under /data
-allow aee_aedv system_data_file:dir { write create add_name };
+#allow aee_aedv system_data_file:dir { write create add_name };
 
 # Purpose: aee_aedv set property
 set_prop(aee_aedv, persist_mtk_aee_prop);
@@ -89,8 +88,8 @@ set_prop(aee_aedv, debug_mtk_aee_prop);
 # allow aee_aedv toolbox_exec:file { execute execute_no_trans };
 
 # purpose: allow aee_aedv to access storage on N version
-allow aee_aedv media_rw_data_file:file  { create_file_perms };
-allow aee_aedv media_rw_data_file:dir { create_dir_perms };
+#allow aee_aedv media_rw_data_file:file  { create_file_perms };
+#allow aee_aedv media_rw_data_file:dir { create_dir_perms };
 
 # Purpose: mnt/user/*
 allow aee_aedv mnt_user_file:dir search;
@@ -147,7 +146,7 @@ allow aee_aedv {
   -keystore
   -init
 }:process ptrace;
-allow aee_aedv dalvikcache_data_file:dir r_dir_perms;
+#allow aee_aedv dalvikcache_data_file:dir r_dir_perms;
 allow aee_aedv zygote_exec:file r_file_perms;
 allow aee_aedv init_exec:file r_file_perms;
 
@@ -271,8 +270,8 @@ allow aee_aedv sysfs_leds:file r_file_perms;
 allow aee_aedv sysfs_ccci:dir search;
 allow aee_aedv sysfs_ccci:file r_file_perms;
 
-allow aee_aedv system_data_file:dir getattr;
-allow aee_aedv system_data_file:file open;
+#allow aee_aedv system_data_file:dir getattr;
+#allow aee_aedv system_data_file:file open;
 
 # Purpose:
 # 01-01 00:03:44.330  3658  3658 I aee_dumpstatev: type=1400 audit(0.0:5411): avc: denied

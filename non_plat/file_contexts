@@ -19,8 +19,8 @@
 # Data files
 #
 #/data/misc/mddb(/.*)?    u:object_r:mddb_data_file:s0
-#/data/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
-#/data/vendor/mtklog/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
+/data/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
+/data/vendor/mtklog/aee_exp(/.*)?  u:object_r:aee_exp_vendor_file:s0
 #/data/agps_supl(/.*)?    u:object_r:agpsd_data_file:s0
 #/data/mnl_flp(/.*)?    u:object_r:mnld_data_file:s0
 #/data/mnl_gfc(/.*)?    u:object_r:mnld_data_file:s0
@@ -28,12 +28,12 @@
 #/data/anr/SF_RTT(/.*)? u:object_r:sf_rtt_file:s0
 #/data/ccci_cfg(/.*)? u:object_r:ccci_cfg_file:s0
 #/data/flashless(/.*)? u:object_r:c2k_file:s0
-#/data/core(/.*)? u:object_r:aee_core_data_file:s0
-#/data/vendor/core(/.*)? u:object_r:aee_core_data_file:s0
+/data/core(/.*)? u:object_r:aee_core_data_file:s0
+/data/vendor/core(/.*)? u:object_r:aee_core_vendor_file:s0
 /data/vendor/tombstones(/.*)? u:object_r:aee_tombstone_data_file:s0
 #/data/dontpanic(/.*)? u:object_r:dontpanic_data_file:s0
-#/data/dumpsys(/.*)?    u:object_r:aee_dumpsys_data_file:s0
-#/data/vendor/dumpsys(/.*)?    u:object_r:aee_dumpsys_data_file:s0
+/data/dumpsys(/.*)?    u:object_r:aee_dumpsys_data_file:s0
+/data/vendor/dumpsys(/.*)?    u:object_r:aee_dumpsys_vendor_file:s0
 /data/extmdl(/.*)? u:object_r:mdlog_data_file:s0
 #/data/http-proxy-cfg(/.*)? u:object_r:http_proxy_cfg_data_file:s0
 #/data/log_temp(/.*)? u:object_r:logtemp_data_file:s0
@@ -50,8 +50,8 @@
 #/data/md3(/.*)? u:object_r:c2k_file:s0
 #/data/mal(/.*)? u:object_r:mal_data_file:s0
 /data/SF_dump(./*)? u:object_r:sf_bqdump_data_file:s0
-#/data/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
-#/data/vendor/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
+/data/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
+/data/vendor/data_tmpfs_log(/.*)? u:object_r:vendor_tmpfs_log_file:s0
 #/data/tmp_mnt/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
 #/data/tmp_mnt/vendor/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
 #/data/setkey.conf        u:object_r:ims_ipsec_data_file:s0
