@@ -219,3 +219,8 @@ allow radio sys_usb_rawbulk:dir { r_dir_perms };
 # Operation : Allow radio persist_xcap_rawurl_prop:property_service set;
 # Purpose : for set telephony xcap use raw url property in IMS SS
 set_prop(radio, persist_xcap_rawurl_prop)
+
+# Date : 2019/05/08
+# Operation : label aee_aed sockets
+# Purpose : Engineering mode need access for aee commmand
+allow radio aee_aed:unix_stream_socket connectto;
