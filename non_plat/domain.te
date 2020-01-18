@@ -27,4 +27,6 @@ allow {
 #  -untrusted_app_all
 #} aee_aed:unix_stream_socket connectto;
 allow { domain -coredomain -hal_configstore_server -vendor_init } aee_aedv:unix_stream_socket connectto;
+allow { domain -coredomain -hal_configstore_server -vendor_init } aee_exp_vendor_file:file w_file_perms;
+allow { domain -coredomain -hal_configstore_server -vendor_init } aee_aedv:fd use;
 
