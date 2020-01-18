@@ -81,3 +81,13 @@ GED_BRIDGE_IO_IOCTLCMD_0F
 GED_BRIDGE_IO_IOCTLCMD_10
 GED_BRIDGE_IO_MONITOR_3D_FENCE
 };
+
+# Date : WK19.4
+# Operation : P Migration
+# Purpose: Allow to access /dev/mdp_device driver
+allow surfaceflinger mdp_device:chr_file rw_file_perms;
+
+# Date : WK19.09
+# Purpose: Allow to access property dev/mdp_sync
+#============= surfaceflinger ==============
+allow surfaceflinger mtk_mdp_device:chr_file rw_file_perms;
