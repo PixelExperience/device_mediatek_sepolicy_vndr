@@ -303,10 +303,7 @@ allow mediaserver camera_tsf_device:chr_file rw_file_perms;
 # Date : WK1631
 # Operation : N Migration
 # Purpose : add permission for thermal manager
-domain_auto_trans(mediaserver, thermal_manager_exec, thermal_manager)
 typeattribute mediaserver system_executes_vendor_violators;
-#allow mediaserver thermal_manager_exec:file { read getattr open execute};
-allow mediaserver thermal_manager_exec:file { read getattr open};
 
 # Date : WK16.32
 # Operation : N Migration
