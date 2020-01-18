@@ -59,9 +59,3 @@ allow mobile_log_d node:tcp_socket node_bind;
 
 # purpose: allow mobile_log_d to read system property init.svc.vendor.
 get_prop(mobile_log_d, vendor_default_prop)
-
-#data/debuglog
-allow mobile_log_d debuglog_data_file:dir {relabelto create_dir_perms};
-allow mobile_log_d debuglog_data_file:file create_file_perms;
-allow mobile_log_d system_data_file:dir create_dir_perms;
-file_type_auto_trans(mobile_log_d, system_data_file, debuglog_data_file)
