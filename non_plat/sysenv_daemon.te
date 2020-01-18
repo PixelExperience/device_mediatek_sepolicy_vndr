@@ -40,3 +40,9 @@ allow sysenv_daemon sysfs:file { open read };
 # Purpose : to access mtd device
 allow sysenv_daemon mtd_device:blk_file { open read write };
 
+# Date: WK18.02
+# Operation: Create
+# Purpose : get device path by read fstab in read/write lk_env
+allow sysenv_daemon sysfs:dir { read open };
+allow sysenv_daemon sysfs:file getattr;
+
