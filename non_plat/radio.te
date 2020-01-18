@@ -53,12 +53,6 @@ allowxperm radio self:udp_socket ioctl { SIOCIWFIRSTPRIV-SIOCIWFIRSTPRIV_09 SIOC
 allow radio block_device:dir search;
 allow radio ttyGS_device:chr_file { open read write ioctl };
 
-
-#Date : 2015/11/13
-#Operation: IT
-# Purpose: for set auto answer
-set_prop(radio, mtk_em_auto_answer_prop)
-
 # Date : 2016/07/05
 # Purpose :
 #   Write IMEI - presanity item write imei should read the file on storage
@@ -213,3 +207,9 @@ allow radio mtk_hal_lbs_hwservice:hwservice_manager find;
 set_prop(radio, mtk_power_off_md_type)
 
 get_prop(radio, persist_mtk_aeev_prop);
+
+
+# Date : 2018/08/31
+# Purpose : Allow EM to set sys property
+set_prop(radio, mtk_em_sys_prop)
+

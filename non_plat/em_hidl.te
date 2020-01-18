@@ -119,3 +119,8 @@ allow em_hidl sysfs_boot_mode:file { read open };
 allow em_hidl ttyGS_device:chr_file { read write ioctl open };
 allow em_hidl vendor_usb_prop:file { read getattr open };
 set_prop(em_hidl, vendor_usb_prop)
+
+# Date :  2018/08/28
+# Operation : EM DEBUG
+# Purpose: for em set hidl configure
+set_prop(em_hidl, mtk_em_hidl_prop)
