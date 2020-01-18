@@ -617,3 +617,26 @@
 /vendor/bin/aeev  u:object_r:aee_aedv_exec:s0
 
 /vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey          u:object_r:hal_drm_clearkey_exec:s0
+
+# Date : 2018/06/15
+# Purpose : mtk EM touchscreen settings
+/sys/module/tpd_debug(/.*)? u:object_r:sysfs_tpd_debug:s0
+
+# Date : 2018/06/15
+# Purpose : mtk EM flash reading
+/proc/mounts u:object_r:proc_flash:s0
+
+# Date : 2018/06/15
+# Purpose : mtk EM PMU reading/setting
+/sys/devices/platform/mt-pmic(/.*)? u:object_r:sysfs_pmu:s0
+/sys/devices/platform/mt6333-user(/.*)? u:object_r:sysfs_pmu:s0
+/sys/devices/platform/mt6311-user(/.*)? u:object_r:sysfs_pmu:s0
+
+# Date : 2018/06/15
+# Purpose : mtk EM Power debug_log setting
+/sys/devices/platform/spm(/.*)? u:object_r:sysfs_spm:s0
+
+# Date : 2018/06/15
+# Purpose : mtk EM Audio headset detect
+/sys/bus/platform/drivers/Accdet_Driver/state u:object_r:sysfs_headset:s0
+

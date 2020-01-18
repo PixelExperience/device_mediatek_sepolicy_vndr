@@ -186,3 +186,28 @@ set_prop(radio, mtk_bt_sspdebug_prop)
 allow radio sysfs_batteryinfo:dir search;
 allow radio sysfs_batteryinfo:file { read write getattr open create};
 allow radio sysfs_vbus:file { read getattr open };
+
+# Date : 2018/06/15
+# Purpose : Allow EM access touchscreen settings
+allow radio sysfs_tpd_debug:dir { search read open };
+allow radio sysfs_tpd_setting:dir { search read open };
+
+# Date : 2018/06/15
+# Purpose : mtk EM PMU reading/setting
+allow radio sysfs_pmu:dir { search };
+allow radio sysfs_pmu:file { read };
+allow radio sysfs_pmu:lnk_file { read };
+
+# Date : 2018/06/15
+# Purpose : mtk EM Power debug_log setting
+allow radio sysfs_spm:dir { search };
+
+# Date : 2018/06/15
+# Purpose : Allow EM access AAL settings
+set_prop(radio, mtk_aal_prop)
+get_prop(radio, mtk_aal_prop)
+
+# Date : 2018/06/15
+# Purpose: Allow EM detect Audio headset status
+allow radio sysfs_headset:file { read open };
+
