@@ -375,3 +375,9 @@ allow meta_tst nvram_agent_binder:binder call;
 # Operation: P migration
 # Purpose : Allow meta_tst to write misc partition
 allow meta_tst block_device:dir search;
+
+# Date : W18.24
+# Operation: P migration
+# Purpose : Allow meta_tst to access tpd sysfs nodes for CTP test
+allow meta_tst sysfs_tpd_setting:dir search;
+allow meta_tst sysfs_tpd_setting:file { read getattr open };
