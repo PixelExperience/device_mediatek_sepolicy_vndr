@@ -150,8 +150,8 @@ genfscon sysfs /devices/platform/battery/disable_nafg u:object_r:sysfs_dis_nafg:
 # Date : 2019/07/03
 # Purpose: SIU update mmcblk access
 genfscon sysfs /devices/platform/bootdevice/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_mmcblk:s0
-genfscon sysfs /devices/mtk-msdc.0/11230000.msdc0/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_mmcblk:s0
-genfscon sysfs /devices/platform/mtk-msdc.0/11230000.msdc0/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_mmcblk:s0
+genfscon sysfs /devices/bootdevice/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_mmcblk:s0
+#genfscon sysfs /devices/platform/mtk-msdc.0/11230000.msdc0/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_mmcblk:s0
 genfscon sysfs /devices/platform/bootdevice/host0/target0:0:0/0:0:0:0/block/sda u:object_r:sysfs_mmcblk:s0
 genfscon sysfs /devices/platform/bootdevice/host0/target0:0:0/0:0:0:1/block/sdb u:object_r:sysfs_mmcblk:s0
 genfscon sysfs /devices/platform/bootdevice/host0/target0:0:0/0:0:0:2/block/sdc u:object_r:sysfs_mmcblk:s0
