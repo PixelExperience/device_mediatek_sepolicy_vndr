@@ -146,7 +146,6 @@ allow radio hal_nfc_hwservice:hwservice_manager find;
 binder_call(radio, hal_nfc)
 binder_call(hal_nfc, radio)
 hwbinder_use(radio);
-#allow radio debugfs_tracing:file write;
 #hal_client_domain(radio, hal_nfc)
 typeattribute radio halclientdomain;
 typeattribute radio hal_nfc_client;
