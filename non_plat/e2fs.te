@@ -18,3 +18,9 @@ allow e2fs devpts:chr_file {read write};
 # Purpose : Allow mke2fs to format userdata and cache partition
 allow e2fs cache_block_device:blk_file rw_file_perms;
 allow e2fs userdata_block_device:blk_file rw_file_perms;
+
+# Date : WK19.11
+# Operation: Q migration
+# Purpose : Allow mke2fs to use ioctl/ioctlcmd
+allowxperm e2fs protect1_block_device:blk_file ioctl BLKPBSZGET;
+allowxperm e2fs protect2_block_device:blk_file ioctl BLKPBSZGET;
