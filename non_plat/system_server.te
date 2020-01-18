@@ -220,3 +220,18 @@ allow system_server proc_battery_cmd:dir search;
 #Date:2019/10/09
 #Operation:Q Migration
 get_prop(system_server, debug_mtk_aee_prop)
+
+#Date:2019/10/09
+#Operation:Q Migration
+get_prop(system_server, debug_bq_dump_prop)
+get_prop(system_server, mtk_telecom_vibrate)
+allow system_server proc_cmdq_debug:file getattr;
+allow system_server proc_freqhop:file getattr;
+allow system_server proc_last_kmsg:file r_file_perms;
+allow system_server proc_cm_mgr:dir search;
+allow system_server proc_isp_p2:dir search;
+allow system_server proc_thermal:dir search;
+allow system_server proc_atf_log:dir search;
+allow system_server proc_cpufreq:dir search;
+allow system_server proc_mtkcooler:dir search;
+allow system_server proc_ppm:dir search;
