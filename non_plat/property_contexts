@@ -154,7 +154,12 @@ ro.vendor.md_mims_support u:object_r:mtk_telephony_sensitive_prop:s0
 #=============allow processes to change thermal config================
 vendor.thermal.manager.data u:object_r:mtk_thermal_config_prop:s0
 #=============allow composer set property ============================
-debug.sf.hwc_pid u:object_r:graphics_hwc_pid_prop:s0
+vendor.debug.sf.hwc_pid u:object_r:graphics_hwc_pid_prop:s0
+
+#=============allow graphics debug property ============================
+vendor.debug.sf. u:object_r:graphics_debug_prop:s0
+vendor.debug.hwc. u:object_r:graphics_debug_prop:s0
+vendor.debug.bq. u:object_r:graphics_debug_prop:s0
 
 #============= mtkcam property ============================
 persist.mtkcam. u:object_r:mtkcam_prop:s0

@@ -146,6 +146,7 @@ type mtk_thermal_config_prop, property_type;
 
 #=============allow composer set property ============================
 type graphics_hwc_pid_prop, property_type;
+type graphics_debug_prop, property_type;
 
 #============= mtkcam property ============================
 type mtkcam_prop, property_type;
