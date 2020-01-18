@@ -29,3 +29,5 @@ set_prop(vendor_init, mtk_gps_support_prop)
 set_prop(vendor_init, mtk_rat_config_prop)
 set_prop(vendor_init, mtk_aal_ro_prop)
 set_prop(vendor_init, mtk_pq_ro_prop)
+set_prop(vendor_init, mtk_default_prop)
+
