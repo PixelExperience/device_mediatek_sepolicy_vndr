@@ -306,8 +306,14 @@ allow aee_aedv metadata_file:dir search;
 allow aee_aedv self:capability linux_immutable;
 allow aee_aedv userdata_block_device:blk_file { read write open };
 allow aee_aedv para_block_device:blk_file rw_file_perms;
-allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl FS_IOC_FIEMAP;
 allow aee_aedv mrdump_device:blk_file rw_file_perms;
+allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl {
+  FS_IOC_GETFLAGS
+  FS_IOC_SETFLAGS
+  F2FS_IOC_GET_PIN_FILE
+  F2FS_IOC_SET_PIN_FILE
+  FS_IOC_FIEMAP
+};
 
 # Purpose: allow vendor aee read lowmemorykiller logs
 # file path: /sys/module/lowmemorykiller/parameters/
