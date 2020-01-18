@@ -567,6 +567,8 @@
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.pq@2\.1-service u:object_r:mtk_hal_pq_exec:s0
 # Keymaster Attestation Hal
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.keymaster_attestation@1\.1-service u:object_r:hal_keymaster_attestation_exec:s0
+#ST NFC 1.1 hidl service
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.nfc@1\.1-service-st u:object_r:hal_nfc_default_exec:s0
 
 
 #############################
