@@ -168,3 +168,6 @@ allow dumpstate proc_last_kmsg:file r_file_perms;
 # Date: 19/07/15
 # Purpose: Allow dumpstate to read /sys/kernel/debug/kmemleak
 allow dumpstate debugfs_kmemleak:file r_file_perms;
+
+#Purpose: Allow dumpstate to read /sys/class/misc/adsp/adsp_last_log
+allow dumpstate sysfs_adsp:file r_file_perms;

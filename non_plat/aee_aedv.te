@@ -165,7 +165,7 @@ allow aee_aedv proc_interrupts:file read;
 # avc: denied { open } for path="/sys/kernel/debug/tracing/tracing_on" dev=
 # "debugfs" ino=2087 scontext=u:r:dumpstate:s0 tcontext=u:object_r:
 # tracing_shell_writable:s0 tclass=file permissive=1
-allow aee_aedv debugfs_tracing:file { write read open };
+allow aee_aedv debugfs_tracing:file rw_file_perms;
 
 # Purpose:
 # 01-01 00:05:16.730  3566  3566 W dmesg   : type=1400 audit(0.0:5173): avc:
