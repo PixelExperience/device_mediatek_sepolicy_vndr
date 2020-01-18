@@ -106,3 +106,7 @@ genfscon proc /partitions u:object_r:proc_partition:s0
 
 # allow netd to set MTU
 genfscon sysfs /devices/virtual/net u:object_r:sysfs_net:s0
+
+# Date : 2018/11/01
+# Purpose : mtk EM c2k bypass read usb file
+genfscon sysfs /devices/virtual/usb_rawbulk u:object_r:sys_usb_rawbulk:s0

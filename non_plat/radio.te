@@ -217,3 +217,7 @@ set_prop(radio, mtk_em_sys_prop)
 # Purpose : Allow EM set wcn coredump prop
 set_prop(radio, coredump_prop)
 
+# Date : 2018/11/01
+# Purpose : mtk EM c2k bypass read usb file
+allow radio sys_usb_rawbulk:file { r_file_perms };
+allow radio sys_usb_rawbulk:dir { r_dir_perms };

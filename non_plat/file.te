@@ -308,3 +308,7 @@ type sysfs_headset, fs_type, sysfs_type;
 
 # socket between atci_service and audio-daemon
 type atci-audio_socket, file_type;
+
+# Date : 2018/11/01
+# Purpose : mtk EM c2k bypass read usb file
+type sys_usb_rawbulk, fs_type, sysfs_type;
