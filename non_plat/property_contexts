@@ -49,6 +49,7 @@ vendor.ril.mux.      u:object_r:gsm0710muxd_prop:s0
 ctl.vendor.ril-daemon-mtk   u:object_r:ctl_ril-daemon-mtk_prop:s0
 ctl.vendor.fusion_ril_mtk   u:object_r:ctl_fusion_ril_mtk_prop:s0
 ctl.vendor.ril-proxy   u:object_r:ctl_ril-proxy_prop:s0
+ctl.vendor.viarild u:object_r:ctl_viarild_prop:s0
 
 ctl.vendor.muxreport-daemon u:object_r:ctl_muxreport-daemon_prop:s0
 ctl.vendor.ccci_fsd u:object_r:ctl_ccci_fsd_prop:s0
