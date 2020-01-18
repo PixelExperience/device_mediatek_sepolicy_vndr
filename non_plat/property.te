@@ -201,3 +201,6 @@ type mtk_aal_prop, property_type, mtk_core_property_type;
 #=============mtk pq property=============
 type mtk_pq_ro_prop, property_type, mtk_core_property_type;
 type mtk_pq_prop, property_type, mtk_core_property_type;
+
+#=============mtk emmc property=============
+type mtk_emmc_support_prop, property_type, mtk_core_property_type;
