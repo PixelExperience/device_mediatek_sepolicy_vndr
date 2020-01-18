@@ -40,8 +40,9 @@ allow nvram_agent_binder init:unix_stream_socket connectto;
 allow nvram_agent_binder property_socket:sock_file write;
 allow nvram_agent_binder sysfs:file write;
 #allow nvram_agent_binder self:capability { fowner chown dac_override fsetid };
-typeattribute nvram_agent_binder data_between_core_and_vendor_violators;
-allow nvram_agent_binder system_data_file:dir create_file_perms;
+#typeattribute nvram_agent_binder data_between_core_and_vendor_violators;
+#remove from Android P
+#allow nvram_agent_binder system_data_file:dir create_file_perms;
 
 # Purpose: for backup
 allow nvram_agent_binder nvram_device:chr_file rw_file_perms;
@@ -58,7 +59,8 @@ allow nvram_agent_binder hwservicemanager_prop:file r_file_perms;
 
 #for nvram hidl client support
 allow nvram_agent_binder sysfs:file { read open };
-allow nvram_agent_binder system_data_file:lnk_file read;
+#remove from android P
+#allow nvram_agent_binder system_data_file:lnk_file read;
 
 # Allow to use HWBinder IPC
 hwbinder_use(nvram_agent_binder);

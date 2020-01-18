@@ -32,42 +32,6 @@ allow merged_hal_service mnld_data_file:dir create_file_perms;
 allow merged_hal_service mnld_data_file:dir rw_dir_perms;
 allow merged_hal_service mnld:unix_dgram_socket sendto;
 
-#for nvram agent hidl
-allow merged_hal_service hwservicemanager_prop:file r_file_perms;
-allow merged_hal_service sysfs:file { read open };
-allow merged_hal_service system_data_file:lnk_file read;
-hal_server_domain(merged_hal_service, hal_nvramagent)
-# Allow a set of permissions required for a domain to be a server which provides a HAL implementation over HWBinder.
-#hal_server_domain(merged_hal_service, hal_nvramagent)
-#for nvram agent hidl access nvram file
-allow merged_hal_service nvram_agent_service:service_manager add;
-allow merged_hal_service nvram_device:blk_file rw_file_perms;
-allow merged_hal_service bootdevice_block_device:blk_file rw_file_perms;
-allow merged_hal_service nvdata_device:blk_file rw_file_perms;
-allow merged_hal_service nvram_data_file:dir create_dir_perms;
-allow merged_hal_service nvram_data_file:file create_file_perms;
-allow merged_hal_service nvram_data_file:lnk_file read;
-allow merged_hal_service nvdata_file:lnk_file read;
-allow merged_hal_service nvdata_file:dir create_dir_perms;
-allow merged_hal_service nvdata_file:file create_file_perms;
-#allow merged_hal_service system_file:file execute_no_trans;
-allow merged_hal_service als_ps_device:chr_file r_file_perms;
-allow merged_hal_service mtk-adc-cali_device:chr_file rw_file_perms;
-allow merged_hal_service gsensor_device:chr_file r_file_perms;
-allow merged_hal_service gyroscope_device:chr_file r_file_perms;
-allow merged_hal_service init:unix_stream_socket connectto;
-allow merged_hal_service property_socket:sock_file write;
-allow merged_hal_service sysfs:file write;
-#allow merged_hal_service self:capability { fowner chown dac_override fsetid };
-typeattribute merged_hal_service data_between_core_and_vendor_violators;
-allow merged_hal_service system_data_file:dir create_file_perms;
-allow merged_hal_service nvram_device:chr_file rw_file_perms;
-allow merged_hal_service pro_info_device:chr_file rw_file_perms;
-allow merged_hal_service block_device:dir search;
-allow merged_hal_service app_data_file:file write;
-allow merged_hal_service mtd_device:dir search;
-allow merged_hal_service mtd_device:chr_file rw_file_perms;
-
 #graphics allocator permissions
 hal_server_domain(merged_hal_service, hal_graphics_allocator)
 allow merged_hal_service gpu_device:dir search;

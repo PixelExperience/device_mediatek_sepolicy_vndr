@@ -70,8 +70,9 @@ allow nvram_daemon proc_lk_env:file rw_file_perms;
 
 # Purpose: for workaround
 # Todo: Remove this policy
-typeattribute nvram_daemon data_between_core_and_vendor_violators;
-allow nvram_daemon system_data_file:dir write;
+#typeattribute nvram_daemon data_between_core_and_vendor_violators;
+#remove from Android P
+#allow nvram_daemon system_data_file:dir write;
 
 # Purpose: property set
 #allow nvram_daemon service_nvram_init_prop:property_service set;
@@ -79,11 +80,13 @@ allow nvram_daemon system_data_file:dir write;
 # Purpose: copy /fstab*
 allow nvram_daemon rootfs:dir { read open };
 allow nvram_daemon rootfs:file r_file_perms;
-allow nvram_daemon system_data_file:lnk_file read;
+#remove from Android P
+#allow nvram_daemon system_data_file:lnk_file read;
 
 # Purpose: remove /data/nvram link
-allow nvram_daemon system_data_file:dir { remove_name add_name };
-allow nvram_daemon system_data_file:lnk_file { create unlink };
+#remove from Android P
+#allow nvram_daemon system_data_file:dir { remove_name add_name };
+#allow nvram_daemon system_data_file:lnk_file { create unlink };
 allow nvram_daemon nvram_data_file:lnk_file unlink;
 # Purpose: for run toolbox command: chown chmode..
 #allow nvram_daemon toolbox_exec:file rx_file_perms;
