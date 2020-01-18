@@ -117,8 +117,8 @@ mtk.md   u:object_r:mtk_md_prop:s0
 #============= allow factory idle current prop ==============
 vendor.debug.factory.idle_state    u:object_r:vendor_factory_idle_state_prop:s0
 
-#=============allow ftrace log property================
-ftrace.buffer.log     u:object_r:ftrace_log_prop:s0
+#=============allow mobile log property================
+vendor.MB.            u:object_r:mobile_log_prop:s0
 
 #=============allow service.nvram_init property================
 vendor.service.nvram_init     u:object_r:service_nvram_init_prop:s0

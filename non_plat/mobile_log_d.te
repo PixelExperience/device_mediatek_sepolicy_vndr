@@ -34,8 +34,8 @@ allow mobile_log_d logtemp_data_file:file create_file_perms;
 allow mobile_log_d data_tmpfs_log_file:dir create_dir_perms;
 allow mobile_log_d data_tmpfs_log_file:file create_file_perms;
 
-#ftrace log property
-set_prop(mobile_log_d, ftrace_log_prop)
+#mobile itself property
+set_prop(mobile_log_d, mobile_log_prop)
 
 #Dat: 2017/02/14
 #Purpose: allow set telephony Sensitive property
