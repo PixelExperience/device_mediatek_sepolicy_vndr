@@ -6,13 +6,14 @@
 # Purpose: Allow to access ged for gralloc_extra functions
 allow appdomain proc_ged:file rw_file_perms;
 allowxperm appdomain proc_ged:file ioctl {
- GED_BRIDGE_IO_GE_ALLOC
  GED_BRIDGE_IO_LOG_BUF_GET
- GED_BRIDGE_IO_GE_GET
- GED_BRIDGE_IO_GE_SET
+ GED_BRIDGE_IO_LOG_BUF_WRITE
+ GED_BRIDGE_IO_BOOST_GPU_FREQ
  GED_BRIDGE_IO_MONITOR_3D_FENCE
  GED_BRIDGE_IO_QUERY_INFO
- GED_BRIDGE_IO_LOG_BUF_WRITE
+ GED_BRIDGE_IO_GE_ALLOC
+ GED_BRIDGE_IO_GE_GET
+ GED_BRIDGE_IO_GE_SET
  };
 
 # Date : W16.42
