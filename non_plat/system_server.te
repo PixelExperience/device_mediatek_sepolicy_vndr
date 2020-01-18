@@ -205,4 +205,9 @@ allow system_server alarm_device:chr_file rw_file_perms;
 # Date : WK19.7
 # Operation: Q migration
 # Purpose : Allow system_server to use ioctl/ioctlcmd
-allowxperm system_server proc_ged:file ioctl GED_BRIDGE_IO_LOG_BUF_GET;
+allowxperm system_server proc_ged:file ioctl {
+  GED_BRIDGE_IO_LOG_BUF_GET
+  GED_BRIDGE_IO_MONITOR_3D_FENCE
+  GED_BRIDGE_IO_GE_GET
+  GED_BRIDGE_IO_GE_SET
+  };
