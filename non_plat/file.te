@@ -393,3 +393,14 @@ type mtee_trusty_file, fs_type, sysfs_type;
 # Date : 2019/08/29
 # Purpose: Allow rild access proc/aed/reboot-reason
 type proc_aed_reboot_reason, fs_type, proc_type;
+
+# Date : 2019/09/05
+# Purpose: Allow powerhal to control kernel resources
+type proc_ppm, fs_type, proc_type;
+type proc_cpufreq, fs_type, proc_type;
+type proc_hps, fs_type, proc_type;
+type proc_cm_mgr, fs_type, proc_type;
+type proc_ca_drv, fs_type, proc_type;
+type sysfs_ged, fs_type, sysfs_type;
+type sysfs_fbt_cpu, fs_type, sysfs_type;
+type sysfs_fbt_fteh, fs_type, sysfs_type;

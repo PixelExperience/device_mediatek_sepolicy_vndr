@@ -18,10 +18,6 @@ allow hal_power_client mtk_hal_power_hwservice:hwservice_manager find;
 hal_server_domain(mtk_hal_power, hal_power);
 hal_server_domain(mtk_hal_power, hal_wifi);
 
-# proc fs
-allow mtk_hal_power proc:dir r_dir_perms;
-allow mtk_hal_power proc:file rw_file_perms;
-
 # sysfs
 allow mtk_hal_power sysfs_devices_system_cpu:file rw_file_perms;
 
@@ -62,7 +58,6 @@ allow mtk_hal_power mtk_hal_camera:file r_file_perms;
 # Operation: SQC
 # Purpose : Allow powerHAL to access thermal
 allow mtk_hal_power proc_thermal:dir r_dir_perms;
-allow mtk_hal_power sysfs:file rw_file_perms;
 allow mtk_hal_power debugfs_fpsgo:dir r_dir_perms;
 allow mtk_hal_power debugfs_fpsgo:file rw_file_perms;
 
@@ -147,3 +142,20 @@ allowxperm mtk_hal_power self:udp_socket ioctl priv_sock_ioctls;
 # Purpose : MTK power hal interface permission
 set_prop(mtk_hal_power, mtk_powerhal_prop)
 
+# Date : 2019/09/05
+# Operation: SQC
+# Purpose : Add procfs, sysfs policy
+allow mtk_hal_power proc_ppm:dir r_dir_perms;
+allow mtk_hal_power proc_ppm:file rw_file_perms;
+allow mtk_hal_power proc_cpufreq:dir r_dir_perms;
+allow mtk_hal_power proc_cpufreq:file rw_file_perms;
+allow mtk_hal_power proc_hps:dir r_dir_perms;
+allow mtk_hal_power proc_hps:file rw_file_perms;
+allow mtk_hal_power proc_cm_mgr:dir r_dir_perms;
+allow mtk_hal_power proc_cm_mgr:file rw_file_perms;
+allow mtk_hal_power sysfs_ged:dir r_dir_perms;
+allow mtk_hal_power sysfs_ged:file rw_file_perms;
+allow mtk_hal_power sysfs_fbt_cpu:dir r_dir_perms;
+allow mtk_hal_power sysfs_fbt_cpu:file rw_file_perms;
+allow mtk_hal_power sysfs_fbt_fteh:dir r_dir_perms;
+allow mtk_hal_power sysfs_fbt_fteh:file rw_file_perms;
