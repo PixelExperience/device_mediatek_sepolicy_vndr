@@ -174,3 +174,6 @@ allow dumpstate sysfs_adsp:file r_file_perms;
 
 #Purpose: Allow dumpstate to read /sys/kernel/debug/smi_mon
 allow dumpstate debugfs_smi_mon:file r_file_perms;
+
+# MTEE Trusty
+allow dumpstate mtee_trusty_file:file rw_file_perms;
