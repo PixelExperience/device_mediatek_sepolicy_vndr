@@ -4,3 +4,6 @@
 
 # This is for mtklogger apk to commnucate with mnld
 user=_app seinfo=platform name=com.mediatek.mtklogger.proxy domain=vendor_app type=app_data_file levelFrom=user
+
+# This is for emcamera apk to commnucate with hal1
+user=_app seinfo=platform name=com.mediatek.emcamera domain=vendor_app type=app_data_file levelFrom=user
