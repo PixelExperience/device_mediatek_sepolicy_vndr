@@ -150,3 +150,9 @@ allow dumpstate sysfs_execstate:file r_file_perms;
 allow dumpstate proc_isp_p2:dir r_dir_perms;
 allow dumpstate proc_isp_p2:file r_file_perms;
 
+# Date : W19.26
+# Operation : Migration
+# Purpose : fix google dumpstate avc error in xTS
+allow dumpstate debugfs:dir r_dir_perms;
+allow dumpstate debugfs_mmc:dir search;
+allow dumpstate mnt_media_rw_file:dir getattr;
