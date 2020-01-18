@@ -323,7 +323,6 @@ allow factory sysfs_vibrator:dir search;
 # For Audio device permission
 allow factory proc_asound:dir { read search open };
 allow factory proc_asound:file { read open getattr write };
-allow factory mtk_audiohal_data_file:dir { read search open };
 allow factory audiohal_prop:property_service set;
 
 # For Accdet data permission
@@ -362,3 +361,10 @@ allow factory vendor_data_file:file { create read write open };
 # Purpose : Refine policy
 allow factory sysfs_mmcblk:dir { search };
 allow factory sysfs_mmcblk:file { read getattr open };
+
+# Date : WK18.37
+# Operation: P migration
+# Purpose : ADSP SmartPA calibration
+allow factory vendor_file:file execute_no_trans;
+allow factory mtk_audiohal_data_file:dir create_dir_perms;
+allow factory mtk_audiohal_data_file:file { write create unlink r_file_perms };
