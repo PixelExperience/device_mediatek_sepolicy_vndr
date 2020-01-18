@@ -49,3 +49,8 @@ allow lbs_dbg sdcardfs:file { rename getattr };
 allow lbs_dbg media_rw_data_file:dir { create add_name };
 allow lbs_dbg media_rw_data_file:file { write rename create open };
 allow lbs_dbg sdcardfs:file { write create open };
+allow lbs_dbg media_rw_data_file:file unlink;
+allow lbs_dbg sdcardfs:file unlink;
+
+allow lbs_dbg vfat:dir { write remove_name create add_name };
+allow lbs_dbg vfat:file { write rename create open getattr unlink };
