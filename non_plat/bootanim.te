@@ -25,4 +25,4 @@ allow bootanim proc_perfmgr:file {open read ioctl};
 # Date : WK19.11
 # Operation : Migration
 # Purpose : Allow to access ged for ioctl related functions
-allowxperm bootanim proc_ged:file ioctl {PROC_GED_IOCTLCMD_1 PROC_GED_IOCTLCMD_3};
+allowxperm bootanim proc_ged:file ioctl { GED_BRIDGE_IO_LOG_BUF_GET GED_BRIDGE_IO_GE_GET };
