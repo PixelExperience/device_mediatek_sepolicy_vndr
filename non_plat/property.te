@@ -310,3 +310,7 @@ type mtk_bt_sap_enable_prop, property_type, mtk_core_property_type;
 
 #=============MTK powerhal property================
 type mtk_powerhal_prop, property_type;
+
+#=============MTK Wifi wlan_assistant property=============
+type mtk_nvram_ready_prop, property_type, mtk_core_property_type;
+
