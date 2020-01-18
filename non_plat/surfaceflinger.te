@@ -25,12 +25,6 @@ allow surfaceflinger proc_bootprof:file r_file_perms;
 #============= surfaceflinger ==============
 allow surfaceflinger debugfs_ion:dir search;
 
-#============= surfaceflinger ==============
-#allow surfaceflinger debugfs_tracing:file write;
-
-#============= surfaceflinger ==============
-#allow surfaceflinger debugfs_tracing:file open;
-
 # Date : WK17.30
 # Operation : O Migration
 # Purpose: Allow to access cmdq driver

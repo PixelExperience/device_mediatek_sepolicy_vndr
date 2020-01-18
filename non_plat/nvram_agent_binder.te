@@ -30,8 +30,6 @@ allow nvram_agent_binder nvdata_file:lnk_file read;
 allow nvram_agent_binder nvdata_file:dir create_dir_perms;
 allow nvram_agent_binder nvdata_file:file create_file_perms;
 
-#allow nvram_agent_binder system_file:file execute_no_trans;
-
 allow nvram_agent_binder als_ps_device:chr_file r_file_perms;
 allow nvram_agent_binder mtk-adc-cali_device:chr_file rw_file_perms;
 allow nvram_agent_binder gsensor_device:chr_file r_file_perms;
@@ -39,9 +37,7 @@ allow nvram_agent_binder gyroscope_device:chr_file r_file_perms;
 allow nvram_agent_binder init:unix_stream_socket connectto;
 allow nvram_agent_binder property_socket:sock_file write;
 allow nvram_agent_binder sysfs:file write;
-#allow nvram_agent_binder self:capability { fowner chown dac_override fsetid };
-#remove from Android P
-#allow nvram_agent_binder system_data_file:dir create_file_perms;
+allow nvram_agent_binder self:capability { fowner chown fsetid };
 
 # Purpose: for backup
 allow nvram_agent_binder nvram_device:chr_file rw_file_perms;
@@ -58,8 +54,6 @@ allow nvram_agent_binder hwservicemanager_prop:file r_file_perms;
 
 #for nvram hidl client support
 allow nvram_agent_binder sysfs:file { read open };
-#remove from android P
-#allow nvram_agent_binder system_data_file:lnk_file read;
 
 # Allow to use HWBinder IPC
 hwbinder_use(nvram_agent_binder);

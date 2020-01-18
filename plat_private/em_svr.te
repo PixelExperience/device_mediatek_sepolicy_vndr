@@ -48,7 +48,7 @@ allow em_svr sysfs_leds:dir search;
 
 # Date: WK1812
 # Purpose: add for sensor calibration
-#allow em_svr self:capability { dac_read_search dac_override chown fsetid };
+allow em_svr self:capability { chown fsetid };
 
 # Date: WK1812
 # Purpose: add for shell cmd

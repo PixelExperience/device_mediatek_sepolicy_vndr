@@ -41,37 +41,12 @@ allow fuelgauged kmsg_device:chr_file w_file_perms;
 # Data : WK14.43
 # Operation : Migration
 # Purpose : For fg daemon can comminucate with kernel
-### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.t
-#allow fuelgauged fuelgauged:netlink_kobject_uevent_socket create_socket_perms;
-#allow fuelgauged fuelgauged:netlink_socket create_socket_perms;
 allow fuelgauged self:netlink_socket create;
 allow fuelgauged self:netlink_socket create_socket_perms_no_ioctl;
 allow fuelgauged self:netlink_route_socket { bind create getattr write nlmsg_read read nlmsg_write };
 
-# Data : WK16.21
-# Operation : New Feature
-# Purpose : For fg daemon can access /data/FG folder
-#file_type_auto_trans(fuelgauged, system_data_file, fuelgauged_file);
-#allow fuelgauged fuelgauged_file:file rw_file_perms;
-#allow fuelgauged system_data_file:dir rw_dir_perms;
-
-# Data : WK16.21
-# Operation : New Feature
-# Purpose : For fg daemon can do nvram r/w to save car_tune_value
-#allow fuelgauged nvdata_file:dir rw_dir_perms;
-#allow fuelgauged nvdata_file:file {rw_file_perms create_file_perms};
-#allow fuelgauged nvram_data_file:lnk_file rw_file_perms;
-#allow fuelgauged nvdata_file:lnk_file rw_file_perms;
-
 # Data : WK16.39
-#allow fuelgauged self:capability { chown fsetid dac_override };
-
-# Data : W16.43
-# Operation : New Feature
-# Purpose : Change from /data to /cache
-#allow fuelgauged cache_file:file {rw_file_perms create_file_perms};
-#allow fuelgauged cache_file:dir {rw_dir_perms create_dir_perms};
-#allow fuelgauged sysfs:file {rw_file_perms create_file_perms};
+allow fuelgauged self:capability { chown fsetid };
 
 # Date: W17.22
 # Operation : New Feature

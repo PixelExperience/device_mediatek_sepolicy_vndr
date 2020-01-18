@@ -41,8 +41,6 @@ allow connsyslogger vfat:file create_file_perms;
 allow connsyslogger mnt_user_file:dir search;
 allow connsyslogger mnt_user_file:lnk_file read;
 allow connsyslogger storage_file:lnk_file read;
-#allow connsyslogger self:capability { chown dac_override };
-#allow connsyslogger proc:file {setattr write read open};
 
 #permission for use SELinux API
 allow connsyslogger rootfs:file r_file_perms;

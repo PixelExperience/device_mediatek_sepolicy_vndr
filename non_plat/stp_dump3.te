@@ -20,7 +20,7 @@ type stp_dump3 ,domain;
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-#allow stp_dump3 self:capability { net_admin fowner chown fsetid dac_override };
+allow stp_dump3 self:capability { net_admin fowner chown fsetid };
 allow stp_dump3 self:netlink_socket { read write getattr bind create setopt };
 allow stp_dump3 self:netlink_generic_socket { read write getattr bind create setopt };
 allow stp_dump3 wmtdetect_device:chr_file { read write ioctl open };

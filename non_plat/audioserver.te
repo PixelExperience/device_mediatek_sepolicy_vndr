@@ -38,7 +38,6 @@ allow audioserver tmpfs:dir search;
 # Date : WK16.18
 # Operation : Migration
 # Purpose: access sysfs node
-#allow audioserver sysfs:file { open read write };
 allow audioserver sysfs_ccci:dir search;
 
 # Purpose: Dump debug info

@@ -22,12 +22,8 @@ allow mediaserver lens_device:chr_file rw_file_perms;
 # Purpose : Set audio driver permission to access SD card for debug purpose and accss NVRam.
 allow mediaserver sdcard_type:dir { w_dir_perms create };
 allow mediaserver sdcard_type:file create;
-#allow mediaserver nvram_data_file:dir w_dir_perms;
-#allow mediaserver nvram_data_file:file create_file_perms;
 allow mediaserver nvram_data_file:lnk_file read;
 allow mediaserver nvdata_file:lnk_file read;
-#allow mediaserver nvdata_file:dir w_dir_perms;
-#allow mediaserver nvdata_file:file create_file_perms;
 allow mediaserver sdcard_type:dir remove_name;
 allow mediaserver sdcard_type:file unlink;
 
@@ -35,8 +31,6 @@ allow mediaserver sdcard_type:file unlink;
 # Operation : Migration
 # Purpose : nvram access (dumchar case for nand and legacy chip)
 allow mediaserver nvram_device:chr_file rw_file_perms;
-### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.te
-#allow mediaserver self:netlink_kobject_uevent_socket { create setopt bind };
 allow mediaserver self:capability { net_admin };
 
 # Date : WK14.34
@@ -47,8 +41,6 @@ allow mediaserver devmap_device:chr_file { ioctl };
 # Date : WK14.34
 # Operation : Migration
 # Purpose : Smartcard Service
-### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.te
-#allow mediaserver self:netlink_kobject_uevent_socket read;
 allow mediaserver system_data_file:file open;
 
 # Date : WK14.36
@@ -70,13 +62,6 @@ allow mediaserver Vcodec_device:chr_file rw_file_perms;
 
 # Date : WK14.36
 # Operation : Migration
-# Purpose : MMProfile debug
-# userdebug_or_eng(`
-#allow mediaserver debugfs:file {read ioctl getattr};
-# ')
-
-# Date : WK14.36
-# Operation : Migration
 # Purpose :  access nvram, otp, ccci cdoec devices.
 allow mediaserver MtkCodecService:binder call;
 allow mediaserver ccci_device:chr_file rw_file_perms;
@@ -89,7 +74,6 @@ allow mediaserver bootdevice_block_device:blk_file rw_file_perms;
 # Date : WK14.36
 # Operation : Migration
 # Purpose : for SW codec VP/VR
-#allow mediaserver mtk_device:chr_file { read write ioctl open };
 allow mediaserver mtk_sched_device:chr_file rw_file_perms;
 
 # Date : WK14.38
@@ -144,13 +128,6 @@ allow mediaserver camera_fdvt_device:chr_file rw_file_perms;
 # Purpose : APE PLAYBACK
 binder_call(mediaserver,MtkCodecService)
 
-# Data : WK14.39
-# Operation : Migration
-# Purpose : HW encrypt SW codec
-#allow mediaserver mediaserver_data_file:file create_file_perms;
-#allow mediaserver mediaserver_data_file:dir create_dir_perms;
-#allow mediaserver sec_device:chr_file r_file_perms;
-
 # Date : WK14.40
 # Operation : Migration
 # Purpose : HDMI driver access
@@ -171,13 +148,6 @@ binder_call(mediaserver,audiocmdservice_atci)
 # Operation : Migration
 # Purpose : mtk_jpeg
 allow mediaserver mtk_jpeg_device:chr_file r_file_perms;
-
-# Date : WK14.41
-# Operation : Migration
-# Purpose : Lossless BT audio
-#allow mediaserver shell_exec:file { read open execute execute_no_trans };
-#allow mediaserver system_file:file execute_no_trans;
-#allow mediaserver zygote_exec:file execute_no_trans;
 
 # Date : WK14.41
 # Operation : Migration
@@ -218,8 +188,6 @@ allow mediaserver sysfs_lowmemorykiller:file { read open };
 allow mediaserver proc_mtkcooler:dir search;
 allow mediaserver proc_mtktz:dir search;
 allow mediaserver proc_thermal:dir search;
-#allow mediaserver thermal_manager_data_file:file create_file_perms;
-#allow mediaserver thermal_manager_data_file:dir { rw_dir_perms setattr };
 
 # Date : WK14.46
 # Operation : Migration
@@ -276,13 +244,6 @@ allow mediaserver mnt_user_file:lnk_file {read write};
 # Purpose: Allow mediaserver to read binder from surfaceflinger
 allow mediaserver surfaceflinger:fifo_file {read write};
 
-
-# Date : WK15.45
-# Purpose : camera read/write /nvcfg/camera data
-#allow mediaserver nvcfg_file:dir create_dir_perms;
-#allow mediaserver nvcfg_file:file create_file_perms;
-
-
 # Date : WK15.46
 # Operation : Migration
 # Purpose : DPE Driver
@@ -328,11 +289,6 @@ allow mediaserver sw_sync_device:chr_file rw_file_perms;
 # Operation : N Migration
 # Purpose : OWE Driver
 allow mediaserver camera_owe_device:chr_file rw_file_perms;
-
-# Date : WK17.27
-# Operation : O Migration
-# Purpose : m4u Driver
-#allow mediaserver proc:file r_file_perms;
 
 # Date : WK17.30
 # Operation : O Migration

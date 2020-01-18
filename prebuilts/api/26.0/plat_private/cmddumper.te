@@ -31,11 +31,6 @@ allow cmddumper system_file:file x_file_perms;
 allow cmddumper media_rw_data_file:file  { create_file_perms };
 allow cmddumper media_rw_data_file:dir { create_dir_perms };
 
-# purpose: access vmodem device
-#allow cmddumper vmodem_device:chr_file { create_file_perms };
-
 # purpose: access plat_file_contexts
 allow cmddumper file_contexts_file:file { read getattr open };
 
-# purpose: access /sys/devices/virtual/BOOT/BOOT/boot/boot_mode
-#allow cmddumper sysfs:file { read open };

@@ -14,13 +14,11 @@ init_daemon_domain(audiocmdservice_atci)
 # Perform Binder IPC for audio tuning tool and access to mediaserver
 binder_use(audiocmdservice_atci)
 binder_call(audiocmdservice_atci, mediaserver)
-#allow audiocmdservice_atci mediaserver:chr_file create_file_perms;
 allow audiocmdservice_atci mediaserver:dir w_dir_perms;
 allow audiocmdservice_atci mediaserver_service:service_manager find;
 
 # Since Android N, google separates mediaserver to audioserver and cameraserver
 binder_call(audiocmdservice_atci, audioserver)
-#allow audiocmdservice_atci audioserver:chr_file create_file_perms;
 allow audiocmdservice_atci audioserver:dir w_dir_perms;
 allow audiocmdservice_atci audioserver_service:service_manager find;
 
@@ -45,4 +43,3 @@ allow radio audiocmdservice_atci_exec:file getattr;
 #Android O porting
 hwbinder_use(audiocmdservice_atci)
 get_prop(audiocmdservice_atci, hwservicemanager_prop);
-#allow audiocmdservice_atci debugfs_tracing:file rw_file_perms;

@@ -2,12 +2,6 @@
 # MTK Policy Rule
 # ============
 
-# Date : WK14.31
-# Operation : Migration
-# Purpose : For IPC communication
-### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.te
-#allow bootanim self:netlink_socket create_socket_perms;
-
 # Date : WK14.32
 # Operation : Migration
 # Purpose : for playing boot tone

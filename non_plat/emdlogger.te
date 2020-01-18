@@ -1,5 +1,4 @@
 #allow emdlogger to set property
-#allow emdlogger debug_mdlogger_prop:property_service set;
 allow emdlogger debug_prop:property_service set;
 allow emdlogger persist_mtklog_prop:property_service set;
 allow emdlogger system_radio_prop:property_service set;
@@ -37,7 +36,6 @@ allow emdlogger vfat:dir create_dir_perms;
 allow emdlogger vfat:file create_file_perms;
 
 #modem logger permission in storage in android M version
-#allow emdlogger log_device:chr_file { write open };
 allow emdlogger mnt_user_file:dir search;
 allow emdlogger mnt_user_file:lnk_file read;
 allow emdlogger storage_file:lnk_file read;
@@ -94,7 +92,7 @@ allow emdlogger file_contexts_file:file { read getattr open };
 
 allow emdlogger block_device:dir search;
 allow emdlogger md_block_device:blk_file { read open };
-#allow emdlogger self:capability { chown dac_override };
+allow emdlogger self:capability { chown };
 
 
 # purpose: allow emdlogger to access persist.meta.connecttype

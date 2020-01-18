@@ -73,11 +73,6 @@ not_full_treble(`
 # Package: MTKLogger/Debugutils
 allow platform_app aee_aed:unix_stream_socket connectto;
 
-# Date : WK17.31
-# Operation : O Migration
-# Purpose : m4u Driver
-#allow platform_app proc:file r_file_perms;
-
 # Date : WK17.46
 # Operation : Migration
 # Purpose : allow MTKLogger to read KE DB

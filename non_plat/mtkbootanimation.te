@@ -33,15 +33,6 @@ allow mtkbootanimation guiext-server:binder transfer;
 # Purpose : for gpu access
 allow mtkbootanimation dri_device:chr_file { read write open ioctl };
 
-# Date : WK14.37
-# Operation : Migration
-# Purpose : for op
-#allow mtkbootanimation terservice:binder call;
-
-# Date : WK15.30
-# Operation : Migration
-# Purpose : for device bring up, not to block early migration/sanity
-#allow mtkbootanimation terservice_service:service_manager find;
 # Date : WK17.29
 # Operation : Migration
 # Purpose : for device bring up
