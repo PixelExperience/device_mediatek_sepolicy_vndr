@@ -167,3 +167,9 @@ allow mtk_hal_power sysfs_ca_drv:dir r_dir_perms;
 allow mtk_hal_power sysfs_ca_drv:file rw_file_perms;
 allow mtk_hal_power sysfs_pftch_qos:dir r_dir_perms;
 allow mtk_hal_power sysfs_pftch_qos:file rw_file_perms;
+
+# Date : 2019/09/18
+# Operation: SQC
+# Purpose : Add f2fs permission
+allow mtk_hal_power sysfs_fs_f2fs:dir r_dir_perms;
+allow mtk_hal_power sysfs_fs_f2fs:file rw_file_perms;
