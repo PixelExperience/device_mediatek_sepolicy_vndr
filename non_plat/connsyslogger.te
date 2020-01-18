@@ -4,15 +4,11 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type connsyslogger,domain;
-type connsyslogger_exec, system_file_type, exec_type, file_type;
-typeattribute connsyslogger coredomain;
 # Purpose : for create hidl server
 #hal_server_domain(connsyslogger, mtk_hal_log)
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(connsyslogger)
 
 #for logging sdcard access
 allow connsyslogger fuse:dir { create_dir_perms };
@@ -83,10 +79,5 @@ allow connsyslogger node:tcp_socket node_bind;
 #Date:2019/03/25
 # usb device ttyGSx for modem logger usb logging
 allow connsyslogger ttyGS_device:chr_file { rw_file_perms};
-
-#Date:2019/06/27
-#access data/debuglog
-allow connsyslogger debuglog_data_file:dir {relabelto create_dir_perms};
-allow connsyslogger debuglog_data_file:file create_file_perms;
 
 
