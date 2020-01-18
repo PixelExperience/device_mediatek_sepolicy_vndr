@@ -69,7 +69,7 @@ allow factory shell_exec:file r_file_perms;
 
 # Date: WK15.44
 # Purpose: factory idle current status
-allow factory factory_idle_state_prop:property_service set;
+allow factory vendor_factory_idle_state_prop:property_service set;
 
 # Date: WK15.46
 # Purpose: gps factory mode
