@@ -171,10 +171,6 @@ allow radio sysfs_pmu:lnk_file { read };
 allow radio sysfs_spm:dir { search };
 
 # Date : 2018/06/15
-# Purpose : Allow EM access AAL settings
-get_prop(radio, mtk_aal_prop)
-
-# Date : 2018/06/15
 # Purpose: Allow EM detect Audio headset status
 allow radio sysfs_headset:file { read open };
 
