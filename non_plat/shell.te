@@ -19,3 +19,4 @@ allow shell aee_exp_vendor_file:file r_file_perms;
 allow shell aee_exp_data_file:dir r_dir_perms;
 allow shell aee_exp_data_file:file r_file_perms;
 
+get_prop(shell, mobile_log_prop)
