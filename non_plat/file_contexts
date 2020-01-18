@@ -346,6 +346,7 @@
 /dev/hwmsensor(/.*)? u:object_r:hwmsensor_device:s0
 /dev/msensor(/.*)? u:object_r:msensor_device:s0
 /dev/biometric(/.*)? u:object_r:biometric_device:s0
+/dev/sensorlist(/.*)? u:object_r:sensorlist_device:s0
 ##########################
 # Sensor Devices Start
 #

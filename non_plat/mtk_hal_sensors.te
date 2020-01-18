@@ -11,6 +11,17 @@ hwbinder_use(mtk_hal_sensors)
 # call into system_server process (callbacks)
 binder_call(mtk_hal_sensors, system_server)
 
+# graphics allocator
+allow mtk_hal_sensors hal_graphics_allocator_default:fd use;
+
+# gpu device
+allow mtk_hal_sensors gpu_device:dir create_dir_perms;
+allow mtk_hal_sensors gpu_device:chr_file rw_file_perms;
+allow mtk_hal_sensors dri_device:chr_file rw_file_perms;
+
+# ion device
+allow mtk_hal_sensors ion_device:dir create_dir_perms;
+allow mtk_hal_sensors ion_device:chr_file rw_file_perms;
 # system file
 allow mtk_hal_sensors system_file:dir read;
 allow mtk_hal_sensors system_file:dir open;
@@ -29,6 +40,7 @@ hal_server_domain(mtk_hal_sensors, hal_sensors);
 #allow mtk_hal_sensors hidl_base_hwservice:hwservice_manager add;
 
 # Access sensor bio devices
+allow mtk_hal_sensors sensorlist_device:chr_file rw_file_perms;
 allow mtk_hal_sensors m_acc_misc_device:chr_file rw_file_perms;
 allow mtk_hal_sensors m_als_misc_device:chr_file rw_file_perms;
 allow mtk_hal_sensors m_ps_misc_device:chr_file rw_file_perms;
