@@ -413,6 +413,7 @@
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/vendor(_[ab])?   u:object_r:vendor_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/lk(_[ab])?       u:object_r:lk_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/odmdtbo(_[ab])?  u:object_r:dtbo_block_device:s0
+/dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/dtbo(_[ab])?     u:object_r:dtbo_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/tee([12]|_[ab])  u:object_r:tee_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/md1img(_[ab])?   u:object_r:md_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/md1dsp(_[ab])?   u:object_r:dsp_block_device:s0
@@ -450,6 +451,7 @@
 /dev/block/platform/bootdevice/by-name/vendor(_[ab])?        u:object_r:vendor_block_device:s0
 /dev/block/platform/bootdevice/by-name/lk(_[ab])?            u:object_r:lk_block_device:s0
 /dev/block/platform/bootdevice/by-name/odmdtbo(_[ab])?       u:object_r:dtbo_block_device:s0
+/dev/block/platform/bootdevice/by-name/dtbo(_[ab])?          u:object_r:dtbo_block_device:s0
 /dev/block/platform/bootdevice/by-name/tee([12]|_[ab])       u:object_r:tee_block_device:s0
 /dev/block/platform/bootdevice/by-name/md1img(_[ab])?        u:object_r:md_block_device:s0
 /dev/block/platform/bootdevice/by-name/md1dsp(_[ab])?        u:object_r:dsp_block_device:s0
