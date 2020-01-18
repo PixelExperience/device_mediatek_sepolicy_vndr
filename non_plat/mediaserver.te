@@ -351,7 +351,7 @@ allow mediaserver mtk_cmdq_device:chr_file { read ioctl open };
 # Purpose : Change thermal config
 typeattribute mediaserver system_writes_vendor_properties_violators;
 allow mediaserver mtk_thermal_config_prop:file { getattr open read };
-allow mediaserver mtk_thermal_config_prop:property_service set;
+
 
 # Date : WK17.43
 # Operation : Migration

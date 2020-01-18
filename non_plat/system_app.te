@@ -21,7 +21,7 @@ get_prop(system_app, mtk_telephony_sensitive_prop)
 # Operation : MT6799 SQC
 # Purpose : Change thermal config
 allow system_app mtk_thermal_config_prop:file { getattr open read };
-allow system_app mtk_thermal_config_prop:property_service set;
+
 
 # Date : 2017/11/07
 # Operation : Migration
