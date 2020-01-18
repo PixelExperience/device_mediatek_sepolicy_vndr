@@ -22,9 +22,9 @@ allow rild cgroup:dir create_dir_perms;
 
 # Property service
 # allow set RIL related properties (radio./net./system./etc)
-set_prop(rild, radio_prop)
-set_prop(rild, net_radio_prop)
-set_prop(rild, system_radio_prop)
+#set_prop(rild, radio_prop)
+#set_prop(rild, net_radio_prop)
+#set_prop(rild, system_radio_prop)
 set_prop(rild, persist_ril_prop)
 auditallow rild net_radio_prop:property_service set;
 auditallow rild system_radio_prop:property_service set;

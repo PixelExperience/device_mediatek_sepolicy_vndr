@@ -28,7 +28,7 @@ allow nvram_daemon nvdata_device:blk_file rw_file_perms;
 # Date : WK14.34
 # Operation : Migration 
 # Purpose : the option is used to tell that if other processes can access nvram. 
-allow nvram_daemon system_prop:property_service set;
+#allow nvram_daemon system_prop:property_service set;
 
 # Date : WK14.35
 # Operation : chown folder and file permission 
