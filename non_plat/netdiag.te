@@ -26,8 +26,3 @@ allow netdiag mmc_prop:file { getattr open };
 # purpose: allow netdiag to access storage in new version
 allow netdiag media_rw_data_file:file  { create_file_perms };
 allow netdiag media_rw_data_file:dir { create_dir_perms };
-
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(netdiag, vendor_default_prop)

@@ -60,8 +60,3 @@ allow netd untrusted_app:fd use;
 # Purpose :  CTS for wifi
 allow netd untrusted_app:unix_stream_socket { read write getopt setopt};
 allow netd isolated_app:fd use;
-
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(netd, vendor_default_prop)

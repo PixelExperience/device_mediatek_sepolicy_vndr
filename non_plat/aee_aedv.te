@@ -393,11 +393,6 @@ allow aee_aedv proc_hw_ver:file r_file_perms;
 # Purpose: Allow aee_aedv to read /proc/sched_debug
 allow aee_aedv proc_sched_debug:file r_file_perms;
 
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(aee_aedv, vendor_default_prop)
-
 # Purpose: Allow aee_aedv to read /proc/atf_log
 allow aee_aedv proc_atf_log:dir search;
 

@@ -20,8 +20,3 @@ dontaudit vold proc_mtktz:dir { read open };
 dontaudit vold proc_thermal:dir { read open };
 
 allow vold mtd_device:blk_file rw_file_perms;
-
-# Date : WK18.20
-# Operation : Migration
-# Purpose : no permission for vendor_default_prop
-get_prop(vold, vendor_default_prop)
