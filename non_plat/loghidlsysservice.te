@@ -2,4 +2,4 @@
 # Policy File of /system/bin/loghidlsysservice Executable File
 
 # Purpose : for create hidl server
-hal_server_domain(loghidlsysservice, mtk_hal_log)
+hal_client_domain(loghidlsysservice, mtk_hal_log)
