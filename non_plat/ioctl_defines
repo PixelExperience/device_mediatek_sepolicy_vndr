@@ -28,26 +28,26 @@ define(`GED_BRIDGE_IO_IOCTLCMD_0F', `0x670f')
 define(`GED_BRIDGE_IO_IOCTLCMD_10', `0x6710')
 
 #####################################
-# perf_ioctl.h
+# perf_ioctl.h : FPSGO
 #
-define(`FPSGO_QUEUE', `0x6701')
-define(`FPSGO_DEQUEUE', `0x6703')
-define(`FPSGO_VSYNC', `0x6705')
-define(`FPSGO_TOUCH', `0x670a')
-define(`FPSGO_QUEUE_CONNECT', `0x670f')
-define(`FPSGO_BQID', `0x6710')
+define(`PERFMGR_FPSGO_QUEUE', `0x6701')
+define(`PERFMGR_FPSGO_DEQUEUE', `0x6703')
+define(`PERFMGR_FPSGO_VSYNC', `0x6705')
+define(`PERFMGR_FPSGO_TOUCH', `0x670a')
+define(`PERFMGR_FPSGO_QUEUE_CONNECT', `0x670f')
+define(`PERFMGR_FPSGO_BQID', `0x6710')
 
-#####################################
-#
-#
-define(`EARA_NN_BEGIN', `0x6701')
-define(`EARA_NN_END', `0x6702')
-define(`EARA_GETUSAGE', `0x6703')
+# perf_ioctl.h : EARA
+define(`PERFMGR_EARA_NN_BEGIN', `0x6701')
+define(`PERFMGR_EARA_NN_END', `0x6702')
+define(`PERFMGR_EARA_GETUSAGE', `0x6703')
 
-#####################################
-#
-#
+# perf_ioctl.h : others
 define(`PERFMGR_CPU_PREFER', `0x6701')
+
+#####################################
+#
+#
 define(`MMC_IOCTLCMD', `0xb300')
 define(`UFS_IOCTLCMD', `0x5388')
 

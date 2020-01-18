@@ -40,7 +40,7 @@ allow mtk_hal_power mtk_hal_audio:dir r_dir_perms;
 # Purpose : Allow powerHAL to access perfmgr
 allow mtk_hal_power proc_perfmgr:dir r_dir_perms;
 allow mtk_hal_power proc_perfmgr:file rw_file_perms;
-allowxperm mtk_hal_power proc_perfmgr:file ioctl FPSGO_TOUCH;
+allowxperm mtk_hal_power proc_perfmgr:file ioctl PERFMGR_FPSGO_TOUCH;
 
 # Date : 2017/10/11
 # Operation: SQC
@@ -100,6 +100,10 @@ allow mtk_hal_power proc_mtktz:file rw_file_perms;
 # Date : 2019/05/08
 # Operation: SQC
 # Purpose : Allow powerHAL to access /proc/[pid]
-# 2019/04/24 : redundant setting
 allow mtk_hal_power system_server:dir r_dir_perms;
 allow mtk_hal_power system_server:file r_file_perms;
+
+# Date : 2019/05/22
+# Operation: SQC
+# Purpose : Allow powerHAL to access prop
+set_prop(mtk_hal_power, mtk_powerhal_prop)
