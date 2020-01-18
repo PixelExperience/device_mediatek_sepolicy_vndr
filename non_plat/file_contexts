@@ -200,6 +200,7 @@
 /dev/mtk_sched(/.*)? u:object_r:mtk_sched_device:s0
 /dev/MTK_SMI(/.*)? u:object_r:MTK_SMI_device:s0
 /dev/mtk_cmdq(/.*)? u:object_r:mtk_cmdq_device:s0
+/dev/mdp_sync(/.*)? u:object_r:mtk_mdp_device:s0
 /dev/mtk_rrc(/.*)? u:object_r:mtk_rrc_device:s0
 /dev/mtk_dfrc(/.*)? u:object_r:mtk_dfrc_device:s0
 /dev/mt-mdp(/.*)? u:object_r:mt_mdp_device:s0
