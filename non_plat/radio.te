@@ -138,7 +138,7 @@ binder_call(radio, mtk_hal_power)
 
 # Date : 2017/10/31
 # Purpose: Policy for EM to set wcn coredump property
-set_prop(radio, wmt_prop)
+get_prop(radio, wmt_prop)
 
 # Date : WK18.16
 # Operation: P migration
@@ -152,7 +152,7 @@ set_prop(radio, vendor_radio_prop)
 # Date : 2018/05/03
 # Operation: P migration
 # Purpose: allow EM to set modem reset delay property
-set_prop(radio, mtk_debug_md_reset_prop)
+get_prop(radio, mtk_debug_md_reset_prop)
 
 # Date : 2018/06/01
 # Operation : P migration
