@@ -144,7 +144,7 @@ persist.vendor.meta.connecttype u:object_r:meta_connecttype_prop:s0
 #=============Telephony Sensitive property==============
 vendor.ril.iccid.sim u:object_r:mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.last_iccid_sim  u:object_r:mtk_telephony_sensitive_prop:s0
-ro.mtk_md_mims_support u:object_r:mtk_telephony_sensitive_prop:s0
+ro.vendor.md_mims_support u:object_r:mtk_telephony_sensitive_prop:s0
 
 #=============allow processes to change thermal config================
 thermal.manager.data u:object_r:mtk_thermal_config_prop:s0
