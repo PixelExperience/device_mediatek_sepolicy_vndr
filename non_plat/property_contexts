@@ -131,7 +131,7 @@ persist.bt.sspdebug.enable   u:object_r:mtk_em_bt_sspdebug_prop:s0
 ril.force_apn_change u:object_r:mtk_em_ril_apnchange_prop:s0
 
 #=============allow em set protocol================
-persist.net.auto.tethering   u:object_r:mtk_em_net_auto_tethering_prop:s0
+persist.vendor.net.auto.tethering   u:object_r:mtk_em_net_auto_tethering_prop:s0
 
 #=============allow system server to set meta_connecttype property  ==============
 persist.meta.connecttype u:object_r:meta_connecttype_prop:s0
