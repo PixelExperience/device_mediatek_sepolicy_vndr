@@ -91,3 +91,7 @@ allow mnld hwservicemanager_prop:file { read open getattr };
 allow mnld debugfs_tracing:file { open write };
 
 allow mnld mnt_vendor_file:dir search;
+
+# Date : WK18.26
+# Purpose : for atci gps test
+allow mnld atci_service:unix_dgram_socket sendto;
