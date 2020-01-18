@@ -146,6 +146,7 @@ allow meta_tst tmpfs:lnk_file read;
 allow meta_tst agpsd_data_file:dir search;
 allow meta_tst agpsd_data_file:sock_file write;
 allow meta_tst mnld_device:chr_file rw_file_perms;
+allow meta_tst mnld_exec:file rx_file_perms;
 set_prop(meta_tst, mnld_prop);
 
 # Date: WK16.12
