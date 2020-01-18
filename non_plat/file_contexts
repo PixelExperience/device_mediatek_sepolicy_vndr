@@ -407,6 +407,7 @@
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/ppl         u:object_r:ppl_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/sec1        u:object_r:sec1_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/boot_para   u:object_r:boot_para_block_device:s0
+/dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/super       u:object_r:super_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/boot(_[ab])?     u:object_r:boot_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/system(_[ab])?   u:object_r:system_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/odm(_[ab])?      u:object_r:odm_block_device:s0
@@ -423,6 +424,8 @@
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/scp(_[ab])?      u:object_r:scp_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/sspm(_[ab])?     u:object_r:sspm_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/spmfw(_[ab])?    u:object_r:spmfw_block_device:s0
+/dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/vbmeta(_system|_vendor)?(_[ab])?    u:object_r:vbmeta_block_device:s0
+
 /dev/block/platform/bootdevice/by-name/proinfo   u:object_r:nvram_device:s0
 /dev/block/platform/bootdevice/by-name/nvram     u:object_r:nvram_device:s0
 /dev/block/platform/bootdevice/by-name/nvdata    u:object_r:nvdata_device:s0
@@ -444,6 +447,7 @@
 /dev/block/platform/bootdevice/by-name/nvcfg     u:object_r:nvcfg_block_device:s0
 /dev/block/platform/bootdevice/by-name/sec1      u:object_r:sec1_block_device:s0
 /dev/block/platform/bootdevice/by-name/boot_para u:object_r:boot_para_block_device:s0
+/dev/block/platform/bootdevice/by-name/super     u:object_r:super_block_device:s0
 /dev/block/platform/bootdevice/by-name/cam_vpu[1-3](_[ab])?  u:object_r:cam_vpu_block_device:s0
 /dev/block/platform/bootdevice/by-name/system(_[ab])?        u:object_r:system_block_device:s0
 /dev/block/platform/bootdevice/by-name/boot(_[ab])?          u:object_r:boot_block_device:s0
@@ -463,8 +467,7 @@
 /dev/block/platform/bootdevice/by-name/spmfw(_[ab])?         u:object_r:spmfw_block_device:s0
 /dev/block/platform/bootdevice/by-name/mcupmfw(_[ab])?       u:object_r:mcupmfw_block_device:s0
 /dev/block/platform/bootdevice/by-name/loader_ext(_[ab])?    u:object_r:loader_ext_block_device:s0
-/dev/block/platform/bootdevice/by-name/vbmeta(_[ab])?    u:object_r:vbmeta_block_device:s0
-
+/dev/block/platform/bootdevice/by-name/vbmeta(_system|_vendor)?(_[ab])?    u:object_r:vbmeta_block_device:s0
 
 #############################
 # sysfs files
