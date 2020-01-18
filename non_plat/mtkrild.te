@@ -130,3 +130,8 @@ allow mtkrild nvdata_file:file create_file_perms;
 # Operation: P migration
 # Purpose: Allow supplementary service HIDL to set vendor property
 set_prop(mtkrild, mtk_ss_vendor_prop)
+
+# Date : WK19.43
+# Purpose: Allow wfc module from rild read system property from wfc module
+get_prop(mtkrild, mtk_wfc_serv_prop)
+

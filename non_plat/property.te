@@ -323,3 +323,7 @@ type mtk_hdmi_prop, property_type, mtk_core_property_type;
 
 #=============mtk nn option property=============
 type mtk_nn_option_prop, property_type;
+
+#============system wfc service property===========
+type mtk_wfc_serv_prop, property_type;
+

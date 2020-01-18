@@ -158,3 +158,8 @@ allow rild self:netlink_netfilter_socket { create_socket_perms_no_ioctl };
 # Date : 2019/08/29
 # Purpose: Allow rild to access proc/aed/reboot-reason
 allow rild proc_aed_reboot_reason:file rw_file_perms;
+
+# Date : WK19.43
+# Purpose: Allow wfc module from rild read system property from wfc module
+get_prop(rild, mtk_wfc_serv_prop)
+

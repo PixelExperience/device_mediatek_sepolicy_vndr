@@ -364,3 +364,6 @@ persist.vendor.sys.hdmi_hidl. u:object_r:mtk_hdmi_prop:s0
 #=============mtk nn option==============#
 ro.vendor.mtk_nn.option u:object_r:mtk_nn_option_prop:s0
 
+#============system wfc service property===========
+persist.vendor.wfc. u:object_r:mtk_wfc_serv_prop:s0
+
