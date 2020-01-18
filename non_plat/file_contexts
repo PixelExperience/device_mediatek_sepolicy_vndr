@@ -65,6 +65,7 @@
 /data/vendor/stp_dump(/.*)? u:object_r:stp_dump_data_file:s0
 /data/vendor/mediadrm(/.*)?      u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/dipdebug(/.*)?    u:object_r:aee_dipdebug_vendor_file:s0
+/data/vendor/key_provisioning(/.*)?   u:object_r:key_install_data_file:s0
 
 # Misc data
 #/data/misc/acdapi(/.*)? u:object_r:acdapi_data_file:s0
@@ -479,6 +480,12 @@
 /dev/block/platform/bootdevice/by-name/loader_ext(_[ab])?    u:object_r:loader_ext_block_device:s0
 /dev/block/platform/bootdevice/by-name/vbmeta(_system|_vendor)?(_[ab])?    u:object_r:vbmeta_block_device:s0
 
+# Key manager
+/dev/block/platform/bootdevice/by-name/kb        u:object_r:kb_block_device:s0
+/dev/block/platform/bootdevice/by-name/dkb       u:object_r:dkb_block_device:s0
+/dev/kb                                          u:object_r:kb_block_device:s0
+/dev/dkb                                         u:object_r:dkb_block_device:s0
+
 # W19.23 Q new feature - Userdata Checkpoint
 /dev/block/by-name/md_udc             u:object_r:metadata_block_device:s0
 
@@ -549,6 +556,7 @@
 /(system\/vendor|vendor)/bin/thermalloadalgod u:object_r:thermalloadalgod_exec:s0
 /(system\/vendor|vendor)/bin/lbs_hidl_service u:object_r:lbs_hidl_service_exec:s0
 /(system\/vendor|vendor)/bin/meta_tst u:object_r:meta_tst_exec:s0
+/(system\/vendor|vendor)/bin/kisd u:object_r:kisd_exec:s0
 
 /(system\/vendor|vendor)/bin/fm_hidl_service u:object_r:fm_hidl_service_exec:s0
 /(system\/vendor|vendor)/bin/wlan_assistant u:object_r:wlan_assistant_exec:s0
