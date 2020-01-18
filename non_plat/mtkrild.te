@@ -83,10 +83,6 @@ allow mtkrild block_device:dir search;
 allow mtkrild platform_app:fd use;
 allow mtkrild radio:fd use;
 
-# For emulator
-allow mtkrild qemu_pipe_device:chr_file rw_file_perms;
-allow mtkrild socket_device:sock_file { w_file_perms };
-
 # For MAL MFI
 allow mtkrild mal_mfi_socket:sock_file { w_file_perms };
 
