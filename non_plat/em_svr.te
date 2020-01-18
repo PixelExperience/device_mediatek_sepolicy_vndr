@@ -31,7 +31,3 @@ allow em_svr nvram_device:blk_file { open read write };
 # Purpose: add for Gyroscope sensor
 allow em_svr gyroscope_device:chr_file { read ioctl open };
 
-# Date : 2018/05/03
-# Purpose: allow EM to control battery
-allow em_svr battery_node:dir search;
-allow em_svr battery_node:file { write open };
