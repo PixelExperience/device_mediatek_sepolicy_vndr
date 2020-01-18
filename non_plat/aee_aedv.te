@@ -64,9 +64,9 @@ allow aee_aedv kernel:process getsched;
 userdebug_or_eng(`allow aee_aedv self:capability sys_admin;')
 
 # Purpose: aee_aedv set property
-set_prop(aee_aedv, persist_mtk_aee_prop);
-set_prop(aee_aedv, persist_aee_prop);
-set_prop(aee_aedv, debug_mtk_aee_prop);
+set_prop(aee_aedv, persist_mtk_aeev_prop);
+set_prop(aee_aedv, persist_aeev_prop);
+set_prop(aee_aedv, debug_mtk_aeev_prop);
 
 # Purpose: mnt/user/*
 allow aee_aedv mnt_user_file:dir search;
