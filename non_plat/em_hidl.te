@@ -119,3 +119,8 @@ set_prop(em_hidl, vendor_usb_prop)
 # Operation : EM DEBUG
 # Purpose: for em set hidl configure
 set_prop(em_hidl, mtk_em_hidl_prop)
+
+# Date :  2019/08/22
+# Operation : EM AAL
+# Purpose: for em set aal property
+set_prop(em_hidl, mtk_pq_prop)
