@@ -61,3 +61,9 @@ allow ccci_fsd mnt_vendor_file:dir search;
 # Purpose: for fstab parser
 allow ccci_fsd kmsg_device:chr_file w_file_perms;
 allow ccci_fsd proc_lk_env:file rw_file_perms;
+
+#============= ccci_fsd MD Low Power Monitor Related ==============
+allow ccci_fsd vendor_data_file:dir create_dir_perms;
+allow ccci_fsd vendor_data_file:file create_file_perms;
+allow ccci_fsd sysfs_mmcblk:dir search;
+allow ccci_fsd sysfs_mmcblk:file { read getattr open };
