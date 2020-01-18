@@ -26,9 +26,3 @@ allow untrusted_app_25 sysfs_batteryinfo:dir search;
 allow untrusted_app_25 sysfs_batteryinfo:file { getattr open read };
 allow untrusted_app_25 sysfs_therm:dir { open read search };
 allow untrusted_app_25 sysfs_therm:file { getattr open read };
-
-# Date : WK17.39
-# Stage: O Migration, SQC
-# Purpose: Allow to use HAL PQ
-allow untrusted_app_25 mtk_hal_pq_hwservice:hwservice_manager find;
-allow untrusted_app mtk_hal_pq_hwservice:hwservice_manager find;
