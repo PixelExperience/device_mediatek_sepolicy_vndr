@@ -154,7 +154,6 @@ type mtk_telephony_sensitive_prop, property_type;
 type mtk_thermal_config_prop, property_type;
 
 #=============allow composer set property ============================
-type graphics_config_prop, property_type;
 type graphics_hwc_pid_prop, property_type;
 
 #============= mtkcam property ============================

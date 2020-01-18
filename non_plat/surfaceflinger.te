@@ -36,11 +36,6 @@ allow surfaceflinger debugfs_ion:dir search;
 # Purpose: Allow to access cmdq driver
 allow surfaceflinger mtk_cmdq_device:chr_file { read ioctl open };
 
-# Date : WK17.32
-# Operation : O Migration
-# Purpose: Allow to access property
-get_prop(surfaceflinger, graphics_config_prop)
-
 # Date : W17.39
 # Perform Binder IPC.
 binder_use(surfaceflinger)

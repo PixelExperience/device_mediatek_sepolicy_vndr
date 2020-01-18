@@ -6,10 +6,6 @@
 # Purpose : allow shell to switch aee mode
 allow shell aee_aed:unix_stream_socket connectto;
 
-# Date : WK17.34
-# Purpose : allow shell to get density property
-get_prop(shell, graphics_config_prop)
-
 # Date : WK17.35
 # Purpose : allow shell to dump the debugging information of camera hal.
 allow shell hal_camera_hwservice:hwservice_manager { find };

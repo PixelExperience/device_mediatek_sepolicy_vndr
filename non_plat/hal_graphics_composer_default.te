@@ -42,7 +42,5 @@ binder_call(hal_graphics_composer_default, mtk_hal_power)
 # Date : WK17.32
 # Operation : O Migration
 # Purpose: Allow to access property
-set_prop(hal_graphics_composer_default, graphics_config_prop)
-get_prop(hal_graphics_composer_default, graphics_config_prop)
 set_prop(hal_graphics_composer_default, graphics_hwc_pid_prop)
 get_prop(hal_graphics_composer_default, graphics_hwc_pid_prop)
