@@ -118,6 +118,8 @@ type logmisc_data_file, file_type, data_file_type, core_data_file_type;
 #mobilelog data/log_temp
 type logtemp_data_file, file_type, data_file_type, core_data_file_type;
 
+type debuglog_data_file, file_type, data_file_type, core_data_file_type;
+
 # NE core_forwarder
 type aee_core_data_file, file_type, data_file_type, core_data_file_type;
 type aee_core_vendor_file, file_type, data_file_type;
