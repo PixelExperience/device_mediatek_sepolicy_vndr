@@ -20,3 +20,4 @@ allow vendor_init tmpfs:dir { write create add_name };
 allow vendor_init vendor_file:system module_load;
 
 allow vendor_init kmsg_device:chr_file unlink;
+set_prop(vendor_init, persist_mtk_aee_prop);
