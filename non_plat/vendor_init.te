@@ -35,3 +35,11 @@ set_prop(vendor_init, mtk_emmc_support_prop)
 allow vendor_init tmpfs:lnk_file create;
 
 set_prop(vendor_init, mtk_cxp_vendor_prop)
+
+# Run "ifup lo" to bring up the localhost interface
+allow vendor_init proc_hostname:file w_file_perms;
+allow vendor_init self:udp_socket { create ioctl };
+# in addition to unpriv ioctls granted to all domains, init also needs:
+allowxperm vendor_init self:udp_socket ioctl { SIOCSIFFLAGS };
+allow vendor_init self:global_capability_class_set net_raw;
+
