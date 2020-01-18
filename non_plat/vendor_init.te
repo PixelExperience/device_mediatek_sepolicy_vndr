@@ -8,6 +8,7 @@ allow vendor_init mtk_md_version_prop:property_service set;
 allow vendor_init mtk_volte_prop:property_service set;
 allow vendor_init usp_prop:property_service set;
 allow vendor_init vendor_radio_prop:property_service set;
+allow vendor_init mtk_ril_mode_prop:property_service set;
 allow vendor_init wmt_prop:property_service set;
 
 allow vendor_init proc:file write;

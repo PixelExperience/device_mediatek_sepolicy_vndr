@@ -192,3 +192,6 @@ type mtk_ccci_fsd_prop, property_type, mtk_core_property_type;
 
 #=============allow ct volte==============
 type mtk_ct_volte_prop, property_type, mtk_core_property_type;
+
+#=============mtk ril mode property=============
+type mtk_ril_mode_prop, property_type, mtk_core_property_type;
