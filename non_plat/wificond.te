@@ -1,0 +1,8 @@
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# Date : WK18.20
+# Operation : Migration
+# Purpose : wificond
+get_prop(wificond, vendor_default_prop)

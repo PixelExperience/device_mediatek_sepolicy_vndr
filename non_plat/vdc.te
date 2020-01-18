@@ -1,0 +1,8 @@
+# ==============================================
+# MTK Policy Rule
+# ============
+
+# Date : WK18.20
+# Operation : Migration
+# Purpose : no permission for vendor_default_prop
+get_prop(atcid, vendor_default_prop)
