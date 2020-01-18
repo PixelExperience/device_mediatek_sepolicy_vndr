@@ -17,7 +17,7 @@ allow update_engine loader_ext_block_device:blk_file rw_file_perms;
 allow update_engine cam_vpu_block_device:blk_file rw_file_perms;
 allow update_engine para_block_device:blk_file rw_file_perms;
 allow update_engine vbmeta_block_device:blk_file rw_file_perms;
-
+allow update_engine proc_filesystems:file r_file_perms;
 
 # Add for update_engine call by system_app
 allow update_engine system_app:binder { call transfer };
