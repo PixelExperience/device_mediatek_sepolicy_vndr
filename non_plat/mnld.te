@@ -88,7 +88,8 @@ allow mnld mtk_hal_gnss:unix_dgram_socket sendto;
 hwbinder_use(mnld);
 binder_call(mnld, system_server)
 allow mnld fwk_sensor_hwservice:hwservice_manager find;
-allow mnld hwservicemanager_prop:file { read open getattr };
+#allow mnld hwservicemanager_prop:file { read open getattr };
+get_prop(mnld, hwservicemanager_prop);
 allow mnld debugfs_tracing:file { open write };
 
 allow mnld mnt_vendor_file:dir search;
