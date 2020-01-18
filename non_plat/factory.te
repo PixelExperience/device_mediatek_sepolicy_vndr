@@ -279,6 +279,7 @@ hal_client_domain(factory, hal_nfc);
 # Purpose: Allow to access cmdq driver
 allow factory mtk_cmdq_device:chr_file { read ioctl open };
 allow factory mtk_mdp_device:chr_file rw_file_perms;
+allow factory sw_sync_device:chr_file rw_file_perms;
 
 # Date: WK1733
 # Purpose: add selinux policy to stop 'ccci_fsd' for clear emmc in factory mode

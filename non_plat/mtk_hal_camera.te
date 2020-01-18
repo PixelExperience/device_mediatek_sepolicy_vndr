@@ -132,7 +132,7 @@ allow mtk_hal_camera CAM_CAL_DRV2_device:chr_file rw_file_perms;
 # Purpose: Other device drivers used by camera
 # -----------------------------------
 allow mtk_hal_camera ion_device:chr_file rw_file_perms;
-allow mtk_hal_camera sw_sync_device:chr_file getattr;
+allow mtk_hal_camera sw_sync_device:chr_file rw_file_perms;
 allow mtk_hal_camera MTK_SMI_device:chr_file r_file_perms;
 
 # -----------------------------------

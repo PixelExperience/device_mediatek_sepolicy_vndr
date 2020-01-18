@@ -115,6 +115,7 @@ allow platform_app mtk_hal_mms:binder call;
 # Package: com.mediatek.camera
 #allow platform_app hal_camera_hwservice:hwservice_manager find;
 allow platform_app mtk_hal_camera:binder call;
+allow platform_app sw_sync_device:chr_file rw_file_perms;
 
 # Date: 2019/07/04
 # Purpose: Allow platform app to use BGService HIDL and access mtk_hal_camera

@@ -32,6 +32,7 @@ allowxperm appdomain proc_perfmgr:file ioctl {
 # Purpose : Allow MDP user access mdp driver
 allow appdomain mdp_device:chr_file rw_file_perms;
 allow appdomain mtk_mdp_device:chr_file rw_file_perms;
+allow appdomain sw_sync_device:chr_file rw_file_perms;
 
 # Date : W19.23
 # Operation : Migration
