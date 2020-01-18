@@ -150,4 +150,4 @@ genfscon sysfs /devices/platform/bootdevice/host0/target0:0:0/0:0:0:2/block/sdc 
 
 # Date : 2019/07/12
 # Purpose:dumpstate mmcblk1 access
-genfscon sysfs /devices/platform/externdevice/mmc_host/mmc1 u:object_r:sysfs_mmcblk1:s0
+genfscon sysfs /devices/platform/externdevice/mmc_host/mmc1 u:object_r:sysfs_devices_block:s0

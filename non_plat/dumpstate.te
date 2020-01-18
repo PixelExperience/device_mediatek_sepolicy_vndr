@@ -162,7 +162,7 @@ allow dumpstate mnt_media_rw_file:dir getattr;
 
 # Date: 19/07/15
 # Purpose: fix google dumpstate avc error in xTs
-allow dumpstate sysfs_mmcblk1:file r_file_perms;
+allow dumpstate sysfs_devices_block:file r_file_perms;
 allow dumpstate proc_last_kmsg:file r_file_perms;
 
 # Date: 19/07/15
