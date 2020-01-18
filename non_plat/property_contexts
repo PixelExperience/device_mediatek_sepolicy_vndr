@@ -304,3 +304,6 @@ persist.vendor.ss. u:object_r:mtk_ss_vendor_prop:s0
 
 # MTK Antutu feature
 ro.vendor.net.upload.benchmark.default u:object_r:mtk_antutu_prop:s0
+
+#=============malloc debug unwind backtrace switch property==============#
+vendor.debug.malloc.bt.switch u:object_r:mtk_malloc_debug_backtrace_prop:s0

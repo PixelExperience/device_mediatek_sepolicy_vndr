@@ -268,3 +268,6 @@ type mtk_fullscreenswitch_prop, property_type, mtk_core_property_type;
 # MTK Antutu feature
 type mtk_antutu_prop, property_type, mtk_core_property_type;
 
+#=============mtk malloc debug switch unwind backtrace property=============
+type mtk_malloc_debug_backtrace_prop, property_type, mtk_core_property_type;
+
