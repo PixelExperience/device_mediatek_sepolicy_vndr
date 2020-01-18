@@ -92,3 +92,9 @@ allow aee_core_forwarder media_rw_data_file:file { create open write };
 #           scontext=u:r:aee_core_forwarder:s0 tcontext=u:r:aee_core_forwarder:s0
 #           tclass=capability permissive=0
 allow aee_core_forwarder self:capability sys_nice;
+
+# Purpose : allow aee_core_forwarder to access hwservicemanager_prop
+get_prop(aee_core_forwarder, hwservicemanager_prop)
+
+# Purpose : allow aee_core_forwarder to connect aee_aed socket
+allow aee_core_forwarder aee_aed:unix_stream_socket connectto;

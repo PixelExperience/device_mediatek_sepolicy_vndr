@@ -391,8 +391,6 @@ allow aee_aedv sysfs_boot_mode:file r_file_perms;
 #userdebug_or_eng(`
 #  allow aee_aedv debugfs_tracing_debug:file { r_file_perms write };
 #')
-# Purpose: allow aee_aedv self to sys_ptrace/dac_read_search/dac_override
-#userdebug_or_eng(`allow aee_aedv self:capability { sys_ptrace dac_read_search dac_override };')
 
 #Purpose: Allow aee_aedv to read /sys/mtk_memcfg/slabtrace
 allow aee_aedv proc_slabtrace:file r_file_perms;
