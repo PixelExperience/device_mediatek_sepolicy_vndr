@@ -24,13 +24,16 @@ vendor.pullmdlog u:object_r:vendor_mdl_pulllog_prop:s0
 
 #=============allow AEE==============
 # persist.vendor.mtk.aee.mode && persist.vendor.mtk.aee.dal
-persist.vendor.mtk.aee u:object_r:persist_mtk_aee_prop:s0
+persist.vendor.mtk.aee. u:object_r:persist_mtk_aee_prop:s0
+persist.vendor.mtk.aeev. u:object_r:persist_mtk_aeev_prop:s0
 
 # persist.vendor.aee.core.dump && persist.vendor.aee.core.direct
-persist.vendor.aee u:object_r:persist_aee_prop:s0
+persist.vendor.aee. u:object_r:persist_aee_prop:s0
+persist.vendor.aeev. u:object_r:persist_aeev_prop:s0
 
 # vendor.debug.mtk.aee.db
-vendor.debug.mtk.aee u:object_r:debug_mtk_aee_prop:s0
+vendor.debug.mtk.aee. u:object_r:debug_mtk_aee_prop:s0
+vendor.debug.mtk.aeev u:object_r:debug_mtk_aeev_prop:s0
 
 ro.vendor.aee.build.info u:object_r:ro_mtk_aee_prop:s0
 ro.vendor.aee.enforcing u:object_r:ro_mtk_aee_prop:s0
