@@ -251,3 +251,7 @@ allow system_server sysfs_pages_volatile:file r_file_perms;
 # Operation: Q Migration
 # Purpose : power_hal_mgr_service may use libmtkperf_client
 allow system_server sysfs_boot_mode:file r_file_perms;
+
+# Date : 2019/10/22
+# Operation : Q Migration
+allow system_server self:capability sys_module;
