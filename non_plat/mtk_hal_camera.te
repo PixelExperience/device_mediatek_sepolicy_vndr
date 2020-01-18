@@ -57,6 +57,7 @@ allow mtk_hal_camera fwk_sensor_hwservice:hwservice_manager find;
 allow mtk_hal_camera mtk_hal_power_hwservice:hwservice_manager find;
 allow mtk_hal_camera nvram_data_file:lnk_file { read write getattr setattr read create open };
 allow mtk_hal_camera nvdata_file:lnk_file { read write getattr setattr read create open };
+hal_client_domain(mtk_hal_camera, hal_graphics_allocator)
 
 # -----------------------------------
 # Purpose: Camera-related devices (driver)
@@ -240,6 +241,7 @@ allow mtk_hal_camera gpu_device:chr_file { read open write getattr ioctl };
 
 ## Purpose: Allow to access ged for gralloc_extra functions
 allow mtk_hal_camera proc_ged:file {open read write ioctl getattr};
+allowxperm mtk_hal_camera proc_ged:file ioctl { GED_BRIDGE_IO_GE_GET GED_BRIDGE_IO_GE_SET};
 
 ################################################################################
 # Date : WK17
