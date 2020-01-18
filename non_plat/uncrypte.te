@@ -1,0 +1,2 @@
+#====================== uncrypt.te ======================
+allow uncrypt para_block_device:blk_file w_file_perms;
