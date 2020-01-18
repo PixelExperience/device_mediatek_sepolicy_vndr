@@ -7,9 +7,9 @@ attribute mtk_core_property_type;
 
 # Date: 2017/06/12
 # LBS HIDL
-attribute mtk_hal_lbs;
-attribute mtk_hal_lbs_client;
-attribute mtk_hal_lbs_server;
+#attribute mtk_hal_lbs;
+#attribute mtk_hal_lbs_client;
+#attribute mtk_hal_lbs_server;
 
 # Date: 2017/06/27
 # IMSA HIDL

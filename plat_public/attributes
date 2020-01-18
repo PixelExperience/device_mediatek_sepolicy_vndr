@@ -8,3 +8,9 @@ attribute hal_gpu;
 attribute hal_gpu_client;
 attribute hal_gpu_server;
 
+# Date: 2017/06/12
+# LBS HIDL
+attribute mtk_hal_lbs;
+attribute mtk_hal_lbs_client;
+attribute mtk_hal_lbs_server;
+

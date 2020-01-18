@@ -156,7 +156,7 @@ type hwzram0_device, dev_type;
 type RT_Monitor_device, dev_type;
 type kick_powerkey_device, dev_type;
 type agps_device, dev_type;
-type mnld_device, dev_type;
+#type mnld_device, dev_type;
 type geo_device, dev_type;
 type mdlog_device, dev_type;
 type md32_device, dev_type;
