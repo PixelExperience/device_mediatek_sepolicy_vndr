@@ -334,10 +334,6 @@ type sys_usb_rawbulk, fs_type, sysfs_type;
 # Backlight brightness file
 type sysfs_vibrator_setting, fs_type, sysfs_type;
 
-# Date : WK18.16
-# Purpose: Android Migration
-type sysfs_mmcblk, fs_type, sysfs_type;
-
 # Vibrator vibrate file
 type sysfs_leds_setting, fs_type, sysfs_type;
 
