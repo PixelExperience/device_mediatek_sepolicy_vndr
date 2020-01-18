@@ -13,6 +13,7 @@ allow vendor_init proc_wmtdbg:file w_file_perms;
 allow vendor_init vold_prop:property_service set;
 
 allow vendor_init proc:file write;
+allow vendor_init proc_cpufreq:file w_file_perms;
 allow vendor_init proc_bootprof:file write;
 allow vendor_init rootfs:dir { write add_name setattr };
 allow vendor_init self:capability sys_module;
