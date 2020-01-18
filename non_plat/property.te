@@ -119,10 +119,10 @@ type mtk_em_prop, property_type, mtk_core_property_type;
 type mediatek_prop, property_type, mtk_core_property_type;
 
 #============= allow em set property ===============
-type mtk_em_auto_answer_prop, property_type, mtk_core_property_type;
+type mtk_em_auto_answer_prop, property_type, extended_core_property_type;
 
 #============= allow em set protocol ===============
-type mtk_em_net_auto_tethering_prop, property_type, mtk_core_property_type;
+type mtk_em_net_auto_tethering_prop, property_type, extended_core_property_type;
 
 #=============allow meta_tst to stop specific service ===============
 type ctl_mobile_log_d_prop, property_type;
