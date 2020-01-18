@@ -142,3 +142,7 @@ allow rild mtk_hal_secure_element:binder call;
 # Operation: P migration
 # Purpose: Allow supplementary service HIDL to set vendor property
 set_prop(rild, mtk_ss_vendor_prop)
+
+# Date : 2018/2/27
+# Purpose : for NVRAM recovery mechanism
+set_prop(rild,powerctl_prop);
