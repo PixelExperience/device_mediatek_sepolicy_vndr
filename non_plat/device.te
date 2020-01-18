@@ -14,6 +14,7 @@ type stpant_device, dev_type;
 type fm_device, dev_type;
 type stpgps_device, dev_type;
 type fw_log_wmt_device, dev_type;
+type fw_log_wifi_device, dev_type;
 type pmem_multimedia_device, dev_type;
 type mt6516_isp_device, dev_type;
 type mt6516_IDP_device, dev_type;

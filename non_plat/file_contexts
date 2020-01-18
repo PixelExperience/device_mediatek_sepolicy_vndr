@@ -149,6 +149,7 @@
 /dev/FM50AF(/.*)? u:object_r:FM50AF_device:s0
 /dev/fm(/.*)? u:object_r:fm_device:s0
 /dev/fw_log_wmt u:object_r:fw_log_wmt_device:s0
+/dev/fw_log_wifi u:object_r:fw_log_wifi_device:s0
 #/dev/gps(/.*)? u:object_r:gps_device:s0
 /dev/geofence(/.*)? u:object_r:geo_device:s0
 #/dev/mt3337_gpsonly u:object_r:gps_device:s0
