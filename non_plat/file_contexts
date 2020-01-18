@@ -586,6 +586,8 @@
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.wifi@1\.0-service-mediatek           u:object_r:mtk_hal_wifi_exec:s0
 # MTK USB hal
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.usb@1\.1-service-mediatek u:object_r:mtk_hal_usb_exec:s0
+# MTK OMAPI for UICC
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.secure_element@1\.0-service-mediatek u:object_r:mtk_hal_secure_element_exec:s0
 
 #############################
 # System/bin files
