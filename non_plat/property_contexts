@@ -245,3 +245,6 @@ ro.vendor.mtk_disable_cap_switch u:object_r:mtk_default_prop:s0
 
 #============mtk emmc=======#
 ro.vendor.mtk_emmc_support u:object_r:mtk_emmc_support_prop:s0
+
+# MTK connsys log feature
+ro.vendor.connsys.dedicated.log u:object_r:mtk_default_prop:s0
