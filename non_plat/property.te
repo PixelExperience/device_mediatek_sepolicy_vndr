@@ -256,3 +256,6 @@ type vendor_usb_otg_switch, property_type, mtk_core_property_type;
 
 #=============mtk anr property=============
 type mtk_anr_support_prop, property_type, mtk_core_property_type;
+
+#=============mtk app resolution tuner property=============
+type mtk_appresolutiontuner_prop, property_type, mtk_core_property_type;
