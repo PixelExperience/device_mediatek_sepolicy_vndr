@@ -204,6 +204,7 @@ allow factory audio_device:chr_file rw_file_perms;
 allow factory audio_device:dir w_dir_perms;
 allow factory audiohal_prop:property_service set;
 allow factory audio_ipi_device:chr_file { read write ioctl open };
+allow factory audio_scp_device:chr_file r_file_perms;
 
 #Purpose: For key and touch event
 allow factory input_device:chr_file r_file_perms;
