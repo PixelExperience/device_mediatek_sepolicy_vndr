@@ -152,9 +152,6 @@ type graphics_debug_prop, property_type;
 #============= mtkcam property ============================
 type mtkcam_prop, property_type;
 
-#============= allow em set UCE property ===============
-type persist_uce_prop, property_type;
-
 #============= atm modem mode property ==============
 type atm_mdmode_prop, property_type;
 

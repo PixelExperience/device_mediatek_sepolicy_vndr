@@ -161,12 +161,6 @@ set_prop(radio, mnld_prop)
 # Purpose: Policy for EM to set wcn coredump property
 set_prop(radio, wmt_prop)
 
-# Date : WK17.47
-# Operation: O migration
-# Purpose: Allow EM enable/disable Presence
-allow radio persist_uce_prop:property_service set;
-get_prop(radio, persist_uce_prop)
-
 # Date : WK18.16
 # Operation: P migration
 # Purpose: Allow radio to get tel_switch_prop
