@@ -38,3 +38,5 @@ allow wlan_assistant nvdata_file:dir { search read getattr open };
 allow wlan_assistant nvdata_file:file { read getattr open };
 allow wlan_assistant sysfs:file { open read };
 allow wlan_assistant wmtWifi_device:chr_file { read write getattr open };
+
+allow wlan_assistant mnt_vendor_file :dir search;
