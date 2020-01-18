@@ -131,11 +131,6 @@ get_prop(system_server, mtk_telephony_sensitive_prop)
 allow system_server debugfs_wakeup_sources:file { read getattr open };
 
 # Date:W17.26
-# Operation : mtk hostapd hal
-# Purpose : mtk hostapd hal interface permission
-hal_client_domain(system_server, mtk_hal_wifi_hostapd)
-
-# Date:W17.26
 # Operation : imsa hal
 # Purpose : imsa hal interface permission
 binder_call(system_server, mtk_hal_imsa)

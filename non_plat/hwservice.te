@@ -11,10 +11,6 @@ type mtk_hal_power_hwservice, hwservice_manager_type;
 # LBS HIDL
 type mtk_hal_lbs_hwservice, hwservice_manager_type;
 
-# Date: 2017/06/22
-# WIFI HOSTAPD HIDL
-type mtk_hal_wifi_hostapd_hwservice, hwservice_manager_type;
-
 # Date: 2017/06/27
 # IMSA HIDL
 type mtk_hal_imsa_hwservice, hwservice_manager_type;

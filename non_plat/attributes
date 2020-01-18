@@ -11,12 +11,6 @@ attribute mtk_hal_lbs;
 attribute mtk_hal_lbs_client;
 attribute mtk_hal_lbs_server;
 
-# Date: 2017/06/22
-# WIFI HOSTAPD HIDL
-attribute mtk_hal_wifi_hostapd;
-attribute mtk_hal_wifi_hostapd_client;
-attribute mtk_hal_wifi_hostapd_server;
-
 # Date: 2017/06/27
 # IMSA HIDL
 attribute hal_imsa;
