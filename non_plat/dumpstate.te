@@ -9,7 +9,6 @@ set_prop(dumpstate, debug_bq_dump_prop);
 allow dumpstate aed_device:chr_file { read getattr };
 
 # Purpose: data/dumpsys/*
-typeattribute dumpstate data_between_core_and_vendor_violators;
 allow dumpstate aee_dumpsys_data_file:dir { w_dir_perms };
 allow dumpstate aee_dumpsys_data_file:file { create_file_perms };
 
@@ -54,8 +53,8 @@ allow dumpstate sysfs_lowmemorykiller:dir search;
 allow dumpstate expdb_block_device:blk_file { read write ioctl open };
 
 #/data/anr/SF_RTT
-allow dumpstate sf_rtt_file:dir search;
-allow dumpstate sf_rtt_file:file r_file_perms;
+#allow dumpstate sf_rtt_file:dir search;
+#allow dumpstate sf_rtt_file:file r_file_perms;
 
 # Data : 2017/03/22
 # Operation : add fd use selinux rule
