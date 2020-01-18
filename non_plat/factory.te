@@ -117,6 +117,7 @@ allow factory biometric_device:chr_file r_file_perms;
 allow factory kd_camera_flashlight_device:chr_file rw_file_perms;
 allow factory kd_camera_hw_device:chr_file rw_file_perms;
 allow factory seninf_device:chr_file rw_file_perms;
+allow factory CAM_CAL_DRV_device:chr_file rw_file_perms;
 
 #Purpose: For reboot the target
 allow factory powerctl_prop:property_service set;
