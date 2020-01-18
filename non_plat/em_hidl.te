@@ -114,6 +114,8 @@ allow em_hidl sysfs_boot_mode:file { read open };
 allow em_hidl ttyGS_device:chr_file { read write ioctl open };
 allow em_hidl vendor_usb_prop:file { read getattr open };
 set_prop(em_hidl, vendor_usb_prop)
+allow em_hidl nvdata_file:file r_file_perms;
+allow em_hidl nvdata_file:dir search;
 
 # Date :  2018/08/28
 # Operation : EM DEBUG
