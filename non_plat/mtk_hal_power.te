@@ -15,10 +15,6 @@ allow mtk_hal_power hidl_base_hwservice:hwservice_manager add;
 add_hwservice(mtk_hal_power, mtk_hal_power_hwservice)
 allow hal_power_client mtk_hal_power_hwservice:hwservice_manager find;
 
-# netdagent
-allow mtk_hal_power mtk_hal_netdagent_hwservice:hwservice_manager find;
-allow mtk_hal_power netdagent:binder call;
-
 hal_server_domain(mtk_hal_power, hal_power);
 hal_server_domain(mtk_hal_power, hal_wifi);
 
