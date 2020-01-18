@@ -52,3 +52,4 @@ allow thermal_manager mtk_thermal_config_prop:property_service set;
 # Operation : P Migration
 # Purpose : Allow thermal_manager to access vendor data file.
 allow thermal_manager vendor_data_file:dir { write add_name };
+allow thermal_manager self:capability { fowner chown };

@@ -90,3 +90,18 @@ allow mtk_hal_power su:file { read open };
 # Purpose : Allow powerHAL to access /d/mtkfb
 allow mtk_hal_power debugfs_fb:dir search;
 allow mtk_hal_power debugfs_fb:file { getattr open read write };
+
+# Date : 2018/06/26
+# Operation: Thermal change policy in perfservice
+
+allow mtk_hal_power proc_thermal:file read;
+allow mtk_hal_power thermal_manager_data_file:file { write getattr setattr read lock open };
+allow mtk_hal_power thermalloadalgod:unix_stream_socket connectto;
+
+allow mtk_hal_power proc_mtkcooler:dir search;
+allow mtk_hal_power proc_mtkcooler:file { read write open };
+allow mtk_hal_power proc_mtktz:dir search;
+allow mtk_hal_power proc_mtktz:file {open read write };
+
+
+
