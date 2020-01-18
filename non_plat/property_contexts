@@ -222,6 +222,7 @@ ro.vendor.mtk_protocol1_rat_config u:object_r:mtk_rat_config_prop:s0
 ro.vendor.mtk_aal_support u:object_r:mtk_aal_ro_prop:s0
 ro.vendor.mtk_ultra_dimming_support u:object_r:mtk_aal_ro_prop:s0
 ro.vendor.mtk_dre30_support u:object_r:mtk_aal_ro_prop:s0
+persist.vendor.sys.aal. u:object_r:mtk_aal_prop:s0
 
 #=============allow mtk pq==============#
 persist.vendor.sys.pq. u:object_r:mtk_pq_prop:s0
