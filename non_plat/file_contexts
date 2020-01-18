@@ -151,6 +151,7 @@
 /dev/fw_log_wifi u:object_r:fw_log_wifi_device:s0
 #/dev/gps(/.*)? u:object_r:gps_device:s0
 /dev/geofence(/.*)? u:object_r:geo_device:s0
+/dev/fw_log_gps u:object_r:fw_log_gps_device:s0
 #/dev/mt3337_gpsonly u:object_r:gps_device:s0
 /dev/hdmitx(/.*)? u:object_r:graphics_device:s0
 /dev/hid-keyboard(/.*)? u:object_r:hid_keyboard_device:s0
