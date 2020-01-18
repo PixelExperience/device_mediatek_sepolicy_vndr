@@ -16,6 +16,11 @@ allow mobile_log_d sysfs_scp:file { open write };
 allow mobile_log_d sysfs_scp:dir search;
 allow mobile_log_d scp_device:chr_file { read open };
 
+#adsp
+allow mobile_log_d sysfs_adsp:file { open write };
+allow mobile_log_d sysfs_adsp:dir search;
+allow mobile_log_d adsp_device:chr_file { read open };
+
 #sspm
 allow mobile_log_d sysfs_sspm:file { open write };
 allow mobile_log_d sysfs_sspm:dir search;

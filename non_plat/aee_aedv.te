@@ -321,6 +321,10 @@ allow aee_aedv sysfs_lowmemorykiller:file r_file_perms;
 allow aee_aedv sysfs_scp:dir r_dir_perms;
 allow aee_aedv sysfs_scp:file r_file_perms;
 
+# Purpose: Allow aee read /sys/class/misc/adsp/adsp_dump
+allow aee_aedv sysfs_adsp:dir r_dir_perms;
+allow aee_aedv sysfs_adsp:file r_file_perms;
+
 # Purpose: allow aee_aedv self to fsetid/sys_nice/chown/fowner/kill
 allow aee_aedv self:capability { fsetid sys_nice chown fowner kill };
 
