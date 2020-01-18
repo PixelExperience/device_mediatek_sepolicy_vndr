@@ -317,6 +317,9 @@ type rilproxy_atci_socket, file_type;
 type atci_service_socket, file_type;
 type adb_atci_socket, file_type;
 
+# EM Power PMU register reading/setting
+type debugfs_regmap, fs_type, debugfs_type;
+
 # Date : 2018/11/01
 # Purpose : mtk EM c2k bypass read usb file
 type sys_usb_rawbulk, fs_type, sysfs_type;

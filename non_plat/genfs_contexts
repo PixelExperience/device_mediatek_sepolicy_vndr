@@ -59,6 +59,8 @@ genfscon sysfs /devices/platform/battery/Pump_Express u:object_r:sysfs_pump_expr
 genfscon sysfs /devices/platform/mt_charger/power_supply u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/mt-rtc/rtc    u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/mt-pmic u:object_r:sysfs_pmu:s0
+genfscon sysfs /devices/platform/1000d000.pwrap/mt-pmic u:object_r:sysfs_pmu:s0
+genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6359-pmic/mt-pmic u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/mt6333-user u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/mt6311-user u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/mt_usb/musb-hdrc/dual_role_usb u:object_r:sysfs_dual_role_usb20:s0
@@ -106,6 +108,9 @@ genfscon proc /partitions u:object_r:proc_partition:s0
 
 # allow netd to set MTU
 genfscon sysfs /devices/virtual/net u:object_r:sysfs_net:s0
+
+# mtk EM power PMU register
+genfscon  debugfs /rt-regmap u:object_r:debugfs_regmap:s0
 
 # Date : 2018/11/01
 # Purpose : mtk EM c2k bypass read usb file
