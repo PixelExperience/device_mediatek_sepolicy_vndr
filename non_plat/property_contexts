@@ -58,7 +58,6 @@ ctl.ril-daemon-mtk   u:object_r:ctl_ril-daemon-mtk_prop:s0
 ctl.fusion_ril_mtk   u:object_r:ctl_fusion_ril_mtk_prop:s0
 ctl.ril-daemon-s   u:object_r:ctl_ril-daemon-s_prop:s0
 ctl.ril-daemon-d   u:object_r:ctl_ril-daemon-d_prop:s0
-ctl.viarild       u:object_r:ctl_viarild_prop:s0
 ctl.ril-proxy   u:object_r:ctl_ril-proxy_prop:s0
 
 ctl.ccci_fsd         u:object_r:ctl_ccci_fsd_prop:s0
@@ -68,7 +67,7 @@ ctl.muxreport-daemon u:object_r:ctl_muxreport-daemon_prop:s0
 
 vendor.ril.active.md        u:object_r:ril_active_md_prop:s0
 vendor.ril.mux.report.case  u:object_r:ril_mux_report_case_prop:s0
-ril.cdma.report      u:object_r:ril_cdma_report_prop:s0
+vendor.ril.cdma.report      u:object_r:ril_cdma_report_prop:s0
 
 #=============allow dynamic telephony switch==============
 ro.boot.opt_c2k_lte_mode    u:object_r:tel_switch_prop:s0
