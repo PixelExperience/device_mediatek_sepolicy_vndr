@@ -161,7 +161,7 @@ allow meta_tst mt6605_device:chr_file rw_file_perms;
 #Operation : Migration
 #Purpose : DRM key installation
 #allow meta_tst shell_exec:file rx_file_perms;
-allow meta_tst system_data_file:dir create;
+#allow meta_tst system_data_file:dir create;
 allow meta_tst key_install_data_file:dir w_dir_perms;
 allow meta_tst key_install_data_file:file create_file_perms;
 
@@ -228,8 +228,8 @@ allow meta_tst gsm0710muxd_device:chr_file rw_file_perms;
 
 #Date: W16.33
 # Purpose:  N Migration For CCT
-allow meta_tst media_rw_data_file:dir { search read open getattr };
-allow meta_tst media_rw_data_file:file { write open read};
+#allow meta_tst media_rw_data_file:dir { search read open getattr };
+#allow meta_tst media_rw_data_file:file { write open read};
 
 # Date : WK16.35
 # Purpose : Update camera flashlight driver device file
@@ -275,13 +275,13 @@ allow meta_tst ctl_emdlogger1_prop:property_service set;
 
 #Date: W17.27
 # Purpose : Allow meta_tst read /data/nvram link
-allow meta_tst system_data_file:lnk_file read;
+#allow meta_tst system_data_file:lnk_file read;
 
 #Date: W17.27
 # Purpose: STMicro NFC solution integration
 allow meta_tst st21nfc_device:chr_file { open read write ioctl };
-allow meta_tst factory_data_file:sock_file { write unlink };
-allow meta_tst nfc_socket:dir search;
+#allow meta_tst factory_data_file:sock_file { write unlink };
+#allow meta_tst nfc_socket:dir search;
 allow meta_tst vendor_file:file { getattr execute execute_no_trans read open };
 set_prop(meta_tst,hwservicemanager_prop);
 hwbinder_use(meta_tst);
@@ -315,17 +315,17 @@ allow meta_tst mddb_data_file:dir { search write add_name create getattr read op
 
 # Date: W17.43
 # Purpose : meta access mobile log.
-allow meta_tst logtemp_data_file:dir { relabelto create_dir_perms };
-allow meta_tst logtemp_data_file:file create_file_perms;
-allow meta_tst data_tmpfs_log_file:dir create_dir_perms;
-allow meta_tst data_tmpfs_log_file:file create_file_perms;
+#allow meta_tst logtemp_data_file:dir { relabelto create_dir_perms };
+#allow meta_tst logtemp_data_file:file create_file_perms;
+#allow meta_tst data_tmpfs_log_file:dir create_dir_perms;
+#allow meta_tst data_tmpfs_log_file:file create_file_perms;
 
 # Date: W17.43
 # Purpose meta access on /data/mdlog
-allow meta_tst mdlog_data_file:dir { create_dir_perms relabelto };
-allow meta_tst mdlog_data_file:fifo_file { create_file_perms };
-allow meta_tst mdlog_data_file:file { create_file_perms };
-allow meta_tst system_data_file:dir { create_dir_perms relabelfrom};
+#allow meta_tst mdlog_data_file:dir { create_dir_perms relabelto };
+#allow meta_tst mdlog_data_file:fifo_file { create_file_perms };
+#allow meta_tst mdlog_data_file:file { create_file_perms };
+#allow meta_tst system_data_file:dir { create_dir_perms relabelfrom};
 
 # Date: W17.43
 # Purpose : Allow meta_tst to call android.hardware.audio@2.0-service-mediatek
