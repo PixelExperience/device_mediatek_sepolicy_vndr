@@ -254,7 +254,7 @@ type sysfs_boot_mode, fs_type, sysfs_type;
 type sysfs_boot_type, fs_type, sysfs_type;
 
 # consys Log folder
-type consyslog_data_file, file_type, data_file_type;
+type consyslog_data_file, file_type, data_file_type, core_data_file_type;
 
 # Date : WK1817
 # Purpose : for meta to get com port type and uart port info

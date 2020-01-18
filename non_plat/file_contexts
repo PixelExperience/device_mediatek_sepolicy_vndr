@@ -60,7 +60,7 @@
 /data/vendor/audiohal(/.*)? u:object_r:mtk_audiohal_data_file:s0
 /data/vendor/powerhal(/.*)? u:object_r:mtk_powerhal_data_file:s0
 #/data/vendor/nfc(/.*)? u:object_r:nfc_data_file:s0
-/data/vendor/connsyslog(/.*)?  u:object_r:consyslog_data_file:s0
+/data/connsyslog(/.*)?  u:object_r:consyslog_data_file:s0
 /data/vendor/stp_dump(/.*)? u:object_r:stp_dump_data_file:s0
 /data/vendor/mediadrm(/.*)?      u:object_r:mediadrm_vendor_data_file:s0
 
@@ -552,7 +552,7 @@
 /(system\/vendor|vendor)/bin/factory u:object_r:factory_exec:s0
 
 /(system\/vendor|vendor)/bin/mnld u:object_r:mnld_exec:s0
-/(system\/vendor|vendor)/bin/connsyslogger u:object_r:connsyslogger_exec:s0
+/system/bin/connsyslogger u:object_r:connsyslogger_exec:s0
 
 /(system\/vendor|vendor)/bin/sysenv_daemon u:object_r:sysenv_daemon_exec:s0
 /(system\/vendor|vendor)/bin/biosensord_nvram u:object_r:biosensord_nvram_exec:s0
