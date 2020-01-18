@@ -107,13 +107,13 @@ ctl.emdlogger5       u:object_r:ctl_emcsmdlogger_prop:s0
 ctl.eemcs_fsd         u:object_r:ctl_eemcs_fsd_prop:s0
 
 #=============allow c2k_prop ==============
-net.cdma.mdmstat u:object_r:net_cdma_mdmstat:s0
+vendor.net.cdma.mdmstat u:object_r:net_cdma_mdmstat:s0
 
 #=============allow bt prop==============
 bt.                         u:object_r:bt_prop:s0
 persist.bt.          u:object_r:persist_bt_prop:s0
 #=============allow ccci_mdinit md status ==============
-mtk.md   u:object_r:mtk_md_prop:s0
+vendor.mtk.md   u:object_r:mtk_md_prop:s0
 #============= allow factory idle current prop ==============
 vendor.debug.factory.idle_state    u:object_r:vendor_factory_idle_state_prop:s0
 
@@ -195,3 +195,6 @@ persist.vendor.debug.wifi_fw_level u:object_r:mtk_debug_wifi_level_prop:s0
 
 #=============allow EM to set BT ssp debug mode property================
 persist.vendor.bt.sspdebug.enable u:object_r:mtk_bt_sspdebug_prop:s0
+
+#=============allow ccci_mdinit get ccci_fsd property===========
+init.svc.ccci_fsd u:object_r:mtk_ccci_fsd_prop:s0

@@ -53,6 +53,9 @@ allow ccci_fsd rawfs:file create_file_perms;
 allow ccci_fsd sysfs_ccci:dir search;
 allow ccci_fsd sysfs_ccci:file r_file_perms;
 
+#============= ccci_fsd ==============
+allow ccci_fsd mnt_vendor_file:dir search;
+
 # Purpose: for fstab parser
 allow ccci_fsd kmsg_device:chr_file w_file_perms;
 allow ccci_fsd proc_lk_env:file rw_file_perms;
