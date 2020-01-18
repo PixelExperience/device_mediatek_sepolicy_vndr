@@ -255,10 +255,6 @@ allow factory ctl_default_prop:property_service set;
 # Purpose : Update camera flashlight driver device file
 allow factory flashlight_device:chr_file rw_file_perms;
 
-# Date : WK16.48
-# Purpose: For SmartPa speaker calibration
-allow factory proc:dir search;
-#allow factory proc:file {open read write};
 
 # Date: WK15.25
 #Purpose: for unmount sdcardfs and stop services which are using data partition
