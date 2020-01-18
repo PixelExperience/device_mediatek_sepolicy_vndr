@@ -98,3 +98,10 @@ hal_client_domain(platform_app, mtk_hal_fm)
 # Purpose : MTKLogger need connect to log hidl server
 # Package: com.mediatek.mtklogger
 hal_client_domain(platform_app, mtk_hal_log)
+
+# Date: 2018/06/08
+# Operation : Migration
+# Purpose : MTKLogger need get netlog/mdlog property for property change
+# Package: com.mediatek.mtklogger
+allow platform_app debug_mdlogger_prop:file { read getattr open };
+allow platform_app debug_mtklog_prop:file { read getattr open };

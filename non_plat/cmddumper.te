@@ -1,5 +1,4 @@
-#cmddumper access external modem ttySDIO2 
-typeattribute cmddumper system_writes_vendor_properties_violators;
+#cmddumper access external modem ttySDIO2
 allow cmddumper ttySDIO_device:chr_file { read write ioctl open };
 
 # for modem logging sdcard access
