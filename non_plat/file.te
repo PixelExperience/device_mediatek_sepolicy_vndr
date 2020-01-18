@@ -360,6 +360,7 @@ type sysfs_dis_nafg, fs_type, sysfs_type;
 # Date : WK18.16
 # Purpose: Android Migration
 type sysfs_mmcblk, fs_type, sysfs_type;
+type sysfs_mmcblk1, fs_type, sysfs_type;
 
 type aee_dipdebug_vendor_file, file_type, data_file_type;
 
