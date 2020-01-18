@@ -41,9 +41,9 @@ persist.vendor.aee u:object_r:persist_aee_prop:s0
 # vendor.debug.mtk.aee.db
 vendor.debug.mtk.aee u:object_r:debug_mtk_aee_prop:s0
 
-ro.vendor.aee.build.info u:object_r:persist_mtk_aee_prop:s0
-
-ro.vendor.hava_aee_feature u:object_r:persist_mtk_aee_prop:s0
+ro.vendor.aee.build.info u:object_r:ro_mtk_aee_prop:s0
+ro.vendor.aee.enforcing u:object_r:ro_mtk_aee_prop:s0
+ro.vendor.have_aee_feature u:object_r:ro_mtk_aee_prop:s0
 
 #=============allow AEE_Dumpstate==============
 vendor.debug.bq.dump u:object_r:debug_bq_dump_prop:s0
