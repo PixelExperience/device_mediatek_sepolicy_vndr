@@ -10,7 +10,7 @@ allow mediacodec devmap_device:chr_file { ioctl };
 # Date : WK14.36
 # Operation : Migration
 # Purpose : VDEC/VENC device node
-allow mediacodec Vcodec_device:chr_file { read write ioctl open };
+allow mediacodec Vcodec_device:chr_file rw_file_perms;
 
 # Date : WK16.21
 # Operation : Migration
