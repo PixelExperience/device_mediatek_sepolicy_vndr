@@ -264,8 +264,8 @@ allow mtk_hal_camera mtk_cmdq_device:chr_file { read ioctl open };
 # Date : WK17.36
 # Operation : O Migration
 # Purpose: Allow to access battery status
-allow mtk_hal_camera sysfs_power_supply:dir search;
-allow mtk_hal_camera sysfs_power_supply:file { getattr open read };
+allow mtk_hal_camera sysfs_batteryinfo:dir search;
+allow mtk_hal_camera sysfs_batteryinfo:file { getattr open read };
 
 # Date : WK17.39
 # Operation : O Migration

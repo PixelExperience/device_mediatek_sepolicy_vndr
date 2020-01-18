@@ -56,7 +56,6 @@ type proc_lk_env, fs_type;
 type proc_ged, fs_type;
 type proc_perfmgr, fs_type;
 type sysfs_therm, fs_type, sysfs_type;
-type sysfs_power_supply, fs_type, sysfs_type;
 type sysfs_fps, fs_type, sysfs_type;
 type sysfs_ccci, fs_type, sysfs_type;
 type sysfs_ssw, fs_type,sysfs_type;

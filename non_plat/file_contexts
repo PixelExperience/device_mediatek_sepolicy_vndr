@@ -473,7 +473,6 @@
 /sys/bus/platform/drivers/dev_info/dev_info u:object_r:sysfs_devinfo:s0
 /sys/firmware/devicetree/base/chosen/atag\,devinfo u:object_r:sysfs_devinfo:s0
 /sys/devices/virtual/thermal(/.*)? u:object_r:sysfs_therm:s0
-/sys/devices/platform/battery/power_supply(/.*)? u:object_r:sysfs_power_supply:s0
 /sys/devices/virtual/switch/fps(/.*)? u:object_r:sysfs_fps:s0
 /sys/class/BOOT/BOOT/boot/boot_mode(/.*)? u:object_r:sysfs_boot:s0
 
