@@ -49,7 +49,6 @@ allow mnld lbs_hidl_service:unix_dgram_socket sendto;
 allow mnld merged_hal_service:unix_dgram_socket sendto;
 
 # Purpose : For access system data
-typeattribute mnld data_between_core_and_vendor_violators;
 allow mnld bootdevice_block_device:blk_file rw_file_perms;
 allow mnld block_device:dir search;
 allow mnld mnld_prop:property_service set;
@@ -76,10 +75,6 @@ allow mnld gps_data_file:lnk_file read;
 
 allow mnld storage_file:lnk_file read;
 allow mnld nvcfg_file:dir search;
-allow mnld media_rw_data_file:dir { search create read open write add_name remove_name getattr };
-allow mnld media_rw_data_file:file create;
-allow mnld media_rw_data_file:file rw_file_perms;
-allow mnld media_rw_data_file:file create_file_perms;
 
 # Date : WK15.30
 # Operation : Migration
