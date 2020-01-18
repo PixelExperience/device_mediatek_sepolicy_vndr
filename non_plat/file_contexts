@@ -549,7 +549,7 @@
 /(system\/vendor|vendor)/bin/biosensord_nvram u:object_r:biosensord_nvram_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-mediatek u:object_r:mtk_hal_bluetooth_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.gnss@1\.1-service u:object_r:mtk_hal_gnss_exec:s0
-/(system\/vendor|vendor)/bin/hw/android\.hardware\.audio@2\.0-service-mediatek u:object_r:mtk_hal_audio_exec:s0
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.audio@4\.0-service-mediatek u:object_r:mtk_hal_audio_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.power@2\.0-service u:object_r:mtk_hal_power_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.sensors@1\.0-service-mediatek u:object_r:mtk_hal_sensors_exec:s0
 /(system\/vendor|vendor)/bin/hw/rilproxy u:object_r:rild_exec:s0
