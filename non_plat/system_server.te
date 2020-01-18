@@ -9,8 +9,8 @@ allow system_server irtx_device:chr_file rw_file_perms;
 allow system_server qemu_pipe_device:chr_file rw_file_perms;
 allow system_server wmtWifi_device:chr_file w_file_perms;
 
-# /proc access.
-#allow system_server proc:file w_file_perms;
+# Add for bootprof
+allow system_server proc_bootprof:file w_file_perms;
 
 # /data/core access.
 allow system_server aee_core_data_file:dir r_dir_perms;
