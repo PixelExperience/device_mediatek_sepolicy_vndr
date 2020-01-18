@@ -402,3 +402,12 @@ set_prop(meta_tst, powerctl_prop);
 # Purpose : Allow meta_tst to set system clock
 # avc: denied { sys_time } for capability=25 scontext=u:r:meta_tst:s0 tcontext=u:r:meta_tst:s0 tclass=capability permissive=0
 allow meta_tst self:capability sys_time;
+
+# Data: W18.35
+# Operation: Android P migration
+# Purpose : check usb online status
+# avc: denied { search } for name="power_supply" dev="sysfs" ino=8712 scontext=u:r:meta_tst:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=dir permissive=0
+# avc: denied { read } for name="online" dev="sysfs" ino=8764 scontext=u:r:meta_tst:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=file permissive=0
+# avc: denied { open } for path="/sys/devices/platform/mt_charger/power_supply/usb/online" dev="sysfs" ino=8764 scontext=u:r:meta_tst:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=file permissive=0
+allow meta_tst sysfs_batteryinfo:dir search;
+allow meta_tst sysfs_batteryinfo:file {read open};
