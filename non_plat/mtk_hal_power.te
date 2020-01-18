@@ -42,6 +42,7 @@ allow mtk_hal_power mtk_hal_audio:dir getattr;
 # Purpose : Allow powerHAL to access perfmgr
 allow mtk_hal_power proc_perfmgr:dir search;
 allow mtk_hal_power proc_perfmgr:file { getattr open read write ioctl };
+allowxperm mtk_hal_power proc_perfmgr:file ioctl FPSGO_TOUCH;
 
 # Date : 2017/10/11
 # Operation: SQC
