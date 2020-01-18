@@ -133,8 +133,8 @@ allow system_server wifi_prop:file { read getattr open };
 allow system_server aee_aed:unix_stream_socket connectto;
 
 #Dat: 2017/02/14
-#Purpose: allow set telephony Sensitive property
-set_prop(system_server, mtk_telephony_sensitive_prop)
+#Purpose: allow get telephony Sensitive property
+get_prop(system_server, mtk_telephony_sensitive_prop)
 
 # Date: W17.22
 # Operation : New Feature
