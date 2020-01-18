@@ -100,7 +100,6 @@ allow aee_aed dumpstate:unix_stream_socket { read write ioctl };
 allow aee_aed dumpstate:dir search;
 allow aee_aed dumpstate:file r_file_perms;
 
-#allow aee_aed proc:file rw_file_perms;
 allow aee_aed logdr_socket:sock_file write;
 allow aee_aed logd:unix_stream_socket connectto;
 # allow aee_aed system_ndebug_socket:sock_file write; mask for never allow rule

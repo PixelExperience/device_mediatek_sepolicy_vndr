@@ -14,7 +14,6 @@ allow dumpstate mnt_user_file:lnk_file read;
 allow dumpstate storage_file:lnk_file read;
 
 # Purpose: timer_intval. this is neverallow
-#allow dumpstate sysfs:file r_file_perms;
 allow dumpstate app_data_file:dir search;
 allow dumpstate kmsg_device:chr_file r_file_perms;
 
