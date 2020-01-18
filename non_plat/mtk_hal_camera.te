@@ -176,8 +176,8 @@ allow mtk_hal_camera dumpstate:fifo_file write;
 # Purpose: avc: denied { write } for path="/data/vendor/mtklog/aee_exp/temp/db.fXpwOm/SYS_DEBUG_MTKCAM"
 # dev="dm-0" ino=82287 scontext=u:r:mtk_hal_camera:s0 tcontext=u:object_r:aee_exp_data_file:s0
 # tclass=file permissive=0
-allow mtk_hal_camera aee_exp_data_file:dir { w_dir_perms };
-allow mtk_hal_camera aee_exp_data_file:file { create_file_perms };
+#allow mtk_hal_camera aee_exp_data_file:dir { w_dir_perms };
+#allow mtk_hal_camera aee_exp_data_file:file { create_file_perms };
 
 # -----------------------------------
 # Android O
@@ -212,12 +212,11 @@ allow mtk_hal_camera untrusted_app:dir search;
 allow mtk_hal_camera offloadservice_device:chr_file rw_file_perms;
 
 ## Purpose: for camera middleware dump image buffer to sdcard & audio frameworks dump
-typeattribute mtk_hal_camera data_between_core_and_vendor_violators;
-allow mtk_hal_camera system_data_file:dir write;
+#allow mtk_hal_camera system_data_file:dir write;
 allow mtk_hal_camera storage_file:lnk_file {read write};
 allow mtk_hal_camera mnt_user_file:dir {write read search};
 allow mtk_hal_camera mnt_user_file:lnk_file {read write};
-allow mtk_hal_camera media_rw_data_file:dir {getattr create};
+#allow mtk_hal_camera media_rw_data_file:dir {getattr create};
 
 ## Purpose: Allow mtk_hal_camera to read binder from surfaceflinger
 allow mtk_hal_camera surfaceflinger:fifo_file {read write};
