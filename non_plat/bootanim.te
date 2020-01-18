@@ -21,6 +21,12 @@ allow bootanim proc_ged:file {open read write ioctl getattr};
 # Purpose : For MTK perfmgr
 allow bootanim proc_perfmgr:dir {search read};
 allow bootanim proc_perfmgr:file {open read ioctl};
+allowxperm bootanim proc_perfmgr:file ioctl {
+  FPSGO_QUEUE
+  FPSGO_DEQUEUE
+  FPSGO_QUEUE_CONNECT
+  FPSGO_BQID
+};
 
 # Date : WK19.11
 # Operation : Migration
