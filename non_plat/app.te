@@ -53,3 +53,8 @@ allowxperm appdomain proc_perfmgr:file ioctl {
 # Date : W19.4
 # Purpose : Allow MDP user access mdp driver
 allow appdomain mdp_device:chr_file rw_file_perms;
+
+# Date : W19.23
+# Operation : Migration
+# Purpose : For platform app com.android.gallery3d
+allow { appdomain -isolated_app } radio_data_file:file rw_file_perms;
