@@ -167,7 +167,7 @@ type atm_mdmode_prop, property_type;
 type atm_ipaddr_prop, property_type;
 
 #=============allow consyslogger==============
-type vendor_consyslogger_prop, property_type, mtk_core_property_type;
+type vendor_connsysfw_prop, property_type, mtk_core_property_type;
 
 #=============radio group property=============
 type vendor_radio_prop, property_type, mtk_core_property_type;

@@ -16,7 +16,7 @@ init_daemon_domain(connsyslogger)
 
 
 #allow connsyslogger to set property
-allow connsyslogger vendor_consyslogger_prop:property_service set;
+allow connsyslogger vendor_connsysfw_prop:property_service set;
 #allow connsyslogger debug_prop:property_service set;
 allow connsyslogger persist_mtklog_prop:property_service set;
 #allow connsyslogger system_radio_prop:property_service set;
