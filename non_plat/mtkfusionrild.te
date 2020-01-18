@@ -120,8 +120,8 @@ allow rild mtk_agpsd:unix_stream_socket connectto;
 #Date 2017/10/12
 #Purpose: allow set MTU size
 allow rild toolbox_exec:file getattr;
-allow rild toolbox_exec:file {execute read open};
-allow rild toolbox_exec:file {execute_no_trans};
+#allow rild toolbox_exec:file {execute read open};
+#allow rild toolbox_exec:file {execute_no_trans};
 allow rild mtk_net_ipv6_prop:property_service set;
 
 #Dat: 2017/10/17
