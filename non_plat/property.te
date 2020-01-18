@@ -279,3 +279,5 @@ type mtk_malloc_debug_backtrace_prop, property_type, mtk_core_property_type;
 #=============MTK Voice Recognize property===========
 type mtk_voicerecgnize_prop, property_type, mtk_core_property_type;
 
+#=============allow radio to set/get xcap rawurl config================
+type persist_xcap_rawurl_prop, property_type, extended_core_property_type;

@@ -325,3 +325,5 @@ vendor.voicerecognize.raw u:object_r:mtk_voicerecgnize_prop:s0
 vendor.voicerecognize_data.raw u:object_r:mtk_voicerecgnize_prop:s0
 vendor.voicerecognize.noDL u:object_r:mtk_voicerecgnize_prop:s0
 
+#=============allow radio to set/get xcap rawurl config================
+persist.vendor.mtk.xcap.rawurl  u:object_r:persist_xcap_rawurl_prop:s0
