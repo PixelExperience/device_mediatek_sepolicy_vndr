@@ -173,6 +173,13 @@ allow mtk_hal_camera dumpstate:unix_stream_socket { read write };
 allow mtk_hal_camera dumpstate:fd { use };
 allow mtk_hal_camera dumpstate:fifo_file write;
 
+# Purpose: Allow camerahalserver to dump debug info to SYS_DEBUG_MTKCAM via aee_aedv.
+# avc: denied { write } for path="/data/vendor/mtklog/aee_exp/temp/db.9oRG8O/SYS_DEBUG_MTKCAM"
+# dev="dm-2" ino=1458278 scontext=u:r:mtk_hal_camera:s0 tcontext=u:object_r:aee_exp_vendor_file:s0
+# tclass=file permissive=0
+allow mtk_hal_camera aee_exp_vendor_file:dir { w_dir_perms };
+allow mtk_hal_camera aee_exp_vendor_file:file { create_file_perms };
+
 # -----------------------------------
 # Android O
 # Purpose: Debugging
