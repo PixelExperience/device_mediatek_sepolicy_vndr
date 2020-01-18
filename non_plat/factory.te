@@ -74,7 +74,6 @@ allow factory vendor_factory_idle_state_prop:property_service set;
 
 # Date: WK15.46
 # Purpose: gps factory mode
-####typeattribute factory data_between_core_and_vendor_violators;
 ###allow factory agpsd_data_file:dir search;
 allow factory apk_data_file:dir write;
 #allow factory gps_data_file:dir r_dir_perms;

@@ -27,7 +27,6 @@ init_daemon_domain(fuelgauged_nvram)
 # Purpose : For fg daemon can access /data/FG folder
 #file_type_auto_trans(fuelgauged_nvram, system_data_file, fuelgauged_nvram_file);
 #allow fuelgauged_nvram fuelgauged_nvram_file:file rw_file_perms;
-#typeattribute fuelgauged_nvram data_between_core_and_vendor_violators;
 #allow fuelgauged_nvram system_data_file:dir rw_dir_perms;
 
 # Data : WK16.21

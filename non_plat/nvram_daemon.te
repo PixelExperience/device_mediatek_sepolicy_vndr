@@ -70,7 +70,6 @@ allow nvram_daemon proc_lk_env:file rw_file_perms;
 
 # Purpose: for workaround
 # Todo: Remove this policy
-#typeattribute nvram_daemon data_between_core_and_vendor_violators;
 #remove from Android P
 #allow nvram_daemon system_data_file:dir write;
 

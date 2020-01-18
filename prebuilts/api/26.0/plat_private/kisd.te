@@ -16,7 +16,6 @@ typeattribute kisd mlstrustedsubject;
 init_daemon_domain(kisd)
 
 allow kisd tee_device:chr_file {read write open ioctl};
-typeattribute kisd data_between_core_and_vendor_violators;
 allow kisd provision_file:dir {read write open ioctl add_name search remove_name};
 allow kisd provision_file:file {create read write open getattr unlink};
 allow kisd system_file:file {execute_no_trans};
