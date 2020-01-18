@@ -1,0 +1,2 @@
+allow hal_usb_default sysfs_dual_role_usb20:dir search;
+allow hal_usb_default sysfs_dual_role_usb20:file {open read getattr};
