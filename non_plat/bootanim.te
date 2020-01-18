@@ -21,3 +21,8 @@ allow bootanim proc_ged:file {open read write ioctl getattr};
 # Purpose : For MTK perfmgr
 allow bootanim proc_perfmgr:dir {search read};
 allow bootanim proc_perfmgr:file {open read ioctl};
+
+# Date : WK18.20
+# Operation : Migration
+# Purpose : no permission for vendor_default_prop
+get_prop(bootanim, vendor_default_prop)

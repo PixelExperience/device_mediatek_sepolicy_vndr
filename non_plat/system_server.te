@@ -191,3 +191,8 @@ allow system_server mtk_thermal_config_prop:property_service set;
 # Purpose : perfmgr permission
 allow system_server proc_perfmgr:dir {read search};
 allow system_server proc_perfmgr:file {open read ioctl};
+
+# Date : WK18.20
+# Operation : Migration
+# Purpose : no permission for vendor_default_prop
+get_prop(system_server, vendor_default_prop)
