@@ -106,6 +106,7 @@ type eemcs_device, dev_type;
 type emd_device, dev_type;
 type mt6605_device, dev_type;
 type st21nfc_device, dev_type;
+type st54spi_device, dev_type;
 type exm0_device, dev_type;
 type mmcblk_device, dev_type;
 type BOOT_device, dev_type;
