@@ -22,7 +22,6 @@ allow kernel system_data_file:lnk_file r_file_perms;
 # Operation : Migration
 # Purpose : transit from kernel to aee_core_forwarder domain when executing aee_core_forwarder
 typeattribute kernel system_executes_vendor_violators;
-domain_auto_trans(kernel, aee_core_forwarder_exec, aee_core_forwarder)
 
 # Date : WK14.43
 # Operation : Migration

@@ -1,11 +1,11 @@
 # ==============================================
-# Policy File of /vendor/bin/aee_core_forwarder Executable File
+# Policy File of /system/bin/aee_core_forwarder Executable File
 
 # ==============================================
 # Type Declaration
 # ==============================================
-type aee_core_forwarder_exec, exec_type, file_type, vendor_file_type;
-type aee_core_forwarder, domain;
+type aee_core_forwarder_exec, exec_type, file_type;
+typeattribute aee_core_forwarder coredomain;
 
 # ==============================================
 # MTK Policy Rule
@@ -13,18 +13,17 @@ type aee_core_forwarder, domain;
 init_daemon_domain(aee_core_forwarder)
 
 #/data/core/zcorexxx.zip
-allow aee_core_forwarder aee_core_data_file:dir relabelto;
-allow aee_core_forwarder aee_core_data_file:dir create_dir_perms;
-allow aee_core_forwarder aee_core_data_file:file create_file_perms;
-typeattribute aee_core_forwarder data_between_core_and_vendor_violators;
-allow aee_core_forwarder system_data_file:dir { write relabelfrom create add_name };
+#allow aee_core_forwarder aee_core_data_file:dir relabelto;
+#allow aee_core_forwarder aee_core_data_file:dir create_dir_perms;
+#allow aee_core_forwarder aee_core_data_file:file create_file_perms;
+#allow aee_core_forwarder system_data_file:dir { write relabelfrom create add_name };
 
 #mkdir /sdcard/mtklog/aee_exp and write /sdcard/mtklog/aee_exp/zcorexxx.zip
 allow aee_core_forwarder sdcard_type:dir create_dir_perms;
 allow aee_core_forwarder sdcard_type:file create_file_perms;
 allow aee_core_forwarder self:capability fsetid;
-allow aee_core_forwarder aee_exp_data_file:dir create_dir_perms;
-allow aee_core_forwarder aee_exp_data_file:file create_file_perms;
+#allow aee_core_forwarder aee_exp_data_file:dir create_dir_perms;
+#allow aee_core_forwarder aee_exp_data_file:file create_file_perms;
 
 #mkdir(path, mode)
 #allow aee_core_forwarder self:capability dac_override;
@@ -64,7 +63,7 @@ dontaudit aee_core_forwarder untrusted_app:dir search;
 # Purpose : access for pipefs
 allow aee_core_forwarder kernel:fd use;
 # Purpose : read AEE persist property
-allow aee_core_forwarder persist_aee_prop:file r_file_perms;
+#allow aee_core_forwarder persist_aee_prop:file r_file_perms;
 # Purpose: search root dir "/"
 allow aee_core_forwarder tmpfs:dir search;
 # Purpose : read /selinux_version
@@ -104,7 +103,7 @@ allow aee_core_forwarder media_rw_data_file:file { create open write };
 # Purpose : type=1400 audit(0.0:6594): avc: denied { connectto } for
 #           path=00616E64726F69643A6165655F616564 scontext=u:r:aee_core_forwarder:s0
 #           tcontext=u:r:aee_aedv:s0 tclass=unix_stream_socket permissive=0
-allow aee_core_forwarder aee_aedv:unix_stream_socket connectto;
+#allow aee_core_forwarder aee_aedv:unix_stream_socket connectto;
 
 # Data : 2017/08/04
 # Operation : fix sys_nice selinux warning
