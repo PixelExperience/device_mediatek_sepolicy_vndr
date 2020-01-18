@@ -144,3 +144,7 @@ get_prop(rild, tel_switch_prop)
 #Date: W1817
 #Purpose: allow rild access property of vendor_radio_prop
 set_prop(rild, vendor_radio_prop)
+
+#Date : W18.21
+#Purpose: allow rild access to vendor.ril.ipo system property
+set_prop(rild, vendor_ril_ipo_prop)
