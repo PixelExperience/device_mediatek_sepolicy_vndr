@@ -15,7 +15,6 @@ allow netdiag vfat:file create_file_perms;
 allow netdiag tmpfs:lnk_file read;
 
 #Purpose : for network log property
-typeattribute netdiag system_writes_vendor_properties_violators;
 set_prop(netdiag, debug_netlog_prop)
 set_prop(netdiag, persist_mtklog_prop)
 set_prop(netdiag, debug_mtklog_prop)
