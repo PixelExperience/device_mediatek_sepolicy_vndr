@@ -15,6 +15,7 @@ ctl.dualmdlogger       u:object_r:ctl_dualmdlogger_prop:s0
 
 #=============allow mtkrild to set persist.ril property==============
 persist.ril u:object_r:persist_ril_prop:s0
+vendor.ril.ipo u:object_r:vendor_ril_ipo_prop:s0
 
 #=============allow netlog==============
 #debug.mtklog.init.flag
@@ -44,7 +45,7 @@ debug.mtk.aee u:object_r:debug_mtk_aee_prop:s0
 debug.bq.dump u:object_r:debug_bq_dump_prop:s0
 
 #=============allow mux==============
-ril.mux.      u:object_r:gsm0710muxd_prop:s0
+vendor.ril.mux.      u:object_r:gsm0710muxd_prop:s0
 
 #=============allow mdinit==============
 ctl.ril-daemon-mtk   u:object_r:ctl_ril-daemon-mtk_prop:s0
@@ -60,7 +61,7 @@ ctl.ccci3_fsd         u:object_r:ctl_ccci3_fsd_prop:s0
 ctl.muxreport-daemon u:object_r:ctl_muxreport-daemon_prop:s0
 
 vendor.ril.active.md        u:object_r:ril_active_md_prop:s0
-ril.mux.report.case  u:object_r:ril_mux_report_case_prop:s0
+vendor.ril.mux.report.case  u:object_r:ril_mux_report_case_prop:s0
 ril.cdma.report      u:object_r:ril_cdma_report_prop:s0
 
 #=============allow bootanim==============
