@@ -398,6 +398,16 @@ allow meta_tst self:capability sys_time;
 allow meta_tst sysfs_batteryinfo:dir search;
 allow meta_tst sysfs_batteryinfo:file {read open};
 
+# Data: W18.42
+# Operation: Android P migration
+# Purpose : add socket permission for meta
+allow meta_tst fwmarkd_socket:sock_file write;
+
+#Date: W18.42
+# Operation: Android P migration
+# Purpose : Add ATM meta mvram sepolicy
+allow meta_tst mnt_vendor_file:dir search;
+
 # Date : WK19.08
 # Operation: P migration
 # Purpose : audio scp recovery
