@@ -37,3 +37,5 @@
 # it is used to mount all storages in meta/factory mode
 /system/bin/storagemanagerd u:object_r:storagemanagerd_exec:s0
 
+# For drmserver
+/sys/block/mmcblk0rpmb/size u:object_r:access_sys_file:s0
