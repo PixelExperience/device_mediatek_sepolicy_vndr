@@ -18,14 +18,12 @@ allow thermal_manager proc_thermal:dir search;
 allow thermal_manager proc_mtkcooler:file rw_file_perms;
 allow thermal_manager proc_mtktz:file rw_file_perms;
 allow thermal_manager proc_thermal:file rw_file_perms;
-typeattribute thermal_manager data_between_core_and_vendor_violators;
-allow thermal_manager system_data_file:dir { write add_name };
-#allow thermal_manager self:capability { fowner chown fsetid dac_override };
+
 
 # Date : WK15.30
 # Operation : Migration
 # Purpose : Use file_type_auto_trans to specify label to avoid violated(never allow)
-#allow thermal_manager thermal_manager_data_file:file { create write read open setattr write lock};
+allow thermal_manager thermal_manager_data_file:file { create write read open setattr write lock};
 allow thermal_manager thermal_manager_data_file:dir { rw_dir_perms setattr };
 
 allow thermal_manager mediaserver:fd use;
@@ -50,3 +48,8 @@ allow thermal_manager sysfs:file write;
 # Purpose : Allow thermal_manager to notify SPA.
 allow thermal_manager mtk_thermal_config_prop:file { getattr open read };
 allow thermal_manager mtk_thermal_config_prop:property_service set;
+
+# Date : WK18.18
+# Operation : P Migration
+# Purpose : Allow thermal_manager to access vendor data file.
+allow thermal_manager vendor_data_file:dir { write add_name };
