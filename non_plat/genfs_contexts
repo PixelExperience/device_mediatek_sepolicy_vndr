@@ -249,3 +249,14 @@ genfscon sysfs /module/pftch_qos u:object_r:sysfs_pftch_qos:s0
 # Date : WK19.38
 # Purpose: Android Migration for video codec driver
 genfscon sysfs /firmware/devicetree/base/model u:object_r:sysfs_device_tree_model:s0
+
+# Date : 2019/10/11
+# Purpose : allow system_server to access /proc/wlan/status for Q Migration
+genfscon proc /wlan/status u:object_r:proc_wlan_status:s0
+
+# Date : 2019/10/11
+# Purpose : allow system_server to access /sys/kernel/mm/ksm/pages_xxx
+genfscon sysfs /kernel/mm/ksm/pages_shared u:object_r:sysfs_pages_shared:s0
+genfscon sysfs /kernel/mm/ksm/pages_sharing u:object_r:sysfs_pages_sharing:s0
+genfscon sysfs /kernel/mm/ksm/pages_unshared u:object_r:sysfs_pages_unshared:s0
+genfscon sysfs /kernel/mm/ksm/pages_volatile u:object_r:sysfs_pages_volatile:s0

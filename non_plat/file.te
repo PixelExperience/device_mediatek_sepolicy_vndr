@@ -413,3 +413,14 @@ type sysfs_pftch_qos, fs_type, sysfs_type;
 # Date : WK19.38
 # Purpose: Android Migration for video codec driver
 type sysfs_device_tree_model, fs_type, sysfs_type;
+
+# Date : 2019/10/11
+# Purpose : allow system_server to access /proc/wlan/status for Q Migration
+type proc_wlan_status, fs_type, proc_type;
+
+# Date : 2019/10/11
+# Purpose : allow system_server to access /sys/kernel/mm/ksm/pages_xxx
+type sysfs_pages_shared, fs_type, sysfs_type;
+type sysfs_pages_sharing, fs_type, sysfs_type;
+type sysfs_pages_unshared, fs_type, sysfs_type;
+type sysfs_pages_volatile, fs_type, sysfs_type;
