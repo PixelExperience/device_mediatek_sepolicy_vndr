@@ -162,7 +162,7 @@ type vendor_connsysfw_prop, property_type, extended_core_property_type;
 type vendor_radio_prop, property_type, mtk_core_property_type;
 
 #=============allow bluetooth==============
-type vendor_bluetooth_prop, property_type, mtk_core_property_type;
+type vendor_bluetooth_prop, property_type, extended_core_property_type;
 
 #=============allow EM to set modem reset delay property================
 type mtk_debug_md_reset_prop, property_type, mtk_core_property_type;
