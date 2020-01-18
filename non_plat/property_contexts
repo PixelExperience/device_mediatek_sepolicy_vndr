@@ -126,7 +126,6 @@ vendor.client.      u:object_r:mtk_em_prop:s0
 #=============allow mediatek_prop ==============
 vendor.debug.camera.p2plug.log u:object_r:mediatek_prop:s0
 vendor.client.em.appmode u:object_r:mediatek_prop:s0
-ro.mediatek.platform u:object_r:mediatek_prop:s0
 #=============Property set by EM, for test/debug purpose=========
 persist.vendor.em.  u:object_r:mtk_em_sys_prop:s0
 persist.vendor.em.hidl.  u:object_r:mtk_em_hidl_prop:s0
