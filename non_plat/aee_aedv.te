@@ -402,6 +402,7 @@ allow aee_aedv proc_last_kmsg:file r_file_perms;
 # Purpose: Allow aee_aedv to access /sys/devices/virtual/timed_output/vibrator/enable
 allow aee_aedv sysfs_vibrator_setting:dir search;
 allow aee_aedv sysfs_vibrator_setting:file w_file_perms;
+allow aee_aedv sysfs_vibrator:dir search;
 
 # Purpose: Allow aee_aedv to read /sys/kernel/debug/rcu/rcu_callback_log
 allow aee_aedv debugfs_rcu:file r_file_perms;
@@ -419,3 +420,11 @@ allow aee_aedv sysfs_boot:file r_file_perms;
 userdebug_or_eng(`
   allow aee_aedv debugfs_tracing_debug:file { r_file_perms write };
 ')
+# Purpose: allow aee_aedv self to sys_ptrace
+userdebug_or_eng(`allow aee_aedv self:capability sys_ptrace;')
+
+#Purpose: Allow aee_aedv to read /sys/mtk_memcfg/slabtrace
+allow aee_aedv proc_slabtrace:file r_file_perms;
+
+# temp solution
+get_prop(aee_aedv, vendor_default_prop)

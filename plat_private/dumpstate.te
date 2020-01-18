@@ -45,5 +45,8 @@ allow dumpstate hal_camera_hwservice:hwservice_manager find;
 #Purpose: Allow dumpstate to read/write /sys/kernel/debug/tracing/buffer_total_size_kb
 userdebug_or_eng(`allow dumpstate debugfs_tracing_debug:file { r_file_perms write };')
 
-# Purpose: Allow aee_dumpstate to write /sys/devices/virtual/timed_output/vibrator/enable
+# Purpose: Allow dumpstate to write /sys/devices/virtual/timed_output/vibrator/enable
 allow dumpstate sysfs_vibrator:file write;
+
+# Purpose : Allow dumpstate self to sys_nice
+allow dumpstate self:capability sys_nice;
