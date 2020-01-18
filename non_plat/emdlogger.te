@@ -1,5 +1,5 @@
 #allow emdlogger to set property
-allow emdlogger debug_mdlogger_prop:property_service set;
+#allow emdlogger debug_mdlogger_prop:property_service set;
 allow emdlogger debug_prop:property_service set;
 allow emdlogger persist_mtklog_prop:property_service set;
 allow emdlogger system_radio_prop:property_service set;
@@ -105,3 +105,11 @@ allow emdlogger port:tcp_socket { name_connect name_bind };
 allow emdlogger emdlogger:tcp_socket { create connect setopt bind };
 allow emdlogger emdlogger:tcp_socket { bind setopt listen accept read write };
 allow emdlogger node:tcp_socket node_bind;
+
+# Android P migration
+set_prop(emdlogger, vendor_mdl_prop)
+set_prop(emdlogger, vendor_mdl_start_prop)
+set_prop(emdlogger, debug_mdlogger_prop)
+get_prop(emdlogger, debug_mdlogger_prop)
+get_prop(emdlogger, vendor_mdl_prop)
+get_prop(emdlogger, vendor_mdl_start_prop)
