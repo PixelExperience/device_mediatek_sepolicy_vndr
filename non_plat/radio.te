@@ -21,6 +21,8 @@ allow radio debugfs_usb20_phy:dir search;
 # Operation : IT
 # Purpose : for engineermode sensor can work normal
 allow radio als_ps_device:chr_file { read open ioctl };
+allow radio gsensor_device:chr_file { read open ioctl };
+allow radio gyroscope_device:chr_file { read ioctl open };
 
 # Date : WK14.38 2016/06/28
 # Operation : Migration
