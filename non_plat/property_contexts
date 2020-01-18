@@ -344,3 +344,7 @@ ro.lmk.swap_free_low_percentage u:object_r:exported3_default_prop:s0 exact int
 #=============allow processes to change powerhal config================
 persist.vendor.powerhal. u:object_r:mtk_powerhal_prop:s0
 vendor.powerhal. u:object_r:mtk_powerhal_prop:s0
+
+#=============MTK Wifi wlan_assistant property=============
+vendor.mtk.nvram.ready u:object_r:mtk_nvram_ready_prop:s0
+
