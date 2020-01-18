@@ -71,3 +71,7 @@ vendor.mediatek.hardware.camera.postproc::IPostDevice u:object_r:mtk_hal_bgs_hws
 # Date : 2019/07/16
 # HDMI HIDL
 vendor.mediatek.hardware.hdmi::IMtkHdmiService u:object_r:mtk_hal_hdmi_hwservice:s0
+
+#Date: 2019/09/02
+# ATMs hidl
+vendor.mediatek.hardware.camera.atms::IATMs u:object_r:hal_camera_hwservice:s0
