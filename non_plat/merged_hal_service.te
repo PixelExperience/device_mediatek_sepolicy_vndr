@@ -57,6 +57,8 @@ allow merged_hal_service proc:dir  {search getattr};
 allow merged_hal_service proc:file {getattr open read write ioctl};
 allow merged_hal_service debugfs_ged:dir search;
 allow merged_hal_service debugfs_ged:file { getattr open read write };
+allow merged_hal_service debugfs_fpsgo:dir search;
+allow merged_hal_service debugfs_fpsgo:file { getattr open write read };
 allow merged_hal_service system_data_file:dir { create write add_name };
 allow merged_hal_service proc_thermal:file { write open };
 allow merged_hal_service proc_thermal:dir search;
