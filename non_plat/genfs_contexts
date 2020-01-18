@@ -111,6 +111,11 @@ genfscon proc /partitions u:object_r:proc_partition:s0
 # mtk EM power PMU register
 genfscon  debugfs /rt-regmap u:object_r:debugfs_regmap:s0
 
+# mtk VPU/MDLA power reading
+genfscon debugfs  /vpu/power u:object_r:debugfs_vpu_power:s0
+genfscon debugfs  /mdla/power u:object_r:debugfs_mdla_power:s0
+genfscon debugfs  /vpu/vpu_memory u:object_r:debugfs_vpu_memory:s0
+
 # Date : 2018/11/01
 # Purpose : mtk EM c2k bypass read usb file
 genfscon sysfs /devices/virtual/usb_rawbulk u:object_r:sys_usb_rawbulk:s0
@@ -119,6 +124,9 @@ genfscon proc /isp_p2 u:object_r:proc_isp_p2:s0
 #Date : 2018/11/22
 #Purpose: allow mdlogger to read mdinfo file
 genfscon sysfs /kernel/md/mdee u:object_r:sysfs_mdinfo:s0
+
+# mtk eara thermal reading
+genfscon debugfs  /eara_thermal/enable u:object_r:debugfs_eara_thermal:s0
 
 # Date : 2019/04/09
 # Purpose: mtk EM battery temprature settings

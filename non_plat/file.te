@@ -226,6 +226,16 @@ type debugfs_ged, fs_type, debugfs_type;
 # fpsgo debugfs file
 type debugfs_fpsgo, fs_type, debugfs_type;
 
+# eara_thermal debugfs file
+type debugfs_eara_thermal, fs_type, debugfs_type;
+
+# vpu debugfs file
+type debugfs_vpu_power, fs_type, debugfs_type;
+type debugfs_vpu_memory, fs_type, debugfs_type;
+
+# mdla debugfs file
+type debugfs_mdla_power, fs_type, debugfs_type;
+
 # memtrack debugfs file
 type debugfs_gpu_mali_midgard, fs_type, debugfs_type;
 type debugfs_gpu_mali_utgard, fs_type, debugfs_type;

@@ -15,6 +15,9 @@ allow mtk_hal_power hidl_base_hwservice:hwservice_manager add;
 add_hwservice(mtk_hal_power, mtk_hal_power_hwservice)
 allow hal_power_client mtk_hal_power_hwservice:hwservice_manager find;
 
+# netdagent
+allow mtk_hal_power mtk_hal_netdagent_hwservice:hwservice_manager find;
+allow mtk_hal_power netdagent:binder call;
 
 hal_server_domain(mtk_hal_power, hal_power);
 hal_server_domain(mtk_hal_power, hal_wifi);
@@ -104,6 +107,21 @@ allow mtk_hal_power proc_mtktz:file rw_file_perms;
 allow mtk_hal_power system_server:dir r_dir_perms;
 allow mtk_hal_power system_server:file r_file_perms;
 
+# Date : 2019/07/11
+# Operation: mt6779 SQC
+# Purpose : Allow powerHAL to VPU, RILD
+allow mtk_hal_power debugfs_vpu_power:dir r_dir_perms;
+allow mtk_hal_power debugfs_vpu_power:file rw_file_perms;
+
+allow mtk_hal_power debugfs_mdla_power:dir r_dir_perms;
+allow mtk_hal_power debugfs_mdla_power:file rw_file_perms;
+
+allow mtk_hal_power rild_oem_socket:sock_file write;
+allow mtk_hal_power rild:unix_stream_socket connectto;
+
+allow mtk_hal_power debugfs_eara_thermal:dir search;
+allow mtk_hal_power debugfs_eara_thermal:file { getattr open write read };
+
 # Date : 2019/05/22
 # Operation: SQC
 # Purpose : Allow powerHAL to access prop
@@ -116,3 +134,8 @@ allow mtk_hal_power self:udp_socket create;
 allow mtk_hal_power kernel:system module_request;
 allow mtk_hal_power self:capability sys_module;
 allowxperm mtk_hal_power self:udp_socket ioctl priv_sock_ioctls;
+
+# Date : W19.20
+# Operation : MTK power hal migration
+# Purpose : MTK power hal interface permission
+set_prop(mtk_hal_power, mtk_powerhal_prop)
