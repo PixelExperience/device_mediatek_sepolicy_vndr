@@ -4,6 +4,8 @@
 
 /data/system_de/mdfilter(/.*)? u:object_r:mddb_filter_data_file:s0
 /data/debuglogger(/.*)? u:object_r:debuglog_data_file:s0
+/data/ramdump(/.*)? u:object_r:debuglog_data_file:s0
+
 #############################
 # debugfs files
 #
