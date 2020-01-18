@@ -268,3 +268,9 @@ genfscon sysfs /kernel/mm/ksm/pages_volatile u:object_r:sysfs_pages_volatile:s0
 # Purpose : To avoid using the SELabel of u:object_r:proc:s0 or u:object_r:sysfs:s0
 # to access /proc/device-tree/chosen/atag,chipid or  /sysfs/firmware/devicetree/base/chosen/atag,chipid
 genfscon sysfs /firmware/devicetree/base/chosen/atag,chipid u:object_r:sysfs_chipid:s0
+
+# Date : 2019/10/18
+# Purpose : allow system_server to access rt5509 param and calib node
+genfscon sysfs /devices/platform/rt5509_param.0 u:object_r:sysfs_rt_param:s0
+genfscon sysfs /devices/virtual/rt5509_cal/rt5509.0 u:object_r:sysfs_rt_calib:s0
+

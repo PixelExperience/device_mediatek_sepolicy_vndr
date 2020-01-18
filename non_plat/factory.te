@@ -400,3 +400,11 @@ get_prop(factory, exported3_radio_prop)
 # Operation : Q Migration
 # Purpose: Allow clear eMMC
 set_prop(factory, ctl_mdlogger_prop);
+
+# Date : WK19.41
+# Operation : Q Migration
+# Purpose: allow system_server to access rt5509 param and calib node
+allow factory sysfs_rt_param:file rw_file_perms;
+allow factory sysfs_rt_calib:file rw_file_perms;
+allow factory sysfs_rt_param:dir r_dir_perms;
+allow factory sysfs_rt_calib:dir r_dir_perms;
