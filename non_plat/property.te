@@ -106,8 +106,8 @@ type persist_bt_prop, property_type, mtk_core_property_type;
 #============= allow factory idle current prop ==============
 type vendor_factory_idle_state_prop, property_type, mtk_core_property_type;
 
-#============= allow ftrace log property ===============
-type ftrace_log_prop, property_type, mtk_core_property_type;
+#============= allow mobile log property ===============
+type mobile_log_prop, property_type, mtk_core_property_type;
 
 #============= allow service.nvram_init property ===============
 type service_nvram_init_prop, property_type, mtk_core_property_type;
