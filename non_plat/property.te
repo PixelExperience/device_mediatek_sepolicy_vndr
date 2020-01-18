@@ -1,7 +1,9 @@
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-type mtk_default_prop, property_type;
+
+# MTK properties, allow all system/vendor processes to read.
+type mtk_default_prop, property_type, mtk_core_property_type;
 
 # Date: W14.32
 # Operation: Migration
