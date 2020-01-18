@@ -280,3 +280,7 @@ vendor.em.usb. u:object_r:vendor_em_usb_prop:s0
 
 #=============allow em to set usb otg switch property  ==============
 persist.vendor.usb.otg.switch u:object_r:vendor_usb_otg_switch:s0
+
+#============mtk rsc========#
+ro.boot.rsc u:object_r:mtk_default_prop:s0
+
