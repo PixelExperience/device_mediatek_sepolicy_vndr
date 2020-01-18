@@ -60,3 +60,6 @@ allow surfaceflinger hal_graphics_composer_default:lnk_file read;
 # Operation : Debug
 # Purpose: Allow to dump buffer queue
 get_prop(surfaceflinger, debug_bq_dump_prop)
+
+allowxperm surfaceflinger proc_perfmgr:file ioctl {GED_BRIDGE_IO_LOG_BUF_GET GED_BRIDGE_IO_BOOST_GPU_FREQ GED_BRIDGE_IO_QUERY_INFO};
+

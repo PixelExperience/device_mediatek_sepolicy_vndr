@@ -12,8 +12,10 @@ get_prop(mtk_hal_power, hwservicemanager_prop)
 allow mtk_hal_power hal_power_hwservice:hwservice_manager { add find };
 allow mtk_hal_power hidl_base_hwservice:hwservice_manager add;
 
-#add_hwservice(hal_power, mtk_hal_power_hwservice)
+add_hwservice(mtk_hal_power, mtk_hal_power_hwservice)
 allow hal_power_client mtk_hal_power_hwservice:hwservice_manager find;
+allow system_server mtk_hal_power_hwservice:hwservice_manager find;
+
 
 hal_server_domain(mtk_hal_power, hal_power);
 

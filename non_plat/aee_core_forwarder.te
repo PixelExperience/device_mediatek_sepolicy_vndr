@@ -7,3 +7,4 @@
 
 allow aee_core_forwarder aee_exp_data_file:dir { write add_name search };
 allow aee_core_forwarder aee_exp_data_file:file { write create open getattr };
+allow aee_core_forwarder hwservicemanager_prop:file { read open getattr };

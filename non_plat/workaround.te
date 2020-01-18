@@ -1,0 +1,56 @@
+
+
+#============= aee_core_forwarder ==============
+allow aee_core_forwarder aee_aed:unix_stream_socket connectto;
+allow aee_core_forwarder aee_core_data_file:dir read;
+allow aee_core_forwarder hwservicemanager:binder { call transfer };
+
+#============= audioserver ==============
+allow audioserver vendor_default_prop:file read;
+
+#============= bip ==============
+allow bip net_dns_prop:file read;
+
+#============= bluetooth ==============
+allow bluetooth mtk_amslog_prop:file read;
+
+#============= emdlogger ==============
+allow emdlogger logmuch_prop:file read;
+
+#============= merged_hal_service ==============
+allow merged_hal_service nvram_agent_binder_hwservice:hwservice_manager find;
+
+#============= mtk_hal_audio ==============
+allow mtk_hal_audio audioserver:fifo_file write;
+allow mtk_hal_audio sysfs_boot_mode:file read;
+allow mtk_hal_audio sysfs_dt_firmware_android:dir search;
+
+#============= mtk_hal_camera ==============
+allow mtk_hal_camera sysfs_dt_firmware_android:dir search;
+
+#============= platform_app ==============
+allow platform_app mtk_amslog_prop:file read;
+
+#============= rild ==============
+allow rild proc_cmdline:file read;
+
+#============= shared_relro ==============
+allow shared_relro mtk_amslog_prop:file read;
+
+#============= system_server ==============
+allow system_server vendor_default_prop:file read;
+
+#============= ueventd ==============
+allow ueventd tmpfs:lnk_file read;
+
+#============= wmt_loader ==============
+allow wmt_loader proc_wmtdbg:file setattr;
+
+# interface=android.hardware.audio::IDevicesFactory for hal_audio_hwservice
+allow hal_audio_client hal_audio_hwservice:hwservice_manager find;
+allow hal_audio_server hal_audio_hwservice:hwservice_manager find;
+allow hal_audio hal_audio_hwservice:hwservice_manager find;
+
+
+# interface=android.system.suspend::ISystemSuspend for aee_core_forwarder
+allow aee_core_forwarder system_suspend_hwservice:hwservice_manager find;
