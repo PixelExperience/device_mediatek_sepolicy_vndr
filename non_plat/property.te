@@ -167,3 +167,6 @@ type vendor_consyslogger_prop, property_type, mtk_core_property_type;
 
 #=============radio group property=============
 type vendor_radio_prop, property_type, mtk_core_property_type;
+
+#=============allow bluetooth==============
+type vendor_bluetooth_prop, property_type, mtk_core_property_type;

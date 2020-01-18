@@ -26,6 +26,9 @@ allow platform_app mdlogger:unix_stream_socket connectto;
 allow platform_app emdlogger:unix_stream_socket connectto;
 allow platform_app cmddumper:unix_stream_socket connectto;
 unix_socket_connect(platform_app, netdiag, netdiag)
+# Date: 2018/11/17
+# purpose: allow MTKLogger to control Bluetooth HCI log via socket
+allow platform_app bluetooth:unix_stream_socket connectto;
 
 # Date : 2014/10/17
 # Operation : Migration
