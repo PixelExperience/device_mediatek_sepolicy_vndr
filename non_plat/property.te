@@ -85,9 +85,6 @@ type ctl_muxreport-daemon_prop, property_type;
 #=============allow telephony modules to set tel_switch_prop==============
 type tel_switch_prop, property_type, mtk_core_property_type;
 
-#=============allow ppp to set pppoe.ppp0==============
-type pppoe_ppp0_prop, property_type, mtk_core_property_type;
-
 #=============allow bootanim==============
 type bootani_prop, property_type, mtk_core_property_type;
 
