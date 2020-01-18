@@ -144,5 +144,7 @@ allow aee_aed self:capability { sys_nice chown fowner};
 # Purpose: Allow aee_aed to write /sys/kernel/debug/tracing/snapshot
 userdebug_or_eng(`allow aee_aed debugfs_tracing_debug:file { write open };')
 
-# Purpose: Allow aee_aed self to sys_ptrace
-userdebug_or_eng(`allow aee_aed self:capability sys_ptrace;')
+# Purpose: Allow aee_aed self to sys_ptrace/dac_override/dac_read_search
+userdebug_or_eng(`
+  allow aee_aed self:capability { sys_ptrace dac_override dac_read_search };
+')
