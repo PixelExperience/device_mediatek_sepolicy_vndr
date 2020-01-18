@@ -67,3 +67,6 @@ allow mtk_hal_sensors nvcfg_file:dir create_dir_perms;
 # Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
 allow mtk_hal_sensors mnt_vendor_file:dir search;
 
+# Date : WK19.48
+# Purpose: fix [vts_10.0_r2]VtsHalSensorsV2_0Target fail
+allow mtk_hal_sensors merged_hal_service:fd use;
