@@ -11,7 +11,11 @@ type thermalloadalgod_exec , exec_type, file_type, vendor_file_type;
 # MTK Policy Rule
 # ==============================================
 init_daemon_domain(thermalloadalgod)
-file_type_auto_trans(thermal_manager, system_data_file, thermal_manager_data_file)
+
+# Date : WK18.18
+# Operation : P Migration
+# Purpose : Allow thermal_manager to access vendor data file.
+file_type_auto_trans(thermal_manager, vendor_data_file, thermal_manager_data_file)
 
 
 # Data : WK14.43
