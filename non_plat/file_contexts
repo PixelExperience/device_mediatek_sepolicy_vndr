@@ -244,7 +244,6 @@
 /dev/socket/mdnsd(/.*)? u:object_r:mdnsd_socket:s0
 /dev/socket/mdns(/.*)? u:object_r:mdns_socket:s0
 /dev/socket/mnld(/.*)? u:object_r:mnld_socket:s0
-/dev/socket/MPED(/.*)? u:object_r:MPED_socket:s0
 /dev/socket/netdiag(/.*)? u:object_r:netdiag_socket:s0
 /dev/socket/netd(/.*)? u:object_r:netd_socket:s0
 /dev/socket/rild2-md2(/.*)? u:object_r:rild2_md2_socket:s0
@@ -536,7 +535,6 @@
 /(system\/vendor|vendor)/bin/spm_loader u:object_r:spm_loader_exec:s0
 /(system\/vendor|vendor)/bin/ccci_mdinit u:object_r:ccci_mdinit_exec:s0
 
-/(system\/vendor|vendor)/bin/MPED u:object_r:MPED_exec:s0
 /(system\/vendor|vendor)/bin/mnld u:object_r:mnld_exec:s0
 
 /(system\/vendor|vendor)/bin/sysenv_daemon u:object_r:sysenv_daemon_exec:s0
