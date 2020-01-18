@@ -1,7 +1,6 @@
 # ==============================================
 # Policy File of /vendor/bin/nvram_agent_binder Executable File
 
-
 # ==============================================
 # Type Declaration
 # ==============================================
@@ -17,7 +16,6 @@ init_daemon_domain(nvram_agent_binder)
 # Operation : access nvram by binder 
 # Purpose : ensure nvram user can access nvram file normally. 
 allow nvram_agent_binder nvram_agent_service:service_manager add;
-
 
 # Date : WK14.43
 # Operation : 2rd Selinux Migration 
@@ -42,6 +40,7 @@ allow nvram_agent_binder init:unix_stream_socket connectto;
 allow nvram_agent_binder property_socket:sock_file write;
 allow nvram_agent_binder sysfs:file write;
 #allow nvram_agent_binder self:capability { fowner chown dac_override fsetid };
+typeattribute nvram_agent_binder data_between_core_and_vendor_violators;
 allow nvram_agent_binder system_data_file:dir create_file_perms;
 
 # Purpose: for backup
@@ -56,7 +55,6 @@ allow nvram_agent_binder mtd_device:chr_file rw_file_perms;
 
 #for nvram agent hidl
 allow nvram_agent_binder hwservicemanager_prop:file r_file_perms;
-
 
 #for nvram hidl client support
 allow nvram_agent_binder sysfs:file { read open };

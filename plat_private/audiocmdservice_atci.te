@@ -24,7 +24,6 @@ binder_call(audiocmdservice_atci, audioserver)
 allow audiocmdservice_atci audioserver:dir w_dir_perms;
 allow audiocmdservice_atci audioserver_service:service_manager find;
 
-
 # Access to fuse file system
 allow audiocmdservice_atci sdcard_type:file create_file_perms;
 allow audiocmdservice_atci sdcard_type:dir w_dir_perms;
@@ -32,8 +31,6 @@ allow audiocmdservice_atci sdcard_type:dir w_dir_perms;
 # Access to internal storage
 allow audiocmdservice_atci media_rw_data_file:dir create_dir_perms;
 allow audiocmdservice_atci media_rw_data_file:file create_file_perms;
-
-
 
 #To access the file at /dev/kmsg
 allow audiocmdservice_atci kmsg_device:chr_file w_file_perms;
@@ -48,4 +45,4 @@ allow radio audiocmdservice_atci_exec:file getattr;
 #Android O porting
 hwbinder_use(audiocmdservice_atci)
 get_prop(audiocmdservice_atci, hwservicemanager_prop);
-allow audiocmdservice_atci debugfs_tracing:file rw_file_perms;
+#allow audiocmdservice_atci debugfs_tracing:file rw_file_perms;

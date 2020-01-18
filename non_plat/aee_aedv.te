@@ -31,6 +31,7 @@ allow aee_aedv sdcard_type:dir create_dir_perms;
 allow aee_aedv sdcard_type:file create_file_perms;
 
 #data/anr
+typeattribute aee_aedv data_between_core_and_vendor_violators;
 allow aee_aedv anr_data_file:dir create_dir_perms;
 allow aee_aedv anr_data_file:file create_file_perms;
 
@@ -182,7 +183,6 @@ allow aee_aedv debugfs_dmlog_debug:file { read open };
 allow aee_aedv debugfs_page_owner_slim_debug:file { read open };
 allow aee_aedv debugfs_ion_mm_heap:dir search;
 allow aee_aedv debugfs_ion_mm_heap:file { read open };
-allow aee_aedv debugfs_ion_mm_heap:lnk_file read;
 allow aee_aedv debugfs_ion_mm_heap:lnk_file read;
 allow aee_aedv debugfs_cpuhvfs:dir search;
 allow aee_aedv debugfs_cpuhvfs:file { read open };

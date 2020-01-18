@@ -31,7 +31,7 @@ allow servicemanager thermalindicator:process { getattr };
 typeattribute thermalindicator mlstrustedsubject;
 
 allow thermalindicator proc:dir           {search getattr};
-allow thermalindicator proc:file          read;
+#allow thermalindicator proc:file          read;
 allow thermalindicator shell:dir          search;
 allow thermalindicator platform_app:dir   search;
 allow thermalindicator platform_app:file  {open read getattr};

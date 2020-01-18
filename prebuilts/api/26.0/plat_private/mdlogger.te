@@ -47,7 +47,7 @@ allow mdlogger file_contexts_file:file { read getattr open };
 
 #permission for read boot mode
 #avc: denied { open }  path="/sys/devices/virtual/BOOT/BOOT/boot/boot_mode" dev="sysfs"
-allow mdlogger sysfs:file { read open };
+#allow mdlogger sysfs:file { read open };
 
 # Allow read avc: denied { read } for name="mddb" dev="mmcblk0p25" ino=681 
 # scontext=u:r:mdlogger:s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=0

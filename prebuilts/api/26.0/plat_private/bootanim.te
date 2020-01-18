@@ -44,7 +44,7 @@ allow bootanim gpu_device:dir search;
 
 
 #============= bootanim ==============
-allow bootanim debugfs_tracing:file write;
+#allow bootanim debugfs_tracing:file write;
 
 #============= bootanim ==============
-allow bootanim debugfs_tracing:file open;
+#allow bootanim debugfs_tracing:file open;

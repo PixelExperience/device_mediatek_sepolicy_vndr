@@ -9,6 +9,7 @@ set_prop(dumpstate, debug_bq_dump_prop);
 allow dumpstate aed_device:chr_file { read getattr };
 
 # Purpose: data/dumpsys/*
+typeattribute dumpstate data_between_core_and_vendor_violators;
 allow dumpstate aee_dumpsys_data_file:dir { w_dir_perms };
 allow dumpstate aee_dumpsys_data_file:file { create_file_perms };
 
@@ -35,19 +36,18 @@ allow dumpstate debugfs_page_owner_slim_debug:file { read open };
 allow dumpstate debugfs_ion_mm_heap:dir search;
 allow dumpstate debugfs_ion_mm_heap:file { read open };
 allow dumpstate debugfs_ion_mm_heap:lnk_file read;
-allow dumpstate debugfs_ion_mm_heap:lnk_file read;
 allow dumpstate debugfs_cpuhvfs:dir search;
 allow dumpstate debugfs_cpuhvfs:file { read open };
 
 # Purpose: /sys/kernel/ccci/md_chn
 allow dumpstate sysfs_ccci:dir search;
-allow dumpstate sysfs_ccci:file { read open };
+#allow dumpstate sysfs_ccci:file { read open };
 
 # Purpose: leds status
 allow dumpstate sysfs_leds:lnk_file read;
 
 # Purpose: /sys/module/lowmemorykiller/parameters/adj
-allow dumpstate sysfs_lowmemorykiller:file { read open };
+#allow dumpstate sysfs_lowmemorykiller:file { read open };
 allow dumpstate sysfs_lowmemorykiller:dir search;
 
 # Purpose: /dev/block/mmcblk0p10
@@ -69,7 +69,7 @@ allow dumpstate aee_aed:unix_stream_socket { read write ioctl };
 # allow dumpstate config_gz:file read;
 
 allow dumpstate sysfs_leds:dir r_dir_perms;
-allow dumpstate sysfs_leds:file r_file_perms;
+#allow dumpstate sysfs_leds:file r_file_perms;
 
 # Purpose: 01-01 08:30:57.260  3070  3070 W aee_dumpstate: type=1400 audit(0.0:13196): avc: denied
 # { read } for name="SF_dump" dev="dm-0" ino=352257 scontext=u:r:dumpstate:s0 tcontext=u:object_r:

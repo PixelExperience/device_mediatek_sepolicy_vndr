@@ -47,6 +47,7 @@ allow mtk_hal_audio nvdata_file:dir w_dir_perms;
 allow mtk_hal_audio nvdata_file:file create_file_perms;
 allow mtk_hal_audio sdcard_type:dir remove_name;
 allow mtk_hal_audio sdcard_type:file unlink;
+typeattribute mtk_hal_audio data_between_core_and_vendor_violators;
 allow mtk_hal_audio system_data_file:lnk_file read;
 
 # Date : WK14.34

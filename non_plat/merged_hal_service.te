@@ -59,6 +59,7 @@ allow merged_hal_service init:unix_stream_socket connectto;
 allow merged_hal_service property_socket:sock_file write;
 allow merged_hal_service sysfs:file write;
 #allow merged_hal_service self:capability { fowner chown dac_override fsetid };
+typeattribute merged_hal_service data_between_core_and_vendor_violators;
 allow merged_hal_service system_data_file:dir create_file_perms;
 allow merged_hal_service nvram_device:chr_file rw_file_perms;
 allow merged_hal_service pro_info_device:chr_file rw_file_perms;

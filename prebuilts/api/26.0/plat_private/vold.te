@@ -5,4 +5,4 @@
 # volume manager
 
 #============= vold ==============
-allow vold debugfs_tracing:file write;
+#allow vold debugfs_tracing:file write;

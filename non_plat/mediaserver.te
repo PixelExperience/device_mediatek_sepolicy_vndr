@@ -22,6 +22,7 @@ allow mediaserver lens_device:chr_file rw_file_perms;
 # Purpose : Set audio driver permission to access SD card for debug purpose and accss NVRam.
 allow mediaserver sdcard_type:dir { w_dir_perms create };
 allow mediaserver sdcard_type:file create;
+typeattribute mediaserver data_between_core_and_vendor_violators;
 allow mediaserver nvram_data_file:dir w_dir_perms;
 allow mediaserver nvram_data_file:file create_file_perms;
 allow mediaserver nvram_data_file:lnk_file read;
@@ -304,6 +305,7 @@ allow mediaserver camera_tsf_device:chr_file rw_file_perms;
 # Operation : N Migration
 # Purpose : add permission for thermal manager
 domain_auto_trans(mediaserver, thermal_manager_exec, thermal_manager)
+typeattribute mediaserver system_executes_vendor_violators;
 allow mediaserver thermal_manager_exec:file { read getattr open execute};
 
 # Date : WK16.32
@@ -345,7 +347,7 @@ allow mediaserver camera_owe_device:chr_file rw_file_perms;
 # Date : WK17.27
 # Operation : O Migration
 # Purpose : m4u Driver
-allow mediaserver proc:file r_file_perms;
+#allow mediaserver proc:file r_file_perms;
 
 # Date : WK17.29
 # Operation : O Migration

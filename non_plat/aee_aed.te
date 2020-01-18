@@ -22,6 +22,7 @@ allow aee_aed mtd_device:chr_file rw_file_perms;
 allow aee_aed RT_Monitor_device:chr_file r_file_perms;
 
 #data/aee_exp
+typeattribute aee_aed data_between_core_and_vendor_violators;
 allow aee_aed aee_exp_data_file:dir create_dir_perms;
 allow aee_aed aee_exp_data_file:file create_file_perms;
 
@@ -43,7 +44,7 @@ set_prop(aee_aed, persist_aee_prop);
 set_prop(aee_aed, debug_mtk_aee_prop);
 
 # /proc/lk_env
-allow aee_aed proc_lk_env:file rw_file_perms;
+#allow aee_aed proc_lk_env:file rw_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/pid/exe
 allow aee_aed exec_type:file r_file_perms;

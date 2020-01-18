@@ -26,6 +26,7 @@ allow fuelgauged_static kmsg_device:chr_file w_file_perms;
 # Data : WK16.21
 # Operation : New Feature
 # Purpose : For fg daemon can do nvram r/w to save car_tune_value
+typeattribute fuelgauged_static data_between_core_and_vendor_violators;
 allow fuelgauged_static nvdata_file:dir rw_dir_perms;
 allow fuelgauged_static nvdata_file:file {rw_file_perms create_file_perms};
 allow fuelgauged_static nvram_data_file:lnk_file rw_file_perms;

@@ -68,6 +68,7 @@ allow ccci_mdinit bootdevice_block_device:blk_file rw_file_perms;
 
 set_prop(ccci_mdinit, ril_mux_report_case_prop)
 
+typeattribute ccci_mdinit data_between_core_and_vendor_violators;
 allow ccci_mdinit mdlog_data_file:dir search;
 allow ccci_mdinit mdlog_data_file:file r_file_perms;
 

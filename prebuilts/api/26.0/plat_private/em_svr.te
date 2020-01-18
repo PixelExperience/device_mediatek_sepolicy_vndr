@@ -26,8 +26,8 @@ init_daemon_domain(em_svr)
 # Date: W14.38 2014/09/17
 # Operation : Migration
 # Purpose : for em_svr
-allow em_svr proc:file write;
-allow em_svr sysfs:file write;
+#allow em_svr proc:file write;
+#allow em_svr sysfs:file write;
 allow em_svr shell_exec:file { read execute open getattr execute_no_trans };
 allow em_svr system_file:file execute_no_trans;
 allow em_svr block_device:dir search;
@@ -35,7 +35,7 @@ allow em_svr graphics_device:chr_file { read write open ioctl};
 allow em_svr graphics_device:dir search;
 allow em_svr radio_data_file:dir { search write add_name create };
 allow em_svr radio_data_file:file { create write open read };
-allow em_svr sysfs_devices_system_cpu:file write;
+#allow em_svr sysfs_devices_system_cpu:file write;
 #allow em_svr self:capability { dac_override sys_nice fowner chown fsetid };
 allow em_svr self:process execmem;
 allow em_svr system_data_file:dir { write remove_name add_name relabelfrom create open };
@@ -63,8 +63,8 @@ binder_call(em_svr, surfaceflinger)
 # Purpose : add policy for desense/Power/Memory access system file
 allow em_svr toolbox_exec:file { getattr execute read open execute_no_trans };
 allow em_svr vendor_toolbox_exec:file { getattr };
-allow em_svr proc:file { open read };
-allow em_svr sysfs:file { read };
+#allow em_svr proc:file { open read };
+#allow em_svr sysfs:file { read };
 
 # Date: 2017/07/19
 # Operation : O Migration
@@ -81,5 +81,5 @@ allow em_svr system_data_file:file open;
 # Purpose: add policy for backlight file access
 allow em_svr sysfs_leds:dir search;
 allow em_svr sysfs_leds:lnk_file read;
-allow em_svr sysfs:file open;
+#allow em_svr sysfs:file open;
 

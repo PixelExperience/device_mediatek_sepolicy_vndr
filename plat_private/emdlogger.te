@@ -49,7 +49,7 @@ allow emdlogger storage_file:file { create_file_perms };
 
 #permission for read boot mode
 #avc: denied { open }  path="/sys/devices/virtual/BOOT/BOOT/boot/boot_mode" dev="sysfs"
-allow emdlogger sysfs:file { read open };
+#allow emdlogger sysfs:file { read open };
 
 # Allow read avc: denied { read } for name="mddb" dev="mmcblk0p25" ino=681 
 # scontext=u:r:emdlogger:s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=0

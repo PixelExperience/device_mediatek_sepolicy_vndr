@@ -17,6 +17,8 @@ type MPED_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(MPED)
 net_domain(MPED)
 
+typeattribute MPED data_between_core_and_vendor_violators;
+
 # Date : WK15.29
 # Operation : Feature Developing
 # Purpose : Setup Connection with GPS for sensor aiding data exchange

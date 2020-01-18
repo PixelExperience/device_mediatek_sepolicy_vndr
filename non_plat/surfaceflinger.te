@@ -10,7 +10,7 @@ allow surfaceflinger debug_prop:property_service set;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow surfaceflinger proc_ged:file {open read write ioctl getattr};
+#allow surfaceflinger proc_ged:file {open read write ioctl getattr};
 
 # Date : W16.42
 # Operation : Integration
@@ -20,16 +20,16 @@ allow surfaceflinger gpu_device:dir search;
 
 # Date : WK17.12
 # Purpose: Fix bootup fail
-allow surfaceflinger proc:file r_file_perms;
+#allow surfaceflinger proc:file r_file_perms;
 
 #============= surfaceflinger ==============
 allow surfaceflinger debugfs_ion:dir search;
 
 #============= surfaceflinger ==============
-allow surfaceflinger debugfs_tracing:file write;
+#allow surfaceflinger debugfs_tracing:file write;
 
 #============= surfaceflinger ==============
-allow surfaceflinger debugfs_tracing:file open;
+#allow surfaceflinger debugfs_tracing:file open;
 
 # Date : WK17.30
 # Operation : O Migration
@@ -56,7 +56,7 @@ allow surfaceflinger mtkbootanimation:file { read getattr open };
 # Operation : Migration
 # Purpose: Allow to access perfmgr
 allow surfaceflinger proc_perfmgr:dir {read search};
-allow surfaceflinger proc_perfmgr:file {open read ioctl};
+#allow surfaceflinger proc_perfmgr:file {open read ioctl};
 
 # Date : WK17.43
 # Operation : Debug

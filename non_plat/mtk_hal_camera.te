@@ -29,7 +29,6 @@ vndbinder_use(mtk_hal_camera)
 
 allow mtk_hal_camera hwservicemanager_prop:file { open read getattr };
 
-
 # -----------------------------------
 # Purpose: Allow camerahalserver to perform binder IPC to servers and callbacks.
 # -----------------------------------
@@ -119,7 +118,6 @@ allow mtk_hal_camera CAM_CAL_DRV_device:chr_file rw_file_perms;
 allow mtk_hal_camera CAM_CAL_DRV1_device:chr_file rw_file_perms;
 allow mtk_hal_camera CAM_CAL_DRV2_device:chr_file rw_file_perms;
 
-
 # -----------------------------------
 # Purpose: Other device drivers used by camera
 # -----------------------------------
@@ -127,14 +125,12 @@ allow mtk_hal_camera ion_device:chr_file rw_file_perms;
 allow mtk_hal_camera sw_sync_device:chr_file getattr;
 allow mtk_hal_camera MTK_SMI_device:chr_file r_file_perms;
 
-
 # -----------------------------------
 # Purpose: Filesystem in Userspace (FUSE)
 # - sdcard access (buffer dump for EM mode)
 # -----------------------------------
 allow mtk_hal_camera fuse:dir { search read write };
 allow mtk_hal_camera fuse:file rw_file_perms;
-
 
 # -----------------------------------
 # Purpose: Storage access
@@ -148,19 +144,15 @@ allow mtk_hal_camera nvram_data_file:file { write getattr setattr read create op
 allow mtk_hal_camera nvram_device:chr_file rw_file_perms;
 allow mtk_hal_camera self:netlink_kobject_uevent_socket { create setopt bind };
 
-
 ## Date : WK14.XX-15.XX
 ## sdcard access - dump for debug
 allow mtk_hal_camera sdcard_type:dir { write add_name create };
 allow mtk_hal_camera sdcard_type:file { append create getattr };
 
-
-
 # -----------------------------------
 # Purpose: property access
 # -----------------------------------
 allow mtk_hal_camera mtkcam_prop:file { open read getattr };
-
 
 # -----------------------------------
 # Android O
@@ -170,7 +162,6 @@ allow mtk_hal_camera mtkcam_prop:file { open read getattr };
 # (used in user build)
 allow mtk_hal_camera shell:unix_stream_socket { read write };
 allow mtk_hal_camera shell:fifo_file write;
-
 
 # -----------------------------------
 # Android O
@@ -188,14 +179,12 @@ allow mtk_hal_camera dumpstate:fifo_file write;
 allow mtk_hal_camera aee_exp_data_file:dir { w_dir_perms };
 allow mtk_hal_camera aee_exp_data_file:file { create_file_perms };
 
-
 # -----------------------------------
 # Android O
 # Purpose: Debugging
 # -----------------------------------
 # Purpose: libmemunreachable.so/GetUnreachableMemory()
 allow mtk_hal_camera self:process { ptrace };
-
 
 ################################################################################
 # Date : WK14.XX-15.XX
@@ -205,7 +194,6 @@ allow mtk_hal_camera sysfs_wake_lock:file rw_file_perms;
 allow mtk_hal_camera nvdata_file:dir { write search add_name };
 allow mtk_hal_camera nvdata_file:file { read write getattr setattr open create };
 allow mtk_hal_camera proc_meminfo:file { read getattr open };
-
 
 ## Purpose : for low SD card latency issue
 allow mtk_hal_camera sysfs_lowmemorykiller:file { read open };
@@ -224,6 +212,7 @@ allow mtk_hal_camera untrusted_app:dir search;
 allow mtk_hal_camera offloadservice_device:chr_file rw_file_perms;
 
 ## Purpose: for camera middleware dump image buffer to sdcard & audio frameworks dump
+typeattribute mtk_hal_camera data_between_core_and_vendor_violators;
 allow mtk_hal_camera system_data_file:dir write;
 allow mtk_hal_camera storage_file:lnk_file {read write};
 allow mtk_hal_camera mnt_user_file:dir {write read search};
@@ -259,7 +248,6 @@ allow mtk_hal_camera proc_ged:file {open read write ioctl getattr};
 # Operation : O Migration
 ## Purpose: Allow to call hal_graphics_allocator binder.
 allow mtk_hal_camera system_data_file:lnk_file read;
-
 
 allow mtk_hal_camera debugfs_tracing:file { write open };
 

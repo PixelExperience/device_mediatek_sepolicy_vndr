@@ -5,7 +5,6 @@
 # Type Declaration
 # ==============================================
 
-
 # ==============================================
 # MTK Policy Rule
 # ==============================================
@@ -52,13 +51,12 @@ allow factory vmodem_device:chr_file rw_file_perms;
 # Purpose: for nand project
 allow factory mtd_device:dir search;
 allow factory mtd_device:chr_file rw_file_perms;
-allow factory mtd_device:chr_file rw_file_perms;
 allow factory self:capability sys_resource;
 allow factory pro_info_device:chr_file rw_file_perms;
 
 # Data: WK15.28
 # Purpose: for mt-ramdump reset
-allow factory proc_mrdump_rst:file w_file_perms;
+#allow factory proc_mrdump_rst:file w_file_perms;
 
 #Date: WK15.31
 #Purpose: define factory_data_file instead of system_data_file
@@ -75,6 +73,7 @@ allow factory factory_idle_state_prop:property_service set;
 
 # Date: WK15.46
 # Purpose: gps factory mode
+typeattribute factory data_between_core_and_vendor_violators;
 allow factory agpsd_data_file:dir search;
 allow factory apk_data_file:dir write;
 #allow factory gps_data_file:dir r_dir_perms;
@@ -220,7 +219,7 @@ allow factory input_device:dir rw_dir_perms;
 # Purpose:  N Migration For ccci sysfs node
 # Allow read to sys/kernel/ccci/* files
 allow factory sysfs_ccci:dir search;
-allow factory sysfs_ccci:file r_file_perms;
+#allow factory sysfs_ccci:file r_file_perms;
 
 # Date: WK16.18
 # Purpose: N Migration For boot_mode
@@ -228,7 +227,7 @@ allow factory sysfs_ccci:file r_file_perms;
 # avc: denied { read } for name="boot_mode" dev="sysfs" ino=117
 # scontext=u:r:factory:s0 tcontext=u:object_r:sysfs:s0
 # tclass=file permissive=0
-allow factory sysfs:file rw_file_perms;
+#allow factory sysfs:file rw_file_perms;
 
 # Date: WK16.30
 #Purpose: For gps test
@@ -259,7 +258,7 @@ allow factory flashlight_device:chr_file rw_file_perms;
 # Date : WK16.48
 # Purpose: For SmartPa speaker calibration
 allow factory proc:dir search;
-allow factory proc:file {open read write};
+#allow factory proc:file {open read write};
 
 # Date: WK15.25
 #Purpose: for unmount sdcardfs and stop services which are using data partition
@@ -270,19 +269,19 @@ allow factory tmpfs:filesystem unmount;
 allow factory sysfs:dir { read open };
 allow factory sysfs_leds:dir search;
 allow factory sysfs_leds:lnk_file read;
-allow factory sysfs_vibrator:file {open read write};
+#allow factory sysfs_vibrator:file {open read write};
 allow factory ion_device:chr_file { read open ioctl };
 allow factory debugfs_ion:dir search;
-allow factory proc:file ioctl;
+#allow factory proc:file ioctl;
 # Date: WK17.27
 # Purpose: STMicro NFC solution integration
 allow factory st21nfc_device:chr_file { open read getattr write ioctl };
 allow factory nfc_socket:dir search;
-allow factory vendor_file:file { getattr execute execute_no_trans read open };
+#allow factory vendor_file:file { getattr execute execute_no_trans read open };
 set_prop(factory,hwservicemanager_prop);
 hwbinder_use(factory);
 hal_client_domain(factory, hal_nfc);
-allow factory debugfs_tracing:file { open write };
+#allow factory debugfs_tracing:file { open write };
 
 # Date : WK17.32
 # Operation : O Migration
@@ -293,10 +292,9 @@ allow factory mtk_cmdq_device:chr_file { read ioctl open };
 # Purpose: add selinux policy to stop 'ccci_fsd' for clear emmc in factory mode
 set_prop(factory,ctl_ccci_fsd_prop);
 
-
 # Date : WK17.38
 # Operation : O Migration
 # Purpose: Allow to access sysfs
 allow factory sysfs_therm:dir search;
-allow factory sysfs_therm:file {open read write};
+#allow factory sysfs_therm:file {open read write};
 

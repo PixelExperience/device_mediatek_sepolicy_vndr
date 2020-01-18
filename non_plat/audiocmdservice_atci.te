@@ -3,6 +3,7 @@
 
 # Read/Write NV
 allow audiocmdservice_atci nvram_device:devfile_class_set rw_file_perms;
+typeattribute audiocmdservice_atci data_between_core_and_vendor_violators;
 allow audiocmdservice_atci nvram_data_file:dir create_dir_perms;
 allow audiocmdservice_atci nvram_data_file:{file lnk_file} create_file_perms;
 allow audiocmdservice_atci nvdata_file:dir create_dir_perms;

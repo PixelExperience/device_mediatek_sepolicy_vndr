@@ -36,7 +36,7 @@ allow mdlogger storage_file:file { create_file_perms };
 
 # Allow read to sys/kernel/ccci/* files
 allow mdlogger sysfs_ccci:dir search;
-allow mdlogger sysfs_ccci:file r_file_perms;
+#allow mdlogger sysfs_ccci:file r_file_perms;
 
 # purpose: allow mdlogger to access storage in new version
 allow mdlogger media_rw_data_file:file  { create_file_perms };

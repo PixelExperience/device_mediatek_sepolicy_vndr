@@ -16,6 +16,7 @@ init_daemon_domain(aee_core_forwarder)
 allow aee_core_forwarder aee_core_data_file:dir relabelto;
 allow aee_core_forwarder aee_core_data_file:dir create_dir_perms;
 allow aee_core_forwarder aee_core_data_file:file create_file_perms;
+typeattribute aee_core_forwarder data_between_core_and_vendor_violators;
 allow aee_core_forwarder system_data_file:dir { write relabelfrom create add_name };
 
 #mkdir /sdcard/mtklog/aee_exp and write /sdcard/mtklog/aee_exp/zcorexxx.zip

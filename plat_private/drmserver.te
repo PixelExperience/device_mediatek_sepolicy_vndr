@@ -3,4 +3,4 @@
 # ======================
 
 # =======drmserver======
-allow drmserver sysfs:file { read open };
+#allow drmserver sysfs:file { read open };

@@ -60,10 +60,10 @@ allow mobile_log_d mmc_prop:file { getattr open };
 allow mobile_log_d safemode_prop:file { getattr open };
 
 #proc/ access
-allow mobile_log_d proc:file r_file_perms;
+#allow mobile_log_d proc:file r_file_perms;
 
 # boot_mdoe file access
-allow mobile_log_d sysfs:file { open read };
+#allow mobile_log_d sysfs:file { open read };
 
 # purpose: allow MobileLog to access storage in N version
 allow mobile_log_d media_rw_data_file:file  create_file_perms;
@@ -71,6 +71,6 @@ allow mobile_log_d media_rw_data_file:dir create_dir_perms;
 
 # access debugfs/tracing/instances/
 allow mobile_log_d debugfs_tracing:dir create_dir_perms;
-allow mobile_log_d debugfs_tracing:file create_file_perms;
+#allow mobile_log_d debugfs_tracing:file create_file_perms;
 allow mobile_log_d debugfs_tracing_instances:dir create_dir_perms;
-allow mobile_log_d debugfs_tracing_instances:file create_file_perms;
+#allow mobile_log_d debugfs_tracing_instances:file create_file_perms;

@@ -100,13 +100,13 @@ allow aee_aed dumpstate:unix_stream_socket { read write ioctl };
 allow aee_aed dumpstate:dir search;
 allow aee_aed dumpstate:file r_file_perms;
 
-allow aee_aed proc:file rw_file_perms;
+#allow aee_aed proc:file rw_file_perms;
 allow aee_aed logdr_socket:sock_file write;
 allow aee_aed logd:unix_stream_socket connectto;
 # allow aee_aed system_ndebug_socket:sock_file write; mask for never allow rule
 
 # vibrator
-allow aee_aed sysfs_vibrator:file w_file_perms;
+#allow aee_aed sysfs_vibrator:file w_file_perms;
 
 # Data : 2017/03/22
 # Operation : add NE flow rule for Android O
@@ -133,4 +133,4 @@ allow aee_aed crash_dump:file r_file_perms;
 # [  217.196275] <0>.(0)[209:logd.auditd]type=1400 audit(1262304561.676:377): avc: denied { read }
 # for pid=1486 comm="aee_aed" name="atag,devinfo" dev="sysfs" ino=2349 scontext=u:r:aee_aed:s0
 # tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-allow aee_aed sysfs:file r_file_perms;
+#allow aee_aed sysfs:file r_file_perms;

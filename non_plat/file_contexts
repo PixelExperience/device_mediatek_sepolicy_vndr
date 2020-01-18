@@ -281,7 +281,7 @@
 /dev/socket/soc_vt_svc(/.*)? u:object_r:soc_vt_svc_socket:s0
 /dev/socket/soc_vt_tcv(/.*)? u:object_r:soc_vt_tcv_socket:s0
 /dev/socket/sysctl(/.*)? u:object_r:sysctl_socket:s0
-/dev/socket/vold(/.*)? u:object_r:vold_socket:s0
+#/dev/socket/vold(/.*)? u:object_r:vold_socket:s0
 /dev/socket/volte_vt(/.*)? u:object_r:volte_vt_socket:s0
 /dev/socket/wpa_wlan0(/.*)? u:object_r:wpa_wlan0_socket:s0
 /dev/stpant(/.*)? u:object_r:stpant_device:s0

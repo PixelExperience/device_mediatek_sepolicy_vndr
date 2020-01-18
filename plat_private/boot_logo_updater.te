@@ -23,7 +23,7 @@ allow boot_logo_updater init:unix_stream_socket connectto;
 allow boot_logo_updater property_socket:sock_file write;
 #allow boot_logo_updater self:capability dac_override;
 # To access some boot_mode infornation
-allow boot_logo_updater sysfs:file rw_file_perms;
+#allow boot_logo_updater sysfs:file rw_file_perms;
 # To access directory /dev/block/mmcblk0 or /dev/block/sdc
 allow boot_logo_updater block_device:dir search;
 allow boot_logo_updater graphics_device:dir search;
@@ -40,10 +40,10 @@ allow boot_logo_updater sysfs:dir read;
 # sanity fail for ALPS03604686:
 # for path="/sys/firmware/devicetree/base/firmware/android/fstab" andfor name = "cmdline" and "mtdblock14"
 allow boot_logo_updater mtd_device:blk_file read;
-allow boot_logo_updater proc:file read;
+#allow boot_logo_updater proc:file read;
 allow boot_logo_updater sysfs:dir open;
 # for path="/proc/cmdline and ="/dev/block/mtdblock14"
-allow boot_logo_updater proc:file open;
+#allow boot_logo_updater proc:file open;
 allow boot_logo_updater system_data_file:dir write;
 allow boot_logo_updater mtd_device:blk_file open;
 

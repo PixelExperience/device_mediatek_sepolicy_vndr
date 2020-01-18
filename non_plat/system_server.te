@@ -14,9 +14,10 @@ allow system_server wmtWifi_device:chr_file w_file_perms;
 #allow system_server gps_data_file:dir rw_dir_perms;
 
 # /proc access.
-allow system_server proc:file w_file_perms;
+#allow system_server proc:file w_file_perms;
 
 # /data/dontpanic access.
+typeattribute system_server data_between_core_and_vendor_violators;
 allow system_server dontpanic_data_file:dir search;
 
 # /data/agps_supl access.
@@ -35,7 +36,7 @@ allow system_server zygote:binder impersonate;
 allow system_server ctl_bootanim_prop:property_service set;
 
 # After connected to DHCPv6, enabled 6to4 IPv6 AP to get property.
-allow system_server proc_net:file w_file_perms;
+#allow system_server proc_net:file w_file_perms;
 r_dir_file(system_server, wide_dhcpv6_data_file)
 
 # For dumpsys.
@@ -72,7 +73,7 @@ allow system_server sysfs_dcm:file rw_file_perms;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow system_server proc_ged:file {open read write ioctl getattr};
+#allow system_server proc_ged:file {open read write ioctl getattr};
 
 # Date : WK16.36
 # Purpose: Allow to set property log.tag.WifiHW to control log level of WifiHW
@@ -106,7 +107,7 @@ allow system_server ttyMT_device:chr_file rw_file_perms;
 # Operation : thermal hal Feature developing
 # Purpose : thermal hal interface permission
 allow system_server proc_mtktz:dir search;
-allow system_server proc_mtktz:file r_file_perms;
+#allow system_server proc_mtktz:file r_file_perms;
 
 # Date : WK16.46
 # Operation: PowerManager set persist.meta.connecttype property
@@ -204,7 +205,6 @@ allow system_server dhcp_data_file:file create_file_perms;
 # Purpose : lbs hidl interface permission
 hal_client_domain(system_server, mtk_hal_lbs)
 
-
 # Date : WK17.12
 # Operation : MT6799 SQC
 # Purpose : Change thermal config
@@ -215,4 +215,4 @@ allow system_server mtk_thermal_config_prop:property_service set;
 # Operation : Migration
 # Purpose : perfmgr permission
 allow system_server proc_perfmgr:dir {read search};
-allow system_server proc_perfmgr:file {open read ioctl};
+#allow system_server proc_perfmgr:file {open read ioctl};

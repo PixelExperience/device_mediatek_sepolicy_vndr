@@ -5,6 +5,7 @@
 # Date : WK14.37
 # Operation : Migration
 # Purpose : for opetator
+typeattribute mtkbootanimation data_between_core_and_vendor_violators;
 allow mtkbootanimation custom_file:dir search;
 allow mtkbootanimation custom_file:file r_file_perms;
 allow mtkbootanimation bootani_prop:property_service set;
@@ -16,12 +17,12 @@ allow mtkbootanimation qemu_pipe_device:chr_file rw_file_perms;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow mtkbootanimation proc_ged:file {open read write ioctl getattr};
+#allow mtkbootanimation proc_ged:file {open read write ioctl getattr};
 
 # Date : WK14.31
 # Operation : Migration
 # Purpose : access to sec mem proc interface.
-allow mtkbootanimation proc_secmem:file { read open};
+#allow mtkbootanimation proc_secmem:file { read open};
 
 # Date : WK14.36
 # Operation : Migration
@@ -52,4 +53,4 @@ allow mtkbootanimation guiext-server_service:service_manager find;
 # Operation : Migration
 # Purpose : FPSGO integration
 allow mtkbootanimation proc_perfmgr:dir {search read};
-allow mtkbootanimation proc_perfmgr:file {open read ioctl};
+#allow mtkbootanimation proc_perfmgr:file {open read ioctl};

@@ -34,6 +34,7 @@ userdebug_or_eng(`
 ')
 
 # Logging for backward compatibility
+typeattribute mtk_hal_bluetooth data_between_core_and_vendor_violators;
 allow mtk_hal_bluetooth bluetooth_data_file:dir ra_dir_perms;
 allow mtk_hal_bluetooth bluetooth_data_file:file create_file_perms;
 

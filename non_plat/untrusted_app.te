@@ -37,7 +37,9 @@ allow untrusted_app_25 sysfs_therm:file { getattr open read };
 # Operation: Development RenderScript opt
 # Purpose : Allow RenderScript Opt RS2CL to invoke standalone executable
 # properly for thermal tests at OEM/ODM.
+typeattribute untrusted_app_25 system_executes_vendor_violators;
 allow untrusted_app_25 vendor_file:file execute_no_trans;
+typeattribute untrusted_app system_executes_vendor_violators;
 allow untrusted_app vendor_file:file execute_no_trans;
 
 # Date : WK17.39
