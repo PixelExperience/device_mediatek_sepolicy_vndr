@@ -2,7 +2,9 @@
 # MTK Policy Rule
 # ============
 
-# proc interfaces
+#############################
+# proc files
+#
 genfscon proc /driver/thermal u:object_r:proc_thermal:s0
 genfscon proc /thermlmt u:object_r:proc_thermal:s0
 genfscon proc /fps_tm u:object_r:proc_thermal:s0
@@ -21,7 +23,6 @@ genfscon proc /ged u:object_r:proc_ged:s0
 genfscon proc /mtk_jpeg u:object_r:proc_mtk_jpeg:s0
 genfscon proc /perfmgr u:object_r:proc_perfmgr:s0
 genfscon proc /driver/wmt_dbg u:object_r:proc_wmtdbg:s0
-
 genfscon proc /zraminfo u:object_r:proc_zraminfo:s0
 genfscon proc /gpulog u:object_r:proc_gpulog:s0
 genfscon proc /cpu/alignment u:object_r:proc_cpu_alignment:s0
@@ -41,10 +42,38 @@ genfscon proc /mtk_memcfg/slabtrace u:object_r:proc_slabtrace:s0
 genfscon proc /mtk_cmdq_debug/status u:object_r:proc_cmdq_debug:s0
 genfscon proc /cpuhvfs/dbg_repo u:object_r:proc_dbg_repo:s0
 
+# mtk EM FreqHopping setting
+genfscon proc /freqhopping/freqhopping_debug u:object_r:proc_freqhop:s0
+genfscon proc /freqhopping/status u:object_r:proc_freqhop:s0
+genfscon proc /freqhopping/dumpregs u:object_r:proc_freqhop:s0
 
-genfscon iso9660 / u:object_r:iso9660:s0
-genfscon rawfs / u:object_r:rawfs:s0
-genfscon fuseblk / u:object_r:fuseblk:s0
+# mtk EM flash reading
+genfscon proc /partitions u:object_r:proc_partition:s0
+
+# Purpose dump not exit file
+genfscon proc /isp_p2/isp_p2_dump u:object_r:proc_isp_p2_dump:s0
+genfscon proc /isp_p2/isp_p2_kedump u:object_r:proc_isp_p2_kedump:s0
+genfscon proc /mali/memory_usage u:object_r:proc_memory_usage:s0
+genfscon proc /mtk_es_reg_dump u:object_r:proc_mtk_es_reg_dump:s0
+
+# Date : 2018/11/01
+# Purpose : mtk EM c2k bypass read usb file
+genfscon proc /isp_p2 u:object_r:proc_isp_p2:s0
+
+# Date : WK19.27
+# Purpose: Android Migration for SVP
+genfscon proc /m4u u:object_r:proc_m4u:s0
+
+
+#############################
+# sysfs files
+#
+genfscon sysfs /bus/platform/drivers/mtk-kpd u:object_r:sysfs_keypad_file:s0
+genfscon sysfs /power/vcorefs/pwr_ctrl u:object_r:sysfs_vcorefs_pwrctrl:s0
+genfscon sysfs /power/dcm_state u:object_r:sysfs_dcm:s0
+genfscon sysfs /power/mtkdcs/mode u:object_r:sysfs_dcs:s0
+genfscon sysfs /power/mtkpasr/execstate u:object_r:sysfs_execstate:s0
+genfscon sysfs /mtk_ssw u:object_r:sysfs_ssw:s0
 
 # Date : 2018/06/15
 # Purpose : mtk EM Audio headset detect
@@ -100,33 +129,13 @@ genfscon sysfs /devices/platform/leds-mt65xx/leds u:object_r:sysfs_leds:s0
 # Purpose : mtk EM Power debug_log setting
 genfscon sysfs /devices/platform/spm u:object_r:sysfs_spm:s0
 
-# mtk EM FreqHopping setting
-genfscon proc /freqhopping/freqhopping_debug u:object_r:proc_freqhop:s0
-genfscon proc /freqhopping/status u:object_r:proc_freqhop:s0
-genfscon proc /freqhopping/dumpregs u:object_r:proc_freqhop:s0
-
-# mtk EM flash reading
-genfscon proc /partitions u:object_r:proc_partition:s0
-
-# mtk EM power PMU register
-genfscon  debugfs /rt-regmap u:object_r:debugfs_regmap:s0
-
-# mtk VPU/MDLA power reading
-genfscon debugfs  /vpu/power u:object_r:debugfs_vpu_power:s0
-genfscon debugfs  /mdla/power u:object_r:debugfs_mdla_power:s0
-genfscon debugfs  /vpu/vpu_memory u:object_r:debugfs_vpu_memory:s0
-
 # Date : 2018/11/01
 # Purpose : mtk EM c2k bypass read usb file
 genfscon sysfs /devices/virtual/usb_rawbulk u:object_r:sys_usb_rawbulk:s0
-genfscon proc /isp_p2 u:object_r:proc_isp_p2:s0
 
 #Date : 2018/11/22
 #Purpose: allow mdlogger to read mdinfo file
 genfscon sysfs /kernel/md/mdee u:object_r:sysfs_mdinfo:s0
-
-# mtk eara thermal reading
-genfscon debugfs  /eara_thermal/enable u:object_r:debugfs_eara_thermal:s0
 
 # Date : 2019/04/09
 # Purpose: mtk EM battery temprature settings
@@ -136,10 +145,6 @@ genfscon sysfs /devices/platform/battery/Power_On_Voltage u:object_r:sysfs_power
 genfscon sysfs /devices/platform/battery/Power_Off_Voltage u:object_r:sysfs_power_off_vol:s0
 genfscon sysfs /devices/platform/battery/FG_daemon_disable u:object_r:sysfs_fg_disable:s0
 genfscon sysfs /devices/platform/battery/disable_nafg u:object_r:sysfs_dis_nafg:s0
-
-# Date : WK19.27
-# Purpose: Android Migration for SVP
-genfscon proc /m4u u:object_r:proc_m4u:s0
 
 # Date : 2019/07/03
 # Purpose: SIU update mmcblk access
@@ -151,3 +156,57 @@ genfscon sysfs /devices/platform/bootdevice/host0/target0:0:0/0:0:0:2/block/sdc 
 # Date : 2019/07/12
 # Purpose:dumpstate mmcblk1 access
 genfscon sysfs /devices/platform/externdevice/mmc_host/mmc1 u:object_r:sysfs_devices_block:s0
+
+
+#############################
+# debugfs files
+#
+genfscon debugfs /kernel/debug/binder u:object_r:debugfs_binder:s0
+genfscon debugfs /kernel/debug/blockio u:object_r:debugfs_blockio:s0
+genfscon debugfs /kernel/debug/cpuhvfs u:object_r:debugfs_cpuhvfs:s0
+genfscon debugfs /kernel/debug/displowpower u:object_r:debugfs_fb:s0
+genfscon debugfs /kernel/debug/disp u:object_r:debugfs_fb:s0
+genfscon debugfs /kernel/debug/dispsys u:object_r:debugfs_fb:s0
+genfscon debugfs /kernel/debug/dmlog u:object_r:debugfs_dmlog_debug:s0
+genfscon debugfs /kernel/debug/dynamic_debug u:object_r:debugfs_dynamic_debug:s0
+genfscon debugfs /kernel/debug/emi_mbw/dump_buf u:object_r:debugfs_emi_mbw_buf:s0
+genfscon debugfs /kernel/debug/fbconfig u:object_r:debugfs_fb:s0
+genfscon debugfs /kernel/debug/fpsgo u:object_r:debugfs_fpsgo:s0
+genfscon debugfs /kernel/debug/fuseio u:object_r:debugfs_fuseio:s0
+genfscon debugfs /kernel/debug/ged u:object_r:debugfs_ged:s0
+genfscon debugfs /kernel/debug/ion/client_history u:object_r:debugfs_ion_mm_heap:s0
+genfscon debugfs /kernel/debug/ion/clients u:object_r:debugfs_ion:s0
+genfscon debugfs /kernel/debug/ion/heaps u:object_r:debugfs_ion_mm_heap:s0
+genfscon debugfs /kernel/debug/ion/ion_mm_heap u:object_r:debugfs_ion_mm_heap:s0
+genfscon debugfs /kernel/debug/kmemleak u:object_r:debugfs_kmemleak:s0
+genfscon debugfs /kernel/debug/mali0/gpu_memory u:object_r:debugfs_gpu_mali_midgard:s0
+genfscon debugfs /kernel/debug/mali/gpu_memory u:object_r:debugfs_gpu_mali_utgard:s0
+genfscon debugfs /kernel/debug/mtkfb u:object_r:debugfs_fb:s0
+genfscon debugfs /kernel/debug/mmprofile u:object_r:debugfs_fb:s0
+genfscon debugfs /kernel/debug/musb-hdrc u:object_r:debugfs_usb:s0
+genfscon debugfs /kernel/debug/page_owner_slim u:object_r:debugfs_page_owner_slim_debug:s0
+genfscon debugfs /kernel/debug/pvr u:object_r:debugfs_gpu_img:s0
+genfscon debugfs /kernel/debug/rcu u:object_r:debugfs_rcu:s0
+genfscon debugfs /kernel/debug/shrinker u:object_r:debugfs_shrinker_debug:s0
+genfscon debugfs /kernel/debug/usb20_phy u:object_r:debugfs_usb20_phy:s0
+genfscon debugfs /kernel/debug/usb_c u:object_r:debugfs_usb:s0
+genfscon debugfs /kernel/debug/vpu/device_dbg u:object_r:debugfs_vpu_device_dbg:s0
+genfscon debugfs /kernel/debug/wakeup_sources u:object_r:debugfs_wakeup_sources:s0
+
+# mtk VPU/MDLA power reading
+genfscon debugfs  /vpu/power u:object_r:debugfs_vpu_power:s0
+genfscon debugfs  /mdla/power u:object_r:debugfs_mdla_power:s0
+genfscon debugfs  /vpu/vpu_memory u:object_r:debugfs_vpu_memory:s0
+
+# mtk eara thermal reading
+genfscon debugfs  /eara_thermal/enable u:object_r:debugfs_eara_thermal:s0
+
+# mtk EM power PMU register
+genfscon debugfs /rt-regmap u:object_r:debugfs_regmap:s0
+
+
+genfscon iso9660 / u:object_r:iso9660:s0
+genfscon rawfs / u:object_r:rawfs:s0
+genfscon fuseblk / u:object_r:fuseblk:s0
+
+

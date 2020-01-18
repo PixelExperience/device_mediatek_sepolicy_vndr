@@ -494,50 +494,6 @@
 /dev/block/by-name/md_udc             u:object_r:metadata_block_device:s0
 
 #############################
-# sysfs files
-#
-/sys/bus/platform/drivers/mtk-kpd(/.*)?	u:object_r:sysfs_keypad_file:s0
-/sys/power/vcorefs/pwr_ctrl -- u:object_r:sysfs_vcorefs_pwrctrl:s0
-/sys/power/dcm_state u:object_r:sysfs_dcm:s0
-/sys/power/mtkdcs/mode u:object_r:sysfs_dcs:s0
-/sys/mtk_ssw(/.*)? u:object_r:sysfs_ssw:s0
-
-#############################
-# debugfs files
-#
-/sys/kernel/debug/binder(/.*)? u:object_r:debugfs_binder:s0
-/sys/kernel/debug/blockio(/.*)? u:object_r:debugfs_blockio:s0
-/sys/kernel/debug/fuseio(/.*)? u:object_r:debugfs_fuseio:s0
-/sys/kernel/debug/musb-hdrc(/.*)? u:object_r:debugfs_usb:s0
-/sys/kernel/debug/usb_c(/.*)? u:object_r:debugfs_usb:s0
-/sys/kernel/debug/mtkfb u:object_r:debugfs_fb:s0
-/sys/kernel/debug/mmprofile(/.*)? u:object_r:debugfs_fb:s0
-/sys/kernel/debug/fbconfig u:object_r:debugfs_fb:s0
-/sys/kernel/debug/displowpower(/.*)? u:object_r:debugfs_fb:s0
-/sys/kernel/debug/disp(/.*)? u:object_r:debugfs_fb:s0
-/sys/kernel/debug/dispsys u:object_r:debugfs_fb:s0
-/sys/kernel/debug/cpuhvfs(/.*)? u:object_r:debugfs_cpuhvfs:s0
-/sys/kernel/debug/usb20_phy(/.*)? u:object_r:debugfs_usb20_phy:s0
-/sys/kernel/debug/dynamic_debug(/.*)? u:object_r:debugfs_dynamic_debug:s0
-/sys/kernel/debug/wakeup_sources u:object_r:debugfs_wakeup_sources:s0
-/sys/kernel/debug/dmlog u:object_r:debugfs_dmlog_debug:s0
-/sys/kernel/debug/page_owner_slim u:object_r:debugfs_page_owner_slim_debug:s0
-/sys/kernel/debug/shrinker u:object_r:debugfs_shrinker_debug:s0
-/sys/kernel/debug/rcu(/.*)? u:object_r:debugfs_rcu:s0
-/sys/kernel/debug/ged(/.*)? u:object_r:debugfs_ged:s0
-/sys/kernel/debug/ion/ion_mm_heap(/.*)? u:object_r:debugfs_ion_mm_heap:s0
-/sys/kernel/debug/ion/heaps(/.*)? u:object_r:debugfs_ion_mm_heap:s0
-/sys/kernel/debug/ion/client_history(/.*)? u:object_r:debugfs_ion_mm_heap:s0
-/sys/kernel/debug/mali0/gpu_memory u:object_r:debugfs_gpu_mali_midgard:s0
-/sys/kernel/debug/mali/gpu_memory u:object_r:debugfs_gpu_mali_utgard:s0
-/sys/kernel/debug/pvr(/.*)? u:object_r:debugfs_gpu_img:s0
-/sys/kernel/debug/ion/clients(/.*)? u:object_r:debugfs_ion:s0
-/sys/kernel/debug/fpsgo(/.*)? u:object_r:debugfs_fpsgo:s0
-/sys/kernel/debug/emi_mbw/dump_buf(/.*)? u:object_r:debugfs_emi_mbw_buf:s0
-/sys/kernel/debug/vpu/device_dbg(/.*)? u:object_r:debugfs_vpu_device_dbg:s0
-/sys/kernel/debug/kmemleak u:object_r:debugfs_kmemleak:s0
-
-#############################
 # System files
 #
 /(system\/vendor|vendor)/bin/audiocmdservice_atci u:object_r:audiocmdservice_atci_exec:s0
@@ -669,20 +625,9 @@
 
 /vendor/bin/hw/modemdbfilter_service u:object_r:modemdbfilter_service_exec:s0
 
-# Date : 2018/06/15
-# Purpose : mtk EM flash reading
-/proc/mounts u:object_r:proc_flash:s0
-
 # Date: 2018/07/06
 # Purpose for same-process HAL files and their dependencies: libGLES_mali.so need libm4u.so on mali GPU.
 /vendor/lib(64)?/libm4u\.so   u:object_r:same_process_hal_file:s0
-
-# Purpose dump not exit file
-/proc/isp_p2/isp_p2_dump u:object_r:proc_isp_p2_dump:s0
-/proc/isp_p2/isp_p2_kedump u:object_r:proc_isp_p2_kedump:s0
-/proc/mali/memory_usage u:object_r:proc_memory_usage:s0
-/proc/mtk_es_reg_dump u:object_r:proc_mtk_es_reg_dump:s0
-/sys/power/mtkpasr/execstate u:object_r:sysfs_execstate:s0
 
 # Date: 2018/12/04
 # Purpose: Neuron runtime API and the dependencies
