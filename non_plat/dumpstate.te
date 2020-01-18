@@ -111,6 +111,9 @@ allow dumpstate sysfs_vibrator_setting:file write;
 # Purpose: Allow dumpstate to read /sys/kernel/debug/rcu/rcu_callback_log
 allow dumpstate debugfs_rcu:file r_file_perms;
 
+# Purpose: Allow dumpstate to read /proc/ufs_debug
+allow dumpstate proc_ufs_debug:file rw_file_perms;
+
 # Purpose: Allow dumpstate to read /proc/msdc_debug
 allow dumpstate proc_msdc_debug:file r_file_perms;
 

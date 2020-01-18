@@ -375,6 +375,9 @@ allow aee_aedv sysfs_vibrator:dir search;
 # Purpose: Allow aee_aedv to read /sys/kernel/debug/rcu/rcu_callback_log
 allow aee_aedv debugfs_rcu:file r_file_perms;
 
+# Purpose: Allow aee_aedv to read /proc/ufs_debug
+allow aee_aedv proc_ufs_debug:file rw_file_perms;
+
 # Purpose: Allow aee_aedv to read /proc/msdc_debug
 allow aee_aedv proc_msdc_debug:file r_file_perms;
 
