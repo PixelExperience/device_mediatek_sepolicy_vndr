@@ -141,3 +141,6 @@ allow aee_aed system_server:binder call;
 
 # Purpose: allow aee_aed to read packages.list
 allow aee_aed packages_list_file:file r_file_perms;
+
+# Purpose: Allow aee_aed to read /proc/*/exe
+allow aee_aed system_file_type:file r_file_perms;

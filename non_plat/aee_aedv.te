@@ -415,3 +415,6 @@ allow aee_aedv proc_isp_p2:file r_file_perms;
 
 allow aee_aedv connsyslog_data_vendor_file:file r_file_perms;
 allow aee_aedv connsyslog_data_vendor_file:dir r_dir_perms;
+
+# Purpose: Allow aee_aedv to read the /proc/*/exe of vendor process
+allow aee_aedv vendor_file_type:file r_file_perms;
