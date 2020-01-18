@@ -106,9 +106,6 @@ genfscon proc /freqhopping/dumpregs u:object_r:proc_freqhop:s0
 # mtk EM flash reading
 genfscon proc /partitions u:object_r:proc_partition:s0
 
-# allow netd to set MTU
-genfscon sysfs /devices/virtual/net u:object_r:sysfs_net:s0
-
 # mtk EM power PMU register
 genfscon  debugfs /rt-regmap u:object_r:debugfs_regmap:s0
 
