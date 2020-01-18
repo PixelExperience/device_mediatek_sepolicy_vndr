@@ -72,7 +72,6 @@ type proc_kpageflags, fs_type, proc_type;
 type proc_slabtrace, fs_type, proc_type;
 type proc_cmdq_debug, fs_type, proc_type;
 type proc_isp_p2, fs_type, proc_type;
-type proc_cl_cam_status, fs_type, proc_type;
 type proc_dbg_repo, fs_type, proc_type;
 type proc_isp_p2_dump, fs_type, proc_type;
 type proc_isp_p2_kedump, fs_type, proc_type;
