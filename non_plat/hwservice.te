@@ -34,3 +34,7 @@ type mtk_hal_keyattestation_hwservice, hwservice_manager_type;
 # Date: 2018/05/25
 # FM HIDL
 type mtk_hal_fm_hwservice, hwservice_manager_type;
+
+# Date: 2018/03/23
+# log hidl
+type mtk_hal_log_hwservice, hwservice_manager_type;
