@@ -10,6 +10,7 @@ type stpwmt_device, dev_type;
 type wmtdetect_device, dev_type;
 type wmtWifi_device, dev_type;
 type stpbt_device, dev_type;
+type fw_log_bt_device, dev_type;
 type stpant_device, dev_type;
 type fm_device, dev_type;
 type stpgps_device, dev_type;
