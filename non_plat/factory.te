@@ -44,6 +44,10 @@ allow factory ttyMT_device:chr_file rw_file_perms;
 allow factory ttyS_device:chr_file rw_file_perms;
 allow factory ttyGS_device:chr_file rw_file_perms;
 
+# Purpose: OTG
+allow factory usb_device:chr_file rw_file_perms;
+allow factory usb_device:dir r_dir_perms;
+
 # Date: WK15.01
 # Purpose : OTG Mount
 allow factory sdcard_type:dir mounton;
