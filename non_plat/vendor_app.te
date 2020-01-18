@@ -3,7 +3,7 @@
 #
 
 # This is for common part
-type vendor_app, domain;
+type vendor_app, domain, mlstrustedsubject;
 
 app_domain(vendor_app)
 
@@ -66,3 +66,9 @@ allow vendor_app cameraserver_service:service_manager find;
 # eng mode camera - save iamges files and log files on external storage
 allow vendor_app media_rw_data_file:dir { create_dir_perms };
 allow vendor_app media_rw_data_file:file { create_file_perms };
+
+# Date : WK18.32
+# Purpose :
+# eng mode camera - save iamges files and log files on external storage
+allow vendor_app vendor_data_file:dir { create_dir_perms };
+allow vendor_app vendor_data_file:file { create_file_perms };
