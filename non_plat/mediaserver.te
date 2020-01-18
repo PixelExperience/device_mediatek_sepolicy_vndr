@@ -316,6 +316,12 @@ allow mediaserver camera_mfb_device:chr_file rw_file_perms;
 # Purpose : Allow permgr access
 allow mediaserver proc_perfmgr:dir {read search};
 allow mediaserver proc_perfmgr:file {open read ioctl};
+allowxperm mediaserver proc_perfmgr:file ioctl {
+GED_BRIDGE_IO_BOOST_GPU_FREQ
+GED_BRIDGE_IO_IOCTLCMD_0F
+GED_BRIDGE_IO_LOG_BUF_WRITE
+GED_BRIDGE_IO_IOCTLCMD_10
+};
 
 # Date : WK18.18
 # Operation : Migration
