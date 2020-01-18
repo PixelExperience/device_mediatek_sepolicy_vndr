@@ -153,10 +153,6 @@ set_prop(radio, system_prop)
 allow radio mtk_hal_power_hwservice:hwservice_manager find;
 binder_call(radio, mtk_hal_power)
 
-# Date : WK1738 2017/09/21
-# Purpose : Allow YGPS trigger mnld NE
-set_prop(radio, mnld_prop)
-
 # Date : 2017/10/31
 # Purpose: Policy for EM to set wcn coredump property
 set_prop(radio, wmt_prop)
@@ -174,11 +170,6 @@ set_prop(radio, vendor_radio_prop)
 # Operation: P migration
 # Purpose: allow EM to set modem reset delay property
 set_prop(radio, mtk_debug_md_reset_prop)
-
-# Date : 2018/05/10
-# Operation: P migration
-# Purpose: Allow EM to set BT ssp debug mode property
-set_prop(radio, mtk_bt_sspdebug_prop)
 
 # Date : 2018/06/01
 # Operation : P migration
