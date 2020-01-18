@@ -62,7 +62,7 @@ hal_client_domain(mtk_hal_camera, hal_graphics_allocator)
 # -----------------------------------
 # Purpose: Camera-related devices (driver)
 # -----------------------------------
-allow mtk_hal_camera proc:file { read ioctl open };
+allow mtk_hal_camera proc:file rw_file_perms;
 allow mtk_hal_camera proc_mtk_jpeg:file r_file_perms;
 allowxperm mtk_hal_camera proc_mtk_jpeg:file ioctl {
      JPG_BRIDGE_ENC_IO_INIT
@@ -329,3 +329,6 @@ allow mtk_hal_camera aee_dipdebug_vendor_file:file { create_file_perms };
 
 allow mtk_hal_camera proc_isp_p2:dir search;
 allow mtk_hal_camera proc_isp_p2:file {create_file_perms};
+
+# Purpose : AINR/Thermal Boost
+allow mtk_hal_camera system_data_file:dir { getattr }
