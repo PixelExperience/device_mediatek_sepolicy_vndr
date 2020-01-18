@@ -83,7 +83,7 @@ type ctl_muxreport-daemon_prop, property_type;
 type tel_switch_prop, property_type, mtk_core_property_type;
 
 #=============allow bootanim==============
-type bootani_prop, property_type, mtk_core_property_type;
+type bootani_prop, property_type, extended_core_property_type;
 
 #=============allow mnld_prop==============
 type mnld_prop, property_type, mtk_core_property_type;
