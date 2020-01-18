@@ -58,14 +58,14 @@ allow rild mtd_device:dir search;
 allow rild tty_device:chr_file rw_file_perms;
 allow rild eemcs_device:chr_file { rw_file_perms };
 
-allow rild Vcodec_device:chr_file { rw_file_perms };
+#allow rild Vcodec_device:chr_file { rw_file_perms };
 allow rild devmap_device:chr_file { r_file_perms };
 allow rild devpts:chr_file { rw_file_perms };
 allow rild ccci_device:chr_file { rw_file_perms };
 allow rild misc_device:chr_file { rw_file_perms };
 allow rild proc_lk_env:file rw_file_perms;
 allow rild sysfs_vcorefs_pwrctrl:file { w_file_perms };
-allow rild bootdevice_block_device:blk_file { rw_file_perms };
+#allow rild bootdevice_block_device:blk_file { rw_file_perms };
 allow rild para_block_device:blk_file { rw_file_perms };
 
 # Allow dir search, fd uses
