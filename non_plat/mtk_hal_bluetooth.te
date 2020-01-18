@@ -36,6 +36,9 @@ allow mtk_hal_bluetooth nvdata_file:file rw_file_perms;
 allow mtk_hal_bluetooth nvram_data_file:lnk_file read;
 allow mtk_hal_bluetooth nvdata_file:lnk_file read;
 
+# Purpose: Allow to search /mnt/vendor/* for fstab when using NVM_Init()
+allow mtk_hal_bluetooth mnt_vendor_file:dir search;
+
 allow mtk_hal_bluetooth hwservicemanager_prop:file r_file_perms;
 
 add_hwservice(hal_bluetooth, mtk_hal_bluetooth_hwservice)
