@@ -130,7 +130,7 @@ allow init kernel:key search;
 # Operation : boost cpu while booting
 # Purpose : enhance boottime
 allow init proc_perfmgr:file write;
-allow init proc_wmtdbg:file write;
+allow init proc_wmtdbg:file w_file_perms;
 
 # Date : W18.20
 # Operation : mount soc vendor's partition when booting
