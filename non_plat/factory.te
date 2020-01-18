@@ -353,3 +353,14 @@ allow factory sysfs:file { read open };
 # For touch auto test
 allow factory sysfs_tpd_setting:dir search;
 allow factory sysfs_tpd_setting:file { read getattr open };
+
+# Date : WK18.23
+# Operation: P migration
+# Purpose : Allow factory to unmount partition, stop service, and then erase partition
+allow factory vendor_shell_exec:file { read execute open execute_no_trans };
+allow factory vendor_toolbox_exec:file { execute_no_trans };
+allow factory labeledfs:filesystem { unmount };
+allow factory proc_cmdline:file { read open getattr };
+allow factory factory:capability { sys_boot sys_admin};
+allow factory sysfs_dt_firmware_android:file { read open getattr };
+allow factory sysfs_dt_firmware_android:dir { read open search };

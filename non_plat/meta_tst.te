@@ -382,3 +382,14 @@ allow meta_tst block_device:dir search;
 # Purpose : Allow meta_tst to access tpd sysfs nodes for CTP test
 allow meta_tst sysfs_tpd_setting:dir search;
 allow meta_tst sysfs_tpd_setting:file { read getattr open };
+
+# Date : WK18.24
+# Operation: P migration
+# Purpose : Allow meta_tst to unmount partition, stop service, and then erase partition
+allow meta_tst vendor_shell_exec:file { read execute open execute_no_trans };
+allow meta_tst vendor_toolbox_exec:file { execute_no_trans };
+allow meta_tst labeledfs:filesystem { unmount };
+allow meta_tst proc_cmdline:file { read open getattr };
+allow meta_tst meta_tst:capability { sys_admin };
+allow meta_tst sysfs_dt_firmware_android:file { read open getattr };
+allow meta_tst sysfs_dt_firmware_android:dir { read open search };

@@ -77,6 +77,3 @@ allow emdlogger sysfs_dt_firmware_android:dir search;
 allow emdlogger sysfs_dt_firmware_android:file { read open getattr };
 allow emdlogger system_file:dir open;
 allow emdlogger vendor_default_prop:file { read getattr open };
-allow emdlogger mota_sysfile:dir search;
-
-

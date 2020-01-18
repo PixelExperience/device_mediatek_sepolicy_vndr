@@ -12,3 +12,9 @@ allow e2fs nvdata_device:blk_file rw_file_perms;
 allow e2fs nvcfg_block_device:blk_file rw_file_perms;
 
 allow e2fs devpts:chr_file {read write};
+
+# Date : WK18.23
+# Operation: P migration
+# Purpose : Allow mke2fs to format userdata and cache partition
+allow e2fs cache_block_device:blk_file rw_file_perms;
+allow e2fs userdata_block_device:blk_file rw_file_perms;
