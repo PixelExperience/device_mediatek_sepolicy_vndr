@@ -52,7 +52,7 @@ allow em_svr self:capability { chown fsetid };
 
 # Date: WK1812
 # Purpose: add for shell cmd
-allow em_svr shell_exec:file { getattr execute read open execute_no_trans };
+allow em_svr shell_exec:file rx_file_perms;
 
 # Date: WK1812
 # Purpose: add for power battery charge/PMU
