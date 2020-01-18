@@ -146,11 +146,6 @@ binder_call(mediaserver,MtkCodecService)
 
 # Data : WK14.39
 # Operation : Migration
-# Purpose : dump for debug
-allow mediaserver audiohal_prop:property_service set;
-
-# Data : WK14.39
-# Operation : Migration
 # Purpose : HW encrypt SW codec
 #allow mediaserver mediaserver_data_file:file create_file_perms;
 #allow mediaserver mediaserver_data_file:dir create_dir_perms;
