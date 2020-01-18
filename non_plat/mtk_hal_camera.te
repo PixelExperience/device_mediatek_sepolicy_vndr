@@ -291,3 +291,18 @@ allow mtk_hal_camera aee_aedv:unix_stream_socket connectto;
 # Stage: O Migration
 # Purpose: ISP tuning remapping
 allow mtk_hal_camera mediatek_prop:property_service set;
+
+# Date : WK18.22
+# Stage: p Migration
+# Purpose: NVRAM
+allow mtk_hal_camera nvram_data_file:dir search;
+allow mtk_hal_camera nvram_data_file:file rw_file_perms;
+allow mtk_hal_camera nvram_data_file:lnk_file read;
+allow mtk_hal_camera nvdata_file:lnk_file read;
+allow mtk_hal_camera nvdata_file:dir create_dir_perms;
+allow mtk_hal_camera nvdata_file:file { read write getattr setattr open create };
+allow mtk_hal_camera nvcfg_file:lnk_file read;
+allow mtk_hal_camera nvcfg_file:dir create_dir_perms;
+allow mtk_hal_camera nvcfg_file:file { read write getattr setattr open create };
+allow mtk_hal_camera mnt_vendor_file:dir search;
+allow mtk_hal_camera mnt_vendor_file:file create_file_perms;
