@@ -18,7 +18,7 @@
 #############################
 # Data files
 #
-#/data/misc/mddb(/.*)?    u:object_r:mddb_data_file:s0
+/data/vendor/meta(/.*)?    u:object_r:mddb_data_file:s0
 /data/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
 /data/vendor/mtklog/aee_exp(/.*)?  u:object_r:aee_exp_vendor_file:s0
 /data/vendor/agps_supl(/.*)?    u:object_r:agpsd_data_file:s0
