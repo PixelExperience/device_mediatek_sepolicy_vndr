@@ -219,3 +219,6 @@ ro.vendor.mtk_gps_support u:object_r:mtk_gps_support_prop:s0
 ro.vendor.mtk_agps_app u:object_r:mtk_gps_support_prop:s0
 ro.vendor.mtk_log_hide_gps u:object_r:mtk_gps_support_prop:s0
 ro.vendor.mtk_hidl_consolidation u:object_r:mtk_gps_support_prop:s0
+
+#============allow rat config=======#
+ro.vendor.mtk_protocol1_rat_config u:object_r:mtk_rat_config_prop:s0

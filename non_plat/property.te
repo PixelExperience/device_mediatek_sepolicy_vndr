@@ -198,3 +198,7 @@ type mtk_ril_mode_prop, property_type, mtk_core_property_type;
 
 #=============GPS support properties==============
 type mtk_gps_support_prop, property_type, mtk_core_property_type;
+
+#=============mtk rat config property=============
+type mtk_rat_config_prop, property_type, mtk_core_property_type;
+
