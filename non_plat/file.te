@@ -260,6 +260,7 @@ type consyslog_data_file, file_type, data_file_type;
 # Purpose : for meta to get com port type and uart port info
 type sysfs_comport_type, fs_type, sysfs_type;
 type sysfs_uart_info, fs_type, sysfs_type;
+type sysfs_usb_cmode, fs_type, sysfs_type;
 
 # Date : WK1820
 # Purpose : for charger to access vbus info and pump_express
