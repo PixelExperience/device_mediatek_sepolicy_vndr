@@ -202,3 +202,9 @@ type mtk_gps_support_prop, property_type, mtk_core_property_type;
 #=============mtk rat config property=============
 type mtk_rat_config_prop, property_type, mtk_core_property_type;
 
+#=============mtk aal property=============
+type mtk_aal_ro_prop, property_type, mtk_core_property_type;
+
+#=============mtk pq property=============
+type mtk_pq_ro_prop, property_type, mtk_core_property_type;
+type mtk_pq_prop, property_type, mtk_core_property_type;
