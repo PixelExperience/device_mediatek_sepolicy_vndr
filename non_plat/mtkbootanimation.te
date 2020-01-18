@@ -5,9 +5,6 @@
 # Date : WK14.37
 # Operation : Migration
 # Purpose : for opetator
-typeattribute mtkbootanimation data_between_core_and_vendor_violators;
-allow mtkbootanimation custom_file:dir search;
-allow mtkbootanimation custom_file:file r_file_perms;
 allow mtkbootanimation bootani_prop:property_service set;
 
 # Date : WK14.46
