@@ -615,3 +615,5 @@
 
 /vendor/bin/hw/vendor\.mediatek\.hardware\.dumpstate@1\.0-service      u:object_r:hal_dumpstate_impl_exec:s0
 /vendor/bin/aeev  u:object_r:aee_aedv_exec:s0
+
+/vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey          u:object_r:hal_drm_clearkey_exec:s0
