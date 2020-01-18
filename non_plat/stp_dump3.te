@@ -6,8 +6,9 @@
 # Type Declaration
 # ==============================================
 
-type stp_dump3_exec , exec_type, file_type, vendor_file_type;
-type stp_dump3 ,domain;
+type stp_dump3_exec, exec_type, file_type;
+type stp_dump3, domain;
+typeattribute stp_dump3 coredomain;
 
 # ==============================================
 # Android Policy Rule
@@ -20,9 +21,14 @@ type stp_dump3 ,domain;
 # ==============================================
 # MTK Policy Rule
 # ==============================================
+file_type_auto_trans(stp_dump3,system_data_file,stp_dump_data_file)
 allow stp_dump3 self:capability { net_admin fowner chown fsetid };
 allow stp_dump3 self:netlink_socket { read write getattr bind create setopt };
 allow stp_dump3 self:netlink_generic_socket { read write getattr bind create setopt };
+allow stp_dump3 media_rw_data_file:dir { add_name setattr };
+allow stp_dump3 media_rw_data_file:dir rmdir;
+allow stp_dump3 media_rw_data_file:dir { open read write create setattr getattr add_name remove_name search};
+allow stp_dump3 media_rw_data_file:file { open read write create setattr getattr append unlink rename};
 allow stp_dump3 wmtdetect_device:chr_file { read write ioctl open };
 allow stp_dump3 stpwmt_device:chr_file { read write ioctl open };
 allow stp_dump3 tmpfs:lnk_file r_file_perms;

@@ -61,7 +61,7 @@
 /data/vendor/powerhal(/.*)? u:object_r:mtk_powerhal_data_file:s0
 #/data/vendor/nfc(/.*)? u:object_r:nfc_data_file:s0
 /data/connsyslog(/.*)?  u:object_r:consyslog_data_file:s0
-/data/vendor/stp_dump(/.*)? u:object_r:stp_dump_data_file:s0
+/data/misc/stp_dump(/.*)? u:object_r:stp_dump_data_file:s0
 /data/vendor/mediadrm(/.*)?      u:object_r:mediadrm_vendor_data_file:s0
 
 # Misc data
@@ -529,7 +529,7 @@
 # System files
 #
 /(system\/vendor|vendor)/bin/audiocmdservice_atci u:object_r:audiocmdservice_atci_exec:s0
-/(system\/vendor|vendor)/bin/stp_dump3 u:object_r:stp_dump3_exec:s0
+/system/bin/stp_dump3 u:object_r:stp_dump3_exec:s0
 /(system\/vendor|vendor)/bin/wmt_launcher u:object_r:mtk_wmt_launcher_exec:s0
 /(system\/vendor|vendor)/bin/ccci_fsd u:object_r:ccci_fsd_exec:s0
 /(system\/vendor|vendor)/bin/fuelgauged u:object_r:fuelgauged_exec:s0
