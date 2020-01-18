@@ -51,3 +51,5 @@ allowxperm mtk_hal_mms proc_mtk_jpeg:file ioctl {
      JPG_BRIDGE_ENC_IO_DEINIT
      JPG_BRIDGE_ENC_IO_START
      };
+# Allow to use mms by JPEG with handle
+allow mtk_hal_mms platform_app:fd use;
