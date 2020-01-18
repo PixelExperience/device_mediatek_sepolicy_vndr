@@ -194,7 +194,8 @@ allow meta_tst sysfs_ccci:file r_file_perms;
 # detail avc log: [   11.751803] <1>.(1)[227:logd.auditd]type=1400 audit(1262304016.560:10):
 #avc: denied { read } for pid=203 comm="meta_tst" name="meta_com_type_info" dev=
 #"sysfs" ino=11073 scontext=u:r:meta_tst:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-#allow meta_tst sysfs:file rw_file_perms;
+allow meta_tst sysfs_comport_type:file rw_file_perms;
+allow meta_tst sysfs_uart_info:file rw_file_perms;
 
 #Date: W16.17
 # Purpose:  N Migration For meta_tst load MD NVRAM database
