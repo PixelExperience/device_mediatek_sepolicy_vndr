@@ -21,7 +21,7 @@ type stp_dump3 ,domain;
 # MTK Policy Rule
 # ==============================================
 file_type_auto_trans(stp_dump3,system_data_file,stp_dump_data_file)
-allow stp_dump3 self:capability { net_admin fowner chown fsetid dac_override };
+#allow stp_dump3 self:capability { net_admin fowner chown fsetid dac_override };
 allow stp_dump3 self:netlink_socket { read write getattr bind create setopt };
 allow stp_dump3 self:netlink_generic_socket { read write getattr bind create setopt };
 #allow stp_dump3 media_rw_data_file:sock_file { write create unlink setattr };

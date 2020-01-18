@@ -64,7 +64,7 @@ allow fuelgauged nvram_data_file:lnk_file rw_file_perms;
 allow fuelgauged nvdata_file:lnk_file rw_file_perms;
 
 # Data : WK16.39
-allow fuelgauged self:capability { chown fsetid dac_override };
+#allow fuelgauged self:capability { chown fsetid dac_override };
 
 # Data : W16.43
 # Operation : New Feature

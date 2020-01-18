@@ -90,7 +90,7 @@ allow aee_aed tombstone_data_file:dir w_dir_perms;
 allow aee_aed tombstone_data_file:file create_file_perms;
 
 # /proc/pid/
-allow aee_aed self:capability { fowner chown dac_override fsetid sys_nice sys_resource net_admin sys_module};
+#allow aee_aed self:capability { fowner chown dac_override fsetid sys_nice sys_resource net_admin sys_module};
 
 # system(cmd) aee_dumpstate aee_archive
 allow aee_aed shell_exec:file rx_file_perms;

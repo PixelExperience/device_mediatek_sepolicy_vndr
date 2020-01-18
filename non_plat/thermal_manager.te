@@ -19,7 +19,7 @@ allow thermal_manager proc_mtkcooler:file rw_file_perms;
 allow thermal_manager proc_mtktz:file rw_file_perms;
 allow thermal_manager proc_thermal:file rw_file_perms;
 allow thermal_manager system_data_file:dir { write add_name };
-allow thermal_manager self:capability { fowner chown fsetid dac_override };
+#allow thermal_manager self:capability { fowner chown fsetid dac_override };
 
 # Date : WK15.30
 # Operation : Migration

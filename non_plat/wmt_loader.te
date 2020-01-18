@@ -13,7 +13,7 @@ type wmt_loader_exec , exec_type, file_type, vendor_file_type;
 # ==============================================
 init_daemon_domain(wmt_loader)
 
-allow wmt_loader self:capability { chown dac_override };
+#allow wmt_loader self:capability { chown dac_override };
 
 # Set the property
 set_prop(wmt_loader, wmt_prop)

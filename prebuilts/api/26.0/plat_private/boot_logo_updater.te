@@ -21,7 +21,7 @@ allow boot_logo_updater graphics_device:chr_file rw_file_perms;
 # For IPC communication
 allow boot_logo_updater init:unix_stream_socket connectto;
 allow boot_logo_updater property_socket:sock_file write;
-allow boot_logo_updater self:capability dac_override;
+#allow boot_logo_updater self:capability dac_override;
 # To access some boot_mode infornation
 allow boot_logo_updater sysfs:file rw_file_perms;
 # To access directory /dev/block/mmcblk0 or /dev/block/sdc

@@ -18,7 +18,7 @@ allow mtkrild kernel:system module_request;
 
 # Capabilities assigned for mtkrild
 allow mtkrild self:capability { setuid net_admin net_raw };
-allow mtkrild self:capability dac_override;
+#allow mtkrild self:capability dac_override;
 
 # Control cgroups
 allow mtkrild cgroup:dir create_dir_perms;

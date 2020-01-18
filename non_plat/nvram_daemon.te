@@ -52,7 +52,7 @@ allow nvram_daemon init:unix_stream_socket connectto;
 # Purpose: for property set
 #allow nvram_daemon property_socket:sock_file w_file_perms;
 allow nvram_daemon sysfs:file w_file_perms;
-allow nvram_daemon self:capability { fowner chown dac_override fsetid };
+#allow nvram_daemon self:capability { fowner chown dac_override fsetid };
 
 # Purpose: for backup
 allow nvram_daemon nvram_device:chr_file rw_file_perms;

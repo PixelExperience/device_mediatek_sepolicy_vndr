@@ -14,7 +14,7 @@ typeattribute storagemanagerd coredomain;
 
 init_daemon_domain(storagemanagerd)
 
-unix_socket_connect(storagemanagerd, vold, vold)
+#unix_socket_connect(storagemanagerd, vold, vold)
 
 # storagemanagerd sends information back to dumpstate when "adb bugreport" is used
 allow storagemanagerd dumpstate:fd use;

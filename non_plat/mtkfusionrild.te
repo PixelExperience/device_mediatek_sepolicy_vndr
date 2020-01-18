@@ -15,7 +15,7 @@ allow rild kernel:system module_request;
 
 # Capabilities assigned for rild
 allow rild self:capability { setuid net_admin net_raw };
-allow rild self:capability dac_override;
+#allow rild self:capability dac_override;
 
 # Control cgroups
 allow rild cgroup:dir create_dir_perms;

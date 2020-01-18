@@ -117,7 +117,7 @@ allow aee_aedv aee_tombstone_data_file:dir w_dir_perms;
 allow aee_aedv aee_tombstone_data_file:file create_file_perms;
 
 # /proc/pid/
-allow aee_aedv self:capability { fowner chown dac_override fsetid sys_nice sys_resource net_admin sys_module};
+#allow aee_aedv self:capability { fowner chown dac_override fsetid sys_nice sys_resource net_admin sys_module};
 
 # PROCESS_FILE_STATE
 allow aee_aedv dumpstate:unix_stream_socket { read write ioctl };

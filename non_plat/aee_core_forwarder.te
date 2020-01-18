@@ -26,7 +26,7 @@ allow aee_core_forwarder aee_exp_data_file:dir create_dir_perms;
 allow aee_core_forwarder aee_exp_data_file:file create_file_perms;
 
 #mkdir(path, mode)
-allow aee_core_forwarder self:capability dac_override;
+#allow aee_core_forwarder self:capability dac_override;
 
 #read STDIN_FILENO
 allow aee_core_forwarder kernel:fifo_file read;

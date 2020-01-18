@@ -24,7 +24,7 @@ allow MPED sdcard_type:file create_file_perms;
 allow MPED sdcard_type:dir create_dir_perms;
 allow MPED init:unix_stream_socket connectto;
 allow MPED init:udp_socket rw_socket_perms;
-allow MPED self:capability { fsetid dac_override };
+#allow MPED self:capability { fsetid dac_override };
 allow MPED sysfs:file rw_file_perms;
 allow MPED tmpfs:lnk_file create_file_perms;
 # TODO::mtk work around and will fix it later

@@ -22,7 +22,7 @@ set_prop(mobile_log_d, debug_prop)
 unix_socket_connect(mobile_log_d, logdr, logd);
 
 #capability
-allow mobile_log_d self:capability { setuid setgid chown dac_read_search dac_override fowner fsetid };
+#allow mobile_log_d self:capability { setuid setgid chown dac_read_search dac_override fowner fsetid };
 allow mobile_log_d self:capability2 syslog;
 
 #aee mode switch

@@ -47,4 +47,4 @@ allow fuelgauged_static system_data_file:dir rw_dir_perms;
 allow fuelgauged_static rootfs:file entrypoint;
 
 # Data : WK16.39
-allow fuelgauged_static self:capability { chown fsetid dac_override };
+#allow fuelgauged_static self:capability { chown fsetid dac_override };

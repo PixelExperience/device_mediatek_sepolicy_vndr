@@ -178,8 +178,6 @@ type debugfs_usb20_phy, fs_type, debugfs_type;
 # dynamic_debug debugfs file
 type debugfs_dynamic_debug, fs_type, debugfs_type;
 
-# /sys/kernel/debug/wakeup_sources
-type debugfs_wakeup_sources, fs_type, debugfs_type;
 # shrinker debugfs file
 type debugfs_shrinker_debug, fs_type, debugfs_type;
 

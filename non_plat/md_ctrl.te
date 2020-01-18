@@ -17,7 +17,7 @@ type md_ctrl_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(md_ctrl)
 allow md_ctrl ccci_device:chr_file { rw_file_perms };
 allow md_ctrl devpts:chr_file { rw_file_perms };
-allow md_ctrl self:capability dac_override;
+#allow md_ctrl self:capability dac_override;
 allow md_ctrl muxreport_exec:file rx_file_perms;
 allow md_ctrl emd_device:chr_file { rw_file_perms };
 allow md_ctrl eemcs_device:chr_file { rw_file_perms  };

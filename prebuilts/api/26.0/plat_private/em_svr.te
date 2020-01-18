@@ -36,7 +36,7 @@ allow em_svr graphics_device:dir search;
 allow em_svr radio_data_file:dir { search write add_name create };
 allow em_svr radio_data_file:file { create write open read };
 allow em_svr sysfs_devices_system_cpu:file write;
-allow em_svr self:capability { dac_override sys_nice fowner chown fsetid };
+#allow em_svr self:capability { dac_override sys_nice fowner chown fsetid };
 allow em_svr self:process execmem;
 allow em_svr system_data_file:dir { write remove_name add_name relabelfrom create open };
 allow em_svr kernel:system module_request;

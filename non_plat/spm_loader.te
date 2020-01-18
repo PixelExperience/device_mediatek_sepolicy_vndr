@@ -16,5 +16,5 @@ type spm_loader ,domain;
 init_daemon_domain(spm_loader)
 
 # Read to /dev/spm
-allow spm_loader self:capability { dac_read_search dac_override };
+#allow spm_loader self:capability { dac_read_search dac_override };
 allow spm_loader spm_device:chr_file r_file_perms;

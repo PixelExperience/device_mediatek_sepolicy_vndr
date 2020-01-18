@@ -15,14 +15,14 @@ allow domain debugfs_binder:dir search;
 
 # Allow all processes to read /sys/bus/platform/drivers/dev_info/dev_info
 # as it is a public interface for all processes to read some OTP data.
-allow domain sysfs_devinfo:file r_file_perms;
+#allow domain sysfs_devinfo:file r_file_perms;
 
 # Date:20170519
 # Purpose: Full treble bootup issue, coredomain need to access libudf.so where
 # located on /vendor.
 # TODO:: In O MR1 may need to change design
 allow coredomain vendor_file:dir r_dir_perms;
-allow coredomain vendor_file:file { read open getattr execute };
+#allow coredomain vendor_file:file { read open getattr execute };
 allow coredomain vendor_file:lnk_file { getattr read };
 
 # Date:20170630
@@ -32,5 +32,5 @@ allow {
   -untrusted_app_all
   -untrusted_v2_app
 } aee_aed:unix_stream_socket connectto;
-allow { domain -coredomain -hal_configstore_server } aee_aedv:unix_stream_socket connectto;
+allow { domain -coredomain -hal_configstore_server -vendor_init } aee_aedv:unix_stream_socket connectto;
 

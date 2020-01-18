@@ -19,7 +19,7 @@ allow factory kernel:system module_request;
 allow factory node:tcp_socket node_bind;
 allow factory userdata_block_device:blk_file rw_file_perms;
 allow factory port:tcp_socket { name_bind name_connect };
-allow factory self:capability { sys_module ipc_lock sys_nice dac_override net_raw fsetid net_admin sys_time sys_boot sys_admin };
+#allow factory self:capability { sys_module ipc_lock sys_nice dac_override net_raw fsetid net_admin sys_time sys_boot sys_admin };
 allow factory sdcard_type:dir r_dir_perms;
 ### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.te
 #allow factory self:netlink_route_socket create_socket_perms;

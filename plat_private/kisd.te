@@ -28,7 +28,7 @@ allow kisd dkb_block_device:blk_file {read write open ioctl getattr};
 allow kisd key_install_data_file:dir {write remove_name add_name};
 allow kisd key_install_data_file:file {write getattr read create unlink open};
 allow kisd key_install_data_file:dir search;
-allow kisd self:capability {dac_override dac_read_search};
+#allow kisd self:capability {dac_override dac_read_search};
 allow kisd mtd_device:chr_file { open read write };
 allow kisd mtd_device:dir { search };
 allow kisd kb_block_device:chr_file {read write open ioctl getattr};
