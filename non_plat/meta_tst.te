@@ -364,3 +364,14 @@ allow meta_tst self:capability net_raw;
 allow meta_tst self:tcp_socket { setopt bind create listen accept connect };
 allow meta_tst self:tcp_socket { read write };
 allow meta_tst self:udp_socket { write connect };
+
+# Date : WK18.28
+# Operation: P migration
+# Purpose : AUDIO test, Allow meta_tst to write/read asound
+allow meta_tst proc_asound:dir { read search open };
+allow meta_tst proc_asound:file { read open getattr write };
+allow meta_tst mtk_audiohal_data_file:dir { read search open };
+allow meta_tst audiohal_prop:property_service set;
+allow meta_tst sysfs:file { read open };
+allow meta_tst sysfs_headset:file { read open };
+
