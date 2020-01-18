@@ -320,3 +320,6 @@ type mtk_wifi_hotspot_prop, property_type, mtk_core_property_type;
 
 #=============mtk hdmi property=============
 type mtk_hdmi_prop, property_type, mtk_core_property_type;
+
+#=============mtk nn option property=============
+type mtk_nn_option_prop, property_type;
