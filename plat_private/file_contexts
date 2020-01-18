@@ -43,6 +43,5 @@
 
 #MTK vibrator
 /sys/devices/platform/vibrator@0/leds/vibrator(/.*)? u:object_r:sysfs_vibrator:s0
-/sys/module/tpd_setting(/.*)?  u:object_r:sysfs_tpd_setting:s0
 
 /sys/block/mmcblk0rpmb/size u:object_r:access_sys_file:s0

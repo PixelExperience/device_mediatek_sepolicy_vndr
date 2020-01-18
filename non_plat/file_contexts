@@ -473,25 +473,7 @@
 /sys/power/vcorefs/pwr_ctrl -- u:object_r:sysfs_vcorefs_pwrctrl:s0
 /sys/power/dcm_state u:object_r:sysfs_dcm:s0
 /sys/power/mtkdcs/mode u:object_r:sysfs_dcs:s0
-/sys/devices/virtual/misc/md32(/.*)?  u:object_r:sysfs_md32:s0
-/sys/devices/virtual/misc/scp(/.*)?  u:object_r:sysfs_scp:s0
-/sys/devices/virtual/misc/scp_B(/.*)?  u:object_r:sysfs_scp:s0
-/sys/devices/virtual/misc/sspm(/.*)?  u:object_r:sysfs_sspm:s0
-/sys/devices/virtual/misc/adsp(/.*)?  u:object_r:sysfs_adsp:s0
-/sys/kernel/ccci(/.*)? u:object_r:sysfs_ccci:s0
 /sys/mtk_ssw(/.*)? u:object_r:sysfs_ssw:s0
-/sys/bus/platform/drivers/dev_info/dev_info u:object_r:sysfs_devinfo:s0
-/sys/firmware/devicetree/base/chosen/atag\,devinfo u:object_r:sysfs_devinfo:s0
-/sys/devices/virtual/thermal(/.*)? u:object_r:sysfs_therm:s0
-/sys/devices/virtual/switch/fps(/.*)? u:object_r:sysfs_fps:s0
-/sys/devices/virtual/BOOT/BOOT/boot/boot_mode(/.*)? u:object_r:sysfs_boot_mode:s0
-/sys/devices/virtual/BOOT/BOOT/boot/boot_type(/.*)? u:object_r:sysfs_boot_type:s0
-/sys/bus/platform/drivers/meta_com_type_info/meta_com_type_info(/.*)? u:object_r:sysfs_comport_type:s0
-/sys/bus/platform/drivers/meta_uart_port_info/meta_uart_port_info(/.*)? u:object_r:sysfs_uart_info:s0
-/sys/devices/platform/(charger|battery)/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0
-/sys/devices/platform/(charger|battery)/Pump_Express u:object_r:sysfs_pump_express:s0
-/sys/devices/platform/mt_usb/musb-hdrc/dual_role_usb(/.*)? u:object_r:sysfs_dual_role_usb20:s0
-/sys/devices/platform/mt_usb/musb-hdrc/cmode(/.*)? u:object_r:sysfs_usb_cmode:s0
 
 #############################
 # debugfs files
@@ -634,33 +616,10 @@
 /vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey          u:object_r:hal_drm_clearkey_exec:s0
 
 /vendor/bin/loghidlvendorservice u:object_r:loghidlvendorservice_exec:s0
-# Date : 2018/06/15
-# Purpose : mtk EM touchscreen settings
-/sys/module/tpd_debug(/.*)? u:object_r:sysfs_tpd_debug:s0
 
 # Date : 2018/06/15
 # Purpose : mtk EM flash reading
 /proc/mounts u:object_r:proc_flash:s0
-
-# Date : 2018/06/15
-# Purpose : mtk EM PMU reading/setting
-/sys/devices/platform/mt-pmic(/.*)? u:object_r:sysfs_pmu:s0
-/sys/devices/platform/mt6333-user(/.*)? u:object_r:sysfs_pmu:s0
-/sys/devices/platform/mt6311-user(/.*)? u:object_r:sysfs_pmu:s0
-
-# Date : 2018/06/15
-# Purpose : mtk EM Power debug_log setting
-/sys/devices/platform/spm(/.*)? u:object_r:sysfs_spm:s0
-
-# Date : 2018/06/15
-# Purpose : mtk EM Audio headset detect
-/sys/bus/platform/drivers/Accdet_Driver/state u:object_r:sysfs_headset:s0
-
-# Date: 2018/07/02
-#Purpose : MTK Vibrator
-/sys/devices/virtual/timed_output/vibrator(/.*)? u:object_r:sysfs_vibrator:s0
-/sys/devices/platform/leds-mt65xx/leds(/.*)? u:object_r:sysfs_leds:s0
-/sys/devices/platform/odm/odm:vibrator@0/leds/vibrator(/.*)? u:object_r:sysfs_vibrator:s0
 
 # Date: 2018/07/06
 # Purpose for same-process HAL files and their dependencies: libGLES_mali.so need libm4u.so on mali GPU.

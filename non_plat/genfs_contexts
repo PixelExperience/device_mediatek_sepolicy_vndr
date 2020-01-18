@@ -42,11 +42,57 @@ genfscon iso9660 / u:object_r:iso9660:s0
 genfscon rawfs / u:object_r:rawfs:s0
 genfscon fuseblk / u:object_r:fuseblk:s0
 
+# Date : 2018/06/15
+# Purpose : mtk EM Audio headset detect
+genfscon sysfs /bus/platform/drivers/Accdet_Driver/state u:object_r:sysfs_headset:s0
+genfscon sysfs /bus/platform/drivers/dev_info/dev_info u:object_r:sysfs_devinfo:s0
+genfscon sysfs /bus/platform/drivers/meta_com_type_info/meta_com_type_info u:object_r:sysfs_comport_type:s0
+genfscon sysfs /bus/platform/drivers/meta_uart_port_info/meta_uart_port_info u:object_r:sysfs_uart_info:s0
+
 genfscon sysfs /devices/platform/battery    u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/charger/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0
+genfscon sysfs /devices/platform/battery/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0
+genfscon sysfs /devices/platform/charger/Pump_Express u:object_r:sysfs_pump_express:s0
+genfscon sysfs /devices/platform/battery/Pump_Express u:object_r:sysfs_pump_express:s0
 genfscon sysfs /devices/platform/mt_charger/power_supply u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/mt-rtc/rtc    u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/mt-pmic u:object_r:sysfs_pmu:s0
+genfscon sysfs /devices/platform/mt6333-user u:object_r:sysfs_pmu:s0
+genfscon sysfs /devices/platform/mt6311-user u:object_r:sysfs_pmu:s0
+genfscon sysfs /devices/platform/mt_usb/musb-hdrc/dual_role_usb u:object_r:sysfs_dual_role_usb20:s0
+genfscon sysfs /devices/platform/mt_usb/musb-hdrc/cmode u:object_r:sysfs_usb_cmode:s0
+
+genfscon sysfs /devices/virtual/BOOT/BOOT/boot/boot_mode u:object_r:sysfs_boot_mode:s0
+genfscon sysfs /devices/virtual/BOOT/BOOT/boot/boot_type u:object_r:sysfs_boot_type:s0
+
+genfscon sysfs /devices/virtual/misc/md32  u:object_r:sysfs_md32:s0
+genfscon sysfs /devices/virtual/misc/scp  u:object_r:sysfs_scp:s0
+genfscon sysfs /devices/virtual/misc/scp_B  u:object_r:sysfs_scp:s0
+genfscon sysfs /devices/virtual/misc/sspm  u:object_r:sysfs_sspm:s0
+genfscon sysfs /devices/virtual/misc/adsp  u:object_r:sysfs_adsp:s0
+
+genfscon sysfs /devices/virtual/thermal u:object_r:sysfs_therm:s0
+genfscon sysfs /devices/virtual/switch/fps u:object_r:sysfs_fps:s0
+
+genfscon sysfs /firmware/devicetree/base/chosen/atag,devinfo u:object_r:sysfs_devinfo:s0
+
+genfscon sysfs /kernel/ccci u:object_r:sysfs_ccci:s0
+
+# Date : 2018/06/15
+# Purpose : mtk EM touchscreen settings
+genfscon sysfs /module/tpd_debug u:object_r:sysfs_tpd_debug:s0
+genfscon sysfs /module/tpd_setting  u:object_r:sysfs_tpd_setting:s0
 genfscon sysfs /power/vcorefs/vcore_debug    u:object_r:sysfs_vcore_debug:s0
 genfscon sysfs /power/vcorefs/opp_table    u:object_r:sysfs_vcore_debug:s0
-genfscon sysfs /devices/platform/mt-rtc/rtc    u:object_r:sysfs_rtc:s0
+
+# Date: 2018/08/09
+#Purpose : MTK Vibrator
+genfscon sysfs /devices/virtual/timed_output/vibrator u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/odm/odm:vibrator@0/leds/vibrator u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/leds-mt65xx/leds u:object_r:sysfs_leds:s0
+# Date : 2018/08/109
+# Purpose : mtk EM Power debug_log setting
+genfscon sysfs /devices/platform/spm u:object_r:sysfs_spm:s0
 
 # mtk EM FreqHopping setting
 genfscon proc /freqhopping/freqhopping_debug u:object_r:proc_freqhop:s0
