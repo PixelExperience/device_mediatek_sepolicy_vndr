@@ -54,8 +54,7 @@ allow dumpstate sysfs_lowmemorykiller:dir search;
 allow dumpstate expdb_block_device:blk_file { read write ioctl open };
 
 #/data/anr/SF_RTT
-allow dumpstate sf_rtt_file:dir search;
-allow dumpstate sf_rtt_file:file r_file_perms;
+allow dumpstate sf_rtt_file:dir { search getattr };
 
 # Data : 2017/03/22
 # Operation : add fd use selinux rule
