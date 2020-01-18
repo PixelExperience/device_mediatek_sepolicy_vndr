@@ -26,3 +26,11 @@ allow untrusted_app_25 sysfs_batteryinfo:dir search;
 #allow untrusted_app_25 sysfs_batteryinfo:file { getattr open read };
 allow untrusted_app_25 sysfs_therm:dir { open read search };
 allow untrusted_app_25 sysfs_therm:file { getattr open read };
+
+allowxperm untrusted_app_25 proc_ged:file ioctl {
+GED_BRIDGE_IO_GE_GET
+GED_BRIDGE_IO_MONITOR_3D_FENCE
+GED_BRIDGE_IO_GE_SET
+GED_BRIDGE_IO_QUERY_INFO
+GED_BRIDGE_IO_GE_ALLOC
+};
