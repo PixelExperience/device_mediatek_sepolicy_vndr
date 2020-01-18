@@ -176,6 +176,15 @@ type mtk_venc_h264_showlog_prop, property_type, mtk_core_property_type;
 #=============allow em to set modem warning_prop property================
 type mtk_modem_warning_prop, property_type, mtk_core_property_type;
 
+#=============allow em to set bgdata disabled property================
+type mtk_bgdata_disabled, property_type, mtk_core_property_type;
+
+#=============allow em to set telecom vibrate property================
+type mtk_telecom_vibrate, property_type, mtk_core_property_type;
+
+#=============allow em to set gprs attach type property================
+type mtk_gprs_attach_type, property_type, mtk_core_property_type;
+
 #=============allow meta_tst to stop specific service ===============
 type ctl_mobile_log_d_prop, property_type;
 type ctl_mnld_prop, property_type;
