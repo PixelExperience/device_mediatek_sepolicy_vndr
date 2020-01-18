@@ -404,3 +404,8 @@ type proc_ca_drv, fs_type, proc_type;
 type sysfs_ged, fs_type, sysfs_type;
 type sysfs_fbt_cpu, fs_type, sysfs_type;
 type sysfs_fbt_fteh, fs_type, sysfs_type;
+
+# Date : WK19.38
+# Purpose: Android Migration for video codec driver
+type sysfs_device_tree_model, fs_type, sysfs_type;
+
