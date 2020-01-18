@@ -107,7 +107,6 @@ allow rild mtk_net_ipv6_prop:property_service set;
 # for dynamic feature switch between ss & dsds
 allow rild sysfs:file open;
 allow rild sysfs:file read;
-allow rild usp_prop:property_service set;
 
 #Date: 2017/12/6
 #Purpose: allow set the RS times for /proc/sys/net/ipv6/conf/ccmniX/router_solicitations
