@@ -406,3 +406,8 @@ allow aee_aedv para_block_device:blk_file rw_file_perms;
 allow aee_aedv aee_dumpsys_vendor_file:file ioctl;
 allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl FS_IOC_FIEMAP;
 
+#data/dipdebug
+allow aee_aedv aee_dipdebug_vendor_file:dir r_dir_perms;
+allow aee_aedv aee_dipdebug_vendor_file:file r_file_perms;
+allow aee_aedv proc_isp_p2:dir r_dir_perms;
+allow aee_aedv proc_isp_p2:file r_file_perms;

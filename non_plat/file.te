@@ -70,6 +70,7 @@ type proc_pidmap, fs_type, proc_type;
 type proc_kpageflags, fs_type, proc_type;
 type proc_slabtrace, fs_type, proc_type;
 type proc_cmdq_debug, fs_type, proc_type;
+type proc_isp_p2, fs_type, proc_type;
 type proc_dbg_repo, fs_type, proc_type;
 type proc_isp_p2_dump, fs_type, proc_type;
 type proc_isp_p2_kedump, fs_type, proc_type;
@@ -342,3 +343,5 @@ type sysfs_leds_setting, fs_type, sysfs_type;
 # Date : 2019/04/09
 # Purpose: mtk EM battery temprature settings
 type sysfs_battery_temp, fs_type, sysfs_type;
+
+type aee_dipdebug_vendor_file, file_type, data_file_type;
