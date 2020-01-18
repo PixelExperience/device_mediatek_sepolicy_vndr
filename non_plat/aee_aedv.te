@@ -291,7 +291,7 @@ allow aee_aedv sysfs:file { r_file_perms write };
 
 # Purpose: Allow aee_aedv to use HwBinder IPC.
 hwbinder_use(aee_aedv)
-allow aee_aedv hwservicemanager_prop:file { read open getattr };
+get_prop(aee_aedv, hwservicemanager_prop)
 
 # Purpose: Allow aee_aedv access to vendor/bin/mtkcam-debug, which in turn invokes ICameraProvider
 # - avc: denied { find } for interface=android.hardware.camera.provider::ICameraProvider pid=2956
