@@ -269,6 +269,7 @@ allow mtk_hal_camera property_socket:sock_file write;
 # Operation : O Migration
 # Purpose: Allow to access cmdq driver
 allow mtk_hal_camera mtk_cmdq_device:chr_file { read ioctl open };
+allow mtk_hal_camera mtk_mdp_device:chr_file rw_file_perms;
 
 # Date : WK17.36
 # Operation : O Migration

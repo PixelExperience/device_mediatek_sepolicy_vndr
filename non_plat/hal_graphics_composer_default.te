@@ -42,7 +42,7 @@ set_prop(hal_graphics_composer_default, graphics_hwc_latch_unsignaled_prop)
 
 # Date : WK18.03
 # Purpose: Allow to access property dev/mdp_sync
-allow hal_graphics_composer_default mtk_mdp_device:chr_file { read write open ioctl };
+allow hal_graphics_composer_default mtk_mdp_device:chr_file rw_file_perms;
 allow hal_graphics_composer_default mdp_device:chr_file rw_file_perms;
 allow hal_graphics_composer_default tee_device:chr_file rw_file_perms;
 allowxperm hal_graphics_composer_default proc_ged:file ioctl { proc_ged_ioctls };
