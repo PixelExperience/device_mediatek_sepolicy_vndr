@@ -31,10 +31,10 @@ allow em_svr gyroscope_device:chr_file { read ioctl open };
 
 # Date : 2018/06/15
 # Purpose : Allow EM access touchscreen settings
-allow radio sysfs_tpd_debug:dir search;
-allow radio sysfs_tpd_setting:dir search;
-allow radio sysfs_tpd_debug:file rw_file_perms;
-allow radio sysfs_tpd_setting:file rw_file_perms;
+allow em_svr sysfs_tpd_debug:dir { search };
+allow em_svr sysfs_tpd_setting:dir { search };
+allow em_svr sysfs_tpd_debug:file { rw_file_perms };
+allow em_svr sysfs_tpd_setting:file { rw_file_perms };
 
 # Date : 2018/06/15
 # Purpose : EM FreqHopping setting
