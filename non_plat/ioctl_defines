@@ -49,7 +49,9 @@ define(`PERFMGR_CPU_PREFER', `0x6701')
 #
 #
 define(`MMC_IOCTLCMD', `0xb300')
+define(`MMC_IOC_MULTI_CMD', `0xb301')
 define(`UFS_IOCTLCMD', `0x5388')
+define(`UFS_IOCTL_RPMB', `0x5391')
 
 #####################################
 #
