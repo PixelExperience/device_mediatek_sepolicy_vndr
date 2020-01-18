@@ -90,4 +90,5 @@ allow netdiag self:udp_socket { ioctl create };
 #avc: denied { open } for path="/dev/__properties__/u:object_r:atm_mdmode_prop:s0"
 allow netdiag proc_qtaguid_stat:dir { read open search };
 allow netdiag proc_qtaguid_stat:file { read getattr open };
-allow netdiag vendor_default_prop:file  { read getattr open };
+#allow netdiag vendor_default_prop:file  { read getattr open map };
+get_prop(netdiag, vendor_default_prop)
