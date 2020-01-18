@@ -399,4 +399,4 @@ get_prop(factory, exported3_radio_prop)
 # Date : WK19.38
 # Operation : Q Migration
 # Purpose: Allow clear eMMC
-allow factory ctl_mdlogger_prop:property_service set;
+set_prop(factory, ctl_mdlogger_prop);
