@@ -55,3 +55,8 @@ get_prop(surfaceflinger, graphics_debug_prop)
 get_prop(surfaceflinger, graphics_hwc_latch_unsignaled_prop)
 allow surfaceflinger hal_graphics_composer_default:dir search;
 allow surfaceflinger hal_graphics_composer_default:lnk_file read;
+
+# Date : WK18.36
+# Operation : Debug
+# Purpose: Allow to dump buffer queue
+get_prop(surfaceflinger, debug_bq_dump_prop)
