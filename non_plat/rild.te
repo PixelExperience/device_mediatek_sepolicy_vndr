@@ -150,3 +150,8 @@ set_prop(rild,powerctl_prop);
 # Date: 2019/06/14
 # Operation : Migration
 allow rild proc_cmdline:file r_file_perms;
+
+# Date: 2019/07/18
+# Operation: AP wifi path
+# Purpose: Allow packet can be filtered by RILD process
+allow rild self:netlink_netfilter_socket { create_socket_perms_no_ioctl };
