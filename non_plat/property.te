@@ -229,6 +229,7 @@ type mtk_ct_volte_prop, property_type, mtk_core_property_type;
 
 #=============mtk ril mode property=============
 type mtk_ril_mode_prop, property_type, mtk_core_property_type;
+type mtk_ss_vendor_prop, property_type, mtk_core_property_type;
 
 #=============GPS support properties==============
 type mtk_gps_support_prop, property_type, mtk_core_property_type;

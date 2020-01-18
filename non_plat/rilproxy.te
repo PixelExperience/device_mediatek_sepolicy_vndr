@@ -57,3 +57,8 @@ set_prop(mtkrild, vendor_ril_ipo_prop)
 # Operation: P migration
 # Purpose: Allow carrier express HIDL to set vendor property
 set_prop(mtkrild, mtk_cxp_vendor_prop)
+
+# Date : WK18.31
+# Operation: P migration
+# Purpose: Allow supplementary service HIDL to set vendor property
+set_prop(mtkrild, mtk_ss_vendor_prop)

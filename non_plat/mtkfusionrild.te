@@ -134,3 +134,8 @@ set_prop(rild, mtk_cxp_vendor_prop)
 #Date : W18.29
 #Purpose: allow rild access binder to mtk_hal_secure_element
 allow rild mtk_hal_secure_element:binder call;
+
+# Date : WK18.31
+# Operation: P migration
+# Purpose: Allow supplementary service HIDL to set vendor property
+set_prop(rild, mtk_ss_vendor_prop)

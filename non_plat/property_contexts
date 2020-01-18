@@ -296,5 +296,8 @@ vendor.anr.autotest u:object_r:mtk_anr_support_prop:s0
 ro.vendor.app_resolution_tuner u:object_r:mtk_appresolutiontuner_prop:s0
 persist.vendor.dbg.disable.art u:object_r:mtk_appresolutiontuner_prop:s0
 
+#============= allow em set ims xcap property ===============
+persist.vendor.ss. u:object_r:mtk_ss_vendor_prop:s0
+
 # MTK Antutu feature
 ro.vendor.net.upload.benchmark.default u:object_r:mtk_antutu_prop:s0
