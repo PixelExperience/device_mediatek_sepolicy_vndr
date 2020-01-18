@@ -47,3 +47,6 @@ allow aee_aed proc_lk_env:file rw_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/pid/exe
 allow aee_aed exec_type:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /proc/cpu/alignment
+allow aee_aed proc_cpu_alignment:file { write open };

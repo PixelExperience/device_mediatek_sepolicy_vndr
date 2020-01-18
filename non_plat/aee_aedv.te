@@ -356,3 +356,39 @@ allow aee_aedv sysfs_lowmemorykiller:file r_file_perms;
 # Purpose: Allow aee read /sys/class/misc/scp/scp_dump
 allow aee_aedv sysfs_scp:dir r_dir_perms;
 allow aee_aedv sysfs_scp:file r_file_perms;
+
+# Purpose: allow aee_aedv self to fsetid/sys_nice/chown/fowner
+allow aee_aedv self:capability { fsetid sys_nice chown fowner };
+
+# Purpose: allow aee_aedv to read /proc/buddyinfo
+allow aee_aedv proc_buddyinfo:file { read open };
+
+# Purpose: allow aee_aedv to read /proc/cmdline
+allow aee_aedv proc_cmdline:file { read open };
+
+# Purpose: allow aee_aedv to read /proc/slabinfo
+allow aee_aedv proc_slabinfo:file { read open };
+
+# Purpose: allow aee_aedv to read /proc/stat
+allow aee_aedv proc_stat:file { read open };
+
+# Purpose: allow aee_aedv to read /proc/version
+allow aee_aedv proc_version:file { read open };
+
+# Purpose: allow aee_aedv to read /proc/vmallocinfo
+allow aee_aedv proc_vmallocinfo:file { read open };
+
+# Purpose: allow aee_aedv to read /proc/vmstat
+allow aee_aedv proc_vmstat:file { read open };
+
+# Purpose: Allow aee_aedv to read /proc/cpu/alignment
+allow aee_aedv proc_cpu_alignment:file { write open };
+
+# Purpose: Allow aee_aedv to read /proc/gpulog
+allow aee_aedv proc_gpulog:file { read open };
+
+# Purpose: Allow aee_aedv to read /proc/chip/hw_ver
+allow aee_aedv proc_hw_ver:file { read open };
+
+# Purpose: Allow aee_aedv to read /proc/sched_debug
+allow aee_aedv proc_sched_debug:file { read open };

@@ -134,3 +134,9 @@ allow aee_aed crash_dump:file r_file_perms;
 # for pid=1486 comm="aee_aed" name="atag,devinfo" dev="sysfs" ino=2349 scontext=u:r:aee_aed:s0
 # tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
 #allow aee_aed sysfs:file r_file_perms;
+
+# Purpose : allow aee_aed to read /proc/version
+allow aee_aed proc_version:file { read open };
+
+# Purpose : allow aee_aed self to sys_nice/chown
+allow aee_aed self:capability { sys_nice chown };

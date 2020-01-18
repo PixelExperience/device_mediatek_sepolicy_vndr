@@ -89,3 +89,21 @@ allow dumpstate gpu_device:dir search;
 
 # Purpose: Allow aee_dumpstate to invoke "lshal debug <interface>", where <interface> is "ICameraProvider".
 allow dumpstate mtk_hal_camera:binder { call };
+
+# Purpose: Allow aee_dumpstate to read /proc/slabinfo
+allow dumpstate proc_slabinfo:file { read open };
+
+# Purpose: Allow aee_dumpstate to read /proc/zraminfo
+allow dumpstate proc_zraminfo:file { read open };
+
+# Purpose: Allow aee_dumpstate to write /sys/devices/virtual/timed_output/vibrator/enable
+allow dumpstate sysfs_vibrator:file write;
+
+# Purpose: Allow aee_dumpstate to read /proc/gpulog
+allow dumpstate proc_gpulog:file { read open };
+
+# Purpose: Allow aee_dumpstate to read /proc/sched_debug
+allow dumpstate proc_sched_debug:file { read open };
+
+# Purpose: Allow aee_dumpstate to read /proc/chip/hw_ver
+allow dumpstate proc_hw_ver:file { read open };
