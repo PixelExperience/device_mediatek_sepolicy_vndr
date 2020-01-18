@@ -105,3 +105,10 @@ allow nvram_daemon sysfs:file read;
 # Operation: P migration
 # Purpose: Allow nvram_daemon to get tel_switch_prop
 get_prop(nvram_daemon, tel_switch_prop)
+
+# Date : WK18.21
+# Operation: P migration
+# Purpose: Allow nvram_daemon to search /mnt/vendor/nvdata for fstab
+allow nvram_daemon mnt_vendor_file:dir search;
+allow nvram_daemon self:capability { fowner chown fsetid };
+
