@@ -79,6 +79,5 @@ allow connsyslogger sdcardfs:dir { create_dir_perms };
 allow connsyslogger sdcardfs:file { create_file_perms };
 allow connsyslogger rootfs:lnk_file getattr;
 
-typeattribute connsyslogger data_between_core_and_vendor_violators;
-allow connsyslogger media_rw_data_file:file  { create_file_perms };
-allow connsyslogger media_rw_data_file:dir { create_dir_perms };
+#allow connsyslogger media_rw_data_file:file  { create_file_perms };
+#allow connsyslogger media_rw_data_file:dir { create_dir_perms };
