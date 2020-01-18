@@ -71,4 +71,5 @@ allowxperm mtk_hal_gpu proc_ged:file ioctl {
 	GED_BRIDGE_IO_GPU_TUNER_STATUS
 };
 
+allow mtk_hal_gpu merged_hal_service:fd use;
 

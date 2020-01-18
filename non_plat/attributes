@@ -71,9 +71,5 @@ attribute hal_atci;
 attribute hal_atci_client;
 attribute hal_atci_server;
 
-# Date: 2019/04/19
-# GPU HIDL
-attribute hal_gpu;
-attribute hal_gpu_client;
-attribute hal_gpu_server;
+
 
