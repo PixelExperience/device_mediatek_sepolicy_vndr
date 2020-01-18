@@ -13,7 +13,6 @@ hal_client_domain(system_app, mtk_hal_lbs)
 
 #Dat: 2017/02/14
 #Purpose: allow set telephony Sensitive property
-typeattribute system_app system_writes_vendor_properties_violators;
 get_prop(system_app, mtk_telephony_sensitive_prop)
 
 

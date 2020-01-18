@@ -11,8 +11,6 @@ allow radio sysfs_keypad_file:file { w_file_perms };
 # Purpose : for engineermode WFD IOT property
 allow radio surfaceflinger:fifo_file { rw_file_perms };
 
-typeattribute radio system_writes_vendor_properties_violators;
-
 # Date : 2016/06/11
 # Operation : IT
 # Purpose : for engineermode Usb PHY Tuning
@@ -145,10 +143,6 @@ get_prop(radio, wmt_prop)
 # Purpose: Allow radio to get tel_switch_prop
 get_prop(radio, tel_switch_prop)
 
-#Date: W1817
-#Purpose: allow rild access property of vendor_radio_prop
-set_prop(radio, vendor_radio_prop)
-
 # Date : 2018/05/03
 # Operation: P migration
 # Purpose: allow EM to set modem reset delay property
@@ -178,7 +172,6 @@ allow radio sysfs_spm:dir { search };
 
 # Date : 2018/06/15
 # Purpose : Allow EM access AAL settings
-set_prop(radio, mtk_aal_prop)
 get_prop(radio, mtk_aal_prop)
 
 # Date : 2018/06/15

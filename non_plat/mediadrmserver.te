@@ -7,10 +7,3 @@
 allow mediadrmserver proc_ged:file {open read write ioctl getattr};
 
 
-
-
-# Date : WK17.28
-# Operation : MT6757 SQC
-# Purpose : Change thermal config
-allow mediaserver mtk_thermal_config_prop:file { getattr open read };
-allow mediaserver mtk_thermal_config_prop:property_service set;
