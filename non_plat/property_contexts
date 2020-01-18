@@ -19,17 +19,17 @@ vendor.ril.ipo u:object_r:vendor_ril_ipo_prop:s0
 
 #=============allow netlog==============
 #debug.mtklog.init.flag
-debug.mtklog  u:object_r:debug_mtklog_prop:s0
+vendor.mtklog  u:object_r:debug_mtklog_prop:s0
 #persist.mtklog.log2sd.path
-persist.mtklog u:object_r:persist_mtklog_prop:s0
-#debug.netlog.stopreason
-debug.netlog u:object_r:debug_netlog_prop:s0
+persist.vendor.mtklog u:object_r:persist_mtklog_prop:s0
+#vendor.netlog.stopreason
+vendor.netlog u:object_r:debug_netlog_prop:s0
 
 #=============allow netd to set mtk_wifi.*========================
 mtk_wifi. u:object_r:mtk_wifi_prop:s0
 
 #=============allow mdlogger==============
-debug.mdlogger u:object_r:debug_mdlogger_prop:s0
+vendor.mdlogger u:object_r:debug_mdlogger_prop:s0
 
 #=============allow AEE==============
 # persist.vendor.mtk.aee.mode && persist.vendor.mtk.aee.dal
