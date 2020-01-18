@@ -369,4 +369,5 @@ get_prop(meta_tst, tel_switch_prop)
 # Operation: P migration
 # Purpose : Allow meta_tst to call nvram hal
 allow meta_tst nvram_agent_binder_hwservice:hwservice_manager find;
+allow meta_tst nvram_agent_binder:binder call;
 
