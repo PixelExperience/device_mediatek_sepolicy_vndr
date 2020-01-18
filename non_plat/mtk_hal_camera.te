@@ -344,7 +344,13 @@ allow mtk_hal_camera sysfs_dt_firmware_android:dir search;
 # Date: 2019/07/09
 # Operation : For M4U security
 allow mtk_hal_camera proc_m4u:file r_file_perms;
-allowxperm mtk_hal_camera proc_m4u:file ioctl MTK_M4U_T_SEC_INIT;
+allowxperm mtk_hal_camera proc_m4u:file ioctl{
+MTK_M4U_T_ALLOC_MVA
+MTK_M4U_T_DEALLOC_MVA
+MTK_M4U_T_CONFIG_PORT
+MTK_M4U_T_DMA_OP
+MTK_M4U_T_SEC_INIT
+};
 
 # Date: 2019/08/27
 # Operation : For android Q allowing ioctl
