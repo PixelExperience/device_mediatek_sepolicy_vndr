@@ -307,11 +307,18 @@ allow aee_aedv selinuxfs:file r_file_perms;
 # Purpose: Allow aee_aedv to read /proc/pid/exe
 #allow aee_aedv exec_type:file r_file_perms;
 
-# Purpose: mrdump pre-allocation: immutable and userdata
-# - avc: denied { linux_immutable } for capability=9 scontext=u:r:aee_aedv:s0
-#   tcontext=u:r:aee_aedv:s0 tclass=capability permissive=0
+# Purpose: mrdump db flow and pre-allocation
+# mrdump db flow
+allow aee_aedv sysfs_dt_firmware_android:dir search;
+allow aee_aedv sysfs_dt_firmware_android:file r_file_perms;
+allow aee_aedv kernel:system module_request;
+allow aee_aedv metadata_file:dir search;
+# pre-allocation
 allow aee_aedv self:capability linux_immutable;
 allow aee_aedv userdata_block_device:blk_file { read write open };
+allow aee_aedv para_block_device:blk_file rw_file_perms;
+allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl FS_IOC_FIEMAP;
+allow aee_aedv mrdump_device:blk_file rw_file_perms;
 
 # Purpose: allow vendor aee read lowmemorykiller logs
 # file path: /sys/module/lowmemorykiller/parameters/
@@ -404,12 +411,6 @@ allow aee_aedv proc_cmdq_debug:file r_file_perms;
 
 # temp solution
 get_prop(aee_aedv, vendor_default_prop)
-
-# mrdump
-allow aee_aedv para_block_device:blk_file rw_file_perms;
-allow aee_aedv aee_dumpsys_vendor_file:file ioctl;
-allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl FS_IOC_FIEMAP;
-allow aee_aedv mrdump_device:blk_file rw_file_perms;
 
 #data/dipdebug
 allow aee_aedv aee_dipdebug_vendor_file:dir r_dir_perms;
