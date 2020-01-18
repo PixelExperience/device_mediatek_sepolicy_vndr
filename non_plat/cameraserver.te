@@ -355,4 +355,8 @@ allow cameraserver debugfs_ion:dir search;
 # Operation : MT6771 SQC
 # Purpose: Allow permgr access
 allow cameraserver proc_perfmgr:dir {read search};
-allow cameraserver proc_perfmgr:file {open read ioctl};
+allow cameraserver proc_perfmgr:file r_file_perms;
+allowxperm cameraserver proc_perfmgr:file ioctl {
+  GED_BRIDGE_IO_BOOST_GPU_FREQ
+  GED_BRIDGE_IO_LOG_BUF_WRITE
+};
