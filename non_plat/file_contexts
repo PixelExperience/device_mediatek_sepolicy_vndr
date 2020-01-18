@@ -631,6 +631,7 @@
 
 /vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey          u:object_r:hal_drm_clearkey_exec:s0
 
+/vendor/bin/loghidlvendorservice u:object_r:loghidlvendorservice_exec:s0
 # Date : 2018/06/15
 # Purpose : mtk EM touchscreen settings
 /sys/module/tpd_debug(/.*)? u:object_r:sysfs_tpd_debug:s0
