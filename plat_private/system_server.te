@@ -3,3 +3,7 @@
 dontaudit system_server appdomain:file w_file_perms;
 allow system_server ota_package_file:dir getattr;
 allow uncrypt uncrypt:capability fowner;
+
+# Purpose: receive dropbox message
+allow system_server aee_aed:fifo_file w_file_perms;
+allow system_server aee_aed:fd use;

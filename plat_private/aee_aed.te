@@ -132,3 +132,12 @@ userdebug_or_eng(`allow aee_aed debugfs_tracing_debug:file { write open };')
 
 # Purpose: Allow aee_aed to read/write /sys/kernel/debug/tracing/tracing_on
 #userdebug_or_eng(` allow aee_aed debugfs_tracing:file { r_file_perms write };')
+
+# Purpose: receive dropbox message
+allow aee_aed dropbox_data_file:file {getattr read};
+allow aee_aed dropbox_service:service_manager find;
+allow aee_aed servicemanager:binder call;
+allow aee_aed system_server:binder call;
+
+# Purpose: allow aee_aed to read packages.list
+allow aee_aed packages_list_file:file r_file_perms;
