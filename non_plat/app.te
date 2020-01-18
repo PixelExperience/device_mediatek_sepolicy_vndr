@@ -36,3 +36,7 @@ allowxperm appdomain proc_perfmgr:file ioctl {
   FPSGO_QUEUE_CONNECT
   FPSGO_BQID
 };
+
+# Date : W19.4
+# Purpose : Allow MDP user access mdp driver
+allow appdomain mdp_device:chr_file rw_file_perms;
