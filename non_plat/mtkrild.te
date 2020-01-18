@@ -128,3 +128,7 @@ allow mtkrild node:rawip_socket node_bind;
 # Allow to use sysenv
 allow mtkrild sysfs:file open;
 allow mtkrild sysfs:file read;
+
+#Date : W18.15
+#Purpose: allow rild access to vendor.ril.ipo system property
+set_prop(mtkrild, vendor_ril_ipo_prop)
