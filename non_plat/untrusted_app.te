@@ -32,15 +32,6 @@ allow untrusted_app_25 sysfs_batteryinfo:file { getattr open read };
 allow untrusted_app_25 sysfs_therm:dir { open read search };
 allow untrusted_app_25 sysfs_therm:file { getattr open read };
 
-# Date : 2017/08/10
-# Operation: Development RenderScript opt
-# Purpose : Allow RenderScript Opt RS2CL to invoke standalone executable
-# properly for thermal tests at OEM/ODM.
-typeattribute untrusted_app_25 system_executes_vendor_violators;
-allow untrusted_app_25 vendor_file:file execute_no_trans;
-typeattribute untrusted_app system_executes_vendor_violators;
-allow untrusted_app vendor_file:file execute_no_trans;
-
 # Date : WK17.39
 # Stage: O Migration, SQC
 # Purpose: Allow to use HAL PQ

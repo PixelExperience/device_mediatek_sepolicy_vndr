@@ -293,13 +293,6 @@ allow mediaserver camera_dpe_device:chr_file rw_file_perms;
 # Purpose : TSF Driver
 allow mediaserver camera_tsf_device:chr_file rw_file_perms;
 
-
-
-# Date : WK1631
-# Operation : N Migration
-# Purpose : add permission for thermal manager
-typeattribute mediaserver system_executes_vendor_violators;
-
 # Date : WK16.32
 # Operation : N Migration
 # Purpose : RSC Driver
