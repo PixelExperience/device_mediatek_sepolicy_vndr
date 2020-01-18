@@ -99,7 +99,7 @@ type bt_prop, property_type, mtk_core_property_type;
 type persist_bt_prop, property_type, mtk_core_property_type;
 
 #============= allow factory idle current prop ==============
-type factory_idle_state_prop, property_type, mtk_core_property_type;
+type vendor_factory_idle_state_prop, property_type, mtk_core_property_type;
 
 #============= allow ftrace log property ===============
 type ftrace_log_prop, property_type, mtk_core_property_type;

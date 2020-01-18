@@ -97,7 +97,7 @@ persist.bt.          u:object_r:persist_bt_prop:s0
 #=============allow ccci_mdinit md status ==============
 mtk.md   u:object_r:mtk_md_prop:s0
 #============= allow factory idle current prop ==============
-debug.factory.idle_state    u:object_r:factory_idle_state_prop:s0
+vendor.debug.factory.idle_state    u:object_r:vendor_factory_idle_state_prop:s0
 
 #=============allow ftrace log property================
 ftrace.buffer.log     u:object_r:ftrace_log_prop:s0
