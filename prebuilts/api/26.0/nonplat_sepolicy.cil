@@ -1625,6 +1625,8 @@
 (roletype object_r nvram_agent_service_26_0)
 (typeattribute thermalindicator_26_0)
 (roletype object_r thermalindicator_26_0)
+(type netd_socket)
+(roletype object_r netd_socket)
 (type hostapd_socket)
 (roletype object_r hostapd_socket)
 (type hal_audio_default)

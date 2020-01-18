@@ -42,3 +42,5 @@
 
 # For boot type
 /sys/devices/virtual/BOOT/BOOT/boot/boot_type(/.*)? u:object_r:sysfs_boot_type:s0
+
+/dev/socket/netd    u:object_r:netd_socket:s0

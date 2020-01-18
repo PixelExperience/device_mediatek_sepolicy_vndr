@@ -12,7 +12,7 @@
 #############################
 # Custom files
 (/vendor)?/custom(/.*)?		u:object_r:custom_file:s0
-
+/dev/socket/netd    u:object_r:netd_socket:s0
 
 
 #############################

@@ -12,6 +12,7 @@
 (type mediacasserver_service)
 (type tracing_shell_writable)
 (type tracing_shell_writable_debug)
+(type netd_socket)
 
 (typeattributeset tracing_shell_writable_debug_26_0 (debugfs_tracing_debug tracing_shell_writable_debug))
 (typeattributeset priv_app_26_0 (mediaprovider priv_app))
