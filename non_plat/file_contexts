@@ -507,10 +507,8 @@
 /dev/block/platform/bootdevice/by-name/vbmeta(_system|_vendor)?(_[ab])?    u:object_r:vbmeta_block_device:s0
 
 # Key manager
-/dev/block/platform/bootdevice/by-name/kb        u:object_r:kb_block_device:s0
-/dev/block/platform/bootdevice/by-name/dkb       u:object_r:dkb_block_device:s0
-/dev/kb                                          u:object_r:kb_block_device:s0
-/dev/dkb                                         u:object_r:dkb_block_device:s0
+/dev/block/platform/soc/[0-9]+\.mmc/by-name/kb   u:object_r:kb_block_device:s0
+/dev/block/platform/soc/[0-9]+\.mmc/by-name/dkb  u:object_r:dkb_block_device:s0
 
 # W19.23 Q new feature - Userdata Checkpoint
 /dev/block/by-name/md_udc             u:object_r:metadata_block_device:s0
