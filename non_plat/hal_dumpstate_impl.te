@@ -1,0 +1,11 @@
+type hal_dumpstate_impl, domain;
+hal_server_domain(hal_dumpstate_impl, hal_dumpstate)
+
+type hal_dumpstate_impl_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_dumpstate_impl)
+
+allow hal_dumpstate_impl vendor_shell_exec:file rx_file_perms;
+allow hal_dumpstate_impl vendor_toolbox_exec:file rx_file_perms;
+
+allow hal_dumpstate_impl aee_exp_vendor_file:file create_file_perms;
+allow hal_dumpstate_impl aee_exp_vendor_file:dir create_dir_perms;
