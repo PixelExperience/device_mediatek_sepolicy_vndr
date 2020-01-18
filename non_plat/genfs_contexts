@@ -45,6 +45,7 @@ genfscon sysfs /devices/platform/battery    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/mt_charger/power_supply u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /power/vcorefs/vcore_debug    u:object_r:sysfs_vcore_debug:s0
 genfscon sysfs /power/vcorefs/opp_table    u:object_r:sysfs_vcore_debug:s0
+genfscon sysfs /devices/platform/mt-rtc/rtc    u:object_r:sysfs_rtc:s0
 
 # mtk EM FreqHopping setting
 genfscon proc /freqhopping/freqhopping_debug u:object_r:proc_freqhop:s0
