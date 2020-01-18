@@ -30,9 +30,9 @@ allow coredomain vendor_file:lnk_file { getattr read };
 
 # Date:20170630
 # Purpose: allow trusted process to connect aee daemon
-allow {
-  coredomain
-  -untrusted_app_all
-} aee_aed:unix_stream_socket connectto;
+#allow {
+#  coredomain
+#  -untrusted_app_all
+#} aee_aed:unix_stream_socket connectto;
 allow { domain -coredomain -hal_configstore_server -vendor_init } aee_aedv:unix_stream_socket connectto;
 

@@ -131,7 +131,7 @@ allow aee_aedv crash_dump:file r_file_perms;
 allow aee_aedv vendor_file:file execute_no_trans;
 
 # Purpose: debugfs files
-allow aee_aedv debugfs:lnk_file read;
+# allow aee_aedv debugfs:lnk_file read;
 allow aee_aedv debugfs_binder:dir { read open };
 allow aee_aedv debugfs_binder:file { read open };
 allow aee_aedv debugfs_blockio:file { read open };
