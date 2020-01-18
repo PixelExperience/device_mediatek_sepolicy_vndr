@@ -28,6 +28,7 @@ add_hwservice(hal_mms_server, mtk_hal_mms_hwservice)
 allow mtk_hal_mms graphics_device:chr_file { read write open ioctl };
 allow mtk_hal_mms ion_device:chr_file { read open ioctl };
 allow mtk_hal_mms mtk_cmdq_device:chr_file { read open ioctl };
+allow mtk_hal_mms mtk_mdp_device:chr_file rw_file_perms;
 allow mtk_hal_mms mtk_hal_pq_hwservice:hwservice_manager find;
 allow mtk_hal_mms proc:file r_file_perms;
 
