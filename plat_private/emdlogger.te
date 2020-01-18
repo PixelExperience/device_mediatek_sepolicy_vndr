@@ -68,7 +68,8 @@ allow emdlogger file_contexts_file:file { read getattr open };
 #avc: denied { open } for path="/system/etc/mddb"
 #avc: denied { read } for name="u:object_r:vendor_default_prop:s0"
 allow emdlogger proc_cmdline:file { read getattr open };
-allow emdlogger sysfs_dt_firmware_android:dir search;
+allow emdlogger sysfs_dt_firmware_android:dir { read open search };
+allow emdlogger tmpfs:dir write;
 allow emdlogger sysfs_dt_firmware_android:file { read open getattr };
 allow emdlogger system_file:dir open;
 allow emdlogger vendor_default_prop:file { read getattr open };
