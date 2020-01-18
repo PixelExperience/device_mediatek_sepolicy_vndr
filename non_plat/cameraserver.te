@@ -42,7 +42,6 @@ allow cameraserver MTK_SMI_device:chr_file r_file_perms;
 allow cameraserver camera_pipemgr_device:chr_file r_file_perms;
 allow cameraserver kd_camera_flashlight_device:chr_file rw_file_perms;
 allow cameraserver lens_device:chr_file rw_file_perms;
-typeattribute cameraserver data_between_core_and_vendor_violators;
 allow cameraserver nvdata_file:dir { write search add_name };
 allow cameraserver nvdata_file:file { read write getattr setattr open create };
 allow cameraserver nvram_data_file:dir search;
@@ -311,7 +310,6 @@ allow cameraserver gpu_device:dir search;
 allow cameraserver property_socket:sock_file write;
 allow cameraserver proc:file getattr;
 allow cameraserver shell_exec:file { execute read getattr open};
-typeattribute cameraserver system_executes_vendor_violators;
 allow cameraserver init:unix_stream_socket connectto;
 
 # Date : WK16.32
