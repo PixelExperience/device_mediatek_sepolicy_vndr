@@ -99,8 +99,8 @@ a2dp.     u:object_r:audiohal_prop:s0
 persist.af.     u:object_r:audiohal_prop:s0
 
 #=============allow wmt ==============
-persist.mtk.wcn u:object_r:wmt_prop:s0
-service.wcn u:object_r:wmt_prop:s0
+persist.vendor.connsys. u:object_r:wmt_prop:s0
+vendor.connsys.driver. u:object_r:wmt_prop:s0
 
 #=============allow sensor daemon==============
 ctl.emdlogger5       u:object_r:ctl_emcsmdlogger_prop:s0
