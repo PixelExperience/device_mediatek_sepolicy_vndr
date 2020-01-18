@@ -12,6 +12,7 @@ init_daemon_domain(atcid)
 set_prop(atcid,persist_service_atci_prop)
 allow atcid block_device:dir search;
 allow atcid socket_device:sock_file write;
+allow atcid gsmrild_socket:sock_file write;
 
 # Date : WK17.21
 # Purpose: Allow to use HIDL
