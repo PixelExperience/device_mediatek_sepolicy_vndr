@@ -88,5 +88,5 @@ allow fuelgauged nvcfg_file:file { read write getattr open create };
 # Date: W18.17
 # Operation : add label for /sys/devices/platform/battery(/.*)
 # Purpose : add fuelgauged could access
-allow fuelgauged battery_node:file { read open };
+r_dir_file(fuelgauged, sysfs_batteryinfo);
 
