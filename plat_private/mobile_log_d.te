@@ -32,6 +32,12 @@ allow mobile_log_d system_file:file execute_no_trans;
 #shell command
 allow mobile_log_d shell_exec:file rx_file_perms;
 
+# execute logcat command
+allow mobile_log_d logcat_exec:file rx_file_perms;
+
+# execute 'logcat -L' via dumpstate
+domain_auto_trans(mobile_log_d, logcat_exec, dumpstate)
+
 #general storage access
 allow mobile_log_d storage_file:dir create_dir_perms;
 allow mobile_log_d storage_file:file create_file_perms;

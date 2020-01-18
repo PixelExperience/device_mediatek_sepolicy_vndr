@@ -49,3 +49,9 @@ allow dumpstate sysfs_vibrator:file write;
 
 # Purpose : Allow dumpstate self to sys_nice
 allow dumpstate self:capability sys_nice;
+
+# Date: W1826
+# Purpose : mobile_log_d exec 'logcat -L' via dumpstate
+allow dumpstate mobile_log_d:fd use;
+allow dumpstate mobile_log_d:fifo_file write;
+allow dumpstate mobile_log_d:unix_stream_socket { read write };
