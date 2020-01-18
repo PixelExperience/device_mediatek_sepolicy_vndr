@@ -92,3 +92,7 @@ allow netdiag proc_qtaguid_stat:dir { read open search };
 allow netdiag proc_qtaguid_stat:file { read getattr open };
 #allow netdiag vendor_default_prop:file  { read getattr open map };
 get_prop(netdiag, vendor_default_prop)
+allow netdiag proc_net_tcp_udp:file getattr;
+allow netdiag netd:binder call;
+get_prop(netdiag, apexd_prop)
+
