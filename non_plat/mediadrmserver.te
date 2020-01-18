@@ -14,3 +14,8 @@ allow mediadrmserver proc_ged:file {open read write ioctl getattr};
 # Purpose : Change thermal config
 allow mediaserver mtk_thermal_config_prop:file { getattr open read };
 allow mediaserver mtk_thermal_config_prop:property_service set;
+
+# Date : WK18.20
+# Operation : Migration
+# Purpose : no permission for vendor_default_prop
+get_prop(mediadrmserver, vendor_default_prop)
