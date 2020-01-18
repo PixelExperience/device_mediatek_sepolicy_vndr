@@ -375,3 +375,6 @@ allow meta_tst audiohal_prop:property_service set;
 allow meta_tst sysfs:file { read open };
 allow meta_tst sysfs_headset:file { read open };
 
+#Date: W18.05
+#Purpose : Allow meta_tst to use socket for listening uevent
+allow meta_tst meta_tst:netlink_kobject_uevent_socket { read bind create setopt };
