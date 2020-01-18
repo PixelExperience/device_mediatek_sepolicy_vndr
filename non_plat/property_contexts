@@ -88,7 +88,7 @@ ro.boot.opt_sim_count       u:object_r:tel_switch_prop:s0
 ro.boot.opt_using_default   u:object_r:tel_switch_prop:s0
 
 #=============allow bootanim==============
-persist.bootanim.     u:object_r:bootani_prop:s0
+persist.vendor.bootanim.     u:object_r:bootani_prop:s0
 
 #=============allow mnld_prop ==============
 vendor.gps.clock.type u:object_r:mnld_prop:s0
