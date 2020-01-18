@@ -19,13 +19,16 @@ allow e2fs devpts:chr_file {read write};
 allow e2fs cache_block_device:blk_file rw_file_perms;
 allow e2fs userdata_block_device:blk_file rw_file_perms;
 
-# Date : WK19.11
-# Operation: Q migration
-# Purpose : Allow mke2fs to use ioctl/ioctlcmd
-allowxperm e2fs protect1_block_device:blk_file ioctl BLKPBSZGET;
-allowxperm e2fs protect2_block_device:blk_file ioctl BLKPBSZGET;
-
 # Date : WK19.23
 # Operation: Q migration
 # Purpose : Allow format /metadata for UDC
 allow e2fs metadata_block_device:blk_file rw_file_perms;
+
+# Date : WK19.34
+# Operation: Q migration
+# Purpose : Allow mke2fs to use ioctl/ioctlcmd
+allowxperm e2fs protect1_block_device:blk_file ioctl { BLKPBSZGET BLKROGET BLKDISCARD BLKDISCARDZEROES BLKSECDISCARD };
+allowxperm e2fs protect2_block_device:blk_file ioctl { BLKPBSZGET BLKROGET BLKDISCARD BLKDISCARDZEROES BLKSECDISCARD };
+allowxperm e2fs nvdata_device:blk_file ioctl { BLKPBSZGET BLKROGET BLKDISCARD BLKDISCARDZEROES BLKSECDISCARD };
+allowxperm e2fs nvcfg_block_device:blk_file ioctl { BLKPBSZGET BLKROGET BLKDISCARD BLKDISCARDZEROES BLKSECDISCARD };
+allowxperm e2fs persist_block_device:blk_file ioctl { BLKPBSZGET BLKROGET BLKDISCARD BLKDISCARDZEROES BLKSECDISCARD };
