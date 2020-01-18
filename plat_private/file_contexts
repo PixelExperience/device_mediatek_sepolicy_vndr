@@ -15,6 +15,7 @@
 /system/bin/mdlogger u:object_r:mdlogger_exec:s0
 /system/bin/emdlogger[0-9]+ u:object_r:emdlogger_exec:s0
 /system/bin/netdiag u:object_r:netdiag_exec:s0
+/system/bin/loghidlsysservice u:object_r:loghidlsysservice_exec:s0
 /system/bin/cmddumper u:object_r:cmddumper_exec:s0
 /system/bin/thermalindicator u:object_r:thermalindicator_exec:s0
 /system/bin/em_svr u:object_r:em_svr_exec:s0
