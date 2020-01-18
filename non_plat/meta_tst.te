@@ -321,7 +321,7 @@ set_prop(meta_tst, atm_ipaddr_prop);
 # Date : WK18.16
 # Operation: P migration
 # Purpose: Allow meta_tst to get tel_switch_prop
-get_prop(meta_tst, tel_switch_prop)
+get_prop(meta_tst, tel_switch_prop);
 
 # Date : WK18.21
 # Operation: P migration
@@ -378,3 +378,8 @@ allow meta_tst sysfs_headset:file { read open };
 #Date: W18.05
 #Purpose : Allow meta_tst to use socket for listening uevent
 allow meta_tst meta_tst:netlink_kobject_uevent_socket { read bind create setopt };
+
+#Date : WK18.28
+# Operation: P migration
+# Purpose : 
+set_prop(meta_tst, vendor_usb_prop);
