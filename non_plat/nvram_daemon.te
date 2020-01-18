@@ -89,3 +89,5 @@ get_prop(nvram_daemon, tel_switch_prop)
 allow nvram_daemon mnt_vendor_file:dir search;
 allow nvram_daemon self:capability { fowner chown fsetid };
 
+allow nvram_daemon sysfs_boot_mode:file r_file_perms;
+
