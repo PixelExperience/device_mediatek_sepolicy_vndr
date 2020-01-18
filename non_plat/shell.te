@@ -20,3 +20,6 @@ allow shell aee_exp_data_file:dir r_dir_perms;
 allow shell aee_exp_data_file:file r_file_perms;
 
 get_prop(shell, mobile_log_prop)
+get_prop(shell, persist_mtk_aee_prop);
+get_prop(shell, persist_aee_prop);
+get_prop(shell, debug_mtk_aee_prop);
