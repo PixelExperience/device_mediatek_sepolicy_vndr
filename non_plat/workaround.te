@@ -11,9 +11,6 @@ allow audioserver vendor_default_prop:file read;
 #============= bluetooth ==============
 allow bluetooth mtk_amslog_prop:file read;
 
-#============= emdlogger ==============
-allow emdlogger logmuch_prop:file read;
-
 #============= merged_hal_service ==============
 allow merged_hal_service nvram_agent_binder_hwservice:hwservice_manager find;
 
