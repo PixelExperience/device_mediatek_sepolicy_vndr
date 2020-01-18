@@ -56,3 +56,6 @@ set_prop(vendor_init, mtk_appresolutiontuner_prop)
 
 # fullscreen switch
 set_prop(vendor_init, mtk_fullscreenswitch_prop)
+
+# for kernel module verification support, allow vendor domain to search kernel keyring
+allow vendor_init kernel:key search;
