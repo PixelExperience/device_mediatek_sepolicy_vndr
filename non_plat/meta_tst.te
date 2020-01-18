@@ -390,7 +390,14 @@ set_prop(meta_tst, vendor_usb_prop);
 allow meta_tst loghidlvendorservice:unix_stream_socket connectto;
 
 # Date: W18.32
+# Operation: Android P migration
 # Purpose : Allow meta_tst to set powerctl property
 # avc:  denied  { set } for property=sys.powerctl pid=330 uid=0 gid=1001 scontext=u:r:meta_tst:s0 
 # tcontext=u:object_r:powerctl_prop:s0 tclass=property_service permissive=0
 set_prop(meta_tst, powerctl_prop);
+
+# Date: W18.33
+# Operation: Android P migration
+# Purpose : Allow meta_tst to set system clock
+# avc: denied { sys_time } for capability=25 scontext=u:r:meta_tst:s0 tcontext=u:r:meta_tst:s0 tclass=capability permissive=0
+allow meta_tst self:capability sys_time;
