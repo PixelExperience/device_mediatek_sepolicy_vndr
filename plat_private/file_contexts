@@ -11,7 +11,7 @@
 #
 
 /system/bin/mobile_log_d u:object_r:mobile_log_d_exec:s0
-
+/system/bin/aee_core_forwarder u:object_r:aee_core_forwarder_exec:s0
 /system/bin/mdlogger u:object_r:mdlogger_exec:s0
 /system/bin/emdlogger[0-9]+ u:object_r:emdlogger_exec:s0
 /system/bin/netdiag u:object_r:netdiag_exec:s0

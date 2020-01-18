@@ -513,7 +513,6 @@
 #
 /(system\/vendor|vendor)/bin/stp_dump3 u:object_r:stp_dump3_exec:s0
 /(system\/vendor|vendor)/bin/wmt_launcher u:object_r:mtk_wmt_launcher_exec:s0
-/(system\/vendor|vendor)/bin/aee_core_forwarder u:object_r:aee_core_forwarder_exec:s0
 /(system\/vendor|vendor)/bin/ccci_fsd u:object_r:ccci_fsd_exec:s0
 /(system\/vendor|vendor)/bin/fuelgauged u:object_r:fuelgauged_exec:s0
 /(system\/vendor|vendor)/bin/fuelgauged_nvram u:object_r:fuelgauged_nvram_exec:s0
