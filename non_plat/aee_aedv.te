@@ -401,3 +401,8 @@ allow aee_aedv proc_cmdq_debug:file r_file_perms;
 # temp solution
 get_prop(aee_aedv, vendor_default_prop)
 
+# mrdump
+allow aee_aedv para_block_device:blk_file rw_file_perms;
+allow aee_aedv aee_dumpsys_vendor_file:file ioctl;
+allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl FS_IOC_FIEMAP;
+
