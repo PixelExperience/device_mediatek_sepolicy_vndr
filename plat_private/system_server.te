@@ -1,3 +1,5 @@
 # Date: W18.32
 # Operation : dontaudit writing to timerslack_ns
 dontaudit system_server appdomain:file w_file_perms;
+allow system_server ota_package_file:dir getattr;
+allow uncrypt uncrypt:capability fowner;
