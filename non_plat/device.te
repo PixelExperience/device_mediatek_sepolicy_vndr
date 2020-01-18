@@ -173,6 +173,7 @@ type otp_device, dev_type;
 type otp_part_block_device, dev_type;
 type qemu_pipe_device, dev_type;
 type icusb_device, dev_type;
+type nlop_device, dev_type;
 type irtx_device, dev_type;
 type pmic_ftm_device, dev_type;
 type charger_ftm_device, dev_type;

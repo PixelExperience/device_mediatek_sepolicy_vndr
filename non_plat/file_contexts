@@ -314,6 +314,7 @@
 /dev/ttyC1 u:object_r:mdlog_device:s0
 /dev/ttyC2         u:object_r:agps_device:s0
 /dev/ttyC3 u:object_r:icusb_device:s0
+/dev/ttyC6 u:object_r:nlop_device:s0
 /dev/ttyGS.* u:object_r:ttyGS_device:s0
 /dev/ttyMT.* u:object_r:ttyMT_device:s0
 /dev/ttyS.* u:object_r:ttyS_device:s0
