@@ -80,3 +80,11 @@ attribute mtk_hal_md_dbfilter_server;
 attribute hal_hdmi;
 attribute hal_hdmi_client;
 attribute hal_hdmi_server;
+
+# Date: 2019/09/06
+# BGService HIDL
+attribute mtk_hal_bgs;
+attribute mtk_hal_bgs_client;
+attribute mtk_hal_bgs_server;
+
+

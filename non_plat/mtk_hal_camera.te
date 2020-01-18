@@ -23,6 +23,8 @@ init_daemon_domain(mtk_hal_camera)
 # HAL implementation of the specified type over HwBinder.
 hal_server_domain(mtk_hal_camera, hal_camera)
 
+hal_server_domain(mtk_hal_camera, mtk_hal_bgs)
+
 # Allow camerahalserver to use HwBinder and vendor binder IPC.
 hwbinder_use(mtk_hal_camera)
 vndbinder_use(mtk_hal_camera)
