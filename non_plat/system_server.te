@@ -17,7 +17,6 @@ allow system_server wmtWifi_device:chr_file w_file_perms;
 #allow system_server proc:file w_file_perms;
 
 # /data/dontpanic access.
-typeattribute system_server data_between_core_and_vendor_violators;
 allow system_server dontpanic_data_file:dir search;
 
 # /data/agps_supl access.
