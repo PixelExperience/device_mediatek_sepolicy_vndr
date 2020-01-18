@@ -230,3 +230,8 @@ allow mtk_hal_audio mnt_vendor_file:dir search;
 allow mtk_hal_audio audioserver:fifo_file w_file_perms;
 allow mtk_hal_audio sysfs_boot_mode:file r_file_perms;
 allow mtk_hal_audio sysfs_dt_firmware_android:dir search;
+
+# Date : WK18.44
+# Operation: adsp
+allow mtk_hal_audio adsp_device:file rw_file_perms;
+allow mtk_hal_audio adsp_device:chr_file rw_file_perms;
