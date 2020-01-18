@@ -66,8 +66,7 @@ allow em_svr sysfs:dir { open read };
 # Purpose: battery temprature setting
 allow em_svr sysfs_batteryinfo:dir search;
 allow em_svr sysfs_batteryinfo:file { write open };
-
-
+r_dir_file(em_svr, sysfs_batteryinfo);
 
 
 

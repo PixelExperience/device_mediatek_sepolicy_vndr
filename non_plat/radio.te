@@ -202,3 +202,9 @@ set_prop(radio, mtk_bt_sspdebug_prop)
 # Purpose : For EM access vendor property
 allow radio vendor_default_prop:file { read getattr open };
 
+# Date : 2018/06/01
+# Operation : P migration
+# Purpose : For EM access battery info
+allow radio sysfs_batteryinfo:dir search;
+allow radio sysfs_batteryinfo:file { read write getattr open create};
+allow radio sysfs_vbus:file { read getattr open };
