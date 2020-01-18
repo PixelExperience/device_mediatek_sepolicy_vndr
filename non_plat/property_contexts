@@ -117,7 +117,7 @@ vendor.debug.factory.idle_state    u:object_r:vendor_factory_idle_state_prop:s0
 ftrace.buffer.log     u:object_r:ftrace_log_prop:s0
 
 #=============allow service.nvram_init property================
-service.nvram_init     u:object_r:service_nvram_init_prop:s0
+vendor.service.nvram_init     u:object_r:service_nvram_init_prop:s0
 
 #=============allow ro.wlan.mtk.wifi.5g property================
 ro.wlan.mtk.wifi.5g     u:object_r:wifi_5g_prop:s0

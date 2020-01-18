@@ -75,7 +75,7 @@ allow nvram_daemon proc_lk_env:file rw_file_perms;
 #allow nvram_daemon system_data_file:dir write;
 
 # Purpose: property set
-#allow nvram_daemon service_nvram_init_prop:property_service set;
+allow nvram_daemon service_nvram_init_prop:property_service set;
 
 # Purpose: copy /fstab*
 allow nvram_daemon rootfs:dir { read open };
@@ -101,3 +101,8 @@ set_prop(nvram_daemon, wifi_5g_prop)
 #WK17.26 camera 8163
 allow nvram_daemon sysfs:dir read;
 allow nvram_daemon sysfs:file read;
+
+# Date : WK18.16
+# Operation: P migration
+# Purpose: Allow nvram_daemon to get tel_switch_prop
+get_prop(nvram_daemon, tel_switch_prop)
