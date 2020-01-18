@@ -315,3 +315,9 @@ allow mtk_hal_camera mnt_vendor_file:file create_file_perms;
 # Purpose: allow mtk_hal_camera to access gz_device node
 allow mtk_hal_camera gz_device:chr_file rw_file_perms;
 
+#data/dipdebug
+allow mtk_hal_camera aee_dipdebug_vendor_file:dir rw_dir_perms;
+allow mtk_hal_camera aee_dipdebug_vendor_file:file { create_file_perms };
+
+allow mtk_hal_camera proc_isp_p2:dir search;
+allow mtk_hal_camera proc_isp_p2:file {create_file_perms};
