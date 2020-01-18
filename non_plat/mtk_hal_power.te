@@ -57,8 +57,8 @@ allow mtk_hal_power mtk_powerhal_data_file:file {create_file_perms rw_file_perms
 allow mtk_hal_power mtk_powerhal_data_file:sock_file {create_file_perms rw_file_perms};
 
 #camera contorl cpu
-allow mtk_hal_power mtk_hal_camera:dir search;
-allow mtk_hal_power mtk_hal_camera:file { read open };
+allow mtk_hal_power mtk_hal_camera:dir { search getattr };
+allow mtk_hal_power mtk_hal_camera:file { getattr open write read };
 
 # Date : 2017/10/24
 # Operation: SQC
@@ -77,6 +77,7 @@ allow mtk_hal_power proc_net:file {open write};
 # Operation: SQC
 # Purpose : Allow powerHAL to access mediacodec
 allow mtk_hal_power mediacodec:dir search;
+allow mtk_hal_power mediacodec:dir getattr;
 allow mtk_hal_power mediacodec:file { getattr open write read };
 
 set_prop(mtk_hal_power, mtk_thermal_config_prop)
@@ -86,3 +87,9 @@ set_prop(mtk_hal_power, mtk_thermal_config_prop)
 # Purpose : Allow powerHAL to access /proc/[pid]
 allow mtk_hal_power su:dir { search getattr };
 allow mtk_hal_power su:file { read open };
+
+# Date : 2018/03/16
+# Operation: SQC
+# Purpose : Allow powerHAL to access /d/mtkfb
+allow mtk_hal_power debugfs_fb:dir search;
+allow mtk_hal_power debugfs_fb:file { getattr open read write };
