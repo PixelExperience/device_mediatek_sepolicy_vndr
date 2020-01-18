@@ -72,3 +72,10 @@ allow vendor_app media_rw_data_file:file { create_file_perms };
 # eng mode camera - save iamges files and log files on external storage
 allow vendor_app vendor_data_file:dir { create_dir_perms };
 allow vendor_app vendor_data_file:file { create_file_perms };
+
+# Date : 2019/03/25
+# Operation : IT
+# Purpose : for engineermode sensor can work normal
+allow vendor_app als_ps_device:chr_file r_file_perms;
+allow vendor_app gsensor_device:chr_file r_file_perms;
+allow vendor_app gyroscope_device:chr_file r_file_perms;
