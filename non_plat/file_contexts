@@ -692,3 +692,6 @@
 #MRDUMP
 /dev/block/platform/bootdevice/by-name/mrdump(/.*)? u:object_r:mrdump_device:s0
 
+# Date: 2019/07/16
+# hdmi hal
+/(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.hdmi@1\.0-service u:object_r:mtk_hal_hdmi_exec:s0

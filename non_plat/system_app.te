@@ -39,3 +39,12 @@ allow system_app mtk_hal_mms:binder call;
 # Operation : Migration
 # Purpose : system_app need vendor_default_prop
 get_prop(system_app, vendor_default_prop)
+
+# Date: 2019/07/16
+# Operation : Migration
+# Purpose : system_app need use hdmi service and create socktet
+allow system_app mtk_hal_hdmi_hwservice:hwservice_manager find;
+allow system_app mtk_hal_hdmi:binder call;
+allow system_app self:netlink_kobject_uevent_socket {read bind create setopt };
+# system_app need to read from sysfs /sys/class/switch/hdmi/state
+r_dir_file(system_app, sysfs_switch);
