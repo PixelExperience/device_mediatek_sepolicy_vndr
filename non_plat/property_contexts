@@ -176,3 +176,13 @@ persist.vendor.radio. u:object_r:vendor_radio_prop:s0
 
 #=============allow bluetooth==============
 vendor.bthcisnoop u:object_r:vendor_bluetooth_prop:s0
+
+#=============allow EM to set modem reset delay property================
+vendor.mediatek.debug.md.reset.wait u:object_r:mtk_debug_md_reset_prop:s0
+
+#=============allow EM to set wifi log level property================
+persist.vendor.debug.wifi_driver_level u:object_r:mtk_debug_wifi_level_prop:s0
+persist.vendor.debug.wifi_fw_level u:object_r:mtk_debug_wifi_level_prop:s0
+
+#=============allow EM to set BT ssp debug mode property================
+persist.vendor.bt.sspdebug.enable u:object_r:mtk_bt_sspdebug_prop:s0
