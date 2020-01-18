@@ -192,3 +192,8 @@ allow system_server mtk_thermal_config_prop:property_service set;
 # Purpose : perfmgr permission
 allow system_server proc_perfmgr:dir {read search};
 allow system_server proc_perfmgr:file {open read ioctl};
+
+# Date : W18.22
+# Operation : MTK wifi hal migration
+# Purpose : MTK wifi hal interface permission
+binder_call(system_server, mtk_hal_wifi)
