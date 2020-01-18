@@ -50,7 +50,7 @@ allow nvram_agent_binder mtd_device:dir search;
 allow nvram_agent_binder mtd_device:chr_file rw_file_perms;
 
 #for nvram agent hidl
-allow nvram_agent_binder hwservicemanager_prop:file r_file_perms;
+get_prop(nvram_agent_binder, hwservicemanager_prop)
 
 #for nvram hidl client support
 allow nvram_agent_binder sysfs:file { read open };

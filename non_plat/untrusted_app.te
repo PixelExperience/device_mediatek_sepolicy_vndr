@@ -23,6 +23,6 @@ allow untrusted_app_25 proc_thermal:file { getattr open read };
 allow untrusted_app_25 sysfs_fps:dir search;
 allow untrusted_app_25 sysfs_fps:file { getattr open read };
 allow untrusted_app_25 sysfs_batteryinfo:dir search;
-allow untrusted_app_25 sysfs_batteryinfo:file { getattr open read };
+#allow untrusted_app_25 sysfs_batteryinfo:file { getattr open read };
 allow untrusted_app_25 sysfs_therm:dir { open read search };
 allow untrusted_app_25 sysfs_therm:file { getattr open read };

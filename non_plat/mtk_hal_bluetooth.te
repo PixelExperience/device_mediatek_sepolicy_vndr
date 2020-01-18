@@ -2,7 +2,7 @@ type mtk_hal_bluetooth, domain;
 type mtk_hal_bluetooth_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(mtk_hal_bluetooth)
 
-r_dir_file(mtk_hal_bluetooth, system_file)
+#r_dir_file(mtk_hal_bluetooth, system_file)
 # call into the Bluetooth process (callbacks)
 binder_call(mtk_hal_bluetooth, bluetooth)
 hwbinder_use(mtk_hal_bluetooth);
@@ -39,9 +39,9 @@ allow mtk_hal_bluetooth nvdata_file:lnk_file read;
 # Purpose: Allow to search /mnt/vendor/* for fstab when using NVM_Init()
 allow mtk_hal_bluetooth mnt_vendor_file:dir search;
 
-allow mtk_hal_bluetooth hwservicemanager_prop:file r_file_perms;
+get_prop(mtk_hal_bluetooth, hwservicemanager_prop)
 
-add_hwservice(hal_bluetooth, mtk_hal_bluetooth_hwservice)
+#add_hwservice(hal_bluetooth, mtk_hal_bluetooth_hwservice)
 allow hal_bluetooth_client mtk_hal_bluetooth_hwservice:hwservice_manager find;
 
 allow mtk_hal_bluetooth system_data_file:lnk_file read;

@@ -277,7 +277,7 @@ allow meta_tst mddb_data_file:dir { search write add_name create getattr read op
 # Purpose : Allow meta_tst to call Audio HAL service
 binder_call(meta_tst, mtk_hal_audio)
 allow meta_tst mtk_hal_audio:binder call;
-allow meta_tst hal_audio_hwservice:hwservice_manager find;
+#allow meta_tst hal_audio_hwservice:hwservice_manager find;
 allow meta_tst mtk_audiohal_data_file:dir {read search open};
 allow meta_tst proc:file {read open};
 allow meta_tst audio_device:chr_file rw_file_perms;

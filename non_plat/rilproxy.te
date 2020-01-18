@@ -33,7 +33,7 @@ allow rild netd_socket:sock_file read;
 
 #Date : W17.13
 #Purpose: Treble SEpolicy denied clean up
-allow rild hwservicemanager_prop:file r_file_perms;
+get_prop(rild, hwservicemanager_prop)
 
 #Date : W17.18
 #Purpose: Treble SEpolicy denied clean up
@@ -47,7 +47,7 @@ vndbinder_use(rild)
 #Date : W17.20
 #Purpose: allow access to audio hal
 binder_call(rild, mtk_hal_audio)
-allow rild hal_audio_hwservice:hwservice_manager find;
+#allow rild hal_audio_hwservice:hwservice_manager find;
 
 #Date : W18.15
 #Purpose: allow rild access to vendor.ril.ipo system property

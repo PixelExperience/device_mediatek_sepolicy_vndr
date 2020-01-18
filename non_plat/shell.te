@@ -8,7 +8,7 @@ allow shell aee_aed:unix_stream_socket connectto;
 
 # Date : WK17.35
 # Purpose : allow shell to dump the debugging information of camera hal.
-allow shell hal_camera_hwservice:hwservice_manager { find };
+#allow shell hal_camera_hwservice:hwservice_manager { find };
 binder_call(shell, mtk_hal_camera)
 
 # Date : WK17.36

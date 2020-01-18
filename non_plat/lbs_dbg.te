@@ -9,7 +9,7 @@ type lbs_dbg, domain;
 # MTK Policy Rule
 # ==============================================
 file_type_auto_trans(lbs_dbg, system_data_file, lbs_dbg_data_file);
-type lbs_dbg_exec, exec_type, file_type;
+type lbs_dbg_exec, system_file_type, exec_type, file_type;
 typeattribute lbs_dbg coredomain;
 
 init_daemon_domain(lbs_dbg)

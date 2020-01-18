@@ -20,7 +20,7 @@ allow merged_hal_service sysfs:file write;
 #mtk libs_hidl_service permissions
 hal_server_domain(merged_hal_service, mtk_hal_lbs)
 vndbinder_use(merged_hal_service)
-r_dir_file(merged_hal_service, system_file)
+#r_dir_file(merged_hal_service, system_file)
 unix_socket_connect(merged_hal_service, agpsd, mtk_agpsd);
 allow merged_hal_service mtk_agpsd:unix_dgram_socket sendto;
 

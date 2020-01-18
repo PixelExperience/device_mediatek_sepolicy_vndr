@@ -4,7 +4,7 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type aee_aed_exec, exec_type, file_type;
+type aee_aed_exec, system_file_type, exec_type, file_type;
 typeattribute aee_aed coredomain;
 typeattribute aee_aed mlstrustedsubject;
 
@@ -32,7 +32,7 @@ allow aee_aed domain:lnk_file getattr;
 allow aee_aed usermodehelper:file r_file_perms;
 
 #suid_dumpable. this is neverallow
-# allow aee_aed proc_security:file r_file_perms;
+#allow aee_aed proc_security:file r_file_perms;
 
 #property
 allow aee_aed init:unix_stream_socket connectto;
@@ -100,7 +100,7 @@ allow aee_aed dumpstate:file r_file_perms;
 
 allow aee_aed logdr_socket:sock_file write;
 allow aee_aed logd:unix_stream_socket connectto;
-# allow aee_aed system_ndebug_socket:sock_file write; mask for never allow rule
+#allow aee_aed system_ndebug_socket:sock_file write;
 
 # vibrator
 allow aee_aed sysfs_vibrator:file w_file_perms;
@@ -110,15 +110,15 @@ allow aee_aed sysfs_vibrator:file w_file_perms;
 # Purpose : make aee_aed can get specific process NE info
 allow aee_aed domain:dir r_dir_perms;
 allow aee_aed domain:{ file lnk_file } r_file_perms;
-allow aee_aed {
-  domain
-  -logd
-  -keystore
-  -init
-}:process ptrace;
+#allow aee_aed {
+#  domain
+#  -logd
+#  -keystore
+#  -init
+#}:process ptrace;
 allow aee_aed dalvikcache_data_file:dir r_dir_perms;
-allow aee_aed zygote_exec:file r_file_perms;
-allow aee_aed init_exec:file r_file_perms;
+#allow aee_aed zygote_exec:file r_file_perms;
+#allow aee_aed init_exec:file r_file_perms;
 
 # Data : 2017/04/06
 # Operation : add selinux rule for crash_dump notify aee_aed
@@ -136,9 +136,9 @@ allow aee_aed self:capability { sys_nice chown fowner kill };
 userdebug_or_eng(`allow aee_aed debugfs_tracing_debug:file { write open };')
 
 # Purpose: Allow aee_aed self to sys_ptrace/dac_override/dac_read_search
-userdebug_or_eng(`
-  allow aee_aed self:capability { sys_ptrace dac_override dac_read_search };
-')
+#userdebug_or_eng(`
+#  allow aee_aed self:capability { sys_ptrace dac_override dac_read_search };
+#')
 
 # Purpose: Allow aee_aed to read/write /sys/kernel/debug/tracing/tracing_on
-userdebug_or_eng(` allow aee_aed debugfs_tracing:file { r_file_perms write };')
+#userdebug_or_eng(` allow aee_aed debugfs_tracing:file { r_file_perms write };')

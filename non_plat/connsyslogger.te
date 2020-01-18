@@ -5,7 +5,7 @@
 # Type Declaration
 # ==============================================
 type connsyslogger,domain;
-type connsyslogger_exec, exec_type, file_type;
+type connsyslogger_exec, system_file_type, exec_type, file_type;
 typeattribute connsyslogger coredomain;
 # Purpose : for create hidl server
 hal_server_domain(connsyslogger, mtk_hal_log)

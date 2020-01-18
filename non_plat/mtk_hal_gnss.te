@@ -7,7 +7,7 @@ init_daemon_domain(mtk_hal_gnss)
 #TODO:: work around solution, wait for correct solution from google
 vndbinder_use(mtk_hal_gnss)
 
-r_dir_file(mtk_hal_gnss, system_file)
+#r_dir_file(mtk_hal_gnss, system_file)
 
 # Communicate over a socket created by mnld process.
 allow mtk_hal_gnss mnld_data_file:sock_file create_file_perms;

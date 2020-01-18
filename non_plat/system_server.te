@@ -29,7 +29,7 @@ allow system_server aee_dumpsys_data_file:file w_file_perms;
 allow system_server aee_exp_data_file:file w_file_perms;
 
 # Dump native process backtrace.
-allow system_server exec_type:file r_file_perms;
+#allow system_server exec_type:file r_file_perms;
 
 # Querying zygote socket.
 allow system_server zygote:unix_stream_socket { getopt getattr };

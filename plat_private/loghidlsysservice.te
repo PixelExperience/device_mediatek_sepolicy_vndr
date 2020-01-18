@@ -4,7 +4,7 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type loghidlsysservice_exec, exec_type, file_type;
+type loghidlsysservice_exec, system_file_type, exec_type, file_type;
 typeattribute loghidlsysservice coredomain;
 
 

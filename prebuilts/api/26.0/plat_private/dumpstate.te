@@ -14,7 +14,7 @@ allow dumpstate mnt_user_file:lnk_file read;
 allow dumpstate storage_file:lnk_file read;
 
 # Purpose: timer_intval. this is neverallow
-allow dumpstate app_data_file:dir search;
+#allow dumpstate app_data_file:dir search;
 allow dumpstate kmsg_device:chr_file r_file_perms;
 
 # Purpose:
@@ -40,4 +40,4 @@ allow dumpstate gpu_device:dir search;
 # Purpose: 01-01 08:30:57.474   286   286 E SELinux : avc:  denied  { find } for interface=
 # android.hardware.camera.provider::ICameraProvider pid=3133 scontext=u:r:dumpstate:s0 tcontext=
 # u:object_r:hal_camera_hwservice:s0 tclass=hwservice_manager
-allow dumpstate hal_camera_hwservice:hwservice_manager find;
+#allow dumpstate hal_camera_hwservice:hwservice_manager find;

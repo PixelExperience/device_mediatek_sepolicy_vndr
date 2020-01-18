@@ -53,7 +53,7 @@ allow mtkrild bluetooth_efs_file:dir r_dir_perms;
 # Violate Android P rule
 allow mtkrild sdcardfs:dir r_dir_perms;
 # Violate Android P rule
-allow mtkrild system_file:file x_file_perms;
+#allow mtkrild system_file:file x_file_perms;
 allow mtkrild proc:file rw_file_perms;
 allow mtkrild proc_net:file w_file_perms;
 
@@ -61,7 +61,6 @@ allow mtkrild proc_net:file w_file_perms;
 allow mtkrild self:netlink_route_socket nlmsg_write;
 
 # Allow read/write to devices/files
-allow mtkrild alarm_device:chr_file rw_file_perms;
 allow mtkrild radio_device:chr_file rw_file_perms;
 allow mtkrild radio_device:blk_file r_file_perms;
 allow mtkrild mtd_device:dir search;

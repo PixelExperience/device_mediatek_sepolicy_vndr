@@ -3,7 +3,7 @@
 # ==============================================
 
 # New added for moving to /system
-type mobile_log_d_exec , exec_type, file_type;
+type mobile_log_d_exec, system_file_type, exec_type, file_type;
 typeattribute mobile_log_d coredomain;
 
 init_daemon_domain(mobile_log_d)

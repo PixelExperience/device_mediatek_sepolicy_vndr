@@ -3,7 +3,7 @@
 # ==============================================
 
 # New added for move to /system
-type emdlogger_exec , exec_type, file_type;
+type emdlogger_exec, system_file_type, exec_type, file_type;
 typeattribute emdlogger coredomain;
 
 init_daemon_domain(emdlogger)

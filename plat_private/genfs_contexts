@@ -1,0 +1,4 @@
+#MTK vibrator
+genfscon sysfs /devices/platform/vibrator@0/leds/vibrator u:object_r:sysfs_vibrator:s0
+
+genfscon sysfs /block/mmcblk0rpmb/size u:object_r:access_sys_file:s0

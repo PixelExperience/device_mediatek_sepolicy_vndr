@@ -3,7 +3,7 @@
 # ==============================================
 
 # New added for move to /system
-type cmddumper_exec, exec_type, file_type;
+type cmddumper_exec, system_file_type, exec_type, file_type;
 typeattribute cmddumper coredomain;
 
 init_daemon_domain(cmddumper)

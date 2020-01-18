@@ -3,7 +3,7 @@
 # ==============================================
 
 # New added for move to /system
-type netdiag_exec , exec_type, file_type;
+type netdiag_exec, system_file_type, exec_type, file_type;
 typeattribute netdiag coredomain;
 
 init_daemon_domain(netdiag)
@@ -31,8 +31,6 @@ allow netdiag system_file:file rx_file_perms;
 allow netdiag self:capability { net_admin setuid net_raw setgid};
 allow netdiag shell_exec:file rx_file_perms;
 
-#/proc/3523/net/xt_qtaguid/ctrl & /proc
-allow netdiag qtaguid_proc:file r_file_perms;
 
 #access /proc/318/net/psched
 allow netdiag proc_net:file r_file_perms;

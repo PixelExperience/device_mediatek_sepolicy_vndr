@@ -107,14 +107,14 @@ allow aee_aedv proc_lk_env:file rw_file_perms;
 # Purpose : make aee_aedv can get specific process NE info
 allow aee_aedv domain:dir r_dir_perms;
 allow aee_aedv domain:{ file lnk_file } r_file_perms;
-allow aee_aedv {
-  domain
-  -logd
-  -keystore
-  -init
-}:process ptrace;
-allow aee_aedv zygote_exec:file r_file_perms;
-allow aee_aedv init_exec:file r_file_perms;
+#allow aee_aedv {
+#  domain
+#  -logd
+#  -keystore
+#  -init
+#}:process ptrace;
+#allow aee_aedv zygote_exec:file r_file_perms;
+#allow aee_aedv init_exec:file r_file_perms;
 
 # Data : 2017/04/06
 # Operation : add selinux rule for crash_dump notify aee_aedv
@@ -297,14 +297,14 @@ allow aee_aedv hwservicemanager_prop:file { read open getattr };
 # - avc: denied { find } for interface=android.hardware.camera.provider::ICameraProvider pid=2956
 #   scontext=u:r:aee_aedv:s0 tcontext=u:object_r:hal_camera_hwservice:s0 tclass=hwservice_manager
 # - Transaction error in ICameraProvider::debug: Status(EX_TRANSACTION_FAILED)
-allow aee_aedv hal_camera_hwservice:hwservice_manager { find };
+#allow aee_aedv hal_camera_hwservice:hwservice_manager { find };
 binder_call(aee_aedv, mtk_hal_camera)
 
 # Purpose: allow aee to read /sys/fs/selinux/enforce to get selinux status
 allow aee_aedv selinuxfs:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/pid/exe
-allow aee_aedv exec_type:file r_file_perms;
+#allow aee_aedv exec_type:file r_file_perms;
 
 # Purpose: mrdump pre-allocation: immutable and userdata
 # - avc: denied { linux_immutable } for capability=9 scontext=u:r:aee_aedv:s0
@@ -388,11 +388,11 @@ allow aee_aedv sysfs_vcore_debug:file r_file_perms;
 allow aee_aedv sysfs_boot_mode:file r_file_perms;
 
 #Purpose: Allow aee_aedv to read/write /sys/kernel/debug/tracing/buffer_total_size_kb
-userdebug_or_eng(`
-  allow aee_aedv debugfs_tracing_debug:file { r_file_perms write };
-')
+#userdebug_or_eng(`
+#  allow aee_aedv debugfs_tracing_debug:file { r_file_perms write };
+#')
 # Purpose: allow aee_aedv self to sys_ptrace/dac_read_search/dac_override
-userdebug_or_eng(`allow aee_aedv self:capability { sys_ptrace dac_read_search dac_override };')
+#userdebug_or_eng(`allow aee_aedv self:capability { sys_ptrace dac_read_search dac_override };')
 
 #Purpose: Allow aee_aedv to read /sys/mtk_memcfg/slabtrace
 allow aee_aedv proc_slabtrace:file r_file_perms;

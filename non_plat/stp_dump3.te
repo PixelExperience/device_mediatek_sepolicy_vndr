@@ -6,7 +6,7 @@
 # Type Declaration
 # ==============================================
 
-type stp_dump3_exec, exec_type, file_type;
+type stp_dump3_exec, system_file_type, exec_type, file_type;
 type stp_dump3, domain;
 typeattribute stp_dump3 coredomain;
 

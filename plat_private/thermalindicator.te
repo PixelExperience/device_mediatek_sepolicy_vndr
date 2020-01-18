@@ -3,7 +3,7 @@
 # =============================================================================
 
 # New added for move to /system
-type thermalindicator_exec, exec_type, file_type;
+type thermalindicator_exec, system_file_type, exec_type, file_type;
 typeattribute thermalindicator coredomain;
 
 init_daemon_domain(thermalindicator)

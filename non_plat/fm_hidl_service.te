@@ -14,6 +14,6 @@ init_daemon_domain(fm_hidl_service)
 
 vndbinder_use(fm_hidl_service)
 
-r_dir_file(fm_hidl_service, system_file)
+#r_dir_file(fm_hidl_service, system_file)
 
 allow fm_hidl_service fm_device:chr_file { rw_file_perms };

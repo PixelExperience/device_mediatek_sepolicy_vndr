@@ -42,7 +42,7 @@
 /system/bin/mtkbootanimation u:object_r:mtkbootanimation_exec:s0
 /system/bin/boot_logo_updater u:object_r:boot_logo_updater_exec:s0
 
-#MTK vibrator
-/sys/devices/platform/vibrator@0/leds/vibrator(/.*)? u:object_r:sysfs_vibrator:s0
-
-/sys/block/mmcblk0rpmb/size u:object_r:access_sys_file:s0
+/dev/ubi_ctrl u:object_r:mtd_device:s0
+/dev/ubi[_0-9]* u:object_r:mtd_device:s0
+/dev/block/mtd(.*)?     u:object_r:mtd_device:s0
+/dev/block/mntlblk(.*)?     u:object_r:mtd_device:s0

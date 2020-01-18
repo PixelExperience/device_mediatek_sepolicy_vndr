@@ -315,8 +315,6 @@
 /dev/ttyUSB3         u:object_r:tty_device:s0
 /dev/ttyUSB4         u:object_r:tty_device:s0
 /dev/TV-out(/.*)? u:object_r:TV_out_device:s0
-/dev/ubi_ctrl u:object_r:mtd_device:s0
-/dev/ubi[_0-9]* u:object_r:mtd_device:s0
 /dev/uboot(/.*)? u:object_r:uboot_device:s0
 /dev/uibc(/.*)? u:object_r:uibc_device:s0
 /dev/uinput(/.*)? u:object_r:uinput_device:s0
@@ -382,8 +380,6 @@
 /dev/block/sdc u:object_r:bootdevice_block_device:s0
 /dev/block/mmcblk1 u:object_r:mmcblk1_block_device:s0
 /dev/block/mmcblk1p1 u:object_r:mmcblk1p1_block_device:s0
-/dev/block/mtd(.*)?     u:object_r:mtd_device:s0
-/dev/block/mntlblk(.*)?     u:object_r:mtd_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/proinfo     u:object_r:nvram_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/nvram       u:object_r:nvram_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/nvdata      u:object_r:nvdata_device:s0

@@ -3,7 +3,7 @@
 
 # New added for move to /system
 typeattribute boot_logo_updater coredomain;
-type boot_logo_updater_exec , exec_type, file_type;
+type boot_logo_updater_exec, system_file_type, exec_type, file_type;
 
 # ==============================================
 # MTK Policy Rule

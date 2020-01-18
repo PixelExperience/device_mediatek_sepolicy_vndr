@@ -33,7 +33,6 @@ allow coredomain vendor_file:lnk_file { getattr read };
 allow {
   coredomain
   -untrusted_app_all
-  -untrusted_v2_app
 } aee_aed:unix_stream_socket connectto;
 allow { domain -coredomain -hal_configstore_server -vendor_init } aee_aedv:unix_stream_socket connectto;
 

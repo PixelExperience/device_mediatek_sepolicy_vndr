@@ -104,7 +104,7 @@ hal_client_domain(radio, hal_imsa)
 
 #Dat: 2017/06/29
 #Purpose: For audio parameter tuning
-allow radio hal_audio_hwservice:hwservice_manager find;
+#allow radio hal_audio_hwservice:hwservice_manager find;
 binder_call(radio,mtk_hal_audio)
 
 # TODO : Will move to plat_private when SEPolicy split done
@@ -148,7 +148,7 @@ get_prop(radio, mtk_debug_md_reset_prop)
 # Operation : P migration
 # Purpose : For EM access battery info
 allow radio sysfs_batteryinfo:dir search;
-allow radio sysfs_batteryinfo:file { read write getattr open create};
+#allow radio sysfs_batteryinfo:file { read write getattr open create};
 allow radio sysfs_vbus:file { read getattr open };
 
 # Date : 2018/06/15

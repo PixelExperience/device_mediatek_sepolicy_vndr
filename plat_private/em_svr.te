@@ -6,7 +6,7 @@
 # Type Declaration
 # ==============================================
 
-type em_svr_exec , exec_type, file_type;
+type em_svr_exec, system_file_type, exec_type, file_type;
 typeattribute em_svr coredomain;
 
 # ==============================================
@@ -65,8 +65,8 @@ allow em_svr sysfs:dir { open read };
 # Date: WK1822
 # Purpose: battery temprature setting
 allow em_svr sysfs_batteryinfo:dir search;
-allow em_svr sysfs_batteryinfo:file { write open };
-r_dir_file(em_svr, sysfs_batteryinfo);
+#allow em_svr sysfs_batteryinfo:file { write open };
+#r_dir_file(em_svr, sysfs_batteryinfo);
 
 
 
