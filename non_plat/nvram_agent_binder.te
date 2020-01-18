@@ -68,3 +68,7 @@ hwbinder_use(nvram_agent_binder);
 # Allow a set of permissions required for a domain to be a server which provides a HAL implementation over HWBinder.
 hal_server_domain(nvram_agent_binder, hal_nvramagent)
 
+# Date : WK18.16
+# Operation: P migration
+# Purpose: Allow nvram_daemon to get tel_switch_prop
+get_prop(nvram_daemon, tel_switch_prop)
