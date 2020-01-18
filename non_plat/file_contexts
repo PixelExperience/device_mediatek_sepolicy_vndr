@@ -649,3 +649,8 @@
 # Purpose : mtk EM Audio headset detect
 /sys/bus/platform/drivers/Accdet_Driver/state u:object_r:sysfs_headset:s0
 
+# Date: 2018/07/02
+#Purpose : MTK Vibrator
+/sys/devices/virtual/timed_output/vibrator(/.*)? u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/leds-mt65xx/leds(/.*)? u:object_r:sysfs_leds:s0
+/sys/devices/platform/odm/odm:vibrator@0/leds/vibrator(/.*)? u:object_r:sysfs_vibrator:s0
