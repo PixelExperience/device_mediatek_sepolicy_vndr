@@ -9,10 +9,6 @@ allow system_server irtx_device:chr_file rw_file_perms;
 allow system_server qemu_pipe_device:chr_file rw_file_perms;
 allow system_server wmtWifi_device:chr_file w_file_perms;
 
-# Access mtk gps devices.
-#allow system_server gps_data_file:file create_file_perms;
-#allow system_server gps_data_file:dir rw_dir_perms;
-
 # /proc access.
 #allow system_server proc:file w_file_perms;
 
@@ -42,20 +38,6 @@ allow system_server exec_type:file r_file_perms;
 allow system_server zygote:unix_stream_socket { getopt getattr };
 
 # Communicate over a socket created by mnld process.
-
-# TODO:: MTK need to remove later
-not_full_treble(`
-	allow system_server mnld_data_file:sock_file create_file_perms;
-	allow system_server mnld_data_file:sock_file rw_file_perms;
-')
-
-allow system_server mnld_data_file:dir create_file_perms;
-allow system_server mnld_data_file:dir rw_dir_perms;
-
-# TODO:: MTK need to remove later
-not_full_treble(`
-	allow system_server mnld:unix_dgram_socket sendto;
-')
 
 # Allow system_server to read /sys/kernel/debug/wakeup_sources
 allow system_server debugfs_wakeup_sources:file r_file_perms;

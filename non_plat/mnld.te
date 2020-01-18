@@ -50,8 +50,6 @@ allow mnld merged_hal_service:unix_dgram_socket sendto;
 
 # Purpose : For access system data
 typeattribute mnld data_between_core_and_vendor_violators;
-allow mnld system_data_file:dir { write add_name };
-allow mnld system_data_file:lnk_file read;
 allow mnld bootdevice_block_device:blk_file rw_file_perms;
 allow mnld block_device:dir search;
 allow mnld mnld_prop:property_service set;
