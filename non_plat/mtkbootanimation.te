@@ -14,7 +14,7 @@ allow mtkbootanimation qemu_pipe_device:chr_file rw_file_perms;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow mtkbootanimation proc_ged:file {open read write ioctl getattr};
+allow mtkbootanimation proc_ged:file rw_file_perms;
 
 # ==============================================
 # Type Declaration for secmem

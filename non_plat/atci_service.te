@@ -84,7 +84,7 @@ allow atci_service vendor_shell_exec:file { read execute open execute_no_trans }
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow atci_service proc_ged:file {open read write ioctl getattr};
+allow atci_service proc_ged:file rw_file_perms;
 
 # Date : WK16.35
 # Operation : Migration

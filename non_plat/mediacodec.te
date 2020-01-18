@@ -89,8 +89,8 @@ allow mediacodec MtkCodecService:binder transfer;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow mediacodec proc_ged:file {open read write ioctl getattr};
-allowxperm mediacodec proc_ged:file ioctl { GED_BRIDGE_IO_GE_GET GED_BRIDGE_IO_GE_SET };
+allow mediacodec proc_ged:file rw_file_perms;
+allowxperm mediacodec proc_ged:file ioctl { proc_ged_ioctls };
 
 # Data : WK16.42
 # Operator: Whitney bring up

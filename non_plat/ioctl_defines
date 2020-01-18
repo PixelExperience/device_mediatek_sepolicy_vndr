@@ -24,9 +24,6 @@ define(`GED_BRIDGE_IO_TARGET_FPS', `0x6768')
 define(`GED_BRIDGE_IO_GE_INFO', `0x6769')
 define(`GED_BRIDGE_IO_GPU_TUNER_STATUS', `0x676a')
 
-define(`GED_BRIDGE_IO_IOCTLCMD_0F', `0x670f')
-define(`GED_BRIDGE_IO_IOCTLCMD_10', `0x6710')
-
 #####################################
 # perf_ioctl.h : FPSGO
 #

@@ -4,7 +4,7 @@
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow zygote proc_ged:file {open read write ioctl getattr};
+allow zygote proc_ged:file rw_file_perms;
 
 # Date : WK17.02
 # Purpose: Allow to access gpu for memtrack functions

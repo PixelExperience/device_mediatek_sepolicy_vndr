@@ -19,3 +19,7 @@ set_prop(bluetooth, debug_prop)
 # Add dir create perms for bluetooth on /data/misc/bluetooth/logs
 allow bluetooth bluetooth_logs_data_file:dir { create_dir_perms relabelto };
 allow bluetooth bluetooth_logs_data_file:fifo_file { create_file_perms };
+
+# Date: 2019/06/14
+# Operation : Migration
+get_prop(bluetooth, mtk_amslog_prop)

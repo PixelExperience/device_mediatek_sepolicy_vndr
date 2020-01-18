@@ -295,10 +295,7 @@ allow cameraserver gpu_device:dir search;
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
 allow cameraserver proc_ged:file rw_file_perms;
-allowxperm cameraserver proc_ged:file ioctl {
-  GED_BRIDGE_IO_GE_GET
-  GED_BRIDGE_IO_GPU_TIMESTAMP
-};
+allowxperm cameraserver proc_ged:file ioctl { proc_ged_ioctls };
 
 # Date : WK16.33
 # Operation : Migration

@@ -146,3 +146,7 @@ set_prop(rild, mtk_ss_vendor_prop)
 # Date : 2018/2/27
 # Purpose : for NVRAM recovery mechanism
 set_prop(rild,powerctl_prop);
+
+# Date: 2019/06/14
+# Operation : Migration
+allow rild proc_cmdline:file r_file_perms;

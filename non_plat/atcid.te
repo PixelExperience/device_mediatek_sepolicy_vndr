@@ -30,7 +30,7 @@ allow atcid self:capability sys_time;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow atcid proc_ged:file {open read write ioctl getattr};
+allow atcid proc_ged:file rw_file_perms;
 
 # Date : WK17.23
 # Stage: O Migration, SQC

@@ -46,8 +46,12 @@ allow audioserver fuse:file write;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow audioserver proc_ged:file {open read write ioctl getattr};
+allow audioserver proc_ged:file rw_file_perms;
 
 # Date : WK16.48
 # Purpose: Allow to trigger AEE dump
 allow audioserver aee_aed:unix_stream_socket connectto;
+
+# Date: 2019/06/14
+# Operation : Migration
+get_prop(audioserver, vendor_default_prop)

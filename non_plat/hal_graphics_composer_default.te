@@ -7,7 +7,7 @@ allow hal_graphics_composer_default debugfs_ged:dir search;
 # Purpose : Add polivy for hwc HIDL
 
 allow hal_graphics_composer_default proc:file { read getattr open ioctl };
-allow hal_graphics_composer_default proc_ged:file { read ioctl open };
+allow hal_graphics_composer_default proc_ged:file r_file_perms;
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket { read bind create setopt };
 
 # Date : WK17.21
@@ -19,13 +19,8 @@ allow hal_graphics_composer_default hal_graphics_mapper_hwservice:hwservice_mana
 # Purpose: GPU driver required
 allow hal_graphics_composer_default gpu_device:dir search;
 
-#============= hal_graphics_composer_default ==============
 allow hal_graphics_composer_default debugfs_ion:dir search;
-
-#============= hal_graphics_composer_default ==============
 allow hal_graphics_composer_default debugfs_tracing:file write;
-
-#============= hal_graphics_composer_default ==============
 allow hal_graphics_composer_default debugfs_tracing:file open;
 
 # Date : WK17.30
@@ -47,26 +42,10 @@ set_prop(hal_graphics_composer_default, graphics_hwc_latch_unsignaled_prop)
 
 # Date : WK18.03
 # Purpose: Allow to access property dev/mdp_sync
-#============= hal_graphics_composer_default ==============
 allow hal_graphics_composer_default mtk_mdp_device:chr_file { read write open ioctl };
-
 allow hal_graphics_composer_default mdp_device:chr_file rw_file_perms;
-
 allow hal_graphics_composer_default tee_device:chr_file rw_file_perms;
-
-allowxperm hal_graphics_composer_default proc_ged:file ioctl {
-GED_BRIDGE_IO_LOG_BUF_GET
-GED_BRIDGE_IO_GE_INFO
-GED_BRIDGE_IO_GE_GET
-GED_BRIDGE_IO_GE_SET
-GED_BRIDGE_IO_LOG_BUF_WRITE
-GED_BRIDGE_IO_GE_ALLOC
-GED_BRIDGE_IO_BOOST_GPU_FREQ
-GED_BRIDGE_IO_IOCTLCMD_0F
-GED_BRIDGE_IO_IOCTLCMD_10
-GED_BRIDGE_IO_MONITOR_3D_FENCE
-GED_BRIDGE_IO_QUERY_INFO
-};
+allowxperm hal_graphics_composer_default proc_ged:file ioctl { proc_ged_ioctls };
 
 # Date: 2018/11/08
 # Operation : JPEG

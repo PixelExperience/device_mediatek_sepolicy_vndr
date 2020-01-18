@@ -8,3 +8,7 @@ allow ueventd proc_net:file r_file_perms;
 allow ueventd device:chr_file { relabelfrom relabelto };
 allow ueventd m_acc_misc_device:chr_file { relabelfrom relabelto };
 allow ueventd m_mag_misc_device:chr_file { relabelfrom relabelto };
+
+# Date: 2019/06/14
+# Operation : Migration
+allow ueventd tmpfs:lnk_file r_file_perms;

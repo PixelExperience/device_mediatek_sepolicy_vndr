@@ -190,7 +190,7 @@ allow mtk_hal_audio sdcard_type:file { create_file_perms };
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow mtk_hal_audio proc_ged:file {open read write ioctl getattr};
+allow mtk_hal_audio proc_ged:file rw_file_perms;
 
 set_prop(mtk_hal_audio,hwservicemanager_prop);
 allow mtk_hal_audio storage_file:dir search;
@@ -224,3 +224,9 @@ allow mtk_hal_audio audio_scp_device:chr_file r_file_perms;
 # Operation: P migration
 # Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
 allow mtk_hal_audio mnt_vendor_file:dir search;
+
+# Date: 2019/06/14
+# Operation : Migration
+allow mtk_hal_audio audioserver:fifo_file w_file_perms;
+allow mtk_hal_audio sysfs_boot_mode:file r_file_perms;
+allow mtk_hal_audio sysfs_dt_firmware_android:dir search;
