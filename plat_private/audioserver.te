@@ -47,16 +47,13 @@ allow audioserver untrusted_app:dir search;
 # Date : WK15.34
 # Operation : Migration
 # Purpose: for camera middleware dump image buffer to sdcard & audio frameworks dump
-allow audioserver system_data_file:dir write;
 allow audioserver storage_file:lnk_file {read write};
 allow audioserver mnt_user_file:dir {write read search};
 allow audioserver mnt_user_file:lnk_file {read write};
 
 # Purpose: Dump debug info
 allow audioserver kmsg_device:chr_file { open write };
-allow audioserver property_socket:sock_file write;
 allow audioserver media_rw_data_file:dir { create_dir_perms };
-allow audioserver init:unix_stream_socket connectto;
 
 # Date : WK16.27
 # Operation : Migration
