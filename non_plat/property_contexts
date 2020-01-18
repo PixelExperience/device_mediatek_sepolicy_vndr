@@ -343,7 +343,7 @@ vendor.powerhal. u:object_r:mtk_powerhal_prop:s0
 vendor.mtk.nvram.ready u:object_r:mtk_nvram_ready_prop:s0
 
 #=============Wi-Fi Hotspot==============
-wifi.sap.interface u:object_r:mtk_wifi_hotspot_prop:s0
+ro.vendor.wifi.sap.interface u:object_r:mtk_wifi_hotspot_prop:s0
 
 #=============allow mtk hdmi==============#
 persist.vendor.sys.hdmi_hidl. u:object_r:mtk_hdmi_prop:s0
