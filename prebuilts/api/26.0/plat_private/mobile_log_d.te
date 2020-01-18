@@ -23,6 +23,7 @@ unix_socket_connect(mobile_log_d, logdr, logd);
 
 #capability
 #allow mobile_log_d self:capability { setuid setgid chown dac_read_search dac_override fowner fsetid };
+allow mobile_log_d self:capability { setuid chown setgid };
 allow mobile_log_d self:capability2 syslog;
 
 #aee mode switch
@@ -58,12 +59,6 @@ allow mobile_log_d rootfs:file r_file_perms;
 allow mobile_log_d device_logging_prop:file { getattr open };
 allow mobile_log_d mmc_prop:file { getattr open };
 allow mobile_log_d safemode_prop:file { getattr open };
-
-#proc/ access
-#allow mobile_log_d proc:file r_file_perms;
-
-# boot_mdoe file access
-#allow mobile_log_d sysfs:file { open read };
 
 # purpose: allow MobileLog to access storage in N version
 allow mobile_log_d media_rw_data_file:file  create_file_perms;

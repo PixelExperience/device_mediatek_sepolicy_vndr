@@ -1,3 +1,17 @@
+# boot_mdoe file access
+allow mobile_log_d sysfs_boot:file { open read };
+
+#proc/ access
+#allow mobile_log_d proc:file r_file_perms;
+allow mobile_log_d proc_kmsg:file r_file_perms;
+allow mobile_log_d proc_cmdline:file r_file_perms;
+allow mobile_log_d proc_atf_log:dir search;
+allow mobile_log_d proc_atf_log:file r_file_perms;
+allow mobile_log_d proc_gz_log:file r_file_perms;
+allow mobile_log_d proc_last_kmsg:file r_file_perms;
+allow mobile_log_d proc_bootprof:file r_file_perms;
+allow mobile_log_d proc_pl_lk:file r_file_perms;
+
 #scp
 allow mobile_log_d sysfs_scp:file { open write };
 allow mobile_log_d sysfs_scp:dir search;
@@ -9,7 +23,6 @@ allow mobile_log_d sysfs_sspm:dir search;
 allow mobile_log_d sspm_device:chr_file { read open };
 
 #data/misc/mblog
-typeattribute mobile_log_d data_between_core_and_vendor_violators;
 allow mobile_log_d logmisc_data_file:dir { relabelto create_dir_perms };
 allow mobile_log_d logmisc_data_file:file create_file_perms;
 

@@ -25,6 +25,11 @@ genfscon proc /gpulog u:object_r:proc_gpulog:s0
 genfscon proc /cpu/alignment u:object_r:proc_cpu_alignment:s0
 genfscon proc /sched_debug u:object_r:proc_sched_debug:s0
 genfscon proc /chip/hw_ver u:object_r:proc_hw_ver:s0
+genfscon proc /atf_log u:object_r:proc_atf_log:s0
+genfscon proc /gz_log u:object_r:proc_gz_log:s0
+genfscon proc /last_kmsg u:object_r:proc_last_kmsg:s0
+genfscon proc /bootprof u:object_r:proc_bootprof:s0
+genfscon proc /pl_lk u:object_r:proc_pl_lk:s0
 
 genfscon iso9660 / u:object_r:iso9660:s0
 genfscon rawfs / u:object_r:rawfs:s0

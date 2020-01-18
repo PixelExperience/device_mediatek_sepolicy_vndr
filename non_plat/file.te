@@ -61,6 +61,11 @@ type proc_cpu_alignment, fs_type;
 type proc_gpulog, fs_type;
 type proc_sched_debug, fs_type;
 type proc_hw_ver, fs_type;
+type proc_atf_log, fs_type, proc_type;
+type proc_gz_log, fs_type, proc_type;
+type proc_last_kmsg, fs_type, proc_type;
+type proc_bootprof, fs_type, proc_type;
+type proc_pl_lk, fs_type, proc_type;
 type sysfs_therm, fs_type, sysfs_type;
 type sysfs_fps, fs_type, sysfs_type;
 type sysfs_ccci, fs_type, sysfs_type;
@@ -93,10 +98,10 @@ type mediacodec_data_file, file_type, data_file_type;
 
 
 #mobilelog data/misc/mblog
-type logmisc_data_file, file_type, data_file_type;
+type logmisc_data_file, file_type, data_file_type, core_data_file_type;
 
 #mobilelog data/log_temp
-type logtemp_data_file, file_type, data_file_type;
+type logtemp_data_file, file_type, data_file_type, core_data_file_type;
 
 # NE core_forwarder
 type aee_core_data_file, file_type, data_file_type, core_data_file_type;

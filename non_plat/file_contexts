@@ -36,7 +36,7 @@
 /data/vendor/dumpsys(/.*)?    u:object_r:aee_dumpsys_vendor_file:s0
 /data/extmdl(/.*)? u:object_r:mdlog_data_file:s0
 #/data/http-proxy-cfg(/.*)? u:object_r:http_proxy_cfg_data_file:s0
-#/data/log_temp(/.*)? u:object_r:logtemp_data_file:s0
+/data/log_temp(/.*)? u:object_r:logtemp_data_file:s0
 #/data/lost\+found(/.*)? u:object_r:lost_found_data_file:s0
 /data/mdlog(/.*)? u:object_r:mdlog_data_file:s0
 /data/mdl(/.*)? u:object_r:mdlog_data_file:s0
@@ -64,7 +64,7 @@
 
 # Misc data
 #/data/misc/acdapi(/.*)? u:object_r:acdapi_data_file:s0
-#/data/misc/mblog(/.*)? u:object_r:logmisc_data_file:s0
+/data/misc/mblog(/.*)? u:object_r:logmisc_data_file:s0
 #/data/misc/ppp(/.*)? u:object_r:ppp_data_file:s0
 #/data/misc/radvd(/.*)? u:object_r:radvd_data_file:s0
 #/data/misc/sensor(/.*)?         u:object_r:sensor_data_file:s0
@@ -476,7 +476,7 @@
 /sys/firmware/devicetree/base/chosen/atag\,devinfo u:object_r:sysfs_devinfo:s0
 /sys/devices/virtual/thermal(/.*)? u:object_r:sysfs_therm:s0
 /sys/devices/virtual/switch/fps(/.*)? u:object_r:sysfs_fps:s0
-/sys/class/BOOT/BOOT/boot/boot_mode(/.*)? u:object_r:sysfs_boot:s0
+/sys/devices/virtual/BOOT/BOOT/boot/boot_mode(/.*)? u:object_r:sysfs_boot:s0
 /sys/bus/platform/drivers/meta_com_type_info/meta_com_type_info(/.*)? u:object_r:sysfs_comport_type:s0
 /sys/bus/platform/drivers/meta_uart_port_info/meta_uart_port_info(/.*)? u:object_r:sysfs_uart_info:s0
 
