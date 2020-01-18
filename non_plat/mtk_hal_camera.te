@@ -80,6 +80,7 @@ allow mtk_hal_camera camera_dip_device:chr_file rw_file_perms;
 allow mtk_hal_camera camera_tsf_device:chr_file rw_file_perms;
 allow mtk_hal_camera kd_camera_hw_device:chr_file rw_file_perms;
 allow mtk_hal_camera kd_camera_flashlight_device:chr_file rw_file_perms;
+allow mtk_hal_camera flashlight_device:chr_file rw_file_perms;
 allow mtk_hal_camera lens_device:chr_file rw_file_perms;
 
 # FDVT Driver
