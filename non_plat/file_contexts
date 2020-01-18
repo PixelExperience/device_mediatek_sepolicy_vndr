@@ -533,7 +533,6 @@
 /(system\/vendor|vendor)/bin/thermalloadalgod u:object_r:thermalloadalgod_exec:s0
 /(system\/vendor|vendor)/bin/lbs_hidl_service u:object_r:lbs_hidl_service_exec:s0
 
-/(system\/vendor|vendor)/bin/wifi2agps u:object_r:wifi2agps_exec:s0
 /(system\/vendor|vendor)/bin/wmt_loader u:object_r:wmt_loader_exec:s0
 /(system\/vendor|vendor)/bin/md_ctrl u:object_r:md_ctrl_exec:s0
 /(system\/vendor|vendor)/bin/spm_loader u:object_r:spm_loader_exec:s0
