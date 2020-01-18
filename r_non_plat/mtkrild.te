@@ -74,7 +74,6 @@ allow mtkrild devpts:chr_file { rw_file_perms };
 allow mtkrild ccci_device:chr_file { rw_file_perms };
 allow mtkrild misc_device:chr_file { rw_file_perms };
 allow mtkrild proc_lk_env:file rw_file_perms;
-allow mtkrild sysfs_vcorefs_pwrctrl:file { w_file_perms };
 allow mtkrild bootdevice_block_device:blk_file { rw_file_perms };
 allow mtkrild para_block_device:blk_file { rw_file_perms };
 
