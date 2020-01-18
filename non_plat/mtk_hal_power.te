@@ -159,3 +159,11 @@ allow mtk_hal_power sysfs_fbt_cpu:dir r_dir_perms;
 allow mtk_hal_power sysfs_fbt_cpu:file rw_file_perms;
 allow mtk_hal_power sysfs_fbt_fteh:dir r_dir_perms;
 allow mtk_hal_power sysfs_fbt_fteh:file rw_file_perms;
+
+# Date : 2019/09/17
+# Operation: SQC
+# Purpose : Add cache audit
+allow mtk_hal_power sysfs_ca_drv:dir r_dir_perms;
+allow mtk_hal_power sysfs_ca_drv:file rw_file_perms;
+allow mtk_hal_power sysfs_pftch_qos:dir r_dir_perms;
+allow mtk_hal_power sysfs_pftch_qos:file rw_file_perms;

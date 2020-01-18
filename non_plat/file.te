@@ -400,12 +400,15 @@ type proc_ppm, fs_type, proc_type;
 type proc_cpufreq, fs_type, proc_type;
 type proc_hps, fs_type, proc_type;
 type proc_cm_mgr, fs_type, proc_type;
-type proc_ca_drv, fs_type, proc_type;
 type sysfs_ged, fs_type, sysfs_type;
 type sysfs_fbt_cpu, fs_type, sysfs_type;
 type sysfs_fbt_fteh, fs_type, sysfs_type;
 
+# Date : 2019/09/17
+# Purpose: Allow powerhal to control cache audit
+type sysfs_ca_drv, fs_type, sysfs_type;
+type sysfs_pftch_qos, fs_type, sysfs_type;
+
 # Date : WK19.38
 # Purpose: Android Migration for video codec driver
 type sysfs_device_tree_model, fs_type, sysfs_type;
-
