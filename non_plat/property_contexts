@@ -271,7 +271,6 @@ ro.vendor.mtk_support_mp2_playback u:object_r:mtk_default_prop:s0
 ro.vendor.mtk_audio_ape_support u:object_r:mtk_default_prop:s0
 ro.vendor.mtk_flv_playback_support u:object_r:mtk_default_prop:s0
 ro.vendor.mtk_mtkps_playback_support u:object_r:mtk_default_prop:s0
-ro.vendor.mtk_wmv_playback_support u:object_r:mtk_default_prop:s0
 ro.vendor.mtk_wearable_platform u:object_r:mtk_default_prop:s0
 ro.vendor.mediatek.platform u:object_r:mtk_default_prop:s0
 ro.vendor.mediatek.version.branch u:object_r:mtk_default_prop:s0
