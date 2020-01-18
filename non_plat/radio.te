@@ -112,8 +112,8 @@ binder_call(radio, hal_telephony)
 allow radio hal_graphics_composer_default:fd use;
 
 #Dat: 2017/02/14
-#Purpose: allow set telephony Sensitive property
-set_prop(radio, mtk_telephony_sensitive_prop)
+#Purpose: allow get telephony Sensitive property
+get_prop(radio, mtk_telephony_sensitive_prop)
 
 # Date : WK17.26
 # Operation : O Migration
