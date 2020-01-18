@@ -294,7 +294,7 @@ allow cameraserver gpu_device:dir search;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow cameraserver proc_ged:file {open read write getattr};
+allow cameraserver proc_ged:file rw_file_perms;
 allowxperm cameraserver proc_ged:file ioctl { GED_BRIDGE_IO_GE_GET };
 
 # Date : WK16.33
@@ -357,6 +357,8 @@ allow cameraserver debugfs_ion:dir search;
 allow cameraserver proc_perfmgr:dir {read search};
 allow cameraserver proc_perfmgr:file r_file_perms;
 allowxperm cameraserver proc_perfmgr:file ioctl {
-  GED_BRIDGE_IO_BOOST_GPU_FREQ
-  GED_BRIDGE_IO_LOG_BUF_WRITE
+  FPSGO_QUEUE
+  FPSGO_DEQUEUE
+  FPSGO_QUEUE_CONNECT
+  FPSGO_BQID
 };
