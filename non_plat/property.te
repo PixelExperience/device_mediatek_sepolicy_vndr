@@ -315,3 +315,5 @@ type mtk_powerhal_prop, property_type;
 #=============MTK Wifi wlan_assistant property=============
 type mtk_nvram_ready_prop, property_type, mtk_core_property_type;
 
+#=============allow wifi hotspot to read property===========
+type mtk_wifi_hotspot_prop, property_type, mtk_core_property_type;

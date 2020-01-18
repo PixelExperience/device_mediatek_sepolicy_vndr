@@ -342,3 +342,5 @@ vendor.powerhal. u:object_r:mtk_powerhal_prop:s0
 #=============MTK Wifi wlan_assistant property=============
 vendor.mtk.nvram.ready u:object_r:mtk_nvram_ready_prop:s0
 
+#=============Wi-Fi Hotspot==============
+wifi.sap.interface u:object_r:mtk_wifi_hotspot_prop:s0
