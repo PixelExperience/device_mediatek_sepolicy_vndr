@@ -29,3 +29,8 @@ allow system_app mtk_thermal_config_prop:file { getattr open read };
 allow system_app aee_exp_data_file:file r_file_perms;
 allow system_app aee_exp_data_file:dir r_dir_perms;
 allow system_app md_monitor:unix_stream_socket connectto;
+
+# Date : WK19.11
+# Operation: Q migration
+# Purpose : Allow system_app to use ioctl/ioctlcmd
+allowxperm system_app proc_ged:file ioctl GED_BRIDGE_IO_LOG_BUF_GET;
