@@ -14,7 +14,6 @@ ctl.emdlogger3       u:object_r:ctl_emdlogger3_prop:s0
 ctl.dualmdlogger       u:object_r:ctl_dualmdlogger_prop:s0
 
 #=============allow mtkrild to set persist.ril property==============
-persist.ril u:object_r:persist_ril_prop:s0
 vendor.ril.ipo u:object_r:vendor_ril_ipo_prop:s0
 
 #=============allow netlog==============
