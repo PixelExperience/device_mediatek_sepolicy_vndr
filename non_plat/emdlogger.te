@@ -110,6 +110,3 @@ allow emdlogger node:tcp_socket node_bind;
 set_prop(emdlogger, vendor_mdl_prop)
 set_prop(emdlogger, vendor_mdl_start_prop)
 set_prop(emdlogger, debug_mdlogger_prop)
-get_prop(emdlogger, debug_mdlogger_prop)
-get_prop(emdlogger, vendor_mdl_prop)
-get_prop(emdlogger, vendor_mdl_start_prop)
