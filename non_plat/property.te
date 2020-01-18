@@ -179,5 +179,8 @@ type mtk_debug_wifi_level_prop, property_type, mtk_core_property_type;
 #=============allow EM to set BT ssp debug mode property================
 type mtk_bt_sspdebug_prop, property_type, mtk_core_property_type;
 
+#=============em camera property==============
+type vendor_debug_prop, property_type, mtk_core_property_type;
+
 #=============allow ccci_mdinit get ccci_fsd property===========
 type mtk_ccci_fsd_prop, property_type, mtk_core_property_type;
