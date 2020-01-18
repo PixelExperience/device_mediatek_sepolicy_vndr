@@ -11,17 +11,7 @@ allow radio sysfs_keypad_file:file { w_file_perms };
 # Purpose : for engineermode WFD IOT property
 allow radio surfaceflinger:fifo_file { rw_file_perms };
 
-# Date : WK16.14 2016/03/30
-# Operation : IT
-# Purpose : for engineermode camera app mode
-
 typeattribute radio system_writes_vendor_properties_violators;
-allow radio mtk_em_prop:property_service set;
-
-# Date : WK16.24 2016/06/10
-# Operation : Migration
-# Purpose : for engineermode camera app mode
-allow radio cameraserver_service:service_manager find;
 
 # Date : 2016/06/11
 # Operation : IT
@@ -37,7 +27,6 @@ allow radio als_ps_device:chr_file { read open ioctl };
 # Date : WK14.38 2016/06/28
 # Operation : Migration
 # Purpose : for engineermode
-allow radio mediatek_prop:property_service set;
 allow radio mt_otg_test_device:chr_file { read write ioctl open };
 allow radio mtgpio_device:chr_file { read ioctl open };
 allow radio stpbt_device:chr_file { read write open };
@@ -94,11 +83,6 @@ allow radio nvdata_file:file rw_file_perms;
 #Operation: IT
 #Purpose: for set persist.net.auto.tethering
 allow radio mtk_em_net_auto_tethering_prop:property_service set;
-
-# Date : WK17.06 2017/02/06
-# Operation : IT
-# Purpose : for engineermode camera
-allow radio vendor_debug_prop:property_service set;
 
 # Date : WK17.03
 # Operation : O Migration
