@@ -37,6 +37,10 @@ allow system_app mtk_hal_mms:binder call;
 
 # Date: 2019/06/14
 # Operation : Migration
-# Purpose : system_app need get mtk_amslog_prop
-get_prop(system_app, mtk_amslog_prop)
+# Purpose : system_app need vendor_default_prop
 get_prop(system_app, vendor_default_prop)
+
+# Date: 2019/06/17
+# Operation : Migration
+# Purpose :allow system_app to read mtk_em_tel_log_prop
+get_prop(system_app, mtk_em_tel_log_prop)
