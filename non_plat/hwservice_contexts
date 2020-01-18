@@ -59,3 +59,7 @@ vendor.mediatek.hardware.gpu::IGraphicExt u:object_r:mtk_hal_gpu_hwservice:s0
 # modem db filter hidl
 vendor.mediatek.hardware.modemdbfilter::ICopyDBFilter u:object_r:mtk_hal_md_dbfilter_hwservice:s0
 
+# Date: 2019/07/04
+vendor.mediatek.hardware.camera.lomoeffect::ILomoEffect u:object_r:hal_camera_hwservice:s0
+vendor.mediatek.hardware.camera.ccap::ICCAPControl u:object_r:hal_camera_hwservice:s0
+vendor.mediatek.hardware.camera.bgservice::IBGService u:object_r:hal_camera_hwservice:s0
