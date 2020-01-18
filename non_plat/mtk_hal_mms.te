@@ -40,6 +40,7 @@ allow mtk_hal_mms mtk_hal_pq:binder call;
 # Purpose : Allow to use graphics allocator fd for gralloc_extra
 allow mtk_hal_mms hal_graphics_allocator_default:fd use;
 allow mtk_hal_mms debugfs_ion:dir search;
+allow mtk_hal_mms merged_hal_service:fd use;
 
 # Purpose : VDEC/VENC device node
 allow mtk_hal_mms Vcodec_device:chr_file rw_file_perms;
