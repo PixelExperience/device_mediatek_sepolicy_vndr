@@ -376,7 +376,7 @@ allow cameraserver mtk_cmdq_device:chr_file { read ioctl open };
 # Purpose : Change thermal config
 typeattribute cameraserver system_writes_vendor_properties_violators;
 allow cameraserver mtk_thermal_config_prop:file { getattr open read };
-allow cameraserver mtk_thermal_config_prop:property_service set;
+
 
 # Date : WK17.44
 # Operation : Migration

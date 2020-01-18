@@ -185,7 +185,7 @@ hal_client_domain(system_server, mtk_hal_lbs)
 # Operation : MT6799 SQC
 # Purpose : Change thermal config
 allow system_server mtk_thermal_config_prop:file { getattr open read };
-allow system_server mtk_thermal_config_prop:property_service set;
+
 
 # Date : WK17.43
 # Operation : Migration
