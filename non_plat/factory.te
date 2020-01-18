@@ -316,7 +316,8 @@ allow factory sysfs_wake_lock:file rw_file_perms;
 #allow factory system_file:file x_file_perms;
 
 # For Light HIDL permission
-#allow factory hal_light_hwservice:hwservice_manager find;
+hal_client_domain(factory, hal_light);
+allow factory hal_light_hwservice:hwservice_manager find;
 allow factory mtk_hal_light:binder call;
 allow factory merged_hal_service:binder call;
 # For vibrator test permission
