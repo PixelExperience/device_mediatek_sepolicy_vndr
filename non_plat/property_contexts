@@ -200,6 +200,18 @@ persist.vendor.meta.connecttype u:object_r:meta_connecttype_prop:s0
 vendor.ril.iccid.sim u:object_r:mtk_telephony_sensitive_prop:s0
 vendor.ril.uim.subscriberid u:object_r:mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.last_iccid_sim  u:object_r:mtk_telephony_sensitive_prop:s0
+vendor.ril.ia.iccid u:object_r:mtk_telephony_sensitive_prop:s0
+vendor.ril.radio.ia u:object_r:mtk_telephony_sensitive_prop:s0
+vendor.ril.c2kirat.ia.sim1 u:object_r:mtk_telephony_sensitive_prop:s0
+vendor.ril.c2kirat.ia.sim2 u:object_r:mtk_telephony_sensitive_prop:s0
+vendor.ril.c2kirat.ia.sim3 u:object_r:mtk_telephony_sensitive_prop:s0
+vendor.ril.c2kirat.ia.sim4 u:object_r:mtk_telephony_sensitive_prop:s0
+persist.vendor.radio.ia   u:object_r:mtk_telephony_sensitive_prop:s0
+persist.vendor.radio.ia.1 u:object_r:mtk_telephony_sensitive_prop:s0
+persist.vendor.radio.ia.2 u:object_r:mtk_telephony_sensitive_prop:s0
+persist.vendor.radio.ia.3 u:object_r:mtk_telephony_sensitive_prop:s0
+persist.vendor.radio.data.iccid u:object_r:mtk_telephony_sensitive_prop:s0
+persist.vendor.radio.mobile.data u:object_r:mtk_telephony_sensitive_prop:s0
 
 #=============allow sim config property==============
 vendor.gsm.sim.operator.default-name u:object_r:vendor_sim_system_prop:s0
