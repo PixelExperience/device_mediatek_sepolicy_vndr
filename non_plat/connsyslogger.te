@@ -31,7 +31,7 @@ allow connsyslogger init:unix_stream_socket connectto;
 allow connsyslogger tmpfs:lnk_file { create_file_perms };
 
 # purpose: avc: denied { read } for name="plat_file_contexts"
-allow connsyslogger file_contexts_file:file { read getattr open };
+allow connsyslogger file_contexts_file:file { read getattr open map};
 
 #logger SD logging in factory mode
 allow connsyslogger vfat:dir create_dir_perms;
@@ -65,5 +65,8 @@ allow connsyslogger media_rw_data_file:file  { create_file_perms };
 allow connsyslogger media_rw_data_file:dir { create_dir_perms };
 
 set_prop(connsyslogger, vendor_connsysfw_prop)
+
+allow connsyslogger vendor_configs_file:file map;
+
 
 
