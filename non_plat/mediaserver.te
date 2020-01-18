@@ -23,12 +23,12 @@ allow mediaserver lens_device:chr_file rw_file_perms;
 allow mediaserver sdcard_type:dir { w_dir_perms create };
 allow mediaserver sdcard_type:file create;
 typeattribute mediaserver data_between_core_and_vendor_violators;
-allow mediaserver nvram_data_file:dir w_dir_perms;
-allow mediaserver nvram_data_file:file create_file_perms;
+#allow mediaserver nvram_data_file:dir w_dir_perms;
+#allow mediaserver nvram_data_file:file create_file_perms;
 allow mediaserver nvram_data_file:lnk_file read;
 allow mediaserver nvdata_file:lnk_file read;
-allow mediaserver nvdata_file:dir w_dir_perms;
-allow mediaserver nvdata_file:file create_file_perms;
+#allow mediaserver nvdata_file:dir w_dir_perms;
+#allow mediaserver nvdata_file:file create_file_perms;
 allow mediaserver sdcard_type:dir remove_name;
 allow mediaserver sdcard_type:file unlink;
 
@@ -153,9 +153,9 @@ allow mediaserver audiohal_prop:property_service set;
 # Data : WK14.39
 # Operation : Migration
 # Purpose : HW encrypt SW codec
-allow mediaserver mediaserver_data_file:file create_file_perms;
-allow mediaserver mediaserver_data_file:dir create_dir_perms;
-allow mediaserver sec_device:chr_file r_file_perms;
+#allow mediaserver mediaserver_data_file:file create_file_perms;
+#allow mediaserver mediaserver_data_file:dir create_dir_perms;
+#allow mediaserver sec_device:chr_file r_file_perms;
 
 # Date : WK14.40
 # Operation : Migration
@@ -224,8 +224,8 @@ allow mediaserver sysfs_lowmemorykiller:file { read open };
 allow mediaserver proc_mtkcooler:dir search;
 allow mediaserver proc_mtktz:dir search;
 allow mediaserver proc_thermal:dir search;
-allow mediaserver thermal_manager_data_file:file create_file_perms;
-allow mediaserver thermal_manager_data_file:dir { rw_dir_perms setattr };
+#allow mediaserver thermal_manager_data_file:file create_file_perms;
+#allow mediaserver thermal_manager_data_file:dir { rw_dir_perms setattr };
 
 # Date : WK14.46
 # Operation : Migration
@@ -285,8 +285,8 @@ allow mediaserver surfaceflinger:fifo_file {read write};
 
 # Date : WK15.45
 # Purpose : camera read/write /nvcfg/camera data
-allow mediaserver nvcfg_file:dir create_dir_perms;
-allow mediaserver nvcfg_file:file create_file_perms;
+#allow mediaserver nvcfg_file:dir create_dir_perms;
+#allow mediaserver nvcfg_file:file create_file_perms;
 
 
 # Date : WK15.46
@@ -306,7 +306,8 @@ allow mediaserver camera_tsf_device:chr_file rw_file_perms;
 # Purpose : add permission for thermal manager
 domain_auto_trans(mediaserver, thermal_manager_exec, thermal_manager)
 typeattribute mediaserver system_executes_vendor_violators;
-allow mediaserver thermal_manager_exec:file { read getattr open execute};
+#allow mediaserver thermal_manager_exec:file { read getattr open execute};
+allow mediaserver thermal_manager_exec:file { read getattr open};
 
 # Date : WK16.32
 # Operation : N Migration
