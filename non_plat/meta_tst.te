@@ -395,3 +395,7 @@ allow meta_tst proc_cmdline:file { read open getattr };
 allow meta_tst meta_tst:capability { sys_admin };
 allow meta_tst sysfs_dt_firmware_android:file { read open getattr };
 allow meta_tst sysfs_dt_firmware_android:dir { read open search };
+# Purpose : Allow meta_tst to communicate with driver thru socket
+allow meta_tst meta_tst:capability { sys_module net_admin net_raw };
+allow meta_tst self:udp_socket { create ioctl };
+allowxperm meta_tst self:udp_socket ioctl priv_sock_ioctls;
