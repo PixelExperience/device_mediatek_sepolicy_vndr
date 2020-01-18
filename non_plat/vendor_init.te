@@ -1,0 +1,22 @@
+allow vendor_init exported3_system_prop:property_service set;
+allow vendor_init bt_prop:property_service set;
+allow vendor_init dalvik_prop:property_service set;
+
+allow vendor_init ffs_prop:property_service set;
+allow vendor_init mediatek_prop:property_service set;
+allow vendor_init mtk_md_version_prop:property_service set;
+allow vendor_init mtk_volte_prop:property_service set;
+allow vendor_init usp_prop:property_service set;
+allow vendor_init vendor_radio_prop:property_service set;
+
+
+allow vendor_init proc:file write;
+allow vendor_init proc_bootprof:file write;
+allow vendor_init rootfs:dir { write add_name setattr };
+allow vendor_init self:capability sys_module;
+
+allow vendor_init tmpfs:dir { write create add_name };
+
+allow vendor_init vendor_file:system module_load;
+
+allow vendor_init kmsg_device:chr_file unlink;
