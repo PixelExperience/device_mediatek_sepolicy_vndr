@@ -370,3 +370,7 @@ get_prop(meta_tst, tel_switch_prop)
 # Purpose : Allow meta_tst to call nvram hal
 allow meta_tst nvram_agent_binder_hwservice:hwservice_manager find;
 
+# Date : WK18.21
+# Operation: P migration
+# Purpose : Allow meta_tst to write misc partition
+allow meta_tst block_device:dir search;
