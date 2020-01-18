@@ -31,10 +31,6 @@ allow system_server zygote:binder impersonate;
 # Property service.
 allow system_server ctl_bootanim_prop:property_service set;
 
-# After connected to DHCPv6, enabled 6to4 IPv6 AP to get property.
-allow system_server proc_net:file w_file_perms;
-r_dir_file(system_server, wide_dhcpv6_data_file)
-
 # For dumpsys.
 allow system_server aee_dumpsys_data_file:file w_file_perms;
 allow system_server aee_exp_data_file:file w_file_perms;
