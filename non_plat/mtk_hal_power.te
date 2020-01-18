@@ -118,6 +118,14 @@ allow mtk_hal_power debugfs_mdla_power:file rw_file_perms;
 allow mtk_hal_power rild_oem_socket:sock_file write;
 allow mtk_hal_power rild:unix_stream_socket connectto;
 
+# Date : 2019/05/22
+# Operation: SQC
+# Purpose : Allow powerHAL to access block read ahead
+allow mtk_hal_power sysfs_dm:dir r_dir_perms;
+allow mtk_hal_power sysfs_dm:file rw_file_perms;
+allow mtk_hal_power sysfs_mmcblk:dir r_dir_perms;
+allow mtk_hal_power sysfs_mmcblk:file rw_file_perms;
+
 allow mtk_hal_power debugfs_eara_thermal:dir search;
 allow mtk_hal_power debugfs_eara_thermal:file { getattr open write read };
 
@@ -138,3 +146,4 @@ allowxperm mtk_hal_power self:udp_socket ioctl priv_sock_ioctls;
 # Operation : MTK power hal migration
 # Purpose : MTK power hal interface permission
 set_prop(mtk_hal_power, mtk_powerhal_prop)
+
