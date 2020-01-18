@@ -81,11 +81,11 @@ ro.boot.opt_using_default   u:object_r:tel_switch_prop:s0
 persist.bootanim.     u:object_r:bootani_prop:s0
 
 #=============allow mnld_prop ==============
-gps.clock.type u:object_r:mnld_prop:s0
-gps.gps.version u:object_r:mnld_prop:s0
-debug.gpsdbglog.enable u:object_r:mnld_prop:s0
-debug.gpsdbglog. u:object_r:mnld_prop:s0
-debug.gps. u:object_r:mnld_prop:s0
+vendor.gps.clock.type u:object_r:mnld_prop:s0
+vendor.gps.gps.version u:object_r:mnld_prop:s0
+vendor.debug.gpsdbglog.enable u:object_r:mnld_prop:s0
+vendor.debug.gpsdbglog. u:object_r:mnld_prop:s0
+vendor.debug.gps. u:object_r:mnld_prop:s0
 
 #=============allow audiohal==============
 streamout.     u:object_r:audiohal_prop:s0
