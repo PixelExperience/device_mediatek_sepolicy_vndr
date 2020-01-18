@@ -319,6 +319,7 @@ allow factory audiohal_prop:property_service set;
 
 # For Accdet data permission
 allow factory sysfs:file { read open };
+allow factory sysfs_headset:file { read open };
 
 # For touch auto test
 allow factory sysfs_tpd_setting:dir search;
