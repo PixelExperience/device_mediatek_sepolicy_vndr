@@ -7,6 +7,7 @@ init_daemon_domain(mtk_hal_audio)
 hal_client_domain(mtk_hal_audio, hal_allocator)
 
 hwbinder_use(mtk_hal_audio)
+wakelock_use(mtk_hal_audio);
 
 allow mtk_hal_audio ion_device:chr_file r_file_perms;
 
