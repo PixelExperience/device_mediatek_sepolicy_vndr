@@ -548,6 +548,7 @@
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.audio@5\.0-service-mediatek u:object_r:mtk_hal_audio_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.mtkpower@1\.0-service u:object_r:mtk_hal_power_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.sensors@1\.0-service-mediatek u:object_r:mtk_hal_sensors_exec:s0
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.sensors@2\.0-service-mediatek u:object_r:mtk_hal_sensors_exec:s0
 /(system\/vendor|vendor)/bin/hw/rilproxy u:object_r:rild_exec:s0
 /(system\/vendor|vendor)/bin/hw/mtkfusionrild u:object_r:rild_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.light@2\.0-service-mediatek u:object_r:mtk_hal_light_exec:s0
