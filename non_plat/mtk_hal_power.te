@@ -29,9 +29,6 @@ allow mtk_hal_power sysfs_devices_system_cpu:file write;
 allow mtk_hal_power debugfs_ged:dir search;
 allow mtk_hal_power debugfs_ged:file { getattr open read write };
 
-typeattribute mtk_hal_power data_between_core_and_vendor_violators;
-allow mtk_hal_power system_data_file:dir { create write add_name };
-
 # proc_thermal
 allow mtk_hal_power proc_thermal:file { write open };
 
