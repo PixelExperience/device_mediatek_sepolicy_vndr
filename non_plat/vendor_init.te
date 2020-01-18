@@ -43,3 +43,5 @@ allow vendor_init self:udp_socket { create ioctl };
 allowxperm vendor_init self:udp_socket ioctl { SIOCSIFFLAGS };
 allow vendor_init self:global_capability_class_set net_raw;
 
+# enhance boot time
+allow vendor_init proc_perfmgr:file write;
