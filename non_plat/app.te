@@ -20,3 +20,9 @@ allow appdomain mtk_cmdq_device:chr_file {open read ioctl};
 # Purpose : Allow HWUI to access perfmgr
 allow appdomain proc_perfmgr:dir search;
 allow appdomain proc_perfmgr:file { getattr open read ioctl};
+allowxperm appdomain proc_perfmgr:file ioctl {
+  FPSGO_QUEUE
+  FPSGO_DEQUEUE
+  FPSGO_QUEUE_CONNECT
+  FPSGO_BQID
+};

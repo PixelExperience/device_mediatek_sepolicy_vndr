@@ -46,6 +46,13 @@ allow surfaceflinger mtkbootanimation:file { read getattr open };
 # Purpose: Allow to access perfmgr
 allow surfaceflinger proc_perfmgr:dir {read search};
 allow surfaceflinger proc_perfmgr:file {open read ioctl};
+allowxperm surfaceflinger proc_perfmgr:file ioctl {
+  FPSGO_QUEUE
+  FPSGO_DEQUEUE
+  FPSGO_QUEUE_CONNECT
+  FPSGO_BQID
+  FPSGO_VSYNC
+};
 
 # Date : WK17.43
 # Operation : Debug
