@@ -57,3 +57,7 @@ type mtk_hal_md_dbfilter_hwservice, hwservice_manager_type;
 # Date: 2019/07/16
 # HDMI HIDL
 type mtk_hal_hdmi_hwservice, hwservice_manager_type;
+
+# Date: 2019/09/06
+# BGService HIDL
+type mtk_hal_bgs_hwservice, hwservice_manager_type;
