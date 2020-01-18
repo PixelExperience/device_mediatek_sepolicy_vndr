@@ -133,9 +133,6 @@ type mediatek_prop, property_type, mtk_core_property_type;
 type mtk_em_auto_answer_prop, property_type, mtk_core_property_type;
 
 #============= allow em set protocol ===============
-type mtk_em_bt_sspdebug_prop, property_type, mtk_core_property_type;
-
-#============= allow em set protocol ===============
 type mtk_em_net_auto_tethering_prop, property_type, mtk_core_property_type;
 
 #=============allow meta_tst to stop specific service ===============
@@ -179,9 +176,6 @@ type vendor_bluetooth_prop, property_type, mtk_core_property_type;
 
 #=============allow EM to set modem reset delay property================
 type mtk_debug_md_reset_prop, property_type, mtk_core_property_type;
-
-#=============allow EM to set wifi log level property================
-type mtk_debug_wifi_level_prop, property_type, mtk_core_property_type;
 
 #=============allow EM to set BT ssp debug mode property================
 type mtk_bt_sspdebug_prop, property_type, mtk_core_property_type;
