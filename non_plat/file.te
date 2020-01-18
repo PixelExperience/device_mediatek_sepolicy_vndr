@@ -264,3 +264,6 @@ type sysfs_uart_info, fs_type, sysfs_type;
 # Purpose : for charger to access vbus info and pump_express
 type sysfs_vbus, fs_type, sysfs_type;
 type sysfs_pump_express, fs_type, sysfs_type;
+
+# Widevine move data/mediadrm folder from system to vendor
+type mediadrm_vendor_data_file, file_type, data_file_type;
