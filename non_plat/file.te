@@ -67,6 +67,7 @@ type proc_last_kmsg, fs_type, proc_type;
 type proc_bootprof, fs_type, proc_type;
 type proc_pl_lk, fs_type, proc_type;
 type proc_msdc_debug, fs_type, proc_type;
+type proc_ufs_debug, fs_type, proc_type;
 type proc_pidmap, fs_type, proc_type;
 type proc_kpageflags, fs_type, proc_type;
 type proc_slabtrace, fs_type, proc_type;
