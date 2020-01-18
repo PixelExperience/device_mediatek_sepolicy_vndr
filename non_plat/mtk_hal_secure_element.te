@@ -8,7 +8,11 @@ init_daemon_domain(mtk_hal_secure_element)
 
 # Allow to get vendor.mediatek.hardware.radio HIDL interface
 allow mtk_hal_secure_element mtk_hal_rild_hwservice:hwservice_manager find;
-allow mtk_hal_secure_element rild:binder { call transfer };
+binder_call(mtk_hal_secure_element, rild)
+
+# Allow to get android.hardware.radio HIDL interface
+hal_client_domain(mtk_hal_secure_element, hal_telephony)
+allow mtk_hal_secure_element hal_telephony_hwservice:hwservice_manager find;
 
 # Allow to use persist.radio.multisim.config
 allow mtk_hal_secure_element exported3_radio_prop:file { read open getattr };
