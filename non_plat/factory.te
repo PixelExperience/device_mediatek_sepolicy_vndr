@@ -352,4 +352,8 @@ r_dir_file(factory, sysfs_switch)
 allow factory vendor_data_file:dir { add_name read write};
 allow factory vendor_data_file:file { create read write open };
 
-
+# Date : WK18.31
+# Operation: P migration
+# Purpose : Refine policy
+allow factory sysfs_mmcblk:dir { search };
+allow factory sysfs_mmcblk:file { read getattr open };
