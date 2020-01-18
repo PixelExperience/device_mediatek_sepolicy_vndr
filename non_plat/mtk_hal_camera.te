@@ -263,14 +263,17 @@ allow mtk_hal_camera sysfs_batteryinfo:file { getattr open read };
 # Purpose: Change thermal config
 allow mtk_hal_camera mtk_thermal_config_prop:property_service set;
 
-# Date : WK17.48
-# Stage: O Migration
+# Date : WK18.31
+# Stage: P Migration
 # Purpose: CCT
 allow mtk_hal_camera graphics_device:chr_file { read write ioctl open };
 allow mtk_hal_camera graphics_device:dir search;
 allow mtk_hal_camera cct_data_file:dir create_dir_perms;
 allow mtk_hal_camera cct_data_file:file create_file_perms;
 allow mtk_hal_camera cct_data_file:fifo_file create_file_perms;
+allow mtk_hal_camera sysfs_boot_mode:file { read open };
+allow mtk_hal_camera mnt_vendor_file:dir create_dir_perms;
+allow mtk_hal_camera mnt_vendor_file:fifo_file create_file_perms;
 
 # Date : WK18.01
 # Operation : label aee_aed sockets
