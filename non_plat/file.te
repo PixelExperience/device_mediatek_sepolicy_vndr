@@ -389,3 +389,7 @@ type sysfs_sensor, fs_type, sysfs_type;
 
 #MTEE trusty
 type mtee_trusty_file, fs_type, sysfs_type;
+
+# Date : 2019/08/29
+# Purpose: Allow rild access proc/aed/reboot-reason
+type proc_aed_reboot_reason, fs_type, proc_type;

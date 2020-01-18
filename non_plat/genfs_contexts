@@ -220,3 +220,7 @@ genfscon sysfs /devices/virtual/sensor u:object_r:sysfs_sensor:s0
 
 # MTEE trusty
 genfscon sysfs /devices/platform/trusty u:object_r:mtee_trusty_file:s0
+
+# Date : 2019/08/29
+# Purpose: allow rild to access /proc/aed/reboot-reason
+genfscon proc /aed/reboot-reason u:object_r:proc_aed_reboot_reason:s0

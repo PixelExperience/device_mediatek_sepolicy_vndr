@@ -43,7 +43,6 @@ allow rild bluetooth_efs_file:dir r_dir_perms;
 # Violate Android P rule
 allow rild sdcardfs:dir r_dir_perms;
 #allow rild system_file:file x_file_perms;
-allow rild proc:file rw_file_perms;
 allow rild proc_net:file w_file_perms;
 
 # Allow rild to create and use netlink sockets.
@@ -155,3 +154,7 @@ allow rild proc_cmdline:file r_file_perms;
 # Operation: AP wifi path
 # Purpose: Allow packet can be filtered by RILD process
 allow rild self:netlink_netfilter_socket { create_socket_perms_no_ioctl };
+
+# Date : 2019/08/29
+# Purpose: Allow rild to access proc/aed/reboot-reason
+allow rild proc_aed_reboot_reason:file rw_file_perms;
