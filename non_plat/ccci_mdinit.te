@@ -46,6 +46,7 @@ set_prop(ccci_mdinit, ctl_ccci2_fsd_prop)
 set_prop(ccci_mdinit, ctl_ccci3_fsd_prop)
 
 get_prop(ccci_mdinit, vendor_default_prop)
+get_prop(ccci_mdinit, init_svc_emdlogger1_prop)
 
 allow ccci_mdinit ccci_device:chr_file rw_file_perms;
 allow ccci_mdinit ccci_monitor_device:chr_file rw_file_perms;

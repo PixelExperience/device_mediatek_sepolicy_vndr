@@ -4,5 +4,7 @@ ctl.emdlogger1       u:object_r:ctl_emdlogger1_prop:s0
 ctl.emdlogger2       u:object_r:ctl_emdlogger2_prop:s0
 ctl.emdlogger3       u:object_r:ctl_emdlogger3_prop:s0
 
+init.svc.emdlogger1 u:object_r:init_svc_emdlogger1_prop:s0
+
 #allow mtk audio hidl service to read "ro.audio.usb.period_us"
 ro.audio.usb.period_us u:object_r:exported_default_prop:s0 exact int
