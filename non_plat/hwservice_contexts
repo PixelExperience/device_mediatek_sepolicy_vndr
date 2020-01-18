@@ -48,3 +48,7 @@ vendor.mediatek.hardware.log::ILog u:object_r:mtk_hal_log_hwservice:s0
 # Date: 2018/06/26
 # em hidl
 vendor.mediatek.hardware.engineermode::IEmd u:object_r:mtk_hal_em_hwservice:s0
+
+# Date : 2018/07/02
+# MMS HIDL
+vendor.mediatek.hardware.mms::IMms u:object_r:mtk_hal_mms_hwservice:s0

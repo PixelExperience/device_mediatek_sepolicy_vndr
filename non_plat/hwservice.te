@@ -42,3 +42,7 @@ type mtk_hal_log_hwservice, hwservice_manager_type;
 # Date: 2018/06/26
 # em hidl
 type mtk_hal_em_hwservice, hwservice_manager_type;
+
+# Date: 2018/07/02
+# MMS HIDL
+type mtk_hal_mms_hwservice, hwservice_manager_type;

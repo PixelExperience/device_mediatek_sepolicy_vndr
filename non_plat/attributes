@@ -64,3 +64,8 @@ attribute mtk_hal_em;
 attribute mtk_hal_em_client;
 attribute mtk_hal_em_server;
 
+# Date: 2018/07/02
+# MDP HIDL
+attribute hal_mms;
+attribute hal_mms_client;
+attribute hal_mms_server;
