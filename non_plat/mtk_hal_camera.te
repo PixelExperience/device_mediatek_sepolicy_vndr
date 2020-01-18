@@ -249,7 +249,12 @@ allow mtk_hal_camera gpu_device:chr_file rw_file_perms;
 
 ## Purpose: Allow to access ged for gralloc_extra functions
 allow mtk_hal_camera proc_ged:file {open read write ioctl getattr};
-allowxperm mtk_hal_camera proc_ged:file ioctl { GED_BRIDGE_IO_GE_GET GED_BRIDGE_IO_GE_SET};
+allowxperm mtk_hal_camera proc_ged:file ioctl {
+    GED_BRIDGE_IO_GE_GET
+    GED_BRIDGE_IO_GE_SET
+    GED_BRIDGE_IO_LOG_BUF_GET
+    GED_BRIDGE_IO_QUERY_INFO
+};
 
 ################################################################################
 # Date : WK17
