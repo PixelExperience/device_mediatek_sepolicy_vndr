@@ -332,6 +332,9 @@ type sysfs_headset, fs_type, sysfs_type;
 # socket between atci_service and audio-daemon
 type atci-audio_socket, file_type;
 
+# socket between atcid and meta_tst
+type meta_atci_socket, file_type;
+
 # ATCI socket types
 type rild_atci_socket, file_type;
 type rilproxy_atci_socket, file_type;

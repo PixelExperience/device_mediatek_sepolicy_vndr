@@ -11,7 +11,6 @@ type atcid_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(atcid)
 set_prop(atcid,persist_service_atci_prop)
 allow atcid block_device:dir search;
-allow atcid socket_device:sock_file write;
 allow atcid gsmrild_socket:sock_file write;
 
 # Date : WK17.21
@@ -72,3 +71,9 @@ allow atcid sysfs_mmcblk:file { read open };
 unix_socket_connect(atcid, rild_atci, rild);
 unix_socket_connect(atcid, rilproxy_atci, rild);
 unix_socket_connect(atcid, atci_service, atci_service);
+
+# Date : WK19.42
+# Purpose: Add policy to access ATCI sockets
+unix_socket_connect(atcid, atci-audio, audiocmdservice_atci);
+unix_socket_connect(atcid, meta_atci, meta_tst);
+allow atcid adb_atci_socket:sock_file write;

@@ -254,6 +254,7 @@
 /dev/socket/agpsd3(/.*)? u:object_r:agpsd_socket:s0
 /dev/socket/agpsd(/.*)? u:object_r:agpsd_socket:s0
 /dev/socket/atci-audio(/.*)? u:object_r:atci-audio_socket:s0
+/dev/socket/meta-atci(/.*)? u:object_r:meta_atci_socket:s0
 /dev/socket/backuprestore(/.*)? u:object_r:backuprestore_socket:s0
 /dev/socket/dfo(/.*)? u:object_r:dfo_socket:s0
 /dev/socket/dnsproxyd(/.*)? u:object_r:dnsproxyd_socket:s0
