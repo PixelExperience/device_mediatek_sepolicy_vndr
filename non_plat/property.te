@@ -25,7 +25,7 @@ type ctl_dualmdlogger_prop, property_type;
 type ctl_viarild_prop, property_type;
 #=============allow mtkrild to set persist.ril property==============
 type persist_ril_prop, property_type, mtk_core_property_type;
-type vendor_ril_ipo_prop property_type, mtk_core_property_type;
+type vendor_ril_ipo_prop, property_type, mtk_core_property_type;
 
 #=============allow gsm0710muxd to set mux property==============
 type gsm0710muxd_prop, property_type, mtk_core_property_type;
