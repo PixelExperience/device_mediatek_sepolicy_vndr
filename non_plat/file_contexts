@@ -241,6 +241,7 @@
 /dev/socket/agpsd2(/.*)? u:object_r:agpsd_socket:s0
 /dev/socket/agpsd3(/.*)? u:object_r:agpsd_socket:s0
 /dev/socket/agpsd(/.*)? u:object_r:agpsd_socket:s0
+/dev/socket/atci-audio(/.*)? u:object_r:atci-audio_socket:s0
 /dev/socket/backuprestore(/.*)? u:object_r:backuprestore_socket:s0
 /dev/socket/dfo(/.*)? u:object_r:dfo_socket:s0
 /dev/socket/dnsproxyd(/.*)? u:object_r:dnsproxyd_socket:s0
@@ -523,6 +524,7 @@
 #############################
 # System files
 #
+/(system\/vendor|vendor)/bin/audiocmdservice_atci u:object_r:audiocmdservice_atci_exec:s0
 /(system\/vendor|vendor)/bin/stp_dump3 u:object_r:stp_dump3_exec:s0
 /(system\/vendor|vendor)/bin/wmt_launcher u:object_r:mtk_wmt_launcher_exec:s0
 /(system\/vendor|vendor)/bin/ccci_fsd u:object_r:ccci_fsd_exec:s0

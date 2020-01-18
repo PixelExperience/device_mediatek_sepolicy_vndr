@@ -298,3 +298,5 @@ type sysfs_spm, fs_type, sysfs_type;
 # Purpose : mtk EM Audio headset detect
 type sysfs_headset, fs_type, sysfs_type;
 
+# socket between atci_service and audio-daemon
+type atci-audio_socket, file_type;
