@@ -236,6 +236,7 @@ genfscon proc /ppm u:object_r:proc_ppm:s0
 genfscon proc /cpufreq u:object_r:proc_cpufreq:s0
 genfscon proc /hps u:object_r:proc_hps:s0
 genfscon proc /cm_mgr u:object_r:proc_cm_mgr:s0
+genfscon proc /fliperfs u:object_r:proc_fliperfs:s0
 genfscon sysfs /module/ged u:object_r:sysfs_ged:s0
 genfscon sysfs /module/fbt_cpu u:object_r:sysfs_fbt_cpu:s0
 genfscon sysfs /module/fbt_fteh u:object_r:sysfs_fbt_fteh:s0

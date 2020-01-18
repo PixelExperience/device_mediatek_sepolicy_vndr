@@ -153,6 +153,8 @@ allow mtk_hal_power proc_hps:dir r_dir_perms;
 allow mtk_hal_power proc_hps:file rw_file_perms;
 allow mtk_hal_power proc_cm_mgr:dir r_dir_perms;
 allow mtk_hal_power proc_cm_mgr:file rw_file_perms;
+allow mtk_hal_power proc_fliperfs:dir r_dir_perms;
+allow mtk_hal_power proc_fliperfs:file rw_file_perms;
 allow mtk_hal_power sysfs_ged:dir r_dir_perms;
 allow mtk_hal_power sysfs_ged:file rw_file_perms;
 allow mtk_hal_power sysfs_fbt_cpu:dir r_dir_perms;

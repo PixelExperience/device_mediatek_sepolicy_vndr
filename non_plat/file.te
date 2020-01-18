@@ -400,6 +400,7 @@ type proc_ppm, fs_type, proc_type;
 type proc_cpufreq, fs_type, proc_type;
 type proc_hps, fs_type, proc_type;
 type proc_cm_mgr, fs_type, proc_type;
+type proc_fliperfs, fs_type, proc_type;
 type sysfs_ged, fs_type, sysfs_type;
 type sysfs_fbt_cpu, fs_type, sysfs_type;
 type sysfs_fbt_fteh, fs_type, sysfs_type;
