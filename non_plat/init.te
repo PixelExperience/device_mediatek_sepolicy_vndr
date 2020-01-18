@@ -132,3 +132,6 @@ allow init kernel:key search;
 # Purpose : enhance boottime
 allow init proc_perfmgr:file write;
 
+# Date : W18.20
+# Operation : mount soc vendor's partition when booting
+allow init mnt_vendor_file:dir mounton;
