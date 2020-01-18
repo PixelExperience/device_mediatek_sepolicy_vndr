@@ -19,6 +19,8 @@ genfscon proc /mrdump_rst u:object_r:proc_mrdump_rst:s0
 genfscon proc /mtk_battery_cmd u:object_r:proc_battery_cmd:s0
 genfscon proc /ged u:object_r:proc_ged:s0
 genfscon proc /perfmgr u:object_r:proc_perfmgr:s0
+genfscon proc /driver/wmt_dbg u:object_r:proc_wmtdbg:s0
+
 genfscon proc /slabinfo u:object_r:proc_slabinfo:s0
 genfscon proc /zraminfo u:object_r:proc_zraminfo:s0
 genfscon proc /gpulog u:object_r:proc_gpulog:s0

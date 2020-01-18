@@ -54,6 +54,7 @@ type proc_slogger, fs_type, proc_type;
 type proc_lk_env, fs_type, proc_type;
 type proc_ged, fs_type, proc_type;
 type proc_perfmgr, fs_type, proc_type;
+type proc_wmtdbg, fs_type, proc_type;
 type proc_slabinfo, fs_type, proc_type;
 type proc_zraminfo, fs_type, proc_type;
 type proc_cpu_alignment, fs_type, proc_type;
