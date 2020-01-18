@@ -296,3 +296,10 @@ set_prop(factory,ctl_ccci_fsd_prop);
 allow factory sysfs_therm:dir search;
 allow factory sysfs_therm:file {open read write};
 
+#Date: W18.22
+# Purpose:  P Migration for factory get com port type and uart port info
+# detail avc log: [   11.751803] <1>.(1)[227:logd.auditd]type=1400 audit(1262304016.560:10):
+#avc: denied { read } for pid=203 comm="factory" name="meta_com_type_info" dev=
+#"sysfs" ino=11073 scontext=u:r:factory:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
+allow factory sysfs_comport_type:file rw_file_perms;
+allow factory sysfs_uart_info:file rw_file_perms;
