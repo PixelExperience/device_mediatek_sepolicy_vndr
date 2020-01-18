@@ -365,3 +365,9 @@ set_prop(meta_tst, atm_ipaddr_prop);
 # Operation: P migration
 # Purpose: Allow meta_tst to get tel_switch_prop
 get_prop(meta_tst, tel_switch_prop)
+
+# Date : WK18.21
+# Operation: P migration
+# Purpose : Allow meta_tst to call nvram hal
+allow meta_tst nvram_agent_binder_hwservice:hwservice_manager find;
+
