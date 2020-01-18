@@ -213,3 +213,9 @@ persist.vendor.mtk_ct_volte_support u:object_r:mtk_ct_volte_prop:s0
 
 #============Label mtk ril mode=======#
 ro.vendor.mtk_ril_mode u:object_r:mtk_ril_mode_prop:s0
+
+#=============GPS support properties==============
+ro.vendor.mtk_gps_support u:object_r:mtk_gps_support_prop:s0
+ro.vendor.mtk_agps_app u:object_r:mtk_gps_support_prop:s0
+ro.vendor.mtk_log_hide_gps u:object_r:mtk_gps_support_prop:s0
+ro.vendor.mtk_hidl_consolidation u:object_r:mtk_gps_support_prop:s0
