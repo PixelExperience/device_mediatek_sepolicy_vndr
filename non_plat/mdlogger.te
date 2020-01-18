@@ -53,3 +53,7 @@ allow mdlogger aee_aed:unix_stream_socket connectto;
     
 ## purpose: avc: denied { read } for name="plat_file_contexts"
 allow emdlogger file_contexts_file:file { read getattr open};
+
+#permission for read boot mode
+#avc: denied { open }  path="/sys/devices/virtual/BOOT/BOOT/boot/boot_mode" dev="sysfs"
+allow mdlogger sysfs_boot:file { read open };

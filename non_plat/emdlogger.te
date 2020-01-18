@@ -57,7 +57,7 @@ allow emdlogger storage_file:file { create_file_perms };
 
 #permission for read boot mode
 #avc: denied { open }  path="/sys/devices/virtual/BOOT/BOOT/boot/boot_mode" dev="sysfs"
-#allow emdlogger sysfs:file { read open };
+allow emdlogger sysfs_boot:file { read open };
 
 # Allow read to sys/kernel/ccci/* files
 allow emdlogger sysfs_ccci:dir search;
