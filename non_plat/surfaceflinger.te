@@ -20,7 +20,7 @@ allow surfaceflinger gpu_device:dir search;
 
 # Date : WK17.12
 # Purpose: Fix bootup fail
-#allow surfaceflinger proc:file r_file_perms;
+allow surfaceflinger proc_bootprof:file r_file_perms;
 
 #============= surfaceflinger ==============
 allow surfaceflinger debugfs_ion:dir search;
