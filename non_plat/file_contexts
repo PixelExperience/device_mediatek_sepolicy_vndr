@@ -62,6 +62,7 @@
 #/data/vendor/nfc(/.*)? u:object_r:nfc_data_file:s0
 /data/vendor/connsyslog(/.*)?  u:object_r:consyslog_data_file:s0
 /data/vendor/stp_dump(/.*)? u:object_r:stp_dump_data_file:s0
+/data/vendor/mediadrm(/.*)?      u:object_r:mediadrm_vendor_data_file:s0
 
 # Misc data
 #/data/misc/acdapi(/.*)? u:object_r:acdapi_data_file:s0
@@ -558,7 +559,7 @@
 /(system\/vendor|vendor)/bin/hw/camerahalserver u:object_r:mtk_hal_camera_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.imsa@1\.0-service u:object_r:mtk_hal_imsa_exec:s0
 #Widevine drm hal
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.0-service.widevine           u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service.widevine           u:object_r:hal_drm_widevine_exec:s0
 #PQ hal
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.pq@2\.1-service u:object_r:mtk_hal_pq_exec:s0
 # Keymaster Attestation Hal
