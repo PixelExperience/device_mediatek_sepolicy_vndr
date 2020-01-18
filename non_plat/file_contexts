@@ -403,6 +403,7 @@
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/misc2       u:object_r:misc2_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/logo        u:object_r:logo_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/para        u:object_r:para_block_device:s0
+/dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/misc        u:object_r:misc_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/seccfg      u:object_r:seccfg_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/secro       u:object_r:secro_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/system      u:object_r:system_block_device:s0
@@ -447,6 +448,7 @@
 /dev/block/platform/bootdevice/by-name/misc2     u:object_r:misc2_block_device:s0
 /dev/block/platform/bootdevice/by-name/logo      u:object_r:logo_block_device:s0
 /dev/block/platform/bootdevice/by-name/para      u:object_r:para_block_device:s0
+/dev/block/platform/bootdevice/by-name/misc      u:object_r:misc_block_device:s0
 /dev/block/platform/bootdevice/by-name/seccfg    u:object_r:seccfg_block_device:s0
 /dev/block/platform/bootdevice/by-name/secro     u:object_r:secro_block_device:s0
 /dev/block/platform/bootdevice/by-name/userdata  u:object_r:userdata_block_device:s0
