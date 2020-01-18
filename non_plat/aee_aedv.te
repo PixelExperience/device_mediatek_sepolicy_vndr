@@ -436,3 +436,6 @@ allow aee_aedv proc_dbg_repo:file r_file_perms;
 allow aee_aedv proc_pl_lk:file r_file_perms;
 
 allow aee_aedv proc_aed_reboot_reason:file r_file_perms;
+
+# Purpose: Allow aee_aedv to write /proc/sys/vm/drop_caches
+allow aee_aedv proc_drop_caches:file rw_file_perms;
