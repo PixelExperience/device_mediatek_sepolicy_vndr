@@ -73,15 +73,15 @@ allow factory vendor_factory_idle_state_prop:property_service set;
 
 # Date: WK15.46
 # Purpose: gps factory mode
-typeattribute factory data_between_core_and_vendor_violators;
-allow factory agpsd_data_file:dir search;
+####typeattribute factory data_between_core_and_vendor_violators;
+###allow factory agpsd_data_file:dir search;
 allow factory apk_data_file:dir write;
 #allow factory gps_data_file:dir r_dir_perms;
 #allow factory gps_data_file:dir { write open };
 #allow factory gps_data_file:file { read write };
-allow factory gps_data_file:dir { write add_name search remove_name unlink};
-allow factory gps_data_file:file { read write open create getattr append setattr unlink lock};
-allow factory gps_data_file:lnk_file read;
+###allow factory gps_data_file:dir { write add_name search remove_name unlink};
+###allow factory gps_data_file:file { read write open create getattr append setattr unlink lock};
+###allow factory gps_data_file:lnk_file read;
 # allow factory gps_emi_device:chr_file { read write };
 allow factory shell_exec:file x_file_perms;
 allow factory storage_file:lnk_file r_file_perms;
@@ -98,10 +98,10 @@ allow factory storage_file:lnk_file read;
 #Date: WK16.05
 #Purpose: For access NVRAM
 allow factory factory:capability chown;
-allow factory nvram_data_file:dir create_dir_perms;
-allow factory nvram_data_file:file create_file_perms;
-allow factory nvram_data_file:lnk_file r_file_perms;
-allow factory nvdata_file:lnk_file r_file_perms;
+###allow factory nvram_data_file:dir create_dir_perms;
+###allow factory nvram_data_file:file create_file_perms;
+###allow factory nvram_data_file:lnk_file r_file_perms;
+###allow factory nvdata_file:lnk_file r_file_perms;
 allow factory nvram_device:chr_file rw_file_perms;
 allow factory nvram_device:blk_file rw_file_perms;
 allow factory nvdata_device:blk_file rw_file_perms;
@@ -133,8 +133,8 @@ allow factory mmcblk1p1_block_device:blk_file rw_file_perms;
 allow factory block_device:dir w_dir_perms;
 
 #Purpose: For EMMC test
-allow factory nvdata_file:dir create_dir_perms;
-allow factory nvdata_file:file create_file_perms;
+###allow factory nvdata_file:dir create_dir_perms;
+###allow factory nvdata_file:file create_file_perms;
 
 #Purpose: For HRM test
 allow factory hrm_device:chr_file r_file_perms;
@@ -189,8 +189,8 @@ allow factory LC898212AF_device:chr_file rw_file_perms;
 allow factory BU6429AF_device:chr_file rw_file_perms;
 allow factory DW9718AF_device:chr_file rw_file_perms;
 allow factory BU64745GWZAF_device:chr_file rw_file_perms;
-allow factory cct_data_file:dir create_dir_perms;
-allow factory cct_data_file:file create_file_perms;
+###allow factory cct_data_file:dir create_dir_perms;
+###allow factory cct_data_file:file create_file_perms;
 allow factory camera_tsf_device:chr_file rw_file_perms;
 allow factory camera_rsc_device:chr_file rw_file_perms;
 allow factory camera_gepf_device:chr_file rw_file_perms;
