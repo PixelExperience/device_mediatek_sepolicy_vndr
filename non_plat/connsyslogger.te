@@ -1,29 +1,18 @@
 
-# Policy File of /vendor/bin/connsyslogger Executable File
+# Policy File of /system/bin/connsyslogger Executable File
 
 # ==============================================
 # Type Declaration
 # ==============================================
 type connsyslogger,domain;
-type connsyslogger_exec, exec_type, file_type, vendor_file_type;
-typeattribute connsyslogger mlstrustedsubject;
+type connsyslogger_exec, exec_type, file_type;
+typeattribute connsyslogger coredomain;
 # Purpose : for create hidl server
 hal_server_domain(connsyslogger, mtk_hal_log)
 # ==============================================
 # MTK Policy Rule
 # ==============================================
 init_daemon_domain(connsyslogger)
-
-
-#allow connsyslogger to set property
-allow connsyslogger vendor_connsysfw_prop:property_service set;
-#allow connsyslogger debug_prop:property_service set;
-#allow connsyslogger persist_mtklog_prop:property_service set;
-#allow connsyslogger system_radio_prop:property_service set;
-
-#stpwmt device for connsyslogger
-allow connsyslogger stpwmt_device:chr_file { rw_file_perms };
-
 
 #for logging sdcard access
 allow connsyslogger fuse:dir { create_dir_perms };
@@ -33,17 +22,11 @@ allow connsyslogger fuse:file { create_file_perms };
 allow connsyslogger consyslog_data_file:dir { create_dir_perms relabelto };
 allow connsyslogger consyslog_data_file:fifo_file { create_file_perms };
 allow connsyslogger consyslog_data_file:file { create_file_perms };
-#allow connsyslogger system_data_file:dir { create_dir_perms relabelfrom};
-
-#file_type_auto_trans(connsyslogger, system_data_file, consyslog_data_file)
+allow connsyslogger system_data_file:dir { create_dir_perms relabelfrom};
 
 #consys logger socket access
 allow connsyslogger property_socket:sock_file write;
 allow connsyslogger init:unix_stream_socket connectto;
-#allow connsyslogger platform_app:unix_stream_socket connectto;
-#allow connsyslogger shell_exec:file { rx_file_perms };
-#allow connsyslogger system_file:file execute_no_trans;
-#allow connsyslogger zygote_exec:file { rx_file_perms };
 
 allow connsyslogger tmpfs:lnk_file { create_file_perms };
 
@@ -59,7 +42,7 @@ allow connsyslogger mnt_user_file:dir search;
 allow connsyslogger mnt_user_file:lnk_file read;
 allow connsyslogger storage_file:lnk_file read;
 #allow connsyslogger self:capability { chown dac_override };
-allow connsyslogger proc:file {setattr write read open};
+#allow connsyslogger proc:file {setattr write read open};
 
 #permission for use SELinux API
 allow connsyslogger rootfs:file r_file_perms;
@@ -80,5 +63,9 @@ allow connsyslogger sdcardfs:dir { create_dir_perms };
 allow connsyslogger sdcardfs:file { create_file_perms };
 allow connsyslogger rootfs:lnk_file getattr;
 
-#allow connsyslogger media_rw_data_file:file  { create_file_perms };
-#allow connsyslogger media_rw_data_file:dir { create_dir_perms };
+allow connsyslogger media_rw_data_file:file  { create_file_perms };
+allow connsyslogger media_rw_data_file:dir { create_dir_perms };
+
+set_prop(connsyslogger, vendor_connsysfw_prop)
+
+

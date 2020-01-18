@@ -25,6 +25,7 @@ allow platform_app mobile_log_d:unix_stream_socket connectto;
 allow platform_app mdlogger:unix_stream_socket connectto;
 allow platform_app emdlogger:unix_stream_socket connectto;
 allow platform_app cmddumper:unix_stream_socket connectto;
+allow platform_app connsyslogger:unix_stream_socket connectto;
 unix_socket_connect(platform_app, netdiag, netdiag)
 # Date: 2018/11/17
 # purpose: allow MTKLogger to control Bluetooth HCI log via socket
@@ -105,3 +106,6 @@ hal_client_domain(platform_app, mtk_hal_log)
 # Package: com.mediatek.mtklogger
 allow platform_app debug_mdlogger_prop:file { read getattr open };
 allow platform_app debug_mtklog_prop:file { read getattr open };
+
+get_prop(platform_app, vendor_connsysfw_prop)
+
