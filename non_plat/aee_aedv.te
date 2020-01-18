@@ -410,6 +410,9 @@ allow aee_aedv debugfs_rcu:file r_file_perms;
 # Purpose: Allow aee_aedv to read /proc/msdc_debug
 allow aee_aedv proc_msdc_debug:file r_file_perms;
 
+# Purpose: Allow aee_aedv to read /proc/pidmap
+allow aee_aedv proc_pidmap:file r_file_perms;
+
 # Purpose: Allow aee_aedv to read /sys/power/vcorefs/vcore_debug
 allow aee_aedv sysfs_vcore_debug:file r_file_perms;
 
