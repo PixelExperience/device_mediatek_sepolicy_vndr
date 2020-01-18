@@ -379,7 +379,12 @@ allow meta_tst sysfs_headset:file { read open };
 #Purpose : Allow meta_tst to use socket for listening uevent
 allow meta_tst meta_tst:netlink_kobject_uevent_socket { read bind create setopt };
 
-#Date : WK18.28
+# Date : WK18.28
 # Operation: P migration
 # Purpose : 
 set_prop(meta_tst, vendor_usb_prop);
+
+# Date: W18.29
+# Operation: Catch log
+# Purpose : meta connect with loghidlserver by socket.
+allow meta_tst loghidlvendorservice:unix_stream_socket connectto;
