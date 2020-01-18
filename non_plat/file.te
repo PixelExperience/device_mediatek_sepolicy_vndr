@@ -346,10 +346,10 @@ type debugfs_regmap, fs_type, debugfs_type;
 type sys_usb_rawbulk, fs_type, sysfs_type;
 
 # Backlight brightness file
-type sysfs_vibrator_setting, fs_type, sysfs_type;
+type sysfs_leds_setting, fs_type, sysfs_type;
 
 # Vibrator vibrate file
-type sysfs_leds_setting, fs_type, sysfs_type;
+type sysfs_vibrator_setting, fs_type, sysfs_type;
 
 # Date : 2019/04/09
 # Purpose: mtk EM battery settings
