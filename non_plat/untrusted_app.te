@@ -10,19 +10,3 @@
 #					 from MTK kernel modules for thermal tests at OEM/ODM.
 allow untrusted_app proc_mtktz:dir search;
 allow untrusted_app proc_mtktz:file r_file_perms;
-
-# Date : 2017/08/01
-# Operation: SQC
-# Purpose : Allow Whatstemp, a MTK thermal logging tool, to log thermal related information
-# properly for thermal tests at OEM/ODM.
-allow untrusted_app_25 proc_mtktz:dir search;
-allow untrusted_app_25 proc_mtktz:file { getattr open read };
-allow untrusted_app_25 proc_thermal:dir search;
-allow untrusted_app_25 proc_thermal:file { getattr open read };
-
-allow untrusted_app_25 sysfs_fps:dir search;
-allow untrusted_app_25 sysfs_fps:file { getattr open read };
-allow untrusted_app_25 sysfs_batteryinfo:dir search;
-#allow untrusted_app_25 sysfs_batteryinfo:file { getattr open read };
-allow untrusted_app_25 sysfs_therm:dir { open read search };
-allow untrusted_app_25 sysfs_therm:file { getattr open read };

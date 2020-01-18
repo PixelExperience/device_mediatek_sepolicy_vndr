@@ -108,8 +108,3 @@ get_prop(platform_app, vendor_connsysfw_prop)
 # Purpose : JPEG need to use PQ via MMS HIDL
 allow platform_app mtk_hal_mms_hwservice:hwservice_manager find;
 allow platform_app mtk_hal_mms:binder call;
-
-# Date: 2019/06/14
-# Operation : Migration
-# Purpose : platform_app need get mtk_amslog_prop
-get_prop(platform_app, mtk_amslog_prop)
