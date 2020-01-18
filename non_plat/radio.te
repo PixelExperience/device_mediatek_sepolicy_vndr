@@ -189,3 +189,7 @@ allow radio sysfs_headset:file { read open };
 # Operation : IT
 # Purpose : Allow to use HAL em
 hal_client_domain(radio, mtk_hal_em)
+
+# Date : 2018/07/03
+# Purpose : Allow sim system to set prop
+set_prop(radio, vendor_sim_system_prop)

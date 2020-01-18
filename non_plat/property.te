@@ -239,3 +239,7 @@ type mtk_pq_prop, property_type, mtk_core_property_type;
 
 #=============mtk emmc property=============
 type mtk_emmc_support_prop, property_type, mtk_core_property_type;
+
+#=============sim system property=============
+type vendor_sim_system_prop, property_type, extended_core_property_type;
+

@@ -180,6 +180,9 @@ persist.vendor.meta.connecttype u:object_r:meta_connecttype_prop:s0
 vendor.ril.iccid.sim u:object_r:mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.last_iccid_sim  u:object_r:mtk_telephony_sensitive_prop:s0
 
+#=============allow sim config property==============
+vendor.gsm.sim.operator.default-name u:object_r:vendor_sim_system_prop:s0
+
 #=============allow processes to change thermal config================
 vendor.thermal.manager.data u:object_r:mtk_thermal_config_prop:s0
 #=============allow composer set property ============================
