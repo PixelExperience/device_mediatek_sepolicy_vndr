@@ -17,6 +17,7 @@ allow hal_power_client mtk_hal_power_hwservice:hwservice_manager find;
 
 
 hal_server_domain(mtk_hal_power, hal_power);
+hal_server_domain(mtk_hal_power, hal_wifi);
 
 # proc fs
 allow mtk_hal_power proc:dir r_dir_perms;
@@ -107,3 +108,11 @@ allow mtk_hal_power system_server:file r_file_perms;
 # Operation: SQC
 # Purpose : Allow powerHAL to access prop
 set_prop(mtk_hal_power, mtk_powerhal_prop)
+
+# Date : 2019/05/29
+# Operation: SQC
+# Purpose : Allow powerHAL to access wifi driver
+allow mtk_hal_power self:udp_socket create;
+allow mtk_hal_power kernel:system module_request;
+allow mtk_hal_power self:capability sys_module;
+allowxperm mtk_hal_power self:udp_socket ioctl priv_sock_ioctls;
