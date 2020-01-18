@@ -101,3 +101,13 @@ set_prop(em_hidl, vendor_em_usb_prop)
 # Operation : EM DEBUG
 # Purpose: for setting usb otg enable property
 set_prop(em_hidl, vendor_usb_otg_switch)
+
+# Data : 2018/07/06
+# Purpose : EM MCF read nvdata dir and file
+allow em_hidl nvdata_file:dir { read open add_name search getattr};
+allow em_hidl nvdata_file:file { getattr read open };
+
+# Data : 2018/07/06
+# Purpose : EM MCF search vendor dir
+allow em_hidl mnt_vendor_file:dir search;
+
