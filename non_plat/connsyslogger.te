@@ -84,5 +84,9 @@ allow connsyslogger node:tcp_socket node_bind;
 # usb device ttyGSx for modem logger usb logging
 allow connsyslogger ttyGS_device:chr_file { rw_file_perms};
 
+#Date:2019/06/27
+#access data/debuglog
+allow connsyslogger debuglog_data_file:dir {relabelto create_dir_perms};
+allow connsyslogger debuglog_data_file:file create_file_perms;
 
 
