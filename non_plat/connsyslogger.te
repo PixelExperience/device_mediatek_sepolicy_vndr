@@ -67,6 +67,8 @@ allow connsyslogger media_rw_data_file:dir { create_dir_perms };
 set_prop(connsyslogger, vendor_connsysfw_prop)
 
 allow connsyslogger vendor_configs_file:file map;
+#permission to get driver ready status
+get_prop(connsyslogger, wmt_prop)
 
 
 
