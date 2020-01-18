@@ -94,8 +94,6 @@ allow mtkrild mal_mfi_socket:sock_file { w_file_perms };
 allow mtkrild sysfs_ccci:dir search;
 allow mtkrild sysfs_ccci:file r_file_perms;
 
-allow init socket_device:sock_file { create unlink setattr };
-
 #For Kryptowire mtklog issue
 allow mtkrild aee_aedv:unix_stream_socket connectto;
 # Allow ioctl in order to control network interface

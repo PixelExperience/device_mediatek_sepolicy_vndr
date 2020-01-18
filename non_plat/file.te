@@ -13,6 +13,7 @@ type wpa_supplicant_data_file, file_type, data_file_type;
 type radvd_data_file, file_type, data_file_type;
 type volte_vt_socket, file_type;
 type dfo_socket, file_type;
+type gsmrild_socket, file_type;
 type rild2_socket, file_type;
 type rild3_socket, file_type;
 type rild4_socket, file_type;
