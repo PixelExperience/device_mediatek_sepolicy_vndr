@@ -397,3 +397,8 @@ allow meta_tst self:capability sys_time;
 # avc: denied { open } for path="/sys/devices/platform/mt_charger/power_supply/usb/online" dev="sysfs" ino=8764 scontext=u:r:meta_tst:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=file permissive=0
 allow meta_tst sysfs_batteryinfo:dir search;
 allow meta_tst sysfs_batteryinfo:file {read open};
+
+# Date : WK19.08
+# Operation: P migration
+# Purpose : audio scp recovery
+allow meta_tst audio_scp_device:chr_file r_file_perms;
