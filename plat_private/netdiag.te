@@ -101,6 +101,6 @@ allow netdiag self:udp_socket { ioctl create };
 #allow netdiag atm_mdmode_prop:file { getattr open };
 #allow netdiag bluetooth_a2dp_offload_prop:file { getattr open };
 #allow netdiag bluetooth_prop:file open;
-allow netdiag proc_qtaguid_stat:dir { read open };
+allow netdiag proc_qtaguid_stat:dir { read open search };
 allow netdiag proc_qtaguid_stat:file { read getattr open };
 allow netdiag vendor_default_prop:file  { read getattr open };
