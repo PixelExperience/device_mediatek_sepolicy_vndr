@@ -173,3 +173,6 @@ vendor.ril. u:object_r:vendor_radio_prop:s0
 ro.vendor.ril. u:object_r:vendor_radio_prop:s0
 vendor.gsm. u:object_r:vendor_radio_prop:s0
 persist.vendor.radio. u:object_r:vendor_radio_prop:s0
+
+#=============allow bluetooth==============
+vendor.bthcisnoop u:object_r:vendor_bluetooth_prop:s0
