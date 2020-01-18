@@ -28,6 +28,7 @@
 # google suggest that move aee_aedv_exec to platform @google_issue_id:64130120
 /(system\/vendor|vendor)/bin/aee_aedv u:object_r:aee_aedv_exec:s0
 /(system\/vendor|vendor)/bin/aee_aedv64 u:object_r:aee_aedv_exec:s0
+/vendor/bin/aeev  u:object_r:aee_aedv_exec:s0
 
 # kisd for Key Manager
 /data/vendor/key_provisioning(/.*)?   u:object_r:key_install_data_file:s0
