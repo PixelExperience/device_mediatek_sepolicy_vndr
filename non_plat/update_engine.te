@@ -19,7 +19,6 @@ allow update_engine para_block_device:blk_file rw_file_perms;
 
 
 # Add for update_engine call by system_app
-#allow update_engine self:capability dac_override;
 allow update_engine system_app:binder { call transfer };
 
 # Add for update_engine with postinstall

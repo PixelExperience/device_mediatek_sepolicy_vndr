@@ -74,10 +74,6 @@ allow system_server ttyMT_device:chr_file rw_file_perms;
 # Purpose: Allow to access UART1 ttyS
 allow system_server ttyS_device:chr_file rw_file_perms;
 
-# Date : WK16.44
-# Purpose: Allow to access gpsonly driver
-#allow system_server gps_device:chr_file rw_file_perms;
-
 # Date:W16.46
 # Operation : thermal hal Feature developing
 # Purpose : thermal hal interface permission

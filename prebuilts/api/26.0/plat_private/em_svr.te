@@ -48,7 +48,7 @@ allow em_svr sysfs_leds:dir search;
 
 # Date: WK1812
 # Purpose: add for sensor calibration
-#allow em_svr self:capability { dac_read_search dac_override chown fsetid };
+allow em_svr self:capability { chown fsetid };
 
 # Date: WK1812
 # Purpose: add for shell cmd
@@ -60,23 +60,4 @@ allow em_svr toolbox_exec:file { getattr execute read open execute_no_trans };
 
 # Date: WK1812
 # Purpose: sys file access
-#allow em_svr sysfs:file { getattr read write open };
 allow em_svr sysfs:dir { open read };
-
-# Date: WK1812
-# Purpose: proc file access
-#allow em_svr proc:file { getattr open read write };
-
-
-
-
-
-
-
-
-
-
-
-
-
-

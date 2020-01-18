@@ -4,11 +4,6 @@
 
 # TODO:: Security Issue.
 
-# Date : 2014/09/09
-# Operation : Development GMO Feature "Move OAT to SD Card"
-# Purpose : for GMO ROM Size Slim
-#allow untrusted_app dalvikcache_data_file:lnk_file read;
-
 # Date: 2016/02/26
 # Operation: Migration
 # Purpose: Allow MTK modified ElephantStress and WhatsTemp to read thermal zone temperatures

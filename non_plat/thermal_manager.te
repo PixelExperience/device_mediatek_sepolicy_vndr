@@ -28,7 +28,6 @@ allow thermal_manager thermal_manager_data_file:dir { rw_dir_perms setattr };
 
 allow thermal_manager mediaserver:fd use;
 allow thermal_manager mediaserver:fifo_file { read write };
-#allow thermal_manager pq:fd use;
 allow thermal_manager mediaserver:tcp_socket { read write };
 
 # Date : WK16.30

@@ -23,8 +23,6 @@ allow em_svr proc_battery_cmd:file { create write open };
 
 # Date: WK1812
 # Purpose: add for light/proximity sensor
-#allow em_svr nvdata_file:dir { write open search read add_name };
-#allow em_svr nvdata_file:file { getattr read write create open setattr };
 allow em_svr nvram_device:blk_file { open read write };
 
 # Date: WK1812

@@ -27,13 +27,6 @@ init_daemon_domain(fuelgauged_static)
 allow fuelgauged_static input_device:dir rw_dir_perms;
 allow fuelgauged_static input_device:file r_file_perms;
 
-
-# Data : WK14.43
-# Operation : Migration
-# Purpose : For fg daemon can comminucate with kernel
-### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.te
-#allow fuelgauged_static fuelgauged_static:netlink_kobject_uevent_socket create_socket_perms;
-#allow fuelgauged_static fuelgauged_static:netlink_socket create_socket_perms;
 # Data : WK16.21
 # Operation : New Feature
 # Purpose : For fg daemon can access /data/FG folder
@@ -47,4 +40,4 @@ allow fuelgauged_static system_data_file:dir rw_dir_perms;
 allow fuelgauged_static rootfs:file entrypoint;
 
 # Data : WK16.39
-#allow fuelgauged_static self:capability { chown fsetid dac_override };
+allow fuelgauged_static self:capability { chown fsetid };

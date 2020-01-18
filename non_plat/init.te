@@ -96,7 +96,6 @@ allow init protect_f_data_file:dir mounton;
 allow init protect_s_data_file:dir mounton;
 allow init nvcfg_file:dir mounton;
 allow init persist_data_file:dir mounton;
-#allow init system_file:dir setattr;
 allow init tmpfs:lnk_file create;
 
 # boot process denial clean up

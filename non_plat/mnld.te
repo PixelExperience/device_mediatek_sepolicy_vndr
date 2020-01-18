@@ -37,7 +37,6 @@ allow mnld mnld_device:chr_file rw_file_perms;
 allow mnld mnld_data_file:file rw_file_perms;
 allow mnld mnld_data_file:file create_file_perms;
 allow mnld mnld_data_file:fifo_file create_file_perms;
-#allow mnld gps_device:chr_file rw_file_perms;
 # Purpose : For init process
 allow mnld init:unix_stream_socket connectto;
 allow mnld init:udp_socket { read write };
@@ -54,7 +53,7 @@ allow mnld block_device:dir search;
 allow mnld mnld_prop:property_service set;
 allow mnld property_socket:sock_file write;
 allow mnld mdlog_device:chr_file { read write };
-#allow mnld self:capability { fsetid dac_override };
+allow mnld self:capability { fsetid };
 allow mnld stpbt_device:chr_file { read write };
 allow mnld ttyGS_device:chr_file { read write };
 # Purpose : For file system operations

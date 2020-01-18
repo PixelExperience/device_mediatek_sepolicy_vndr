@@ -24,8 +24,6 @@ file_type_auto_trans(thermal_manager, vendor_data_file, thermal_manager_data_fil
 allow thermalloadalgod input_device:dir { r_dir_perms write };
 allow thermalloadalgod input_device:file r_file_perms;
 
-### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.te
-#allow thermalloadalgod thermalloadalgod:netlink_kobject_uevent_socket { write create bind read};
 allow thermalloadalgod thermalloadalgod:netlink_socket { create bind write read};
 
 allow thermalloadalgod thermal_manager_data_file:dir create_dir_perms;

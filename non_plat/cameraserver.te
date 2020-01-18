@@ -42,16 +42,8 @@ allow cameraserver MTK_SMI_device:chr_file r_file_perms;
 allow cameraserver camera_pipemgr_device:chr_file r_file_perms;
 allow cameraserver kd_camera_flashlight_device:chr_file rw_file_perms;
 allow cameraserver lens_device:chr_file rw_file_perms;
-allow cameraserver nvdata_file:dir { write search add_name };
-allow cameraserver nvdata_file:file { read write getattr setattr open create };
-allow cameraserver nvram_data_file:dir search;
-allow cameraserver nvram_data_file:dir w_dir_perms;
-allow cameraserver nvram_data_file:file create_file_perms;
-allow cameraserver nvram_data_file:lnk_file read;
 allow cameraserver nvdata_file:lnk_file read;
-#allow cameraserver proc:file { read ioctl open };
 allow cameraserver proc_meminfo:file { read getattr open };
-#allow cameraserver sysfs:file { read write open };
 
 # Date : WK14.34
 # Operation : Migration
@@ -92,13 +84,6 @@ allow cameraserver Vcodec_device:chr_file rw_file_perms;
 
 # Date : WK14.36
 # Operation : Migration
-# Purpose : MMProfile debug
-# userdebug_or_eng(`
-#allow cameraserver debugfs:file {read ioctl getattr search};
-# ')
-
-# Date : WK14.36
-# Operation : Migration
 # Purpose :  access nvram, otp, ccci cdoec devices.
 allow cameraserver MtkCodecService:binder call;
 allow cameraserver ccci_device:chr_file rw_file_perms;
@@ -111,7 +96,6 @@ allow cameraserver bootdevice_block_device:blk_file rw_file_perms;
 # Date : WK14.36
 # Operation : Migration
 # Purpose : for SW codec VP/VR
-#allow cameraserver mtk_device:chr_file { read write ioctl open };
 allow cameraserver mtk_sched_device:chr_file rw_file_perms;
 
 # Date : WK14.38
@@ -167,8 +151,6 @@ binder_call(cameraserver,MtkCodecService)
 # Data : WK14.39
 # Operation : Migration
 # Purpose : HW encrypt SW codec
-allow cameraserver mediaserver_data_file:file create_file_perms;
-allow cameraserver mediaserver_data_file:dir create_dir_perms;
 allow cameraserver sec_device:chr_file r_file_perms;
 
 # Date : WK14.40
@@ -225,8 +207,6 @@ allow cameraserver sysfs_lowmemorykiller:file { read open };
 allow cameraserver proc_mtkcooler:dir search;
 allow cameraserver proc_mtktz:dir search;
 allow cameraserver proc_thermal:dir search;
-allow cameraserver thermal_manager_data_file:file create_file_perms;
-allow cameraserver thermal_manager_data_file:dir { rw_dir_perms setattr };
 
 # Date : WK14.46
 # Operation : Migration
@@ -276,11 +256,6 @@ allow cameraserver mnt_user_file:lnk_file {read write};
 # Operation : Migration
 # Purpose: Allow cameraserver to read binder from surfaceflinger
 allow cameraserver surfaceflinger:fifo_file {read write};
-
-# Date : WK15.45
-# Purpose : camera read/write /nvcfg/camera data
-allow cameraserver nvcfg_file:dir create_dir_perms;
-allow cameraserver nvcfg_file:file create_file_perms;
 
 # Date : WK15.46
 # Operation : Migration
@@ -349,7 +324,6 @@ allow cameraserver aee_aed:unix_stream_socket connectto;
 ')
 
 # Purpose: Allow to access debugfs_ion dir.
-#allow cameraserver debugfs_ion:dir search;
 allow cameraserver system_data_file:lnk_file read;
 
 # Date : WK17.19
@@ -359,9 +333,6 @@ allow cameraserver camera_owe_device:chr_file rw_file_perms;
 
 # Date : WK17.25
 # Operation : Migration
-#allow cameraserver debugfs_tracing:file { write open };
-allow cameraserver nvram_data_file:dir { add_name write create};
-allow cameraserver nvram_data_file:file { write getattr setattr read create open };
 allow cameraserver debugfs_ion:dir search;
 
 # Date : WK17.30

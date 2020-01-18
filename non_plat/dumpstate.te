@@ -69,7 +69,6 @@ allow dumpstate aee_aed:unix_stream_socket { read write ioctl };
 # allow dumpstate config_gz:file read;
 
 allow dumpstate sysfs_leds:dir r_dir_perms;
-#allow dumpstate sysfs_leds:file r_file_perms;
 
 # Purpose: 01-01 08:30:57.260  3070  3070 W aee_dumpstate: type=1400 audit(0.0:13196): avc: denied
 # { read } for name="SF_dump" dev="dm-0" ino=352257 scontext=u:r:dumpstate:s0 tcontext=u:object_r:

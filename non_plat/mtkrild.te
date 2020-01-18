@@ -18,7 +18,6 @@ allow mtkrild kernel:system module_request;
 
 # Capabilities assigned for mtkrild
 allow mtkrild self:capability { setuid net_admin net_raw };
-#allow mtkrild self:capability dac_override;
 
 # Control cgroups
 allow mtkrild cgroup:dir create_dir_perms;
@@ -52,34 +51,20 @@ allow mtkrild bluetooth_efs_file:dir r_dir_perms;
 # Allow access permission to dir/files
 # (radio data/system data/proc/etc)
 # Violate Android P rule
-#allow mtkrild radio_data_file:dir rw_dir_perms;
-#allow mtkrild radio_data_file:file create_file_perms;
 allow mtkrild sdcard_type:dir r_dir_perms;
 # Violate Android P rule
-#allow mtkrild system_data_file:dir r_dir_perms;
-#allow mtkrild system_data_file:file r_file_perms;
 allow mtkrild system_file:file x_file_perms;
 allow mtkrild proc:file rw_file_perms;
 allow mtkrild proc_net:file w_file_perms;
 
-# Allow mtkrild to create and use netlink sockets.
-### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.te
-#allow mtkrild self:netlink_socket create_socket_perms;
-#allow mtkrild self:netlink_kobject_uevent_socket create_socket_perms;
 # Set and get routes directly via netlink.
 allow mtkrild self:netlink_route_socket nlmsg_write;
-
-# Allow mtkrild to create sockets.
-### TBD, neverallowxperm on line 177 of system/sepolicy/public/domain.te
-#allow mtkrild self:socket create_socket_perms;
 
 # Allow read/write to devices/files
 allow mtkrild alarm_device:chr_file rw_file_perms;
 allow mtkrild radio_device:chr_file rw_file_perms;
 allow mtkrild radio_device:blk_file r_file_perms;
 allow mtkrild mtd_device:dir search;
-# Allow read/write to uart driver (for GPS)
-#allow mtkrild gps_device:chr_file rw_file_perms;
 # Allow read/write to tty devices
 allow mtkrild tty_device:chr_file rw_file_perms;
 allow mtkrild eemcs_device:chr_file { rw_file_perms };
@@ -96,7 +81,6 @@ allow mtkrild para_block_device:blk_file { rw_file_perms };
 
 # Allow dir search, fd uses
 allow mtkrild block_device:dir search;
-#allow mtkrild platformblk_device:dir search;
 allow mtkrild platform_app:fd use;
 allow mtkrild radio:fd use;
 

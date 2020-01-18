@@ -7,12 +7,6 @@
 # Purpose : VP/VR
 allow mediacodec devmap_device:chr_file { ioctl };
 
-# Date : WK14.34
-# Operation : Migration
-# Purpose : Smartcard Service
-#allow mediacodec self:netlink_kobject_uevent_socket read;
-#allow mediacodec system_data_file:file open;
-
 # Date : WK14.36
 # Operation : Migration
 # Purpose : VDEC/VENC device node
@@ -44,31 +38,8 @@ allow mediacodec proc_meminfo:file {read getattr open};
 
 # Date : WK14.36
 # Operation : Migration
-# Purpose : MMProfile debug
-# userdebug_or_eng(`
-#allow mediacodec debugfs:file {read ioctl getattr};
-# ')
-
-# Date : WK14.36
-# Operation : Migration
 # Purpose : for SW codec VP/VR
-#allow mediacodec mtk_device:chr_file { read write ioctl open };
 allow mediacodec mtk_sched_device:chr_file { read write ioctl open };
-
-# Date : WK14.38
-# Operation : Migration
-# Purpose : NVRam access
-#allow mediacodec block_device:dir { write search };
-
-# Data : WK14.38
-# Operation : Migration
-# Purpose : for boot animation.
-#allow mediacodec bootanim:binder { transfer call };
-
-# Date : WK14.39
-# Operation : Migration
-# Purpose : APE PLAYBACK
-#binder_call(mediacodec,MtkCodecService)
 
 # Data : WK14.39
 # Operation : Migration
@@ -100,31 +71,10 @@ allow mediacodec thermal_manager_data_file:file create_file_perms;
 allow mediacodec thermal_manager_data_file:dir { rw_dir_perms setattr };
 allow mediacodec thermal_manager_data_file:dir search;
 
-# Date : WK14.46
-# Operation : Migration
-# Purpose : for MTK Emulator HW GPU
-#allow mediacodec qemu_pipe_device:chr_file rw_file_perms;
-
 # Data : WK14.47
 # Operation : CTS
 # Purpose : cts search strange app
 allow mediacodec untrusted_app:dir search;
-
-# Date : WK15.35
-# Operation : Migration
-# Purpose: Allow mediacodec to read binder from surfaceflinger
-#allow mediacodec surfaceflinger:fifo_file {read write};
-
-# Date : WK15.45
-# Operation : 1/32x SlowMotion SQC
-# Purpose : for Clearmotion LowPower Switch
-#allow mediacodec mjc_lib_prop:property_service set;
-#allow mediacodec mtk_mjc_prop:property_service set;
-
-# Date : WK15.02
-# Operation : 120Hz Feature SQC
-# Purpose : for 120Hz Smart Switch
-#allow mediacodec mtk_rrc_device:chr_file { read write ioctl open };
 
 # Date : WK14.39
 # Operation : Migration
@@ -150,8 +100,6 @@ allow mediacodec surfaceflinger:fifo_file rw_file_perms;
 # Operator: Whitney SQC
 # Purpose: mediacodec use gpu
 allow mediacodec gpu_device:dir search;
-#allow mediacodec debug_prop:property_service set;
-#allow mediacodec system_prop:property_service set;
 
 # Date : W18.01
 # Add for turn on SElinux in enforcing mode
@@ -196,7 +144,3 @@ allow mediacodec mtk_thermal_config_prop:property_service set;
 allow mediacodec graphics_device:chr_file { ioctl open read };
 allow mediacodec graphics_device:dir search;
 
-# Date : WK18.03
-# Operation : MT6771 SQC
-# Purpose : Video SW decoder setprop for dex2oat thread 2
-#allow mediacodec dalvik_prop:property_service set;

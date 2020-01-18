@@ -83,7 +83,6 @@ allow radio media_rw_data_file:file { create_file_perms };
 # Purpose :
 #   Swift APK integration - access ccci dir/file
 allow radio ccci_fsd:dir { r_dir_perms };
-#allow radio ccci_fsd:file { r_file_perms };
 
 # Date : 2016/07/25
 # Operation : Bluetooth access NVRAM fail in Engineer Mode

@@ -12,12 +12,6 @@ allow mtk_hal_audio ion_device:chr_file r_file_perms;
 
 allow mtk_hal_audio system_file:dir { open read };
 
-userdebug_or_eng(`
-  # used for pcm capture for debug.
-  #allow mtk_hal_audio audiohal_data_file:dir create_dir_perms;
-  #allow mtk_hal_audio audiohal_data_file:file create_file_perms;
-')
-
 r_dir_file(mtk_hal_audio, proc)
 allow mtk_hal_audio audio_device:dir r_dir_perms;
 allow mtk_hal_audio audio_device:chr_file rw_file_perms;
@@ -53,7 +47,6 @@ allow mtk_hal_audio sdcard_type:file unlink;
 # Purpose : nvram access (dumchar case for nand and legacy chip)
 allow mtk_hal_audio nvram_device:chr_file rw_file_perms;
 allow mtk_hal_audio self:netlink_kobject_uevent_socket { create setopt bind };
-#allow mtk_hal_audio self:capability { net_admin };
 
 # Date : WK14.34
 # Operation : Migration
@@ -63,7 +56,6 @@ allow mtk_hal_audio self:netlink_kobject_uevent_socket read;
 # Date : WK14.36
 # Operation : Migration
 # Purpose : media server and bt process communication for A2DP data.and other control flow
-#allow mtk_hal_audio bluetooth:unix_dgram_socket sendto;
 allow mtk_hal_audio bt_a2dp_stream_socket:sock_file write;
 allow mtk_hal_audio bt_int_adp_socket:sock_file write;
 
@@ -106,13 +98,6 @@ allow mtk_hal_audio graphics_device:chr_file rw_file_perms;
 # Operation : Migration
 # Purpose : Smartpa
 allow mtk_hal_audio smartpa_device:chr_file rw_file_perms;
-
-# Date : WK14.41
-# Operation : Migration
-# Purpose : Lossless BT audio
-#allow mtk_hal_audio shell_exec:file { read open execute execute_no_trans };
-#allow mtk_hal_audio system_file:file execute_no_trans;
-#allow mtk_hal_audio zygote_exec:file execute_no_trans;
 
 # Date : WK14.41
 # Operation : Migration
