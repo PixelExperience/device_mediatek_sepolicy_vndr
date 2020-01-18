@@ -557,8 +557,6 @@
 # Google Trusty system files
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service\.trusty u:object_r:hal_keymaster_default_exec:s0
 
-#Widevine drm hal
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service.widevine           u:object_r:hal_drm_widevine_exec:s0
 #PQ hal
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.pq@2\.2-service u:object_r:mtk_hal_pq_exec:s0
 #MMS hal
@@ -617,8 +615,6 @@
 /vendor/lib(64)?/libtflite_mtk.so u:object_r:same_process_hal_file:s0
 
 /vendor/bin/hw/vendor\.mediatek\.hardware\.log@1\.0-service u:object_r:aee_hal_exec:s0
-
-/vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey          u:object_r:hal_drm_clearkey_exec:s0
 
 /vendor/bin/loghidlvendorservice u:object_r:loghidlvendorservice_exec:s0
 
