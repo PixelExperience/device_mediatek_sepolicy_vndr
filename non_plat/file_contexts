@@ -26,8 +26,8 @@
 #/data/mnl_gfc(/.*)?    u:object_r:mnld_data_file:s0
 /data/vendor/gps(/.*)?   u:object_r:gps_data_file:s0
 /data/anr/SF_RTT(/.*)? u:object_r:sf_rtt_file:s0
-#/data/ccci_cfg(/.*)? u:object_r:ccci_cfg_file:s0
-#/data/flashless(/.*)? u:object_r:c2k_file:s0
+/data/vendor/ccci_cfg(/.*)? u:object_r:ccci_cfg_file:s0
+/data/vendor/flashless(/.*)? u:object_r:c2k_file:s0
 /data/core(/.*)? u:object_r:aee_core_data_file:s0
 /data/vendor/core(/.*)? u:object_r:aee_core_vendor_file:s0
 /data/vendor/tombstones(/.*)? u:object_r:aee_tombstone_data_file:s0
@@ -47,7 +47,7 @@
 /data/nfc_socket(/.*)? u:object_r:nfc_socket:s0
 #/data/nvram(/.*)? u:object_r:nvram_data_file:s0
 #/data/cct(/.*)? u:object_r:cct_data_file:s0
-#/data/md3(/.*)? u:object_r:c2k_file:s0
+/data/vendor/md3(/.*)? u:object_r:c2k_file:s0
 #/data/mal(/.*)? u:object_r:mal_data_file:s0
 /data/SF_dump(./*)? u:object_r:sf_bqdump_data_file:s0
 /data/data_tmpfs_log(/.*)? u:object_r:data_tmpfs_log_file:s0
