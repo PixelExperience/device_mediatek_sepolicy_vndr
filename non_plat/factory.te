@@ -198,6 +198,7 @@ allow factory camera_owe_device:chr_file rw_file_perms;
 allow factory camera_mfb_device:chr_file rw_file_perms;
 allow factory mtk_hal_power_hwservice:hwservice_manager find;
 allow factory vendor_data_file:file getattr;
+allow factory mtk_hal_power:binder call;
 get_prop(factory,mediatek_prop);
 #Purpose: For FM test and headset test
 allow factory accdet_device:chr_file r_file_perms;
