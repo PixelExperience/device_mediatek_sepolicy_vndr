@@ -179,8 +179,15 @@ allow system_server mtk_thermal_config_prop:file { getattr open read };
 # Date : WK17.43
 # Operation : Migration
 # Purpose : perfmgr permission
+allow system_server mtk_hal_power_hwservice:hwservice_manager find;
 allow system_server proc_perfmgr:dir {read search};
 allow system_server proc_perfmgr:file {open read ioctl};
+allowxperm system_server proc_perfmgr:file ioctl {
+  FPSGO_QUEUE
+  FPSGO_DEQUEUE
+  FPSGO_QUEUE_CONNECT
+  FPSGO_BQID
+};
 
 # Date : W18.22
 # Operation : MTK wifi hal migration
