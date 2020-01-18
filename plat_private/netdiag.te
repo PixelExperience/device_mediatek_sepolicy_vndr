@@ -74,7 +74,7 @@ allow netdiag self:netlink_xfrm_socket { write getattr setopt read bind create n
 # Purpose: for socket error of tcpdump
 allow netdiag self:packet_socket { read getopt create setopt };
 allowxperm netdiag self:packet_socket ioctl {SIOCGIFINDEX SIOCGSTAMP};
-allow netdiag self:packet_socket { write ioctl };
+allow netdiag self:packet_socket { write ioctl map };
 
 # Purpose: for ip
 allow netdiag self:netlink_route_socket { write getattr setopt read bind create nlmsg_read };
