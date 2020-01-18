@@ -462,6 +462,7 @@
 /dev/block/platform/bootdevice/by-name/spmfw(_[ab])?         u:object_r:spmfw_block_device:s0
 /dev/block/platform/bootdevice/by-name/mcupmfw(_[ab])?       u:object_r:mcupmfw_block_device:s0
 /dev/block/platform/bootdevice/by-name/loader_ext(_[ab])?    u:object_r:loader_ext_block_device:s0
+/dev/block/platform/bootdevice/by-name/vbmeta(_[ab])?    u:object_r:vbmeta_block_device:s0
 
 
 #############################
