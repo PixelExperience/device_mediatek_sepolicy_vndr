@@ -312,3 +312,9 @@ ro.vendor.net.upload.benchmark.default u:object_r:mtk_antutu_prop:s0
 
 #=============malloc debug unwind backtrace switch property==============#
 vendor.debug.malloc.bt.switch u:object_r:mtk_malloc_debug_backtrace_prop:s0
+
+#=============allow gmo====================#
+ro.vendor.gmo.ram_optimize u:object_r:mtk_default_prop:s0
+ro.vendor.gmo.rom_optimize u:object_r:mtk_default_prop:s0
+ro.vendor.mtk_config_max_dram_size u:object_r:mtk_default_prop:s0
+
