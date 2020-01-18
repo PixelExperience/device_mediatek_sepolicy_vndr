@@ -48,19 +48,19 @@ type dbus_bluetooth_socket, file_type;
 type bt_int_adp_socket, file_type;
 type bt_a2dp_stream_socket, file_type;
 type bt_data_file, file_type, data_file_type;
-type proc_thermal, fs_type;
-type proc_mtkcooler, fs_type;
-type proc_mtktz, fs_type;
-type proc_slogger, fs_type;
-type proc_lk_env, fs_type;
-type proc_ged, fs_type;
-type proc_perfmgr, fs_type;
-type proc_slabinfo, fs_type;
-type proc_zraminfo, fs_type;
-type proc_cpu_alignment, fs_type;
-type proc_gpulog, fs_type;
-type proc_sched_debug, fs_type;
-type proc_hw_ver, fs_type;
+type proc_thermal, fs_type, proc_type;
+type proc_mtkcooler, fs_type, proc_type;
+type proc_mtktz, fs_type, proc_type;
+type proc_slogger, fs_type, proc_type;
+type proc_lk_env, fs_type, proc_type;
+type proc_ged, fs_type, proc_type;
+type proc_perfmgr, fs_type, proc_type;
+type proc_slabinfo, fs_type, proc_type;
+type proc_zraminfo, fs_type, proc_type;
+type proc_cpu_alignment, fs_type, proc_type;
+type proc_gpulog, fs_type, proc_type;
+type proc_sched_debug, fs_type, proc_type;
+type proc_hw_ver, fs_type, proc_type;
 type proc_atf_log, fs_type, proc_type;
 type proc_gz_log, fs_type, proc_type;
 type proc_last_kmsg, fs_type, proc_type;
@@ -133,7 +133,7 @@ type rild_via_socket, file_type;
 type rpc_socket, file_type;
 type rild_ctclient_socket, file_type;
 #For icusb
-type proc_icusb, fs_type;
+type proc_icusb, fs_type, proc_type;
 
 # for labeling /mnt/cd-rom as iso9660
 type iso9660, fs_type;
@@ -164,10 +164,10 @@ type autokd_data_file, file_type, data_file_type;
 type fuseblk,sdcard_type,fs_type,mlstrustedobject;
 
 # for mt-ramdump reset
-type proc_mrdump_rst, fs_type;
+type proc_mrdump_rst, fs_type, proc_type;
 
 # battery_cmd file
-type proc_battery_cmd, fs_type;
+type proc_battery_cmd, fs_type, proc_type;
 
 # binder debugfs file
 type debugfs_binder, fs_type, debugfs_type;

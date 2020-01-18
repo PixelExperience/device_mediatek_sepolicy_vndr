@@ -18,7 +18,7 @@ allow em_svr misc_sd_device:chr_file { read open ioctl };
 
 # Date: WK1812
 # Purpose: add for battery log
-allow em_svr proc_battery_cmd:dir { write search add_name };
+allow em_svr proc_battery_cmd:dir { search };
 allow em_svr proc_battery_cmd:file { create write open };
 
 # Date: WK1812

@@ -22,7 +22,6 @@ allow untrusted_app proc_mtktz:file r_file_perms;
 # properly for thermal tests at OEM/ODM.
 allow untrusted_app_25 proc_mtktz:dir search;
 allow untrusted_app_25 proc_mtktz:file { getattr open read };
-allow untrusted_app_25 proc_stat:file { getattr open read };
 allow untrusted_app_25 proc_thermal:dir search;
 allow untrusted_app_25 proc_thermal:file { getattr open read };
 
