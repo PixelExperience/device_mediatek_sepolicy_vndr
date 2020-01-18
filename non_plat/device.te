@@ -258,3 +258,8 @@ type m_situ_misc_device, dev_type;
 type m_step_c_misc_device, dev_type;
 type m_fusion_misc_device, dev_type;
 type m_bio_misc_device, dev_type;
+
+# Date : 2016/07/11
+# Operation : Migration
+# Purpose : Add permission for gpu access
+type dri_device, dev_type, mlstrustedobject;

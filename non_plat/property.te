@@ -281,3 +281,26 @@ type mtk_voicerecgnize_prop, property_type, mtk_core_property_type;
 
 #=============allow radio to set/get xcap rawurl config================
 type persist_xcap_rawurl_prop, property_type, extended_core_property_type;
+
+#=============allow atcid==============
+type persist_service_atci_prop, property_type, mtk_core_property_type;
+type mtk_atci_prop, property_type, mtk_core_property_type;
+
+#=============allow Netd property==============
+type mtk_net_ipv6_prop, property_type, mtk_core_property_type;
+
+#============= allow carrier express (cxp) ==============
+type usp_prop, property_type, mtk_core_property_type;
+type mtk_cxp_vendor_prop, property_type, mtk_core_property_type;
+
+#=============allow MD to set mtk_md_version_prop==============
+type mtk_md_version_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_volte_enable property==============
+type mtk_volte_prop, property_type, mtk_core_property_type;
+
+#=============allow AMS dynamic enable log property===========
+type mtk_amslog_prop, property_type, extended_core_property_type;
+
+#=============allow android log much property==============
+type logmuch_prop, property_type, extended_core_property_type;

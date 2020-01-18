@@ -69,3 +69,10 @@ attribute mtk_hal_em_server;
 attribute hal_mms;
 attribute hal_mms_client;
 attribute hal_mms_server;
+
+attribute hal_mtkcodecservice_server;
+attribute hal_mtkcodecservice;
+
+attribute hal_atci;
+attribute hal_atci_client;
+attribute hal_atci_server;

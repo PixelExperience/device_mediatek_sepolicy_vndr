@@ -1,0 +1,33 @@
+# ==============================================
+# Policy File of /system/bin/md_monitor Executable File
+
+
+# ==============================================
+# Type Declaration
+# ==============================================
+
+typeattribute md_monitor coredomain;
+typeattribute md_monitor mlstrustedsubject;
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+
+# Date : 2015/10/12
+# Operation : IT
+# Purpose : Allow md_monitor to set
+allow md_monitor ccci_device:chr_file rw_file_perms;
+allow md_monitor sysfs_ccci:dir search;
+allow md_monitor sysfs_ccci:file r_file_perms;
+allow md_monitor file_contexts_file:file r_file_perms;
+#allow md_monitor sysfs:file r_file_perms;
+
+# Date : 2017/10/16
+# Operation : IT
+# Purpose : Allow md_monitor to use restore_image_from_pt()
+allow md_monitor block_device:dir search;
+allow md_monitor md_block_device:blk_file r_file_perms;
+allow md_monitor self:capability { chown };
+allow md_monitor storage_file:dir search;
+allow md_monitor tmpfs:lnk_file read;
