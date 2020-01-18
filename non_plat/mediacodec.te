@@ -150,8 +150,8 @@ allow mediacodec surfaceflinger:fifo_file rw_file_perms;
 # Operator: Whitney SQC
 # Purpose: mediacodec use gpu
 allow mediacodec gpu_device:dir search;
-allow mediacodec debug_prop:property_service set;
-allow mediacodec system_prop:property_service set;
+#allow mediacodec debug_prop:property_service set;
+#allow mediacodec system_prop:property_service set;
 
 # Date : W18.01
 # Add for turn on SElinux in enforcing mode
@@ -199,4 +199,4 @@ allow mediacodec graphics_device:dir search;
 # Date : WK18.03
 # Operation : MT6771 SQC
 # Purpose : Video SW decoder setprop for dex2oat thread 2
-allow mediacodec dalvik_prop:property_service set;
+#allow mediacodec dalvik_prop:property_service set;

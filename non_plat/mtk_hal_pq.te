@@ -33,8 +33,8 @@ allow mtk_hal_pq graphics_device:chr_file { read write open ioctl };
 # Purpose : Allow property set
 allow mtk_hal_pq init:unix_stream_socket connectto;
 allow mtk_hal_pq property_socket:sock_file write;
-allow mtk_hal_pq system_prop:property_service set;
-allow mtk_hal_pq debug_prop:property_service set;
+#allow mtk_hal_pq system_prop:property_service set;
+#allow mtk_hal_pq debug_prop:property_service set;
 
 # Purpose : Allow permission to get AmbientLux from hwservice_manager
 allow mtk_hal_pq fwk_sensor_hwservice:hwservice_manager find;

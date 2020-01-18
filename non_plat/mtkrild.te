@@ -25,9 +25,9 @@ allow mtkrild cgroup:dir create_dir_perms;
 
 # Property service
 # allow set RIL related properties (radio./net./system./etc)
-set_prop(mtkrild, radio_prop)
-set_prop(mtkrild, net_radio_prop)
-set_prop(mtkrild, system_radio_prop)
+#set_prop(mtkrild, radio_prop)
+#set_prop(mtkrild, net_radio_prop)
+#set_prop(mtkrild, system_radio_prop)
 set_prop(mtkrild, persist_ril_prop)
 auditallow mtkrild net_radio_prop:property_service set;
 auditallow mtkrild system_radio_prop:property_service set;
