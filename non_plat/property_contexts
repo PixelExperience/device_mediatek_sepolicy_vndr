@@ -72,6 +72,13 @@ ro.boot.opt_md5_support     u:object_r:tel_switch_prop:s0
 ro.boot.opt_ps1_rat         u:object_r:tel_switch_prop:s0
 ro.boot.opt_sim_count       u:object_r:tel_switch_prop:s0
 ro.boot.opt_using_default   u:object_r:tel_switch_prop:s0
+ro.vendor.mtk_c2k_lte_mode    u:object_r:tel_switch_prop:s0
+ro.vendor.mtk_c2k_support     u:object_r:tel_switch_prop:s0
+ro.vendor.mtk_eccci_c2k       u:object_r:tel_switch_prop:s0
+ro.vendor.mtk_lte_support     u:object_r:tel_switch_prop:s0
+ro.vendor.mtk_md1_support     u:object_r:tel_switch_prop:s0
+ro.vendor.mtk_md3_support     u:object_r:tel_switch_prop:s0
+ro.vendor.mtk_ps1_rat         u:object_r:tel_switch_prop:s0
 
 #=============allow bootanim==============
 persist.vendor.bootanim.     u:object_r:bootani_prop:s0
