@@ -21,7 +21,7 @@ init_daemon_domain(aee_core_forwarder)
 #mkdir /sdcard/mtklog/aee_exp and write /sdcard/mtklog/aee_exp/zcorexxx.zip
 allow aee_core_forwarder sdcard_type:dir create_dir_perms;
 allow aee_core_forwarder sdcard_type:file create_file_perms;
-allow aee_core_forwarder self:capability fsetid;
+allow aee_core_forwarder self:capability { fsetid setgid };
 #allow aee_core_forwarder aee_exp_data_file:dir create_dir_perms;
 #allow aee_core_forwarder aee_exp_data_file:file create_file_perms;
 
