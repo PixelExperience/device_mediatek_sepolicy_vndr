@@ -25,8 +25,6 @@ allow wmt_loader wmtdetect_device:chr_file rw_file_perms;
 allow wmt_loader stpwmt_device:chr_file rw_file_perms;
 allow wmt_loader devpts:chr_file rwx_file_perms;
 
-allow wmt_loader proc:file setattr;
-
 # Date: 2019/06/14
 # Operation : Migration
 allow wmt_loader proc_wmtdbg:file setattr;
