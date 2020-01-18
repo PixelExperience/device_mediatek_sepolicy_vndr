@@ -201,3 +201,8 @@ binder_call(system_server, mtk_hal_wifi)
 #           ino=10312 scontext=u:r:system_server:s0 tcontext=
 #           u:object_r:persist_mtk_aee_prop:s0 tclass=file permissive=0
 get_prop(system_server, persist_mtk_aee_prop);
+
+# Date : W19.15
+# Operation : alarm device permission
+# Purpose : support power-off alarm
+allow system_server alarm_device:chr_file rw_file_perms;

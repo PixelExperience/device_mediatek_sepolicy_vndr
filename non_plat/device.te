@@ -225,6 +225,7 @@ type cam_vpu_block_device,dev_type;
 type boot_para_block_device,dev_type;
 type mtk_dfrc_device, dev_type;
 type vbmeta_block_device, dev_type;
+type alarm_device, dev_type;
 
 ##########################
 # Sensor common Devices Start

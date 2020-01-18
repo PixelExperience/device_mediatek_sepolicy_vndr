@@ -339,6 +339,7 @@
 /dev/hrm       u:object_r:hrm_device:s0
 /dev/trusty-ipc-dev0 u:object_r:tee_device:s0
 /dev/mbim u:object_r:mbim_device:s0
+/dev/alarm(/.*)? u:object_r:alarm_device:s0
 ##########################
 # Sensor common Devices Start
 #
