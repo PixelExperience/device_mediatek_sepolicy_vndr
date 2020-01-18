@@ -102,3 +102,9 @@ get_prop(platform_app, vendor_bluetooth_prop)
 get_prop(platform_app, mobile_log_prop)
 
 get_prop(platform_app, vendor_connsysfw_prop)
+
+# Date: 2018/11/08
+# Operation : JPEG
+# Purpose : JPEG need to use PQ via MMS HIDL
+allow platform_app mtk_hal_mms_hwservice:hwservice_manager find;
+allow platform_app mtk_hal_mms:binder call;
