@@ -193,6 +193,7 @@ vendor.gsm.sim.operator.default-name u:object_r:vendor_sim_system_prop:s0
 vendor.thermal.manager.data u:object_r:mtk_thermal_config_prop:s0
 #=============allow composer set property ============================
 vendor.debug.sf.hwc_pid u:object_r:graphics_hwc_pid_prop:s0
+vendor.debug.sf.latch_unsignaled u:object_r:graphics_hwc_latch_unsignaled_prop:s0
 
 #=============allow graphics debug property ============================
 vendor.debug.sf. u:object_r:graphics_debug_prop:s0
