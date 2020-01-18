@@ -85,3 +85,7 @@ allow merged_hal_service mtk_powerhal_data_file:sock_file {create_file_perms rw_
 allow merged_hal_service proc_mtktz:dir search;
 allow merged_hal_service proc_mtktz:file {open read getattr};
 allow merged_hal_service proc_stat:file {open read getattr };
+
+# Date : WK19.11
+# Operation : Q Migration
+allowxperm merged_hal_service proc_ged:file ioctl {GED_BRIDGE_IO_GE_ALLOC GED_BRIDGE_IO_GE_GET};
