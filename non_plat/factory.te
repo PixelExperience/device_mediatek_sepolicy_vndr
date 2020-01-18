@@ -368,3 +368,8 @@ allow factory sysfs_mmcblk:file { read getattr open };
 allow factory vendor_file:file execute_no_trans;
 allow factory mtk_audiohal_data_file:dir create_dir_perms;
 allow factory mtk_audiohal_data_file:file { write create unlink r_file_perms };
+
+#Date : WK18.37
+# Operation: P migration
+# Purpose : Allow factory to open /proc/version
+allow factory proc_version:file {read open getattr};
