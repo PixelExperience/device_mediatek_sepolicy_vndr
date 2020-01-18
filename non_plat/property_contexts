@@ -99,10 +99,8 @@ vendor.debug.gps. u:object_r:mnld_prop:s0
 
 #=============allow audiohal==============
 streamout.     u:object_r:audiohal_prop:s0
-af.     u:object_r:audiohal_prop:s0
 streamin.     u:object_r:audiohal_prop:s0
 a2dp.     u:object_r:audiohal_prop:s0
-persist.af.     u:object_r:audiohal_prop:s0
 
 #=============allow wmt ==============
 persist.vendor.connsys. u:object_r:wmt_prop:s0

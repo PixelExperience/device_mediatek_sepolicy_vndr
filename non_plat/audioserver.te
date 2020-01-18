@@ -2,12 +2,6 @@
 # MTK Policy Rule for vendor
 # ==============================================
 
-# Data : WK14.39
-# Operation : Migration
-# Purpose : dump for debug
-typeattribute audioserver system_writes_vendor_properties_violators;
-allow audioserver audiohal_prop:property_service set;
-
 # Date: WK14.44
 # Operation : Migration
 # Purpose : EVDO
@@ -58,9 +52,3 @@ allow audioserver proc_ged:file {open read write ioctl getattr};
 # Date : WK16.48
 # Purpose: Allow to trigger AEE dump
 allow audioserver aee_aed:unix_stream_socket connectto;
-
-# Date : WK17.28
-# Operation : MT6757 SQC
-# Purpose : Change thermal config
-allow audioserver mtk_thermal_config_prop:file { getattr open read };
-allow audioserver mtk_thermal_config_prop:property_service set;
