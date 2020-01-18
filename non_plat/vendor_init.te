@@ -5,7 +5,6 @@ allow vendor_init ffs_prop:property_service set;
 allow vendor_init mediatek_prop:property_service set;
 allow vendor_init mtk_md_version_prop:property_service set;
 allow vendor_init mtk_volte_prop:property_service set;
-allow vendor_init usp_prop:property_service set;
 allow vendor_init vendor_radio_prop:property_service set;
 allow vendor_init mtk_ril_mode_prop:property_service set;
 allow vendor_init wmt_prop:property_service set;
@@ -34,3 +33,5 @@ set_prop(vendor_init, mtk_emmc_support_prop)
 
 # allow create symbolic link, /mnt/sdcard, for meta/factory mode
 allow vendor_init tmpfs:lnk_file create;
+
+set_prop(vendor_init, mtk_cxp_vendor_prop)
