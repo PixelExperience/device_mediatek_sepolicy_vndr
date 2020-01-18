@@ -1,6 +1,7 @@
 #allow emdlogger to set property
 #allow emdlogger debug_mdlogger_prop:property_service set;
 allow emdlogger debug_prop:property_service set;
+typeattribute emdlogger system_writes_vendor_properties_violators;
 allow emdlogger persist_mtklog_prop:property_service set;
 allow emdlogger system_radio_prop:property_service set;
 

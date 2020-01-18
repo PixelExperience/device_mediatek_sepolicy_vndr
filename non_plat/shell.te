@@ -13,6 +13,7 @@ binder_call(shell, mtk_hal_camera)
 
 # Date : WK17.35
 # Purpose : allow shell to set mtkcam property.
+typeattribute shell system_writes_vendor_properties_violators;
 set_prop(shell, mtkcam_prop)
 
 # Date : WK17.36

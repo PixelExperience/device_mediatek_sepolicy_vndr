@@ -88,6 +88,7 @@ allow system_server proc_mtktz:file r_file_perms;
 # Operation: PowerManager set persist.meta.connecttype property
 # Purpose: Reboot target to meta mode,
 # and set persist.meta.connecttype as "wifi" or "usb".
+typeattribute system_server system_writes_vendor_properties_violators;
 allow system_server meta_connecttype_prop:property_service set;
 
 # Date:W17.02

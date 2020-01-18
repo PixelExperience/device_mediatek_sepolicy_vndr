@@ -80,6 +80,7 @@ allow platform_app aee_aed:unix_stream_socket connectto;
 # Date : WK17.44
 # Operation : O Migration
 # Purpose : allow LocationEM to set mnld property
+typeattribute platform_app system_writes_vendor_properties_violators;
 set_prop(platform_app, mnld_prop)
 
 # Date : WK17.46

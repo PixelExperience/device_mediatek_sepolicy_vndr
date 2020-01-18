@@ -38,6 +38,7 @@ allow aee_aed data_tmpfs_log_file:dir create_dir_perms;
 allow aee_aed data_tmpfs_log_file:file create_file_perms;
 
 # Purpose: aee_aed set property
+typeattribute aee_aed system_writes_vendor_properties_violators;
 set_prop(aee_aed, persist_mtk_aee_prop);
 set_prop(aee_aed, persist_aee_prop);
 set_prop(aee_aed, debug_mtk_aee_prop);
