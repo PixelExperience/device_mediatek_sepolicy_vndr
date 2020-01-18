@@ -206,3 +206,8 @@ get_prop(system_server, persist_mtk_aee_prop);
 # Operation : alarm device permission
 # Purpose : support power-off alarm
 allow system_server alarm_device:chr_file rw_file_perms;
+
+# Date : WK19.7
+# Operation: Q migration
+# Purpose : Allow system_server to use ioctl/ioctlcmd
+allowxperm system_server proc_ged:file ioctl GED_BRIDGE_IO_LOG_BUF_GET;
