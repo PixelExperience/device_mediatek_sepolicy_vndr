@@ -301,3 +301,8 @@ allow mtk_hal_camera nvcfg_file:dir create_dir_perms;
 allow mtk_hal_camera nvcfg_file:file { read write getattr setattr open create };
 allow mtk_hal_camera mnt_vendor_file:dir search;
 allow mtk_hal_camera mnt_vendor_file:file create_file_perms;
+
+# Date : WK18.35
+# Purpose: allow mtk_hal_camera to access gz_device node
+allow mtk_hal_camera gz_device:chr_file rw_file_perms;
+

@@ -51,6 +51,7 @@ type hid_keyboard_device, dev_type;
 type btn_device, dev_type;
 type uinput_device, dev_type;
 type TV_out_device, dev_type;
+type gz_device, dev_type;
 type camera_sysram_device, dev_type;
 type camera_isp_device, dev_type;
 type camera_dip_device, dev_type;
