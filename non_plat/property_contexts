@@ -208,6 +208,7 @@ vendor.thermal.manager.data u:object_r:mtk_thermal_config_prop:s0
 #=============allow composer set property ============================
 vendor.debug.sf.hwc_pid u:object_r:graphics_hwc_pid_prop:s0
 vendor.debug.sf.latch_unsignaled u:object_r:graphics_hwc_latch_unsignaled_prop:s0
+vendor.debug.sf.hdr_enable u:object_r:graphics_hwc_hdr_prop:s0
 
 #============= atm modem mode property(ATM) ==============
 persist.vendor.atm.mdmode u:object_r:atm_mdmode_prop:s0

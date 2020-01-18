@@ -77,3 +77,8 @@ allow surfaceflinger mdp_device:chr_file rw_file_perms;
 # Purpose: Allow to access property dev/mdp_sync
 #============= surfaceflinger ==============
 allow surfaceflinger mtk_mdp_device:chr_file rw_file_perms;
+
+# Date : WK18.43
+# Operation : HDR
+# Purpose: Allow to skip aosp hdr solution
+get_prop(surfaceflinger, graphics_hwc_hdr_prop)
