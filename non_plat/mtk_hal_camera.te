@@ -237,7 +237,7 @@ allow mtk_hal_camera tmpfs:dir search;
 ## Purpose : EGL file access
 allow mtk_hal_camera system_file:dir { read open };
 allow mtk_hal_camera gpu_device:dir search;
-allow mtk_hal_camera gpu_device:chr_file { read open write getattr ioctl };
+allow mtk_hal_camera gpu_device:chr_file rw_file_perms;
 
 ## Purpose: Allow to access ged for gralloc_extra functions
 allow mtk_hal_camera proc_ged:file {open read write ioctl getattr};
