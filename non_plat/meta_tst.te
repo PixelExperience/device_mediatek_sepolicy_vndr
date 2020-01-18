@@ -87,8 +87,6 @@ allow meta_tst persist_data_file:file create_file_perms;
 # Date: WK14.46
 # Operation : Migration
 # Purpose : Camera
-allow meta_tst cct_data_file:dir create_dir_perms;
-allow meta_tst cct_data_file:file create_file_perms;
 allow meta_tst devmap_device:chr_file rw_file_perms;
 allow meta_tst camera_pipemgr_device:chr_file rw_file_perms;
 allow meta_tst MTK_SMI_device:chr_file rw_file_perms;
@@ -174,22 +172,10 @@ allow meta_tst system_block_device:blk_file getattr;
 # Purpose : NVRAM related LID
 allow meta_tst pro_info_device:chr_file rw_file_perms;
 
-# Date: WK15.14
-# Purpose : CCT linker fail
-allow meta_tst self:process execmem;
-
 # Date: WK15.13
 # Purpose: for nand project
 allow meta_tst mtd_device:dir search;
 allow meta_tst mtd_device:chr_file rw_file_perms;
-
-# Date: WK15.38
-# Purpose: M Migration for CCT linker fail
-allow meta_tst sdcard_type:dir create_dir_perms;
-allow meta_tst sdcard_type:file create_file_perms;
-allow meta_tst mnt_user_file:dir search;
-allow meta_tst mnt_user_file:lnk_file read;
-allow meta_tst storage_file:lnk_file read;
 
 # Date: WK16.17
 # Purpose:  N Migration For ccci sysfs node
