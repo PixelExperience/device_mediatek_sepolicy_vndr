@@ -297,7 +297,8 @@ get_prop(aee_aedv, hwservicemanager_prop)
 # - avc: denied { find } for interface=android.hardware.camera.provider::ICameraProvider pid=2956
 #   scontext=u:r:aee_aedv:s0 tcontext=u:object_r:hal_camera_hwservice:s0 tclass=hwservice_manager
 # - Transaction error in ICameraProvider::debug: Status(EX_TRANSACTION_FAILED)
-#allow aee_aedv hal_camera_hwservice:hwservice_manager { find };
+hal_client_domain(aee_aedv, hal_camera)
+allow aee_aedv hal_camera_hwservice:hwservice_manager { find };
 binder_call(aee_aedv, mtk_hal_camera)
 
 # Purpose: allow aee to read /sys/fs/selinux/enforce to get selinux status
