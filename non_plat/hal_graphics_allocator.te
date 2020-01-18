@@ -3,5 +3,3 @@
 # Purpose : Add policy for gralloc HIDL
 
 allow hal_graphics_allocator proc_ged:file { read ioctl open };
-
-allowxperm hal_graphics_allocator_default proc_ged:file ioctl { GED_BRIDGE_IO_GE_ALLOC GED_BRIDGE_IO_GE_GET };
