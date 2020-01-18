@@ -8,9 +8,6 @@ allow aee_core_forwarder hwservicemanager:binder { call transfer };
 #============= audioserver ==============
 allow audioserver vendor_default_prop:file read;
 
-#============= bip ==============
-allow bip net_dns_prop:file read;
-
 #============= bluetooth ==============
 allow bluetooth mtk_amslog_prop:file read;
 
