@@ -8,7 +8,7 @@ type connsyslogger,domain;
 type connsyslogger_exec, system_file_type, exec_type, file_type;
 typeattribute connsyslogger coredomain;
 # Purpose : for create hidl server
-hal_server_domain(connsyslogger, mtk_hal_log)
+#hal_server_domain(connsyslogger, mtk_hal_log)
 # ==============================================
 # MTK Policy Rule
 # ==============================================
@@ -69,6 +69,20 @@ set_prop(connsyslogger, vendor_connsysfw_prop)
 allow connsyslogger vendor_configs_file:file map;
 #permission to get driver ready status
 get_prop(connsyslogger, wmt_prop)
+
+#Date:2019/03/25
+# purpose: allow connsyslogger to access persist.meta.connecttype
+get_prop(connsyslogger, meta_connecttype_prop);
+
+#Date:2019/03/25
+# purpose: allow emdlogger to create socket
+allow connsyslogger port:tcp_socket { name_connect name_bind };
+allow connsyslogger connsyslogger:tcp_socket { create_stream_socket_perms };
+allow connsyslogger node:tcp_socket node_bind;
+
+#Date:2019/03/25
+# usb device ttyGSx for modem logger usb logging
+allow connsyslogger ttyGS_device:chr_file { rw_file_perms};
 
 
 
