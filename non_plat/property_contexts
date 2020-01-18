@@ -48,6 +48,9 @@ ctl.vendor.fusion_ril_mtk   u:object_r:ctl_fusion_ril_mtk_prop:s0
 ctl.vendor.ril-proxy   u:object_r:ctl_ril-proxy_prop:s0
 
 ctl.vendor.muxreport-daemon u:object_r:ctl_muxreport-daemon_prop:s0
+ctl.vendor.ccci_fsd u:object_r:ctl_ccci_fsd_prop:s0
+ctl.vendor.ccci2_fsd u:object_r:ctl_ccci2_fsd_prop:s0
+ctl.vendor.ccci3_fsd u:object_r:ctl_ccci3_fsd_prop:s0
 
 vendor.ril.active.md        u:object_r:ril_active_md_prop:s0
 vendor.ril.mux.report.case  u:object_r:ril_mux_report_case_prop:s0
