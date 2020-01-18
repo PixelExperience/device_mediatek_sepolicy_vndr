@@ -76,12 +76,12 @@
 /data/system/users/[0-9]+/smartbook_wallpaper   u:object_r:wallpaper_file:s0
 
 # nvdata
-#/(vendor|system/vendor)/nvdata(/.*)? u:object_r:nvdata_file:s0
-#/(vendor|system/vendor)/nvcfg(/.*)? u:object_r:nvcfg_file:s0
+/mnt/vendor/nvdata(/.*)? u:object_r:nvdata_file:s0
+/mnt/vendor/nvcfg(/.*)? u:object_r:nvcfg_file:s0
 
 # protected data file
-#/(vendor|system/vendor)/protect_f(/.*)?         u:object_r:protect_f_data_file:s0
-#/(vendor|system/vendor)/protect_s(/.*)?         u:object_r:protect_s_data_file:s0
+/mnt/vendor/protect_f(/.*)?         u:object_r:protect_f_data_file:s0
+/mnt/vendor/protect_s(/.*)?         u:object_r:protect_s_data_file:s0
 /mnt/vendor/persist(/.*)?        u:object_r:persist_data_file:s0
 
 #fat on nand image
