@@ -273,6 +273,9 @@ type mediadrm_vendor_data_file, file_type, data_file_type;
 # mtk usb hal
 type sysfs_dual_role_usb20, fs_type, sysfs_type;
 
+# lbs debug file
+type lbs_dbg_data_file, file_type, data_file_type, core_data_file_type;
+
 # Touch parameters file
 type sysfs_tpd_setting, fs_type, sysfs_type;
 type sysfs_tpd_debug, fs_type, sysfs_type;

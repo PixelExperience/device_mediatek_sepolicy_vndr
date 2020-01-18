@@ -95,3 +95,6 @@ allow mnld mnt_vendor_file:dir search;
 # Date : WK18.26
 # Purpose : for atci gps test
 allow mnld atci_service:unix_dgram_socket sendto;
+
+allow mnld sysfs_boot_mode:file { read open };
+

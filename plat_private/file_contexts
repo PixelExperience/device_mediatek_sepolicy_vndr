@@ -22,6 +22,7 @@
 /system/bin/aee_aed64 u:object_r:aee_aed_exec:s0
 /system/bin/aee_dumpstate u:object_r:dumpstate_exec:s0
 /(system\/vendor|vendor)/bin/kisd u:object_r:kisd_exec:s0
+/system/bin/lbs_dbg u:object_r:lbs_dbg_exec:s0
 
 # google suggest that move aee_aedv_exec to platform @google_issue_id:64130120
 /(system\/vendor|vendor)/bin/aee_aedv u:object_r:aee_aedv_exec:s0
