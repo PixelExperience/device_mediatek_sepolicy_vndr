@@ -64,7 +64,7 @@ allow emdlogger sysfs_boot_mode:file { read open };
 allow emdlogger sysfs_ccci:dir search;
 allow emdlogger sysfs_ccci:file r_file_perms;
 
-# Allow read avc: denied { read } for name="mddb" dev="mmcblk0p25" ino=681 
+# Allow read avc: denied { read } for name="mddb" dev="mmcblk0p25" ino=681
 # scontext=u:r:emdlogger:s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=0
 allow emdlogger system_file:dir read;
 
@@ -111,6 +111,7 @@ allow emdlogger node:tcp_socket node_bind;
 set_prop(emdlogger, vendor_mdl_prop)
 set_prop(emdlogger, vendor_mdl_start_prop)
 set_prop(emdlogger, debug_mdlogger_prop)
-set_prop(emdlogger, vendor_usb_prop)
+get_prop(emdlogger, vendor_usb_prop)
 set_prop(emdlogger, persist_mdlog_prop)
 set_prop(emdlogger, vendor_mdl_pulllog_prop)
+set_prop(emdlogger, exported_system_radio_prop)
