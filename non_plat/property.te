@@ -291,6 +291,7 @@ type mtk_net_ipv6_prop, property_type, mtk_core_property_type;
 
 #============= allow carrier express (cxp) ==============
 type usp_prop, property_type, mtk_core_property_type;
+type usp_srv_prop, property_type, extended_core_property_type;
 type mtk_cxp_vendor_prop, property_type, mtk_core_property_type;
 
 #=============allow MD to set mtk_md_version_prop==============
