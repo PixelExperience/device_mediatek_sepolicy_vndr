@@ -606,6 +606,7 @@
 /vendor/lib(64)?/libglslcompiler\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libPVRScopeServices\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libsrv_um\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libmpvr\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libusc\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libtqvalidate\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libPVROCL\.so   u:object_r:same_process_hal_file:s0
