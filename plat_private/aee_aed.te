@@ -138,8 +138,8 @@ allow aee_aed crash_dump:file r_file_perms;
 # Purpose : allow aee_aed to read /proc/version
 allow aee_aed proc_version:file { read open };
 
-# Purpose : allow aee_aed self to sys_nice/chown
-allow aee_aed self:capability { sys_nice chown fowner};
+# Purpose : allow aee_aed self to sys_nice/chown/kill
+allow aee_aed self:capability { sys_nice chown fowner kill };
 
 # Purpose: Allow aee_aed to write /sys/kernel/debug/tracing/snapshot
 userdebug_or_eng(`allow aee_aed debugfs_tracing_debug:file { write open };')
@@ -148,3 +148,6 @@ userdebug_or_eng(`allow aee_aed debugfs_tracing_debug:file { write open };')
 userdebug_or_eng(`
   allow aee_aed self:capability { sys_ptrace dac_override dac_read_search };
 ')
+
+# Purpose: Allow aee_aed to read/write /sys/kernel/debug/tracing/tracing_on
+userdebug_or_eng(` allow aee_aed debugfs_tracing:file { r_file_perms write };')
