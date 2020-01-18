@@ -108,9 +108,3 @@ get_prop(platform_app, vendor_connsysfw_prop)
 # Purpose : JPEG need to use PQ via MMS HIDL
 allow platform_app mtk_hal_mms_hwservice:hwservice_manager find;
 allow platform_app mtk_hal_mms:binder call;
-
-# Date: 2019/05/24
-# Operation : Migration
-# Purpose : Camera need read cl_cam_status
-# Package: com.mediatek.camera
-allow platform_app proc_cl_cam_status:file r_file_perms;
