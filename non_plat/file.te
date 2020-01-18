@@ -233,3 +233,7 @@ type mtk_powerhal_data_file, file_type, data_file_type;
 # Date : WK1743
 # Purpose : for meta_tst copy MD DB from MD image
 type mddb_data_file, file_type, data_file_type;
+
+# Date : WK1814
+# Purpose : for factory to get boot mode
+type sysfs_boot, fs_type, sysfs_type;
