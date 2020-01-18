@@ -557,7 +557,7 @@
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.imsa@1\.0-service u:object_r:mtk_hal_imsa_exec:s0
 #Widevine drm hal
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service.widevine           u:object_r:hal_drm_widevine_exec:s0
-/system/bin/move_widevine_data\.sh                                                    u:object_r:move-widevine-data-sh_exec:s0
+
 #PQ hal
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.pq@2\.2-service u:object_r:mtk_hal_pq_exec:s0
 # Keymaster Attestation Hal
