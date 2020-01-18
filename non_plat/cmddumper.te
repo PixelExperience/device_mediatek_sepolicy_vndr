@@ -25,5 +25,7 @@ allow cmddumper file_contexts_file:file { read getattr open };
 allow cmddumper sysfs_boot_mode:file { read open };
 
 # Android P migration
-set_prop(emdlogger, persist_mtklog_prop)
-set_prop(emdlogger, vendor_mdl_prop)
+set_prop(cmddumper, persist_mtklog_prop)
+set_prop(cmddumper, vendor_mdl_prop)
+allow cmddumper tmpfs:lnk_file read;
+allow cmddumper vmodem_device:chr_file { read write ioctl open };
