@@ -139,6 +139,7 @@
 /dev/DW9718AF(/.*)? u:object_r:DW9718AF_device:s0
 /dev/WV511AAF(/.*)? u:object_r:lens_device:s0
 /dev/ebc(/.*)? u:object_r:ebc_device:s0
+/dev/usip(/.*)? u:object_r:ebc_device:s0
 /dev/ebr[0-9]+ u:object_r:ebr_device:s0
 /dev/eemcs.* u:object_r:eemcs_device:s0
 /dev/emd.* u:object_r:emd_device:s0
