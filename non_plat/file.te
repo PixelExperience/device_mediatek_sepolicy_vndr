@@ -118,7 +118,7 @@ type aee_dumpsys_data_file, file_type, data_file_type, core_data_file_type;
 type aee_dumpsys_vendor_file, file_type, data_file_type;
 
 # SF rtt dump
-type sf_rtt_file, file_type, data_file_type;
+type sf_rtt_file, file_type, data_file_type, core_data_file_type;
 
 #for 3Gdongle
 type rild-dongle_socket, file_type;
