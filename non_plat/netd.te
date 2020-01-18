@@ -60,3 +60,6 @@ allow netd untrusted_app:fd use;
 # Purpose :  CTS for wifi
 allow netd untrusted_app:unix_stream_socket { read write getopt setopt};
 allow netd isolated_app:fd use;
+
+# MTK support antutu feature
+get_prop(netd, mtk_antutu_prop);
