@@ -69,7 +69,7 @@
 /data/misc/mblog(/.*)? u:object_r:logmisc_data_file:s0
 #/data/misc/ppp(/.*)? u:object_r:ppp_data_file:s0
 #/data/misc/radvd(/.*)? u:object_r:radvd_data_file:s0
-#/data/misc/sensor(/.*)?         u:object_r:sensor_data_file:s0
+/data/vendor/sensor(/.*)?         u:object_r:sensor_data_file:s0
 #/data/misc/wpa_supplicant(/.*)? u:object_r:wpa_supplicant_data_file:s0
 
 # Wallpaper file for smartbook
