@@ -166,6 +166,10 @@ genfscon sysfs /devices/platform/bootdevice/host0/target0:0:0/0:0:0:2/block/sdc 
 genfscon sysfs /devices/platform/externdevice/mmc_host/mmc0 u:object_r:sysfs_devices_block:s0
 genfscon sysfs /devices/platform/externdevice/mmc_host/mmc1 u:object_r:sysfs_devices_block:s0
 
+# Date : 2019/10/22
+# Purpose : mrdump_tool(copy_process by aee_aedv) need to write data to lbaooo
+genfscon sysfs /module/mrdump/parameters/lbaooo u:object_r:sysfs_mrdump_lbaooo:s0
+
 #############################
 # debugfs files
 #

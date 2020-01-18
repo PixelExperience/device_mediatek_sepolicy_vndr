@@ -408,3 +408,6 @@ type sysfs_fbt_fteh, fs_type, sysfs_type;
 # Purpose: Android Migration for video codec driver
 type sysfs_device_tree_model, fs_type, sysfs_type;
 
+# Date : 2019/10/22
+# Purpose : allow aee_aedv write /sys/module/mrdump/parameters/lbaooo
+type sysfs_mrdump_lbaooo, fs_type, sysfs_type;
