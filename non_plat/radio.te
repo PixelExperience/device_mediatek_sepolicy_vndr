@@ -195,3 +195,8 @@ set_prop(radio, wmt_prop)
 # Purpose: Allow EM enable/disable Presence
 allow radio persist_uce_prop:property_service set;
 get_prop(radio, persist_uce_prop)
+
+# Date : WK18.16
+# Operation: P migration
+# Purpose: Allow radio to get tel_switch_prop
+get_prop(radio, tel_switch_prop)
