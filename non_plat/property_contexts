@@ -240,7 +240,6 @@ ro.vendor.mediatek.version.branch u:object_r:mtk_default_prop:s0
 ro.vendor.mediatek.version.release u:object_r:mtk_default_prop:s0
 vendor.met.running u:object_r:mtk_default_prop:s0
 vendor.sys.boot.reason u:object_r:mtk_default_prop:s0
-persist.vendor.sys.activitylog u:object_r:mtk_default_prop:s0
 ro.vendor.mtk_disable_cap_switch u:object_r:mtk_default_prop:s0
 
 #============mtk emmc=======#
