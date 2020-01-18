@@ -158,9 +158,6 @@ vendor.bthcisnoop u:object_r:vendor_bluetooth_prop:s0
 #=============allow EM to set modem reset delay property================
 vendor.mediatek.debug.md.reset.wait u:object_r:mtk_debug_md_reset_prop:s0
 
-#=============allow EM to set BT ssp debug mode property================
-persist.vendor.bt.sspdebug.enable u:object_r:mtk_bt_sspdebug_prop:s0
-
 #=============em camera property==============
 vendor.debug. u:object_r:vendor_debug_prop:s0
 
