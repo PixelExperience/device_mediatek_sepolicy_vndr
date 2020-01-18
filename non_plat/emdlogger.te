@@ -119,3 +119,11 @@ set_prop(emdlogger, exported_system_radio_prop)
 
 allow emdlogger vendor_configs_file:file map;
 allow emdlogger vendor_default_prop:file map;
+
+# Date : WK19.12
+# Operation: add permission to catch logs
+# Purpose : get kernel and radio logs when modem exception
+allow emdlogger kernel:system syslog_read;
+allow emdlogger logcat_exec:file {rx_file_perms};
+allow emdlogger logdr_socket:sock_file write;
+
