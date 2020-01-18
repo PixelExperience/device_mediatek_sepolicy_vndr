@@ -15,6 +15,7 @@ type fw_log_bt_device, dev_type;
 type stpant_device, dev_type;
 type fm_device, dev_type;
 type stpgps_device, dev_type;
+type gpsdl_device, dev_type;
 type fw_log_gps_device, dev_type;
 type fw_log_wmt_device, dev_type;
 type fw_log_wifi_device, dev_type;

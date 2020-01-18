@@ -55,6 +55,7 @@ allow mnld property_socket:sock_file write;
 allow mnld mdlog_device:chr_file { read write };
 allow mnld self:capability { fsetid };
 allow mnld stpbt_device:chr_file { read write };
+allow mnld gpsdl_device:chr_file { read write };
 allow mnld ttyGS_device:chr_file { read write };
 # Purpose : For file system operations
 allow mnld sdcard_type:dir search;

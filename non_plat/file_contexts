@@ -301,6 +301,10 @@
 /dev/fw_log_bt u:object_r:fw_log_bt_device:s0
 /dev/stpgps        u:object_r:mnld_device:s0
 /dev/stpgps(/.*)? u:object_r:stpgps_device:s0
+/dev/gpsdl0        u:object_r:mnld_device:s0
+/dev/gpsdl0(/.*)? u:object_r:gpsdl_device:s0
+/dev/gpsdl1        u:object_r:mnld_device:s0
+/dev/gpsdl1(/.*)? u:object_r:gpsdl_device:s0
 /dev/stpwmt(/.*)? u:object_r:stpwmt_device:s0
 /dev/sw_sync(/.*)? u:object_r:sw_sync_device:s0
 /dev/tgt(/.*)? u:object_r:tgt_device:s0
