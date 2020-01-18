@@ -411,3 +411,6 @@ type sysfs_device_tree_model, fs_type, sysfs_type;
 # Date : 2019/10/22
 # Purpose : allow aee_aedv write /sys/module/mrdump/parameters/lbaooo
 type sysfs_mrdump_lbaooo, fs_type, sysfs_type;
+# Date : 2019/12/12
+# Purpose : allow media sources to access /sys/bus/platform/drivers/mem_bw_ctrl/*
+type sysfs_concurrency_scenario, fs_type, sysfs_type;

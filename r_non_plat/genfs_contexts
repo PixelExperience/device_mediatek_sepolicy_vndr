@@ -248,3 +248,7 @@ genfscon sysfs /module/fbt_fteh u:object_r:sysfs_fbt_fteh:s0
 # Date : WK19.38
 # Purpose: Android Migration for video codec driver
 genfscon sysfs /firmware/devicetree/base/model u:object_r:sysfs_device_tree_model:s0
+
+# Date : 2019/12/12
+# Purpose : allow media sources to access /sys/bus/platform/drivers/mem_bw_ctrl/*
+genfscon sysfs /bus/platform/drivers/mem_bw_ctrl/concurrency_scenario u:object_r:sysfs_concurrency_scenario:s0

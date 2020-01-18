@@ -153,3 +153,7 @@ allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_CONFIG_PORT;
 allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_CACHE_SYNC;
 allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_CONFIG_PORT_ARRAY;
 
+# Date : 2019/12/12
+# Purpose : allow media sources to access /sys/bus/platform/drivers/mem_bw_ctrl/*
+allow mediacodec sysfs_concurrency_scenario:file rw_file_perms;
+allow mediacodec sysfs_concurrency_scenario:dir search;
