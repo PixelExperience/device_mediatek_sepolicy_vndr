@@ -56,3 +56,8 @@ vendor.mediatek.hardware.engineermode::IEmd u:object_r:mtk_hal_em_hwservice:s0
 # Date : 2018/07/02
 # MMS HIDL
 vendor.mediatek.hardware.mms::IMms u:object_r:mtk_hal_mms_hwservice:s0
+
+# Date : 2019/04/19
+# GPU HIDL
+vendor.mediatek.hardware.gpu::IGraphicExt u:object_r:mtk_hal_gpu_hwservice:s0
+
