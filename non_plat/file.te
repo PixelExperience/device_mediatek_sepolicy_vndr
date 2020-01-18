@@ -431,3 +431,8 @@ type sysfs_pages_volatile, fs_type, sysfs_type;
 # Date : 2019/10/22
 # Purpose : allow aee_aedv write /sys/module/mrdump/parameters/lbaooo
 type sysfs_mrdump_lbaooo, fs_type, sysfs_type;
+
+# Date : 2019/10/25
+# Purpose : To avoid using the SELabel of u:object_r:proc:s0 or u:object_r:sysfs:s0
+# to access /proc/device-tree/chosen/atag,chipid or  /sysfs/firmware/devicetree/base/chosen/atag,chipid
+type sysfs_chipid, fs_type, sysfs_type;
