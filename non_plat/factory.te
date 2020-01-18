@@ -389,3 +389,6 @@ allow factory exported3_radio_prop:file { read open getattr };
 allow factory vendor_nfc_socket:dir { write add_name remove_name search };
 allow factory vendor_nfc_socket:sock_file { create write unlink setattr };
 
+# Allow to get AOSP property
+get_prop(factory, exported3_radio_prop);
+
