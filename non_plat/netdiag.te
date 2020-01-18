@@ -26,6 +26,3 @@ allow netdiag mmc_prop:file { getattr open };
 # purpose: allow netdiag to access storage in new version
 allow netdiag media_rw_data_file:file  { create_file_perms };
 allow netdiag media_rw_data_file:dir { create_dir_perms };
-
-# Fix boot up SELinux violation
-allow netdiag mtk_em_ril_apnchange_prop:file open;

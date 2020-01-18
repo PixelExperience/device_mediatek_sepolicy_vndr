@@ -130,19 +130,10 @@ mediatek. u:object_r:mediatek_prop:s0
 debug.camera.p2plug.log u:object_r:mediatek_prop:s0
 
 #=============allow em set protocol================
-volte.emergency.pdn.protocol    u:object_r:mtk_em_pdn_prop:s0
-
-#=============allow em set protocol================
-persist.ims.simulate   u:object_r:mtk_em_ims_simulate_prop:s0
-
-#=============allow em set protocol================
-persist.auto_answer   u:object_r:mtk_em_auto_answer_prop:s0
+persist.vendor.auto_answer   u:object_r:mtk_em_auto_answer_prop:s0
 
 #=============allow em set protocol================
 persist.bt.sspdebug.enable   u:object_r:mtk_em_bt_sspdebug_prop:s0
-
-#=============allow em set ril.force_apn_change property================
-ril.force_apn_change u:object_r:mtk_em_ril_apnchange_prop:s0
 
 #=============allow em set protocol================
 persist.vendor.net.auto.tethering   u:object_r:mtk_em_net_auto_tethering_prop:s0
@@ -155,8 +146,6 @@ ril.iccid.sim u:object_r:mtk_telephony_sensitive_prop:s0
 persist.radio.last_iccid_sim  u:object_r:mtk_telephony_sensitive_prop:s0
 ro.mtk_md_mims_support u:object_r:mtk_telephony_sensitive_prop:s0
 
-
-
 #=============allow processes to change thermal config================
 thermal.manager.data u:object_r:mtk_thermal_config_prop:s0
 
@@ -168,7 +157,7 @@ debug.sf.hwc_pid u:object_r:graphics_hwc_pid_prop:s0
 persist.mtkcam. u:object_r:mtkcam_prop:s0
 mtkcam. u:object_r:mtkcam_prop:s0
 
-#=============allow radio  to set xcap config================
+#=============allow radio  to set em xcap config================
 persist.ss. u:object_r:mtk_em_ril_xcapset_prop:s0
 persist.gba. u:object_r:mtk_em_ril_xcapset_prop:s0
 
