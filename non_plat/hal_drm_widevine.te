@@ -12,6 +12,6 @@ vndbinder_use(hal_drm_widevine);
 allow hal_drm_widevine debugfs_tracing:file write;
 allow hal_drm_widevine debugfs_ion:dir search;
 
-allow hal_drm_default hal_allocator_server:fd use;
+allow hal_drm_widevine hal_allocator_server:fd use;
 allow hal_drm_widevine mediadrm_vendor_data_file:dir create_dir_perms;
 allow hal_drm_widevine mediadrm_vendor_data_file:file create_file_perms;
