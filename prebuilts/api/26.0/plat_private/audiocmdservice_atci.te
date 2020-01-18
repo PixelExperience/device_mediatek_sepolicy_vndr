@@ -31,7 +31,7 @@ allow audiocmdservice_atci sdcard_type:dir w_dir_perms;
 allow audiocmdservice_atci media_rw_data_file:dir create_dir_perms;
 allow audiocmdservice_atci media_rw_data_file:file create_file_perms;
 
-
+hal_client_domain(audiocmdservice_atci, hal_audio)
 
 #To access the file at /dev/kmsg
 allow audiocmdservice_atci kmsg_device:chr_file w_file_perms;

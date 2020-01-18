@@ -24,6 +24,8 @@ hwbinder_use(audiocmdservice_atci)
 get_prop(audiocmdservice_atci, hwservicemanager_prop);
 #allow audiocmdservice_atci hal_audio_hwservice:hwservice_manager find;
 
+hal_client_domain(audiocmdservice_atci, hal_audio)
+
 #To access the file at /dev/kmsg
 allow audiocmdservice_atci kmsg_device:chr_file w_file_perms;
 
