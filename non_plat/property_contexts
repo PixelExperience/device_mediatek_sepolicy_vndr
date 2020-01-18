@@ -135,8 +135,8 @@ vendor.client.      u:object_r:mtk_em_prop:s0
 
 #=============allow mediatek_prop ==============
 mediatek. u:object_r:mediatek_prop:s0
-debug.camera.p2plug.log u:object_r:mediatek_prop:s0
-mtk.client.appmode u:object_r:mediatek_prop:s0
+vendor.debug.camera.p2plug.log u:object_r:mediatek_prop:s0
+vendor.client.em.appmode u:object_r:mediatek_prop:s0
 
 #=============allow em set protocol================
 persist.vendor.auto_answer   u:object_r:mtk_em_auto_answer_prop:s0
