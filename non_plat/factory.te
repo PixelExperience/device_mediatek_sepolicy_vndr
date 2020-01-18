@@ -383,9 +383,6 @@ allow factory mtk_audiohal_data_file:file { write create unlink r_file_perms };
 # Purpose : Allow factory to open /proc/version
 allow factory proc_version:file {read open getattr};
 
-# Allow to use persist.radio.multisim.config
-allow factory exported3_radio_prop:file { read open getattr };
-
 # Purpose : adsp
 allow factory adsp_device:chr_file rw_file_perms;
 
@@ -393,6 +390,6 @@ allow factory adsp_device:chr_file rw_file_perms;
 allow factory vendor_nfc_socket:dir { write add_name remove_name search };
 allow factory vendor_nfc_socket:sock_file { create write unlink setattr };
 
-# Allow to get AOSP property
-get_prop(factory, exported3_radio_prop);
+# Allow to get AOSP property persist.radio.multisim.config
+get_prop(factory, exported3_radio_prop)
 
