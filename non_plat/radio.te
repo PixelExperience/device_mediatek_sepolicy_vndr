@@ -225,3 +225,8 @@ set_prop(radio, persist_xcap_rawurl_prop)
 # Operation : label aee_aed sockets
 # Purpose : Engineering mode need access for aee commmand
 allow radio aee_aed:unix_stream_socket connectto;
+
+# Date : 2019/05/23
+# Operation : Get subpimc reigster status
+# Purpose : Engineering mode need get subpimic register status
+allow radio debugfs_regmap:dir { search };
