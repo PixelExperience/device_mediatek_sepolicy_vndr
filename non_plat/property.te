@@ -16,12 +16,6 @@ type mtk_default_prop, property_type, mtk_core_property_type;
 type ctl_gsm0710muxd_prop, property_type;
 type ctl_gsm0710muxd-s_prop, property_type;
 type ctl_gsm0710muxd-d_prop, property_type;
-#=============allow ccci_mdinit to ctl. mdlogger==============
-type ctl_mdlogger_prop, property_type;
-type ctl_emdlogger1_prop, property_type;
-type ctl_emdlogger2_prop, property_type;
-type ctl_emdlogger3_prop, property_type;
-type ctl_dualmdlogger_prop, property_type;
 
 #=============allow viarild to start property==============
 type ctl_viarild_prop, property_type;

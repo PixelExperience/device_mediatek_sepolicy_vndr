@@ -1,0 +1,5 @@
+#=============allow ccci_mdinit to ctl. mdlogger==============
+ctl.mdlogger u:object_r:ctl_mdlogger_prop:s0
+ctl.emdlogger1       u:object_r:ctl_emdlogger1_prop:s0
+ctl.emdlogger2       u:object_r:ctl_emdlogger2_prop:s0
+ctl.emdlogger3       u:object_r:ctl_emdlogger3_prop:s0
