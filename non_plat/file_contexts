@@ -576,7 +576,8 @@
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.nfc@1\.1-service-st u:object_r:hal_nfc_default_exec:s0
 # MTK Wifi Hal
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.wifi@1\.0-service-mediatek           u:object_r:mtk_hal_wifi_exec:s0
-
+# MTK USB hal
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.usb@1\.1-service-mediatek u:object_r:mtk_hal_usb_exec:s0
 
 #############################
 # System/bin files
