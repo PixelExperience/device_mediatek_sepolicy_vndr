@@ -74,3 +74,9 @@ attribute hal_atci_server;
 # Date: 2019/06/12
 # modem db filter hidl
 attribute mtk_hal_md_dbfilter_server;
+
+# Date: 2019/07/16
+# HDMI HIDL
+attribute hal_hdmi;
+attribute hal_hdmi_client;
+attribute hal_hdmi_server;
