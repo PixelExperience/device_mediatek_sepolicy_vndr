@@ -251,6 +251,9 @@ type debugfs_emi_mbw_buf, fs_type, debugfs_type;
 # /sys/kernel/debug/vpu/device_dbg
 type debugfs_vpu_device_dbg, fs_type, debugfs_type;
 
+# /sys/kernel/debug/kmemleak
+type debugfs_kmemleak, fs_type, debugfs_type;
+
 ######################################
 # core domain file data
 

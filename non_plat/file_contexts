@@ -524,6 +524,7 @@
 /sys/kernel/debug/fpsgo(/.*)? u:object_r:debugfs_fpsgo:s0
 /sys/kernel/debug/emi_mbw/dump_buf(/.*)? u:object_r:debugfs_emi_mbw_buf:s0
 /sys/kernel/debug/vpu/device_dbg(/.*)? u:object_r:debugfs_vpu_device_dbg:s0
+/sys/kernel/debug/kmemleak u:object_r:debugfs_kmemleak:s0
 
 #############################
 # System files
