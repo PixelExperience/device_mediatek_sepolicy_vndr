@@ -394,3 +394,8 @@ allow cameraserver camera_mfb_device:chr_file rw_file_perms;
 # Purpose: Allow permgr access
 allow cameraserver proc_perfmgr:dir {read search};
 allow cameraserver proc_perfmgr:file {open read ioctl};
+
+# Date : WK18.20
+# Operation : Migration
+# Purpose : no permission for vendor_default_prop
+get_prop(cameraserver, vendor_default_prop)

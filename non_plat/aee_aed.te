@@ -50,3 +50,8 @@ allow aee_aed exec_type:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/cpu/alignment
 allow aee_aed proc_cpu_alignment:file { write open };
+
+# Date : WK18.20
+# Operation : Migration
+# Purpose : no permission for vendor_default_prop
+get_prop(aee_aed, vendor_default_prop)

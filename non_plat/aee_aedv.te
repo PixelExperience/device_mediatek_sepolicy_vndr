@@ -392,3 +392,8 @@ allow aee_aedv proc_hw_ver:file { read open };
 
 # Purpose: Allow aee_aedv to read /proc/sched_debug
 allow aee_aedv proc_sched_debug:file { read open };
+
+# Date : WK18.20
+# Operation : Migration
+# Purpose : no permission for vendor_default_prop
+get_prop(aee_aedv, vendor_default_prop)
