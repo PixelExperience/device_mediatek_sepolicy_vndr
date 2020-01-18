@@ -50,6 +50,7 @@ type bt_data_file, file_type, data_file_type;
 type proc_thermal, fs_type, proc_type;
 type proc_mtkcooler, fs_type, proc_type;
 type proc_mtktz, fs_type, proc_type;
+type proc_mtd, fs_type, proc_type;
 type proc_slogger, fs_type, proc_type;
 type proc_lk_env, fs_type, proc_type;
 type proc_ged, fs_type, proc_type;
