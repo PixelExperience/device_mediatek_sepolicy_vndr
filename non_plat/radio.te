@@ -143,6 +143,11 @@ get_prop(radio, mtk_debug_md_reset_prop)
 allow radio sysfs_batteryinfo:dir search;
 #allow radio sysfs_batteryinfo:file { read write getattr open create};
 allow radio sysfs_vbus:file { read getattr open };
+allow radio sysfs_battery_consumption:file r_file_perms;
+allow radio sysfs_power_on_vol:file r_file_perms;
+allow radio sysfs_power_off_vol:file r_file_perms;
+allow radio sysfs_fg_disable:file w_file_perms;
+allow radio sysfs_dis_nafg:file w_file_perms;
 
 # Date : 2018/06/15
 # Purpose : Allow EM access touchscreen settings

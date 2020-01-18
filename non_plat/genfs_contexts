@@ -122,4 +122,9 @@ genfscon sysfs /kernel/md/mdee u:object_r:sysfs_mdinfo:s0
 # Date : 2019/04/09
 # Purpose: mtk EM battery temprature settings
 genfscon sysfs /devices/platform/battery/Battery_Temperature u:object_r:sysfs_battery_temp:s0
+genfscon sysfs /devices/platform/battery/FG_Battery_CurrentConsumption u:object_r:sysfs_battery_consumption:s0
+genfscon sysfs /devices/platform/battery/Power_On_Voltage u:object_r:sysfs_power_on_vol:s0
+genfscon sysfs /devices/platform/battery/Power_Off_Voltage u:object_r:sysfs_power_off_vol:s0
+genfscon sysfs /devices/platform/battery/FG_daemon_disable u:object_r:sysfs_fg_disable:s0
+genfscon sysfs /devices/platform/battery/disable_nafg u:object_r:sysfs_dis_nafg:s0
 
