@@ -273,3 +273,7 @@ allow system_server zygote:process setsched;
 # Date : 2019/11/21
 # Operation : Q Migration
 allow system_server sf_rtt_file:dir rmdir;
+
+# Date : 2019/11/29
+# Operation : Q Migration
+allow system_server storage_stub_file:dir getattr;
