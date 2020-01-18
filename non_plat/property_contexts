@@ -256,6 +256,7 @@ ro.vendor.mtk_dre30_support u:object_r:mtk_aal_ro_prop:s0
 persist.vendor.sys.pq. u:object_r:mtk_pq_prop:s0
 vendor.debug.pq. u:object_r:mtk_pq_prop:s0
 persist.vendor.sys.isp. u:object_r:mtk_pq_prop:s0
+persist.vendor.sys.mtkaal. u:object_r:mtk_pq_prop:s0
 ro.vendor.mtk_pq_color_mode u:object_r:mtk_pq_ro_prop:s0
 ro.vendor.mtk_blulight_def_support u:object_r:mtk_pq_ro_prop:s0
 ro.vendor.mtk_chameleon_support u:object_r:mtk_pq_ro_prop:s0
