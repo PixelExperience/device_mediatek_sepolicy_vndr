@@ -592,10 +592,15 @@
 /vendor/lib(64)?/hw/vulkan\.mt[0-9]+\.so     u:object_r:same_process_hal_file:s0
 
 /vendor/lib(64)?/libIMGegl\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libsrv_um\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libtqvalidate\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libusc\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libglslcompiler\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libPVRScopeServices\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libsrv_um\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libusc\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libtqvalidate\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libPVROCL\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libufwriter\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libmemtrack_GL\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libPVRTrace\.so   u:object_r:same_process_hal_file:s0
 
 /vendor/lib(64)?/libGLES_mali\.so   u:object_r:same_process_hal_file:s0
 
