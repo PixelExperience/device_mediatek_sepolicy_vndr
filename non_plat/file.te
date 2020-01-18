@@ -275,4 +275,26 @@ type sysfs_dual_role_usb20, fs_type, sysfs_type;
 
 # Touch parameters file
 type sysfs_tpd_setting, fs_type, sysfs_type;
+type sysfs_tpd_debug, fs_type, sysfs_type;
+
+# Date : 2018/06/11
+# Purpose : mtk EM FreqHopping setting
+type proc_freqhop, fs_type, proc_type;
+
+# Date : 2018/06/11
+# Purpose : mtk EM flash reading
+type proc_flash, fs_type, proc_type;
+type proc_partition, fs_type, proc_type;
+
+# Date : 2018/06/11
+# Purpose : mtk EM PMU reading/setting
+type sysfs_pmu, fs_type, sysfs_type;
+
+# Date : 2018/06/11
+# Purpose : mtk EM Power debug_log setting
+type sysfs_spm, fs_type, sysfs_type;
+
+# Date : 2018/06/11
+# Purpose : mtk EM Audio headset detect
+type sysfs_headset, fs_type, sysfs_type;
 

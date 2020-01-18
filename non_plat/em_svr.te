@@ -30,3 +30,30 @@ allow em_svr nvram_device:blk_file { open read write };
 # Date: WK1812
 # Purpose: add for Gyroscope sensor
 allow em_svr gyroscope_device:chr_file { read ioctl open };
+
+# Date : 2018/06/15
+# Purpose : Allow EM access touchscreen settings
+allow radio sysfs_tpd_debug:dir search;
+allow radio sysfs_tpd_setting:dir search;
+allow radio sysfs_tpd_debug:file rw_file_perms;
+allow radio sysfs_tpd_setting:file rw_file_perms;
+
+# Date : 2018/06/15
+# Purpose : EM FreqHopping setting
+allow em_svr proc_freqhop:file { open read write };
+
+# Date : 2018/06/15
+# Purpose : EM flash reading
+allow em_svr proc_flash:file { open read };
+allow em_svr proc_partition:file { open read };
+
+# Date : 2018/06/15
+# Purpose : EM Power PMU reading/setting
+allow em_svr sysfs_pmu:dir { search };
+allow em_svr sysfs_pmu:file { open read write };
+allow em_svr sysfs_pmu:lnk_file { read };
+
+# Date : 2018/06/15
+# Purpose : EM Power debug_log setting
+allow em_svr sysfs_spm:dir { search };
+allow em_svr sysfs_spm:file { open read write };
