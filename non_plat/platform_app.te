@@ -67,12 +67,6 @@ not_full_treble(`
 	allow platform_app mnld:unix_stream_socket connectto;
 ')
 
-# Date : 2015/11/18
-# Operation : label aee_aed sockets
-# Purpose : Engineering mode need access for aee commmand
-# Package: MTKLogger/Debugutils
-allow platform_app aee_aed:unix_stream_socket connectto;
-
 # Date : WK17.46
 # Operation : Migration
 # Purpose : allow MTKLogger to read KE DB
