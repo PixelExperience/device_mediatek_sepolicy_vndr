@@ -38,3 +38,6 @@ allow mtk_hal_pq property_socket:sock_file write;
 
 # Purpose : Allow permission to get AmbientLux from hwservice_manager
 allow mtk_hal_pq fwk_sensor_hwservice:hwservice_manager find;
+
+# Purpose : Allow permission to set pq property
+set_prop(mtk_hal_pq, mtk_pq_prop)
