@@ -30,3 +30,7 @@ type mtk_hal_pq_hwservice, untrusted_app_visible_hwservice, hwservice_manager_ty
 # Date: 2017/07/20
 # keymaster attestation hidl
 type mtk_hal_keyattestation_hwservice, hwservice_manager_type;
+
+# Date: 2018/05/25
+# FM HIDL
+type mtk_hal_fm_hwservice, hwservice_manager_type;
