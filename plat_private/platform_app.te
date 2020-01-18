@@ -11,3 +11,10 @@ allow platform_app init:unix_stream_socket connectto;
 # Stage: O Migration, SQC
 # Purpose: Allow to use selinux for hal_power
 hal_client_domain(platform_app, hal_power)
+
+# Date: 2019/07/18
+# Operation : Migration
+# Purpose : DebugLoggerUI access data/debuglogger/ folder
+# Package: com.debug.loggerui
+allow platform_app debuglog_data_file:dir create_dir_perms;
+allow platform_app debuglog_data_file:file create_file_perms;
