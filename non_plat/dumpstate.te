@@ -176,3 +176,8 @@ allow dumpstate debugfs_smi_mon:file r_file_perms;
 
 # MTEE Trusty
 allow dumpstate mtee_trusty_file:file rw_file_perms;
+
+# 09-05 15:58:31.552000  9693  9693 W df      : type=1400 audit(0.0:990):
+# avc: denied { search } for name="expand" dev="tmpfs" ino=10779 scontext=u:r:dumpstate:s0
+# tcontext=u:object_r:mnt_expand_file:s0 tclass=dir permissive=0
+allow dumpstate mnt_expand_file:dir search;
