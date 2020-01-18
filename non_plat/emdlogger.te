@@ -86,10 +86,6 @@ allow emdlogger aee_aed:unix_stream_socket connectto;
 allow emdlogger para_block_device:blk_file { read open write };
 allow emdlogger proc_lk_env:file { read write ioctl open };
 
-#Android O for created file in data
-
-    file_type_auto_trans(emdlogger, system_data_file, mdlog_data_file)
-
 ## purpose: avc: denied { read } for name="plat_file_contexts"
 allow emdlogger file_contexts_file:file { read getattr open map};
 

@@ -51,3 +51,7 @@ allow mdlogger system_file:dir read;
 ## purpose:  read modem db and filter folder and file
 allow mdlogger mddb_filter_data_file:dir { r_dir_perms };
 allow mdlogger mddb_filter_data_file:file { r_file_perms };
+## Save modem log into data
+allow mdlogger debuglog_data_file:dir {relabelto create_dir_perms};
+allow mdlogger debuglog_data_file:file create_file_perms;
+allow mdlogger system_data_file:dir create_dir_perms;

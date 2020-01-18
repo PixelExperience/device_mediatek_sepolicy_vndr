@@ -101,4 +101,3 @@ allow netdiag debuglog_data_file:dir {relabelto create_dir_perms};
 allow netdiag debuglog_data_file:file create_file_perms;
 allow netdiag system_data_file:dir { create_dir_perms relabelfrom };
 allow netdiag file_contexts_file:file { r_file_perms };
-file_type_auto_trans(netdiag, system_data_file, debuglog_data_file)
