@@ -495,7 +495,7 @@
 /sys/kernel/debug/mtkfb u:object_r:debugfs_fb:s0
 /sys/kernel/debug/mmprofile(/.*)? u:object_r:debugfs_fb:s0
 /sys/kernel/debug/fbconfig u:object_r:debugfs_fb:s0
-/sys/kernel/debug/displowpower u:object_r:debugfs_fb:s0
+/sys/kernel/debug/displowpower(/.*)? u:object_r:debugfs_fb:s0
 /sys/kernel/debug/disp(/.*)? u:object_r:debugfs_fb:s0
 /sys/kernel/debug/dispsys u:object_r:debugfs_fb:s0
 /sys/kernel/debug/cpuhvfs(/.*)? u:object_r:debugfs_cpuhvfs:s0
