@@ -44,9 +44,9 @@ allow ccci_fsd otp_device:chr_file rw_file_perms;
 allow ccci_fsd sysfs:file r_file_perms;
 allow ccci_fsd sysfs_boot_type:file { read open };
 #============= ccci_fsd MD block data==============
+##restore>NVM_GetDeviceInfo>open  /dev/block/platform/bootdevice/by-name/nvram
 allow ccci_fsd block_device:dir search;
 allow ccci_fsd nvram_device:blk_file rw_file_perms;
-allow ccci_fsd bootdevice_block_device:blk_file rw_file_perms;
 allow ccci_fsd nvdata_device:blk_file rw_file_perms;
 #============= ccci_fsd cryption related ==============
 allow ccci_fsd rawfs:dir create_dir_perms;
@@ -63,7 +63,7 @@ allow ccci_fsd kmsg_device:chr_file w_file_perms;
 allow ccci_fsd proc_lk_env:file rw_file_perms;
 
 #============= ccci_fsd MD Low Power Monitor Related ==============
-allow ccci_fsd vendor_data_file:dir create_dir_perms;
-allow ccci_fsd vendor_data_file:file create_file_perms;
+allow ccci_fsd ccci_data_md1_file:dir create_dir_perms;
+allow ccci_fsd ccci_data_md1_file:file create_file_perms;
 allow ccci_fsd sysfs_mmcblk:dir search;
 allow ccci_fsd sysfs_mmcblk:file { read getattr open };

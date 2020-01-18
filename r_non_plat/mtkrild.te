@@ -54,7 +54,7 @@ allow mtkrild bluetooth_efs_file:dir r_dir_perms;
 allow mtkrild sdcardfs:dir r_dir_perms;
 # Violate Android P rule
 #allow mtkrild system_file:file x_file_perms;
-allow mtkrild proc:file rw_file_perms;
+#allow mtkrild proc:file rw_file_perms;
 allow mtkrild proc_net:file w_file_perms;
 
 # Set and get routes directly via netlink.
@@ -68,13 +68,13 @@ allow mtkrild mtd_device:dir search;
 allow mtkrild tty_device:chr_file rw_file_perms;
 allow mtkrild eemcs_device:chr_file { rw_file_perms };
 
-allow mtkrild Vcodec_device:chr_file { rw_file_perms };
+#allow mtkrild Vcodec_device:chr_file { rw_file_perms };
 allow mtkrild devmap_device:chr_file { r_file_perms };
 allow mtkrild devpts:chr_file { rw_file_perms };
 allow mtkrild ccci_device:chr_file { rw_file_perms };
 allow mtkrild misc_device:chr_file { rw_file_perms };
 allow mtkrild proc_lk_env:file rw_file_perms;
-allow mtkrild bootdevice_block_device:blk_file { rw_file_perms };
+#allow mtkrild bootdevice_block_device:blk_file { rw_file_perms };
 allow mtkrild para_block_device:blk_file { rw_file_perms };
 
 # Allow dir search, fd uses
@@ -82,18 +82,12 @@ allow mtkrild block_device:dir search;
 allow mtkrild platform_app:fd use;
 allow mtkrild radio:fd use;
 
-# For emulator
-allow mtkrild qemu_pipe_device:chr_file rw_file_perms;
-allow mtkrild socket_device:sock_file { w_file_perms };
-
 # For MAL MFI
 allow mtkrild mal_mfi_socket:sock_file { w_file_perms };
 
 # For ccci sysfs node
 allow mtkrild sysfs_ccci:dir search;
 allow mtkrild sysfs_ccci:file r_file_perms;
-
-allow init socket_device:sock_file { create unlink setattr };
 
 #For Kryptowire mtklog issue
 allow mtkrild aee_aedv:unix_stream_socket connectto;

@@ -158,17 +158,13 @@ allow mtk_hal_audio mnt_user_file:lnk_file {read write};
 # Operation : Migration
 # Purpose: read/open sysfs node
 allow mtk_hal_audio sysfs_ccci:file r_file_perms;
+allow mtk_hal_audio sysfs_ccci:dir search;
 
 # Date : WK16.18
 # Operation : Migration
 # Purpose: research root dir "/"
 allow mtk_hal_audio tmpfs:dir search;
 
-# Date : WK16.18
-# Operation : Migration
-# Purpose: access sysfs node
-allow mtk_hal_audio sysfs:file { open read write };
-allow mtk_hal_audio sysfs_ccci:dir search;
 # Purpose: Dump debug info
 allow mtk_hal_audio debugfs_binder:dir search;
 allow mtk_hal_audio kmsg_device:chr_file { open write };

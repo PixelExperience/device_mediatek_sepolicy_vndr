@@ -89,6 +89,8 @@ genfscon sysfs /devices/platform/charger/Pump_Express u:object_r:sysfs_pump_expr
 genfscon sysfs /devices/platform/battery/Pump_Express u:object_r:sysfs_pump_express:s0
 genfscon sysfs /devices/platform/mt_charger/power_supply u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/mt-rtc/rtc    u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6359-pmic/mt6359-rtc/rtc u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6358-pmic/mt6358-rtc/rtc u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/mt-pmic u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/1000d000.pwrap/mt-pmic u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6358-pmic/mt-pmic u:object_r:sysfs_pmu:s0
@@ -107,7 +109,10 @@ genfscon sysfs /devices/virtual/misc/scp_B  u:object_r:sysfs_scp:s0
 genfscon sysfs /devices/virtual/misc/sspm  u:object_r:sysfs_sspm:s0
 genfscon sysfs /devices/virtual/misc/adsp  u:object_r:sysfs_adsp:s0
 
+# Date : 2019/09/12
 genfscon sysfs /devices/virtual/thermal u:object_r:sysfs_therm:s0
+genfscon sysfs /devices/class/thermal u:object_r:sysfs_therm:s0
+
 genfscon sysfs /devices/virtual/switch/fps u:object_r:sysfs_fps:s0
 
 genfscon sysfs /firmware/devicetree/base/chosen/atag,devinfo u:object_r:sysfs_devinfo:s0
@@ -158,8 +163,8 @@ genfscon sysfs /devices/platform/bootdevice/host0/target0:0:0/0:0:0:2/block/sdc 
 
 # Date : 2019/07/12
 # Purpose:dumpstate mmcblk1 access
+genfscon sysfs /devices/platform/externdevice/mmc_host/mmc0 u:object_r:sysfs_devices_block:s0
 genfscon sysfs /devices/platform/externdevice/mmc_host/mmc1 u:object_r:sysfs_devices_block:s0
-
 
 #############################
 # debugfs files
@@ -213,4 +218,29 @@ genfscon iso9660 / u:object_r:iso9660:s0
 genfscon rawfs / u:object_r:rawfs:s0
 genfscon fuseblk / u:object_r:fuseblk:s0
 
+# 2019/08/24
+genfscon sysfs /class/sensor u:object_r:sysfs_sensor:s0
+genfscon sysfs /devices/virtual/sensor u:object_r:sysfs_sensor:s0
 
+# MTEE trusty
+genfscon sysfs /devices/platform/trusty u:object_r:mtee_trusty_file:s0
+
+# Date : 2019/08/29
+# Purpose: allow rild to access /proc/aed/reboot-reason
+genfscon proc /aed/reboot-reason u:object_r:proc_aed_reboot_reason:s0
+
+
+# 2019/09/05
+# Purpose: Allow powerhal to control kernel resources
+genfscon proc /ppm u:object_r:proc_ppm:s0
+genfscon proc /cpufreq u:object_r:proc_cpufreq:s0
+genfscon proc /hps u:object_r:proc_hps:s0
+genfscon proc /cm_mgr u:object_r:proc_cm_mgr:s0
+genfscon proc /ca_drv u:object_r:proc_ca_drv:s0
+genfscon sysfs /module/ged u:object_r:sysfs_ged:s0
+genfscon sysfs /module/fbt_cpu u:object_r:sysfs_fbt_cpu:s0
+genfscon sysfs /module/fbt_fteh u:object_r:sysfs_fbt_fteh:s0
+
+# Date : WK19.38
+# Purpose: Android Migration for video codec driver
+genfscon sysfs /firmware/devicetree/base/model u:object_r:sysfs_device_tree_model:s0

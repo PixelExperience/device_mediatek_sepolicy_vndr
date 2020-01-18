@@ -32,6 +32,7 @@ set_prop(vendor_init, tel_switch_prop)
 set_prop(vendor_init, mtk_aal_ro_prop)
 set_prop(vendor_init, mtk_pq_ro_prop)
 set_prop(vendor_init, mtk_default_prop)
+set_prop(vendor_init, mtk_nn_option_prop)
 
 set_prop(vendor_init, mtk_emmc_support_prop)
 set_prop(vendor_init, mtk_anr_support_prop)

@@ -14,7 +14,6 @@ binder_call(mtk_hal_light, system_server)
 # system file
 allow mtk_hal_light system_file:dir read;
 allow mtk_hal_light system_file:dir open;
-allow mtk_hal_light sysfs:file rw_file_perms;
 
 allow mtk_hal_light sysfs_leds:lnk_file read;
 allow mtk_hal_light sysfs_leds:file rw_file_perms;

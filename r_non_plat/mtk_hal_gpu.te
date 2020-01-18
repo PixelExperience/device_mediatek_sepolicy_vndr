@@ -31,11 +31,6 @@ hal_client_domain(mtk_hal_gpu, hal_allocator)
 # Purpose : Allow to use kernel driver
 allow mtk_hal_gpu graphics_device:chr_file rw_file_perms;
 
-# Purpose : Allow property set
-allow mtk_hal_gpu init:unix_stream_socket connectto;
-allow mtk_hal_gpu property_socket:sock_file write;
-
-
 # Purpose : Allow permission to set pq property
 #set_prop(mtk_hal_gpu, mtk_gpu_prop)
 

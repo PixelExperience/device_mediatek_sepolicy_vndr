@@ -21,7 +21,6 @@ init_daemon_domain(nvram_daemon)
 # Operation : Migration 
 # Purpose : the device is used to store Nvram backup data that can not be lost. 
 allow nvram_daemon nvram_device:blk_file rw_file_perms;
-allow nvram_daemon bootdevice_block_device:blk_file rw_file_perms;
 allow nvram_daemon nvdata_device:blk_file rw_file_perms;
 
 # Date : WK14.35
@@ -41,7 +40,6 @@ allow nvram_daemon gyroscope_device:chr_file r_file_perms;
 allow nvram_daemon init:unix_stream_socket connectto;
 
 # Purpose: for property set
-allow nvram_daemon sysfs:file w_file_perms;
 allow nvram_daemon self:capability { fowner chown fsetid };
 
 # Purpose: for backup

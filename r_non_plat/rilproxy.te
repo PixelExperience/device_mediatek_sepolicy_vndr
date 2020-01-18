@@ -18,7 +18,6 @@ allow rild init:unix_stream_socket connectto;
 allow rild mtkrild:unix_stream_socket connectto;
 allow rild property_socket:sock_file write;
 allow rild self:capability setuid;
-allow rild socket_device:sock_file write;
 allow rild radio_prop:property_service set;
 allow rild ril_mux_report_case_prop:property_service set;
 allow rild mtk_agpsd:unix_stream_socket connectto;
@@ -72,3 +71,9 @@ set_prop(mtkrild, mtk_ss_vendor_prop)
 # Purpose: Allow rild access to send SUPL INIT to mnld
 allow rild mnld:unix_dgram_socket sendto;
 allow mtkrild mnld:unix_dgram_socket sendto;
+
+# Date : W19.35
+# Operation: Q migration
+# Purpose: Fix rilproxy SeLinux warning of pre-defined socket
+allow rild gsmrild_socket:sock_file write;
+

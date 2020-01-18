@@ -13,6 +13,7 @@ type wpa_supplicant_data_file, file_type, data_file_type;
 type radvd_data_file, file_type, data_file_type;
 type volte_vt_socket, file_type;
 type dfo_socket, file_type;
+type gsmrild_socket, file_type;
 type rild2_socket, file_type;
 type rild3_socket, file_type;
 type rild4_socket, file_type;
@@ -136,6 +137,7 @@ type sf_rtt_file, file_type, data_file_type, core_data_file_type;
 type rild-dongle_socket, file_type;
 
 type ccci_cfg_file, file_type, data_file_type;
+type ccci_data_md1_file, file_type, data_file_type;
 type c2k_file, file_type, data_file_type;
 #For sensor
 type sensor_data_file, file_type, data_file_type;
@@ -343,10 +345,10 @@ type debugfs_regmap, fs_type, debugfs_type;
 type sys_usb_rawbulk, fs_type, sysfs_type;
 
 # Backlight brightness file
-type sysfs_vibrator_setting, fs_type, sysfs_type;
+type sysfs_leds_setting, fs_type, sysfs_type;
 
 # Vibrator vibrate file
-type sysfs_leds_setting, fs_type, sysfs_type;
+type sysfs_vibrator_setting, fs_type, sysfs_type;
 
 # Date : 2019/04/09
 # Purpose: mtk EM battery settings
@@ -380,3 +382,29 @@ type debugfs_smi_mon, fs_type, debugfs_type;
 # Date : WK19.34
 # Purpose: Android Migration for video codec driver
 type vcodec_file, file_type, data_file_type;
+
+# Date : 2019/08/24
+type sysfs_sensor, fs_type, sysfs_type;
+
+#MTEE trusty
+type mtee_trusty_file, fs_type, sysfs_type;
+
+# Date : 2019/08/29
+# Purpose: Allow rild access proc/aed/reboot-reason
+type proc_aed_reboot_reason, fs_type, proc_type;
+
+# Date : 2019/09/05
+# Purpose: Allow powerhal to control kernel resources
+type proc_ppm, fs_type, proc_type;
+type proc_cpufreq, fs_type, proc_type;
+type proc_hps, fs_type, proc_type;
+type proc_cm_mgr, fs_type, proc_type;
+type proc_ca_drv, fs_type, proc_type;
+type sysfs_ged, fs_type, sysfs_type;
+type sysfs_fbt_cpu, fs_type, sysfs_type;
+type sysfs_fbt_fteh, fs_type, sysfs_type;
+
+# Date : WK19.38
+# Purpose: Android Migration for video codec driver
+type sysfs_device_tree_model, fs_type, sysfs_type;
+

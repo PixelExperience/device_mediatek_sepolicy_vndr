@@ -124,3 +124,7 @@ set_prop(em_hidl, mtk_em_hidl_prop)
 # Operation : EM AAL
 # Purpose: for em set aal property
 set_prop(em_hidl, mtk_pq_prop)
+# Date :  2019/09/10
+# Operation : EM wcn coredump
+# Purpose: for em set wcn coredump property
+set_prop(em_hidl, coredump_prop)

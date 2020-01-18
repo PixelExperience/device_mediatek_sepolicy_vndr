@@ -54,8 +54,7 @@ allow dumpstate sysfs_lowmemorykiller:dir search;
 allow dumpstate expdb_block_device:blk_file { read write ioctl open };
 
 #/data/anr/SF_RTT
-allow dumpstate sf_rtt_file:dir search;
-allow dumpstate sf_rtt_file:file r_file_perms;
+allow dumpstate sf_rtt_file:dir { search getattr };
 
 # Data : 2017/03/22
 # Operation : add fd use selinux rule
@@ -174,3 +173,11 @@ allow dumpstate sysfs_adsp:file r_file_perms;
 
 #Purpose: Allow dumpstate to read /sys/kernel/debug/smi_mon
 allow dumpstate debugfs_smi_mon:file r_file_perms;
+
+# MTEE Trusty
+allow dumpstate mtee_trusty_file:file rw_file_perms;
+
+# 09-05 15:58:31.552000  9693  9693 W df      : type=1400 audit(0.0:990):
+# avc: denied { search } for name="expand" dev="tmpfs" ino=10779 scontext=u:r:dumpstate:s0
+# tcontext=u:object_r:mnt_expand_file:s0 tclass=dir permissive=0
+allow dumpstate mnt_expand_file:dir search;

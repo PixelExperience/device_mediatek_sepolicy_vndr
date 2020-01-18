@@ -45,4 +45,8 @@ get_prop(mtk_hal_bluetooth, hwservicemanager_prop)
 allow hal_bluetooth_client mtk_hal_bluetooth_hwservice:hwservice_manager find;
 
 allow mtk_hal_bluetooth system_data_file:lnk_file read;
+
 hal_server_domain(mtk_hal_bluetooth,hal_bluetooth);
+
+# Purpose: Allow BT Driver to insmod
+allow mtk_hal_bluetooth wmt_prop:property_service set;

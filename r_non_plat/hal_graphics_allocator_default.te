@@ -21,3 +21,4 @@ allow hal_graphics_allocator_default debugfs_tracing:file open;
 allow hal_graphics_allocator_default proc_ged:file r_file_perms;
 allowxperm hal_graphics_allocator_default proc_ged:file ioctl { proc_ged_ioctls };
 
+#============= hal_graphics_allocator_default ==============

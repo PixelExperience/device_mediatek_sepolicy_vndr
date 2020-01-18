@@ -207,3 +207,8 @@ allowxperm system_server proc_ged:file ioctl { proc_ged_ioctls };
 # Date: 2019/06/14
 # Operation : Migration
 get_prop(system_server, vendor_default_prop)
+
+# Date: 2019/06/14
+# Operation : when WFD turnning on, turn off hdmi
+allow system_server mtk_hal_hdmi_hwservice:hwservice_manager find;
+allow system_server mtk_hal_hdmi:binder call;

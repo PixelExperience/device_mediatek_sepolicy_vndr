@@ -28,6 +28,7 @@
 /data/vendor/gps(/.*)?   u:object_r:gps_data_file:s0
 /data/anr/SF_RTT(/.*)? u:object_r:sf_rtt_file:s0
 /data/vendor/ccci_cfg(/.*)? u:object_r:ccci_cfg_file:s0
+/data/vendor/mdlpm(/.*)? u:object_r:ccci_data_md1_file:s0
 /data/vendor/flashless(/.*)? u:object_r:c2k_file:s0
 /data/core(/.*)? u:object_r:aee_core_data_file:s0
 /data/vendor/core(/.*)? u:object_r:aee_core_vendor_file:s0
@@ -262,6 +263,22 @@
 /dev/socket/mnld(/.*)? u:object_r:mnld_socket:s0
 /dev/socket/netdiag(/.*)? u:object_r:netdiag_socket:s0
 /dev/socket/netd(/.*)? u:object_r:netd_socket:s0
+/dev/socket/mrild(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/mrild2(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/mrild3(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/rild-atci u:object_r:gsmrild_socket:s0
+/dev/socket/rild-mbim(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/msap_uim_socket1(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/msap_uim_socket2(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/sap_uim_socket(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/msap_c2k_socket1(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/msap_c2k_socket2(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/msap_c2k_socket3(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/msap_c2k_socket4(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/sap_uim_socket1(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/sap_uim_socket2(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/sap_uim_socket3(/.*)? u:object_r:gsmrild_socket:s0
+/dev/socket/sap_uim_socket4(/.*)? u:object_r:gsmrild_socket:s0
 /dev/socket/rild2-md2(/.*)? u:object_r:rild2_md2_socket:s0
 /dev/socket/rild2(/.*)? u:object_r:rild2_socket:s0
 /dev/socket/rild3(/.*)? u:object_r:rild3_socket:s0
@@ -273,6 +290,8 @@
 /dev/socket/rild-ims(/.*)? u:object_r:rild_ims_socket:s0
 /dev/socket/volte_imsm_dongle(/.*)? u:object_r:rild_imsm_socket:s0
 /dev/socket/rild-vsim(/.*)? u:object_r:rild_vsim_socket:s0
+/dev/socket/rild-vsim2(/.*)? u:object_r:rild_vsim_socket:s0
+/dev/socket/rild-vsim3(/.*)? u:object_r:rild_vsim_socket:s0
 /dev/socket/rild-vsim-md2(/.*)? u:object_r:rild_vsim_md2_socket:s0
 /dev/socket/rild-ctclient u:object_r:rild_ctclient_socket:s0
 /dev/socket/rild-debug-md2(/.*)? u:object_r:rild_debug_md2_socket:s0
@@ -289,6 +308,8 @@
 /dev/socket/rild-oem(/.*)? u:object_r:rild_oem_socket:s0
 /dev/socket/rild(/.*)? u:object_r:rild_socket:s0
 /dev/socket/rild-via u:object_r:rild_via_socket:s0
+/dev/socket/rildc-debug u:object_r:rild_via_socket:s0
+/dev/socket/rild-atci-c2k u:object_r:rild_via_socket:s0
 /dev/socket/mal-mfi(/.*)? u:object_r:mal_mfi_socket:s0
 /dev/socket/mal-mfi-dongle(/.*)? u:object_r:mal_mfi_socket:s0
 /dev/socket/rpc u:object_r:rpc_socket:s0
@@ -486,10 +507,8 @@
 /dev/block/platform/bootdevice/by-name/vbmeta(_system|_vendor)?(_[ab])?    u:object_r:vbmeta_block_device:s0
 
 # Key manager
-/dev/block/platform/bootdevice/by-name/kb        u:object_r:kb_block_device:s0
-/dev/block/platform/bootdevice/by-name/dkb       u:object_r:dkb_block_device:s0
-/dev/kb                                          u:object_r:kb_block_device:s0
-/dev/dkb                                         u:object_r:dkb_block_device:s0
+/dev/block/platform/soc/[0-9]+\.mmc/by-name/kb   u:object_r:kb_block_device:s0
+/dev/block/platform/soc/[0-9]+\.mmc/by-name/dkb  u:object_r:dkb_block_device:s0
 
 # W19.23 Q new feature - Userdata Checkpoint
 /dev/block/by-name/md_udc             u:object_r:metadata_block_device:s0

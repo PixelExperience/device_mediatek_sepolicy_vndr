@@ -431,3 +431,6 @@ allow aee_aedv debugfs_vpu_memory:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/cpuhvfs/dbg_repo
 allow aee_aedv proc_dbg_repo:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /proc/pl_lk
+allow aee_aedv proc_pl_lk:file r_file_perms;
