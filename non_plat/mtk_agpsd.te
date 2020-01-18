@@ -29,6 +29,8 @@ allow mtk_agpsd sdcard_type:dir create_dir_perms;
 allow mtk_agpsd sdcard_type:file create_file_perms;
 allow mtk_agpsd eemcs_device:chr_file rw_file_perms;
 allow mtk_agpsd mnt_user_file:dir create_dir_perms;
+allow mtk_agpsd mnt_vendor_file:dir create_dir_perms;
+allow mtk_agpsd mnt_vendor_file:file create_file_perms;
 
 # Access symbolic link files like /etc and /sdcard
 allow mtk_agpsd tmpfs:lnk_file create_file_perms;
