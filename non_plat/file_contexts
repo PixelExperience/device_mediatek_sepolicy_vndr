@@ -18,6 +18,7 @@
 #############################
 # Data files
 #
+/data/vendor/.tp(/.*)?  u:object_r:thermal_manager_data_file:s0
 /data/vendor_de/meta(/.*)?    u:object_r:mddb_data_file:s0
 /data/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
 /data/vendor/aee_exp(/.*)?  u:object_r:aee_exp_vendor_file:s0
