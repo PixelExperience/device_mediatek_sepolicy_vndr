@@ -211,6 +211,8 @@ allow meta_tst sysfs_android_usb:file rw_file_perms;
 allow meta_tst sysfs_android_usb:dir search;
 allow meta_tst sysfs_usb_cmode:file rw_file_perms;
 allow meta_tst sysfs_usb_cmode:dir search;
+allow meta_tst sysfs_batteryinfo:file rw_file_perms;
+allow meta_tst sysfs_batteryinfo:dir search;
 
 #Date: W16.17
 # Purpose:  N Migration For meta_tst load MD NVRAM database
