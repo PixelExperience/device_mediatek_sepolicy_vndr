@@ -34,10 +34,6 @@ allow aee_aed usermodehelper:file r_file_perms;
 #suid_dumpable. this is neverallow
 #allow aee_aed proc_security:file r_file_perms;
 
-#property
-allow aee_aed init:unix_stream_socket connectto;
-allow aee_aed property_socket:sock_file write;
-
 #allow aee_aed call binaries labeled "system_file" under /system/bin/
 allow aee_aed system_file:file execute_no_trans;
 
@@ -57,10 +53,6 @@ allow aee_aed system_data_file:file r_file_perms;
 
 # Purpose: allow aee_aed to access toolbox
 allow aee_aed toolbox_exec:file rx_file_perms;
-
-# purpose: allow aee_aed to access storage on N version
-allow aee_aed media_rw_data_file:file  { create_file_perms };
-allow aee_aed media_rw_data_file:dir { create_dir_perms };
 
 # Purpose: mnt/user/*
 allow aee_aed mnt_user_file:dir search;

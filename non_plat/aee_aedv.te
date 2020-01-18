@@ -5,6 +5,13 @@
 # MTK Policy Rule
 # ==============================================
 
+type aee_aedv, domain;
+
+type aee_aedv_exec, exec_type, file_type, vendor_file_type;
+typeattribute aee_aedv mlstrustedsubject;
+
+init_daemon_domain(aee_aedv)
+
 
 # Date : WK14.32
 # Operation : AEE UT
@@ -18,16 +25,8 @@ allow aee_aedv etb_device:chr_file rw_file_perms;
 # AED start: /dev/block/expdb
 allow aee_aedv block_device:dir search;
 
-# open/dev/mtd/mtd12 failed(expdb)
-allow aee_aedv mtd_device:dir create_dir_perms;
-allow aee_aedv mtd_device:chr_file rw_file_perms;
-
 # NE flow: /dev/RT_Monitor
 allow aee_aedv RT_Monitor_device:chr_file r_file_perms;
-
-# aee db dir and db files
-allow aee_aedv sdcard_type:dir create_dir_perms;
-allow aee_aedv sdcard_type:file create_file_perms;
 
 #data/aee_exp
 allow aee_aedv aee_exp_vendor_file:dir create_dir_perms;
@@ -50,13 +49,6 @@ allow aee_aedv domain:lnk_file getattr;
 
 #core-pattern
 allow aee_aedv usermodehelper:file r_file_perms;
-
-#property
-allow aee_aedv init:unix_stream_socket connectto;
-allow aee_aedv property_socket:sock_file write;
-
-allow aee_aedv init:process getsched;
-allow aee_aedv kernel:process getsched;
 
 # Date: W15.34
 # Operation: Migration
@@ -283,7 +275,8 @@ allow aee_aedv debugfs_dynamic_debug:file r_file_perms;
 # [ 241.001976] <1>.(1)[209:logd.auditd]type=1400 audit(1262304586.172:515): avc: denied { read }
 # for pid=1978 comm="aee_aedv64" name="atag,devinfo" dev="sysfs" ino=2349 scontext=u:r:aee_aedv:s0
 # tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-allow aee_aedv sysfs:file { r_file_perms write };
+allow aee_aedv sysfs:file r_file_perms;
+allow aee_aedv sysfs_mrdump_lbaooo:file w_file_perms;
 
 # Purpose: Allow aee_aedv to use HwBinder IPC.
 hwbinder_use(aee_aedv)
