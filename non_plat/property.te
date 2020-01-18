@@ -158,9 +158,6 @@ type mtk_disable_c2k_cap_prop, property_type, mtk_core_property_type;
 #=============allow em to set modem reset delay property================
 type mtk_debug_md_reset_prop, property_type, mtk_core_property_type;
 
-#=============allow em to set wcn core dump mode property================
-type mtk_connsys_coredump_mode_prop, property_type, mtk_core_property_type;
-
 #=============allow em to set video log omx.* property================
 type mtk_omx_log_prop, property_type, mtk_core_property_type;
 

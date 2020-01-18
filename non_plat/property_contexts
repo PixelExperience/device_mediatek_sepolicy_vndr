@@ -154,9 +154,6 @@ persist.vendor.radio.disable_c2k_cap u:object_r:mtk_disable_c2k_cap_prop:s0
 #=============allow em to set modem reset delay property================
 vendor.mediatek.debug.md.reset.wait u:object_r:mtk_debug_md_reset_prop:s0
 
-#=============allow em to set wcn core dump mode property================
-persist.vendor.connsys.coredump.mode u:object_r:mtk_connsys_coredump_mode_prop:s0
-
 #=============allow em to set video log omx.* property================
 vendor.mtk.omx. u:object_r:mtk_omx_log_prop:s0
 
