@@ -148,3 +148,8 @@ allow mediacodec graphics_device:dir search;
 allow mediacodec proc_m4u:file r_file_perms;
 allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_SEC_INIT;
 
+# Date : WK19.40
+# Purpose: Android Migration for Hybrid Encoder
+allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_CONFIG_PORT;
+allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_CACHE_SYNC;
+
