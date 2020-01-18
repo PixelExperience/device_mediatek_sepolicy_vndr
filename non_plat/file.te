@@ -255,6 +255,7 @@ type consyslog_data_file, file_type, data_file_type;
 type sysfs_comport_type, fs_type, sysfs_type;
 type sysfs_uart_info, fs_type, sysfs_type;
 
-# Date : WK1817
-# Purpose : for fuelgauged access
-type battery_node, fs_type, sysfs_type;
+# Date : WK1820
+# Purpose : for charger to access vbus info and pump_express
+type sysfs_vbus, fs_type, sysfs_type;
+type sysfs_pump_express, fs_type, sysfs_type;
