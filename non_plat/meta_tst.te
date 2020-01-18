@@ -287,7 +287,7 @@ allow meta_tst mddb_data_file:file { create open write read getattr};
 allow meta_tst mddb_data_file:dir { search write add_name create getattr read open };
 
 # Date: W17.43
-# Purpose : Allow meta_tst to call android.hardware.audio@2.0-service-mediatek
+# Purpose : Allow meta_tst to call Audio HAL service
 binder_call(meta_tst, mtk_hal_audio)
 allow meta_tst mtk_hal_audio:binder call;
 allow meta_tst hal_audio_hwservice:hwservice_manager find;
