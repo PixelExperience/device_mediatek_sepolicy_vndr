@@ -169,9 +169,6 @@ vendor.debug.bq. u:object_r:graphics_debug_prop:s0
 persist.mtkcam. u:object_r:mtkcam_prop:s0
 mtkcam. u:object_r:mtkcam_prop:s0
 
-#=============allow radio to set presence config================
-persist.vendor.mtk_uce_ua_support u:object_r:persist_uce_prop:s0
-
 #============= atm modem mode property(ATM) ==============
 persist.vendor.atm.mdmode u:object_r:atm_mdmode_prop:s0
 
