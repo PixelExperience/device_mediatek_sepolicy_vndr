@@ -37,6 +37,7 @@
 /data/extmdl(/.*)? u:object_r:mdlog_data_file:s0
 #/data/http-proxy-cfg(/.*)? u:object_r:http_proxy_cfg_data_file:s0
 /data/log_temp(/.*)? u:object_r:logtemp_data_file:s0
+/data/debuglogger(/.*)? u:object_r:debuglog_data_file:s0
 #/data/lost\+found(/.*)? u:object_r:lost_found_data_file:s0
 /data/mdlog(/.*)? u:object_r:mdlog_data_file:s0
 /data/mdl(/.*)? u:object_r:mdlog_data_file:s0
