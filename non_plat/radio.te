@@ -201,3 +201,8 @@ set_prop(radio, mtk_telecom_vibrate)
 # Purpose : Allow to use mtk_gprs_attach_type
 set_prop(radio, mtk_gprs_attach_type)
 
+# Date : 2018/07/12
+# Purpose : Allow EM to use Lbs Hidl
+binder_call(radio, lbs_hidl_service)
+allow radio mtk_hal_lbs_hwservice:hwservice_manager find;
+
