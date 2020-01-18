@@ -21,7 +21,7 @@ allow lbs_dbg lbs_dbg_data_file:file create_file_perms;
 
 allow lbs_dbg system_data_file:lnk_file read;
 
-allow lbs_dbg mnld_device:chr_file rw_file_perms;
+#allow lbs_dbg mnld_device:chr_file rw_file_perms;
 
 allow lbs_dbg media_rw_data_file:dir search;
 allow lbs_dbg media_rw_data_file:dir { read open };
