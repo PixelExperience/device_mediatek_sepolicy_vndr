@@ -122,8 +122,6 @@ allow mediacodec mtk_cmdq_device:chr_file { read ioctl open };
 # Date : WK17.28
 # Operation : MT6757 SQC
 # Purpose : Change thermal config
-allow mediacodec mtk_thermal_config_prop:file { getattr open read };
-allow mediacodec mtk_thermal_config_prop:property_service set;
 
 
 # Date : WK17.30
@@ -136,8 +134,7 @@ allow mediacodec mtk_hal_power:unix_stream_socket connectto;
 # Date : WK17.12
 # Operation : MT6799 SQC
 # Purpose : Change thermal config
-allow mediacodec mtk_thermal_config_prop:file { getattr open read };
-allow mediacodec mtk_thermal_config_prop:property_service set;
+set_prop(mediacodec, mtk_thermal_config_prop)
 
 # Date : WK17.43
 # Operation : Migration
