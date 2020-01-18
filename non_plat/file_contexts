@@ -562,7 +562,6 @@
 /(system\/vendor|vendor)/bin/mnld u:object_r:mnld_exec:s0
 /system/bin/connsyslogger u:object_r:connsyslogger_exec:s0
 
-/(system\/vendor|vendor)/bin/sysenv_daemon u:object_r:sysenv_daemon_exec:s0
 /(system\/vendor|vendor)/bin/biosensord_nvram u:object_r:biosensord_nvram_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-mediatek u:object_r:mtk_hal_bluetooth_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.gnss@1\.1-service u:object_r:mtk_hal_gnss_exec:s0
