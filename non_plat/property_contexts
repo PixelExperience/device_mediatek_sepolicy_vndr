@@ -161,7 +161,6 @@ ro.mtk_md_mims_support u:object_r:mtk_telephony_sensitive_prop:s0
 thermal.manager.data u:object_r:mtk_thermal_config_prop:s0
 
 #=============allow composer set property ============================
-ro.sf.lcd_density u:object_r:graphics_config_prop:s0
 debug.sf.hwc_pid u:object_r:graphics_hwc_pid_prop:s0
 
 #============= mtkcam property ============================
