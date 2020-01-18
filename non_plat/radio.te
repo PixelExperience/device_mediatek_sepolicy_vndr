@@ -208,4 +208,8 @@ set_prop(radio, mtk_gprs_attach_type)
 binder_call(radio, lbs_hidl_service)
 allow radio mtk_hal_lbs_hwservice:hwservice_manager find;
 
+# Date : 2018/08/12
+# Purpose : Allow EM to set poweroffmd property
+set_prop(radio, mtk_power_off_md_type)
+
 get_prop(radio, persist_mtk_aeev_prop);

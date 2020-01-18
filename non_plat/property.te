@@ -182,6 +182,9 @@ type mtk_telecom_vibrate, property_type, extended_core_property_type;
 #=============allow em to set gprs attach type property================
 type mtk_gprs_attach_type, property_type, extended_core_property_type;
 
+#=============allow em to set poweroffmd property================
+type mtk_power_off_md_type, property_type, extended_core_property_type;
+
 #=============allow meta_tst to stop specific service ===============
 type ctl_mobile_log_d_prop, property_type;
 type ctl_mnld_prop, property_type;

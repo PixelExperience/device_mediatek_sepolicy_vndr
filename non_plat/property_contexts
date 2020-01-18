@@ -179,6 +179,11 @@ persist.vendor.radio.telecom.vibrate u:object_r:mtk_telecom_vibrate:s0
 #=============allow em to set gprs attach type property================
 persist.vendor.radio.gprs.attach.type u:object_r:mtk_gprs_attach_type:s0
 
+#=============allow em to set poweroffmd property================
+vendor.ril.test.poweroffmd u:object_r:mtk_power_off_md_type:s0
+vendor.ril.testmode u:object_r:mtk_power_off_md_type:s0
+
+
 #=============allow system server to set meta_connecttype property  ==============
 persist.vendor.meta.connecttype u:object_r:meta_connecttype_prop:s0
 
