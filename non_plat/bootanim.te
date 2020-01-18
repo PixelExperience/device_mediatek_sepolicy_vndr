@@ -14,24 +14,29 @@ allow bootanim qemu_pipe_device:chr_file rw_file_perms;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
-allow bootanim proc_ged:file {open read write ioctl getattr};
+allow bootanim proc_ged:file rw_file_perms;
 
 # Date : WK17.43
 # Operation : Migration
 # Purpose : For MTK perfmgr
-allow bootanim proc_perfmgr:dir {search read};
-allow bootanim proc_perfmgr:file {open read ioctl};
+allow bootanim proc_perfmgr:dir r_dir_perms;
+allow bootanim proc_perfmgr:file r_file_perms;
+
+# Date : WK19.11
+# Operation : Migration
+# Purpose : Allow to access ged for ioctl related functions
+allowxperm bootanim proc_ged:file ioctl {
+  GED_BRIDGE_IO_LOG_BUF_WRITE
+  GED_BRIDGE_IO_LOG_BUF_GET
+  GED_BRIDGE_IO_GE_GET
+  GED_BRIDGE_IO_GE_SET
+  GED_BRIDGE_IO_MONITOR_3D_FENCE
+  GED_BRIDGE_IO_QUERY_INFO
+  GED_BRIDGE_IO_GE_INFO
+};
 allowxperm bootanim proc_perfmgr:file ioctl {
   FPSGO_QUEUE
   FPSGO_DEQUEUE
   FPSGO_QUEUE_CONNECT
   FPSGO_BQID
 };
-
-# Date : WK19.11
-# Operation : Migration
-# Purpose : Allow to access ged for ioctl related functions
-allowxperm bootanim proc_ged:file ioctl { GED_BRIDGE_IO_LOG_BUF_WRITE GED_BRIDGE_IO_LOG_BUF_GET GED_BRIDGE_IO_GE_GET GED_BRIDGE_IO_GE_SET GED_BRIDGE_IO_MONITOR_3D_FENCE GED_BRIDGE_IO_QUERY_INFO };
-
-allowxperm bootanim proc_perfmgr:file ioctl { GED_BRIDGE_IO_LOG_BUF_WRITE GED_BRIDGE_IO_BOOST_GPU_FREQ GED_BRIDGE_IO_IOCTLCMD_0F GED_BRIDGE_IO_IOCTLCMD_10 };
-
