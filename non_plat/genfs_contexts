@@ -91,6 +91,7 @@ genfscon sysfs /devices/platform/mt_charger/power_supply u:object_r:sysfs_batter
 genfscon sysfs /devices/platform/mt-rtc/rtc    u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/mt-pmic u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/1000d000.pwrap/mt-pmic u:object_r:sysfs_pmu:s0
+genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6358-pmic/mt-pmic u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6359-pmic/mt-pmic u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/mt6333-user u:object_r:sysfs_pmu:s0
 genfscon sysfs /devices/platform/mt6311-user u:object_r:sysfs_pmu:s0

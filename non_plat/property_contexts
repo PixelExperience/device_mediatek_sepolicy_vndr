@@ -18,6 +18,7 @@ vendor.mdlogger u:object_r:debug_mdlogger_prop:s0
 vendor.mdl u:object_r:vendor_mdl_prop:s0
 vendor.starting.mode  u:object_r:vendor_mdl_start_prop:s0
 vendor.usb. u:object_r:vendor_usb_prop:s0
+persist.vendor.usb. u:object_r:vendor_usb_prop:s0
 persist.vendor.mdl u:object_r:persist_mdlog_prop:s0
 vendor.pullmdlog u:object_r:vendor_mdl_pulllog_prop:s0
 

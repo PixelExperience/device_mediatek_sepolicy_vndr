@@ -230,3 +230,7 @@ allow radio aee_aed:unix_stream_socket connectto;
 # Operation : Get subpimc reigster status
 # Purpose : Engineering mode need get subpimic register status
 allow radio debugfs_regmap:dir { search };
+
+# Date : 2018/09/29
+# Purpose : Allow get USB Current Speed in Engineer Mode
+get_prop(radio, vendor_usb_prop);
