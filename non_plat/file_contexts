@@ -287,6 +287,7 @@
 /dev/socket/wpa_wlan0(/.*)? u:object_r:wpa_wlan0_socket:s0
 /dev/stpant(/.*)? u:object_r:stpant_device:s0
 /dev/stpbt(/.*)? u:object_r:stpbt_device:s0
+/dev/fw_log_bt u:object_r:fw_log_bt_device:s0
 /dev/stpgps        u:object_r:mnld_device:s0
 /dev/stpgps(/.*)? u:object_r:stpgps_device:s0
 /dev/stpwmt(/.*)? u:object_r:stpwmt_device:s0
