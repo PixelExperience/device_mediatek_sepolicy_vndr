@@ -43,7 +43,6 @@ allow radio mtgpio_device:chr_file { read ioctl open };
 allow radio stpbt_device:chr_file { read write open };
 allow radio stpant_device:chr_file { read write open };
 allow radio bt_int_adp_socket:sock_file write;
-allow radio persist_ril_prop:property_service set;
 allow radio mt6605_device:chr_file { read write ioctl open getattr };
 allow radio nfc_socket:dir { write add_name remove_name search };
 allow radio system_prop:property_service set;
