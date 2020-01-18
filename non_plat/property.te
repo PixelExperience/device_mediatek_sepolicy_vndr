@@ -42,6 +42,9 @@ type mtk_wifi_prop, property_type, mtk_core_property_type;
 type debug_mdlogger_prop, property_type, mtk_core_property_type;
 type vendor_mdl_prop, property_type, mtk_core_property_type;
 type vendor_mdl_start_prop, property_type, mtk_core_property_type;
+type vendor_usb_prop, property_type, mtk_core_property_type;
+type persist_mdlog_prop, property_type, mtk_core_property_type;
+type vendor_mdl_pulllog_prop, property_type, mtk_core_property_type;
 
 #=============allow AEE==============
 type persist_mtk_aee_prop, property_type, mtk_core_property_type;
