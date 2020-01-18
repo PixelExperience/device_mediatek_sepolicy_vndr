@@ -239,6 +239,7 @@ type debugfs_vpu_device_dbg, fs_type, debugfs_type;
 # SF bqdump
 type sf_bqdump_data_file, file_type, data_file_type, core_data_file_type;
 type nfc_socket, file_type, data_file_type, core_data_file_type;
+type vendor_nfc_socket, file_type, data_file_type;
 # factory data file
 type factory_data_file, file_type, data_file_type, core_data_file_type;
 # Modem Log folder

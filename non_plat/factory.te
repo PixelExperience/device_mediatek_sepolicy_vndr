@@ -376,3 +376,8 @@ allow factory proc_version:file {read open getattr};
 
 # Allow to use persist.radio.multisim.config
 allow factory exported3_radio_prop:file { read open getattr };
+
+# Purpose : NFC
+allow factory vendor_nfc_socket:dir { write add_name remove_name search };
+allow factory vendor_nfc_socket:sock_file { create write unlink setattr };
+
