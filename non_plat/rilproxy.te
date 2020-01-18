@@ -66,3 +66,9 @@ allow mtkrild nvdata_file:file create_file_perms;
 # Operation: P migration
 # Purpose: Allow supplementary service HIDL to set vendor property
 set_prop(mtkrild, mtk_ss_vendor_prop)
+
+# Date : W19.16
+# Operation: Q migration
+# Purpose: Allow rild access to send SUPL INIT to mnld
+allow rild mnld:unix_dgram_socket sendto;
+allow mtkrild mnld:unix_dgram_socket sendto;
