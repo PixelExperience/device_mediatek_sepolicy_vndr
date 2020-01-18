@@ -55,7 +55,7 @@ allow radio ttyGS_device:chr_file { open read write ioctl };
 #Date : 2015/11/13
 #Operation: IT
 # Purpose: for set auto answer
-allow radio mtk_em_auto_answer_prop:property_service set;
+set_prop(radio, mtk_em_auto_answer_prop)
 
 # Date : 2016/07/05
 # Purpose :
@@ -79,8 +79,8 @@ allow radio nvdata_file:file rw_file_perms;
 
 #Date : 2016/11/08
 #Operation: IT
-#Purpose: for set persist.net.auto.tethering
-allow radio mtk_em_net_auto_tethering_prop:property_service set;
+#Purpose: for EM set persist.net.auto.tethering
+set_prop(radio, mtk_em_net_auto_tethering_prop)
 
 # Date : WK17.03
 # Operation : O Migration
