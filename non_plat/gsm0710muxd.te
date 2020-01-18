@@ -21,7 +21,7 @@ set_prop(gsm0710muxd, ctl_rildaemon_prop)
 set_prop(gsm0710muxd, ctl_ril-daemon-mtk_prop)
 set_prop(gsm0710muxd, ctl_fusion_ril_mtk_prop)
 set_prop(gsm0710muxd, gsm0710muxd_prop)
-#set_prop(gsm0710muxd, radio_prop)
+set_prop(gsm0710muxd, vendor_radio_prop)
 # allow set muxreport control properties
 set_prop(gsm0710muxd, ril_mux_report_case_prop)
 
