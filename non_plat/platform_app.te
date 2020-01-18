@@ -102,6 +102,7 @@ hal_client_domain(platform_app, mtk_hal_log)
 # Package: com.mediatek.mtklogger
 allow platform_app debug_mdlogger_prop:file { read getattr open };
 allow platform_app debug_mtklog_prop:file { read getattr open };
+get_prop(platform_app, vendor_bluetooth_prop)
 get_prop(platform_app, mobile_log_prop)
 
 get_prop(platform_app, vendor_connsysfw_prop)
