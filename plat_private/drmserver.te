@@ -3,4 +3,4 @@
 # ======================
 
 # =======drmserver======
-#allow drmserver sysfs:file { read open };
+allow drmserver access_sys_file:file { read open };
