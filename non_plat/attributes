@@ -51,3 +51,9 @@ attribute hal_nvramagent_server;
 attribute mtk_hal_fm;
 attribute mtk_hal_fm_client;
 attribute mtk_hal_fm_server;
+
+# Date: 2018/03/23
+# log hidl
+attribute mtk_hal_log;
+attribute mtk_hal_log_client;
+attribute mtk_hal_log_server;

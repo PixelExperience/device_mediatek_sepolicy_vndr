@@ -41,3 +41,7 @@ vendor.mediatek.hardware.keymaster_attestation::IKeymasterDevice u:object_r:mtk_
 # Date: 2018/05/25
 # FM HIDL
 vendor.mediatek.hardware.fm::IFmRadio u:object_r:mtk_hal_fm_hwservice:s0
+
+# Date: 2018/03/23
+# log hidl
+vendor.mediatek.hardware.log::ILog u:object_r:mtk_hal_log_hwservice:s0
