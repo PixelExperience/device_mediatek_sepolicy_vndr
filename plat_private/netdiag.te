@@ -104,3 +104,4 @@ allow netdiag self:udp_socket { ioctl create };
 allow netdiag proc_qtaguid_stat:dir { read open };
 allow netdiag proc_qtaguid_stat:file { read getattr open };
 allow netdiag vendor_default_prop:file  { read getattr open };
+allow netdiag vendor_default_prop:property_service { set };
