@@ -17,6 +17,7 @@ allow system_server wmtWifi_device:chr_file w_file_perms;
 #allow system_server proc:file w_file_perms;
 
 # /data/dontpanic access.
+typeattribute system_server data_between_core_and_vendor_violators;
 allow system_server dontpanic_data_file:dir search;
 
 # /data/agps_supl access.
@@ -215,7 +216,3 @@ allow system_server mtk_thermal_config_prop:property_service set;
 # Purpose : perfmgr permission
 allow system_server proc_perfmgr:dir {read search};
 allow system_server proc_perfmgr:file {open read ioctl};
-
-# Date :WK1817
-# Purpose : for /proc/uid_procstat/set from UsageStatsService
-allow system_server proc_uid_procstat:file w_file_perms;

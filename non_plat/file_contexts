@@ -561,8 +561,7 @@
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.pq@2\.0-service u:object_r:mtk_hal_pq_exec:s0
 # Keymaster Attestation Hal
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.keymaster_attestation@1\.1-service u:object_r:hal_keymaster_attestation_exec:s0
-#For /proc/uid_procstat/set from UsageStatsService
-/proc/uid_procstat/set u:object_r:proc_uid_procstat:s0
+
 
 #############################
 # System/bin files
