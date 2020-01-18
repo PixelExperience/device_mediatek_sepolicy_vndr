@@ -9,7 +9,6 @@ type resource_cache_data_file, file_type, data_file_type;
 type http_proxy_cfg_data_file, file_type, data_file_type;
 type acdapi_data_file, file_type, data_file_type;
 type ppp_data_file, file_type, data_file_type;
-type wide_dhcpv6_data_file, file_type, data_file_type;
 type wpa_supplicant_data_file, file_type, data_file_type;
 type radvd_data_file, file_type, data_file_type;
 type volte_vt_socket, file_type;
