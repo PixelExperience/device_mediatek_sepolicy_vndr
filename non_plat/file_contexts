@@ -548,6 +548,7 @@
 /(system\/vendor|vendor)/bin/wmt_loader u:object_r:wmt_loader_exec:s0
 /(system\/vendor|vendor)/bin/spm_loader u:object_r:spm_loader_exec:s0
 /(system\/vendor|vendor)/bin/ccci_mdinit u:object_r:ccci_mdinit_exec:s0
+/(system\/vendor|vendor)/bin/factory u:object_r:factory_exec:s0
 
 /(system\/vendor|vendor)/bin/mnld u:object_r:mnld_exec:s0
 /(system\/vendor|vendor)/bin/connsyslogger u:object_r:connsyslogger_exec:s0
