@@ -97,10 +97,11 @@ hal_client_domain(platform_app, mtk_hal_log)
 
 # Date: 2018/06/08
 # Operation : Migration
-# Purpose : MTKLogger need get netlog/mdlog property for property change
+# Purpose : MTKLogger need get netlog/mdlog/mobilelog property for property change
 # Package: com.mediatek.mtklogger
 allow platform_app debug_mdlogger_prop:file { read getattr open };
 allow platform_app debug_mtklog_prop:file { read getattr open };
+get_prop(platform_app, mobile_log_prop)
 
 get_prop(platform_app, vendor_connsysfw_prop)
 

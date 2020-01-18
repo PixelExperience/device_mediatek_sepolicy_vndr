@@ -104,7 +104,7 @@ type persist_bt_prop, property_type, mtk_core_property_type;
 type vendor_factory_idle_state_prop, property_type, mtk_core_property_type;
 
 #============= allow mobile log property ===============
-type mobile_log_prop, property_type, mtk_core_property_type;
+type mobile_log_prop, property_type, extended_core_property_type;
 
 #============= allow service.nvram_init property ===============
 type service_nvram_init_prop, property_type, mtk_core_property_type;
