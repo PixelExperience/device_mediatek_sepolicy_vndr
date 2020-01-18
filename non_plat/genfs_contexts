@@ -34,7 +34,7 @@ genfscon proc /msdc_debug u:object_r:proc_msdc_debug:s0
 genfscon proc /pidmap u:object_r:proc_pidmap:s0
 genfscon proc /kpageflags u:object_r:proc_kpageflags:s0
 genfscon proc /mtk_memcfg/slabtrace u:object_r:proc_slabtrace:s0
-genfscon proc /mtk_cmdq_debug/status u:object_r:proc_cmqd_debug:s0
+genfscon proc /mtk_cmdq_debug/status u:object_r:proc_cmdq_debug:s0
 
 
 genfscon iso9660 / u:object_r:iso9660:s0

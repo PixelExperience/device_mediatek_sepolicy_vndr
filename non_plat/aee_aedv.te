@@ -397,6 +397,9 @@ userdebug_or_eng(`allow aee_aedv self:capability { sys_ptrace dac_read_search da
 #Purpose: Allow aee_aedv to read /sys/mtk_memcfg/slabtrace
 allow aee_aedv proc_slabtrace:file r_file_perms;
 
+#Purpose: Allow aee_aedv to read /proc/mtk_cmdq_debug/status
+allow aee_aedv proc_cmdq_debug:file r_file_perms;
+
 # temp solution
 get_prop(aee_aedv, vendor_default_prop)
 

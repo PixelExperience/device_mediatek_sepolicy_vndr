@@ -126,5 +126,5 @@ allow dumpstate sf_rtt_file:file r_file_perms;
 #Purpose: Allow dumpstate to read/write /sys/mtk_memcfg/slabtrace
 allow dumpstate proc_slabtrace:file r_file_perms;
 
-#Purpose: Allow dumpstate to read/write /sys/mtk_cmdq_debug/status
-allow dumpstate proc_cmqd_debug:file r_file_perms;
+#Purpose: Allow dumpstate to read /proc/mtk_cmdq_debug/status
+allow dumpstate proc_cmdq_debug:file r_file_perms;

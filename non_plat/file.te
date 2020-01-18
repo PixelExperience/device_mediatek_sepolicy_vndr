@@ -69,7 +69,7 @@ type proc_msdc_debug, fs_type, proc_type;
 type proc_pidmap, fs_type, proc_type;
 type proc_kpageflags, fs_type, proc_type;
 type proc_slabtrace, fs_type, proc_type;
-type proc_cmqd_debug, fs_type, proc_type;
+type proc_cmdq_debug, fs_type, proc_type;
 type sysfs_therm, fs_type, sysfs_type;
 type sysfs_fps, fs_type, sysfs_type;
 type sysfs_ccci, fs_type, sysfs_type;
