@@ -202,13 +202,13 @@ allow meta_tst storage_file:lnk_file read;
 allow meta_tst sysfs_ccci:dir search;
 allow meta_tst sysfs_ccci:file r_file_perms;
 
-#Date: W16.17
-# Purpose:  N Migration for meta_tst get com port type and uart port info
-# detail avc log: [   11.751803] <1>.(1)[227:logd.auditd]type=1400 audit(1262304016.560:10):
-#avc: denied { read } for pid=203 comm="meta_tst" name="meta_com_type_info" dev=
-#"sysfs" ino=11073 scontext=u:r:meta_tst:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
+#Date: W18.22
+# Purpose: P Migration meta_tst get com port type/uart port info/boot mode/usb state/usb close
 allow meta_tst sysfs_comport_type:file rw_file_perms;
 allow meta_tst sysfs_uart_info:file rw_file_perms;
+allow meta_tst sysfs_boot_mode:file rw_file_perms;
+allow meta_tst sysfs_android_usb:file rw_file_perms;
+allow meta_tst sysfs_android_usb:dir search;
 
 #Date: W16.17
 # Purpose:  N Migration For meta_tst load MD NVRAM database
