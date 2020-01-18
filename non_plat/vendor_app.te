@@ -47,6 +47,7 @@ allow vendor_app vendor_app_file:lnk_file { open getattr read };
 unix_socket_connect(vendor_app, mnld, mnld);
 #============= vendor_app ==============
 allow vendor_app mnld:unix_stream_socket connectto;
+allow vendor_app connsyslogger:unix_stream_socket connectto;
 # PMTKLoggerProxy need copy exception db from data/vendor folder
 allow vendor_app aee_exp_data_file:file r_file_perms;
 allow vendor_app aee_exp_data_file:dir r_dir_perms;

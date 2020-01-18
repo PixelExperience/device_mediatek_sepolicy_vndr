@@ -171,3 +171,7 @@ type atm_mdmode_prop, property_type;
 
 #============= atm ip address property ==============
 type atm_ipaddr_prop, property_type;
+
+#=============allow consyslogger==============
+type vendor_consyslogger_prop, property_type, mtk_core_property_type;
+

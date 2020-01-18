@@ -180,3 +180,6 @@ persist.atm.mdmode u:object_r:atm_mdmode_prop:s0
 
 #============= atm ip address property(ATM) ==============
 persist.atm.ipaddress u:object_r:atm_ipaddr_prop:s0
+
+#=============allow consyslogger==============
+vendor.consyslogger u:object_r:vendor_consyslogger_prop:s0

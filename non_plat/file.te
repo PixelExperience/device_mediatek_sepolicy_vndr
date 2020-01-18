@@ -242,3 +242,6 @@ type mddb_data_file, file_type, data_file_type;
 # Date : WK1814
 # Purpose : for factory to get boot mode
 type sysfs_boot, fs_type, sysfs_type;
+
+# consys Log folder
+type consyslog_data_file, file_type, data_file_type;
