@@ -676,3 +676,9 @@
 /vendor/bin/hw/android\.hardware\.drm@1\.2-service\.clearkey           u:object_r:hal_drm_clearkey_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@1\.2-service-lazy\.clearkey      u:object_r:hal_drm_clearkey_exec:s0
 
+
+# Date : 2019/10/28
+# Purpose : move these contexts from plat_private/file_contexts
+/(system\/vendor|vendor)/bin/aee_aedv u:object_r:aee_aedv_exec:s0
+/(system\/vendor|vendor)/bin/aee_aedv64 u:object_r:aee_aedv_exec:s0
+/vendor/bin/aeev  u:object_r:aee_aedv_exec:s0
