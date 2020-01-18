@@ -45,6 +45,7 @@ type debug_mdlogger_prop, property_type, mtk_core_property_type;
 type persist_mtk_aee_prop, property_type, mtk_core_property_type;
 type persist_aee_prop, property_type, mtk_core_property_type;
 type debug_mtk_aee_prop, property_type, mtk_core_property_type;
+type ro_mtk_aee_prop, property_type, mtk_core_property_type;
 
 #=============allow aee_dumpstate==============
 type debug_bq_dump_prop, property_type, mtk_core_property_type;
