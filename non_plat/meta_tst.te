@@ -209,6 +209,8 @@ allow meta_tst sysfs_uart_info:file rw_file_perms;
 allow meta_tst sysfs_boot_mode:file rw_file_perms;
 allow meta_tst sysfs_android_usb:file rw_file_perms;
 allow meta_tst sysfs_android_usb:dir search;
+allow meta_tst sysfs_usb_cmode:file rw_file_perms;
+allow meta_tst sysfs_usb_cmode:dir search;
 
 #Date: W16.17
 # Purpose:  N Migration For meta_tst load MD NVRAM database
@@ -340,8 +342,7 @@ allow meta_tst audiohal_prop:property_service set;
 
 #Data:W1745
 # Purpose : Allow meta_tst to open and read proc/bootprof
-allow meta_tst proc:file write;
-allow meta_tst proc:file getattr;
+allow meta_tst proc_bootprof:file {write open read};
 
 # Date:W17.51
 # Operation : lbs hal

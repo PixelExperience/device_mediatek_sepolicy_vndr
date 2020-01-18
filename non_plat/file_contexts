@@ -485,6 +485,7 @@
 /sys/devices/platform/(charger|battery)/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0
 /sys/devices/platform/(charger|battery)/Pump_Express u:object_r:sysfs_pump_express:s0
 /sys/devices/platform/mt_usb/musb-hdrc/dual_role_usb(/.*)? u:object_r:sysfs_dual_role_usb20:s0
+/sys/devices/platform/mt_usb/musb-hdrc/cmode(/.*)? u:object_r:sysfs_usb_cmode:s0
 
 #############################
 # debugfs files
