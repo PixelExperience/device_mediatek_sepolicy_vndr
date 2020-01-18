@@ -1,0 +1,10 @@
+# ==============================================
+# MTK Attribute declarations
+# ==============================================
+
+# Date: 2019/05/27
+# GPU HIDL
+attribute hal_gpu;
+attribute hal_gpu_client;
+attribute hal_gpu_server;
+
