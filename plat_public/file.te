@@ -5,3 +5,7 @@
 #for drm key install
 type provision_file, file_type, data_file_type;
 type key_install_data_file, file_type, data_file_type;
+
+# Date : WK18.16
+# Purpose: Android Migration
+type sysfs_mmcblk, fs_type, sysfs_type;
