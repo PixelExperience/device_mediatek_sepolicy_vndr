@@ -216,3 +216,7 @@ allow system_server mtk_hal_hdmi:binder call;
 #Date:2019/10/08
 #Operation:Q Migration
 allow system_server proc_battery_cmd:dir search;
+
+#Date:2019/10/09
+#Operation:Q Migration
+get_prop(system_server, debug_mtk_aee_prop)
