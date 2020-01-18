@@ -280,6 +280,7 @@ ro.vendor.mtk_exchange_support u:object_r:mtk_default_prop:s0
 vendor.met.running u:object_r:mtk_default_prop:s0
 ro.vendor.mtk_disable_cap_switch u:object_r:mtk_default_prop:s0
 ro.vendor.mtk_sim_card_onoff u:object_r:mtk_default_prop:s0
+ro.vendor.mtk_perf_plus u:object_r:mtk_default_prop:s0
 
 #============mtk emmc=======#
 ro.vendor.mtk_emmc_support u:object_r:mtk_emmc_support_prop:s0
