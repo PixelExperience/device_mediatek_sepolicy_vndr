@@ -130,6 +130,10 @@ set_prop(rild, vendor_ril_ipo_prop)
 # Operation: P migration
 # Purpose: Allow carrier express HIDL to set vendor property
 set_prop(rild, mtk_cxp_vendor_prop)
+allow rild mnt_vendor_file:dir search;
+allow rild mnt_vendor_file:file create_file_perms;
+allow rild nvdata_file:dir create_dir_perms;
+allow rild nvdata_file:file create_file_perms;
 
 #Date : W18.29
 #Purpose: allow rild access binder to mtk_hal_secure_element

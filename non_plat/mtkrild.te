@@ -129,6 +129,10 @@ set_prop(mtkrild, vendor_radio_prop)
 # Operation: P migration
 # Purpose: Allow carrier express HIDL to set vendor property
 set_prop(mtkrild, mtk_cxp_vendor_prop)
+allow mtkrild mnt_vendor_file:dir search;
+allow mtkrild mnt_vendor_file:file create_file_perms;
+allow mtkrild nvdata_file:dir create_dir_perms;
+allow mtkrild nvdata_file:file create_file_perms;
 
 # Date : WK18.31
 # Operation: P migration
