@@ -131,3 +131,18 @@ allow dumpstate proc_cmdq_debug:file r_file_perms;
 
 #Purpose: Allow dumpstate to read /proc/cpuhvfs/dbg_repo
 allow dumpstate proc_dbg_repo:file r_file_perms;
+
+#Purpose: Allow dumpstate to read /proc/isp_p2/isp_p2_dump
+allow dumpstate proc_isp_p2_dump:file r_file_perms;
+
+#Purpose: Allow dumpstate to read /proc/isp_p2/isp_p2_kedump
+allow dumpstate proc_isp_p2_kedump:file r_file_perms;
+
+#Purpose: Allow dumpstate to read /proc/mali/memory_usage
+allow dumpstate proc_memory_usage:file r_file_perms;
+
+#Purpose: Allow dumpstate to read /proc/mtk_es_reg_dump
+allow dumpstate proc_mtk_es_reg_dump:file r_file_perms;
+
+#Purpose: Allow dumpstate to read /sys/power/mtkpasr/execstate
+allow dumpstate sysfs_execstate:file r_file_perms;
