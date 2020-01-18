@@ -98,3 +98,4 @@ allow mnld atci_service:unix_dgram_socket sendto;
 
 allow mnld sysfs_boot_mode:file { read open };
 
+set_prop(mnld, vendor_radio_prop);
