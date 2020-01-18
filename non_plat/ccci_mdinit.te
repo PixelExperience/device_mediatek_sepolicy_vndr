@@ -71,15 +71,11 @@ allow ccci_mdinit protect_s_data_file:dir rw_dir_perms;
 allow ccci_mdinit protect_s_data_file:file create_file_perms;
 allow ccci_mdinit nvram_device:blk_file rw_file_perms;
 allow ccci_mdinit nvdata_device:blk_file rw_file_perms;
-allow ccci_mdinit bootdevice_block_device:blk_file rw_file_perms;
 
 set_prop(ccci_mdinit, ril_mux_report_case_prop)
 
 allow ccci_mdinit ccci_cfg_file:dir create_dir_perms;
 allow ccci_mdinit ccci_cfg_file:file create_file_perms;
-allow ccci_mdinit block_device:dir search;
-allow ccci_mdinit preloader_block_device:blk_file r_file_perms;
-allow ccci_mdinit secro_block_device:blk_file r_file_perms;
 #===============security relate ==========================
 allow ccci_mdinit preloader_device:chr_file rw_file_perms;
 allow ccci_mdinit misc_sd_device:chr_file r_file_perms;

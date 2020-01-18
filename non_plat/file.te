@@ -137,6 +137,7 @@ type sf_rtt_file, file_type, data_file_type, core_data_file_type;
 type rild-dongle_socket, file_type;
 
 type ccci_cfg_file, file_type, data_file_type;
+type ccci_data_md1_file, file_type, data_file_type;
 type c2k_file, file_type, data_file_type;
 #For sensor
 type sensor_data_file, file_type, data_file_type;
