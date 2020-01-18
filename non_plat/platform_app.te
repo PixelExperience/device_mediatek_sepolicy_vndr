@@ -108,3 +108,15 @@ get_prop(platform_app, vendor_connsysfw_prop)
 # Purpose : JPEG need to use PQ via MMS HIDL
 allow platform_app mtk_hal_mms_hwservice:hwservice_manager find;
 allow platform_app mtk_hal_mms:binder call;
+
+# Date: 2019/07/04
+# Stage: Migration
+# Purpose: Allow to use lomo effect
+# Package: com.mediatek.camera
+#allow platform_app hal_camera_hwservice:hwservice_manager find;
+allow platform_app mtk_hal_camera:binder call;
+
+# Date: 2019/07/04
+# Purpose: Allow platform app to use BGService HIDL and access mtk_hal_camera
+binder_call(platform_app, mtk_hal_camera)
+binder_call(mtk_hal_camera, platform_app)
