@@ -90,3 +90,6 @@ binder_call(mnld, system_server)
 allow mnld fwk_sensor_hwservice:hwservice_manager find;
 allow mnld hwservicemanager_prop:file { read open getattr };
 allow mnld debugfs_tracing:file { open write };
+
+allow mnld sysfs_boot:file { read open };
+allow mnld mnt_vendor_file:dir search;
