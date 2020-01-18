@@ -18,6 +18,7 @@ genfscon proc /driver/icusb u:object_r:proc_icusb:s0
 genfscon proc /mrdump_rst u:object_r:proc_mrdump_rst:s0
 genfscon proc /mtk_battery_cmd u:object_r:proc_battery_cmd:s0
 genfscon proc /ged u:object_r:proc_ged:s0
+genfscon proc /mtk_jpeg u:object_r:proc_mtk_jpeg:s0
 genfscon proc /perfmgr u:object_r:proc_perfmgr:s0
 genfscon proc /driver/wmt_dbg u:object_r:proc_wmtdbg:s0
 
