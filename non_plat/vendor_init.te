@@ -70,3 +70,5 @@ allow vendor_init kernel:key search;
 allow vendor_init expdb_block_device:blk_file rw_file_perms;
 
 set_prop(vendor_init, mtk_wifi_hotspot_prop)
+
+set_prop(vendor_init, persist_aeev_prop)
