@@ -639,6 +639,8 @@
 
 /vendor/bin/loghidlvendorservice u:object_r:loghidlvendorservice_exec:s0
 
+/vendor/bin/em_hidl u:object_r:em_hidl_exec:s0
+
 # Date : 2018/06/15
 # Purpose : mtk EM flash reading
 /proc/mounts u:object_r:proc_flash:s0

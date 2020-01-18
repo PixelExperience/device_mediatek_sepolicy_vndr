@@ -19,7 +19,6 @@
 /system/bin/cmddumper u:object_r:cmddumper_exec:s0
 /system/bin/thermalindicator u:object_r:thermalindicator_exec:s0
 /system/bin/em_svr u:object_r:em_svr_exec:s0
-/vendor/bin/em_hidl u:object_r:em_hidl_exec:s0
 /system/bin/aee_aed u:object_r:aee_aed_exec:s0
 /system/bin/aee_aed64 u:object_r:aee_aed_exec:s0
 /system/bin/aee_dumpstate u:object_r:dumpstate_exec:s0
