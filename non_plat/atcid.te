@@ -9,8 +9,7 @@ type atcid, domain;
 type atcid_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(atcid)
-allow atcid init:unix_stream_socket connectto;
-allow atcid property_socket:sock_file write;
+set_prop(atcid,persist_service_atci_prop)
 allow atcid block_device:dir search;
 allow atcid socket_device:sock_file write;
 
@@ -20,11 +19,8 @@ hwbinder_use(atcid)
 hal_client_domain(atcid, hal_telephony)
 
 allow atcid ttyGS_device:chr_file { read write ioctl open };
-allow atcid persist_service_atci_prop:property_service set;
-allow atcid misc2_device:chr_file { read write open };
 allow atcid wmtWifi_device:chr_file { write open };
 allow atcid misc2_block_device:blk_file { read write open };
-allow atcid bootdevice_block_device:blk_file { open read write };
 allow atci_service gpu_device:chr_file { read write open ioctl getattr };
 allow atcid self:capability sys_time;
 

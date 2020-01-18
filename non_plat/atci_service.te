@@ -13,9 +13,6 @@ init_daemon_domain(atci_service)
 allow atci_service block_device:dir search;
 allow atci_service misc2_block_device:blk_file { open read write };
 allow atci_service misc2_device:chr_file { open read write };
-allow atci_service bootdevice_block_device:blk_file { open read write };
-
-allow atci_service self:capability { net_raw chown fsetid sys_nice net_admin fowner sys_admin };
 allow atci_service camera_isp_device:chr_file { read write ioctl open };
 allow atci_service graphics_device:chr_file { read write ioctl open };
 allow atci_service graphics_device:dir search;
@@ -71,11 +68,9 @@ allow atci_service storage_file:lnk_file read;
 #allow atci_service media_rw_data_file:file { read write create open };
 
 #============= atci_service ==============
-allow atci_service property_socket:sock_file write;
 allow atci_service CAM_CAL_DRV_device:chr_file { read write ioctl open};
 
-allow atci_service init:unix_stream_socket connectto;
-allow atci_service mtk_em_prop:property_service set;
+set_prop(atci_service, mtk_em_prop)
 
 # Date : 2016/03/02
 # Operation : M-Migration
