@@ -53,7 +53,6 @@ allow meta_tst cache_block_device:blk_file rw_file_perms;
 # Date: WK16.12
 # Operation : Migration
 # Purpose : for meta mode nvram
-typeattribute meta_tst data_between_core_and_vendor_violators;
 allow meta_tst nvram_data_file:dir create_dir_perms;
 allow meta_tst nvram_data_file:file create_file_perms;
 allow meta_tst nvram_data_file:lnk_file r_file_perms;
@@ -283,11 +282,11 @@ allow meta_tst system_data_file:lnk_file read;
 allow meta_tst st21nfc_device:chr_file { open read write ioctl };
 allow meta_tst factory_data_file:sock_file { write unlink };
 allow meta_tst nfc_socket:dir search;
-#allow meta_tst vendor_file:file { getattr execute execute_no_trans read open };
+allow meta_tst vendor_file:file { getattr execute execute_no_trans read open };
 set_prop(meta_tst,hwservicemanager_prop);
 hwbinder_use(meta_tst);
 hal_client_domain(meta_tst, hal_nfc);
-#allow meta_tst debugfs_tracing:file { open write };
+allow meta_tst debugfs_tracing:file { open write };
 
 # Date: W17.29
 # Purpose : Allow meta_tst to call vendor.mediatek.hardware.keymaster_attestation@1.0-service.
@@ -297,7 +296,7 @@ hal_client_domain(meta_tst, mtk_hal_keyattestation)
 # Operation : Android O migration
 # Purpose : add sepolicy for accessing sysfs_leds
 allow meta_tst sysfs_leds:lnk_file read;
-#allow meta_tst sysfs_leds:file rw_file_perms;
+allow meta_tst sysfs_leds:file rw_file_perms;
 allow meta_tst sysfs_leds:dir r_dir_perms;
 
 # Date: WK17.43
@@ -334,14 +333,14 @@ binder_call(meta_tst, mtk_hal_audio)
 allow meta_tst mtk_hal_audio:binder call;
 allow meta_tst hal_audio_hwservice:hwservice_manager find;
 allow meta_tst mtk_audiohal_data_file:dir {read search open};
-#allow meta_tst proc:file {read open};
+allow meta_tst proc:file {read open};
 allow meta_tst audio_device:chr_file rw_file_perms;
 allow meta_tst audio_device:dir w_dir_perms;
 allow meta_tst audiohal_prop:property_service set;
 
 #Data:W1745
 # Purpose : Allow meta_tst to open and read proc/bootprof
-#allow meta_tst proc:file write;
+allow meta_tst proc:file write;
 allow meta_tst proc:file getattr;
 
 # Date:W17.51
