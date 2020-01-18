@@ -59,6 +59,13 @@ allow em_svr sysfs_spm:file { open read write };
 # Date: 2019/04/09
 # Purpose: battery temprature setting
 allow em_svr sysfs_battery_temp:file w_file_perms;
+allow em_svr sysfs_battery_consumption:file r_file_perms;
+allow em_svr sysfs_power_on_vol:file r_file_perms;
+allow em_svr sysfs_power_off_vol:file r_file_perms;
+allow em_svr sysfs_fg_disable:file w_file_perms;
+allow em_svr sysfs_dis_nafg:file w_file_perms;
+
+
 
 # Date : 2018/10/12
 # Purpose : EM Power PMU register reading/setting

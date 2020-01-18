@@ -341,7 +341,14 @@ type sysfs_mmcblk, fs_type, sysfs_type;
 type sysfs_leds_setting, fs_type, sysfs_type;
 
 # Date : 2019/04/09
-# Purpose: mtk EM battery temprature settings
+# Purpose: mtk EM battery settings
 type sysfs_battery_temp, fs_type, sysfs_type;
+type sysfs_battery_consumption, fs_type, sysfs_type;
+type sysfs_power_on_vol, fs_type, sysfs_type;
+type sysfs_power_off_vol, fs_type, sysfs_type;
+type sysfs_fg_disable, fs_type, sysfs_type;
+type sysfs_dis_nafg, fs_type, sysfs_type;
+
+
 
 type aee_dipdebug_vendor_file, file_type, data_file_type;
