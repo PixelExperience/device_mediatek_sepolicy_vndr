@@ -187,6 +187,7 @@ allow meta_tst sysfs_ccci:file r_file_perms;
 allow meta_tst sysfs_comport_type:file rw_file_perms;
 allow meta_tst sysfs_uart_info:file rw_file_perms;
 allow meta_tst sysfs_boot_mode:file rw_file_perms;
+allow meta_tst sysfs_boot_type:file r_file_perms;
 allow meta_tst sysfs_android_usb:file rw_file_perms;
 allow meta_tst sysfs_android_usb:dir search;
 allow meta_tst sysfs_usb_cmode:file rw_file_perms;
