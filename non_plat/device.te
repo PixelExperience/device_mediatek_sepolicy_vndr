@@ -161,6 +161,7 @@ type mdlog_device, dev_type;
 type md32_device, dev_type;
 type scp_device, dev_type;
 type adsp_device, dev_type;
+type audio_scp_device, dev_type;
 type sspm_device, dev_type;
 type etb_device, dev_type;
 type MT_pmic_adc_cali_device, dev_type;

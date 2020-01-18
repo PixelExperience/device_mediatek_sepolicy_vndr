@@ -218,6 +218,7 @@ binder_call(mtk_hal_audio, mtk_hal_power)
 binder_call(mtk_hal_audio, merged_hal_service)
 # cm4 smartpa
 allow mtk_hal_audio audio_ipi_device:chr_file { read write ioctl open };
+allow mtk_hal_audio audio_scp_device:chr_file r_file_perms;
 
 # Date : WK18.21
 # Operation: P migration

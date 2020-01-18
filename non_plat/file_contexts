@@ -328,6 +328,7 @@
 /dev/ancservice(/.*)? u:object_r:ancservice_device:s0
 /dev/offloadservice(/.*)? u:object_r:offloadservice_device:s0
 /dev/audio_ipi(/.*)? u:object_r:audio_ipi_device:s0
+/dev/audio_scp(/.*)? u:object_r:audio_scp_device:s0
 /dev/irtx u:object_r:irtx_device:s0
 /dev/spm(/.*)? u:object_r:spm_device:s0
 /dev/xt_qtaguid(/.*)? u:object_r:xt_qtaguid_device:s0
