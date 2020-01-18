@@ -30,3 +30,7 @@ allow mtk_hal_mms ion_device:chr_file { read open ioctl };
 allow mtk_hal_mms mtk_cmdq_device:chr_file { read open ioctl };
 allow mtk_hal_mms mtk_hal_pq_hwservice:hwservice_manager find;
 allow mtk_hal_mms proc:file r_file_perms;
+
+# Purpose : Allow to use allocator for JPEG
+hal_client_domain(mtk_hal_mms, hal_allocator)
+allow mtk_hal_mms mtk_hal_pq:binder call;

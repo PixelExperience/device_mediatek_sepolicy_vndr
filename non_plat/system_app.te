@@ -29,3 +29,9 @@ allow system_app mtk_thermal_config_prop:file { getattr open read };
 allow system_app aee_exp_data_file:file r_file_perms;
 allow system_app aee_exp_data_file:dir r_dir_perms;
 allow system_app md_monitor:unix_stream_socket connectto;
+
+# Date: 2018/11/08
+# Operation : JPEG
+# Purpose : JPEG need to use PQ via MMS HIDL
+allow system_app mtk_hal_mms_hwservice:hwservice_manager find;
+allow system_app mtk_hal_mms:binder call;

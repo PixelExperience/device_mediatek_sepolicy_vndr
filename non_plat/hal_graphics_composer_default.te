@@ -63,3 +63,8 @@ GED_BRIDGE_IO_IOCTLCMD_10
 GED_BRIDGE_IO_MONITOR_3D_FENCE
 GED_BRIDGE_IO_QUERY_INFO
 };
+
+# Date: 2018/11/08
+# Operation : JPEG
+# Purpose : JPEG need to use PQ via MMS HIDL
+allow hal_graphics_composer_default sysfs_boot_mode:file r_file_perms;
