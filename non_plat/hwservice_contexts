@@ -3,9 +3,7 @@ vendor.mediatek.hardware.bluetooth::IMtkBluetoothHci 			u:object_r:mtk_hal_bluet
 # Date: 2017/05/9
 vendor.mediatek.hardware.mtkradioex::IMtkRadioEx u:object_r:mtk_hal_rild_hwservice:s0
 vendor.mediatek.hardware.radio::ISap u:object_r:mtk_hal_rild_hwservice:s0
-vendor.mediatek.hardware.interfaces_tc1.radio_tc1::IRadio u:object_r:mtk_hal_rild_hwservice:s0
-vendor.mediatek.hardware.interfaces_tc1.radio_tc1::ISap u:object_r:mtk_hal_rild_hwservice:s0
-vendor.mediatek.hardware.interfaces_tc1.radio_tc1.deprecated::IOemHook u:object_r:mtk_hal_rild_hwservice:s0
+vendor.mediatek.hardware.interfaces_tc1.mtkradioex_tc1::IMtkRadioEx u:object_r:mtk_hal_rild_hwservice:s0
 vendor.mediatek.hardware.radio_op::IRadioOp u:object_r:mtk_hal_rild_hwservice:s0
 
 # Date: 2017/06/07
