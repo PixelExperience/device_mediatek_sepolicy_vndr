@@ -110,7 +110,10 @@ genfscon sysfs /devices/virtual/misc/scp_B  u:object_r:sysfs_scp:s0
 genfscon sysfs /devices/virtual/misc/sspm  u:object_r:sysfs_sspm:s0
 genfscon sysfs /devices/virtual/misc/adsp  u:object_r:sysfs_adsp:s0
 
+# Date : 2019/09/12
 genfscon sysfs /devices/virtual/thermal u:object_r:sysfs_therm:s0
+genfscon sysfs /devices/class/thermal u:object_r:sysfs_therm:s0
+
 genfscon sysfs /devices/virtual/switch/fps u:object_r:sysfs_fps:s0
 
 genfscon sysfs /firmware/devicetree/base/chosen/atag,devinfo u:object_r:sysfs_devinfo:s0
@@ -227,6 +230,7 @@ genfscon sysfs /devices/platform/trusty u:object_r:mtee_trusty_file:s0
 # Purpose: allow rild to access /proc/aed/reboot-reason
 genfscon proc /aed/reboot-reason u:object_r:proc_aed_reboot_reason:s0
 
+
 # 2019/09/05
 # Purpose: Allow powerhal to control kernel resources
 genfscon proc /ppm u:object_r:proc_ppm:s0
@@ -237,3 +241,4 @@ genfscon proc /ca_drv u:object_r:proc_ca_drv:s0
 genfscon sysfs /module/ged u:object_r:sysfs_ged:s0
 genfscon sysfs /module/fbt_cpu u:object_r:sysfs_fbt_cpu:s0
 genfscon sysfs /module/fbt_fteh u:object_r:sysfs_fbt_fteh:s0
+
