@@ -206,6 +206,8 @@ genfscon debugfs  /eara_thermal/enable u:object_r:debugfs_eara_thermal:s0
 # mtk EM power PMU register
 genfscon debugfs /rt-regmap u:object_r:debugfs_regmap:s0
 
+# 2019/08/15
+genfscon debugfs /smi_mon u:object_r:debugfs_smi_mon:s0
 
 genfscon iso9660 / u:object_r:iso9660:s0
 genfscon rawfs / u:object_r:rawfs:s0

@@ -147,7 +147,7 @@ allow aee_aedv debugfs_wakeup_sources:file { read open };
 allow aee_aedv debugfs_dmlog_debug:file { read open };
 allow aee_aedv debugfs_page_owner_slim_debug:file { read open };
 allow aee_aedv debugfs_ion_mm_heap:dir search;
-allow aee_aedv debugfs_ion_mm_heap:file { read open };
+allow aee_aedv debugfs_ion_mm_heap:file r_file_perms;
 allow aee_aedv debugfs_ion_mm_heap:lnk_file read;
 allow aee_aedv debugfs_cpuhvfs:dir search;
 allow aee_aedv debugfs_cpuhvfs:file { read open };
@@ -423,3 +423,15 @@ allow aee_aedv connsyslog_data_vendor_file:dir r_dir_perms;
 
 # Purpose: Allow aee_aedv to read the /proc/*/exe of vendor process
 allow aee_aedv vendor_file_type:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /sys/kernel/debug/smi_mon
+allow aee_aedv debugfs_smi_mon:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /proc/isp_p2/isp_p2_kedump
+allow aee_aedv proc_isp_p2_kedump:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /sys/kernel/debug/vpu/vpu_memory
+allow aee_aedv debugfs_vpu_memory:file r_file_perms;
+
+# Purpose: Allow aee_aedv to read /proc/cpuhvfs/dbg_repo
+allow aee_aedv proc_dbg_repo:file r_file_perms;

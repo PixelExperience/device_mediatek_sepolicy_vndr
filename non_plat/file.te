@@ -376,3 +376,6 @@ type netd_socket, file_type, coredomain_socket;
 # Date : WK19.27
 # Purpose: Android Migration for SVP
 type proc_m4u, fs_type, proc_type;
+
+# Date : 2019/08/15
+type debugfs_smi_mon, fs_type, debugfs_type;
