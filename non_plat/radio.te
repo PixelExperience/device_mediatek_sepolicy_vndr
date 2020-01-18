@@ -213,3 +213,7 @@ get_prop(radio, persist_mtk_aeev_prop);
 # Purpose : Allow EM to set sys property
 set_prop(radio, mtk_em_sys_prop)
 
+# Date :  2018/09/06
+# Purpose : Allow EM set wcn coredump prop
+set_prop(radio, coredump_prop)
+
