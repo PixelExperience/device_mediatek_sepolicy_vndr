@@ -320,3 +320,8 @@ ro.vendor.gmo.ram_optimize u:object_r:mtk_default_prop:s0
 ro.vendor.gmo.rom_optimize u:object_r:mtk_default_prop:s0
 ro.vendor.mtk_config_max_dram_size u:object_r:mtk_default_prop:s0
 
+#=============MTK Voice Recognize property===========#
+vendor.voicerecognize.raw u:object_r:mtk_voicerecgnize_prop:s0
+vendor.voicerecognize_data.raw u:object_r:mtk_voicerecgnize_prop:s0
+vendor.voicerecognize.noDL u:object_r:mtk_voicerecgnize_prop:s0
+
