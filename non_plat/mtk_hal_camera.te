@@ -331,4 +331,4 @@ allow mtk_hal_camera proc_isp_p2:dir search;
 allow mtk_hal_camera proc_isp_p2:file {create_file_perms};
 
 # Purpose : AINR/Thermal Boost
-allow mtk_hal_camera system_data_file:dir { getattr }
+allow mtk_hal_camera system_data_file:dir { getattr };
