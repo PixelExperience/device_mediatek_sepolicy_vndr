@@ -204,7 +204,7 @@ allow radio mtk_hal_lbs_hwservice:hwservice_manager find;
 # Purpose : Allow EM to set poweroffmd property
 set_prop(radio, mtk_power_off_md_type)
 
-get_prop(radio, persist_mtk_aeev_prop);
+get_prop(radio, persist_mtk_aee_prop);
 
 
 # Date : 2018/08/31
