@@ -1,5 +1,5 @@
 # boot_mdoe file access
-allow mobile_log_d sysfs_boot:file { open read };
+allow mobile_log_d sysfs_boot_mode:file { open read };
 
 #proc/ access
 #allow mobile_log_d proc:file r_file_perms;
