@@ -365,3 +365,7 @@ allow factory sysfs_dt_firmware_android:file { read open getattr };
 allow factory sysfs_dt_firmware_android:dir { read open search };
 # Purpose : Allow factory to communicate with driver thru socket
 allow factory factory:capability { sys_module net_admin net_raw };
+
+# For power_supply and switch permission
+r_dir_file(factory, sysfs_batteryinfo)
+r_dir_file(factory, sysfs_switch)
