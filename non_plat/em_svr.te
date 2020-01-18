@@ -48,7 +48,7 @@ allow em_svr proc_partition:file { open read };
 # Date : 2018/06/15
 # Purpose : EM Power PMU reading/setting
 allow em_svr sysfs_pmu:dir { search };
-allow em_svr sysfs_pmu:file { open read write };
+allow em_svr sysfs_pmu:file { rw_file_perms };
 allow em_svr sysfs_pmu:lnk_file { read };
 
 # Date : 2018/06/15
@@ -59,3 +59,12 @@ allow em_svr sysfs_spm:file { open read write };
 # Date: 2019/04/09
 # Purpose: battery temprature setting
 allow em_svr sysfs_battery_temp:file w_file_perms;
+
+# Date : 2018/10/12
+# Purpose : EM Power PMU register reading/setting
+allow em_svr debugfs_regmap:dir { search };
+allow em_svr debugfs_regmap:file { rw_file_perms };
+
+# Date:2019/04/15
+# Purpose: EM Power
+allow em_svr toolbox_exec:file { map };
