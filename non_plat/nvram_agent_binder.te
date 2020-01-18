@@ -71,3 +71,9 @@ hal_server_domain(nvram_agent_binder, hal_nvramagent)
 # Operation: P migration
 # Purpose: Allow nvram_daemon to get tel_switch_prop
 get_prop(nvram_daemon, tel_switch_prop)
+
+# Date : WK18.21
+# Operation: P migration
+# Purpose: Allow to search /mnt/vendor/nvdata when using nvram function
+allow nvram_agent_binder mnt_vendor_file:dir search;
+
