@@ -411,3 +411,6 @@ allow aee_aedv aee_dipdebug_vendor_file:dir r_dir_perms;
 allow aee_aedv aee_dipdebug_vendor_file:file r_file_perms;
 allow aee_aedv proc_isp_p2:dir r_dir_perms;
 allow aee_aedv proc_isp_p2:file r_file_perms;
+
+allow aee_aedv connsyslog_data_vendor_file:file r_file_perms;
+allow aee_aedv connsyslog_data_vendor_file:dir r_dir_perms;

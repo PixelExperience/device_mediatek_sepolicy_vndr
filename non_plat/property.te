@@ -93,7 +93,7 @@ type audiohal_prop, property_type, mtk_core_property_type;
 
 #=============allow wmt==============
 type wmt_prop, property_type, mtk_core_property_type;
-type coredump_prop, property_type, extended_core_property_type;
+type coredump_prop, property_type, mtk_core_property_type;
 
 #=============allow sensor==============
 type ctl_emcsmdlogger_prop, property_type;
