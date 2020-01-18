@@ -341,3 +341,11 @@ allow factory merged_hal_service:binder call;
 allow factory sysfs_vibrator:file rw_file_perms;
 allow factory sysfs_vibrator:dir search;
 
+# For Audio device permission
+allow factory proc_asound:dir { read search open };
+allow factory proc_asound:file { read open getattr write };
+allow factory mtk_audiohal_data_file:dir { read search open };
+allow factory audiohal_prop:property_service set;
+
+# For Accdet data permission
+allow factory sysfs:file { read open };
