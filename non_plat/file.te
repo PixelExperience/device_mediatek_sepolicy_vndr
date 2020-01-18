@@ -59,7 +59,7 @@ type proc_zraminfo, fs_type, proc_type;
 type proc_cpu_alignment, fs_type, proc_type;
 type proc_gpulog, fs_type, proc_type;
 type proc_sched_debug, fs_type, proc_type;
-type proc_hw_ver, fs_type, proc_type;
+type proc_chip, fs_type, proc_type;
 type proc_atf_log, fs_type, proc_type;
 type proc_gz_log, fs_type, proc_type;
 type proc_last_kmsg, fs_type, proc_type;

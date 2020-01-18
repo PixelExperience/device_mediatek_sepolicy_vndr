@@ -103,7 +103,7 @@ allow dumpstate proc_gpulog:file r_file_perms;
 allow dumpstate proc_sched_debug:file r_file_perms;
 
 # Purpose: Allow aee_dumpstate to read /proc/chip/hw_ver
-allow dumpstate proc_hw_ver:file r_file_perms;
+allow dumpstate proc_chip:file r_file_perms;
 
 # Purpose: Allow aee_dumpstate to write /sys/devices/virtual/timed_output/vibrator/enable
 allow dumpstate sysfs_vibrator_setting:file write;

@@ -55,6 +55,7 @@ allow aee_aed proc_cpu_alignment:file { write open };
 allow aee_aed sysfs_vibrator_setting:dir search;
 allow aee_aed sysfs_vibrator_setting:file w_file_perms;
 allow aee_aed sysfs_vibrator:dir search;
+allow aee_aed sysfs_leds:dir search;
 
 # Purpose: Allow aee_aed to read /proc/kpageflags
 allow aee_aed proc_kpageflags:file r_file_perms;

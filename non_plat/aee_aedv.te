@@ -356,7 +356,7 @@ allow aee_aedv proc_cpu_alignment:file w_file_perms;
 allow aee_aedv proc_gpulog:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/chip/hw_ver
-allow aee_aedv proc_hw_ver:file r_file_perms;
+allow aee_aedv proc_chip:file r_file_perms;
 
 # Purpose: Allow aee_aedv to read /proc/sched_debug
 allow aee_aedv proc_sched_debug:file r_file_perms;
