@@ -71,5 +71,6 @@ attribute hal_atci;
 attribute hal_atci_client;
 attribute hal_atci_server;
 
-
-
+# Date: 2019/06/12
+# modem db filter hidl
+attribute mtk_hal_md_dbfilter_server;

@@ -44,6 +44,10 @@ allow mdlogger storage_file:file { create_file_perms };
 ## purpose: avc: denied { read } for name="plat_file_contexts"
 allow mdlogger file_contexts_file:file { read getattr open };
 
-# Allow read avc: denied { read } for name="mddb" dev="mmcblk0p25" ino=681 
+# Allow read avc: denied { read } for name="mddb" dev="mmcblk0p25" ino=681
 # scontext=u:r:mdlogger:s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=0
 allow mdlogger system_file:dir read;
+## Android Q migration
+## purpose:  read modem db and filter folder and file
+allow mdlogger mddb_filter_data_file:dir { r_dir_perms };
+allow mdlogger mddb_filter_data_file:file { r_file_perms };
