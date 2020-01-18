@@ -351,3 +351,7 @@ persist.vendor.sys.hdmi_hidl. u:object_r:mtk_hdmi_prop:s0
 
 #=============mtk nn option==============#
 ro.vendor.mtk_nn.option u:object_r:mtk_nn_option_prop:s0
+
+#============system fingerprint property============#
+ro.system.build.fingerprint u:object_r:exported_fingerprint_prop:s0 exact string
+
