@@ -178,10 +178,10 @@ allow system_server mtk_hal_power_hwservice:hwservice_manager find;
 allow system_server proc_perfmgr:dir {read search};
 allow system_server proc_perfmgr:file {open read ioctl};
 allowxperm system_server proc_perfmgr:file ioctl {
-  FPSGO_QUEUE
-  FPSGO_DEQUEUE
-  FPSGO_QUEUE_CONNECT
-  FPSGO_BQID
+  PERFMGR_FPSGO_QUEUE
+  PERFMGR_FPSGO_DEQUEUE
+  PERFMGR_FPSGO_QUEUE_CONNECT
+  PERFMGR_FPSGO_BQID
 };
 
 # Date : W18.22

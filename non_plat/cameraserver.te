@@ -357,8 +357,8 @@ allow cameraserver debugfs_ion:dir search;
 allow cameraserver proc_perfmgr:dir {read search};
 allow cameraserver proc_perfmgr:file r_file_perms;
 allowxperm cameraserver proc_perfmgr:file ioctl {
-  FPSGO_QUEUE
-  FPSGO_DEQUEUE
-  FPSGO_QUEUE_CONNECT
-  FPSGO_BQID
+  PERFMGR_FPSGO_QUEUE
+  PERFMGR_FPSGO_DEQUEUE
+  PERFMGR_FPSGO_QUEUE_CONNECT
+  PERFMGR_FPSGO_BQID
 };
