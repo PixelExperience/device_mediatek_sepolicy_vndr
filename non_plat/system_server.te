@@ -212,3 +212,7 @@ get_prop(system_server, vendor_default_prop)
 # Operation : when WFD turnning on, turn off hdmi
 allow system_server mtk_hal_hdmi_hwservice:hwservice_manager find;
 allow system_server mtk_hal_hdmi:binder call;
+
+#Date:2019/10/08
+#Operation:Q Migration
+allow system_server proc_battery_cmd:dir search;
