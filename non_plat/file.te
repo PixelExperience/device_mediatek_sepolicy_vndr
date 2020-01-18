@@ -124,9 +124,6 @@ type logtemp_data_file, file_type, data_file_type, core_data_file_type;
 type aee_core_data_file, file_type, data_file_type, core_data_file_type;
 type aee_core_vendor_file, file_type, data_file_type;
 
-# NE tombstone
-type aee_tombstone_data_file, file_type, data_file_type;
-
 # AEE exp
 type aee_exp_data_file, file_type, data_file_type, core_data_file_type;
 type aee_exp_vendor_file, file_type, data_file_type;

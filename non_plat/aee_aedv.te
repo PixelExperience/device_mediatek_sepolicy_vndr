@@ -80,10 +80,6 @@ userdebug_or_eng(`
   allow aee_aedv su:file { read getattr open };
 ')
 
-# /data/vendor/tombstone
-allow aee_aedv aee_tombstone_data_file:dir w_dir_perms;
-allow aee_aedv aee_tombstone_data_file:file create_file_perms;
-
 # /proc/pid/
 allow aee_aedv self:capability { fowner chown fsetid sys_nice sys_resource net_admin sys_module};
 

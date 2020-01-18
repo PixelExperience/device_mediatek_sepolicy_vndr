@@ -31,7 +31,6 @@
 /data/vendor/flashless(/.*)? u:object_r:c2k_file:s0
 /data/core(/.*)? u:object_r:aee_core_data_file:s0
 /data/vendor/core(/.*)? u:object_r:aee_core_vendor_file:s0
-/data/vendor/tombstones(/.*)? u:object_r:aee_tombstone_data_file:s0
 #/data/dontpanic(/.*)? u:object_r:dontpanic_data_file:s0
 /data/dumpsys(/.*)?    u:object_r:aee_dumpsys_data_file:s0
 /data/vendor/dumpsys(/.*)?    u:object_r:aee_dumpsys_vendor_file:s0
