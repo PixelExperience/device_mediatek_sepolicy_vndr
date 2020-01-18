@@ -50,3 +50,7 @@ type mtk_hal_keymanage_hwservice, hwservice_manager_type;
 # GPU HIDL
 type mtk_hal_gpu_hwservice, hwservice_manager_type;
 
+# Date: 2019/06/12
+# modem db filter hidl
+type mtk_hal_md_dbfilter_hwservice, hwservice_manager_type;
+
