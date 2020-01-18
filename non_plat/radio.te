@@ -186,3 +186,7 @@ get_prop(radio, persist_uce_prop)
 # Operation: P migration
 # Purpose: Allow radio to get tel_switch_prop
 get_prop(radio, tel_switch_prop)
+
+#Date: W1817
+#Purpose: allow rild access property of vendor_radio_prop
+set_prop(radio, vendor_radio_prop)

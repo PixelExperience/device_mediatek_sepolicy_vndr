@@ -140,3 +140,7 @@ allow rild vendor_toolbox_exec:file {execute_no_trans};
 # Operation: P migration
 # Purpose: Allow rild to get tel_switch_prop
 get_prop(rild, tel_switch_prop)
+
+#Date: W1817
+#Purpose: allow rild access property of vendor_radio_prop
+set_prop(rild, vendor_radio_prop)

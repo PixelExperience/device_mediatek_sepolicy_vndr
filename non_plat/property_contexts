@@ -171,3 +171,9 @@ persist.atm.ipaddress u:object_r:atm_ipaddr_prop:s0
 
 #=============allow consyslogger==============
 vendor.consyslogger u:object_r:vendor_consyslogger_prop:s0
+
+#============Label telephony property=======#
+vendor.ril. u:object_r:vendor_radio_prop:s0
+ro.vendor.ril. u:object_r:vendor_radio_prop:s0
+vendor.gsm. u:object_r:vendor_radio_prop:s0
+persist.vendor.radio. u:object_r:vendor_radio_prop:s0
