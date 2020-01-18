@@ -1,5 +1,14 @@
 # ==============================================
-# Policy File of /system/bin/meta_tst Executable File
+# Policy File of /vendor/bin/meta_tst Executable File
+
+
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type meta_tst, domain;
+type meta_tst_exec , exec_type, file_type, vendor_file_type;
+init_daemon_domain(meta_tst)
 
 # ==============================================
 # MTK Policy Rule
@@ -152,7 +161,7 @@ allow meta_tst mt6605_device:chr_file rw_file_perms;
 #Date WK14.49
 #Operation : Migration
 #Purpose : DRM key installation
-allow meta_tst shell_exec:file rx_file_perms;
+#allow meta_tst shell_exec:file rx_file_perms;
 allow meta_tst system_data_file:dir create;
 allow meta_tst key_install_data_file:dir w_dir_perms;
 allow meta_tst key_install_data_file:file create_file_perms;
@@ -166,7 +175,7 @@ allow meta_tst proc_lk_env:file rw_file_perms;
 allow meta_tst block_device:blk_file getattr;
 allow meta_tst system_block_device:blk_file getattr;
 #allow meta_tst fuse_device:chr_file getattr;
-allow meta_tst shell_exec:file r_file_perms;
+#allow meta_tst shell_exec:file r_file_perms;
 
 # Date: WK15.52
 # Purpose : NVRAM related LID
@@ -216,7 +225,7 @@ allow meta_tst gsm0710muxd_device:chr_file rw_file_perms;
 
 # Date: WK16.20
 # Purpose: meta_tst set sys.usb.config
-set_prop(meta_tst, system_radio_prop);
+#set_prop(meta_tst, system_radio_prop);
 
 #Date: W16.33
 # Purpose:  N Migration For CCT
@@ -240,30 +249,8 @@ allow meta_tst nvcfg_file:dir { search read open };
 #Date: W16.45
 # Purpose : Allow unmount sdcardfs mounted on /data/media
 allow meta_tst sdcard_type:filesystem unmount;
-allow meta_tst toolbox_exec:file { getattr execute execute_no_trans read open };
+#allow meta_tst toolbox_exec:file { getattr execute execute_no_trans read open };
 allow meta_tst storage_stub_file:dir search;
-
-# Date: WK16.16
-# Purpose: support meta mode wifi on
-allow meta_tst self:netlink_route_socket { bind create getattr write nlmsg_read read nlmsg_write };
-#allow meta_tst self:packet_socket { bind create write read ioctl };
-#allow meta_tst net_wlan_dns_prop:property_service set;
-allow meta_tst self:capability { setgid setuid };
-allow meta_tst self:packet_socket create_socket_perms_no_ioctl;
-allow meta_tst self:capability { setgid setuid sys_module sys_time};
-#allow meta_tst wpa_exec:file getattr;
-allow meta_tst wifi_data_file:dir create_dir_perms;
-allow meta_tst wifi_data_file:sock_file create_file_perms;
-#allow meta_tst wpa_exec:file rx_file_perms;
-#allow meta_tst wpa_socket:dir create_dir_perms;
-#allow meta_tst wpa_socket:sock_file create_file_perms;
-allow meta_tst self:netlink_socket create_socket_perms_no_ioctl;
-allow meta_tst self:rawip_socket create;
-allow meta_tst self:udp_socket create_socket_perms_no_ioctl;
-allow meta_tst self:rawip_socket create_socket_perms_no_ioctl;
-allow meta_tst proc_ged:file r_file_perms;
-allowxperm meta_tst self:udp_socket ioctl {SIOCSIFFLAGS SIOCGIFCONF SIOCIWFIRSTPRIV_08 SIOCIWFIRSTPRIV_09};
-allow meta_tst meta_tst:netlink_generic_socket { read write getattr bind create setopt };
 
 # Date : WK16.19
 # Operation: meta_tst set persist.meta.connecttype property
@@ -321,11 +308,11 @@ allow meta_tst mddb_data_file:dir { search write add_name create getattr read op
 
 # Date: W17.43
 # Purpose : meta connect with mdlogger by socket.
-allow meta_tst emdlogger:unix_stream_socket connectto;
+#allow meta_tst emdlogger:unix_stream_socket connectto;
 
 # Date: W17.43
 # Purpose : meta connect with mobilelog by socket.
-allow meta_tst mobile_log_d:unix_stream_socket connectto;
+#allow meta_tst mobile_log_d:unix_stream_socket connectto;
 
 # Date: W17.43
 # Purpose : meta access mobile log.

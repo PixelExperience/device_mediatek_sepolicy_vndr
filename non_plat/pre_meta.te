@@ -2,5 +2,12 @@
 # MTK Policy Rule
 # ==============================================
 
+# ==============================================
+# Type Declaration
+# ==============================================
+type pre_meta, domain;
+type pre_meta_exec , exec_type, file_type, vendor_file_type;
+init_daemon_domain(pre_meta)
+
 allow pre_meta proc_lk_env:file rw_file_perms;
 allow pre_meta para_block_device:blk_file rw_file_perms;set_prop(meta_tst, powerctl_prop);
