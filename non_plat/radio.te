@@ -3,7 +3,7 @@
 # ============
 
 # Purpose : allow to access kpd driver file
-allow radio sysfs_keypad_file:dir { w_dir_perms };
+#allow radio sysfs_keypad_file:dir { w_dir_perms };
 allow radio sysfs_keypad_file:file { w_file_perms };
 
 # Date : WK15.34 2015/08/21
