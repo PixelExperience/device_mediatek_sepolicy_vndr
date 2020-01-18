@@ -9,3 +9,5 @@ allow mediaextractor proc_ged:file {open read write ioctl getattr};
 #============= mediaextractor ==============
 allow mediaextractor vfat:file r_file_perms;
 
+allow mediaextractor mediaserver_service:service_manager find;
+
