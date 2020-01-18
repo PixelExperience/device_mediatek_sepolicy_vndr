@@ -110,4 +110,5 @@ allow em_hidl nvdata_file:file { getattr read open };
 # Data : 2018/07/06
 # Purpose : EM MCF search vendor dir
 allow em_hidl mnt_vendor_file:dir search;
+allow em_hidl vendor_default_prop:file read;
 
