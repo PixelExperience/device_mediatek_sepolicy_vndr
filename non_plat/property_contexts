@@ -159,7 +159,7 @@ persist.ss. u:object_r:mtk_em_ril_xcapset_prop:s0
 persist.gba. u:object_r:mtk_em_ril_xcapset_prop:s0
 
 #=============allow radio to set presence config================
-persist.mtk_uce_ua_support u:object_r:persist_uce_prop:s0
+persist.vendor.mtk_uce_ua_support u:object_r:persist_uce_prop:s0
 
 #============= atm modem mode property(ATM) ==============
 persist.atm.mdmode u:object_r:atm_mdmode_prop:s0
