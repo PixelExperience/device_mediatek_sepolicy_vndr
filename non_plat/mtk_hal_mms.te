@@ -36,5 +36,18 @@ allow mtk_hal_mms proc:file r_file_perms;
 # Purpose : Allow to use allocator for JPEG
 hal_client_domain(mtk_hal_mms, hal_allocator)
 allow mtk_hal_mms mtk_hal_pq:binder call;
+
+# Purpose : Allow to use graphics allocator fd for gralloc_extra
 allow mtk_hal_mms hal_graphics_allocator_default:fd use;
 allow mtk_hal_mms debugfs_ion:dir search;
+
+# Purpose : VDEC/VENC device node
+allow mtk_hal_mms Vcodec_device:chr_file rw_file_perms;
+allow mtk_hal_mms proc_mtk_jpeg:file r_file_perms;
+allowxperm mtk_hal_mms proc_mtk_jpeg:file ioctl {
+     JPG_BRIDGE_ENC_IO_INIT
+     JPG_BRIDGE_ENC_IO_CONFIG
+     JPG_BRIDGE_ENC_IO_WAIT
+     JPG_BRIDGE_ENC_IO_DEINIT
+     JPG_BRIDGE_ENC_IO_START
+     };
