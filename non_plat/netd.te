@@ -11,10 +11,6 @@ allow netd wmtWifi_device:chr_file { write open };
 
 # Date : WK14.34
 # Operation : Migration
-# Purpose :  NA  
-# Owner£º Changqing Sun
-allow netd kernel:system module_request;
-allow netd self:capability sys_module;
 allow netd self:capability fsetid;
 
 # Date : WK14.34

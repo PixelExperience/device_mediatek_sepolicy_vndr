@@ -28,23 +28,6 @@ allow cameraserver self:process { ptrace };
 # -----------------------------------
 allow cameraserver mtkcam_prop:file { open read getattr };
 
-# Date : WK14.31
-# Operation : Migration
-# Purpose : camera devices access.
-# allow cameraserver camera_isp_device:chr_file rw_file_perms;
-# allow cameraserver ccu_device:chr_file rw_file_perms;
-# allow cameraserver vpu_device:chr_file rw_file_perms;
-# allow cameraserver kd_camera_hw_device:chr_file rw_file_perms;
-# allow cameraserver seninf_device:chr_file rw_file_perms;
-# allow cameraserver self:capability { setuid ipc_lock sys_nice };
-# allow cameraserver sysfs_wake_lock:file rw_file_perms;
-# allow cameraserver MTK_SMI_device:chr_file r_file_perms;
-# allow cameraserver camera_pipemgr_device:chr_file r_file_perms;
-# allow cameraserver kd_camera_flashlight_device:chr_file rw_file_perms;
-# allow cameraserver lens_device:chr_file rw_file_perms;
-# allow cameraserver nvdata_file:lnk_file read;
-# allow cameraserver proc_meminfo:file { read getattr open };
-
 # Date : WK14.34
 # Operation : Migration
 # Purpose : nvram access (dumchar case for nand and legacy chip)

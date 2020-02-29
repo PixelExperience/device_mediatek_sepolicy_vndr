@@ -75,3 +75,7 @@ set_prop(vendor_init, mtk_wifi_hotspot_prop)
 set_prop(vendor_init, persist_aeev_prop)
 
 set_prop(vendor_init, mtk_powerhal_prop)
+
+# mmstat tracer
+allow vendor_init debugfs_tracing_instances:dir create_dir_perms;
+allow vendor_init debugfs_tracing_instances:file w_file_perms;
