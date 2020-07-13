@@ -1,0 +1,43 @@
+#=============allow atcid==============
+ctl.atcid-daemon-u u:object_r:ctl_atcid-daemon-u_prop:s0
+ctl.atci_service u:object_r:ctl_atci_service_prop:s0
+persist.vendor.radio.port_index  u:object_r:mtk_atci_sys_prop:s0
+vendor.ril.atci.flightmode u:object_r:mtk_atci_sys_prop:s0
+persist.vendor.service.atci.autostart u:object_r:mtk_atci_sys_prop:s0
+persist.vendor.service.atci.usermode u:object_r:mtk_atci_sys_prop:s0
+
+#=============allow mtk aal==============#
+persist.vendor.sys.aal. u:object_r:mtk_aal_prop:s0
+
+#============allow permission control set property=========
+vendor.moms.permission.control.policy.set u:object_r:mtk_permission_control_prop:s0
+
+#=============allow terservice to set terservice property==============
+persist.vendor.ter u:object_r:terservice_prop:s0
+vendor.ter.service u:object_r:terservice_prop:s0
+
+#=============allow systemui to get ro.vendor.mtk_cta_set===============
+ro.vendor.mtk_cta_set u:object_r:mtk_cta_set_prop:s0
+
+#=============allow RSC===============
+ro.sys.current_rsc_path u:object_r:mtk_rsc_sys_prop:s0
+ro.product.current_rsc_path u:object_r:mtk_rsc_sys_prop:s0
+
+#=============DMC control property==============
+ro.vendor.mtk_dmc_support  u:object_r:mtk_dmc_prop:s0
+ro.vendor.mtk_mapi_support u:object_r:mtk_dmc_prop:s0
+vendor.dmc.apm.active      u:object_r:mtk_dmc_prop:s0
+
+#=============PKM control property==============
+init.svc.pkm_service u:object_r:mtk_pkm_init_prop:s0
+
+#=============MDM init control property==============
+init.svc.md_monitor u:object_r:init_svc_md_monitor_prop:s0
+
+#=============Restrict access to starting/stopping campostalgo===============
+ctl.start$camerapostalgo     u:object_r:ctl_campostalgo_prop:s0
+ctl.stop$camerapostalgo      u:object_r:ctl_campostalgo_prop:s0
+ctl.restart$camerapostalgo   u:object_r:ctl_campostalgo_prop:s0
+
+#=============netflix HD property==============
+ro.netflix.bsp_rev u:object_r:netflix_bsp_rev_prop:s0

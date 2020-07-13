@@ -1,0 +1,6 @@
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# Purpose: for warning kernel API
+allow ppp mtp:file read;

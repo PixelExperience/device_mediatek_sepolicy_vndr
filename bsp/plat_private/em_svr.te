@@ -1,0 +1,10 @@
+# ==============================================
+# Policy File of /system/bin/em_svr Executable File
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# Purpose: Rsc switch
+allow em_svr sysfs_dt_firmware_android:dir { read search open };
+allow em_svr sysfs_dt_firmware_android:file { read getattr open };

@@ -1,0 +1,5 @@
+# ==============================================
+# MTK Policy Rule
+# ============
+
+get_prop(shared_relro, mtk_amslog_prop)

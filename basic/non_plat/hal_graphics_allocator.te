@@ -1,0 +1,2 @@
+# Purpose : Add policy for gralloc HIDL
+allow hal_graphics_allocator proc_ged:file r_file_perms;

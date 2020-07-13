@@ -1,0 +1,5 @@
+# ==============================================
+# MTK Policy Rule
+# =============================================
+#=============netflix HD property==============
+set_prop(vendor_shell, netflix_bsp_rev_prop)

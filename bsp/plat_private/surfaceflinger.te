@@ -1,0 +1,2 @@
+# purpose: allow RTT_Dumper access file context
+allow surfaceflinger file_contexts_file:file r_file_perms;

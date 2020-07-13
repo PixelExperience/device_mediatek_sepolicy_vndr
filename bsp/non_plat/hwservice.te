@@ -1,0 +1,46 @@
+type mtk_hal_wfo_hwservice, hwservice_manager_type;
+type mtk_hal_keyinstall_hwservice, hwservice_manager_type;
+type volte_uce_ua_hwservice, hwservice_manager_type;
+type mtk_hal_videotelephony_hwservice, hwservice_manager_type;
+type hal_mtkcodecservice_hwservice, hwservice_manager_type;
+type mtk_hal_netdagent_hwservice, hwservice_manager_type;
+type volte_rcs_ua_hwservice, hwservice_manager_type;
+type mtk_hal_dfps_hwservice, hwservice_manager_type;
+type mtk_hal_dplanner_hwservice, hwservice_manager_type;
+type mtk_hal_pplagent_hwservice, hwservice_manager_type;
+
+# omadm hidl
+type mtk_hal_omadm_hwservice, hwservice_manager_type;
+
+# DMC HIDL
+type mtk_hal_dmc_hwservice, hwservice_manager_type;
+
+# APM HIDL
+type mtk_hal_apm_hwservice, hwservice_manager_type;
+
+# nwk opt HIDL
+type mtk_hal_nwk_opt_hwservice, hwservice_manager_type;
+
+# ==============================================
+# MICROTRUST Policy Rule
+# ==============================================
+# microtrust THH service manager type
+type hal_thh_hwservice, hwservice_manager_type;
+
+# microtrust TUI service manager type
+type hal_tui_hwservice, hwservice_manager_type;
+
+# microtrust CAPI service manager type
+type hal_capi_hwservice, hwservice_manager_type;
+
+# ==============================================
+# Trustonic Policy Rule
+# ==============================================
+type hal_tee_hwservice, hwservice_manager_type;
+type hal_teeregistry_hwservice, hwservice_manager_type;
+
+# Purpose : Add for HIDL service
+type mtk_mdm_hidl_server, hwservice_manager_type;
+
+# client API HIDL
+type volte_clientapi_ua_hwservice, hwservice_manager_type;

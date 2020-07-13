@@ -1,0 +1,18 @@
+# ==============================================
+# Policy File of /system/bin/mmp Executable File
+
+
+# ==============================================
+# Type Declaration
+# ==============================================
+
+type mmp_exec, system_file_type, exec_type, file_type;
+type mmp ,domain;
+
+typeattribute mmp coredomain;
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+init_daemon_domain(mmp)

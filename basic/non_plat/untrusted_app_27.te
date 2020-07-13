@@ -1,0 +1,8 @@
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# Purpose: Allow same-process GPU library to call MDP/CMDQ via MTK MDP HAL
+#          from app process, instead of via same-process MDP library, to
+#          protect CMDQ device node.
+hal_client_domain(untrusted_app_27, hal_mms)

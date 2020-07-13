@@ -1,0 +1,5 @@
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+# For MAL MFI
+typeattribute rild mtkimsapdomain;

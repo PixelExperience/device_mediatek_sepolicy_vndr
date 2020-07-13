@@ -1,0 +1,7 @@
+# ==============================================
+# Policy File of /system/bin/loghidlsysservice Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type loghidlsysservice ,domain;

@@ -1,0 +1,9 @@
+# ==============================================
+# Policy File of /system/bin/viarild Executable File
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+typeattribute viarild mtkimsapdomain;
+typeattribute statusd mtkimsapdomain;

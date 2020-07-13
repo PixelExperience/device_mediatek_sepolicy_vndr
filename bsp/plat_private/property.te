@@ -1,0 +1,25 @@
+#=============allow atcid==============
+type ctl_atcid-daemon-u_prop, property_type, extended_core_property_type;
+type ctl_atci_service_prop, property_type, extended_core_property_type;
+type mtk_atci_sys_prop, property_type, extended_core_property_type;
+
+#=============mtk aal property=============
+type mtk_aal_prop, property_type, extended_core_property_type;
+
+#============allow permission control set property=========
+type mtk_permission_control_prop, property_type, extended_core_property_type;
+
+#=============allow terserver to set terservice property==============
+type terservice_prop, property_type, extended_core_property_type;
+
+#=============allow systemui to get ro.vendor.mtk_cta_set===============
+type mtk_cta_set_prop, property_type, extended_core_property_type;
+
+#=============allow RSC===============
+type mtk_rsc_sys_prop, property_type, extended_core_property_type;
+
+#=============allow to start/stop campostalgo property==============
+type ctl_campostalgo_prop, property_type, extended_core_property_type;
+
+#=============allow netflix read property==============
+type netflix_bsp_rev_prop, property_type;

@@ -1,0 +1,8 @@
+type vendor_hal_nfc_default, domain;
+type vendor_hal_nfc_default_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_hal_nfc_default)
+
+allow vendor_hal_nfc_default vendor_hal_nfc_default_exec:file execute_no_trans;
+allow vendor_hal_nfc_default hwservicemanager:binder { call transfer };
+allow vendor_hal_nfc_default hwservicemanager_prop:file { getattr map open read };

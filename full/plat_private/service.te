@@ -1,0 +1,7 @@
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# System Server Services
+type mtk_test_ampolicymaker_service, app_api_service, system_server_service, service_manager_type;
+type lwx_service, app_api_service, system_server_service, service_manager_type;

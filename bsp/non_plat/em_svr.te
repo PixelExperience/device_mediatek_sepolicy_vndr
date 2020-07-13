@@ -1,0 +1,9 @@
+# ==============================================
+# Policy File of /system/bin/em_svr Executable File
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# Purpose: Rsc switch
+allow em_svr para_block_device:blk_file write;

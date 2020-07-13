@@ -1,0 +1,2 @@
+#============= boot_logo_updater ==============
+allow boot_logo_updater sysfs:dir open;

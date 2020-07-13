@@ -1,0 +1,6 @@
+# ==============================================
+# MTK Policy Rule for vendor
+# ==============================================
+
+# Purpose : OpenDSP: read/write ipi message to tinysys
+allow audioserver audio_ipi_device:chr_file { read write ioctl open };

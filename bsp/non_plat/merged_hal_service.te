@@ -1,0 +1,3 @@
+# Purpose : Allow powerHAL to access dfps
+allow merged_hal_service mtk_hal_dfps:binder call;
+hal_client_domain(merged_hal_service, hal_dfps);

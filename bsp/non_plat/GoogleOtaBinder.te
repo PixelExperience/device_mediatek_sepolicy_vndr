@@ -1,0 +1,11 @@
+# ==============================================
+# Policy File of /system/bin/GoogleOtaBinder Executable File
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+allow GoogleOtaBinder ota_agent_service:service_manager add;
+
+# /dev/misc
+allow GoogleOtaBinder misc_device:chr_file { write read open ioctl};

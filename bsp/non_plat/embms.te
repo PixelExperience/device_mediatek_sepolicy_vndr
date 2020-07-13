@@ -1,0 +1,13 @@
+# ==============================================
+# Policy File of embms Executable File
+# ==============================================
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+# Purpose: comply with Vzw eMBMS operator requirement
+allow untrusted_app radio:unix_stream_socket connectto;
+
+allow untrusted_app_25 radio:unix_stream_socket connectto;
+
+allow platform_app radio:unix_stream_socket connectto;

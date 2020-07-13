@@ -1,0 +1,2 @@
+# Purpose : hal_cas_default needs to use vendor binder to communicate
+vndbinder_use(hal_cas_default);

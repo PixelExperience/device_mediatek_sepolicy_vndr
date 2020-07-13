@@ -1,0 +1,6 @@
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# Purpose : access gpu hal
+hal_client_domain(cameraserver, hal_gpu)
