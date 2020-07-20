@@ -6,3 +6,6 @@
 #          from app process, instead of via same-process MDP library, to
 #          protect CMDQ device node.
 hal_client_domain(untrusted_app_27, hal_mms)
+
+# Purpose: Allow Kernel to Read Osrelease Proc
+allow untrusted_app_27 proc_kernel:file { getattr open read };

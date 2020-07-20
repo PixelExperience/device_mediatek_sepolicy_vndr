@@ -663,3 +663,6 @@
 /(system\/vendor|vendor)/bin/aee_aedv u:object_r:aee_aedv_exec:s0
 /(system\/vendor|vendor)/bin/aee_aedv64 u:object_r:aee_aedv_exec:s0
 /vendor/bin/aeev  u:object_r:aee_aedv_exec:s0
+
+# Kernel Osrelease
+/proc/sys/kernel(/.*)? u:object_r:proc_kernel:s0

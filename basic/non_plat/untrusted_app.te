@@ -6,8 +6,13 @@
 #					 from MTK kernel modules for thermal tests at OEM/ODM.
 allow untrusted_app proc_mtktz:dir search;
 allow untrusted_app proc_mtktz:file r_file_perms;
+allow untrusted_app proc_kernel:file { getattr open read };
 
 # Purpose: Allow same-process GPU library to call MDP/CMDQ via MTK MDP HAL
 #          from app process, instead of via same-process MDP library, to
 #          protect CMDQ device node.
 hal_client_domain(untrusted_app, hal_mms)
+
+# Purpose: Allow untrusted_app To execute
+allow untrusted_app app_data_file:file execute;
+auditallow untrusted_app app_data_file:file { execute execute_no_trans };
