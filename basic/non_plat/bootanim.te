@@ -26,3 +26,6 @@ allowxperm bootanim proc_perfmgr:file ioctl {
 
 # Purpose : Allow to access gpu device search
 allow bootanim gpu_device:dir search;
+
+# Purpose : Allow to read system data
+allow bootanim system_data_file:dir read;

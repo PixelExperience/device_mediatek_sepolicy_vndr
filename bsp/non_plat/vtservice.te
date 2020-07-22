@@ -242,7 +242,7 @@ allowxperm vtservice proc_perfmgr:file ioctl {
 get_prop(vtservice, vendor_default_prop)
 get_prop(vtservice, vendor_vt_prop)
 
-allow vtservice mtk_hal_mms_hwservice:hwservice_manager find;
+allow vtservice hal_mms_hwservice:hwservice_manager find;
 allow vtservice cameraserver:dir search;
 allow vtservice cameraserver:file { getattr open read };
 allow vtservice debug_bq_dump_prop:file read;

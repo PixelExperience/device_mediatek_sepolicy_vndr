@@ -60,6 +60,9 @@ allow mtk_agpsd merged_hal_service:unix_dgram_socket sendto;
 # Allow send socket to fusion rild
 allow mtk_agpsd rild:unix_dgram_socket sendto;
 
+# Allow system suspend to read the property of hwservicemanager
+allow mtk_agpsd system_suspend_hwservice:hwservice_manager find;
+
 # Allow libapmonitor to read the property of hwservicemanager.ready
 get_prop(mtk_agpsd,hwservicemanager_prop)
 

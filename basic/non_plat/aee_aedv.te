@@ -278,7 +278,7 @@ allow aee_aedv selinuxfs:file r_file_perms;
 
 # Purpose: mrdump db flow and pre-allocation
 # mrdump db flow
-allow aee_aedv sysfs_dt_firmware_android:dir search;
+allow aee_aedv sysfs_dt_firmware_android:dir { open read search };
 allow aee_aedv sysfs_dt_firmware_android:file r_file_perms;
 allow aee_aedv kernel:system module_request;
 allow aee_aedv metadata_file:dir search;
@@ -420,6 +420,11 @@ allow aee_aedv proc_aed_reboot_reason:file r_file_perms;
 # Purpose: Allow aee_aedv to write /proc/sys/vm/drop_caches
 allow aee_aedv proc_drop_caches:file rw_file_perms;
 
+# Purpose: Allow aee_aedv to search in proc_ppm
+allow aee_aedv proc_ppm:dir search;
+
+dontaudit aee_aedv self:capability dac_override;
+dontaudit aee_aedv self:capability dac_read_search;
 allow aee_aedv apexd_prop:file { getattr map open };
 allow aee_aedv atci_sys_prop:file { getattr map open };
 allow aee_aedv atm_ipaddr_prop:file { getattr map open };

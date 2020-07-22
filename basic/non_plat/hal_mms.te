@@ -3,4 +3,4 @@ binder_call(hal_mms_client, hal_mms_server)
 binder_call(hal_mms_server, hal_mms_client)
 
 # give permission for hal client
-allow hal_mms_client mtk_hal_mms_hwservice :hwservice_manager find;
+allow hal_mms_client hal_mms_hwservice :hwservice_manager find;

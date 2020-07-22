@@ -11,3 +11,4 @@ allow zygote gpu_device:chr_file { open read write ioctl getattr};
 
 allow zygote proc_bootprof:file rw_file_perms;
 allow zygote proc_uptime:file rw_file_perms;
+allow zygote system_prop:property_service set;

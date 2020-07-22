@@ -66,3 +66,7 @@ allow mtk_hal_sensors mnt_vendor_file:dir search;
 
 # Purpose: fix [vts_10.0_r2]VtsHalSensorsV2_0Target fail
 allow mtk_hal_sensors merged_hal_service:fd use;
+
+# Purpose: Allow SCP
+allow mtk_hal_sensors sysfs_scp:dir search;
+allow mtk_hal_sensors sysfs_scp:file { open read write };

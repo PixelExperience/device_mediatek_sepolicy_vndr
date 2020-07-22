@@ -12,4 +12,6 @@ typeattribute loghidlvendorservice mlstrustedsubject;
 hal_server_domain(loghidlvendorservice, mtk_hal_log)
 init_daemon_domain(loghidlvendorservice)
 allow loghidlvendorservice system_app:binder call;
+
 dontaudit loghidlvendorservice self:capability dac_read_search;
+dontaudit loghidlvendorservice self:capability dac_override;

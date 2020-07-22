@@ -3,7 +3,12 @@ type vendor_neuralnetworks_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_neuralnetworks)
 
-allow vendor_neuralnetworks vendor_neuralnetworks_exec:file execute_no_trans;
+hal_server_domain(vendor_neuralnetworks, hal_neuralnetworks)
+hal_client_domain(vendor_neuralnetworks, hal_graphics_allocator)
+
+add_hwservice(vendor_neuralnetworks, hal_neuralnetworks_hwservice)
+allow vendor_neuralnetworks hal_neuralnetworks_hwservice:hwservice_manager find;
+allow vendor_neuralnetworks hidl_base_hwservice:hwservice_manager add;
 allow vendor_neuralnetworks ion_device:chr_file r_file_perms;
 allow vendor_neuralnetworks debugfs_ion:dir r_dir_perms;
 allow vendor_neuralnetworks vpu_device:chr_file rw_file_perms;

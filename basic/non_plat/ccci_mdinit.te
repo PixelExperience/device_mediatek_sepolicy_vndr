@@ -118,4 +118,5 @@ allow ccci_mdinit mnt_vendor_file:dir search;
 allow ccci_mdinit block_device:dir search;
 allow ccci_mdinit metadata_file:dir search;
 allow ccci_mdinit proc_cmdline:file r_file_perms;
-allow ccci_mdinit sysfs_dt_firmware_android:dir search;
+allow ccci_mdinit sysfs_dt_firmware_android:dir { open read search };
+allow ccci_mdinit sysfs_dt_firmware_android:file { getattr open read };

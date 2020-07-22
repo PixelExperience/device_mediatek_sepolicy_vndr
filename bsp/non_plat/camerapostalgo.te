@@ -19,7 +19,7 @@ get_prop(camerapostalgo, debug_bq_dump_prop)
 allow camerapostalgo debugfs_ion:dir search;
 
 # ipc call
-allow camerapostalgo mtk_hal_mms_hwservice:hwservice_manager find;
+allow camerapostalgo hal_mms_hwservice:hwservice_manager find;
 allow camerapostalgo mtk_hal_gpu_hwservice:hwservice_manager find;
 hal_client_domain(camerapostalgo, hal_graphics_allocator);
 allow camerapostalgo hal_graphics_mapper_hwservice:hwservice_manager find;

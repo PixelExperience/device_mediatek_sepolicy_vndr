@@ -22,7 +22,11 @@ hwbinder_use(mtk_hal_mms);
 typeattribute mtk_hal_mms untrusted_app_visible_halserver_violators;
 
 # add/find permission rule to hwservicemanager
-add_hwservice(hal_mms_server, mtk_hal_mms_hwservice)
+add_hwservice(hal_mms_server, hal_mms_hwservice)
+hal_server_domain(mtk_hal_mms, hal_mms)
+add_hwservice(mtk_hal_mms, hal_mms_hwservice)
+allow mtk_hal_mms hal_mms_hwservice:hwservice_manager find;
+allow mtk_hal_mms hidl_base_hwservice:hwservice_manager add;
 
 # Purpose : Allow to use kernel driver
 allow mtk_hal_mms graphics_device:chr_file { read write open ioctl };
