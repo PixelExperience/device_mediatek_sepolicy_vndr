@@ -16,3 +16,7 @@ hal_client_domain(untrusted_app, hal_mms)
 # Purpose: Allow untrusted_app To execute
 allow untrusted_app app_data_file:file execute;
 auditallow untrusted_app app_data_file:file { execute execute_no_trans };
+
+# Purpose: Kernel Osrelease Proc
+dontaudit untrusted_app proc:file r_file_perms;
+dontaudit untrusted_app proc_vmstat:file r_file_perms;

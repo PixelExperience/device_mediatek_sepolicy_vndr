@@ -5,6 +5,7 @@
 #############################
 # proc files
 #
+genfscon proc /bus/input/devices u:object_r:proc_devices:s0
 genfscon proc /driver/thermal u:object_r:proc_thermal:s0
 genfscon proc /thermlmt u:object_r:proc_thermal:s0
 genfscon proc /fps_tm u:object_r:proc_thermal:s0

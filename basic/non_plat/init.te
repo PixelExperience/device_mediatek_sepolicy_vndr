@@ -49,12 +49,14 @@ allow init tmpfs:lnk_file create;
 
 # Purpose : bt hal interface permission
 allow init mtk_hal_bluetooth_exec:file getattr;
+allow init bluetooth:binder call;
 
 # Purpose: Fix bootup fail
 allow init debugfs:file w_file_perms;
 
 # Purpose: Fix audio hal service fail
 allow init mtk_hal_audio_exec:file getattr;
+allow init audio_device:chr_file rw_file_perms;
 
 # Purpose: Enable PRODUCT_FULL_TREBLE
 allow init vendor_block_device:lnk_file relabelto;
@@ -112,3 +114,6 @@ allow init boot_block_device:lnk_file relabelto;
 allow init vbmeta_block_device:lnk_file relabelto;
 
 allow init vendor_hal_nfc_default_exec:file { execute };
+
+# Purpose: Fix radio service fail
+allow init radio:binder call;

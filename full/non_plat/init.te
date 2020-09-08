@@ -3,7 +3,7 @@
 # ============
 
 # Purpose : enable socket for ATCI
-allow init socket_device:sock_file { create unlink setattr };
+allow init socket_device:sock_file create_file_perms;
 
 # Purpose : enable mtd device for ubi ioctl
 allow init mtd_device:chr_file rw_file_perms;

@@ -23,6 +23,7 @@ dontaudit vold nvdata_file:dir r_dir_perms;
 dontaudit vold nvcfg_file:dir r_dir_perms;
 dontaudit vold protect_f_data_file:dir r_dir_perms;
 dontaudit vold protect_s_data_file:dir r_dir_perms;
+dontaudit vold persist_data_file:dir r_dir_perms;
 
 # execute mke2fs when format as internal
 allow vold cache_block_device:blk_file getattr;

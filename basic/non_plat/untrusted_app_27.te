@@ -7,5 +7,39 @@
 #          protect CMDQ device node.
 hal_client_domain(untrusted_app_27, hal_mms)
 
-# Purpose: Allow Kernel to Read Osrelease Proc
-allow untrusted_app_27 proc_kernel:file { getattr open read };
+# Purpose: Kernel Osrelease Proc
+dontaudit untrusted_app_27 proc:file r_file_perms;
+
+# Purpose: Allow 3rd Party Apps To Read Device Info
+allow untrusted_app_27 block_device:dir r_dir_perms;
+allow untrusted_app_27 sysfs_devices_block:dir r_dir_perms;
+allow untrusted_app_27 sysfs_thermal:dir r_dir_perms;
+allow untrusted_app_27 proc_asound:dir r_dir_perms;
+allow untrusted_app_27 sysfs_bus:dir r_dir_perms;
+allow untrusted_app_27 sysfs_class:dir r_dir_perms;
+allow untrusted_app_27 mtee_trusty_file:dir r_dir_perms;
+allow untrusted_app_27 sysfs_emi_ctrl:dir r_dir_perms;
+dontaudit untrusted_app_27 anr_data_file:dir r_dir_perms;
+dontaudit untrusted_app_27 mnt_vendor_file:dir r_dir_perms;
+dontaudit untrusted_app_27 proc_tty_drivers:file r_file_perms;
+dontaudit untrusted_app_27 selinuxfs:file { ioctl read lock open };
+dontaudit untrusted_app_27 proc_net_tcp_udp:file r_file_perms;
+dontaudit untrusted_app_27 apk_data_file:file create_file_perms;
+allow untrusted_app_27 sysfs_bus:file r_file_perms;
+allow untrusted_app_27 sysfs_bus:lnk_file r_file_perms;
+allow untrusted_app_27 sysfs_mmcblk:file r_file_perms;
+allow untrusted_app_27 proc_iomem:file r_file_perms;
+allow untrusted_app_27 proc_net:file r_file_perms;
+allow untrusted_app_27 proc_devices:file r_file_perms;
+allow untrusted_app_27 proc_interrupts:file r_file_perms;
+allow untrusted_app_27 proc_partition:file r_file_perms;
+allow untrusted_app_27 proc_version:file { getattr map watch watch_reads };
+allow untrusted_app_27 proc_asound:file { getattr map watch watch_reads };
+allow untrusted_app_27 sysfs_class:lnk_file r_file_perms;
+allow untrusted_app_27 sysfs_devices_block:file r_file_perms;
+allow untrusted_app_27 sysfs_thermal:file r_file_perms;
+allow untrusted_app_27 sysfs_thermal:lnk_file r_file_perms;
+allow untrusted_app_27 sysfs_emi_ctrl:file r_file_perms;
+allow untrusted_app_27 sysfs_emi_ctrl:lnk_file r_file_perms;
+allow untrusted_app_27 selinuxfs:file { getattr map watch watch_reads };
+allow untrusted_app_27 self:udp_socket rw_socket_perms;
