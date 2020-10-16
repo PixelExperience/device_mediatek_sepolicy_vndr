@@ -6,9 +6,9 @@ allow hal_drm_widevine mnt_vendor_file:dir search;
 
 # Add sepolicy for tee relate
 allow hal_drm_widevine mobicore:unix_stream_socket connectto;
-allow hal_drm_widevine persist_data_file:dir search;
+allow hal_drm_widevine persist_data_file:dir create_dir_perms;
 allow hal_drm_widevine mobicore_user_device:chr_file { read write ioctl open };
-allow hal_drm_widevine persist_data_file:file { read getattr open };
+allow hal_drm_widevine persist_data_file:file create_file_perms;
 allow hal_drm_widevine proc:file { read ioctl open };
 allow hal_drm_widevine property_socket:sock_file write;
 allow hal_drm_widevine mobicore_data_file:file { read open getattr};
