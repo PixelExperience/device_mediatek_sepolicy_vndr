@@ -26,12 +26,10 @@ genfscon proc /perfmgr u:object_r:proc_perfmgr:s0
 genfscon proc /driver/wmt_dbg u:object_r:proc_wmtdbg:s0
 genfscon proc /zraminfo u:object_r:proc_zraminfo:s0
 genfscon proc /gpulog u:object_r:proc_gpulog:s0
-genfscon proc /cpu/alignment u:object_r:proc_cpu_alignment:s0
 genfscon proc /sched_debug u:object_r:proc_sched_debug:s0
 genfscon proc /chip u:object_r:proc_chip:s0
 genfscon proc /atf_log u:object_r:proc_atf_log:s0
 genfscon proc /gz_log u:object_r:proc_gz_log:s0
-genfscon proc /last_kmsg u:object_r:proc_last_kmsg:s0
 genfscon proc /bootprof u:object_r:proc_bootprof:s0
 genfscon proc /pl_lk u:object_r:proc_pl_lk:s0
 genfscon proc /msdc_debug u:object_r:proc_msdc_debug:s0
@@ -128,7 +126,6 @@ genfscon sysfs /power/vcorefs/opp_table    u:object_r:sysfs_vcore_debug:s0
 
 # Date: 2018/08/09
 #Purpose : MTK Vibrator
-genfscon sysfs /devices/virtual/timed_output/vibrator u:object_r:sysfs_vibrator:s0
 genfscon sysfs /devices/platform/odm/odm:vibrator@0/leds/vibrator u:object_r:sysfs_vibrator:s0
 genfscon sysfs /devices/platform/leds-mt65xx/leds u:object_r:sysfs_leds:s0
 # Date : 2018/08/109
@@ -220,7 +217,6 @@ genfscon debugfs /smi_mon u:object_r:debugfs_smi_mon:s0
 
 genfscon iso9660 / u:object_r:iso9660:s0
 genfscon rawfs / u:object_r:rawfs:s0
-genfscon fuseblk / u:object_r:fuseblk:s0
 
 # 2019/08/24
 genfscon sysfs /class/sensor u:object_r:sysfs_sensor:s0
