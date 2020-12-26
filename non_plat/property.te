@@ -329,3 +329,6 @@ type mtk_wfc_serv_prop, property_type;
 
 # Wifi version recorder
 type vendor_wifi_version, property_type;
+
+# MTK camera property
+type mtk_camera_prop, property_type, mtk_core_property_type;

@@ -356,3 +356,6 @@ MTK_M4U_T_SEC_INIT
 # Operation : For android Q allowing ioctl
 allow mtk_hal_camera mtk_hal_camera:unix_stream_socket { ioctl };
 allowxperm mtk_hal_camera mtk_hal_camera:unix_stream_socket ioctl IIOCNETAIF;
+
+# MTK camera property
+set_prop(mtk_hal_camera, mtk_camera_prop)
