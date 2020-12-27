@@ -691,3 +691,6 @@
 
 # Thermal
 /(system\/vendor|vendor)/bin/thermal u:object_r:thermal_exec:s0
+
+# TEE
+/dev/teei_fp u:object_r:teei_fp_device:s0

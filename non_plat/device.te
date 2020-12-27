@@ -272,3 +272,5 @@ type m_bio_misc_device, dev_type;
 # Operation : Migration
 # Purpose : Add permission for gpu access
 type dri_device, dev_type, mlstrustedobject;
+
+type teei_fp_device, dev_type;
