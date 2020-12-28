@@ -1,1 +1,4 @@
 allow tee ut_keymaster_device:chr_file rw_file_perms;
+
+allow tee teei_rpmb_device:chr_file rw_file_perms;
+allow tee teei_rpmb_device:blk_file { read write ioctl open };

@@ -273,7 +273,9 @@ type m_bio_misc_device, dev_type;
 # Purpose : Add permission for gpu access
 type dri_device, dev_type, mlstrustedobject;
 
+# TEE
 type teei_fp_device, dev_type;
+type teei_rpmb_device, dev_type;
 
 # Keymaster
 type ut_keymaster_device, dev_type;
