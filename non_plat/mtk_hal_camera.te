@@ -363,3 +363,5 @@ set_prop(mtk_hal_camera, mtk_camera_prop)
 # Camera data files
 allow mtk_hal_camera camera_vendor_data_file:dir create_dir_perms;
 allow mtk_hal_camera camera_vendor_data_file:file create_file_perms;
+
+allow mtk_hal_camera seninf_device:chr_file rw_file_perms;
