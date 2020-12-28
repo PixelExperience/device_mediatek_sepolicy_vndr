@@ -686,3 +686,5 @@
 /(system\/vendor|vendor)/bin/aee_aedv64 u:object_r:aee_aedv_exec:s0
 /vendor/bin/aeev  u:object_r:aee_aedv_exec:s0
 
+# Camera data files
+/data/vendor/camera(/.*)?              u:object_r:camera_vendor_data_file:s0
