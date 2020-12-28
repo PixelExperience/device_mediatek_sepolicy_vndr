@@ -688,3 +688,6 @@
 
 # Camera data files
 /data/vendor/camera(/.*)?              u:object_r:camera_vendor_data_file:s0
+
+# Thermal
+/(system\/vendor|vendor)/bin/thermal u:object_r:thermal_exec:s0
