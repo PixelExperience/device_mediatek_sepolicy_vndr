@@ -698,6 +698,8 @@
 /dev/emmcrpmb0 u:object_r:teei_rpmb_device:s0
 /dev/tz_vfs u:object_r:teei_vfs_device:s0
 
+/data/vendor/thh(/.*)? u:object_r:vendor_teei_data_file:s0
+
 /(vendor|system\/vendor)/bin/teei_daemon u:object_r:tee_exec:s0
 /(vendor|system\/vendor)/bin/teei_loader u:object_r:tee_exec:s0
 

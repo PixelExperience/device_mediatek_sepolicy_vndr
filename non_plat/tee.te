@@ -4,3 +4,6 @@ allow tee teei_rpmb_device:chr_file rw_file_perms;
 allow tee teei_rpmb_device:blk_file { read write ioctl open };
 
 allow tee teei_vfs_device:chr_file rw_file_perms;
+
+allow tee vendor_teei_data_file:dir create_dir_perms;
+allow tee vendor_teei_data_file:file create_file_perms;

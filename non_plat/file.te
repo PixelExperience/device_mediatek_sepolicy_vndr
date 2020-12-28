@@ -443,3 +443,6 @@ type sysfs_concurrency_scenario, fs_type, sysfs_type;
 
 # Camera file types
 type camera_vendor_data_file, file_type, data_file_type;
+
+# TEE
+type vendor_teei_data_file, file_type, data_file_type;
