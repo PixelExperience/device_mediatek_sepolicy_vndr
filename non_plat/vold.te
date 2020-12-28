@@ -46,3 +46,5 @@ allow vold proc_swaps:file getattr;
 allow vold swap_block_device:blk_file getattr;
 
 allow vold sysfs_mmcblk:file rw_file_perms;
+
+allow vold ut_keymaster_device:chr_file { read write open ioctl};

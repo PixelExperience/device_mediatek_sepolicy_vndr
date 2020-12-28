@@ -15,3 +15,5 @@ allow hal_keymaster_attestation tee_device:chr_file { read write open ioctl };
 allow hal_keymaster_attestation mnt_vendor_file:dir search;
 allow hal_keymaster_attestation persist_data_file:dir { write search add_name };
 allow hal_keymaster_attestation persist_data_file:file { write create open getattr };
+
+allow hal_keymaster_attestation ut_keymaster_device:chr_file { read write ioctl open };
