@@ -274,3 +274,5 @@ genfscon sysfs /devices/platform/11270000.usb3/musb-hdrc/cmode u:object_r:sysfs_
 # Date : 2019/12/12
 # Purpose : allow media sources to access /sys/bus/platform/drivers/mem_bw_ctrl/*
 genfscon sysfs /bus/platform/drivers/mem_bw_ctrl/concurrency_scenario u:object_r:sysfs_concurrency_scenario:s0
+
+genfscon sysfs /devices/platform/CONNAC u:object_r:sysfs_net:s0
