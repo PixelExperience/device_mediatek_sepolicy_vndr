@@ -419,3 +419,6 @@ allow meta_tst adsp_device:chr_file rw_file_perms;
 # Operation: P migration
 # Purpose : audio scp recovery
 allow meta_tst audio_scp_device:chr_file r_file_perms;
+
+# TEE
+allow meta_tst teei_client_device:chr_file { create setattr unlink rw_file_perms };;

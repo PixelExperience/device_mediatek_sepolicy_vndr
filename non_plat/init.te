@@ -145,3 +145,6 @@ allow init proc_cpu_alignment:file w_file_perms;
 # Purpose: Allow to relabelto for selinux_android_restorecon
 allow init boot_block_device:lnk_file relabelto;
 allow init vbmeta_block_device:lnk_file relabelto;
+
+# TEE
+allow init teei_client_device:chr_file rw_file_perms;

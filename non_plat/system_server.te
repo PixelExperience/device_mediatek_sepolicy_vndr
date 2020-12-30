@@ -278,4 +278,6 @@ allow system_server sf_rtt_file:dir rmdir;
 # Operation : Q Migration
 allow system_server storage_stub_file:dir getattr;
 
+# TEE
 allow system_server teei_fp_device:chr_file rw_file_perms;
+allow system_server teei_client_device:chr_file r_file_perms;

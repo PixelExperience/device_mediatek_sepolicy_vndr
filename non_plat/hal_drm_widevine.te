@@ -14,3 +14,4 @@ allow hal_drm_widevine hal_allocator_server:fd use;
 allow hal_drm_widevine mediadrm_vendor_data_file:dir create_dir_perms;
 allow hal_drm_widevine mediadrm_vendor_data_file:file create_file_perms;
 
+allow hal_drm_widevine teei_client_device:chr_file rw_file_perms;

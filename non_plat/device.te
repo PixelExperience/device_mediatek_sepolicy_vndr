@@ -278,5 +278,8 @@ type teei_fp_device, dev_type;
 type teei_rpmb_device, dev_type;
 type teei_vfs_device, dev_type;
 
+type teei_client_device, dev_type;
+typeattribute teei_client_device mlstrustedobject;
+
 # Keymaster
 type ut_keymaster_device, dev_type;

@@ -697,6 +697,8 @@
 /dev/rpmb0 u:object_r:teei_rpmb_device:s0
 /dev/emmcrpmb0 u:object_r:teei_rpmb_device:s0
 /dev/tz_vfs u:object_r:teei_vfs_device:s0
+/dev/tee0 u:object_r:teei_client_device:s0
+/dev/teei_client u:object_r:teei_client_device:s0
 
 /data/vendor/thh(/.*)? u:object_r:vendor_teei_data_file:s0
 

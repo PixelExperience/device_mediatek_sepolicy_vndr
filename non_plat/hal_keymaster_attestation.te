@@ -17,3 +17,5 @@ allow hal_keymaster_attestation persist_data_file:dir { write search add_name };
 allow hal_keymaster_attestation persist_data_file:file { write create open getattr };
 
 allow hal_keymaster_attestation ut_keymaster_device:chr_file { read write ioctl open };
+
+allow hal_keymaster_attestation teei_client_device:chr_file { read write open ioctl};
