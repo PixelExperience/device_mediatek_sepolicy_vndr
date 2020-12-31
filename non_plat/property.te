@@ -335,3 +335,6 @@ type mtk_camera_prop, property_type, mtk_core_property_type;
 
 # MTK network property
 type mtk_network_prop, property_type, mtk_core_property_type;
+
+# IMS
+type mtk_md_status_prop, property_type;

@@ -374,3 +374,6 @@ vendor.wlan.firmware.version     u:object_r:vendor_wifi_version:s0
 # MTK camera property
 ro.mtk_cam_dualzoom_support u:object_r:mtk_camera_prop:s0
 ro.mtk_cam_stereo_camera_support u:object_r:mtk_camera_prop:s0
+
+# IMS
+vendor.volte_md_status         u:object_r:mtk_md_status_prop:s0

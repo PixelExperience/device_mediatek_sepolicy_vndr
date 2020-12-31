@@ -1,0 +1,10 @@
+type volte_md_status, domain, netdomain, mtkimsmddomain;
+type volte_md_status_exec, exec_type, file_type, vendor_file_type;;
+
+init_daemon_domain(volte_md_status)
+
+allow volte_md_status ccci_device:chr_file rw_file_perms;
+allow volte_md_status property_socket:sock_file write;
+allow volte_md_status init:unix_stream_socket connectto;
+
+set_prop(volte_md_status, mtk_md_status_prop)
