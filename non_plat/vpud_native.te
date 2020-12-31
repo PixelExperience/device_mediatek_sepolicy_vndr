@@ -1,0 +1,44 @@
+type vpud_native_exec, exec_type, file_type, vendor_file_type;
+type vpud_native, domain;
+
+init_daemon_domain(vpud_native)
+
+allow vpud_native ion_device:chr_file { ioctl read write open };
+allow vpud_native vcu_device:chr_file rw_file_perms;
+allow vpud_native MTK_SMI_device:chr_file { open read ioctl };
+allow vpud_native proc:file { ioctl read getattr open };
+allow vpud_native init:unix_stream_socket connectto;
+allow vpud_native property_socket:sock_file write;
+allow vpud_native sysfs_device_tree_model:file r_file_perms;
+allow vpud_native teei_client_device:chr_file rw_file_perms;
+allow vpud_native mediaserver:fd use;
+
+allow vpud_native mtk_hal_power_hwservice:hwservice_manager find;
+allow vpud_native mtk_hal_power:fd use;
+binder_call(vpud_native, mtk_hal_power)
+
+allow vpud_native thermal_manager_data_file:file { read write };
+allow vpud_native thermalloadalgod:unix_stream_socket connectto;
+allow vpud_native proc_thermal:file open;
+
+allow vpud_native proc_m4u:file r_file_perms;
+allowxperm vpud_native proc_m4u:file ioctl {
+    MTK_M4U_T_ALLOC_MVA
+    MTK_M4U_T_DEALLOC_MVA
+    MTK_M4U_T_CONFIG_PORT
+    MTK_M4U_T_DMA_OP
+    MTK_M4U_T_SEC_INIT
+    MTK_M4U_T_CONFIG_PORT_ARRAY
+    MTK_M4U_T_CACHE_SYNC
+};
+
+allow vpud_native vcodec_file:file create_file_perms;
+allow vpud_native vcodec_file:dir create_dir_perms;
+
+allow vpud_native vendor_shell_exec:file rx_file_perms;
+allow vpud_native vendor_toolbox_exec:file rx_file_perms;
+
+binder_call(vpud_native, hwservicemanager)
+
+set_prop(vpud_native, hwservicemanager_prop)
+set_prop(vpud_native, mtk_thermal_config_prop)

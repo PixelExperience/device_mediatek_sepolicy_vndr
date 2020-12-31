@@ -283,3 +283,7 @@ typeattribute teei_client_device mlstrustedobject;
 
 # Keymaster
 type ut_keymaster_device, dev_type;
+
+# VPU
+type vpud_device, dev_type;
+type vcu_device, dev_type;
