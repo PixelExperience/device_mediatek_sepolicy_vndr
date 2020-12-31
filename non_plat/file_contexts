@@ -707,3 +707,6 @@
 
 # Keymaster
 /dev/ut_keymaster u:object_r:ut_keymaster_device:s0
+
+#Ipsec
+/(system\/vendor|vendor)/bin/ipsec_mon u:object_r:ipsec_mon_exec:s0

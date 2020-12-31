@@ -1,0 +1,6 @@
+allow netutils_wrapper ipsec_mon:fd use;
+
+allow netutils_wrapper ipsec_mon: {
+    netlink_route_socket
+    netlink_xfrm_socket
+} { read write };

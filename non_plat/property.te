@@ -332,3 +332,6 @@ type vendor_wifi_version, property_type;
 
 # MTK camera property
 type mtk_camera_prop, property_type, mtk_core_property_type;
+
+# MTK network property
+type mtk_network_prop, property_type, mtk_core_property_type;
