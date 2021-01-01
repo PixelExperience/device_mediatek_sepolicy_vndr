@@ -1,0 +1,20 @@
+type volte_imsm_93, domain, netdomain, mtkimsmddomain;
+type volte_imsm_93_exec, exec_type, file_type, vendor_file_type;;
+
+init_daemon_domain(volte_imsm_93)
+
+allow volte_imsm_93 self:capability { chown setgid setuid net_admin };
+allow volte_imsm_93 self:udp_socket create_socket_perms;
+allow volte_imsm_93 self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+allow volte_imsm_93 self:netlink_generic_socket create_socket_perms_no_ioctl;
+
+allow volte_imsm_93 { socket_device property_socket }:sock_file write;
+allow volte_imsm_93 { ccci_device devpts }:chr_file rw_file_perms;
+allow volte_imsm_93 init:unix_stream_socket connectto;
+
+allow volte_imsm_93 device:dir rw_dir_perms;
+allow volte_imsm_93 device:lnk_file { create unlink };
+
+set_prop(volte_imsm_93, usp_prop)
+set_prop(volte_imsm_93, ril_mux_report_case_prop)
+set_prop(volte_imsm_93, mtk_volte_prop)
