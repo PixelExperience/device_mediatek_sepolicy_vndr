@@ -1,0 +1,25 @@
+type bip, domain, mtkimsmddomain;
+type bip_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(bip)
+
+allow bip self:netlink_route_socket read;
+allow bip self:tcp_socket { create_socket_perms listen accept };
+allow bip self:udp_socket create_socket_perms;
+allow bip self:rawip_socket { read write create getattr bind setopt };
+
+allow bip socket_device:dir { write add_name remove_name };
+allow bip socket_device:sock_file { write create unlink };
+
+allow bip { node port netd }:udp_socket node_bind;
+allow bip { fwmarkd_socket property_socket }:sock_file write;
+allow bip init:unix_stream_socket connectto;
+
+allow bip port:tcp_socket { name_connect };
+allow bip rootfs:lnk_file getattr;
+allow bip ccci_device:chr_file rw_file_perms;
+allow bip node:rawip_socket node_bind;
+
+set_prop(bip, ril_mux_report_case_prop)
+set_prop(bip, ctl_muxreport-daemon_prop)
+get_prop(bip, net_dns_prop)
