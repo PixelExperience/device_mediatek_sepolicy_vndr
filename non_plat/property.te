@@ -340,3 +340,5 @@ type mtk_network_prop, property_type, mtk_core_property_type;
 type mtk_md_status_prop, property_type;
 type ctl_volte_ua_prop, property_type;
 type ctl_volte_imcb_prop, property_type;
+type mtk_wod_prop, property_type, mtk_core_property_type;
+type persist_wod_prop, property_type, mtk_core_property_type;
