@@ -449,3 +449,4 @@ type vendor_teei_data_file, file_type, data_file_type;
 
 # IMS
 type volte_ua_socket, file_type;
+type volte_imcb_socket, file_type;

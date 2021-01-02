@@ -1,0 +1,22 @@
+type volte_imcb, domain, netdomain, mtkimsmddomain;
+type volte_imcb_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(volte_imcb)
+
+allow volte_imcb { port node }:tcp_socket node_bind;
+allow volte_imcb self:tcp_socket { create bind listen accept setopt read getattr write };
+allow volte_imcb socket_device:sock_file write;
+
+allow volte_imcb {
+    volte_ua
+    init
+}:unix_stream_socket connectto;
+
+allow volte_imcb {
+    volte_ua_socket
+    volte_imcb_socket
+    property_socket
+    netd_socket
+}:sock_file write;
+
+set_prop(volte_imcb, mtk_volte_prop)
