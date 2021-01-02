@@ -1,0 +1,22 @@
+type wfca, domain, netdomain, mtkimsmddomain;
+type wfca_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(wfca)
+
+allow wfca wfca_socket:sock_file write;
+
+allow wfca self:capability2 block_suspend;
+allow wfca self:capability { setgid setuid net_admin net_raw };
+allow wfca self:udp_socket { ioctl read write create getattr bind setopt shutdown };
+allow wfca self:rawip_socket { read write create getattr bind setopt };
+allow wfca self:packet_socket { read create setopt };
+
+allow wfca socket_device:sock_file { write create unlink };
+allow wfca socket_device:dir { write add_name remove_name };
+
+allow wfca { node port }:{ udp_socket rawip_socket } node_bind;
+allow wfca fwmarkd_socket:sock_file write;
+allow wfca ccci_device:chr_file { ioctl read write open };
+allow wfca sysfs_wake_lock:file { read write open };
+
+dontaudit wfca self:capability dac_override;
