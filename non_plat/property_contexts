@@ -382,3 +382,7 @@ ctl.vendor.volte_ua            u:object_r:ctl_volte_ua_prop:s0
 ctl.vendor.volte_imcb          u:object_r:ctl_volte_imcb_prop:s0
 vendor.wo.   u:object_r:mtk_wod_prop:s0
 persist.vendor.wo.   u:object_r:persist_wod_prop:s0
+persist.vendor.gba u:object_r:vendor_ims_xcap_prop:s0
+persist.vendor.radio.ss.mode u:object_r:vendor_ims_xcap_prop:s0
+persist.vendor.radio.ss.xrdm u:object_r:vendor_ims_xcap_prop:s0
+persist.vendor.radio.xcap.cfn u:object_r:vendor_ims_xcap_prop:s0

@@ -1,0 +1,23 @@
+type xcap, domain, netdomain, mtkimsmddomain;
+type xcap_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(xcap)
+
+allow xcap socket_device:sock_file { write create unlink };
+allow xcap socket_device:dir { write add_name remove_name };
+
+allow xcap self:capability { setgid setuid net_admin net_raw };
+allow xcap self:rawip_socket { read write create getattr bind setopt };
+allow xcap self:netlink_route_socket read;
+allow xcap self:udp_socket rw_socket_perms;
+
+allow xcap { port node}:tcp_socket { name_connect node_bind name_bind };
+allow xcap fwmarkd_socket:sock_file write;
+allow xcap property_socket:sock_file write;
+allow xcap ccci_device:chr_file { ioctl read write open };
+allow xcap rootfs:lnk_file getattr;
+
+#set_prop(xcap, persist_xcap_rawurl_prop)
+#set_prop(xcap, vendor_ims_xcap_prop)
+set_prop(xcap, ctl_muxreport-daemon_prop)
+set_prop(xcap, ril_mux_report_case_prop)

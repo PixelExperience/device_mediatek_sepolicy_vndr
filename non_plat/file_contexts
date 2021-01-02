@@ -722,3 +722,4 @@
 /(system\/vendor|vendor)/bin/volte_ua           u:object_r:volte_ua_exec:s0
 /(system\/vendor|vendor)/bin/volte_imcb         u:object_r:volte_imcb_exec:s0
 /(system\/vendor|vendor)/bin/wfca                u:object_r:wfca_exec:s0
+/(system\/vendor|vendor)/bin/xcap                u:object_r:xcap_exec:s0
