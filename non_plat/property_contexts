@@ -378,3 +378,4 @@ ro.mtk_cam_stereo_camera_support u:object_r:mtk_camera_prop:s0
 # IMS
 vendor.volte_md_status         u:object_r:mtk_md_status_prop:s0
 vendor.ril.volte.              u:object_r:mtk_volte_prop:s0
+ctl.vendor.volte_ua            u:object_r:ctl_volte_ua_prop:s0

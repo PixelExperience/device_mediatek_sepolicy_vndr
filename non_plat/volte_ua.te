@@ -1,0 +1,16 @@
+type volte_ua, domain, netdomain, mtkimsmddomain;
+type volte_ua_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(volte_ua)
+
+allow volte_ua {
+    socket_device
+    volte_ua_socket
+    netd_socket
+}:sock_file write;
+
+allow volte_ua node:udp_socket node_bind;
+
+allow volte_ua self:udp_socket { create bind read setopt };
+allow volte_ua self:capability { setgid setuid };
+allow volte_ua self:capability2 { wake_alarm };

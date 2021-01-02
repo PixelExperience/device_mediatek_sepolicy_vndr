@@ -712,6 +712,8 @@
 /(system\/vendor|vendor)/bin/ipsec_mon u:object_r:ipsec_mon_exec:s0
 
 # IMS
+/dev/socket/volte_ua(/.*)?             u:object_r:volte_ua_socket:s0
 /(system\/vendor|vendor)/bin/bip         u:object_r:bip_exec:s0
 /(system\/vendor|vendor)/bin/volte_imsm_93              u:object_r:volte_imsm_93_exec:s0
 /(system\/vendor|vendor)/bin/volte_md_status            u:object_r:volte_md_status_exec:s0
+/(system\/vendor|vendor)/bin/volte_ua           u:object_r:volte_ua_exec:s0
