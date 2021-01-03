@@ -1,0 +1,1 @@
+allow mtkimsapdomain volte_imsvt1_socket:sock_file write;
