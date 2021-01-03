@@ -12,3 +12,4 @@ allow tee teei_client_device:chr_file { create setattr unlink rw_file_perms };;
 allow tee teei_config_device:chr_file rw_file_perms;
 
 allow tee property_socket:sock_file write;
+allow tee init:unix_stream_socket connectto;
