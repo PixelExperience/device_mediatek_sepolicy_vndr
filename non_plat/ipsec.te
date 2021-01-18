@@ -1,0 +1,19 @@
+type ipsec_exec, exec_type, file_type, vendor_file_type;
+type ipsec, domain;
+
+allow ipsec proc_net:file write;
+allow ipsec { property_socket dnsproxyd_socket fwmarkd_socket }:sock_file write;
+allow ipsec { node port }:{ udp_socket rawip_socket } { node_bind name_bind };
+
+allow ipsec init:unix_stream_socket connectto;
+allow ipsec epdg_wod:unix_stream_socket { read write connectto };
+allow ipsec epdg_wod:fd use;
+
+allow ipsec self:capability { kill net_bind_service net_admin };
+allow ipsec self:{ netlink_route_socket netlink_xfrm_socket } { read write create bind nlmsg_read nlmsg_write };
+allow ipsec self:tcp_socket { read write create getattr connect getopt };
+allow ipsec self:capability2 wake_alarm;
+
+allow ipsec devpts:chr_file { read write open };
+
+set_prop(ipsec, mtk_wod_prop)
