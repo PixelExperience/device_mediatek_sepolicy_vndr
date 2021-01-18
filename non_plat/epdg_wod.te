@@ -3,6 +3,8 @@ type epdg_wod_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(epdg_wod)
 
+domain_auto_trans(epdg_wod, stroke_exec, ipsec)
+
 allow epdg_wod self:tun_socket { create relabelfrom relabelto };
 allow epdg_wod self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
 allow epdg_wod self:netlink_xfrm_socket { read write create getattr bind setopt nlmsg_write };
