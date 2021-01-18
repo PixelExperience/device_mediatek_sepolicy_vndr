@@ -68,3 +68,6 @@ get_prop(mtk_agpsd,mnld_prop)
 
 # Read the property of ro.vendor.mtk_log_hide_gps
 get_prop(mtk_agpsd,mtk_gps_support_prop)
+
+# Allow to manage wakelocks
+wakelock_use(mtk_agpsd)
