@@ -12,7 +12,7 @@ allow epdg_wod self:udp_socket { ioctl create };
 allow epdg_wod self:rawip_socket { create getopt setopt };
 allow epdg_wod self:capability { kill net_admin net_raw };
 
-allow epdg_wod tun_device:chr_file rw_file_perms;
+allow epdg_wod { tun_device ccci_device }:chr_file rw_file_perms;
 allow epdg_wod { property_socket netd_socket }:sock_file write;
 allow epdg_wod init:unix_stream_socket connectto;
 
