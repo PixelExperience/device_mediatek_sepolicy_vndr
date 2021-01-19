@@ -1,0 +1,180 @@
+type vtservice_exec, system_file_type, exec_type, file_type;
+type vtservice ,domain;
+typeattribute vtservice coredomain;
+
+type vtservice_hidl_exec , exec_type, file_type, vendor_file_type;
+type vtservice_hidl ,domain, mtkimsapdomain;
+
+init_daemon_domain(vtservice)
+binder_use(vtservice)
+binder_call(vtservice, mediaserver)
+binder_service(vtservice)
+
+init_daemon_domain(vtservice_hidl)
+
+allow vtservice soc_vt_svc_socket:sock_file write;
+allow vtservice soc_vt_tcv_socket:sock_file write;
+allow vtservice rild_oem_socket:sock_file write;
+allow vtservice platform_app:binder call;
+allow vtservice system_server:binder call;
+allow vtservice sdcard_type:dir write;
+allow vtservice sdcard_type:dir add_name;
+allow vtservice sdcard_type:dir create;
+allow vtservice sdcard_type:file create;
+allow vtservice sdcard_type:file getattr;
+allow vtservice surfaceflinger:fd use;
+allow vtservice tmpfs:lnk_file read;
+allow vtservice radio:binder call;
+
+allow vtservice vtservice_service:service_manager add;
+allow vtservice sdcard_type:dir search;
+allow vtservice sdcard_type:file { read write open };
+allow vtservice radio_service:service_manager find;
+allow vtservice mediaserver_service:service_manager find;
+allow vtservice power_service:service_manager find;
+allow vtservice batterystats_service:service_manager find;
+
+allow vtservice_hidl vtservice_service:service_manager add;
+unix_socket_connect(vtservice_hidl, rild_oem, mtkrild)
+allow vtservice_hidl mtkrild:unix_stream_socket connectto;
+
+allow vtservice ccci_device:chr_file { read write open ioctl };
+
+allow vtservice Vcodec_device:chr_file { read write ioctl open };
+
+allow vtservice_hidl MTK_SMI_device:chr_file { read write ioctl open };
+allow vtservice_hidl fwmarkd_socket:sock_file write;
+allow vtservice_hidl netd:unix_stream_socket connectto;
+allow vtservice_hidl untrusted_app:binder call;
+allow vtservice_hidl proc:file open;
+
+allow vtservice audioserver_service:service_manager find;
+allow vtservice mnt_user_file:dir search;
+allow vtservice property_socket:sock_file write;
+allow vtservice surfaceflinger:binder call;
+allow vtservice system_data_file:dir write;
+
+allow vtservice audioserver:binder call;
+allow vtservice init:unix_stream_socket connectto;
+allow vtservice mnt_user_file:lnk_file read;
+allow vtservice system_data_file:dir add_name;
+
+allow vtservice media_rw_data_file:dir create_dir_perms;
+allow vtservice media_rw_data_file:file { write create open };
+
+allow vtservice proc_ged:file r_file_perms;
+allowxperm vtservice proc_ged:file ioctl { proc_ged_ioctls };
+allow vtservice system_data_file:dir remove_name;
+
+allow vtservice system_data_file:dir { open read create };
+allow vtservice system_data_file:sock_file { create open read write unlink };
+
+allow vtservice_hidl self:udp_socket { create bind connect read write setopt getattr getopt shutdown };
+allow vtservice_hidl node:udp_socket { node_bind };
+
+allow vtservice storage_file:lnk_file read;
+allow vtservice devmap_device:chr_file read;
+
+allow vtservice devmap_device:chr_file open;
+allow vtservice devmap_device:chr_file ioctl;
+
+allow vtservice surfaceflinger_service:service_manager find;
+
+allow vtservice cameraserver_service:service_manager find;
+allow vtservice cameraserver:binder call;
+allow vtservice cameraserver:fd use;
+
+allow vtservice mediacodec_service:service_manager find;
+allow vtservice mediacodec:binder call;
+allow vtservice qtaguid_device:chr_file r_file_perms;
+allow vtservice priv_app:binder call;
+
+allow vtservice self:capability net_admin;
+
+allow vtservice debugfs_ged:dir search;
+allow vtservice debugfs_ged:file { write open };
+
+allow vtservice gpu_device:dir search;
+allow vtservice dri_device:chr_file { open read write ioctl getattr};
+allow vtservice gpu_device:chr_file rw_file_perms;
+
+
+hal_client_domain(vtservice, hal_pq)
+
+hal_client_domain(vtservice, hal_allocator)
+
+allow vtservice vtservice_service:service_manager add;
+
+allow vtservice hwservicemanager:binder call;
+allow vtservice hwservicemanager_prop:file { getattr open read }; 
+allow vtservice system_file:dir read;
+allow vtservice system_file:dir open; 
+
+allow vtservice mtk_hal_videotelephony_hwservice :hwservice_manager find;
+
+add_hwservice(vtservice_hidl, mtk_hal_videotelephony_hwservice)
+hwbinder_use(vtservice_hidl)
+binder_call(vtservice, vtservice_hidl)
+binder_call(vtservice_hidl, vtservice)
+
+get_prop(vtservice_hidl, hwservicemanager_prop)
+
+allow vtservice_hidl debugfs_tracing:file open;
+allow vtservice_hidl debugfs_tracing:file write;
+allow vtservice_hidl system_file:dir read;
+allow vtservice_hidl system_file:dir open;
+allow vtservice_hidl rild:unix_stream_socket connectto;
+
+net_domain(vtservice_hidl)
+
+allow vtservice ion_device:chr_file { open read };
+
+hal_client_domain(vtservice, hal_omx);
+allow vtservice mediametrics_service:service_manager find;
+allow vtservice mediametrics:binder call;
+
+allow vtservice self:udp_socket create_socket_perms_no_ioctl;
+allow vtservice node:udp_socket node_bind;
+
+allow vtservice debugfs_ion:dir search;
+allow vtservice fwmarkd_socket:sock_file write;
+allow vtservice hal_graphics_allocator_default:binder call;
+allow vtservice hal_graphics_allocator_default:fd use;
+hal_client_domain(vtservice, hal_graphics_allocator);
+allow vtservice hal_graphics_mapper_hwservice:hwservice_manager find;
+allow vtservice netd:unix_stream_socket connectto;
+allow vtservice ion_device:chr_file ioctl;
+allow vtservice MTK_SMI_device:chr_file { read write ioctl open };
+allow vtservice proc:file getattr;
+allow vtservice mtk_cmdq_device:chr_file { read ioctl open };
+allow vtservice_hidl proc:file read;
+allow vtservice merged_hal_service:fd use;
+allow vtservice merged_hal_service:binder call;
+
+allow vtservice graphics_device:chr_file { ioctl open read };
+allow vtservice graphics_device:dir search;
+
+allow vtservice proc_perfmgr:dir {read search};
+allow vtservice proc_perfmgr:file r_file_perms;
+allowxperm vtservice proc_perfmgr:file ioctl {
+  PERFMGR_FPSGO_QUEUE
+  PERFMGR_FPSGO_DEQUEUE
+  PERFMGR_FPSGO_QUEUE_CONNECT
+  PERFMGR_FPSGO_BQID
+};
+
+get_prop(vtservice, vendor_default_prop)
+
+allow vtservice mtk_hal_mms_hwservice:hwservice_manager find;
+allow vtservice cameraserver:dir search;
+allow vtservice cameraserver:file { getattr open read };
+allow vtservice debug_bq_dump_prop:file read;
+allow vtservice mtk_hal_mms:binder call;
+allow vtservice proc_uptime:file read;
+
+allow vtservice port:udp_socket name_bind;
+allow vtservice self:capability net_raw;
+allow vtservice debug_bq_dump_prop:file open;
+
+hal_client_domain(vtservice, hal_codec2)
+
