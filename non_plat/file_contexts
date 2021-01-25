@@ -734,3 +734,6 @@
 # VPU
 /dev/vcu		         u:object_r:vcu_device:s0
 /vendor/bin/vpud               u:object_r:vpud_native_exec:s0
+
+# DFPS
+/(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.dfps@1\.0-service u:object_r:mtk_hal_dfps_exec:s0

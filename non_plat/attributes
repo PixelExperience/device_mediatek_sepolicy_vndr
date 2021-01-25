@@ -87,4 +87,7 @@ attribute mtk_hal_bgs;
 attribute mtk_hal_bgs_client;
 attribute mtk_hal_bgs_server;
 
-
+# DFPS HIDL
+attribute hal_dfps;
+attribute hal_dfps_client;
+attribute hal_dfps_server;

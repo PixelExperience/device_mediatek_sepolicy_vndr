@@ -1,0 +1,4 @@
+binder_call(hal_dfps_client, hal_dfps_server)
+binder_call(hal_dfps_server, hal_dfps_client)
+
+allow hal_dfps_client mtk_hal_dfps_hwservice:hwservice_manager find;

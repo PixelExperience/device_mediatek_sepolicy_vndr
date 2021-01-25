@@ -148,3 +148,6 @@ allow init vbmeta_block_device:lnk_file relabelto;
 
 # TEE
 allow init teei_client_device:chr_file rw_file_perms;
+
+# DFPS
+allow init mtk_hal_dfps_exec:file getattr;

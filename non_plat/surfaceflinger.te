@@ -82,3 +82,6 @@ allow surfaceflinger mtk_mdp_device:chr_file rw_file_perms;
 # Operation : HDR
 # Purpose: Allow to skip aosp hdr solution
 get_prop(surfaceflinger, graphics_hwc_hdr_prop)
+
+# DFPS
+hal_client_domain(surfaceflinger, hal_dfps)

@@ -81,3 +81,6 @@ vendor.mediatek.hardware.videotelephony::IVideoTelephony u:object_r:mtk_hal_vide
 
 # Keyinstall
 vendor.mediatek.hardware.keyinstall::IKeyinstall u:object_r:mtk_hal_keyinstall_hwservice:s0
+
+# DFPS
+vendor.mediatek.hardware.dfps::IFpsPolicyService u:object_r:mtk_hal_dfps_hwservice:s0

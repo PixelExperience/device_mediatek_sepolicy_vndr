@@ -66,3 +66,7 @@ allowxperm merged_hal_service proc_ged:file ioctl { proc_ged_ioctls };
 # Date: 2019/06/14
 # Operation : Migration
 allow merged_hal_service nvram_agent_binder_hwservice:hwservice_manager find;
+
+# DFPS
+allow merged_hal_service mtk_hal_dfps:binder call;
+hal_client_domain(merged_hal_service, hal_dfps);

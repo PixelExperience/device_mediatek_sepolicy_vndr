@@ -67,3 +67,6 @@ type mtk_hal_videotelephony_hwservice, hwservice_manager_type;
 
 # Keyinstall
 type mtk_hal_keyinstall_hwservice, hwservice_manager_type;
+
+# DFPS
+type mtk_hal_dfps_hwservice, hwservice_manager_type;
