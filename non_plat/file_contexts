@@ -708,6 +708,7 @@
 
 # Keymaster
 /dev/ut_keymaster u:object_r:ut_keymaster_device:s0
+/(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.keyinstall@1\.0-service u:object_r:mtk_hal_keyinstall_exec:s0
 
 # Ipsec
 /(system\/vendor|vendor)/bin/ipsec		u:object_r:ipsec_exec:s0

@@ -1,0 +1,17 @@
+type mtk_hal_keyinstall_exec, exec_type, file_type, vendor_file_type;
+type mtk_hal_keyinstall, domain;
+
+hal_server_domain(mtk_hal_keyinstall, hal_keymaster)
+init_daemon_domain(mtk_hal_keyinstall)
+
+add_hwservice(hal_keymaster_server, mtk_hal_keyinstall_hwservice)
+
+allow hal_keymaster_client mtk_hal_keyinstall_hwservice:hwservice_manager find;
+
+allow mtk_hal_keyinstall persist_data_file:dir { search write add_name };
+allow mtk_hal_keyinstall persist_data_file:file { read write create open setattr getattr };
+
+allow mtk_hal_keyinstall key_install_data_file:dir { write add_name remove_name search };
+allow mtk_hal_keyinstall key_install_data_file:file { write create setattr read getattr unlink open append };
+
+allow mtk_hal_keyinstall debugfs_tracing:file { write };

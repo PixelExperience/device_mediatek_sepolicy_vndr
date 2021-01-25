@@ -64,3 +64,6 @@ type mtk_hal_bgs_hwservice, hwservice_manager_type;
 
 # vtservice
 type mtk_hal_videotelephony_hwservice, hwservice_manager_type;
+
+# Keyinstall
+type mtk_hal_keyinstall_hwservice, hwservice_manager_type;

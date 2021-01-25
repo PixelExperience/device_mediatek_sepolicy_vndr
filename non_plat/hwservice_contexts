@@ -78,3 +78,6 @@ vendor.mediatek.hardware.camera.atms::IATMs u:object_r:hal_camera_hwservice:s0
 
 # vtservice
 vendor.mediatek.hardware.videotelephony::IVideoTelephony u:object_r:mtk_hal_videotelephony_hwservice:s0
+
+# Keyinstall
+vendor.mediatek.hardware.keyinstall::IKeyinstall u:object_r:mtk_hal_keyinstall_hwservice:s0
