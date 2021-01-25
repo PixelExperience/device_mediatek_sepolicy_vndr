@@ -10,3 +10,6 @@
 #					 from MTK kernel modules for thermal tests at OEM/ODM.
 allow untrusted_app proc_mtktz:dir search;
 allow untrusted_app proc_mtktz:file r_file_perms;
+
+# Neural network
+allow untrusted_app mtk_hal_neuralnetworks:binder { call transfer };

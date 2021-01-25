@@ -737,3 +737,7 @@
 
 # DFPS
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.dfps@1\.0-service u:object_r:mtk_hal_dfps_exec:s0
+
+# Neural Networks
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-gpunn u:object_r:mtk_hal_neuralnetworks_exec:s0
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-neuron-ann u:object_r:mtk_hal_neuralnetworks_exec:s0

@@ -125,3 +125,6 @@ binder_call(platform_app, mtk_hal_bgs)
 binder_call(mtk_hal_bgs, platform_app)
 binder_call(platform_app, mtk_hal_camera)
 binder_call(mtk_hal_camera, platform_app)
+
+# Neuralnetwork
+allow platform_app mtk_hal_neuralnetworks:binder { call transfer };

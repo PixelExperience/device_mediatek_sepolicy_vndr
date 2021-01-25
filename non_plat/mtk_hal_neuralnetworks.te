@@ -1,0 +1,38 @@
+type mtk_hal_neuralnetworks, domain;
+type mtk_hal_neuralnetworks_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(mtk_hal_neuralnetworks)
+hal_server_domain(mtk_hal_neuralnetworks, hal_neuralnetworks)
+
+allow mtk_hal_neuralnetworks ion_device:chr_file r_file_perms;
+allow mtk_hal_neuralnetworks debugfs_ion:dir r_dir_perms;
+allow mtk_hal_neuralnetworks vpu_device:chr_file rw_file_perms;
+allow mtk_hal_neuralnetworks mdla_device:chr_file rw_file_perms;
+allow mtk_hal_neuralnetworks gpu_device:chr_file rw_file_perms;
+allow mtk_hal_neuralnetworks untrusted_app_25:binder { call transfer };
+allow mtk_hal_neuralnetworks untrusted_app:binder { call transfer };
+allow mtk_hal_neuralnetworks shell_data_file:file read;
+allow mtk_hal_neuralnetworks vendor_configs_file:file r_file_perms;
+allow mtk_hal_neuralnetworks vendor_configs_file:dir r_dir_perms;
+allow mtk_hal_neuralnetworks sdcardfs:file r_file_perms;
+allow mtk_hal_neuralnetworks untrusted_app_25:fd use;
+allow mtk_hal_neuralnetworks untrusted_app:fd use;
+allow mtk_hal_neuralnetworks sysfs_lowmemorykiller:dir r_dir_perms;
+allow mtk_hal_neuralnetworks sysfs_lowmemorykiller:file r_file_perms;
+allow mtk_hal_neuralnetworks proc_zoneinfo:file r_file_perms;
+allow mtk_hal_neuralnetworks apk_data_file:file read;
+allow mtk_hal_neuralnetworks proc_ged:file rw_file_perms;
+allow mtk_hal_neuralnetworks gpu_device:dir r_dir_perms;
+
+allow mtk_hal_neuralnetworks proc_perfmgr:dir r_dir_perms;
+allow mtk_hal_neuralnetworks proc_perfmgr:file r_file_perms;
+
+allowxperm mtk_hal_neuralnetworks proc_perfmgr:file ioctl {
+  PERFMGR_EARA_NN_BEGIN
+  PERFMGR_EARA_NN_END
+  PERFMGR_EARA_GETUSAGE
+};
+
+allow mtk_hal_neuralnetworks proc_ged:file r_file_perms;
+
+allowxperm mtk_hal_neuralnetworks proc_ged:file ioctl { proc_ged_ioctls };
