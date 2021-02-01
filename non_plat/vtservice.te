@@ -84,7 +84,6 @@ allow vtservice cameraserver_service:service_manager find;
 allow vtservice cameraserver:binder call;
 allow vtservice cameraserver:fd use;
 
-allow vtservice mediacodec_service:service_manager find;
 allow vtservice mediacodec:binder call;
 allow vtservice qtaguid_device:chr_file r_file_perms;
 allow vtservice priv_app:binder call;
