@@ -5,6 +5,7 @@
 #############################
 # proc files
 #
+genfscon proc /last_kmsg u:object_r:proc_last_kmsg:s0
 genfscon proc /driver/thermal u:object_r:proc_thermal:s0
 genfscon proc /thermlmt u:object_r:proc_thermal:s0
 genfscon proc /fps_tm u:object_r:proc_thermal:s0

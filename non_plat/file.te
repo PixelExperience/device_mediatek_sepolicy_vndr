@@ -2,6 +2,7 @@
 # MTK Policy Rule
 # ==============================================
 
+type proc_last_kmsg, fs_type, proc_type;
 type custom_file, file_type, data_file_type;
 type lost_found_data_file, file_type, data_file_type;
 type dontpanic_data_file, file_type, data_file_type;
