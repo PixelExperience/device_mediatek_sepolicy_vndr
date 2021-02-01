@@ -69,7 +69,6 @@ type proc_pl_lk, fs_type, proc_type;
 type proc_msdc_debug, fs_type, proc_type;
 type proc_ufs_debug, fs_type, proc_type;
 type proc_pidmap, fs_type, proc_type;
-type proc_kpageflags, fs_type, proc_type;
 type proc_slabtrace, fs_type, proc_type;
 type proc_cmdq_debug, fs_type, proc_type;
 type proc_isp_p2, fs_type, proc_type;
