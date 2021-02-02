@@ -22,4 +22,3 @@ allow bip node:rawip_socket node_bind;
 
 set_prop(bip, ril_mux_report_case_prop)
 set_prop(bip, ctl_muxreport-daemon_prop)
-get_prop(bip, net_dns_prop)

@@ -12,11 +12,6 @@ type nvram_agent_binder ,domain;
 # ==============================================
 init_daemon_domain(nvram_agent_binder)
 
-# Date : WK14.35
-# Operation : access nvram by binder 
-# Purpose : ensure nvram user can access nvram file normally. 
-allow nvram_agent_binder nvram_agent_service:service_manager add;
-
 # Date : WK14.43
 # Operation : 2rd Selinux Migration 
 # Purpose : the role of nvram_agent_binder is same with nvram_daemon except property_set & exect permission

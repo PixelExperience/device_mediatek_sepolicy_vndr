@@ -17,7 +17,6 @@ allow gsm0710muxd self:capability { chown fowner setuid };
 
 # Property service
 # Set ctl.ril-daemon property
-set_prop(gsm0710muxd, ctl_rildaemon_prop)
 set_prop(gsm0710muxd, ctl_ril-daemon-mtk_prop)
 set_prop(gsm0710muxd, ctl_fusion_ril_mtk_prop)
 set_prop(gsm0710muxd, gsm0710muxd_prop)
