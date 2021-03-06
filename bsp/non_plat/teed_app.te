@@ -1,0 +1,24 @@
+type teed_app, domain;
+
+typeattribute teed_app coredomain;
+
+app_domain(teed_app)
+binder_service(teed_app)
+binder_use(teed_app)
+
+add_service(teed_app, tee_service)
+
+hal_client_domain(teed_app, hal_tee)
+hal_client_domain(teed_app, hal_allocator)
+
+allow teed_app activity_service:service_manager find;
+allow teed_app connectivity_service:service_manager find;
+allow teed_app display_service:service_manager find;
+allow teed_app network_management_service:service_manager find;
+allow teed_app notification_service:service_manager find;
+
+#============= teed_app.te ==============
+allow teed_app system_app_data_file:dir { getattr search };
+
+#============= teed_app for TUI ==============
+allow teed_app surfaceflinger_service:service_manager find;

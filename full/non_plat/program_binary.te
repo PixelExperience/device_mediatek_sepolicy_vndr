@@ -1,0 +1,42 @@
+type program_binary, domain;
+type program_binary_exec, exec_type, file_type, system_file_type;
+typeattribute program_binary coredomain;
+
+init_daemon_domain(program_binary)
+
+# Purpose : Cache program binaries for HWUI usage.
+binder_service(program_binary)
+binder_use(program_binary)
+binder_call({domain -init -netd -installd -iorapd -vndservicemanager -vold -vendor_init}, program_binary)
+
+# Purpose : To manipulate GPU.
+allow program_binary gpu_device:chr_file { open read write ioctl };
+allow program_binary gpu_device:chr_file getattr;
+
+# Purpose : To be a service.
+allow program_binary program_binary_service:service_manager add;
+
+# Purpose : To allow binder call to system server.
+allow program_binary system_server:binder call;
+
+# Purpose : To allow write system property.
+allow program_binary property_socket:sock_file write;
+allow program_binary init:unix_stream_socket connectto;
+
+# Purpose : [M] To allow applications use find operation for service_manager.
+allow system_server program_binary_service:service_manager find;
+
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow program_binary program_binary_service:service_manager find;
+
+# Purpose : To allow program binary service to execute another binary file.
+allow program_binary system_file:file execute_no_trans;
+
+# Purpose : Add permission for gpu access
+allow program_binary dri_device:chr_file { read write open ioctl };
+
+# Purpose: Allow to access ged for gralloc_extra functions
+allow program_binary proc_ged:file {open read write ioctl getattr};
+
+# Purpose : DRM / DRI GPU driver required
+allow program_binary gpu_device:dir search;

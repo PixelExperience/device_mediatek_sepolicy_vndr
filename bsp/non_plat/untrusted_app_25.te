@@ -1,0 +1,8 @@
+#============= untrusted_app_25 for TUI ==============
+allow untrusted_app_25 mobicore_vendor_file:dir search;
+
+# Purpose :allow untrusted_app_25 to access procs
+allow untrusted_app_25 proc_uptime:file getattr;
+allow untrusted_app_25 proc_version:file getattr;
+allow untrusted_app_25 sysfs_net:dir search;
+allow untrusted_app_25 proc_net:file r_file_perms;

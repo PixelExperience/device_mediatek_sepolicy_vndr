@@ -1,0 +1,11 @@
+# Purpose: Allow to access ged for gralloc_extra functions
+allow zygote proc_ged:file rw_file_perms;
+
+# Purpose: Allow to access gpu for memtrack functions
+allow zygote gpu_device:dir search;
+allow zygote gpu_device:chr_file { open read write ioctl getattr};
+
+allow zygote proc_bootprof:file rw_file_perms;
+allow zygote proc_uptime:file rw_file_perms;
+allow zygote system_prop:property_service set;
+get_prop(zygote, vendor_audio_prop)

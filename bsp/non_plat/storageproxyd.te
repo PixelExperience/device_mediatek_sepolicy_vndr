@@ -1,0 +1,9 @@
+type rpmb_block_device, dev_type;
+
+allow tee block_device:dir { search };
+allow tee rpmb_block_device:blk_file rw_file_perms;
+allowxperm tee rpmb_block_device:blk_file ioctl { MMC_IOC_MULTI_CMD UFS_IOCTL_RPMB};
+allow tee bootdevice_block_device:blk_file rw_file_perms;
+allowxperm tee bootdevice_block_device:blk_file ioctl { MMC_IOC_MULTI_CMD UFS_IOCTL_RPMB};
+allow tee self:capability { setuid setgid sys_rawio };
+allow tee tee_data_file:dir create_dir_perms;

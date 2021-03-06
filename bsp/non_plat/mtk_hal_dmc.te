@@ -1,0 +1,4 @@
+binder_call(mtk_hal_dmc_client, mtk_hal_dmc_server)
+binder_call(mtk_hal_dmc_server, mtk_hal_dmc_client)
+add_hwservice(mtk_hal_dmc_server, mtk_hal_dmc_hwservice)
+allow mtk_hal_dmc_client mtk_hal_dmc_hwservice:hwservice_manager find;

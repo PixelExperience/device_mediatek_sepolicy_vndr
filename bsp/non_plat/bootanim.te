@@ -1,0 +1,8 @@
+# Purpose : access to sec mem proc interface.
+allow bootanim proc_secmem:file { read open};
+
+# Purpose : for gpu access
+allow bootanim dri_device:chr_file { read write open ioctl };
+
+#============= bootanim ==============
+allow bootanim debugfs_ion:dir search;

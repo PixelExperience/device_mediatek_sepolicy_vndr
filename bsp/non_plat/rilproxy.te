@@ -1,0 +1,31 @@
+allow rild statusd:unix_stream_socket connectto;
+allow rild rild_via_socket:sock_file write;
+allow rild viarild:unix_stream_socket connectto;
+allow rild cdma_prop:property_service set;
+allow rild ril_cdma_report_prop:property_service set;
+allow rild rild_vsim_socket:sock_file write;
+
+# Allow the find/call of netdagent for rilproxy
+allow rild mtk_hal_netdagent_hwservice:hwservice_manager find;
+allow rild netdagent:binder call;
+
+# Purpose: allow set telephony Sensitive property
+set_prop(rild, mtk_telephony_sensitive_prop)
+
+# Purpose: Allow rild to set ims support property
+set_prop(rild, mtk_volte_support_prop)
+set_prop(rild, mtk_wfc_support_prop)
+set_prop(rild, mtk_vilte_support_prop)
+set_prop(rild, mtk_viwifi_support_prop)
+set_prop(rild, mtk_rcs_ua_support_prop)
+
+# Purpose: Allow rild to set ims enable property
+set_prop(rild, mtk_volte_prop)
+set_prop(rild, mtk_wfc_prop)
+set_prop(rild, mtk_vilte_prop)
+set_prop(rild, mtk_viwifi_prop)
+set_prop(rild, mtk_vt_prop)
+
+# Purpose: Allow rild to set ims nr enable property
+set_prop(rild, mtk_vonr_prop)
+set_prop(rild, mtk_vinr_prop)

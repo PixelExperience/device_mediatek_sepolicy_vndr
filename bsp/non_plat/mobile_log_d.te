@@ -1,0 +1,9 @@
+# Fix bootup violation
+# property "mtk_em_video_log_sf_postbuffer_prop" define for bsp package
+get_prop(mobile_log_d,mtk_em_video_log_sf_postbuffer_prop)
+
+# purpose: allow mobile_log_d to read persist.vendor.log.tel_dbg
+get_prop(mobile_log_d, mtk_em_tel_log_prop)
+
+# purpose: allow mobile_log_d to read persist.vendor.logmuch
+get_prop(mobile_log_d, logmuch_prop)

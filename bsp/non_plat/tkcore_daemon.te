@@ -1,0 +1,61 @@
+type tkcore, domain;
+type tkcore_exec, exec_type, file_type, vendor_file_type;
+type tkcore_admin_device, dev_type;
+
+type tkcore_data_file, file_type, data_file_type;
+type tkcore_protect_data_file, file_type, data_file_type;
+type tkcore_spta_file, file_type, data_file_type;
+type tkcore_log_file, file_type, data_file_type;
+
+type tkcore_systa_file, file_type, vendor_file_type;
+
+type tkcore_prop, property_type, mtk_core_property_type;
+type tkcore_block_device, dev_type;
+
+init_daemon_domain(tkcore)
+
+# kernel device
+allow tkcore tkcore_admin_device:chr_file rw_file_perms;
+
+# sfs
+allow tkcore tkcore_data_file:dir create_dir_perms;
+allow tkcore tkcore_data_file:file { create_file_perms link };
+
+# persist
+allow tkcore mnt_vendor_file:dir search;
+allow tkcore protect_f_data_file:dir search;
+allow tkcore persist_data_file:dir search;
+allow tkcore tkcore_protect_data_file:dir create_dir_perms;
+allow tkcore tkcore_protect_data_file:file { create_file_perms link };
+
+# systa loading
+allow tkcore tkcore_systa_file:dir r_dir_perms;
+allow tkcore tkcore_systa_file:file r_file_perms;
+
+# spta mgmt/loading
+allow tkcore tkcore_spta_file:dir create_dir_perms;
+allow tkcore tkcore_spta_file:file create_file_perms;
+
+# logging
+allow tkcore tkcore_log_file:file create_file_perms;
+
+# allow tkcore to read/write vendor.trustkernel.* properties
+set_prop(tkcore, tkcore_prop);
+
+# maintaining version through /proc fs
+allow tkcore proc_tkcore:file rw_file_perms;
+allow tkcore proc_tkcore:dir search;
+
+# for SDRPMB
+allow tkcore tkcore_block_device:blk_file rw_file_perms;
+allow tkcore block_device:dir search;
+
+# android services
+allow hal_fingerprint_default tkcore_admin_device:chr_file { read write open ioctl };
+allow hal_keymaster_attestation tkcore_admin_device:chr_file { read write open ioctl };
+
+# allow untrusted_app to access tkcore_admin_device
+# refer to external/sepolicy/mls for the detail MLS constrain
+typeattribute tkcore_admin_device mlstrustedobject;
+typeattribute tkcore_spta_file mlstrustedobject;
+typeattribute tkcore_data_file mlstrustedobject;

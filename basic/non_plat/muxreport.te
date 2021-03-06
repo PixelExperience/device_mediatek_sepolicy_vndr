@@ -1,0 +1,24 @@
+type muxreport_exec , exec_type, file_type, vendor_file_type;
+type muxreport ,domain;
+
+init_daemon_domain(muxreport)
+
+# Property service
+# allow set muxreport control properties
+set_prop(muxreport, ril_mux_report_case_prop)
+
+# Allow read/write to devices/files
+allow muxreport ccci_device:chr_file { rw_file_perms };
+allow muxreport devpts:chr_file { rw_file_perms };
+allow muxreport eemcs_device:chr_file { rw_file_perms };
+allow muxreport emd_device:chr_file { rw_file_perms };
+
+# Allow read to sys/kernel/ccci/* files
+allow muxreport sysfs_ccci:dir search;
+allow muxreport sysfs_ccci:file r_file_perms;
+
+# Purpose: Allow muxreport to get tel_switch_prop
+get_prop(muxreport, tel_switch_prop)
+
+# Purpose: allow muxreport access property of vendor_radio_prop
+set_prop(muxreport, vendor_radio_prop)

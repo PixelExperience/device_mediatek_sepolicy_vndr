@@ -1,0 +1,25 @@
+type emcamera_app, domain;
+app_domain(emcamera_app)
+
+# Purpose:  write data/vendor/camera_dump
+allow emcamera_app vendor_camera_dump_file:dir { create_dir_perms };
+allow emcamera_app vendor_camera_dump_file:file { create_file_perms };
+
+allow emcamera_app cameraserver_service:service_manager find;
+allow emcamera_app activity_service:service_manager find;
+allow emcamera_app surfaceflinger_service:service_manager find;
+allow emcamera_app activity_task_service:service_manager find;
+allow emcamera_app audio_service:service_manager find;
+allow emcamera_app trust_service:service_manager find;
+allow emcamera_app device_policy_service:service_manager find;
+allow emcamera_app autofill_service:service_manager find;
+allow emcamera_app sensorservice_service:service_manager find;
+
+# Purpose:  set em camera properties
+set_prop(emcamera_app, mtk_em_prop);
+set_prop(emcamera_app, mtk_emcamera_prop);
+set_prop(emcamera_app, mediatek_prop);
+
+# Purpose:  write data/vendor/shading
+allow emcamera_app vendor_shading_file:dir { create_dir_perms };
+allow emcamera_app vendor_shading_file:file { create_file_perms };

@@ -1,0 +1,2 @@
+# Purpose: Add permission for gpu access
+allow appdomain dri_device:chr_file { read write open ioctl };

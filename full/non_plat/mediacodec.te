@@ -1,0 +1,7 @@
+# Purpose : Play tone for alert
+allow mediacodec custom_file:dir search;
+
+# Purpose : SVP Debug
+#============= mediacodec ==============
+allow mediacodec tmpfs:lnk_file read;
+allow mediacodec media_rw_data_file:file { write read append};

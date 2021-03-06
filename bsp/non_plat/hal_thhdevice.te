@@ -1,0 +1,35 @@
+type hal_thh_default, domain;
+
+# Set hal_thh_default as server domain of hal_thh
+hal_server_domain(hal_thh_default, hal_thh)
+
+# Set exec file type
+type hal_thh_default_exec, exec_type, vendor_file_type, file_type;
+
+# Setup for domain transition
+init_daemon_domain(hal_thh_default)
+
+# Associate hal_thh_hwservice with all server domain
+add_hwservice(hal_thh_server, hal_thh_hwservice)
+
+# Give permission for hal_thh_client to find hal_thh_hwservice via hwservice_manager
+allow hal_thh_client hal_thh_hwservice:hwservice_manager find;
+
+# Access to /dev/hwbinder.
+hwbinder_use(hal_thh_default);
+
+# HwBinder IPC from client to server
+binder_call(hal_thh_client, hal_thh_server)
+
+# Allow platform_app to interact with hal_thh
+hal_client_domain(platform_app, hal_thh)
+hal_client_domain(hal_thh_default, hal_capi)
+hal_client_domain(hal_thh_default, hal_allocator)
+
+# Access thh devices at all.
+allow hal_thh_default teei_client_device:chr_file { create setattr unlink rw_file_perms };
+allow hal_thh_default teei_data_file:dir create_dir_perms;
+allow hal_thh_default teei_data_file:file rw_file_perms;
+allow hal_thh_default teei_data_file:file create_file_perms;
+allow hal_thh_default ut_keymaster_device:chr_file { read write open ioctl};
+allow hal_thh_default soter_teei_prop:property_service set;

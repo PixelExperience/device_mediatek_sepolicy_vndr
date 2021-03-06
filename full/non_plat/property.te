@@ -1,0 +1,9 @@
+#=============allow program binary deamon  ==============
+type program_binary_prop, property_type, mtk_core_property_type;
+
+#=============allow MBIMD==============
+type ctl_mbimd_prop, property_type;
+
+#=============allow system update to set prop=============
+type update_finished_prop, property_type, mtk_core_property_type;
+type update_started_prop, property_type, mtk_core_property_type;

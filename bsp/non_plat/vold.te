@@ -1,0 +1,6 @@
+# Purpose: Microtrust HW-backed Keymaster
+allow vold ut_keymaster_device:chr_file { read write open ioctl};
+allow vold teei_client_device:chr_file { read write open ioctl};
+
+# Purpose : write bootprof
+allow vold proc_bootprof:file { open write };

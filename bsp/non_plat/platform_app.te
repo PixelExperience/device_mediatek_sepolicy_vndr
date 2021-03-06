@@ -1,0 +1,134 @@
+# Purpose: [ALPS01824827][SystemUI] [RenderThread][open device file failed]
+# Package: com.android.systemui
+allow platform_app proc_secmem:file r_file_perms;
+
+# Purpose : TUI service need to access tui device driver
+# Package: com.trustonic.tuiservice.TuiService
+allow platform_app mobicore_tui_device:chr_file { read open ioctl };
+allow platform_app mobicore_user_device:chr_file rw_file_perms;
+
+# TODO:: MTK need to remove later
+not_full_treble(`
+	allow platform_app mobicore:unix_stream_socket connectto;
+')
+
+allow platform_app mobicore_data_file:file r_file_perms;
+allow platform_app mobicore_data_file:dir search;
+allow platform_app self:netlink_kobject_uevent_socket {create bind read setopt};
+
+# Purpose: [SystemUI] [Bind to guiext-server for updating view][path:hardware/gui_ext/]
+# Package: com.android.systemui
+# allow platform_app guiext-server:binder { transfer call };
+
+# Purpose : allow settings get file of ntfs device
+# Package: com.android.settings
+allow platform_app fuseblk:dir create_dir_perms;
+
+# Purpose :[ALPS02350168]allow Settings get file of ntfs device
+# Package: com.android.settings
+allow platform_app fuseblk:file create_file_perms;
+
+# Purpose : Allow camera app to find advcam servive
+allow platform_app mtk_advcamserver_service:service_manager find;
+
+# Purpose: Allow to use lomo effect
+# Package: com.mediatek.camera
+#allow platform_app hal_camera_hwservice:hwservice_manager find;
+allow platform_app mtk_hal_camera:binder call;
+
+# Purpose : Allow UICC terminal to find phoneEx service
+# Package: org.simalliance.openmobileapi
+allow platform_app mtk_radio_service:service_manager find;
+
+# Purpose: Allow to use HAL PQ
+hal_client_domain(platform_app, hal_pq)
+
+# Purpose: Allow to use shared memory for HAL PQ
+hal_client_domain(platform_app, hal_allocator)
+
+# Purpose : Allow System UI to find ppl agent
+# Package: com.android.systemui.keyguard
+allow platform_app mtk_hal_pplagent_hwservice:hwservice_manager find;
+allow platform_app ppl_agent:binder call;
+
+#============= platform_app ==============
+allow platform_app debugfs_ion:dir search;
+
+# Purpose : Allow Dialer to get vendor_vt_prop
+# Package: com.android.dialer
+get_prop(platform_app, vendor_vt_prop)
+
+# Purpose : Allow Rcs to get mtk_rcs_support_prop/mtk_em_tel_log_prop
+# Package: om.mediatek.rcs
+get_prop(platform_app, mtk_rcs_support_prop)
+get_prop(platform_app, mtk_em_tel_log_prop)
+
+# Purpose : allow radio get vzw device type property
+get_prop(platform_app, persist_vendor_vzw_device_type)
+
+# Purpose : Allow platform app to get ECBM property
+get_prop(platform_app, mtk_cdma_ecm_prop);
+
+# Purpose : Allow Entitlement to get mtk_wfc_entitlement_prop
+# Package: com.mediatek.entitlement
+get_prop(platform_app, mtk_wfc_entitlement_prop)
+
+# Purpose : Allow Entitlement to get mtk_cxp_vendor_prop
+# Package: com.mediatek.entitlement
+get_prop(platform_app, mtk_cxp_vendor_prop)
+
+# Purpose : Allow Dialer to get mtk_ims_prop
+# Package: com.android.dialer
+get_prop(platform_app, mtk_ims_prop)
+
+# Purpose : Allow Contacts to get mtk_uce_support_prop
+# Package: com.android.contacts
+get_prop(platform_app, mtk_uce_support_prop)
+
+# Purpose: Allow platform app to use HIDL and access vendor_neuralnetworks
+allow platform_app vendor_neuralnetworks:binder { call transfer };
+
+# Purpose: Allow platform app to get mtk_cam_security_prop
+get_prop(platform_app, mtk_cam_security_prop)
+
+# Purpose: Allow platform app to use BGService HIDL and access mtk_hal_camera
+binder_call(platform_app, mtk_hal_camera)
+binder_call(mtk_hal_camera, platform_app)
+
+# Purpose: Allow platform app to set and get Subsidy Lock properties
+get_prop(platform_app, mtk_subsidylock_prop)
+set_prop(platform_app, mtk_subsidylock_prop_connect)
+
+# Purpose: Allow platform app to use HIDL and access to mtk_hal_dplanner
+allow platform_app mtk_hal_dplanner_hwservice:hwservice_manager find;
+allow platform_app mtk_hal_dplanner:binder call;
+
+# Purpose : Add for HIDL service
+hal_client_domain(platform_app, md_monitor_hal);
+
+# Purpose : For MDMLSample to auto start md_monitor
+set_prop(platform_app, config_prop);
+
+# Purpose: allow to read init.svc.md_monitor property for calling SystemService.waitForState()
+get_prop(platform_app, init_svc_md_monitor_prop)
+
+# Purpose : allow to get mtk_cta_support property
+get_prop(platform_app, mtk_cta_support_prop);
+
+# Purpose: allow get telephony Sensitive property
+# get_prop(platform_app, mtk_telephony_sensitive_prop)
+
+# Purpose: Allow platform app to access mdlactl_device and vpu_device
+allow platform_app mdla_device:chr_file { rw_file_perms };
+allow platform_app vpu_device:chr_file { rw_file_perms };
+
+# Purpose : Allow Contacts to get mtk_clientapi_support_prop
+# Package: com.android.contacts
+get_prop(platform_app, mtk_clientapi_support_prop)
+allow platform_app volte_clientapi_ua_hwservice:hwservice_manager find ;
+allow platform_app volte_clientapi_ua:binder { call transfer };
+
+# Purpose : Allow ACS to get mtk_acs_url_prop, mtk_acs_version_prop and mtk_acs_support_prop
+get_prop(platform_app, mtk_acs_url_prop)
+get_prop(platform_app, mtk_acs_version_prop)
+get_prop(platform_app, mtk_acs_support_prop)

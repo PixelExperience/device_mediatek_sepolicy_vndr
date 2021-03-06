@@ -1,0 +1,172 @@
+# Purpose : allow to access kpd driver file
+allow radio sysfs_keypad_file:dir { r_dir_perms };
+allow radio sysfs_keypad_file:file { w_file_perms };
+
+# Purpose : for engineermode WFD IOT property
+allow radio surfaceflinger:fifo_file { rw_file_perms };
+
+# Purpose : for engineermode Usb PHY Tuning
+allow radio debugfs_usb20_phy:file { read open getattr };
+allow radio debugfs_usb20_phy:dir search;
+
+# Purpose : for engineermode
+allow radio mt_otg_test_device:chr_file { read write ioctl open };
+allow radio mtgpio_device:chr_file { read ioctl open };
+allow radio stpbt_device:chr_file { read write open };
+allow radio stpant_device:chr_file { read write open };
+allow radio bt_int_adp_socket:sock_file write;
+allow radio mt6605_device:chr_file { read write ioctl open getattr };
+allow radio nfc_socket:dir { write add_name remove_name search };
+allow radio system_prop:property_service set;
+
+# Purpose : for engineermode
+allow radio em_svr:unix_stream_socket connectto;
+
+# Purpose : for engineermode WiFi test mode
+# todo: in the feature Google maybe forbid this option,we should use other way
+allowxperm radio self:udp_socket ioctl { SIOCIWFIRSTPRIV-SIOCIWFIRSTPRIV_09 SIOCIWFIRSTPRIV_0B SIOCSIWESSID SIOCSIWMODE };
+
+# Purpose : for bluetooth relayer mode
+allow radio block_device:dir search;
+allow radio ttyGS_device:chr_file { open read write ioctl };
+
+# Purpose :
+#   Write IMEI - presanity item write imei should read the file on storage
+#   Swift APK integration - access TTL scripts and logs on external storage
+#   eng mode camera - save iamges files and log files on external storage
+#   eng mode ygps - save location information on external storage
+allow radio media_rw_data_file:dir { create_dir_perms };
+allow radio media_rw_data_file:file { create_file_perms };
+
+# Purpose :
+#   Swift APK integration - access ccci dir/file
+allow radio ccci_fsd:dir { r_dir_perms };
+
+# Purpose : for Bluetooth read NVRAM data
+allow radio nvdata_file:dir search;
+allow radio nvdata_file:file rw_file_perms;
+
+# Purpose: for EM set persist.net.auto.tethering
+set_prop(radio, mtk_em_net_auto_tethering_prop)
+
+# Purpose : HIDL for rilproxy
+binder_call(radio, hal_telephony)
+
+# Purpose : for YGPS execution
+allow radio hal_graphics_composer_default:fd use;
+
+# Purpose: allow get telephony Sensitive property
+get_prop(radio, mtk_telephony_sensitive_prop)
+
+# Purpose : HIDL for imsa
+binder_call(radio, mtk_hal_imsa)
+
+# Purpose : Allow to use HAL imsa
+hal_client_domain(radio, hal_imsa)
+
+# Purpose: For audio parameter tuning
+binder_call(radio,mtk_hal_audio)
+
+# TODO : Will move to plat_private when SEPolicy split done
+# Purpose : Allow EM set usb property
+set_prop(radio, system_radio_prop)
+
+# Purpose: NFC EM
+allow radio hal_nfc_hwservice:hwservice_manager find;
+binder_call(radio, hal_nfc)
+binder_call(hal_nfc, radio)
+hwbinder_use(radio);
+typeattribute radio halclientdomain;
+typeattribute radio hal_nfc_client;
+allow radio nfc_socket:sock_file { create write unlink setattr };
+set_prop(radio, system_prop)
+
+# Purpose : Allow EM use power HAL
+allow radio mtk_hal_power_hwservice:hwservice_manager find;
+binder_call(radio, mtk_hal_power)
+
+# Purpose: Policy for EM to set wcn coredump property
+get_prop(radio, wmt_prop)
+
+# Purpose: Allow radio to get tel_switch_prop
+get_prop(radio, tel_switch_prop)
+
+# Purpose: allow EM to set modem reset delay property
+get_prop(radio, mtk_debug_md_reset_prop)
+
+# Purpose : For EM access battery info
+allow radio sysfs_battery_supply:dir search;
+allow radio sysfs_vbus:file { read getattr open };
+allow radio sysfs_battery_consumption:file r_file_perms;
+allow radio sysfs_power_on_vol:file r_file_perms;
+allow radio sysfs_power_off_vol:file r_file_perms;
+allow radio sysfs_fg_disable:file w_file_perms;
+allow radio sysfs_dis_nafg:file w_file_perms;
+
+# Purpose : Allow EM access touchscreen settings
+allow radio sysfs_tpd_debug:dir { search read open };
+allow radio sysfs_tpd_setting:dir { search read open };
+
+# Purpose : mtk EM PMU reading/setting
+allow radio sysfs_pmu:dir { search };
+allow radio sysfs_pmu:file { read };
+allow radio sysfs_pmu:lnk_file { read };
+
+# Purpose : mtk EM Power debug_log setting
+allow radio sysfs_spm:dir { search };
+
+# Purpose: Allow EM detect Audio headset status
+allow radio sysfs_headset:file { read open };
+
+# Purpose : Allow to use HAL em
+hal_client_domain(radio, mtk_hal_em)
+
+# Purpose : Allow sim system to set prop
+set_prop(radio, vendor_sim_system_prop)
+
+# Purpose : Allow Mwi to get vendor default properties (ro.vendor.*)
+get_prop(radio, vendor_default_prop)
+
+# Purpose : Allow to use mtk_bgdata_disabled
+set_prop(radio, mtk_bgdata_disabled)
+
+# Purpose : Allow to use mtk_telecom_vibrate
+set_prop(radio, mtk_telecom_vibrate)
+
+# Purpose : Allow to use mtk_gprs_attach_type
+set_prop(radio, mtk_gprs_attach_type)
+
+# Purpose : Allow EM to use Lbs Hidl
+binder_call(radio, lbs_hidl_service)
+allow radio mtk_hal_lbs_hwservice:hwservice_manager find;
+
+# Purpose : Allow EM to set poweroffmd property
+set_prop(radio, mtk_power_off_md_type)
+
+get_prop(radio, persist_mtk_aeev_prop);
+
+# Purpose : Allow EM to set sys property
+set_prop(radio, mtk_em_sys_prop)
+
+# Purpose : mtk EM c2k bypass read usb file
+allow radio sys_usb_rawbulk:file { r_file_perms };
+allow radio sys_usb_rawbulk:dir { r_dir_perms };
+
+# Purpose : for set telephony xcap use raw url property in IMS SS
+set_prop(radio, persist_xcap_rawurl_prop)
+
+# Purpose : Engineering mode need access for aee commmand
+allow radio aee_aed:unix_stream_socket connectto;
+
+# Purpose : Engineering mode need get subpimic register status
+allow radio debugfs_regmap:dir { search };
+
+# Purpose : Allow get USB Current Speed in Engineer Mode
+get_prop(radio, vendor_usb_prop);
+
+allow radio gpuservice:binder call;
+allow radio system_app_data_file:dir getattr;
+allow radio debugfs_ion:dir search;
+allow radio adb_data_file:file r_file_perms;
+
+get_prop(radio, telephony_prop)

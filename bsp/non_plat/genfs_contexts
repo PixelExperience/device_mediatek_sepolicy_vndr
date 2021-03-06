@@ -1,0 +1,37 @@
+# secmem
+genfscon proc /secmem0 u:object_r:proc_secmem:s0
+
+# For DuraSpeed
+genfscon proc /cpu_loading/onoff u:object_r:proc_cpu_loading:s0
+genfscon proc /cpu_loading/uevent_enable u:object_r:proc_cpu_loading:s0
+genfscon proc /cpu_loading/poltime_secs u:object_r:proc_cpu_loading:s0
+genfscon proc /cpu_loading/poltime_nsecs u:object_r:proc_cpu_loading:s0
+genfscon proc /cpu_loading/overThrhld u:object_r:proc_cpu_loading:s0
+genfscon proc /mtk-perf/mt_throttle_ms u:object_r:proc_low_memory_hit:s0
+genfscon proc /mtk-perf/mt_customized_target u:object_r:proc_low_memory_hit:s0
+genfscon proc /mtk-perf/mt_info u:object_r:proc_low_memory_hit:s0
+genfscon proc /mtk-perf/lowmem_hint_enable u:object_r:proc_low_memory_hit:s0
+
+# for wifi throttle
+genfscon sysfs /devices/platform/CONNAC/net/wlan0/operstate u:object_r:sysfs_thermald:s0
+genfscon sysfs /devices/virtual/net/ap0/operstate u:object_r:sysfs_thermald:s0
+genfscon sysfs /devices/virtual/net/p2p0/operstate u:object_r:sysfs_thermald:s0
+
+# Microtrust TEEI sysfs files
+genfscon sysfs /devices/platform/utos u:object_r:teei_control_file:s0
+genfscon sysfs /devices/utos u:object_r:teei_control_file:s0
+
+# TrustKernel TEE proc
+genfscon proc /tkcore u:object_r:proc_tkcore:s0
+
+# for VTS NetdSELinuxTest.CheckProperMTULabels requirement
+genfscon sysfs /devices/platform/CONNAC/net/wlan0/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/CONNAC/net/wlan1/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/180f0000.wifi/net/wlan0/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/180f0000.wifi/net/wlan1/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/180f0000.wifi/net/p2p0/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/180f0000.wifi/net/p2p1/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/bus/180f0000.WIFI/net/wlan0/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/bus/180f0000.WIFI/net/wlan1/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/bus/180f0000.WIFI/net/p2p0/mtu u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/bus/180f0000.WIFI/net/p2p1/mtu u:object_r:sysfs_net:s0

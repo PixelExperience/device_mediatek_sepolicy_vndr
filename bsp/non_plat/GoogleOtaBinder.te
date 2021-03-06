@@ -1,0 +1,4 @@
+allow GoogleOtaBinder ota_agent_service:service_manager add;
+
+# /dev/misc
+allow GoogleOtaBinder misc_device:chr_file { write read open ioctl};

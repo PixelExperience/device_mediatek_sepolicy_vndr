@@ -1,0 +1,300 @@
+#=============allow ccci_mdinit to start ccci_rpcd==============
+type ctl_ccci_rpcd_prop, property_type;
+type ctl_ccci2_rpcd_prop, property_type;
+
+#=============allow statusd==============
+type cdma_prop, property_type, mtk_core_property_type;
+
+#=============allow pppd ==============
+type pppd_gprs_prop, property_type, mtk_core_property_type;
+
+#=============allow teei deamon and init_thh daemon to set property ==============
+type soter_teei_prop, property_type, mtk_core_property_type;
+
+#=============allow log filter property==============
+type logfilter_prop, property_type, mtk_core_property_type;
+#type persist_logfilter_prop, property_type;
+
+#=============allow android log much property==============
+type vendor_logmuch_prop, property_type;
+
+#=============allow em set video log================
+type mtk_em_video_log_acodec_prop, property_type;
+type mtk_em_video_log_sf_postbuffer_prop, property_type;
+type mtk_em_video_log_omx_prop, property_type;
+type mtk_em_video_log_vdec_prop, property_type;
+type mtk_em_video_log_svp_prop, property_type;
+type mtk_em_video_log_mjc_prop, property_type;
+
+#=============allow system server to set appdetection property  ==============
+type appdetection_prop, property_type;
+type mtk_em_video_venc_h264_prop, property_type;
+
+#=============allow radio to set mtk_volte_support property==============
+type mtk_volte_support_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_wfc_support_prop property==============
+type mtk_wfc_support_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_vilte_support_prop property==============
+type mtk_vilte_support_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_viwifi_support_prop property==============
+type mtk_viwifi_support_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_rcs_ua_support property==============
+type mtk_rcs_ua_support_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_wfc_enable property==============
+type mtk_wfc_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_vilte_enable property==============
+type mtk_vilte_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_viwifi_enable property==============
+type mtk_viwifi_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_vt_enable property==============
+type mtk_vt_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_vonr_enable property==============
+type mtk_vonr_prop, property_type, mtk_core_property_type;
+
+#=============allow radio to set mtk_vinr_enable property==============
+type mtk_vinr_prop, property_type, mtk_core_property_type;
+
+#=============allow wifi offload deamon to set system property  ==============
+type mtk_epdg_prop, property_type, mtk_core_property_type;
+type persist_epdg_prop, property_type, mtk_core_property_type;
+
+#=============allow netdagent to set prop  ==============
+type netdagent_prop, property_type, mtk_core_property_type;
+
+#=============allow EM set vt test mode property=============
+type vendor_vt_prop, property_type, mtk_core_property_type;
+
+#=============allow system update to set prop=============
+type mtk_update_prop, property_type, extended_core_property_type;
+
+#=============allow system_server to set media.wfd.*==============
+type media_wfd_prop, property_type, extended_core_property_type;
+
+#=============allow telephony modules to set mtk_vsim_prop==============
+type mtk_vsim_prop, property_type, mtk_core_property_type;
+
+#=============allow system partition to acess mtk_vsim_sys_prop==============
+type mtk_vsim_sys_prop, property_type, extended_core_property_type;
+
+#=============allow EM set ims xcap property=============
+type vendor_ims_xcap_prop, property_type, extended_core_property_type;
+
+#============= allow supplementary service property ===============
+type vendor_supp_serv_prop, property_type, extended_core_property_type;
+
+#=============allow bluetooth to set mtk_bluetooth_prop==============
+type mtk_bluetooth_prop, property_type, extended_core_property_type;
+
+#=============allow EM set moms property===========
+type mtk_moms_prop, property_type, mtk_core_property_type;
+
+#=============allow EM set tel log property===========
+type mtk_log_tel_dbg_prop, property_type, mtk_core_property_type;
+type mtk_em_tel_log_prop, property_type, extended_core_property_type;
+
+#=============allow IMS property===========
+type mtk_ims_prop, property_type, mtk_core_property_type;
+
+#=============allow ims config property=============
+type vendor_imsconfig_prop, property_type, extended_core_property_type;
+
+#=============allow ipsec_mon to set mtk_network_prop==============
+type mtk_network_prop, property_type, mtk_core_property_type;
+
+#=============allow CTA property===========
+type mtk_cta_log_prop, property_type, mtk_core_property_type;
+type mtk_mobile_management_prop, property_type, mtk_core_property_type;
+
+#=============allow vendor_init to set ro.vendor.mtk_wfd_support==============
+type ro_vendor_mtk_wfd_support_prop, property_type, mtk_core_property_type;
+
+#=============allow mtk duraspeed property==============
+type mtk_duraspeed_prop, property_type, mtk_core_property_type;
+type mtk_duraspeed_drop_caches, property_type, extended_core_property_type;
+
+#=============allow Multiple IMS property===========
+type mtk_mims_prop, property_type, mtk_core_property_type;
+
+#=============allow Multiple IMS property===========
+type mtk_dynims_prop, property_type, mtk_core_property_type;
+
+#=============allow IMS/EIMS pdn info property===========
+type mtk_ims_eims_pdn_prop, property_type, mtk_core_property_type;
+
+#=============allow External SIM property===========
+type mtk_extsim_prop, property_type, mtk_core_property_type;
+
+#=============allow Modem Monitor property===========
+type mtk_mdm_prop, property_type, mtk_core_property_type;
+
+#=============allow Modem World Mode property===========
+type mtk_mdworldmode_prop, property_type, mtk_core_property_type;
+
+# OMA DRM
+type mtk_oma_drm_support_prop, property_type, mtk_core_property_type;
+type mtk_drm_fwd_lock_only_prop, property_type, mtk_core_property_type;
+
+#=============allow settings to get relevant property===========
+type mtk_miravision_support_prop, property_type, mtk_core_property_type;
+type mtk_aod_support_prop, property_type, mtk_core_property_type;
+type mtk_default_write_disk_prop, property_type, mtk_core_property_type;
+type mtk_bg_power_saving_support_prop, property_type, mtk_core_property_type;
+type mtk_bg_power_saving_ui_prop, property_type, mtk_core_property_type;
+type mtk_besloudness_support_prop, property_type, mtk_core_property_type;
+type mtk_hifiaudio_support_prop, property_type, mtk_core_property_type;
+type mtk_active_noise_cancel_prop, property_type, mtk_core_property_type;
+type mtk_wapi_support_prop, property_type, mtk_core_property_type;
+
+#=============allow FastDormancy support property===============
+type mtk_fd_support_prop, property_type, mtk_core_property_type;
+
+#=============allow wappush property===========
+type mtk_wappush_prop, property_type, mtk_core_property_type;
+
+#=============allow MD Number Protocol===============
+type num_md_protocol_prop, property_type, mtk_core_property_type;
+
+#=============allow NFC related property===========
+type mtk_st_nfc_gsma_support_prop, property_type, mtk_core_property_type;
+type mtk_st_nfc_ignore_modem_prop, property_type, mtk_core_property_type;
+type mtk_nfc_addon_support_prop, property_type, mtk_core_property_type;
+type mtk_nfc_uicc_clf_prop, property_type, mtk_core_property_type;
+type mtk_radio_seapi_off_prop, property_type, mtk_core_property_type;
+type mtk_nxp_nfc_gsma_support_prop, property_type, mtk_core_property_type;
+
+#=============MTK operator property===========
+type mtk_operator_prop, property_type, mtk_core_property_type;
+
+#=============allow vendor_init to ro.vendor.mtk_system_update_support==============
+type mtk_system_update_support_prop, property_type, extended_core_property_type;
+
+#=============allow vendor_init to ro.vendor.mtk_omacp_support==============
+type mtk_omacp_support_prop, property_type, mtk_core_property_type;
+
+#=============allow libudf property===========
+type mtk_libudf_prop, property_type, mtk_core_property_type;
+
+#=============allow printk property===========
+type mtk_printk_prop, property_type, mtk_core_property_type;
+
+#=============MTK camera property=============
+type mtk_camera_prop, property_type, mtk_core_property_type;
+
+#=============MTK gallery property=============
+type mtk_gallery_prop, property_type, mtk_core_property_type;
+
+#=============MTK media property=============
+type mtk_media_prop, property_type, mtk_core_property_type;
+
+#=============MTK RSC property===========
+type mtk_rsc_prop, property_type, mtk_core_property_type;
+
+#=============allow AMS-aal dynamic property===========
+type mtk_amsaal_prop, property_type, extended_core_property_type;
+
+#=============allow common data property===========
+type mtk_common_data_prop, property_type, extended_core_property_type;
+
+#=============MTK PMS property===========
+type mtk_pms_prop, property_type, mtk_core_property_type;
+
+#=============MTK PMS property===========
+type mtk_selfreg_prop, property_type, extended_core_property_type;
+
+#=============MTK CDMA Less property===========
+type persist_vendor_vzw_device_type, property_type, extended_core_property_type;
+
+#=============MTK RTT property==============
+type mtk_rtt_prop, property_type, extended_core_property_type;
+
+#=============MTK CTM property===========
+type mtk_ctmslot_prop, property_type, extended_core_property_type;
+
+#=============MTK UCE property===========
+type mtk_uce_support_prop, property_type, extended_core_property_type;
+
+#=============USB CBA property===========
+type mtk_cba_activation, property_type, extended_core_property_type;
+
+#=============allow adb to set wfc mccmnc property===========
+type mtk_wfc_mccmnc_prop, property_type, extended_core_property_type;
+
+#=============allow adb to set wfc entitlement property===========
+type mtk_wfc_entitlement_prop, property_type, extended_core_property_type;
+
+#=============allow system_app to get opt-in property===========
+type mtk_wfc_opt_in_prop, property_type, extended_core_property_type;
+type mtk_opt_in_url_prop, property_type, extended_core_property_type;
+type mtk_apptoken_required_prop, property_type, extended_core_property_type;
+
+#=============allow radio to set cdma property===========
+type vendor_cdma_prop, property_type, extended_core_property_type;
+
+#=============ECBM property==============
+type mtk_cdma_ecm_prop, property_type, extended_core_property_type;
+
+#=============MTK RCS property==============
+type mtk_rcs_support_prop, property_type, extended_core_property_type;
+type service_rcs_prop, property_type, mtk_core_property_type;
+
+#=============MTK CLIENTAPI property===========
+type mtk_clientapi_support_prop, property_type, extended_core_property_type;
+
+#=============MTK World Phone property===========
+type mtk_world_phone_prop, property_type, extended_core_property_type;
+
+#=============MTK Capability Switch property===========
+type mtk_capability_switch_prop, property_type, extended_core_property_type;
+
+#=============allow data shaping property==============
+type mtk_datashaping_prop, property_type, mtk_core_property_type;
+
+#=============MTK IMS Config Provision property===========
+type mtk_provision_prop, property_type, mtk_core_property_type;
+
+#=============MTK NeuroPilot  property===========
+type mtk_nn_quant_preferred_prop, property_type, mtk_core_property_type;
+type mtk_tflite_fuse_pad_prop, property_type, mtk_core_property_type;
+
+#=============MTK CAM Security property===========
+type mtk_cam_security_prop, property_type, mtk_core_property_type;
+
+#=============SubsidyLock Property==============
+type mtk_subsidylock_prop, property_type, mtk_core_property_type;
+type mtk_subsidylock_prop_connect, property_type, extended_core_property_type;
+
+#=============mtk to set atci property=============
+type atci_sys_prop, property_type;
+
+#=============allow PMS to read ro.vendor.mtk_telephony_add_on_policy===========
+type mtk_telephony_addon_prop, property_type, mtk_core_property_type;
+
+#=============allow get ro.vendor.mtk_cta_support===============
+type mtk_cta_support_prop, property_type, mtk_core_property_type;
+
+#=============allow mtk heavy loading property==============
+type mtk_heavy_loading_prop, property_type, extended_core_property_type;
+
+#=============allow mtk emcamera set roperty==============
+type mtk_emcamera_prop, property_type, mtk_core_property_type;
+
+#=============jpeg decode sw opt. property============
+type mtk_jpeg_opt_prop, property_type, mtk_core_property_type;
+
+#=============allow TEE property===========
+type ro_vendor_mtk_trustonic_tee_prop, property_type, mtk_core_property_type;
+type ro_vendor_mtk_microtrust_tee_prop, property_type, mtk_core_property_type;
+
+#=============ACS property================
+type mtk_acs_version_prop, property_type, extended_core_property_type;
+type mtk_acs_url_prop, property_type, extended_core_property_type;
+type mtk_acs_support_prop, property_type, extended_core_property_type;

@@ -1,0 +1,37 @@
+type hal_capi_default, domain;
+
+# Set hal_capi_default as server domain of hal_capi
+hal_server_domain(hal_capi_default, hal_capi)
+
+# Set exec file type
+type hal_capi_default_exec, exec_type, vendor_file_type, file_type;
+
+# Setup for domain transition
+init_daemon_domain(hal_capi_default)
+
+# Associate hal_capi_hwservice with all server domain
+add_hwservice(hal_capi_server, hal_capi_hwservice)
+
+# Give permission for hal_capi_client/meta_tst to find hal_capi_hwservice via hwservice_manager
+allow hal_capi_client hal_capi_hwservice:hwservice_manager find;
+allow meta_tst hidl_memory_hwservice:hwservice_manager find;
+hal_client_domain(meta_tst, hal_capi)
+hal_client_domain(meta_tst, hal_allocator)
+
+# Access to /dev/hwbinder.
+hwbinder_use(hal_capi_default);
+
+# HwBinder IPC from client to server
+binder_call(hal_capi_client, hal_capi_server)
+
+# Allow platform_app to interact with hal_capi
+hal_client_domain(platform_app, hal_capi)
+
+# Access capi devices at all.
+allow hal_capi_default teei_client_device:chr_file { open ioctl read write };
+
+# Allow to use shared memory for HAL PQ
+hal_client_domain(hal_capi_default, hal_allocator)
+
+# Allow to set soter prop
+set_prop(hal_capi_default, soter_teei_prop)

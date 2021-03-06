@@ -1,0 +1,36 @@
+# Purpose :  For WIFI SANITY test to set FW path(STA/P2P/AP)
+allow netd wmtWifi_device:chr_file { write open };
+
+# Purpose :  NA
+allow netd kernel:system module_request;
+allow netd self:capability sys_module;
+allow netd self:capability fsetid;
+
+# Purpose :   APP
+allow netd platform_app:fd use;
+
+# Purpose :  PPPOE Test
+allow netd ppp:process sigkill;
+
+# Purpose :  MDLogger USB logging
+allow netd mdlogger:fd use;
+allow netd mdlogger:tcp_socket { read write };
+allow netd mdlogger:tcp_socket { getopt setopt };
+
+# Purpose :  network logging
+allow netd netdiag:fd use;
+allow netd netdiag:udp_socket { read write getopt setopt};
+
+# Purpose : ALPS01789552
+#============= netd ==============
+allow netd self:capability { setuid setgid };
+
+#============= netd ==============
+allow netd untrusted_app:fd use;
+
+# Purpose :  CTS for wifi
+allow netd untrusted_app:unix_stream_socket { read write getopt setopt};
+allow netd isolated_app:fd use;
+
+# MTK support antutu feature
+get_prop(netd, mtk_antutu_prop);

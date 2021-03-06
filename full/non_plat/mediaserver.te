@@ -1,0 +1,37 @@
+# Purpose: Allow reador andgetattr path="/data/data/com.mediatek.voicecommand/training
+# /unlock/passwordfile/0.dat"
+allow mediaserver system_app_data_file:file { read getattr };
+
+# Operation : Move these sepolicy from basic to tk(full) which OMA DRM need
+# Purpose : Allow mediaserver to read /proc/pid/cmdline to get process name, so that
+# it can do white list check which is MTK OMA DRM additional protection mechanism
+
+# system_app:
+allow mediaserver system_app:dir search;
+allow mediaserver system_app:file { read open getattr };
+
+# platform_app:
+allow mediaserver platform_app:dir search;
+allow mediaserver platform_app:file { read open getattr };
+
+# untrusted_app:
+allow mediaserver untrusted_app:dir search;
+allow mediaserver untrusted_app:file { read open getattr };
+
+# Purpose : for 120Hz Smart Switch
+allow mediaserver mtk_rrc_device:chr_file { read write ioctl open };
+
+# Purpose : MJC Driver
+allow mediaserver MJC_device:chr_file { read write ioctl open };
+
+# Purpose : OpenDSP: read/write ipi message to tinysys
+allow mediaserver audio_ipi_device:chr_file { read write ioctl open };
+
+# Purpose : WFD and MET Latency measurement
+allow mediaserver media_wfd_prop:property_service set;
+
+# Purpose : Play tone for alert
+allow mediaserver custom_file:file {read getattr};
+
+# Purpose : Use aee API
+allow mediaserver aee_aed:unix_stream_socket connectto;

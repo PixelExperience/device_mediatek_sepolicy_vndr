@@ -1,0 +1,15 @@
+# Purpose: Allow to access ged for gralloc_extra functions
+allow mediaextractor proc_ged:file rw_file_perms;
+
+#============= mediaextractor ==============
+allow mediaextractor vfat:file r_file_perms;
+
+allow mediaextractor mediaserver_service:service_manager find;
+
+allow mediaextractor platform_app:dir search;
+allow mediaextractor platform_app:file r_file_perms;
+
+hal_client_domain(mediaextractor, hal_omx)
+
+# Purpose: Allow to access audio props
+get_prop(mediaextractor, vendor_audio_prop)

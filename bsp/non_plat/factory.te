@@ -1,0 +1,30 @@
+# Purpose: define factory_data_file instead of system_data_file
+# because system_data_file is sensitive partition from M
+allow resize block_device:dir search;
+
+allow factory kmsg_device:chr_file { write open };
+allow factory proc:file getattr;
+allow factory dm_device:blk_file { read open write ioctl read getattr };
+allow factory sysfs_fs_ext4_features:dir search;
+allow factory sysfs_fs_ext4_features:file read;
+allow factory system_block_device:blk_file getattr;
+allow factory vendor_block_device:blk_file getattr;
+allow factory cache_block_device:blk_file getattr;
+allow factory protect1_block_device:blk_file getattr;
+allow factory protect2_block_device:blk_file getattr;
+
+# Purpose : Allow factory to call android.hardware.audio@2.0-service-mediatek
+binder_call(factory, mtk_hal_audio)
+allow factory mtk_hal_audio:binder call;
+allow factory mtk_audiohal_data_file:dir {read search open};
+allow factory proc:file {read open};
+allow factory audio_device:chr_file rw_file_perms;
+allow factory audio_device:dir w_dir_perms;
+allow factory audiohal_prop:property_service set;
+
+# Purpose : adsp
+allow factory adsp_device:chr_file { rw_file_perms };
+
+# Purpose : Allow factory to get usb_state
+allow factory sysfs_android_usb:dir search;
+allow factory sysfs_android_usb:file r_file_perms;

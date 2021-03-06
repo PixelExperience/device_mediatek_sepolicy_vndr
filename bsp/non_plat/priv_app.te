@@ -1,0 +1,11 @@
+# Purpose: Allow to use mtk telephony APIs (phoneEx)
+allow priv_app mtk_radio_service:service_manager find;
+
+# Purpose: Allow to use HAL PQ
+hal_client_domain(priv_app, hal_pq)
+
+# Purpose: Allow to use shared memory for HAL PQ
+hal_client_domain(priv_app, hal_allocator)
+
+# Purpose :allow priv_app to search debugfs_ion dir
+allow priv_app debugfs_ion:dir search;

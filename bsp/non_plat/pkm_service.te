@@ -1,0 +1,36 @@
+type pkm_service, domain;
+type pkm_service_exec ,exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(pkm_service)
+
+# Purpose : allow pkm_service to send KPI through APM service
+hal_client_domain(pkm_service, mtk_hal_apm)
+
+# Purpose : for pkm_service to connenct to md_monitor
+hal_client_domain(pkm_service, md_monitor_hal)
+
+# Purpose : for pkm_service to access /data/md_mon/
+allow pkm_service md_monitor_vendor_file:dir r_dir_perms;
+allow pkm_service md_monitor_vendor_file:file r_file_perms;
+
+# Purpose : Allow pkm_service to get properties
+get_prop(pkm_service, mtk_ims_prop)
+
+# vendor.ims.eims.pdn.info
+get_prop(pkm_service, mtk_ims_eims_pdn_prop)
+
+# vendor.ril.data.pdn_info*
+get_prop(pkm_service, vendor_radio_prop)
+
+# Purpose : Allow pkm_service to pull packet from netd
+allow pkm_service self:capability net_raw;
+allow pkm_service self:packet_socket { create_socket_perms };
+allow pkm_service self:udp_socket { create_socket_perms };
+allowxperm pkm_service self:packet_socket ioctl {SIOCGIFINDEX SIOCGSTAMP };
+allowxperm pkm_service self:udp_socket ioctl {SIOCGIFINDEX SIOCGSTAMP };
+
+# Add policy read property for init.svc.md_monitor
+get_prop(pkm_service, init_svc_md_monitor_prop)
+
+# Allow PKM service to read vendor.dmc.apm.active
+get_prop(pkm_service, mtk_dmc_prop)

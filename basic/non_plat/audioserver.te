@@ -1,0 +1,37 @@
+# Purpose : EVDO
+allow audioserver rpc_socket:sock_file write;
+allow audioserver ttySDIO_device:chr_file rw_file_perms;
+
+# Purpose : for low SD card latency issue
+allow audioserver sysfs_lowmemorykiller:file { read open };
+
+# Purpose : for change thermal policy when needed
+allow audioserver proc_mtkcooler:dir search;
+allow audioserver proc_mtktz:dir search;
+allow audioserver proc_thermal:dir search;
+
+# Purpose : offloadservice
+allow audioserver offloadservice_device:chr_file rw_file_perms;
+
+# Purpose: read/open sysfs node
+allow audioserver sysfs_ccci:file r_file_perms;
+
+# Purpose: research root dir "/"
+allow audioserver tmpfs:dir search;
+
+# Purpose: access sysfs node
+allow audioserver sysfs_ccci:dir search;
+
+# Purpose: Dump debug info
+allow audioserver debugfs_binder:dir search;
+allow audioserver fuse:file write;
+
+# Purpose: Allow to access ged for gralloc_extra functions
+allow audioserver proc_ged:file rw_file_perms;
+
+# Purpose: Allow to trigger AEE dump
+allow audioserver aee_aed:unix_stream_socket connectto;
+
+# Operation : Migration
+get_prop(audioserver, vendor_default_prop)
+get_prop(audioserver, vendor_audio_prop)

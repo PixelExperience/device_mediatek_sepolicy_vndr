@@ -1,0 +1,43 @@
+type vendor_neuralnetworks, domain;
+type vendor_neuralnetworks_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_neuralnetworks)
+
+hal_server_domain(vendor_neuralnetworks, hal_neuralnetworks)
+hal_client_domain(vendor_neuralnetworks, hal_graphics_allocator)
+
+add_hwservice(vendor_neuralnetworks, hal_neuralnetworks_hwservice)
+allow vendor_neuralnetworks hal_neuralnetworks_hwservice:hwservice_manager find;
+allow vendor_neuralnetworks hidl_base_hwservice:hwservice_manager add;
+allow vendor_neuralnetworks ion_device:chr_file r_file_perms;
+allow vendor_neuralnetworks debugfs_ion:dir r_dir_perms;
+allow vendor_neuralnetworks vpu_device:chr_file rw_file_perms;
+allow vendor_neuralnetworks mdla_device:chr_file rw_file_perms;
+allow vendor_neuralnetworks gpu_device:chr_file rw_file_perms;
+allow vendor_neuralnetworks untrusted_app_25:binder { call transfer };
+allow vendor_neuralnetworks untrusted_app:binder { call transfer };
+allow vendor_neuralnetworks shell_data_file:file read;
+allow vendor_neuralnetworks vendor_configs_file:file r_file_perms;
+allow vendor_neuralnetworks vendor_configs_file:dir r_dir_perms;
+allow vendor_neuralnetworks sdcardfs:file r_file_perms;
+allow vendor_neuralnetworks untrusted_app_25:fd use;
+allow vendor_neuralnetworks untrusted_app:fd use;
+allow vendor_neuralnetworks sysfs_lowmemorykiller:dir r_dir_perms;
+allow vendor_neuralnetworks sysfs_lowmemorykiller:file r_file_perms;
+allow vendor_neuralnetworks proc_zoneinfo:file r_file_perms;
+allow vendor_neuralnetworks apk_data_file:file read;
+allow vendor_neuralnetworks proc_ged:file rw_file_perms;
+allow vendor_neuralnetworks gpu_device:dir r_dir_perms;
+allow vendor_neuralnetworks hwservicemanager:binder { call transfer };
+allow vendor_neuralnetworks hwservicemanager_prop:file { getattr map open read };
+
+# Purpose : allow access to perfmgr for EARA-QoS
+allow vendor_neuralnetworks proc_perfmgr:dir r_dir_perms;
+allow vendor_neuralnetworks proc_perfmgr:file r_file_perms;
+allowxperm vendor_neuralnetworks proc_perfmgr:file ioctl {
+  PERFMGR_EARA_NN_BEGIN
+  PERFMGR_EARA_NN_END
+  PERFMGR_EARA_GETUSAGE
+};
+allow vendor_neuralnetworks proc_ged:file r_file_perms;
+allowxperm vendor_neuralnetworks proc_ged:file ioctl { proc_ged_ioctls };

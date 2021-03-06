@@ -1,0 +1,6 @@
+allow usp_service para_block_device:blk_file rw_file_perms;
+allow usp_service proc_lk_env:file rw_file_perms;
+allow usp_service proc_net:file rw_file_perms;
+allow usp_service ccci_device:chr_file rw_file_perms;
+set_prop(usp_service, usp_srv_prop)
+get_prop(usp_service, mtk_cxp_vendor_prop)

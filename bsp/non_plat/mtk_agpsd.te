@@ -1,0 +1,10 @@
+# Request CDMA network info for CDMA A-GPS
+allow mtk_agpsd rild:unix_dgram_socket sendto;
+
+#============= mtk_agpsd ==============
+allow mtk_agpsd sysfs_ccci:dir search;
+allow mtk_agpsd sysfs_ccci:file { read open };
+
+# Allow to connect APM HIDL server
+hal_client_domain(mtk_agpsd, mtk_hal_apm)
+get_prop(mtk_agpsd, mtk_dmc_prop)

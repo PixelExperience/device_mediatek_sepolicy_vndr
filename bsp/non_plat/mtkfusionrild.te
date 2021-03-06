@@ -1,0 +1,42 @@
+typeattribute rild mtkimsapdomain;
+
+# Purpose: Allow rild to get/set mtk_vsim_prop
+set_prop(rild, mtk_vsim_prop)
+
+allow rild mtk_radio_data_file:dir { read remove_name write search add_name open };
+allow rild mtk_radio_data_file:file { read write create open getattr lock unlink };
+
+# Purpose: Allow rild to set ims feature
+set_prop(rild, mtk_volte_prop)
+set_prop(rild, mtk_wfc_prop)
+set_prop(rild, mtk_vilte_prop)
+set_prop(rild, mtk_viwifi_prop)
+
+# Purpose: Allow rild to get/set mtk_ims_prop
+set_prop(rild, mtk_ims_prop)
+
+# Purpose: Allow rild to set ims support property
+set_prop(rild, mtk_volte_support_prop)
+set_prop(rild, mtk_wfc_support_prop)
+set_prop(rild, mtk_vilte_support_prop)
+set_prop(rild, mtk_viwifi_support_prop)
+set_prop(rild, mtk_rcs_ua_support_prop)
+
+# Purpose: Allow mtkrild to get/set mtk_provision_prop
+set_prop(rild, mtk_provision_prop)
+
+# Purpose : Allow rild to set subsidylock property
+set_prop(rild, mtk_subsidylock_prop)
+
+# Purpose: Allow mtkrild to get/set mtk_ims_eims_pdn_prop
+set_prop(rild, mtk_ims_eims_pdn_prop)
+
+# Purpose : allow to get mtk_cta_support property
+get_prop(rild, mtk_cta_support_prop);
+
+# Purpose: Allow rild to set IMS NR feature
+set_prop(rild, mtk_vonr_prop)
+set_prop(rild, mtk_vinr_prop)
+
+# Purpose: Allow rild to write phantom packet
+allow rild nlop_device:chr_file rw_file_perms;

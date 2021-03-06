@@ -1,0 +1,21 @@
+# Add for app stay in vendor partition and want to IPC with vendor process
+
+# This is for trustonic rootpa apk
+user=system seinfo=platform name=com.gd.mobicore.pa domain=teeregistryd_app
+user=system seinfo=platform name=com.trustonic.teeservice domain=teed_app
+
+# This is for trustonic tts apk, uncomment this if TTS could not bind with RootPA
+# user=_app seinfo=platform name=com.trustonic.tbase.tests.runner domain=mobicore_app type=app_data_file levelFrom=user
+# This is for trustonic tui-service
+user=_app seinfo=platform name=com.trustonic.tuiservice domain=mobicore_app type=app_data_file levelFrom=user
+
+# This is for emcamera apk to commnucate with hal1
+user=_app seinfo=platform name=com.mediatek.emcamera domain=emcamera_app type=app_data_file levelFrom=user
+
+# This is for sensorhub apk to commnucate with hal
+user=_app seinfo=platform name=com.mediatek.sensorhub.ui domain=sensorhub_app type=app_data_file levelFrom=user
+
+# Some 3rd Party apps
+user=_app seinfo=platform name=com.facebook.katana domain=some_party_app type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.instagram.android domain=some_party_app type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.twitter.android domain=some_party_app type=app_data_file levelFrom=all

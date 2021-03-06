@@ -1,0 +1,4 @@
+allow hal_keymaster_attestation ut_keymaster_device:chr_file { read write ioctl open };
+allow hal_keymaster_attestation teei_client_device:chr_file { read write open ioctl};
+hal_client_domain(hal_keymaster_attestation, hal_capi)
+hal_client_domain(hal_keymaster_attestation, hal_allocator)

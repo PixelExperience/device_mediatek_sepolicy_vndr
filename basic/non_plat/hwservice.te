@@ -1,0 +1,64 @@
+# Bluetooth
+type mtk_hal_bluetooth_hwservice, hwservice_manager_type;
+
+# Rild
+type mtk_hal_rild_hwservice, hwservice_manager_type;
+
+# power hidl
+type mtk_hal_power_hwservice, hwservice_manager_type;
+
+# LBS HIDL
+type mtk_hal_lbs_hwservice, hwservice_manager_type;
+
+# IMSA HIDL
+type mtk_hal_imsa_hwservice, hwservice_manager_type;
+
+# NVRAM HIDL
+type nvram_agent_binder_hwservice, hwservice_manager_type;
+
+# PQ HIDL
+type mtk_hal_pq_hwservice, hwservice_manager_type;
+
+# keymaster attestation hidl
+type mtk_hal_keyattestation_hwservice, hwservice_manager_type;
+
+# FM HIDL
+type mtk_hal_fm_hwservice, hwservice_manager_type;
+
+# log hidl
+type mtk_hal_log_hwservice, hwservice_manager_type;
+
+# em hidl
+type mtk_hal_em_hwservice, hwservice_manager_type;
+
+# MMS HIDL
+type hal_mms_hwservice, hwservice_manager_type, untrusted_app_visible_hwservice_violators;
+type hal_atci_hwservice, hwservice_manager_type;
+type mtk_hal_keymanage_hwservice, hwservice_manager_type;
+
+# GPU HIDL
+type mtk_hal_gpu_hwservice, hwservice_manager_type;
+
+# modem db filter hidl
+type mtk_hal_md_dbfilter_hwservice, hwservice_manager_type;
+
+# HDMI HIDL
+type mtk_hal_hdmi_hwservice, hwservice_manager_type;
+
+# BGService HIDL
+type mtk_hal_bgs_hwservice, hwservice_manager_type;
+
+# Soter
+type soter_hwservice, hwservice_manager_type;
+
+# Configstore
+type hal_configstore_hwservice, hwservice_manager_type;
+
+# BTconfigstore
+type hal_btconfigstore_hwservice, hwservice_manager_type;
+
+# DMS
+type dms_hwservice, hwservice_manager_type;
+
+# NFC
+type nxpnfc_hwservice, hwservice_manager_type;

@@ -1,0 +1,4 @@
+# HwBinder IPC from client to server, and callbacks
+binder_call(hal_atci_client, hal_atci_server)
+binder_call(hal_atci_server, hal_atci_client)
+allow hal_atci_client hal_atci_hwservice:hwservice_manager find;

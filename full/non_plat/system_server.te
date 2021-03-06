@@ -1,0 +1,39 @@
+# Purpose : boost thread to RT
+allow system_server surfaceflinger:process { setsched getsched };
+
+# Purpose : for 120Hz Smart Switch
+allow system_server mtk_rrc_device:chr_file rx_file_perms;
+
+# Purpose : Allow P2P framework to read MAC via nvram_agent_service
+allow system_server nvram_agent_service:service_manager find;
+
+# Purpose : Allow system server to read/write /sys/kernel/debug/binder/* for ANR mechanism
+allow system_server debugfs_binder:file rw_file_perms;
+
+# Purpose : Allow system server to read/write /d/ged/hal/* for GED operations
+allow system_server debugfs_ged:dir rw_dir_perms;
+allow system_server debugfs_ged:file rw_file_perms;
+
+# Purpose : Allow system server to read /sys/kernel/debug/shrinker for memory debugging information
+allow system_server debugfs_shrinker_debug:file r_file_perms;
+
+# Purpose : Allow system_server's watchdog thread send sig 9 to surfacelinger process when surfacelinger hang
+allow system_server surfaceflinger:process sigkill;
+
+# Purpose : LWX ccci interface permission
+allow system_server ccci_device:chr_file rw_file_perms;
+allow system_server sysfs_ccci:dir search;
+allow system_server sysfs_ccci:file { open read };
+
+# Purpose : for system_server operate /dev/RT_Monitor when enable hang detect
+allow system_server RT_Monitor_device:chr_file r_file_perms;
+
+# Fix bootup violation
+allow system_server mtk_em_video_log_acodec_prop:file { read getattr open };
+allow system_server mtk_em_video_log_sf_postbuffer_prop:file { read getattr open };
+
+# Purpose: Allow to use phoneEx
+allow system_server mtk_radio_service:service_manager find;
+
+# Purpose: ViLTE allow to use HiDL fd
+allow system_server vendor_framework_file:file r_file_perms;

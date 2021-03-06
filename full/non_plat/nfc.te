@@ -1,0 +1,3 @@
+# Purpose   : Allow NFC to use system service
+#============= nfc ==============
+allow nfc program_binary_service:service_manager find;

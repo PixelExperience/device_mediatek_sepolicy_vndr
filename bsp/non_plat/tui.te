@@ -1,0 +1,31 @@
+type hal_tui_default, domain;
+
+# Set hal_tui_default as server domain of hal_tui
+hal_server_domain(hal_tui_default, hal_tui)
+
+# Set exec file type
+type hal_tui_default_exec, exec_type, vendor_file_type, file_type;
+
+# Setup for domain transition
+init_daemon_domain(hal_tui_default)
+
+# Associate hal_tui_hwservice with all server domain
+add_hwservice(hal_tui_server, hal_tui_hwservice)
+
+# Give permission for hal_tui_client to find hal_tui_hwservice via hwservice_manager
+allow hal_tui_client hal_tui_hwservice:hwservice_manager find;
+
+# Access to /dev/hwbinder.
+hwbinder_use(hal_tui_default);
+
+# HwBinder IPC from client to server
+binder_call(hal_tui_client, hal_tui_server)
+
+# Allow platform_app to interact with hal_tui
+hal_client_domain(platform_app, hal_tui)
+
+# Access tui devices at all.
+allow hal_tui_default utr_tui_device:chr_file { open ioctl read write };
+
+# Allow to use shared memory for HAL PQ
+hal_client_domain(hal_tui_default, hal_allocator)

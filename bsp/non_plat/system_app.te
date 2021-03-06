@@ -1,0 +1,175 @@
+# Purpose: [Settings][RenderThread][operate device file failed]
+# Package: com.android.settings
+allow system_app proc_secmem:file rw_file_perms;
+
+# Purpose: [Settings][Settings used list views need velocity tracker access touch dev]
+# Package: com.android.settings
+allow system_app touch_device:chr_file { read ioctl open };
+
+# Purpose: [MTKThermalManager][View thermal zones and coolers, and change thermal policies]
+# Package Name: com.mediatek.mtkthermalmanager
+allow system_app apk_private_data_file:dir getattr;
+allow system_app asec_image_file:dir getattr;
+allow system_app dontpanic_data_file:dir getattr;
+allow system_app drm_data_file:dir getattr;
+allow system_app install_data_file:file getattr;
+allow system_app lost_found_data_file:dir getattr;
+allow system_app media_data_file:dir getattr;
+allow system_app property_data_file:dir getattr;
+allow system_app proc_thermal:dir search;
+allow system_app proc_thermal:file { read getattr open write };
+allow system_app proc_mtkcooler:dir search;
+allow system_app proc_mtkcooler:file { read getattr open write };
+allow system_app proc_mtktz:dir search;
+allow system_app proc_mtktz:file  { read getattr open write };
+allow system_app proc_slogger:file { read getattr open write };
+
+# Purpose: Allow to use HAL PQ
+hal_client_domain(system_app, hal_pq)
+
+# Purpose : for device bring up, not to block early SQC
+allow system_app debugfs_ion:dir search;
+
+# Purpose : Allow to use HAL presence
+hal_client_domain(system_app, hal_presence)
+
+# Purpose : Carrier express service on BSP
+allow system_app mtk_carrierexpress_service:service_manager add;
+get_prop(system_app, mtk_volte_prop)
+get_prop(system_app, mtk_wfc_prop)
+get_prop(system_app, mtk_vt_prop)
+set_prop(system_app, usp_srv_prop)
+get_prop(system_app, mtk_cxp_vendor_prop)
+set_prop(system_app, radio_prop)
+set_prop(system_app, persist_vendor_vzw_device_type)
+set_prop(system_app, mtk_uce_support_prop)
+set_prop(system_app, mtk_rcs_support_prop)
+set_prop(system_app, mtk_clientapi_support_prop)
+
+# Purpose : Allow to use HAL rcs
+hal_client_domain(system_app, hal_rcs)
+
+# For test apk to execute monkey script, keep in vendor
+allow system_app system_data_file:file {open execute execute_no_trans};
+
+# Purpose : allow SystemUpdate to access ota_package file
+allow system_app ota_package_file:dir { read open write create remove_name search rename add_name getattr };
+allow system_app ota_package_file:file { create_file_perms };
+
+# Purpose : allow SystemUpdate to access Update engine
+allow system_app update_engine:binder { call transfer };
+
+# Purpose : allow MOTA app to write perist.update_finished, persist_update_started
+allow system_app mtk_update_prop:property_service set;
+
+# Purpose: allow PermissionControl use mtk_hal_netdagent_hwservice
+hal_client_domain(system_app,mtk_hal_netdagent)
+
+# Purpose: [sysoper][sysoper will create folder /cache/recovery]
+# Package: com.mediatek.systemupdate.sysoper
+allow system_app cache_file:dir { write search create add_name remove_name };
+allow system_app cache_file:file { read write create open getattr unlink };
+
+# Purpose: Add permission to access recovery folder and write command files to recovery for System Update
+allow system_app cache_recovery_file:dir { write search add_name remove_name };
+allow system_app cache_recovery_file:file { read write create open getattr unlink };
+
+# Purpose : Allow Privacy protection lock to find ppl agent
+# Package: com.mediatek.PrivacyProtectionLock
+allow system_app mtk_hal_pplagent_hwservice:hwservice_manager find;
+allow system_app ppl_agent:binder call;
+
+# Purpose: allow system app to set RTT property
+set_prop(system_app, mtk_rtt_prop)
+
+# Purpose: allow AtciService to access atcid
+hal_client_domain(system_app, hal_atci)
+
+# Purpose: allow system app to set USB CBA property
+set_prop(system_app, mtk_cba_activation)
+
+# Purpose: all System app to read property
+get_prop(system_app, mtk_system_update_support_prop)
+
+# Purpose : Allow system-app to get mtk_wfc_opt_in_prop
+# Package: com.mediatek.settings.ext
+get_prop(system_app, mtk_wfc_opt_in_prop)
+
+# Purpose : Allow OSI Permission control to tcp socket
+allow system_app osi:tcp_socket { create connect write read bind accept listen getattr setattr getopt setopt };
+get_prop(system_app, mtk_vsim_sys_prop)
+set_prop(system_app, mtk_vsim_sys_prop)
+
+# Purpose: Allow BackupRestore can read /dev/block/mmcblk1.
+# Package Name: com.mediatek.backuprestore
+allow system_app block_device:dir search;
+
+# Purpose: allow system app to set mtk_update_prop property
+set_prop(system_app, mtk_update_prop)
+
+# Purpose: Allow system-app to get mtk_ss_vendor_prop
+# Package Name: com.mediatek.engineermode
+get_prop(system_app, mtk_ss_vendor_prop)
+
+# Purpose: Allow to use HIDL and access vendor_neuralnetworks
+allow system_app vendor_neuralnetworks:binder { call transfer };
+allow system_app debugfs_ion:dir search;
+
+# Operation: Support SubsidyLock
+hwbinder_use(system_app)
+hal_client_domain(system_app, hal_telephony)
+allow rild system_app:binder call;
+allow system_app mtk_hal_rild_hwservice:hwservice_manager find;
+allow system_app rild:binder { call transfer };
+get_prop(system_app, mtk_subsidylock_prop)
+set_prop(system_app, mtk_subsidylock_prop_connect)
+
+# Purpose: Presence Service need to communicate with ril.
+# Package Name: com.mediatek.presence
+allow system_app mtk_hal_rild_hwservice:hwservice_manager find;
+allow system_app rild:binder { transfer call };
+
+# Purpose : Allow to use HAL presence
+hal_client_domain(system_app, hal_clientapi)
+
+# Purpose: access for client device of TKCore
+allow system_app tkcore_admin_device:chr_file rw_file_perms;
+
+# Purpose: Allow OP12settings to get opt_in_url_prop
+# Package: com.mediatek.op12.settings;
+get_prop(system_app, mtk_opt_in_url_prop)
+get_prop(system_app, mtk_apptoken_required_prop)
+
+# Operation: SimProcessor needs to read telephony log switch property
+# Purpose: allow to get mtk_em_tel_log_prop
+get_prop(system_app, mtk_em_tel_log_prop);
+
+# Purpose: System APP can submit KPI to DMC through APM HIDL interface
+# Package Name: com.mediatek.apmonitor
+hal_client_domain(system_app, mtk_hal_apm)
+
+# Purpose: System APP can check DMC proerpty to submit KPI or not.
+# Package Name: com.mediatek.apmonitor
+get_prop(system_app, mtk_dmc_prop)
+
+# Operation : system app need to read mtk_cta_support_prop property
+# Purpose : allow to get mtk_cta_support property
+get_prop(system_app, mtk_cta_support_prop);
+
+# Purpose : for setting ims nr enable property
+get_prop(system_app, mtk_vonr_prop)
+get_prop(system_app, mtk_vinr_prop)
+
+# Date: 2019/07/22
+# Purpose: Allow op07settings to get mtk_wfc_entitlement_prop
+# Package: com.mediatek.op07.settings
+get_prop(system_app, mtk_wfc_entitlement_prop)
+
+# Purpose : VoW 2E2K request model update: system APP write and audio HAL read
+# Package Name: com.mediatek.voicecommand
+allow system_app mtk_audiohal_data_file:dir create_dir_perms;
+allow system_app mtk_audiohal_data_file:file create_file_perms;
+
+# Purpose: Allow atmwifimeta apk to use HIDL and access loghidlvendorservice
+allow system_app mtk_hal_log_hwservice:hwservice_manager find;
+binder_call(system_app, loghidlvendorservice);

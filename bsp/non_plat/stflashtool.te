@@ -1,0 +1,8 @@
+type stflashtool, domain;
+type stflashtool_exec, exec_type, file_type, vendor_file_type;
+
+# Purpose : Start STFlashTool to upgrade the FW for ST NFC Solution
+init_daemon_domain(stflashtool);
+
+#============= stflashtool ==============
+allow stflashtool st21nfc_device:chr_file { read write ioctl open };

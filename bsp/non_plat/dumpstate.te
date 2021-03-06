@@ -1,0 +1,2 @@
+# Purpose : fix Test error
+allow dumpstate sysfs_mmcblk:file r_file_perms;

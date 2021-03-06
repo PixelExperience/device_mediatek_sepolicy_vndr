@@ -1,0 +1,39 @@
+# Purpose : Allow svp client alloc sec mem
+allow untrusted_app proc_secmem:file { read ioctl open };
+
+# TrustKernel add
+userdebug_or_eng(`
+	allow untrusted_app tkcore_admin_device:chr_file  { ioctl read write open };
+')
+
+# Purpose :[Launcher2][View update graphics]
+# Package Name: com.android.launcher2
+# allow untrusted_app guiext-server:binder { transfer call };
+
+# Purpose : allow untrusted_app access ntfs device
+allow untrusted_app fuseblk:dir search;
+allow untrusted_app fuseblk:file read;
+allow untrusted_app fuseblk:file rw_file_perms;
+
+# Purpose :
+# avc: denied { write } for name="aee_interim" dev="dm-0" ino=8236
+# scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:coredump_file:s0
+# tclass=dir permissive=0
+userdebug_or_eng(`
+  allow untrusted_app coredump_file:dir { write };
+')
+
+# Purpose : Move from tk sepolicy for ViLTE
+allow untrusted_app vtservice:dir search;
+allow untrusted_app mediaserver:dir search;
+
+# Purpose: allow vendor's osi to use tcp socket
+allow untrusted_app osi:tcp_socket { create connect write read bind accept listen getattr setattr getopt setopt };
+
+# Purpose: Allow untrusted_app to use HIDL and access vendor_neuralnetworks
+allow untrusted_app vendor_neuralnetworks:binder { call transfer };
+allow untrusted_app debugfs_ion:dir search;
+
+# Purpose: Allow untrusted_app to access mdlactl_device and vpu_device
+allow untrusted_app mdla_device:chr_file { rw_file_perms };
+allow untrusted_app vpu_device:chr_file { rw_file_perms };

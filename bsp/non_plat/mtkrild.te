@@ -1,0 +1,17 @@
+typeattribute mtkrild mtkimsapdomain;
+set_prop(mtkrild, vendor_logmuch_prop)
+
+# For sim property
+set_prop(mtkrild, cdma_prop)
+
+# Purpose: Allow mtkrild to get/set mtk_vsim_prop
+set_prop(mtkrild, mtk_vsim_prop)
+
+# Purpose : Allow rild to set subsidylock property
+set_prop(mtkrild, mtk_subsidylock_prop)
+
+# Purpose: Allow mtkrild to get/set mtk_ims_prop
+set_prop(mtkrild, mtk_ims_prop)
+
+# Purpose: Allow mtkrild to get/set mtk_provision_prop
+set_prop(rild, mtk_provision_prop)

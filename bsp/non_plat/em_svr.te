@@ -1,0 +1,2 @@
+# Purpose: Rsc switch
+allow em_svr para_block_device:blk_file write;

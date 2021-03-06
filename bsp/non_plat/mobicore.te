@@ -1,0 +1,27 @@
+type mobicore, domain;
+type mobicore_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(mobicore)
+allow mobicore mobicore_admin_device:chr_file rw_file_perms;
+allow mobicore mobicore_user_device:chr_file rw_file_perms;
+allow mobicore mobicore_data_file:dir { create rw_dir_perms rename reparent };
+allow mobicore mobicore_data_file:file { create_file_perms rw_file_perms };
+
+# appdomain
+allow appdomain mobicore_user_device:chr_file { getattr read write ioctl open };
+allow appdomain mobicore_admin_device:chr_file getattr;
+
+# Purpose : Set new added properties for TuiStarter in 311B mcDriverDaemon
+allow mobicore mobicore_tui_device:chr_file { read open ioctl };
+
+# Purpose : Set sepolicy for Keymaster attestation key injection
+allow hal_keymaster_attestation mobicore:unix_stream_socket connectto;
+allow hal_keymaster_attestation mobicore_user_device:chr_file { read write ioctl open };
+
+# Purpose: set policy for FBE
+allow mobicore unlabeled:dir search;
+
+# Purpose: set sepolicy for access mnt vendor file on Android P
+allow mobicore mnt_vendor_file:dir search;
+allow mobicore persist_data_file:dir { ra_dir_perms };
+allow mobicore persist_data_file:file { read write create open getattr };

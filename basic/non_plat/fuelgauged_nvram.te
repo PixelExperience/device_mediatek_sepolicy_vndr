@@ -1,0 +1,41 @@
+type fuelgauged_nvram ,domain;
+type fuelgauged_nvram_exec , exec_type, file_type, vendor_file_type;
+type fuelgauged_nvram_file, file_type, data_file_type;
+
+init_daemon_domain(fuelgauged_nvram)
+
+# Purpose : For fg daemon can do nvram r/w to save car_tune_value
+allow fuelgauged_nvram nvdata_file:dir rw_dir_perms;
+allow fuelgauged_nvram nvdata_file:file {rw_file_perms create_file_perms};
+allow fuelgauged_nvram nvram_data_file:lnk_file rw_file_perms;
+allow fuelgauged_nvram nvdata_file:lnk_file rw_file_perms;
+
+allow fuelgauged_nvram fuelgauged_file:dir rw_dir_perms;
+allow fuelgauged_nvram fuelgauged_file:file {rw_file_perms create_file_perms};
+
+# Purpose : Change from /data to /cache
+allow fuelgauged_nvram self:capability { chown };
+allow fuelgauged_nvram kmsg_device:chr_file { write open };
+allow fuelgauged_nvram self:capability fsetid;
+
+# Purpose : fgauge_nvram could use IOCTL
+allow fuelgauged_nvram MT_pmic_adc_cali_device:chr_file rw_file_perms;
+
+# Purpose : add fuelgauged to nvcfg read write permit
+# need add label
+allow fuelgauged_nvram sysfs:file { read open };
+allow fuelgauged_nvram nvcfg_file:dir { search write open read add_name create getattr};
+allow fuelgauged_nvram nvcfg_file:file { read write getattr open create };
+
+# Purpose : add fuelgauged could access
+r_dir_file(fuelgauged_nvram, sysfs_battery_supply)
+
+# Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
+allow fuelgauged_nvram mnt_vendor_file:dir search;
+
+# Purpose: mrdump db flow and pre-allocation
+# mrdump db flow
+allow fuelgauged_nvram sysfs_dt_firmware_android:dir { open read search };
+allow fuelgauged_nvram sysfs_dt_firmware_android:file { getattr open read };
+
+allow fuelgauged_nvram sysfs_boot_mode:file { open read };

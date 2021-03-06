@@ -1,0 +1,13 @@
+type spm_loader_exec , exec_type, file_type, vendor_file_type;
+type spm_loader ,domain;
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# purpose: load spm firmware
+# ==============================================
+init_daemon_domain(spm_loader)
+
+# Read to /dev/spm
+allow spm_loader spm_device:chr_file r_file_perms;

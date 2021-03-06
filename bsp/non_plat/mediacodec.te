@@ -1,0 +1,49 @@
+# Purpose : for SVP secure memory allocation
+allow mediacodec proc_secmem:file { read write open};
+
+# Purpose : SVP module operates secmem driver
+allow mediacodec init:unix_stream_socket connectto;
+allow mediacodec mobicore_data_file:file { read open getattr};
+allow mediacodec mobicore_user_device:chr_file { read write ioctl open };
+allow mediacodec property_socket:sock_file write;
+allow mediacodec mobicore:unix_stream_socket connectto;
+allow mediacodec proc_secmem:file { read write ioctl open};
+allow mediacodec mobicore_data_file:dir search;
+allow mediacodec persist_data_file:file { read getattr open };
+allow mediacodec persist_data_file:dir search;
+
+# Purpose : for performance profiling and timing issue tracking during video playback
+allow mediacodec debugfs_fb:dir search;
+
+# Purpose : Add permission for gpu access
+allow mediacodec dri_device:chr_file { read write open ioctl };
+
+# Purpose : Add permission for thermal function access
+allow mediacodec proc_mtktz:dir search;
+allow mediacodec proc_mtktz:file { read open };
+
+# Purpose: For engineermode setting video log
+get_prop(mediacodec, mtk_em_video_log_acodec_prop)
+get_prop(mediacodec, mtk_em_video_log_sf_postbuffer_prop)
+get_prop(mediacodec, mtk_em_video_log_omx_prop)
+get_prop(mediacodec, mtk_em_video_log_vdec_prop)
+get_prop(mediacodec, mtk_em_video_log_svp_prop)
+get_prop(mediacodec, mtk_em_video_log_mjc_prop)
+get_prop(mediacodec, mtk_em_video_venc_h264_prop)
+
+# Purpose: Allow to use HAL PQ
+hal_client_domain(mediacodec, hal_pq)
+
+# Purpose: Allow to use shared memory for HAL PQ
+hal_client_domain(mediacodec, hal_allocator)
+
+# Purpose: Allow to use ape decoder
+hal_client_domain(mediacodec, hal_mtkcodecservice)
+
+# Purpose : SVP module operates TEEI
+hal_client_domain(mediacodec, hal_capi)
+allow mediacodec teei_client_device:chr_file rw_file_perms;
+
+# Purpose: Android Migration for D2+ Encoder
+allow mediacodec proc_chip:dir r_dir_perms;
+allow mediacodec proc_chip:file r_file_perms;

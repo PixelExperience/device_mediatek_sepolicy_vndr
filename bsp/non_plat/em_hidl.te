@@ -1,0 +1,8 @@
+# Purpose: EM set Moms property
+set_prop(em_hidl, mtk_moms_prop)
+
+# Purpose: Allow EM HIDL to get/set vendor_vt_prop
+set_prop(em_hidl, vendor_vt_prop)
+
+# Purpose : allow EM to set mtk_dmc_prop
+set_prop(em_hidl, mtk_dmc_prop);

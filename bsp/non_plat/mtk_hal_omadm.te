@@ -1,0 +1,28 @@
+type mtk_hal_omadm, domain, mtkimsapdomain;
+type mtk_hal_omadm_exec, exec_type, vendor_file_type, file_type;
+
+net_domain(mtk_hal_omadm)
+init_daemon_domain(mtk_hal_omadm)
+
+# hwbinder access
+hwbinder_use(mtk_hal_omadm)
+add_hwservice(mtk_hal_omadm, mtk_hal_omadm_hwservice)
+
+# call into system_server process (callbacks)
+binder_call(mtk_hal_omadm, system_server)
+
+allow mtk_hal_omadm omadm_data_file:file create_file_perms;
+allow mtk_hal_omadm omadm_data_file:dir create_dir_perms;
+allow mtk_hal_omadm self:udp_socket create_socket_perms_no_ioctl;
+allow mtk_hal_omadm self:tcp_socket create_socket_perms_no_ioctl;
+get_prop(mtk_hal_omadm, hwservicemanager_prop)
+allow mtk_hal_omadm self:capability { net_raw };
+allow mtk_hal_omadm fwmarkd_socket:sock_file write;
+allow mtk_hal_omadm netd:unix_stream_socket connectto;
+allow mtk_hal_omadm port:tcp_socket { name_bind name_connect };
+allow mtk_hal_omadm protect_f_data_file:dir create_dir_perms;
+allow mtk_hal_omadm protect_f_data_file:file create_file_perms;
+allow mtk_hal_omadm mnt_vendor_file:dir create_dir_perms;
+allow mtk_hal_omadm mnt_vendor_file:file create_file_perms;
+allow mtk_hal_omadm omadm_misc_file:file create_file_perms;
+allow mtk_hal_omadm omadm_misc_file:dir create_dir_perms;

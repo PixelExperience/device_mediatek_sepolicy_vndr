@@ -1,0 +1,103 @@
+# Purpose : To pass DRM UT
+allow drmserver nvram_agent_binder:binder call;
+allow drmserver platform_app:dir search;
+allow drmserver platform_app:file { read getattr open };
+allow drmserver property_socket:sock_file write;
+allow drmserver radio_data_file:file { read getattr open };
+allow drmserver sdcard_type:file open;
+
+# Purpose : Make drmserver and binder read /proc/pid/cmdline to get process name
+#system app to drmserver
+allow drmserver system_app:dir search;
+allow drmserver system_app:file { read open getattr };
+#Mediaserver to drmserver
+allow drmserver mediaserver:dir search;
+allow drmserver mediaserver:file { read open getattr };
+
+# Purpose : Make widevine mediacodec mode work
+allow drmserver untrusted_app:dir search;
+allow drmserver untrusted_app:file { read open getattr };
+
+# Purpose : Make OMA DRM audio file can be played
+allow drmserver radio_data_file:dir search;
+
+# Purpose : To fix ALPS01790300
+allow drmserver surfaceflinger:fd use;
+
+# Purpose : To fix ALPS01793801
+allow drmserver mediaserver:fifo_file read;
+
+# Purpose : To fix ALPS01822176
+allow drmserver mediaserver:fifo_file write;
+
+# Purpose : Let Drive app can work
+#allow drmserver app_data_file:dir search;
+#allow drmserver app_data_file:file open;
+
+# Purpose : for device bring up, not to block early migration/sanity
+allow drmserver system_app:process getattr;
+
+# Purpose : Allow access to link file; Such as play ready will request
+#           drmserver to access /mnt/sdcard/xxx, which links to /sdcard/xxx.
+allow drmserver mnt_user_file:dir search;
+allow drmserver mnt_user_file:lnk_file read;
+allow drmserver storage_file:lnk_file read;
+
+# Purpose : Allow drmserver to access some system_server opreration on M
+#           and allow drmserver access file stored in sdcard
+use_drmservice(system_server)
+allow drmserver system_server:file getattr;
+allow system_server drmserver:drmservice openDecryptSession;
+allow drmserver nvram_agent_service:service_manager find;
+
+# Purpose : Allow reador path="/data/data/com.mediatek.voicecommand/training
+# /unlock/passwordfile/0.dat"
+allow drmserver system_app_data_file:file read;
+
+# Purpose : allow drmserver access file stored in sdcard like /mnt/media_rw/
+allow drmserver vfat:file open;
+allow drmserver mnt_media_rw_file:dir search;
+
+# Purpose : allow drmserver access nfc process info, because drmserver need
+# check whether calling process is granted process, it need get process name
+# with calling pid
+allow drmserver nfc:dir search;
+allow drmserver nfc:file { read getattr open };
+
+# Purpose : allow drmserver access internal storage which mounted by sdcard, on Android M,
+# google add new feature which can format sdcard as internal storage. MediaScanner will use
+# .maybeTranslateEmulatedPathToInternal to translate emulate storage path(/storage/emulated/0)
+#  to internal storage path(/mnt/expand/edf477fd-9470-450e-882a-7ecda941edf6/media/0), this
+# need add policy to grand permission.
+allow drmserver mnt_expand_file:dir search;
+
+# Purpose : allow drmserver get AMS to start renew/expire/secure time invalid dialog
+allow drmserver activity_service:service_manager find;
+
+# Purpose : allow drmserver access priv app(such as wallpaper) info, because
+# drmserver need check whether calling process is granted process, it need
+# get process name with calling pid
+allow drmserver priv_app:dir search;
+allow drmserver priv_app:file { read getattr open };
+
+# Purpose : allow drmserver encrypt file
+allow drmserver media_rw_data_file:file write;
+
+# Purpose : allow drmserver access ringtone file, so that it can play
+# FL cached ringtone in /data/system_de/0/ringtones/ringtone_cache
+allow drmserver ringtone_file:file read;
+
+# Fix boot violation
+allow drmserver proc_uptime:file r_file_perms;
+
+# Operation : Migration issue
+allow drmserver mediaextractor:dir search;
+allow drmserver mediaextractor:file { read open getattr };
+
+#============= drmserver ==============
+allow drmserver untrusted_app_25:dir search;
+allow drmserver untrusted_app_25:file { getattr open read };
+
+#============= drmserver ==============
+allow drmserver proc_uptime:file read;
+allow drmserver sdcardfs:file open;

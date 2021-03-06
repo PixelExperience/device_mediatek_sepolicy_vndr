@@ -1,0 +1,31 @@
+type osi, domain;
+type osi_exec, system_file_type, exec_type, file_type;
+userdebug_or_eng(`
+permissive osi;
+')
+typeattribute osi coredomain;
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# Purpose : Start osi
+init_daemon_domain(osi)
+net_domain(osi)
+
+#============= osi ==============
+allow osi init:unix_stream_socket connectto;
+allow osi media_rw_data_file:file { read open };
+allow osi net_dn_prop:file { read open };
+allow osi property_socket:sock_file write;
+allow osi sdcardfs:file { read open write };
+allow osi self:capability net_raw;
+allow osi self:udp_socket ioctl;
+allow osi shell_exec:file { execute execute_no_trans };
+allow osi sysfs:dir { read open };
+allow osi sysfs_android_usb:dir search;
+allow osi sysfs_android_usb:file { read open };
+allow osi sysfs_therm:dir search;
+allow osi sysfs_therm:file read;
+allow osi system_data_file:file { read open };
+allow osi toolbox_exec:file getattr;

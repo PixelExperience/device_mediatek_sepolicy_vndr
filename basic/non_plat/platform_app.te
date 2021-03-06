@@ -1,0 +1,102 @@
+typeattribute platform_app mlstrustedsubject;
+
+# Purpose : get/set agps configuration via mtk_hal_lbs
+hal_client_domain(platform_app, mtk_hal_lbs)
+
+# Purpose : FMRadio enable driver access permission for fmradio hardware device
+# Package: com.mediatek.fmradio
+allow platform_app fm_device:chr_file rw_file_perms;
+
+# Purpose : MTKLogger need setup local socket with native daemon:mobile_logd,
+# netdialog,mdlogger,emdlogger,cmddumper
+# Package: com.mediatek.mtklogger
+allow platform_app mobile_log_d:unix_stream_socket connectto;
+allow platform_app mdlogger:unix_stream_socket connectto;
+allow platform_app emdlogger:unix_stream_socket connectto;
+allow platform_app cmddumper:unix_stream_socket connectto;
+allow platform_app connsyslogger:unix_stream_socket connectto;
+unix_socket_connect(platform_app, netdiag, netdiag)
+
+# purpose: allow MTKLogger to control Bluetooth HCI log via socket
+allow platform_app bluetooth:unix_stream_socket connectto;
+
+# Purpose :Make MTKLogger or VIASaber apk can Access TTYSDIO_device
+# Package: com.mediatek.mtklogger
+allow platform_app ttySDIO_device:chr_file rw_file_perms;
+
+# Purpose :Make MTKLogger or VIASaber apk can Access storage
+# Package: com.mediatek.mtklogger
+allow platform_app sdcard_type:file create_file_perms;
+allow platform_app sdcard_type:dir create_dir_perms;
+
+# Purpose : MTKLogger need copy exception db from data folder
+# Package: com.mediatek.mtklogger
+allow platform_app aee_exp_data_file:file r_file_perms;
+allow platform_app aee_exp_data_file:dir r_dir_perms;
+
+# Purpose : MTKLogger need update md config file in data for mode changed
+# Package: com.mediatek.mtklogger
+allow platform_app mdlog_data_file:file rw_file_perms;
+allow platform_app mdlog_data_file:dir rw_dir_perms;
+
+# Purpose : MTKLogger need setup local socket with mnld
+# Package: com.mediatek.mtklogger
+# TODO:: MTK need to remove later
+not_full_treble(`
+	allow platform_app mnld:unix_stream_socket connectto;
+')
+
+# Purpose : allow MTKLogger to read KE DB
+allow platform_app aee_dumpsys_data_file:file r_file_perms;
+
+# Purpose: allow platform_app to read /data/vendor/mtklog/aee_exp
+allow platform_app aee_exp_vendor_file:dir search;
+allow platform_app aee_exp_vendor_file:dir { read getattr open };
+allow platform_app aee_exp_vendor_file:file { read getattr open };
+
+# Purpose : Do FM operation via mtk_hal_fm
+hal_client_domain(platform_app, mtk_hal_fm)
+
+# Purpose : MTKLogger need connect to log hidl server
+# Package: com.mediatek.mtklogger
+hal_client_domain(platform_app, mtk_hal_log)
+
+# Purpose : MTKLogger need get netlog/mdlog/mobilelog property for property change
+# Package: com.mediatek.mtklogger
+get_prop(platform_app, debug_mdlogger_prop)
+get_prop(platform_app, debug_mtklog_prop)
+get_prop(platform_app, vendor_bluetooth_prop)
+get_prop(platform_app, mobile_log_prop)
+
+get_prop(platform_app, vendor_connsysfw_prop)
+
+# Purpose : JPEG need to use PQ via MMS HIDL
+hal_client_domain(platform_app, hal_mms)
+
+# Purpose: Allow to use lomo effect
+# Package: com.mediatek.camera
+allow platform_app mtk_hal_camera:binder call;
+allow platform_app sw_sync_device:chr_file rw_file_perms;
+
+# Purpose: Allow platform app to use BGService HIDL and access mtk_hal_camera
+hal_client_domain(platform_app, mtk_hal_bgs)
+allow platform_app mtk_hal_bgs_hwservice:hwservice_manager find;
+binder_call(platform_app, mtk_hal_bgs)
+binder_call(mtk_hal_bgs, platform_app)
+binder_call(platform_app, mtk_hal_camera)
+binder_call(mtk_hal_camera, platform_app)
+
+# Render Props
+get_prop(platform_app, exported_default_prop)
+get_prop(platform_app, exported_audio_prop)
+get_prop(platform_app, vendor_default_prop)
+get_prop(platform_app, render_prop)
+
+allow platform_app app_data_file:file execute;
+allow platform_app sysfs:dir read;
+allow platform_app sysfs_switch:dir search;
+allow platform_app mtk_cmdq_device:chr_file rw_file_perms;
+allow platform_app mtk_mdp_device:chr_file rw_file_perms;
+allow platform_app sysfs_therm:dir r_dir_perms;
+allow platform_app sysfs_therm:file r_file_perms;
+allow platform_app recovery_service:service_manager find;

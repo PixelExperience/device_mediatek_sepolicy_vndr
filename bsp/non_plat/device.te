@@ -1,0 +1,15 @@
+# Purpose: access for fp device and client device of TEEI
+type teei_fp_device, dev_type;
+type teei_client_device, dev_type;
+type teei_config_device, dev_type;
+type utr_tui_device, dev_type;
+type teei_vfs_device, dev_type;
+type teei_rpmb_device, dev_type;
+type ut_keymaster_device, dev_type;
+
+allow system_server teei_fp_device:chr_file rw_file_perms;
+allow system_server teei_client_device:chr_file r_file_perms;
+
+# Purpose : Add permission for nwk
+type nwkopt_device, dev_type;
+type tx_device, dev_type;

@@ -1,0 +1,4 @@
+# Purpose :allow untrusted_app_27 to get props
+get_prop(untrusted_app_27, apexd_prop)
+get_prop(untrusted_app_27, atci_sys_prop)
+get_prop(untrusted_app_27, atm_ipaddr_prop)

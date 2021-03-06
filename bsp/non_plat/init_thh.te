@@ -1,0 +1,24 @@
+# Purpose: Microtrust service
+type init_thh_service, domain;
+type init_thh_service_exec, exec_type, file_type, vendor_file_type;
+
+allow init_thh_service teei_config_device:chr_file rw_file_perms;
+allow init_thh_service teei_data_file:dir create_dir_perms;
+allow init_thh_service teei_data_file:file rw_file_perms;
+allow init_thh_service teei_data_file:file create_file_perms;
+
+# Enable access android property
+set_prop(init_thh_service, soter_teei_prop)
+allow init_thh_service self:process execmem;
+get_prop(init_thh_service, hwservicemanager_prop)
+allow init_thh_service hwservicemanager:binder call;
+
+hal_client_domain(init_thh_service, hal_capi)
+hal_client_domain(init_thh_service, hal_allocator)
+
+allow init_thh_service tee_device:chr_file rw_file_perms;
+allow init_thh_service hal_thh_hwservice:hwservice_manager find;
+allow init_thh_service hal_thh_default:binder call;
+
+# set up domain
+init_daemon_domain(init_thh_service)

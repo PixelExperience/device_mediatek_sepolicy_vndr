@@ -1,0 +1,101 @@
+# Purpose : SVP module operates secmem driver
+allow mediaserver mobicore_data_file:file getattr;
+allow mediaserver mobicore_data_file:file getattr;
+
+# Purpose : HDCP
+# TODO:: MTK need to remove later
+not_full_treble(`
+    allow mediaserver mobicore:unix_stream_socket connectto;
+')
+
+allow mediaserver mobicore_data_file:file { getattr read};
+allow mediaserver mobicore_user_device:chr_file { read write open ioctl};
+
+# Purpose : HDCP
+allow mediaserver persist_data_file:file { read write getattr };
+
+# Purpose : EVDO
+# TODO:: MTK need to remove later
+not_full_treble(`
+    allow mediaserver statusd:unix_stream_socket connectto;
+')
+
+# Purpose : offloadservice
+allow mediaserver offloadservice_device:chr_file { read write ioctl open };
+
+# Purpose : for control CPU during camera working flow
+allow mediaserver mtk_perf_service:service_manager find;
+
+# Purpose : WFD
+allow mediaserver surfaceflinger:dir search;
+allow mediaserver surfaceflinger:file { read open };
+
+# Purpose : WFD notifies its status to thermal module
+allow mediaserver proc_thermal:file { write getattr open };
+allow mediaserver proc_mtkcooler:file { read write open };
+allow mediaserver proc_mtktz:file { read write open };
+allow mediaserver proc_thermal:file { read write open };
+
+# Purpose : ancservice
+allow mediaserver ancservice_device:chr_file { read write ioctl open };
+
+# Purpose : guiext service for VP
+# binder_call(mediaserver, guiext-server)
+
+# Purpose : Add permission for gpu access
+allow mediaserver dri_device:chr_file { read write open ioctl };
+allow mediaserver gas_srv_service:service_manager find;
+
+# Purpose: For engineermode setting video log
+get_prop(mediaserver, mtk_em_video_log_acodec_prop)
+get_prop(mediaserver, mtk_em_video_log_sf_postbuffer_prop)
+get_prop(mediaserver, mtk_em_video_log_omx_prop)
+get_prop(mediaserver, mtk_em_video_log_vdec_prop)
+get_prop(mediaserver, mtk_em_video_log_svp_prop)
+get_prop(mediaserver, mtk_em_video_log_mjc_prop)
+get_prop(mediaserver, mtk_em_video_venc_h264_prop)
+
+# Purpose: Allow to use HAL PQ
+hal_client_domain(mediaserver, hal_pq)
+
+# Purpose: Allow to use shared memory for HAL PQ
+hal_client_domain(mediaserver, hal_allocator)
+
+# Purpose: Allow to use ape decoder
+hal_client_domain(mediaserver, hal_mtkcodecservice)
+
+# Purpose : for ViLTE - set VTservice has permission to access me
+allow mediaserver vtservice:binder { transfer call };
+allow mediaserver vtservice:fd use;
+
+# Purpose : Allow mediaserver to read processname to pass OMA DRM permisson check
+allow mediaserver platform_app:dir search;
+allow mediaserver platform_app:file { read open };
+
+# Purpose: Allow to access debugfs ged
+allow mediaserver debugfs_ged:dir search;
+allow mediaserver debugfs_ged:file { getattr open write };
+
+# Purpose : Allow mediaserver to read processname of DeskClock to pass OMA DRM permisson check
+allow mediaserver mediaprovider:dir search;
+allow mediaserver platform_app:file getattr;
+allow mediaserver system_app:dir search;
+allow mediaserver system_app:file read;
+allow mediaserver system_app:file open;
+
+# Purpose: Allow read and getattr path="/data/data/com.mediatek.voicecommand/training
+# /anyone/passwordfile/0.dat"
+allow mediaserver system_app_data_file:file { read getattr };
+
+# Purpose: Allow set property to notify rtsp server timeout
+set_prop(mediaserver,system_prop)
+
+# Purpose: Allow ioctl and property operations
+get_prop(mediaserver, media_wfd_prop)
+allowxperm mediaserver proc_perfmgr:file ioctl {
+  PERFMGR_FPSGO_QUEUE
+  PERFMGR_FPSGO_DEQUEUE
+};
+
+# Purpose: allow mediaserver to use gpu hidl api
+hal_client_domain(mediaserver,hal_gpu)

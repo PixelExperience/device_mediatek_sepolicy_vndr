@@ -1,0 +1,69 @@
+# Socket types
+type statusd_socket, file_type;
+
+# TEEI data file
+type teei_data_file, file_type, data_file_type;
+type teei_control_file, fs_type, sysfs_type;
+
+# android log too much data/misc/log
+type logmuch_data_file, file_type, data_file_type, core_data_file_type;
+
+# Purpose :
+# avc: denied { write } for name="aee_interim" dev="dm-0" ino=8236
+# scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:coredump_file:s0
+# tclass=dir permissive=0
+userdebug_or_eng(`
+  typeattribute coredump_file mlstrustedobject;
+')
+
+######################################
+# core domain file data
+
+# Purpose : wifi offload daemon access files and sockets
+type epdg_ipsec_conf_file, file_type, data_file_type;
+type epdg_apn_conf_file, file_type, data_file_type;
+type wo_epdg_action_socket, file_type;
+type wo_epdg_sim_socket, file_type;
+type wo_epdg_ipsec_socket, file_type;
+
+# Purpose: RCS stack for 2/3G network
+type rcs_volte_stack_socket, file_type;
+
+# For DuraSpeed
+type proc_cpu_loading, fs_type, proc_type;
+type proc_low_memory_hit, fs_type, proc_type;
+
+# Purpose: Store ims config data
+type mtk_radio_data_file, file_type, data_file_type;
+
+# mobicore device type and file type
+type mobicore_admin_device, dev_type;
+type mobicore_user_device, dev_type, mlstrustedobject;
+type mobicore_tui_device, dev_type;
+type mobicore_data_file, file_type, data_file_type;
+type mobicore_vendor_file, file_type, vendor_file_type;
+
+# DOE
+type doe_vendor_data_file, file_type, data_file_type;
+
+# md monitor file
+type md_monitor_vendor_file, file_type, data_file_type;
+
+# MTK omadm data folder
+type omadm_data_file, file_type, data_file_type;
+type omadm_misc_file, file_type, data_file_type;
+
+# wifi throttle
+type sysfs_thermald, fs_type, sysfs_type;
+
+# Purpose: Rcs Volte stack submarine development
+type rcs_rild_socket, file_type;
+
+# camera_dump
+type vendor_camera_dump_file, file_type, data_file_type;
+
+# TKCore proc file
+type proc_tkcore, fs_type, proc_type;
+
+# shading dump
+type vendor_shading_file, file_type, data_file_type;

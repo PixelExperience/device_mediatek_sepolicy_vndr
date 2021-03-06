@@ -1,0 +1,8 @@
+# Purpose: Allow app GPU library to use MDP HIDL
+hal_client_domain(ephemeral_app, hal_mms)
+
+# Executing files from an application home directory violates
+# W^X (https://en.wikipedia.org/wiki/W%5EX) constraints (loading executable code
+# from a writable file) and is an unsafe application behavior. Test to see if we
+# can get rid of it.
+auditallow ephemeral_app app_data_file:file execute;

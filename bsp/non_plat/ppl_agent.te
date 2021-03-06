@@ -1,0 +1,51 @@
+type ppl_agent_exec , exec_type, file_type, vendor_file_type;
+type ppl_agent ,domain;
+
+init_daemon_domain(ppl_agent)
+
+# Purpose : [Privacy protection lock][ppl_agent call FileOp_BackupToBinRegionForDM to do nvram backup]
+# Package name : com.mediatek.ppl
+allow ppl_agent nvram_device:blk_file rw_file_perms;
+
+# Purpose : [Privacy protection lock][ppl_agent need access nvram data file for backup restore function]
+# Package name : com.mediatek.ppl
+allow ppl_agent nvram_data_file:dir create_dir_perms;
+allow ppl_agent nvram_data_file:file create_file_perms;
+allow ppl_agent nvram_data_file:lnk_file read;
+allow ppl_agent nvdata_file:lnk_file read;
+allow ppl_agent nvdata_file:dir create_dir_perms;
+allow ppl_agent nvdata_file:file create_file_perms;
+
+# Purpose : [Privacy protection lock][ppl_agent need access nvram data file for backup restore function on MT6582]
+# Package name : ServiceManager
+allow ppl_agent nvram_device:chr_file { read write ioctl open };
+
+# Purpose : [Privacy protection lock][ppl_agent need access ppl data file for backup restore function on MT6577]
+# Package name : ppl_agent
+allow ppl_agent ppl_block_device:blk_file { read write ioctl open };
+
+# Purpose : [Privacy protection lock][ppl_agent need access nvcfg ext4 partiton ppl on MT6797]
+# Package name : com.mediatek.ppl
+allow ppl_agent nvcfg_file:dir create;
+allow ppl_agent nvcfg_file:dir { search write add_name};
+allow ppl_agent nvcfg_file:file create;
+allow ppl_agent nvcfg_file:file { read write open getattr };
+
+# Purpose : [Privacy protection lock]
+allow ppl_agent mnt_vendor_file:dir search;
+
+# Purpose : [Privacy protection lock]
+allow ppl_agent proc_cmdline:file read;
+allow ppl_agent sysfs_dt_firmware_android:dir search;
+
+# Purpose : [Privacy protection lock]
+allow ppl_agent block_device:dir search;
+
+#============= ppl_agent ==============
+hwbinder_use(ppl_agent);
+allow ppl_agent mtk_hal_pplagent_hwservice:hwservice_manager { add find };
+allow ppl_agent hidl_base_hwservice:hwservice_manager add;
+allow ppl_agent hwservicemanager:binder { call transfer };
+allow ppl_agent hwservicemanager_prop:file { getattr open read };
+add_hwservice(mtk_hal_pplagent, mtk_hal_pplagent_hwservice)
+hal_server_domain(ppl_agent, mtk_hal_pplagent);

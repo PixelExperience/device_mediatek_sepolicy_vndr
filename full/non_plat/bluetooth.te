@@ -1,0 +1,2 @@
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow bluetooth program_binary_service:service_manager find;

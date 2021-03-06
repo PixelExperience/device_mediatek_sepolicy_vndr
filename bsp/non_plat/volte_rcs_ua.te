@@ -1,0 +1,27 @@
+type volte_rcs_ua, domain, mtkimsapdomain;
+type volte_rcs_ua_exec, exec_type, file_type, vendor_file_type;
+type rcs_ua_proxy_socket, file_type;
+
+# hwbinder access
+init_daemon_domain(volte_rcs_ua)
+hwbinder_use(volte_rcs_ua)
+hal_server_domain(volte_rcs_ua, hal_rcs)
+add_hwservice(hal_rcs_server, volte_rcs_ua_hwservice)
+
+# call into system_app process (callbacks)
+binder_call(volte_rcs_ua, system_app)
+
+# Purpose: Rcs HIDL Migration
+allow volte_rcs_ua hwservicemanager_prop:file { read getattr open };
+allow volte_rcs_ua debugfs_tracing:file { write open };
+
+# Purpose: For volte_rcs_ua to be able to talk to rcs_volte_stack
+allow volte_rcs_ua rcs_volte_stack_socket:sock_file { open getattr read write append };
+allow volte_rcs_ua rcs_volte_stack:unix_stream_socket { read getattr connectto };
+
+# Purpose: Allow rcs ua to set rcs property
+set_prop(volte_rcs_ua, service_rcs_prop);
+
+# Purpose: For volte_rcs_ua to be able to talk to rcs_rild
+allow volte_rcs_ua rcs_rild_socket:sock_file { open getattr read write append };
+allow volte_rcs_ua rild:unix_stream_socket { read getattr connectto };

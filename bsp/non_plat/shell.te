@@ -1,0 +1,22 @@
+# GAT ls /data/aee_exp/db.xxxx
+allow shell aee_exp_data_file:dir r_dir_perms;
+allow shell aee_exp_data_file:file r_file_perms;
+
+# Purpose: Allow shell to read KE DB
+allow shell aee_dumpsys_data_file:file r_file_perms;
+
+# Purpose: Microtrust init_thh service
+userdebug_or_eng(`
+  allow shell init_thh_service_exec:file rx_file_perms;
+  allow shell init_thh_service_exec:dir r_dir_perms;
+  allow shell init_thh_service_exec:file {execute execute_no_trans};
+  allow shell hal_thh_hwservice:hwservice_manager find;
+  allow shell hal_thh_default:binder call;
+')
+
+# Purpose: Allow shell to read trustkernel log
+allow shell tkcore_data_file:dir search;
+allow shell tkcore_log_file:file { open read getattr };
+
+# Purpose: Allow shell to write/read the property
+userdebug_or_eng(`set_prop(shell, mtk_heavy_loading_prop)')

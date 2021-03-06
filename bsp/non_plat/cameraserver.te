@@ -1,0 +1,34 @@
+# Purpose : for control CPU during camera working flow
+allow cameraserver mtk_perf_service:service_manager find;
+
+# Purpose : Add permission for gpu access
+allow cameraserver dri_device:chr_file { read write open ioctl };
+
+# Purpose : allow camera to save raw data on sdcard
+allow cameraserver fuse:dir { create_dir_perms };
+allow cameraserver fuse:file { create_file_perms };
+allow cameraserver property_socket:sock_file write;
+allow cameraserver sysfs:file getattr;
+allow cameraserver init:unix_stream_socket connectto;
+allow cameraserver debug_prop:property_service set;
+allow cameraserver system_prop:property_service set;
+
+# Purpose : Dump camera buffer to sdcard for debug
+allow cameraserver fuse:dir { write search create add_name };
+allow cameraserver fuse:file { read write create open getattr };
+
+# Purpose : Dump camera buffer to sdcard for debug
+allow cameraserver sdcardfs:dir { create_dir_perms };
+allow cameraserver sdcardfs:file { create_file_perms };
+allow cameraserver media_rw_data_file:dir { create_dir_perms };
+allow cameraserver media_rw_data_file:file { create_file_perms };
+
+# Purpose : allow camera to access log too much detect property
+get_prop(cameraserver,logmuch_prop)
+
+# Purpose: Allow to use shared memory for HAL PQ
+hal_client_domain(cameraserver, hal_allocator)
+
+# Purpose : for ViLTE - set VTservice has permission to access me
+allow cameraserver vtservice:binder { transfer call };
+allow cameraserver vtservice:fd use;

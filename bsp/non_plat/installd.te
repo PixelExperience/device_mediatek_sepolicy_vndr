@@ -1,0 +1,25 @@
+# Purpose : Move app to phone storage
+# 1. Enter Settings->Apps
+# 2. Select Downloaded tab
+# 3. Choose the application and move to phone storage
+# 4. Check the application in Phone storage tab
+allow installd apk_tmp_file:dir getattr;
+allow installd vfat:file getattr;
+
+# Purpose : for GMO ROM Size Slim
+allow installd dalvikcache_data_file:lnk_file { read getattr setattr unlink create };
+allow installd sdcard_type:dir { write read remove_name search create add_name getattr setattr };
+allow installd sdcard_type:file { write getattr setattr read create unlink open };
+
+# Purpose : for access .android_secure
+allow installd vfat:dir search;
+
+# Purpose : MOTA update KK to L, workaround for access /data/.layout_version
+allow installd system_data_file:file open;
+
+# Purpose : ALPS01889518 (MTK MTBF)
+allow installd platform_app:fd use;
+
+# Purpose : copy the content in /data/media/0 to /data/media
+allow installd media_rw_data_file:file { read write create open setattr };
+allow installd shell_exec:file { read execute open execute_no_trans };

@@ -1,0 +1,5 @@
+# Purpose : support abort message dumping
+userdebug_or_eng(`
+  allow aee_aedv coredump_file:dir { remove_name };
+  allow aee_aedv coredump_file:file { unlink };
+')

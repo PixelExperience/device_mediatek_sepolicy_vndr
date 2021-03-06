@@ -1,0 +1,19 @@
+allow logd logd_prop:property_service set;
+allow logd log_tag_prop:property_service set;
+
+# Allow logmuch related property
+get_prop(logd, logmuch_prop)
+get_prop(logd, vendor_logmuch_prop)
+
+# Allow system_server to enable/disable logmuch_prop for Wi-Fi logging purpose
+neverallow {domain -init -logd -radio -mtkrild -cameraserver -mtk_hal_camera -system_server -vendor_init} {
+  logmuch_prop
+  vendor_logmuch_prop
+}:property_service set;
+
+# purpose: allow logd to access aee socket
+allow logd aee_aed:unix_stream_socket connectto;
+
+# Add for turn on SElinux in enforcing mode
+allow logd property_socket:sock_file write;
+allow logd init:unix_stream_socket connectto;

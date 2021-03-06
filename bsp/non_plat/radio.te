@@ -1,0 +1,166 @@
+# Operation : Migration for SWO policy package survey
+allow radio rild_mal_socket:sock_file write;
+allow radio rild_mal_at_socket:sock_file write;
+allow radio rild_mal_md2_socket:sock_file write;
+allow radio rild_mal_at_md2_socket:sock_file write;
+
+# Purpose : for engineermode
+# allow radio guiext-server:binder { transfer call };
+
+allow radio mtk_registry_service:service_manager add;
+
+# Fix boot violation
+add_service(radio, mtk_radio_service)
+
+# Purpose: for iphonesubinfoEx service
+add_service(radio, mtk_phonesubinfo_service)
+
+# Purpose: for world phone get modem type
+get_prop(radio, ril_active_md_prop)
+
+# Purpose: for mtksimphonebook service
+add_service(radio, mtk_simphonebook_service)
+
+# Purpose : Allow to use HAL Wfo
+hal_client_domain(radio, hal_wfo)
+
+# Purpose : for setting volte enable property
+get_prop(radio, mtk_volte_prop)
+
+# Purpose : for setting wfc enable property
+get_prop(radio, mtk_wfc_prop)
+
+# Purpose : for setting vilte enable property after 93 modem
+get_prop(radio, mtk_vilte_prop)
+
+# Purpose : for setting viwifi enable property
+get_prop(radio, mtk_viwifi_prop)
+
+# Purpose : for setting vt enable property
+get_prop(radio, mtk_vt_prop)
+
+# Purpose : Add vtservice to support video telephony functionality
+#           3G VT/ViLTE both use this service which will also communication with IMCB/Rild
+allow radio vtservice:binder call;
+allow radio vtservice:binder transfer;
+allow radio vtservice_service:service_manager find;
+
+# Purpose : for setting ims config force notify property
+set_prop(radio, vendor_imsconfig_prop)
+
+# Purpose: Allow EM to get CXP feature option property
+get_prop(radio, mtk_cxp_vendor_prop)
+
+# Purpose : Allow EM use mtk_hal_netdagent_hwservice
+hal_client_domain(radio,mtk_hal_netdagent)
+
+# Purpose : Engineering mode need to get NFC Service
+allow radio nfc_service:service_manager find;
+
+# Purpose : STMicro NFC integration for Engineering mode
+allow radio st21nfc_device:chr_file { read write getattr ioctl open };
+set_prop(radio,hwservicemanager_prop);
+
+# Purpose : for engineermode WFD IOT property
+set_prop(radio,media_wfd_prop);
+
+# Purpose : Allow to use HAL rcs
+hal_client_domain(radio, hal_rcs);
+
+# Purpose: Allow radio to get mtk_vsim_prop
+get_prop(radio, mtk_vsim_prop)
+get_prop(radio, mtk_vsim_sys_prop)
+set_prop(radio, mtk_vsim_sys_prop)
+set_prop(radio, ctl_start_prop)
+set_prop(radio, ctl_stop_prop)
+
+# Purpose: Allow em to get/set vendor_ims_xcap_prop
+set_prop(radio, vendor_ims_xcap_prop)
+
+# Purpose : for engineermode telephony log settings
+get_prop(radio, logmuch_prop)
+get_prop(radio, mtk_log_tel_dbg_prop)
+set_prop(radio, mtk_em_tel_log_prop)
+set_prop(radio, log_tag_prop)
+
+# Operation: P migration
+get_prop(radio, mtk_ims_prop)
+
+# Purpose: for SWIFT connecting to ATCI
+hal_client_domain(radio, hal_atci)
+
+# Purpose: P SQC, for SMS framework access PplAgent HIDL interface
+allow radio mtk_hal_pplagent_hwservice:hwservice_manager find;
+allow radio ppl_agent:binder call;
+
+# Purpose : for SelfRegister to call nvram hal
+allow radio nvram_agent_binder:binder call;
+allow radio nvram_agent_binder_hwservice:hwservice_manager find;
+
+# Purpose : Allow em to set mtk_selfreg_prop
+set_prop(radio, mtk_selfreg_prop)
+
+# Purpose: Support configure check tool
+#allow radio atci_service_exec:file getattr;
+#allow radio atcid_exec:file getattr;
+
+# Purpose : Allow ctm to set mtk_ctmslot_prop
+set_prop(radio, mtk_ctmslot_prop)
+
+# Purpose : Allow radio to set vendor prop in core domain
+set_prop(radio, vendor_cdma_prop)
+
+# Purpose : Allow Phone process to set ECBM property
+set_prop(radio, mtk_cdma_ecm_prop);
+
+# Purpose : Allow radio to get/set vendor_supp_serv_prop
+set_prop(radio, vendor_supp_serv_prop)
+
+# Purpose : Allow framework to set mtk_common_data_prop
+set_prop(radio, mtk_common_data_prop)
+
+# Purpose : allow radio set world phohe property
+set_prop(radio, mtk_world_phone_prop)
+
+# Date: 2018/07/03
+# Operation: P migration
+# Purpose : allow radio set capability switch property
+set_prop(radio, mtk_capability_switch_prop)
+
+# Purpose : allow radio get vzw device type property
+get_prop(radio, persist_vendor_vzw_device_type)
+
+# Purpose: allow radio to get RTT property
+get_prop(radio, mtk_rtt_prop)
+
+# Purpose : Allow Entitlement to get mtk_wfc_entitlement_prop
+# Package: com.mediatek.entitlement
+get_prop(radio, mtk_wfc_entitlement_prop)
+set_prop(radio, mtk_wfc_entitlement_prop)
+
+# Operation: Support UCE Property
+get_prop(radio, mtk_uce_support_prop)
+set_prop(radio, mtk_uce_support_prop)
+
+# Operation: Support SubsidyLock
+get_prop(radio, mtk_subsidylock_prop)
+set_prop(radio, mtk_subsidylock_prop_connect)
+
+# Operation: Support GWSD
+add_service(radio, mtk_gwsd_service)
+
+# Purpose : Allow to use PQ in Engineer Mode
+hal_client_domain(radio, hal_pq)
+
+# Operation: Presence Service need to communicate with ril.
+allow rild system_app:binder { transfer call };
+
+# Purpose : Add for HIDL service
+hal_client_domain(radio, md_monitor_hal);
+
+# Purpose : for app labeled by radio to auto start md_monitor
+set_prop(radio, config_prop);
+
+# Purpose : for setting ims nr enable property
+get_prop(radio, mtk_vonr_prop)
+get_prop(radio, mtk_vinr_prop)

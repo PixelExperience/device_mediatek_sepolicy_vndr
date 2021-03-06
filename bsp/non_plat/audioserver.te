@@ -1,0 +1,21 @@
+# Purpose : offloadservice
+allow audioserver offloadservice_device:chr_file { rw_file_perms };
+
+# Purpose : ancservice
+allow audioserver ancservice_device:chr_file { rw_file_perms };
+
+# Purpose : perf service for cpu control and rt thread
+allow audioserver mtk_perf_service:service_manager find;
+
+# Purpose : for ViLTE - set VTservice has permission to access me
+allow audioserver vtservice:binder { transfer call };
+allow audioserver vtservice:fd use;
+
+# Purpose : MTK Audio debug use
+set_prop(audioserver, audio_prop)
+
+# Purpose : Allow to get bluetooth prop
+get_prop(audioserver, mtk_bluetooth_prop)
+
+# Purpose : adsp
+allow audioserver adsp_device:chr_file { rw_file_perms };

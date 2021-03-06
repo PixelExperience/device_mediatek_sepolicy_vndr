@@ -1,0 +1,18 @@
+# ==============================================
+# Policy File of /system/bin/thermald Executable File
+
+# Purpose : for thermal management to shutdown the phone
+allow thermald proc_thermal:dir search;
+allow thermald proc_thermal:file { read getattr open write };
+
+# for wifi throttle
+allow proc_thermal proc:filesystem associate;
+allow thermald sysfs_net:dir search;
+allow thermald sysfs_thermald:file r_file_perms;
+allow thermald shell_exec:file rx_file_perms;
+allow thermald toolbox_exec:file rx_file_perms;
+allow thermald system_file:file x_file_perms;
+allow thermald proc_net:file r_file_perms;
+allow thermald self:netlink_route_socket { create setopt bind getattr write nlmsg_read read nlmsg_write };
+allow thermald devpts:chr_file rw_file_perms;
+allow thermald self:capability net_admin;

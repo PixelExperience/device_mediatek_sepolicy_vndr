@@ -1,0 +1,23 @@
+# Purpose : for opetator
+allow mtkbootanimation bootani_prop:property_service set;
+
+# Purpose : For MTK Emulator HW GPU
+allow mtkbootanimation qemu_pipe_device:chr_file rw_file_perms;
+
+# Purpose: Allow to access ged for gralloc_extra functions
+allow mtkbootanimation proc_ged:file rw_file_perms;
+
+# ==============================================
+# Type Declaration for secmem
+# ==============================================
+type proc_secmem, fs_type, proc_type;
+
+# Purpose : access to sec mem proc interface.
+allow mtkbootanimation proc_secmem:file { read open};
+
+# Purpose : for gpu access
+allow mtkbootanimation dri_device:chr_file { read write open ioctl };
+
+# Purpose : FPSGO integration
+allow mtkbootanimation proc_perfmgr:dir {search read};
+allow mtkbootanimation proc_perfmgr:file {open read ioctl};

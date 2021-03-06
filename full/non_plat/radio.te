@@ -1,0 +1,34 @@
+# Purpose : for [CMDC Tester] run on user load
+allow radio media_rw_data_file:dir search;
+allow radio proc_mtkcooler:dir search;
+allow radio proc_mtktz:dir search;
+allow radio md_monitor:dir search;
+
+# Operation : Migration for SWO policy package survey
+allow radio sdcard_type:dir { write create add_name };
+allow radio sdcard_type:file { read write getattr open create };
+allow radio zygote:unix_stream_socket { getopt getattr };
+
+# Purpose : [ALPS01756200] wwop boot up fail
+allow radio custom_file:dir { search getattr open read };
+allow radio custom_file:file { read open getattr};
+
+# Purpose : for device bring up, not to block early migration/sanity
+allow radio dm_agent_binder_service:service_manager find;
+
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow radio program_binary_service:service_manager find;
+
+# Purpose : for system app labled by radio to search file
+allow radio system_app_data_file:dir search;
+
+# Purpose : for [CMDC Tester] run on user load
+allow radio media_rw_data_file:dir search;
+allow radio proc_mtkcooler:dir search;
+allow radio proc_mtktz:dir search;
+
+# Purpose: CTSC Disable aee for mtbf test
+allow radio aee_aed:unix_stream_socket connectto;
+
+# Purpose: CTSC Access agprsInterface
+hal_client_domain(radio,mtk_hal_lbs)

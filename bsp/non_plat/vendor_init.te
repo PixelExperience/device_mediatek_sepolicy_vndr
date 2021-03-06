@@ -1,0 +1,70 @@
+allow vendor_init vendor_radio_prop:property_service set;
+allow vendor_init mtk_ims_prop:property_service set;
+allow vendor_init ro_vendor_mtk_wfd_support_prop:property_service set;
+allow vendor_init mtk_atci_prop:property_service set;
+
+allow vendor_init mtk_mobile_management_prop:property_service set;
+
+allow vendor_init proc_hps:file w_file_perms;
+allow vendor_init proc_cpufreq:file w_file_perms;
+
+set_prop(vendor_init, soter_teei_prop)
+
+allow vendor_init tkcore_prop:property_service set;
+allow vendor_init device:lnk_file unlink;
+get_prop(vendor_init, coredump_prop)
+
+set_prop(vendor_init, mtk_duraspeed_prop)
+
+set_prop(vendor_init, mtk_dynims_prop)
+set_prop(vendor_init, mtk_mims_prop)
+set_prop(vendor_init, mtk_extsim_prop)
+set_prop(vendor_init, mtk_volte_support_prop)
+set_prop(vendor_init, mtk_wfc_support_prop)
+set_prop(vendor_init, mtk_vilte_support_prop)
+set_prop(vendor_init, mtk_viwifi_support_prop)
+set_prop(vendor_init, mtk_rcs_ua_support_prop)
+set_prop(vendor_init, mtk_mdm_prop)
+set_prop(vendor_init, mtk_mdworldmode_prop)
+set_prop(vendor_init, mtk_oma_drm_support_prop)
+set_prop(vendor_init, mtk_miravision_support_prop)
+set_prop(vendor_init, mtk_aod_support_prop)
+set_prop(vendor_init, mtk_default_write_disk_prop)
+set_prop(vendor_init, mtk_bg_power_saving_support_prop)
+set_prop(vendor_init, mtk_bg_power_saving_ui_prop)
+set_prop(vendor_init, mtk_besloudness_support_prop)
+set_prop(vendor_init, mtk_hifiaudio_support_prop)
+set_prop(vendor_init, mtk_active_noise_cancel_prop)
+set_prop(vendor_init, mtk_wapi_support_prop)
+set_prop(vendor_init, mtk_fd_support_prop)
+set_prop(vendor_init, mtk_st_nfc_gsma_support_prop)
+set_prop(vendor_init, mtk_st_nfc_ignore_modem_prop)
+set_prop(vendor_init, mtk_nfc_addon_support_prop)
+set_prop(vendor_init, mtk_nfc_uicc_clf_prop)
+set_prop(vendor_init, mtk_radio_seapi_off_prop)
+set_prop(vendor_init, mtk_nxp_nfc_gsma_support_prop)
+set_prop(vendor_init, num_md_protocol_prop)
+set_prop(vendor_init, mtk_wappush_prop)
+set_prop(vendor_init, mtk_operator_prop)
+set_prop(vendor_init, mtk_cxp_vendor_prop)
+set_prop(vendor_init, mtk_omacp_support_prop)
+set_prop(vendor_init, mtk_system_update_support_prop)
+set_prop(vendor_init, mtk_log_tel_dbg_prop)
+set_prop(vendor_init, mtk_camera_prop)
+set_prop(vendor_init, mtk_gallery_prop)
+set_prop(vendor_init, mtk_media_prop)
+set_prop(vendor_init, mtk_rsc_prop)
+set_prop(vendor_init, mtk_pms_prop)
+set_prop(vendor_init, vendor_logmuch_prop)
+set_prop(vendor_init, mtk_dsbp_support_prop)
+set_prop(vendor_init, mtk_datashaping_prop)
+set_prop(vendor_init, mtk_nn_quant_preferred_prop)
+set_prop(vendor_init, mtk_tflite_fuse_pad_prop)
+set_prop(vendor_init, mtk_cam_security_prop)
+set_prop(vendor_init, mtk_dmc_prop)
+set_prop(vendor_init, mtk_cta_support_prop)
+set_prop(vendor_init, mtk_heavy_loading_prop)
+set_prop(vendor_init, mtk_jpeg_opt_prop)
+
+set_prop(vendor_init, ro_vendor_mtk_trustonic_tee_prop)
+set_prop(vendor_init, ro_vendor_mtk_microtrust_tee_prop)

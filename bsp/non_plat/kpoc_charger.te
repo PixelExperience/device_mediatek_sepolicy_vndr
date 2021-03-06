@@ -1,0 +1,18 @@
+# Purpose : Allow access logo block
+allow kpoc_charger logo_block_device:blk_file { read open };
+
+# Purpose : add sepolicy for kpoc_charger
+allow kpoc_charger logo_device:chr_file read;
+allow kpoc_charger logo_device:chr_file open;
+allow kpoc_charger bootdevice_block_device:blk_file read;
+allow kpoc_charger bootdevice_block_device:blk_file open;
+
+# Purpose : access boot mode
+allow kpoc_charger sysfs_boot_mode:file r_file_perms;
+
+# Purpose : access vbus and pump_express
+allow kpoc_charger sysfs_vbus:file r_file_perms;
+allow kpoc_charger sysfs_pump_express:file r_file_perms;
+
+# Purpose : read /sys/kernel/debug/wakeup_sources
+allow kpoc_charger debugfs_wakeup_sources:file r_file_perms;

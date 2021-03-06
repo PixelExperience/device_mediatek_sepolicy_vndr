@@ -1,0 +1,8 @@
+allow hal_fingerprint_default teei_fp_device:chr_file { read write open ioctl };
+allow hal_fingerprint_default teei_client_device:chr_file { read write open ioctl };
+allow hal_fingerprint_default sysfs:file { read write open ioctl };
+allow hal_fingerprint_default teei_control_file:dir { search open read };
+allow hal_fingerprint_default teei_control_file:file { open read write };
+allow hal_fingerprint_default teei_control_file:lnk_file { open read write };
+
+allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;

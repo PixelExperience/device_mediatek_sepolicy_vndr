@@ -1,0 +1,79 @@
+# Purpose: Allow to use HAL PQ
+hal_client_domain(mtk_hal_camera, hal_pq)
+
+# Purpose: Allow to use shared memory for HAL PQ
+hal_client_domain(mtk_hal_camera, hal_allocator)
+
+# camera binder_call permission
+binder_call(mtk_hal_camera, system_server)
+
+# Purpose: Allow to set log too much property
+set_prop(mtk_hal_camera, vendor_logmuch_prop)
+
+# Purpose: camera notifies its status to thermal module
+allow mtk_hal_camera proc_thermal:file { read write getattr open };
+allow mtk_hal_camera proc_mtktz:file { read write open};
+allow mtk_hal_camera mtk_thermal_config_prop:file { read getattr open };
+allow mtk_hal_camera init:unix_stream_socket connectto;
+allow mtk_hal_camera proc_mtkcooler:file { read write open };
+
+# callback to mtk_advcamserver
+binder_call(mtk_hal_camera, mtk_advcamserver)
+
+# Purpose : Update camera Vcodec device file
+allow mtk_hal_camera Vcodec_device:chr_file { read write open ioctl };
+get_prop(mtk_hal_camera, mtk_em_video_log_vdec_prop)
+
+# Purpose : Dump camera buffer to sdcard for debug
+allow mtk_hal_camera sdcardfs:dir { create_dir_perms };
+allow mtk_hal_camera sdcardfs:file { create_file_perms };
+
+#============= mtk_hal_camera ==============
+allow mtk_hal_camera seninf_device:chr_file rw_file_perms;
+
+# Purpose: CCT
+allow mtk_hal_camera cct_data_file:dir create_dir_perms;
+allow mtk_hal_camera cct_data_file:file create_file_perms;
+allow mtk_hal_camera cct_data_file:fifo_file create_file_perms;
+
+# Purpose: NVRAM
+allow mtk_hal_camera nvram_data_file:dir search;
+allow mtk_hal_camera nvram_data_file:file rw_file_perms;
+allow mtk_hal_camera nvram_data_file:lnk_file read;
+allow mtk_hal_camera nvdata_file:lnk_file read;
+allow mtk_hal_camera nvdata_file:dir create_dir_perms;
+allow mtk_hal_camera nvdata_file:file { read write getattr setattr open create };
+allow mtk_hal_camera nvcfg_file:lnk_file read;
+allow mtk_hal_camera nvcfg_file:dir create_dir_perms;
+allow mtk_hal_camera nvcfg_file:file { read write getattr setattr open create };
+allow mtk_hal_camera mnt_vendor_file:dir search;
+allow mtk_hal_camera mnt_vendor_file:file create_file_perms;
+
+# Purpose: Trustonic TEE access
+allow mtk_hal_camera mobicore_user_device:chr_file rw_file_perms;
+
+# Purpose: secure memory driver access
+allow mtk_hal_camera proc_secmem:file { read write open };
+
+# Purpose: sysfs boot mode access for HalSensor
+allow mtk_hal_camera sysfs_boot_mode:file { read open };
+
+# Purpose: NDD
+allow mtk_hal_camera vendor_data_file:dir create_dir_perms;
+allow mtk_hal_camera vendor_data_file:file create_file_perms;
+
+# Purpose: Allow setprop for CCT
+set_prop(mtk_hal_camera, mtk_camera_prop)
+
+# Purpose: Microtrust TEE access
+allow mtk_hal_camera teei_client_device:chr_file rw_file_perms;
+
+allow mtk_hal_camera mdla_device:chr_file rw_file_perms;
+
+# Operation: For NDD
+allow mtk_hal_camera vendor_camera_dump_file:dir create_dir_perms;
+allow mtk_hal_camera vendor_camera_dump_file:file create_file_perms;
+
+# Operation: For shading
+allow mtk_hal_camera vendor_shading_file:dir create_dir_perms;
+allow mtk_hal_camera vendor_shading_file:file create_file_perms;

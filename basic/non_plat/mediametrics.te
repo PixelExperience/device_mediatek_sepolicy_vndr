@@ -1,0 +1,2 @@
+# Purpose: Allow to access audio props
+get_prop(mediametrics, vendor_audio_prop)

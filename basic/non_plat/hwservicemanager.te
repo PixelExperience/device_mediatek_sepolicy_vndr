@@ -1,0 +1,2 @@
+# Vpud
+allow hwservicemanager vpud_native:binder { call transfer };

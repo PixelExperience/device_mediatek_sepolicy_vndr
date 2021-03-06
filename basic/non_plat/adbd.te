@@ -1,0 +1,7 @@
+# Purpose: Allow adbd to read KE DB
+allow adbd aee_dumpsys_data_file:file r_file_perms;
+allow adbd aee_exp_data_file:dir r_dir_perms;
+allow adbd aee_exp_data_file:file r_file_perms;
+allow adbd gpu_device:dir search;
+allow adbd adb_keys_file:dir r_dir_perms;
+allow adbd self:capability sys_admin;

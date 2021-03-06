@@ -1,0 +1,18 @@
+# Purpose : for MTK Emulator HW GPU
+allow untrusted_app qemu_pipe_device:chr_file rw_file_perms;
+
+# CTS issue
+allow untrusted_app proc_lk_env:file getattr;
+allow untrusted_app proc_sysrq:file getattr;
+allow untrusted_app sdcard_type:file execute;
+allow untrusted_app protect_f_data_file:dir getattr;
+allow untrusted_app protect_s_data_file:dir getattr;
+
+# Purpose : allow test APK to use MediaScannerService
+allow untrusted_app storage_stub_file:dir getattr;
+
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow untrusted_app program_binary_service:service_manager find;
+
+# Purpose : Add permission for mtk radio service find from ServiceManager.
+allow untrusted_app mtk_radio_service:service_manager find;

@@ -1,0 +1,6 @@
+# Purpose: Allow to access ged for gralloc_extra functions
+allow drmserver proc_ged:file rw_file_perms;
+
+# Purpose: Allow Some Apps To Read Device Info
+allow drmserver vold:fd use;
+get_prop(drmserver, vendor_audio_prop)
