@@ -356,3 +356,6 @@ type telephony_prop, property_type;
 # Viodeo Props
 type render_prop, property_type;
 type factor_prop, property_type;
+
+# Wi-Fi
+type wlan_fw_prop, property_type;

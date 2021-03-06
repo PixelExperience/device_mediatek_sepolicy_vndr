@@ -432,3 +432,7 @@ persist.sys.thermal.        u:object_r:thermal_engine_prop:s0
 
 # WFD
 persist.vendor.setWFDInfo.R2             u:object_r:wfd_sys_debug_prop:s0
+
+# Wi-Fi
+vendor.wlan.firmware.       u:object_r:wlan_fw_prop:s0
+vendor.wlan.driver.         u:object_r:wlan_fw_prop:s0
