@@ -1,0 +1,2 @@
+#============= bootanim ==============
+allow bootanim resourcecache_data_file:file read;

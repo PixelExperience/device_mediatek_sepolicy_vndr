@@ -1,0 +1,13 @@
+# ccci_mdinit
+type ctl_mdlogger_prop, property_type;
+type ctl_emdlogger1_prop, property_type;
+type ctl_emdlogger2_prop, property_type;
+type ctl_emdlogger3_prop, property_type;
+type ctl_dualmdlogger_prop, property_type;
+
+# init_svc
+type init_svc_emdlogger1_prop, property_type;
+type init_svc_aee_aedv_prop, property_type;
+
+# DNS property
+type net_dn_prop, property_type;

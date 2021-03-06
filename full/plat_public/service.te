@@ -1,0 +1,3 @@
+# Other Services
+type program_binary_service, service_manager_type;
+type vie_command_service, service_manager_type;
