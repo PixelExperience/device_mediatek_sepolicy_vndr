@@ -367,6 +367,7 @@ persist.vendor.wfc. u:object_r:mtk_wfc_serv_prop:s0
 vendor.audio.hal.boot.               u:object_r:vendor_audio_prop:s0
 vendor.audio.voice.receiver.         u:object_r:vendor_audio_prop:s0
 vendor.audio.mic.                    u:object_r:vendor_audio_prop:s0
+vendor.audio.chk.                    u:object_r:vendor_audio_prop:s0
 
 # BT
 vendor.bt.                           u:object_r:vendor_bt_prop:s0
