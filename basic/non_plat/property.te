@@ -340,6 +340,9 @@ type vendor_system_prop, property_type;
 type vendor_audio_prop, property_type;
 type vendor_bt_prop, property_type;
 
+# DP lanner
+type vendor_dpliner_prop, property_type;
+
 # thermal property
 type thermal_engine_prop, property_type;
 type public_vendor_default_prop, property_type;

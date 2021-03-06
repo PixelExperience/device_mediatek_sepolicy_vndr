@@ -396,6 +396,9 @@ gce.test                              u:object_r:vendor_video_prop:s0
 vilte.test                            u:object_r:vendor_video_prop:s0
 prepend.test                          u:object_r:vendor_video_prop:s0
 
+# DP lanner
+init.svc.dplanner-2-0            u:object_r:vendor_dpliner_prop:s0
+
 # Media
 mtk.vendor.omx.core.log          u:object_r:omx_core_prop:s0
 ro.mtk_crossmount_support        u:object_r:mtk_crossmount_support_prop:s0

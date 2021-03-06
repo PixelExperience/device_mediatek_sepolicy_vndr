@@ -92,3 +92,5 @@ set_prop(vendor_init, mtk_wifi_hotspot_prop)
 set_prop(vendor_init, persist_aeev_prop)
 
 set_prop(vendor_init, mtk_powerhal_prop)
+
+set_prop(vendor_init, vendor_dpliner_prop)
