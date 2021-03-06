@@ -1,0 +1,9 @@
+# Purpose : unknown
+allow sdcardd platform_app:fd use;
+allow sdcardd untrusted_app:fd use;
+
+# Purpose : for M migration SQC
+typeattribute sdcardd mlstrustedsubject;
+
+# Purpose : for N1 SQC
+allow sdcardd sdcardfs:dir mounton;

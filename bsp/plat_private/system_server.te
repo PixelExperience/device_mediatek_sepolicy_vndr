@@ -1,0 +1,23 @@
+# Purpose : for device bring up, not to block early migration/sanity
+allow system_server aal_service:service_manager find;
+
+# Purpose: allow atci to use NSIOT firewall
+# Package: com.mediatek.atci.service
+
+# Purpose : Add permission for aee socket access to report Java Layer Exception
+allow system_server aee_aed:unix_stream_socket connectto;
+
+# Purpose : Add mtk_connmetrics_service for CTA's celluar data control
+allow system_server mtk_connmetrics_service:service_manager add;
+
+# Purpose : Record and get permission
+allow system_server mtk_permrecords_service:service_manager add;
+
+# Purpose : access gpu hal
+hal_client_domain(system_server, hal_gpu)
+
+# Purpose : allow to get mtk_rsc_sys_prop
+get_prop(system_server, mtk_rsc_sys_prop);
+
+# Purpose : Add mtk_autoboot_service for CTA's autoboot app control
+allow system_server mtk_autoboot_service:service_manager add;

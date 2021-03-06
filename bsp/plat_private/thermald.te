@@ -1,0 +1,9 @@
+type thermald_exec, system_file_type, exec_type, file_type;
+typeattribute thermald coredomain;
+
+init_daemon_domain(thermald)
+
+# Purpose : for thermal management to shutdown the phone
+binder_use(thermald)
+allow thermald system_server:binder call;
+allow thermald activity_service:service_manager find;

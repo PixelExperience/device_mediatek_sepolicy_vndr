@@ -1,0 +1,2 @@
+# To let DRM server load ctaplugin based on property
+get_prop(drmserver, mtk_cta_set_prop);

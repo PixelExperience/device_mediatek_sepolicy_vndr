@@ -1,0 +1,12 @@
+# Purpose : Issue submitter need creat folder on SD card
+allow system_app vfat:dir create;
+
+# Change to simple policy
+allow system_app media_rw_data_file:dir {r_dir_perms w_dir_perms};
+allow system_app media_rw_data_file:file {r_file_perms w_file_perms};
+
+# Purpose: allow system app to read/open system data file
+allow system_app system_data_file:dir { read open };
+
+# Purpose: receive dropbox message
+allow system_app aee_aed:unix_stream_socket connectto;

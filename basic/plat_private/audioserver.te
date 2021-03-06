@@ -1,0 +1,47 @@
+# Purpose : For audio dump and log
+allow audioserver sdcard_type:dir { w_dir_perms create };
+allow audioserver sdcard_type:file create;
+allow audioserver sdcard_type:dir remove_name;
+allow audioserver sdcard_type:file unlink;
+
+# Purpose : Smartcard Service
+allow audioserver system_data_file:file open;
+
+# Purpose : for boot animation.
+allow audioserver bootanim:binder { transfer call };
+
+allow audioserver mtkbootanimation:binder { transfer call };
+
+# Purpose : dump for debug
+allow audioserver sdcard_type:file append;
+
+# Purpose : for SMS app
+allow audioserver radio_data_file:dir search;
+allow audioserver radio_data_file:file open;
+
+# Purpose : Music as ringtone
+allow audioserver radio:dir { search read };
+allow audioserver radio:file r_file_perms;
+
+# Purpose : cts search strange app
+allow audioserver untrusted_app:dir search;
+
+# Purpose: for camera middleware dump image buffer to sdcard & audio frameworks dump
+allow audioserver storage_file:lnk_file {read write};
+allow audioserver mnt_user_file:dir {write read search};
+allow audioserver mnt_user_file:lnk_file {read write};
+
+# Purpose: Dump debug info
+allow audioserver kmsg_device:chr_file { open write };
+allow audioserver media_rw_data_file:dir { create_dir_perms };
+
+# Operation : Migration
+# Purpose: tunning tool update parameters
+allow audioserver media_rw_data_file:file { create_file_perms };
+
+# Purpose: Write audio dump files to external SDCard.
+allow audioserver sdcard_type:file { create_file_perms };
+allow audioserver storage_file:dir { r_dir_perms };
+
+# Add for turn on SElinux in enforcing mode
+allow audioserver self:netlink_kobject_uevent_socket { read create };

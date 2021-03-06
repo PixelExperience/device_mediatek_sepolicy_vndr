@@ -1,0 +1,20 @@
+type batterywarning_exec , system_file_type, exec_type, file_type;
+type batterywarning ,domain;
+typeattribute batterywarning coredomain;
+
+init_daemon_domain(batterywarning)
+
+# Purpose : all Binder IPC for battery warning to call IActivityManager to send broadcast
+binder_use(batterywarning)
+
+# Purpose : allow battery warning use AMS to send broadcast through binder call
+allow batterywarning system_server:binder call;
+
+# Purpose : allow battery warning check AMS service status
+allow batterywarning activity_service:service_manager find;
+
+# Purpose : allow battery warning read file
+allow batterywarning sysfs_battery_warning:file { open read getattr };
+
+# Purpose : allow battery warning open socket connection
+allow batterywarning self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;

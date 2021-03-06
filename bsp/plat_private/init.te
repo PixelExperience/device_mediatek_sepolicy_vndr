@@ -1,0 +1,5 @@
+#=============mtk cta property=============
+set_prop(init, mtk_cta_set_prop)
+
+#=============RSC property===============
+set_prop(init, mtk_rsc_sys_prop)

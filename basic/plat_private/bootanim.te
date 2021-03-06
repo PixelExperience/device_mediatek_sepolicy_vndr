@@ -1,0 +1,22 @@
+# Purpose : for playing boot tone
+allow bootanim mediaserver:binder {call transfer};
+allow bootanim mediaserver_service:service_manager find;
+
+# Purpose : for playing bootanimation audio
+allow bootanim audioserver:binder {call transfer};
+allow bootanim audioserver_service:service_manager find;
+
+# Purpose : for opetator
+allow bootanim property_socket:sock_file write;
+allow bootanim init:unix_stream_socket connectto;
+allow bootanim debug_prop:property_service set;
+
+# /data/resource-cache
+allow bootanim resourcecache_data_file:dir search;
+allow bootanim resourcecache_data_file:file { read getattr open };
+
+# Purpose: call surfaceflinger due to powervr
+allow bootanim surfaceflinger:fifo_file rw_file_perms;
+
+# Purpose : DRM / DRI GPU driver required
+allow bootanim gpu_device:dir search;

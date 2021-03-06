@@ -1,0 +1,11 @@
+type met_log_d_exec , system_file_type, exec_type, file_type;
+typeattribute met_log_d coredomain;
+
+init_daemon_domain(met_log_d)
+
+# Run /system/bin/met_log_d
+allow met_log_d system_file:file rx_file_perms;
+
+# getprop & setprop permission
+get_prop(met_log_d, debug_prop)
+set_prop(met_log_d, debug_prop)

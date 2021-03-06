@@ -1,0 +1,24 @@
+# Purpose : for wifi p2p functionality
+allow system_server dhcp_data_file:dir rw_dir_perms;
+allow system_server dhcp_data_file:file create_file_perms;
+
+# Purpose : for relabeling files in /data/anr/ created at bootup
+allow system_server anr_data_file:file relabelto;
+
+# Purpose : for operate HDMI device
+allow system_server graphics_device:chr_file r_file_perms;
+
+# Purpose : for bring up
+allow system_server anr_data_file:dir relabelfrom;
+
+# Purpose : Allow system server to execute "rm r /data/piggybank"
+allow system_server toolbox_exec:file x_file_perms;
+
+# Purpose : Allow system server to open/read/write ioctl for screen freeze/unfreeze operations
+allow system_server graphics_device:chr_file { open read write ioctl };
+
+# Purpose : Allow system server to set property ril eboot, splitted usp prop to usp srv prop
+allow system_server radio_prop:property_service set;
+
+# Fix bootup violation
+allow system_server vendor_framework_file:dir r_dir_perms;

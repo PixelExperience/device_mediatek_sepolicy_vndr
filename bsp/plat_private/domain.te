@@ -1,0 +1,2 @@
+# Purpose : for aee dump systemAPI db, get backtrace
+allow domain aee_aed:process sigchld;

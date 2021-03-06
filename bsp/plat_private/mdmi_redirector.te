@@ -1,0 +1,20 @@
+type mdmi_redirector_exec ,exec_type, file_type, system_file_type;
+type mdmi_redirector, domain;
+typeattribute mdmi_redirector coredomain;
+
+init_daemon_domain(mdmi_redirector)
+net_domain(mdmi_redirector)
+
+# Purpose : To allow mdmi_redirector create socket to forward KPI to PC tool
+allow mdmi_redirector fwmarkd_socket:sock_file write;
+allow mdmi_redirector self:tcp_socket { create_stream_socket_perms };
+allow mdmi_redirector self:udp_socket { create_stream_socket_perms };
+allow mdmi_redirector node:tcp_socket node_bind;
+allow mdmi_redirector port:tcp_socket name_bind;
+allow mdmi_redirector netd:unix_stream_socket { connectto };
+
+# Allow to connect DMC HIDL server
+hal_client_domain(mdmi_redirector, mtk_hal_dmc)
+
+# Read ro.vendor.mtk_mapi_support
+get_prop(mdmi_redirector, mtk_dmc_prop)

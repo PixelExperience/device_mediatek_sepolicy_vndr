@@ -1,0 +1,29 @@
+# Purpose : FileManager can access attribute of file execute
+# Package: com.mediatek.filemanager
+allow platform_app sdcard_type:file execute;
+
+# Purpose : camera app want to inovke SystemProperties.set("xxx", "xxx") need this permission
+# Package: com.mediatek.camera
+allow platform_app property_socket:sock_file write;
+
+# Purpose : AppManager Install need pm access permission
+# Package: com.mediatek.wearable
+allow platform_app system_app_data_file:dir search;
+
+# Purpose : allow platform_app to access debugfs
+# Package: memtrack
+allow platform_app debugfs:file getattr;
+
+# Purpose : [ALPS01785313] Permission denied for dump hprof
+# Package: com.android.gallery3d
+allow platform_app anr_data_file:file rw_file_perms;
+
+# Purpose : Gallery needs to search radio data when send mms
+# Package: com.android.gallery3d
+allow platform_app radio_data_file:dir search;
+
+# Purpose : gallery needs to search mediaserver when browsing videos
+# Package: com.android.gallery3d
+allow platform_app mediaserver:dir search;
+
+allow platform_app vendor_app_file:file execute;

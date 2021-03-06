@@ -1,0 +1,36 @@
+# Purpose : for pplSmsFilterExtension find ppl_agent service
+allow radio ppl_agent_service:service_manager find;
+
+# Purpose : Allow to enable ATCI in Engineer Mode
+set_prop(radio, ctl_atcid-daemon-u_prop);
+set_prop(radio, ctl_atci_service_prop);
+set_prop(radio, mtk_atci_sys_prop);
+
+# Purpose: Allow EM USB/UART switch
+allow radio sysfs_portmode:file r_file_perms;
+allow radio sysfs_android0_usb:dir search;
+allow radio sysfs_android0_usb:file r_file_perms;
+allow radio sysfs_android_usb:dir search;
+allow radio sysfs_android_usb:file r_file_perms;
+
+# Purpose : Allow to on/off AAL in Engineer Mode
+set_prop(radio, mtk_aal_prop);
+
+# Purpose : allow to find aal_service
+allow radio aal_service:service_manager find;
+
+# Purpose : allow to get mtk_cta_set and mtk_cta_support property
+get_prop(radio, mtk_cta_set_prop);
+
+# Purpose : allow to get mtk_rsc_sys_prop
+get_prop(radio, mtk_rsc_sys_prop);
+
+# Purpose: allow to read init.svc.md_monitor property for calling SystemService.waitForState()
+get_prop(radio, init_svc_md_monitor_prop)
+
+# Purpose : Allow EM USB read current_speed
+allow radio sysfs_musb_hdrc:dir search;
+allow radio sysfs_musb_hdrc:file r_file_perms;
+
+# Purpose : allow to get mtk_dmc_prop
+get_prop(radio, mtk_dmc_prop);

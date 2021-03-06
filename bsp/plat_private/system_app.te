@@ -1,0 +1,26 @@
+# Purpose: [MDM] Modem monitor config
+# Package Name: com.mediatek.mdmconfig
+set_prop(system_app, config_prop);
+
+# Purpose : Allow AtciService to set ATCI property
+set_prop(system_app, mtk_atci_sys_prop);
+
+# Purpose : Allow to get AAL property
+get_prop(system_app, mtk_aal_prop);
+
+# Purpose: Permission Control configure
+# Package Name: com.mediatek.security
+set_prop(system_app, mtk_permission_control_prop);
+
+# Purpose : access gpu hal
+hal_client_domain(system_app, hal_gpu)
+
+# Purpose : allow to get mtk_cta_set and mtk_cta_support property
+get_prop(system_app, mtk_cta_set_prop);
+
+# Purpose : allow to get mtk_rsc_sys_prop
+get_prop(system_app, mtk_rsc_sys_prop);
+
+# Purpose: allow to read init.svc.md_monitor property for calling SystemService.waitForState()
+# Package Name: com.mediatek.mdmconfig
+get_prop(system_app, init_svc_md_monitor_prop)

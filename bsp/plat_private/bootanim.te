@@ -1,0 +1,2 @@
+# Purpose : access gpu hal
+hal_client_domain(bootanim, hal_gpu)

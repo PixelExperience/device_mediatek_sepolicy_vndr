@@ -1,0 +1,28 @@
+type camerapostalgo_exec, system_file_type, exec_type, file_type;
+typeattribute camerapostalgo coredomain;
+
+init_daemon_domain(camerapostalgo)
+
+get_prop(camerapostalgo, hwservicemanager_prop)
+allow camerapostalgo camerapostalgo_service:service_manager { add find };
+
+allow camerapostalgo gpu_device:dir search;
+allow camerapostalgo gpu_device:chr_file rw_file_perms;
+
+allow camerapostalgo ion_device:chr_file r_file_perms;
+
+allow camerapostalgo sdcardfs:dir { search };
+allow camerapostalgo mnt_user_file:dir search;
+
+allow camerapostalgo storage_file:lnk_file r_file_perms;
+allow camerapostalgo mnt_user_file:lnk_file r_file_perms;
+allow camerapostalgo sdcardfs:file { r_file_perms };
+allow camerapostalgo media_rw_data_file:dir { rw_dir_perms };
+allow camerapostalgo media_rw_data_file:file { rw_file_perms };
+
+# ipc call
+binder_use(camerapostalgo)
+binder_service(camerapostalgo)
+hwbinder_use(camerapostalgo)
+binder_call(camerapostalgo, platform_app)
+binder_call(camerapostalgo, surfaceflinger)

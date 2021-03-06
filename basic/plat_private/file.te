@@ -1,0 +1,4 @@
+type access_sys_file, fs_type, sysfs_type;
+type mddb_filter_data_file, file_type, data_file_type, core_data_file_type;
+type debuglog_data_file, file_type, data_file_type, core_data_file_type;
+type sysfs_mcupm, fs_type, sysfs_type;

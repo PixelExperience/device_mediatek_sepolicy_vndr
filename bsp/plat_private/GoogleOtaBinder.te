@@ -1,0 +1,15 @@
+type GoogleOtaBinder_exec, system_file_type, exec_type, file_type;
+typeattribute GoogleOtaBinder coredomain;
+
+# permissive GoogleOtaBinder;
+init_daemon_domain(GoogleOtaBinder)
+
+# Purpose : allow Binder IPC
+binder_use(GoogleOtaBinder)
+binder_service(GoogleOtaBinder)
+
+# to get offset
+allow GoogleOtaBinder ota_package_file:dir search;
+allow GoogleOtaBinder ota_package_file:file { getattr open read write };
+allow GoogleOtaBinder mota_proc_file:file read;
+allow GoogleOtaBinder sysfs_dt_firmware_android:file read;

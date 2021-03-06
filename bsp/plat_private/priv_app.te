@@ -1,0 +1,5 @@
+# Purpose : access gpu hal
+hal_client_domain(priv_app, hal_gpu)
+
+# Purpose : access cta prop
+get_prop(priv_app, mtk_cta_set_prop)

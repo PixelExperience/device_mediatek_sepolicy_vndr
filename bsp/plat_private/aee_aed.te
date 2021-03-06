@@ -1,0 +1,8 @@
+# Purpose : support abort message dumping
+userdebug_or_eng(`
+  allow aee_aed coredump_file:dir { remove_name };
+  allow aee_aed coredump_file:file { unlink };
+')
+
+# Purpose : allow aee_aed to ptrace self
+allow aee_aed self:process ptrace;

@@ -1,0 +1,21 @@
+# Purpose: Allow reador andgetattr path="/data/data/com.mediatek.voicecommand/training
+# /unlock/passwordfile/0.dat"
+allow audioserver system_app_data_file:file { read getattr };
+
+# Purpose : Allow audioserver to read /proc/pid/cmdline to get process name, so that
+# it can do white list check which is MTK OMA DRM additional protection mechanism
+
+# system_app:
+allow audioserver system_app:dir search;
+allow audioserver system_app:file { read open getattr };
+
+# platform_app:
+allow audioserver platform_app:dir search;
+allow audioserver platform_app:file { read open getattr };
+
+# untrusted_app:
+allow audioserver untrusted_app:dir search;
+allow audioserver untrusted_app:file { read open getattr };
+
+# For Headphone detection for boot animation sound
+allow audioserver self:netlink_kobject_uevent_socket { create bind read setopt };

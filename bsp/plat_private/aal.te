@@ -1,0 +1,33 @@
+type aal_exec, system_file_type, exec_type, file_type;
+type aal ,domain;
+
+# permissive aal;
+init_daemon_domain(aal)
+
+# Purpose : allow Binder IPC
+binder_use(aal)
+binder_call(aal, binderservicedomain)
+binder_service(aal)
+
+# Purpose : All enforing mode
+allow aal graphics_device:chr_file { read open ioctl };
+allow aal graphics_device:dir search;
+allow aal aal_service:service_manager add;
+
+# Purpose : Allow permission check
+allow aal permission_service:service_manager { find };
+
+# New added for move to /system
+typeattribute aal coredomain;
+
+# Purpose : Allow permission to get AmbientLux from SensorManager
+# denied  { find } for service=sensorservice pid=441 uid=1000 scontext=u:r:aal:s0
+# tcontext=u:object_r:sensorservice_service:s0 tclass=service_manager
+allow aal sensorservice_service:service_manager { find };
+
+#denied { read write } for path="socket:[25560]" dev="sockfs" ino=25560 scontext=u:r:aal:s0
+#tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=0
+allow aal system_server:unix_stream_socket { read write };
+
+# Purpose : Allow permission to set property
+set_prop(aal, mtk_aal_prop)

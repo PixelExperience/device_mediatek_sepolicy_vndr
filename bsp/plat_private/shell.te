@@ -1,0 +1,14 @@
+userdebug_or_eng(`
+# Purpose : Allow shell to listen MAPI payload from network socket
+allow shell mdi_redirector:unix_stream_socket { connectto };
+
+# Purpose : Allow shell to execute mdi_redirector_ctrl to start md_monitor & mdi_redirector daemons
+set_prop(shell, ctl_start_prop);
+set_prop(shell, ctl_stop_prop);
+
+# Purpose : Allow shell to read DMC property ro.vendor.mtk_mapi_support
+get_prop(shell, mtk_dmc_prop);
+
+# Purpose : Allow shell to listen MDMI payload from network socket
+allow shell mdmi_redirector:unix_stream_socket { connectto };
+')
