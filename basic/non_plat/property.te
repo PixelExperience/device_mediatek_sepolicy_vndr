@@ -343,6 +343,9 @@ type vendor_bt_prop, property_type;
 # DP lanner
 type vendor_dpliner_prop, property_type;
 
+# IMS
+type md_status_prop, property_type;
+
 # thermal property
 type thermal_engine_prop, property_type;
 type public_vendor_default_prop, property_type;

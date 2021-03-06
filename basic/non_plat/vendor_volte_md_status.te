@@ -3,6 +3,8 @@ type vendor_volte_md_status_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(vendor_volte_md_status)
 
+set_prop(vendor_volte_md_status, md_status_prop)
+
 allow vendor_volte_md_status vendor_volte_md_status_exec:file execute_no_trans;
 allow vendor_volte_md_status init:unix_stream_socket connectto;
 allow vendor_volte_md_status property_socket:sock_file write;
