@@ -53,6 +53,7 @@
 
 # NFC Data Labels
 /data/nfc(/.*)?		 u:object_r:nfc_data_file:s0
+/dev/nq-nci              u:object_r:nfc_device:s0
 
 # Wallpaper file for smartbook
 /data/system/users/[0-9]+/smartbook_wallpaper   u:object_r:wallpaper_file:s0
