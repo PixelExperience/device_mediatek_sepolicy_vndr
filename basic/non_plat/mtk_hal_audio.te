@@ -188,3 +188,4 @@ allow mtk_hal_audio dms_hwservice:hwservice_manager find;
 
 get_prop(mtk_hal_audio, vendor_audio_prop)
 set_prop(mtk_hal_audio, vendor_audio_prop)
+get_prop(mtk_hal_audio, persist_aee_prop)
