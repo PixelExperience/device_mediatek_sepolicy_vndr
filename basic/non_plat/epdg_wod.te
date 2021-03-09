@@ -26,3 +26,6 @@ allow epdg_wod self:udp_socket create_socket_perms_no_ioctl;
 allow epdg_wod netd:unix_stream_socket connectto;
 allow epdg_wod proc_modules:file r_file_perms;
 allow epdg_wod proc_net:file rw_file_perms;
+
+# silent self capability dac_override
+dontaudit epdg_wod self:capability dac_override;
