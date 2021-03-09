@@ -320,6 +320,9 @@ type mtk_wfc_serv_prop, property_type;
 # OMX property
 type omx_core_prop, property_type;
 
+# Atcid
+type persist_atm_prop, property_type;
+
 # crossmount property
 type mtk_crossmount_support_prop, property_type;
 
