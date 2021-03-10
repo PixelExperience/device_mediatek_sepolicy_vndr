@@ -4,3 +4,6 @@ binder_call(hal_mms_server, hal_mms_client)
 
 # give permission for hal client
 allow hal_mms_client hal_mms_hwservice :hwservice_manager find;
+
+# Allow gmscore_app to add and find mtk_hal_mms_hwservice
+allow gmscore_app hal_mms_hwservice:hwservice_manager find;

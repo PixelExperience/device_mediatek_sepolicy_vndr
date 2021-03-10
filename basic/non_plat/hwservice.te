@@ -32,7 +32,7 @@ type mtk_hal_log_hwservice, hwservice_manager_type;
 type mtk_hal_em_hwservice, hwservice_manager_type;
 
 # MMS HIDL
-type hal_mms_hwservice, hwservice_manager_type, untrusted_app_visible_hwservice_violators;
+type hal_mms_hwservice, hwservice_manager_type;
 type hal_atci_hwservice, hwservice_manager_type;
 type mtk_hal_keymanage_hwservice, hwservice_manager_type;
 

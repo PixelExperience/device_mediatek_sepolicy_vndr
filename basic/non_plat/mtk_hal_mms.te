@@ -57,3 +57,10 @@ allow mtk_hal_mms untrusted_app_all:fd use;
 
 # Purpose : Allow MMS hals to read render props
 get_prop(mtk_hal_mms, render_prop)
+
+# Allow binder calls from gmscore_app to mtk_hal_mms and vice versa
+binder_call(gmscore_app, mtk_hal_mms)
+binder_call(mtk_hal_mms, gmscore_app)
+
+# Allow gmscore_app to use fd
+allow mtk_hal_mms gmscore_app:fd use;
