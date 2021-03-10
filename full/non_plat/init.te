@@ -9,3 +9,6 @@ allow init rawfs:file getattr;
 
 # Purpose : allow insert modules from rootfs
 allow init rootfs:system module_load;
+
+# Purpose: Allow to init /proc/last_kmsg
+allow init proc_last_kmsg:file { r_file_perms setattr };
