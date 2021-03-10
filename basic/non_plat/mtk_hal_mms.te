@@ -64,3 +64,6 @@ binder_call(mtk_hal_mms, gmscore_app)
 
 # Allow gmscore_app to use fd
 allow mtk_hal_mms gmscore_app:fd use;
+
+# Boot Mode
+allow mtk_hal_mms sysfs_boot_mode:file r_file_perms;
