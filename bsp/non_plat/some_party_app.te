@@ -34,4 +34,3 @@ allow some_party_app {
 
 # Allow read vendor display prop
 get_prop(some_party_app, render_prop)
-get_prop(some_party_app, vendor_displayfeature_prop)
