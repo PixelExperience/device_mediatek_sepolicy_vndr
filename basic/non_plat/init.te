@@ -98,7 +98,10 @@ allow init mnt_vendor_file:dir mounton;
 allow init boot_block_device:lnk_file relabelto;
 allow init vbmeta_block_device:lnk_file relabelto;
 
+# NFC
 allow init vendor_hal_nfc_default_exec:file { execute };
+allow init nfc:binder { call };
+allow init st21nfc_device:chr_file rw_file_perms;
 
 # Purpose: Fix radio service fail
 allow init radio:binder call;
