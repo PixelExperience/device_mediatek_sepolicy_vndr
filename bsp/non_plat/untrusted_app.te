@@ -30,8 +30,9 @@ allow untrusted_app mediaserver:dir search;
 # Purpose: allow vendor's osi to use tcp socket
 allow untrusted_app osi:tcp_socket { create connect write read bind accept listen getattr setattr getopt setopt };
 
-# Purpose: Allow untrusted_app to use HIDL and access vendor_neuralnetworks
+# Purpose: Allow untrusted_app to use HIDL and access vendor_neuralnetworks and mtk_hal_neuralnetworks
 allow untrusted_app vendor_neuralnetworks:binder { call transfer };
+allow untrusted_app mtk_hal_neuralnetworks:binder { call transfer };
 allow untrusted_app debugfs_ion:dir search;
 
 # Purpose: Allow untrusted_app to access mdlactl_device and vpu_device

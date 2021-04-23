@@ -111,8 +111,9 @@ set_prop(system_app, mtk_update_prop)
 # Package Name: com.mediatek.engineermode
 get_prop(system_app, mtk_ss_vendor_prop)
 
-# Purpose: Allow to use HIDL and access vendor_neuralnetworks
+# Purpose: Allow to use HIDL and access vendor_neuralnetworks and mtk_hal_neuralnetworks
 allow system_app vendor_neuralnetworks:binder { call transfer };
+allow system_app mtk_hal_neuralnetworks:binder { call transfer };
 allow system_app debugfs_ion:dir search;
 
 # Operation: Support SubsidyLock
