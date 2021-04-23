@@ -193,4 +193,5 @@
 # Neuralnetworks
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-cpunn		u:object_r:vendor_neuralnetworks_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-gpunn		u:object_r:vendor_neuralnetworks_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-neuron-ann		u:object_r:vendor_neuralnetworks_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-neuron-ann	u:object_r:vendor_neuralnetworks_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.3-service-mtk-neuron	u:object_r:mtk_hal_neuralnetworks_exec:s0

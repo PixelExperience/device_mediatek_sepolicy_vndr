@@ -26,3 +26,4 @@ allow init proc_cpu_loading:file setattr;
 allow init proc_low_memory_hit:file setattr;
 
 allow init vendor_neuralnetworks_exec:file { execute };
+allow init mtk_hal_neuralnetworks_exec:file { execute };

@@ -85,8 +85,9 @@ get_prop(platform_app, mtk_ims_prop)
 # Package: com.android.contacts
 get_prop(platform_app, mtk_uce_support_prop)
 
-# Purpose: Allow platform app to use HIDL and access vendor_neuralnetworks
+# Purpose: Allow platform app to use HIDL and access vendor_neuralnetworks and mtk_hal_neuralnetworks
 allow platform_app vendor_neuralnetworks:binder { call transfer };
+allow platform_app mtk_hal_neuralnetworks:binder { call transfer };
 
 # Purpose: Allow platform app to get mtk_cam_security_prop
 get_prop(platform_app, mtk_cam_security_prop)
