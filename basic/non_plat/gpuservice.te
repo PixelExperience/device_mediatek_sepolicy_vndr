@@ -1,2 +1,5 @@
 # Purpose : [ALPS04685294] com.google.android.graphics.gts.VulkanTest#checkVulkan1_1Requirements-fail
 allow gpuservice gpu_device:dir search;
+
+# Purpose : Allow Graphics props
+get_prop(gpuservice, graphics_config_prop)
