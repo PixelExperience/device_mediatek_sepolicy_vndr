@@ -14,8 +14,3 @@ user=_app seinfo=platform name=com.mediatek.emcamera domain=emcamera_app type=ap
 
 # This is for sensorhub apk to commnucate with hal
 user=_app seinfo=platform name=com.mediatek.sensorhub.ui domain=sensorhub_app type=app_data_file levelFrom=user
-
-# Some 3rd Party apps
-user=_app seinfo=platform name=com.facebook.katana domain=some_party_app type=app_data_file levelFrom=all
-user=_app seinfo=platform name=com.instagram.android domain=some_party_app type=app_data_file levelFrom=all
-user=_app seinfo=platform name=com.twitter.android domain=some_party_app type=app_data_file levelFrom=all
