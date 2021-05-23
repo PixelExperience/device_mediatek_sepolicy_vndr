@@ -3,7 +3,7 @@
 #
 # If you want to use these policies, add a
 #
-# include device/mediatek/sepolicy/sepolicy.mk
+# include device/mediatek/sepolicy_vndr/sepolicy.mk
 #
 # to your device's BoardConfig. It is highly recommended that in case
 # you have your own BOARD_SEPOLICY_DIRS declaration,
