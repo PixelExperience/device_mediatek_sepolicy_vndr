@@ -250,3 +250,8 @@ genfscon sysfs /bus/platform/drivers/mem_bw_ctrl/concurrency_scenario u:object_r
 
 # Purpose : allow system_server to read /sys/devices/platform/mhl@0/extcon/HDMI_audio_extcon/state
 genfscon sysfs /devices/platform/mhl@0/extcon/HDMI_audio_extcon/state u:object_r:sysfs_hdmi_audio_extcon:s0
+
+# Purpose: Allow powerhal to control gesture
+genfscon sysfs /bus/i2c/devices/0-0024/easy_wakeup_gesture      u:object_r:sysfs_gesture:s0
+genfscon sysfs /bus/i2c/devices/0-0024/easy_wakeup_gesture_data u:object_r:sysfs_gesture:s0
+genfscon sysfs /bus/i2c/devices/0-0024/easy_wakeup_gesture_id   u:object_r:sysfs_gesture:s0

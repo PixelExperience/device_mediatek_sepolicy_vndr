@@ -149,3 +149,7 @@ allow mtk_hal_power init:file { open read };
 # DT2W
 allow mtk_hal_power input_device:dir rw_dir_perms;
 allow mtk_hal_power input_device:chr_file rw_file_perms;
+
+# Purpose: Allow powerhal to control gesture
+allow mtk_hal_power sysfs_gesture:dir r_dir_perms
+allow mtk_hal_power sysfs_gesture:file rw_file_perms

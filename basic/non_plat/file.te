@@ -429,3 +429,6 @@ type sysfs_concurrency_scenario, fs_type, sysfs_type;
 
 # Purpose : For system_server process get HDMI state
 type sysfs_hdmi_audio_extcon, fs_type, sysfs_type;
+
+# Purpose: Allow powerhal to control gesture
+type sysfs_gesture, fs_type, sysfs_type;
