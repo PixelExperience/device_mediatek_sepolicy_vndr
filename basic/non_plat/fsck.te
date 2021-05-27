@@ -6,6 +6,7 @@ allow fsck persist_block_device:blk_file rw_file_perms;
 allow fsck nvcfg_block_device:blk_file rw_file_perms;
 allow fsck odm_block_device:blk_file rw_file_perms;
 allow fsck oem_block_device:blk_file rw_file_perms;
+allow fsck vendor_block_device:blk_file rw_file_perms;
 
 # Purpose: Fix bootup fail
 allow fsck system_block_device:blk_file getattr;
