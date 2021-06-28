@@ -657,6 +657,8 @@
 
 /vendor/bin/hw/modemdbfilter_service u:object_r:modemdbfilter_service_exec:s0
 
+/vendor/lib(64)?/libgralloctypes_mtk\.so   u:object_r:same_process_hal_file:s0
+
 # Purpose for same-process HAL files and their dependencies: libGLES_mali.so need libm4u.so on mali GPU.
 /vendor/lib(64)?/libm4u\.so   u:object_r:same_process_hal_file:s0
 
