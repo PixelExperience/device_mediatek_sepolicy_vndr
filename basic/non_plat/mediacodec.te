@@ -117,3 +117,6 @@ get_prop(mediacodec, omx_core_prop)
 get_prop(mediacodec, mtk_crossmount_support_prop)
 get_prop(mediacodec, mtk_deinterlace_support_prop)
 get_prop(mediacodec, render_prop)
+
+# Purpose : Allow mediacodec to use vcodec_file data
+allow mediacodec vcodec_file:dir r_dir_perms;
