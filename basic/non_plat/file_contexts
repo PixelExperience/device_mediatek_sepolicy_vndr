@@ -1011,3 +1011,6 @@
 /sys/firmware/devicetree/base/model(/.*)?  u:object_r:sysfs_device_tree_model:s0
 /sys/bus/platform/drivers/emi_ctrl(/.*)?  u:object_r:sysfs_emi_ctrl:s0
 /sys/devices/platform/mtkfb(/.*)?  u:object_r:sysfs_mtkfb:s0
+
+# Purpose: Mtk Graphics Hals
+/(vendor|system/vendor)/bin/hw/android\.hardware\.graphics\.allocator@4\.0-service-mediatek   u:object_r:hal_graphics_allocator_default_exec:s0
