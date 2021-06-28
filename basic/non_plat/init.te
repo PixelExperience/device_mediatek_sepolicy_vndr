@@ -150,3 +150,6 @@ allow init hal_wechat_exec:file execute;
 allow init mtk_hal_mms_exec:file execute;
 allow init vendor_stroke_exec:file execute;
 allow init vendor_volte_md_status_exec:file execute;
+
+# Ion device \\/dev/ion//
+allow init ion_device:chr_file rw_file_perms;
