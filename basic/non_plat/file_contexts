@@ -1014,3 +1014,6 @@
 
 # Purpose: Mtk Graphics Hals
 /(vendor|system/vendor)/bin/hw/android\.hardware\.graphics\.allocator@4\.0-service-mediatek   u:object_r:hal_graphics_allocator_default_exec:s0
+
+# Purpose: Mtk Mapper Hals
+/(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@4\.0-impl-mediatek\.so u:object_r:same_process_hal_file:s0
