@@ -153,3 +153,6 @@ allow init vendor_volte_md_status_exec:file execute;
 
 # Ion device \\/dev/ion//
 allow init ion_device:chr_file rw_file_perms;
+
+# MTK Vibrator
+allow init sysfs_vibrator:file r_file_perms;
