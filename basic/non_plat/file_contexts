@@ -1003,11 +1003,6 @@
 /sys/devices/platform/11016000.i2c5/i2c-5/5-0034/mt6360_pmu_rgbled.4.auto/leds(/.*)?	   u:object_r:sysfs_leds:s0
 /sys/devices/platform/11017000.i2c/i2c-5/5-0034/mt6370_pmu_rgbled/leds(/.*)?			   u:object_r:sysfs_leds:s0
 /sys/devices/platform/leds-mt65xx/leds/lcd-backlight(/.*)?   u:object_r:sysfs_leds:s0
-/sys/devices/platform/1101b000.i2c8/i2c-8/8-001d/power_supply/wireless(/.*)?  u:object_r:sysfs_battery_supply:s0
-/sys/devices/platform/1101b000.i2c8/i2c-8/8-001d/power_supply/parallel(/.*)?  u:object_r:sysfs_battery_supply:s0
-/sys/devices/platform/11016000.i2c5/i2c-5/5-004e/tcpc/type_c_port0(/.*)?   u:object_r:sysfs_battery_supply:s0
-/sys/devices/platform/mt_charger/power_supply(/.*)? u:object_r:sysfs_usb_supply:s0
-/sys/devices/platform/battery(/.*)?  u:object_r:sysfs_battery_supply:s0
 /sys/devices/platform/ts_novatek(/.*)?  u:object_r:sysfsts_novatek:s0
 /sys/devices/platform/CONNAC/net/wlan1(/.*)?  u:object_r:sysfs_net:s0
 /sys/firmware/devicetree/base/model(/.*)?  u:object_r:sysfs_device_tree_model:s0
