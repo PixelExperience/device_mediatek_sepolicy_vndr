@@ -45,3 +45,6 @@ allow hal_graphics_composer_default debugfs_ged:file { w_file_perms };
 
 # Allow to read video props
 get_prop(hal_graphics_composer_default, render_prop)
+
+# Allow binder calls
+allow hal_graphics_composer_default hal_graphics_allocator_default:binder call;
