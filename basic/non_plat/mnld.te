@@ -96,3 +96,7 @@ set_prop(mnld, vendor_radio_prop);
 allow mnld proc_cmdline:file r_file_perms;
 allow mnld sysfs_dt_firmware_android:dir r_dir_perms;
 allow mnld sysfs_dt_firmware_android:file r_file_perms;
+
+# Purpose : MTK Lights
+allow mnld sysfs_leds:dir r_dir_perms;
+allow mnld sysfs_leds:file rw_file_perms;
