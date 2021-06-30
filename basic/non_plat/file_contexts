@@ -1019,3 +1019,6 @@
 
 # Purpose: Mtk Mapper Hals
 /(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@4\.0-impl-mediatek\.so u:object_r:same_process_hal_file:s0
+
+# Purpose: Mtk lights Hals
+/(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.mediatek     u:object_r:hal_light_default_exec:s0
