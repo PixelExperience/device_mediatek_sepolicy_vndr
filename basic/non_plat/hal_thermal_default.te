@@ -2,3 +2,15 @@
 allow hal_thermal_default proc_mtktz:dir search;
 allow hal_thermal_default proc_mtktz:file {open read getattr};
 allow hal_thermal_default proc_stat:file {open read getattr };
+
+# Purpose : Mtk thermal hal
+allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
+allow hal_thermal_default sysfs_thermal:file rw_file_perms;
+allow hal_thermal_default sysfs_therm:dir r_dir_perms;
+allow hal_thermal_default sysfs_therm:file rw_file_perms;
+allow hal_thermal_default proc_stat:file r_file_perms;
+allow hal_thermal_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+hal_client_domain(hal_thermal_default, hal_power);
+
+# Purpose : Read thermal_config
+get_prop(hal_thermal_default, mtk_thermal_config_prop)
