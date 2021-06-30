@@ -1026,3 +1026,4 @@
 # Purpose: Mtk vibrator Hals
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service-mediatek       u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.mtk\.hardware\.vibrator@1\.2-service            u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service\.mediatek           u:object_r:hal_vibrator_default_exec:s0
