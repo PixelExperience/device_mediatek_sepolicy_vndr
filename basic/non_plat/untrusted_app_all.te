@@ -8,6 +8,9 @@ get_prop(untrusted_app_all, render_prop)
 # can get rid of it.
 auditallow untrusted_app_all app_data_file:file { execute execute_no_trans };
 
+# Untrusted apps are not allowed to use cgroups.
+dontaudit untrusted_app_all cgroup:file *;
+
 allow untrusted_app_all proc_zoneinfo:file r_file_perms;
 allow untrusted_app_all input_device:chr_file getattr;
 allow untrusted_app_all input_device:dir r_dir_perms;
