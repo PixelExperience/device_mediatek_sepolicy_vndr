@@ -70,7 +70,6 @@ genfscon sysfs /bus/platform/drivers/dev_info/dev_info u:object_r:sysfs_devinfo:
 genfscon sysfs /bus/platform/drivers/meta_com_type_info/meta_com_type_info u:object_r:sysfs_comport_type:s0
 genfscon sysfs /bus/platform/drivers/meta_uart_port_info/meta_uart_port_info u:object_r:sysfs_uart_info:s0
 
-genfscon sysfs /devices/platform/battery    u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/charger/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0
 genfscon sysfs /devices/platform/battery/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0
 genfscon sysfs /devices/platform/charger/Pump_Express u:object_r:sysfs_pump_express:s0
