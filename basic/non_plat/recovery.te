@@ -13,7 +13,6 @@ allow recovery sysfs_mmcblk:lnk_file r_file_perms;
 
 # Purpose : Add policy for therm, gpu, battery, and boot_type
 allow recovery sysfs:dir r_dir_perms;
-allow recovery sysfs_battery_supply:dir r_dir_perms;
 allow recovery sysfs_boot_type:file r_file_perms;
 allow recovery sysfs_therm:dir r_dir_perms;
 allow recovery sysfs_therm:file r_file_perms;

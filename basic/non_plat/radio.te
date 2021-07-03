@@ -95,7 +95,6 @@ get_prop(radio, tel_switch_prop)
 get_prop(radio, mtk_debug_md_reset_prop)
 
 # Purpose : For EM access battery info
-allow radio sysfs_battery_supply:dir search;
 allow radio sysfs_vbus:file { read getattr open };
 allow radio sysfs_battery_consumption:file r_file_perms;
 allow radio sysfs_power_on_vol:file r_file_perms;

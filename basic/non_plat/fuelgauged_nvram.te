@@ -27,9 +27,6 @@ allow fuelgauged_nvram sysfs:file { read open };
 allow fuelgauged_nvram nvcfg_file:dir { search write open read add_name create getattr};
 allow fuelgauged_nvram nvcfg_file:file { read write getattr open create };
 
-# Purpose : add fuelgauged could access
-r_dir_file(fuelgauged_nvram, sysfs_battery_supply)
-
 # Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
 allow fuelgauged_nvram mnt_vendor_file:dir search;
 

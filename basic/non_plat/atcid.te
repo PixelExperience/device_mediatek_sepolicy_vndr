@@ -26,9 +26,6 @@ hal_client_domain(atcid, hal_pq)
 # Purpose: Allow to access meta_tst
 allow atcid meta_tst:unix_stream_socket connectto;
 
-# Purpose: Allow to access power_supply in sysfs
-allow atcid sysfs_battery_supply:file { read open };
-
 # Purpose: Allow atcid to get tel_switch_prop
 get_prop(atcid, tel_switch_prop)
 
@@ -46,7 +43,6 @@ allow atcid nvdata_file:dir { open read write search add_name };
 allow atcid nvdata_file:file { open read write create getattr setattr };
 allow atcid nvram_device:blk_file { open read write };
 allow atcid proc_meminfo:file { open read };
-allow atcid sysfs_battery_supply:dir search;
 allow atcid sysfs_mmcblk:dir search;
 allow atcid sysfs_mmcblk:file { read open };
 

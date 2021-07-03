@@ -246,10 +246,6 @@ allow mtk_hal_camera property_socket:sock_file write;
 allow mtk_hal_camera mtk_cmdq_device:chr_file { read ioctl open };
 allow mtk_hal_camera mtk_mdp_device:chr_file rw_file_perms;
 
-# Purpose: Allow to access battery status
-allow mtk_hal_camera sysfs_battery_supply:dir search;
-allow mtk_hal_camera sysfs_battery_supply:file { getattr open read };
-
 # Purpose: Change thermal config
 allow mtk_hal_camera mtk_thermal_config_prop:property_service set;
 

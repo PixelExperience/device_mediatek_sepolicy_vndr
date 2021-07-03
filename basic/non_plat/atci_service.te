@@ -83,8 +83,6 @@ allow atci_service mtk_mdp_device:chr_file rw_file_perms;
 allow atci_service sw_sync_device:chr_file rw_file_perms;
 allow atci_service mtk_hal_power:binder call;
 allow atci_service mtk_hal_power_hwservice:hwservice_manager find;
-allow atci_service sysfs_battery_supply:dir search;
-allow atci_service sysfs_battery_supply:file { read getattr open };
 allow atci_service system_file:dir { read open };
 allow atci_service camera_pipemgr_device:chr_file { read ioctl open };
 allow atci_service mtkcam_prop:file { read getattr open };

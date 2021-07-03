@@ -209,7 +209,6 @@ get_prop(system_server, vendor_default_prop)
 get_prop(system_server, exported_default_prop)
 
 # battery proc
-allow system_server sysfs_battery_supply:file rw_file_perms;
 allow system_server sysfs_usb_supply:file rw_file_perms;
 
 # ADB data
