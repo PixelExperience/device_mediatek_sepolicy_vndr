@@ -120,3 +120,6 @@ get_prop(mediacodec, render_prop)
 
 # Purpose : Allow mediacodec to use vcodec_file data
 allow mediacodec vcodec_file:dir r_dir_perms;
+
+# Purpose : Boot mode
+allow mediacodec sysfs_boot_mode:file r_file_perms;
