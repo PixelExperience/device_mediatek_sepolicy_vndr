@@ -990,7 +990,6 @@
 /vendor/bin/aeev  u:object_r:aee_aedv_exec:s0
 
 # Sys files
-/sys/class/thermal(/.*)? u:object_r:sysfs_thermal:s0
 /sys/bus/platform/drivers(/.*)? u:object_r:sysfs_bus:s0
 /sys/bus/i2c/drivers(/.*)? u:object_r:sysfs_bus:s0
 /sys/bus/usb/drivers/usb(/.*)? u:object_r:sysfs_bus:s0
