@@ -67,3 +67,6 @@ allow nvram_daemon sysfs_boot_mode:file r_file_perms;
 allow nvram_daemon proc_cmdline:file r_file_perms;
 allow nvram_daemon sysfs_dt_firmware_android:dir r_dir_perms;
 allow nvram_daemon sysfs_dt_firmware_android:file r_file_perms;
+
+# Purpose: Allow to search metadata files
+allow nvram_daemon metadata_file:dir search;
