@@ -44,6 +44,7 @@ allow mnld merged_hal_service:unix_dgram_socket sendto;
 # Purpose : For access system data
 allow mnld bootdevice_block_device:blk_file rw_file_perms;
 allow mnld block_device:dir search;
+get_prop(mnld, mnld_prop);
 allow mnld mnld_prop:property_service set;
 allow mnld property_socket:sock_file write;
 allow mnld mdlog_device:chr_file { read write };
