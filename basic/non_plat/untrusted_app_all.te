@@ -39,3 +39,4 @@ allow untrusted_app_all proc_thermal:dir r_dir_perms;
 allow untrusted_app_all hal_graphics_allocator_default_tmpfs:file r_file_perms;
 allow untrusted_app_all hal_mms_hwservice:hwservice_manager find;
 allow untrusted_app_all mtk_hal_mms:binder call;
+allow untrusted_app_all proc_devices:file r_file_perms;
