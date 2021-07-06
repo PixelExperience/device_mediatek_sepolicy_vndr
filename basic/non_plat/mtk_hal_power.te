@@ -149,3 +149,6 @@ allow mtk_hal_power init:file { open read };
 # DT2W
 allow mtk_hal_power input_device:dir rw_dir_perms;
 allow mtk_hal_power input_device:chr_file rw_file_perms;
+
+# Displowpower
+allow mtk_hal_power proc_idletime:file rw_file_perms;

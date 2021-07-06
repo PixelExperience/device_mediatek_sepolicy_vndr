@@ -253,3 +253,6 @@ genfscon sysfs /class/thermal               u:object_r:sysfs_thermal:s0
 
 # Purpose : ion clients_summary
 genfscon proc /ion/clients/clients_summary u:object_r:proc_ion_clients_summary:s0
+
+# Purpose : idletime timer
+genfscon proc /displowpower/idletime    u:object_r:proc_idletime:s0
