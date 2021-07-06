@@ -27,6 +27,9 @@ allow mtk_hal_neuralnetworks apk_data_file:file read;
 allow mtk_hal_neuralnetworks proc_ged:file rw_file_perms;
 allow mtk_hal_neuralnetworks gpu_device:dir r_dir_perms;
 allow mtk_hal_neuralnetworks hwservicemanager:binder { call transfer };
+allow mtk_hal_neuralnetworks mtk_hal_power_hwservice:hwservice_manager find;
+allow mtk_hal_neuralnetworks priv_app:dir r_file_perms;
+allow mtk_hal_neuralnetworks sysfs_boot_mode:file rw_file_perms;
 get_prop(mtk_hal_neuralnetworks, hwservicemanager_prop);
 
 # Purpose : allow access to perfmgr for EARA-QoS
