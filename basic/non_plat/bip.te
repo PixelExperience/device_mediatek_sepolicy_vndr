@@ -7,6 +7,6 @@ allow bip bip_exec:file execute_no_trans;
 allow bip ccci_device:chr_file rw_file_perms;
 allow bip property_socket:sock_file write;
 allow bip init:unix_stream_socket connectto;
-allow bip self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read };
+allow bip self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_readpriv };
 
 get_prop(bip, net_dn_prop)
