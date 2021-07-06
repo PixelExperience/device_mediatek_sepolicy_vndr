@@ -250,3 +250,6 @@ genfscon sysfs /devices/platform/mhl@0/extcon/HDMI_audio_extcon/state u:object_r
 
 # Purpose : thermal sysfs files
 genfscon sysfs /class/thermal               u:object_r:sysfs_thermal:s0
+
+# Purpose : ion clients_summary
+genfscon proc /ion/clients/clients_summary u:object_r:proc_ion_clients_summary:s0

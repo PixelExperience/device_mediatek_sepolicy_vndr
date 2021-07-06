@@ -428,3 +428,6 @@ type sysfs_concurrency_scenario, fs_type, sysfs_type;
 
 # Purpose : For system_server process get HDMI state
 type sysfs_hdmi_audio_extcon, fs_type, sysfs_type;
+
+# Purpose : ion clients_summary
+type proc_ion_clients_summary, fs_type, proc_type;
