@@ -48,3 +48,6 @@ hal_server_domain(mtk_hal_bluetooth,hal_bluetooth);
 
 # Purpose: Allow BT Driver to insmod
 allow mtk_hal_bluetooth wmt_prop:property_service set;
+
+# Purpose: Allow to search metadata files
+allow mtk_hal_bluetooth metadata_file:dir search;
