@@ -11,6 +11,11 @@ allow volte_imcb self:capability2 wake_alarm;
 allow volte_imcb volte_ua_socket:sock_file rw_file_perms;
 allow volte_imcb device:lnk_file create_file_perms;
 allow volte_imcb volte_ua:unix_stream_socket connectto;
+allow volte_imcb init:unix_stream_socket connectto;
 allow volte_imcb sysfs_ccci:dir r_dir_perms;
 allow volte_imcb sysfs_ccci:file r_file_perms;
 allow volte_imcb ccci_device:chr_file rw_file_perms;
+allow volte_imcb property_socket:sock_file write;
+
+set_prop(volte_imcb, ril_mux_report_case_prop)
+set_prop(volte_imcb, vendor_radio_prop)
