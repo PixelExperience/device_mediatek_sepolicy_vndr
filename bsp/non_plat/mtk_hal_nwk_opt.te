@@ -17,3 +17,5 @@ allow mtk_hal_nwk_opt input_device:dir r_dir_perms;
 allow mtk_hal_nwk_opt input_device:file rw_file_perms;
 allow mtk_hal_nwk_opt input_device:chr_file rw_file_perms;
 allow mtk_hal_nwk_opt tx_device:chr_file rw_file_perms;
+allow mtk_hal_nwk_opt property_socket:sock_file { getattr read ioctl append write };
+allow mtk_hal_nwk_opt init:unix_stream_socket connectto;
