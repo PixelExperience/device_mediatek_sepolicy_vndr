@@ -3,3 +3,6 @@ allow mediaswcodec debugfs_ion:dir rw_dir_perms;
 allow mediaswcodec gpu_device:dir rw_dir_perms;
 allow mediaswcodec dri_device:chr_file rw_file_perms;
 allow mediaswcodec gpu_device:chr_file rw_file_perms;
+
+# Purpose : Allow proc_ged
+allow mediaswcodec proc_ged:file rw_file_perms;
