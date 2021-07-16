@@ -539,6 +539,7 @@
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-mediatek u:object_r:mtk_hal_bluetooth_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.gnss@2\.0-service-mediatek u:object_r:mtk_hal_gnss_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.gnss@2\.1-service-mediatek u:object_r:mtk_hal_gnss_exec:s0
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.audio@4\.0-service-mediatek u:object_r:mtk_hal_audio_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.audio@5\.0-service-mediatek u:object_r:mtk_hal_audio_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.audio\.service\.mediatek u:object_r:mtk_hal_audio_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.mtkpower@1\.0-service u:object_r:mtk_hal_power_exec:s0
@@ -607,6 +608,7 @@
 /vendor/lib/android\.hidl\.manager@1\.0\.so u:object_r:same_process_hal_file:s0
 
 /vendor/lib/android\.hardware\.audio\.common-util\.so u:object_r:same_process_hal_file:s0
+/vendor/lib/android\.hardware\.audio\.common@4\.0-util\.so u:object_r:same_process_hal_file:s0
 /vendor/lib/android\.hardware\.audio\.common@5\.0-util\.so u:object_r:same_process_hal_file:s0
 
 /vendor/lib(64)?/hw/gralloc\.mt[0-9]+[a-z]*\.so   u:object_r:same_process_hal_file:s0
