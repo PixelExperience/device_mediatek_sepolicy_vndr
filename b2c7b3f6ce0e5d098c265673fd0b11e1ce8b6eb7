@@ -33,6 +33,23 @@
       "message": "Are there devices with MMS 1.2?\nThat\u0027s missing, so if there are, it\u0027d be good if we could add support for that too",
       "revId": "b2c7b3f6ce0e5d098c265673fd0b11e1ce8b6eb7",
       "serverId": "8ba0da3e-d57f-4bbe-ac74-faf358ba962a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98aef7be_158743c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000434
+      },
+      "writtenOn": "2021-08-04T14:39:48Z",
+      "side": 1,
+      "message": "Good to go.",
+      "revId": "b2c7b3f6ce0e5d098c265673fd0b11e1ce8b6eb7",
+      "serverId": "8ba0da3e-d57f-4bbe-ac74-faf358ba962a"
     }
   ]
 }
