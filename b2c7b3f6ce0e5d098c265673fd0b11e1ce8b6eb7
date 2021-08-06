@@ -50,6 +50,24 @@
       "message": "Good to go.",
       "revId": "b2c7b3f6ce0e5d098c265673fd0b11e1ce8b6eb7",
       "serverId": "8ba0da3e-d57f-4bbe-ac74-faf358ba962a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "501b7699_0f9562da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000539
+      },
+      "writtenOn": "2021-08-06T10:37:40Z",
+      "side": 1,
+      "message": "I am not sure if there is any devices with MMS 1.2, as of now I didnt saw any device with MMS 1.2",
+      "parentUuid": "879912df_270d9dbe",
+      "revId": "b2c7b3f6ce0e5d098c265673fd0b11e1ce8b6eb7",
+      "serverId": "8ba0da3e-d57f-4bbe-ac74-faf358ba962a"
     }
   ]
 }
