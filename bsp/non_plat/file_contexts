@@ -192,6 +192,7 @@
 /data/vendor/shading(/.*)?  u:object_r:vendor_shading_file:s0
 
 # Neuralnetworks
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-apunn		u:object_r:vendor_neuralnetworks_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-cpunn		u:object_r:vendor_neuralnetworks_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-gpunn		u:object_r:vendor_neuralnetworks_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-neuron-ann	u:object_r:vendor_neuralnetworks_exec:s0
