@@ -7,12 +7,12 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
     $(MTK_SEPOLICY_PATH)/bsp/non_plat/ota \
     $(MTK_SEPOLICY_PATH)/full/non_plat
 
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
     $(MTK_SEPOLICY_PATH)/basic/plat_public \
     $(MTK_SEPOLICY_PATH)/bsp/plat_public \
     $(MTK_SEPOLICY_PATH)/full/plat_public
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     $(MTK_SEPOLICY_PATH)/basic/plat_private \
     $(MTK_SEPOLICY_PATH)/bsp/plat_private \
     $(MTK_SEPOLICY_PATH)/full/plat_private
