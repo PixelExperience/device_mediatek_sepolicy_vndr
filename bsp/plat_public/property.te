@@ -1,8 +1,8 @@
 #=============DMC control property=============
-type mtk_dmc_prop, property_type;
+system_public_prop(mtk_dmc_prop)
 
 #=============PKM control property=============
-type mtk_pkm_init_prop, property_type;
+system_public_prop(mtk_pkm_init_prop)
 
 #=============MDM init control property=============
-type init_svc_md_monitor_prop, property_type;
+system_public_prop(init_svc_md_monitor_prop)

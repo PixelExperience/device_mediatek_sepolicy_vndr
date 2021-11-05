@@ -1,25 +1,25 @@
 #=============allow atcid==============
-type ctl_atcid-daemon-u_prop, property_type, extended_core_property_type;
-type ctl_atci_service_prop, property_type, extended_core_property_type;
-type mtk_atci_sys_prop, property_type, extended_core_property_type;
+system_internal_prop(ctl_atcid-daemon-u_prop)
+system_internal_prop(ctl_atci_service_prop)
+system_internal_prop(mtk_atci_sys_prop)
 
 #=============mtk aal property=============
-type mtk_aal_prop, property_type, extended_core_property_type;
+system_internal_prop(mtk_aal_prop)
 
 #============allow permission control set property=========
-type mtk_permission_control_prop, property_type, extended_core_property_type;
+system_internal_prop(mtk_permission_control_prop)
 
 #=============allow terserver to set terservice property==============
-type terservice_prop, property_type, extended_core_property_type;
+vendor_internal_prop(terservice_prop)
 
 #=============allow systemui to get ro.vendor.mtk_cta_set===============
-type mtk_cta_set_prop, property_type, extended_core_property_type;
+system_internal_prop(mtk_cta_set_prop)
 
 #=============allow RSC===============
-type mtk_rsc_sys_prop, property_type, extended_core_property_type;
+system_internal_prop(mtk_rsc_sys_prop)
 
 #=============allow to start/stop campostalgo property==============
-type ctl_campostalgo_prop, property_type, extended_core_property_type;
+system_internal_prop(ctl_campostalgo_prop)
 
 #=============allow netflix read property==============
-type netflix_bsp_rev_prop, property_type;
+vendor_public_prop(netflix_bsp_rev_prop)

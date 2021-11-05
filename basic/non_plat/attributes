@@ -1,6 +1,3 @@
-# Attribute that represents all mtk property types (except those with ctl_xxx prefix)
-attribute mtk_core_property_type;
-
 # IMSA HIDL
 attribute hal_imsa;
 attribute hal_imsa_client;
