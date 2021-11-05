@@ -1,4 +1,3 @@
-get_prop(untrusted_app_all, vendor_default_prop)
 get_prop(untrusted_app_all, exported_default_prop)
 get_prop(untrusted_app_all, render_prop)
 

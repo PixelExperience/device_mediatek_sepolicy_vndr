@@ -51,6 +51,5 @@ allow meta_tst mtk_hal_keymanage:binder call;
 # Purpose: DRM key install
 allow meta_tst mobicore_user_device:chr_file { read write ioctl open };
 
-# Purpose : meta set atci property
-set_prop(meta_tst, atci_sys_prop);
+# Purpose : Allow meta to write adb_atci_socket
 allow meta_tst adb_atci_socket:sock_file write;

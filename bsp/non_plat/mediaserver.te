@@ -46,15 +46,6 @@ allow mediaserver ancservice_device:chr_file { read write ioctl open };
 allow mediaserver dri_device:chr_file { read write open ioctl };
 allow mediaserver gas_srv_service:service_manager find;
 
-# Purpose: For engineermode setting video log
-get_prop(mediaserver, mtk_em_video_log_acodec_prop)
-get_prop(mediaserver, mtk_em_video_log_sf_postbuffer_prop)
-get_prop(mediaserver, mtk_em_video_log_omx_prop)
-get_prop(mediaserver, mtk_em_video_log_vdec_prop)
-get_prop(mediaserver, mtk_em_video_log_svp_prop)
-get_prop(mediaserver, mtk_em_video_log_mjc_prop)
-get_prop(mediaserver, mtk_em_video_venc_h264_prop)
-
 # Purpose: Allow to use HAL PQ
 hal_client_domain(mediaserver, hal_pq)
 

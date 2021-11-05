@@ -164,9 +164,6 @@ allow meta_tst nvcfg_file:dir { search read open };
 allow meta_tst sdcard_type:filesystem unmount;
 allow meta_tst storage_stub_file:dir search;
 
-# Purpose: Switch meta connect type, set persist.meta.connecttype as "wifi" or "usb".
-set_prop(meta_tst, meta_connecttype_prop);
-
 # Purpose: support meta_tst check key event
 allow meta_tst input_device:dir r_dir_perms;
 allow meta_tst input_device:chr_file r_file_perms;
@@ -223,9 +220,6 @@ allow meta_tst mtd_device:blk_file rw_file_perms;
 
 # Purpose : Allow meta_tst to access pesist.atm.mdmode in ATM.
 set_prop(meta_tst, atm_mdmode_prop);
-
-# Purpose : Allow meta_tst to access pesist.atm.ipaddress in ATM.
-set_prop(meta_tst, atm_ipaddr_prop);
 
 # Purpose: Allow meta_tst to get tel_switch_prop
 get_prop(meta_tst, tel_switch_prop);

@@ -41,7 +41,6 @@ set_prop(ccci_mdinit, ctl_ccci_fsd_prop)
 set_prop(ccci_mdinit, ctl_ccci2_fsd_prop)
 set_prop(ccci_mdinit, ctl_ccci3_fsd_prop)
 
-get_prop(ccci_mdinit, vendor_default_prop)
 get_prop(ccci_mdinit, init_svc_emdlogger1_prop)
 get_prop(ccci_mdinit, init_svc_aee_aedv_prop)
 

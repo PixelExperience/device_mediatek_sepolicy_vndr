@@ -123,9 +123,6 @@ hal_client_domain(radio, mtk_hal_em)
 # Purpose : Allow sim system to set prop
 set_prop(radio, vendor_sim_system_prop)
 
-# Purpose : Allow Mwi to get vendor default properties (ro.vendor.*)
-get_prop(radio, vendor_default_prop)
-
 # Purpose : Allow to use mtk_bgdata_disabled
 set_prop(radio, mtk_bgdata_disabled)
 
@@ -159,9 +156,6 @@ allow radio aee_aed:unix_stream_socket connectto;
 
 # Purpose : Engineering mode need get subpimic register status
 allow radio debugfs_regmap:dir { search };
-
-# Purpose : Allow get USB Current Speed in Engineer Mode
-get_prop(radio, vendor_usb_prop);
 
 allow radio gpuservice:binder call;
 allow radio system_app_data_file:dir getattr;

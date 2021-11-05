@@ -39,7 +39,6 @@ allow vendor_init unlabeled:dir { relabelfrom getattr setattr search };
 allow vendor_init vendor_file:system module_load;
 
 allow vendor_init kmsg_device:chr_file unlink;
-set_prop(vendor_init, persist_mtk_aee_prop)
 set_prop(vendor_init, ro_mtk_aee_prop)
 set_prop(vendor_init, vendor_usb_prop)
 set_prop(vendor_init, mtk_ct_volte_prop)
@@ -53,7 +52,6 @@ set_prop(vendor_init, mtk_nn_option_prop)
 
 set_prop(vendor_init, mtk_emmc_support_prop)
 set_prop(vendor_init, mtk_anr_support_prop)
-set_prop(vendor_init, mtk_antutu_prop)
 set_prop(vendor_init, mtk_bt_sap_enable_prop)
 set_prop(vendor_init, coredump_prop)
 get_prop(vendor_init, vendor_video_prop)

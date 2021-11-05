@@ -44,9 +44,6 @@ allow aee_aed sysfs_leds:dir search;
 # Purpose: Allow aee_aed to read /proc/kpageflags
 allow aee_aed proc_kpageflags:file r_file_perms;
 
-# temp solution
-get_prop(aee_aed, vendor_default_prop)
-
 hal_client_domain(aee_aed, mtk_hal_log)
 
 # Purpose: create /data/aee_exp at runtime

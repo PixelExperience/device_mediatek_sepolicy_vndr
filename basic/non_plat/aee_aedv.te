@@ -375,9 +375,6 @@ allow aee_aedv debugfs_tracing_debug:file { rw_file_perms };
 # Purpose: Allow aee_aedv to read /proc/mtk_cmdq_debug/status
 allow aee_aedv proc_cmdq_debug:file r_file_perms;
 
-# temp solution
-get_prop(aee_aedv, vendor_default_prop)
-
 #data/dipdebug
 allow aee_aedv aee_dipdebug_vendor_file:dir r_dir_perms;
 allow aee_aedv aee_dipdebug_vendor_file:file r_file_perms;

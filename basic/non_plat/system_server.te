@@ -148,9 +148,6 @@ allow system_server alarm_device:chr_file rw_file_perms;
 allow system_server proc_ged:file rw_file_perms;
 allowxperm system_server proc_ged:file ioctl { proc_ged_ioctls };
 
-# Operation : Migration
-get_prop(system_server, vendor_default_prop)
-
 # Operation : when WFD turnning on, turn off hdmi
 allow system_server mtk_hal_hdmi_hwservice:hwservice_manager find;
 allow system_server mtk_hal_hdmi:binder call;
@@ -205,7 +202,6 @@ allow system_server sysfs_hdmi_audio_extcon:file r_file_perms;
 
 # Camera property
 get_prop(system_server, vendor_camera_prop)
-get_prop(system_server, vendor_default_prop)
 get_prop(system_server, exported_default_prop)
 
 # battery proc

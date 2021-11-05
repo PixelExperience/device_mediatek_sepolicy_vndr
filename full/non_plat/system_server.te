@@ -28,10 +28,6 @@ allow system_server sysfs_ccci:file { open read };
 # Purpose : for system_server operate /dev/RT_Monitor when enable hang detect
 allow system_server RT_Monitor_device:chr_file r_file_perms;
 
-# Fix bootup violation
-allow system_server mtk_em_video_log_acodec_prop:file { read getattr open };
-allow system_server mtk_em_video_log_sf_postbuffer_prop:file { read getattr open };
-
 # Purpose: Allow to use phoneEx
 allow system_server mtk_radio_service:service_manager find;
 

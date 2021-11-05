@@ -180,13 +180,10 @@ allow vtservice ion_device:chr_file { open read };
 # for MA socket rebind
 hal_client_domain(vtservice, hal_omx);
 allow vtservice mediametrics_service:service_manager find;
-allow vtservice mtk_em_video_log_acodec_prop:file read;
-get_prop(vtservice, mtk_em_video_log_sf_postbuffer_prop)
 allow vtservice mediametrics:binder call;
 
 allow vtservice self:udp_socket create_socket_perms_no_ioctl;
 allow vtservice node:udp_socket node_bind;
-get_prop(vtservice, mtk_em_video_log_acodec_prop)
 
 allow vtservice debugfs_ion:dir search;
 allow vtservice fwmarkd_socket:sock_file write;
@@ -197,13 +194,9 @@ allow vtservice hal_graphics_mapper_hwservice:hwservice_manager find;
 allow vtservice netd:unix_stream_socket connectto;
 allow vtservice ion_device:chr_file ioctl;
 allow vtservice MTK_SMI_device:chr_file { read write ioctl open };
-allow vtservice mtk_em_video_venc_h264_prop:file read;
-get_prop(vtservice, mtk_em_video_log_omx_prop)
-get_prop(vtservice, mtk_em_video_log_vdec_prop)
 allow vtservice proc:file getattr;
 allow vtservice mtk_cmdq_device:chr_file { read ioctl open };
 allow vtservice_hidl proc:file read;
-get_prop(vtservice, mtk_em_video_venc_h264_prop)
 allow vtservice merged_hal_service:fd use;
 allow vtservice merged_hal_service:binder call;
 
@@ -221,7 +214,6 @@ allowxperm vtservice proc_perfmgr:file ioctl {
   PERFMGR_FPSGO_BQID
 };
 
-get_prop(vtservice, vendor_default_prop)
 get_prop(vtservice, vendor_vt_prop)
 
 allow vtservice hal_mms_hwservice:hwservice_manager find;

@@ -29,10 +29,6 @@ allow platform_app vow_device:chr_file rw_file_perms;
 # Purpose : Add permission for program binary service find from ServiceManager.
 allow platform_app program_binary_service:service_manager find;
 
-# Fix bootup violation
-get_prop(platform_app,mtk_em_video_log_acodec_prop)
-get_prop(platform_app,mtk_em_video_log_sf_postbuffer_prop)
-
 allow platform_app debugfs_ion:dir search;
 allow platform_app system_app_data_file:dir getattr;
 

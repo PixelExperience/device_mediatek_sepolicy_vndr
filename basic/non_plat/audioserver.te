@@ -33,5 +33,4 @@ allow audioserver proc_ged:file rw_file_perms;
 allow audioserver aee_aed:unix_stream_socket connectto;
 
 # Operation : Migration
-get_prop(audioserver, vendor_default_prop)
 get_prop(audioserver, vendor_audio_prop)

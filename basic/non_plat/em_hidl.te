@@ -33,9 +33,6 @@ set_prop(em_hidl, mtk_ct_ir_engmode_prop)
 # Purpose: EM should mtk_disable_c2k_cap_prop
 set_prop(em_hidl, mtk_disable_c2k_cap_prop)
 
-# Purpose: EM should mtk_debug_md_reset_prop
-set_prop(em_hidl, mtk_debug_md_reset_prop)
-
 # Purpose: EM should video log mtk_omx_log_prop
 set_prop(em_hidl, mtk_omx_log_prop)
 
@@ -63,7 +60,6 @@ allow em_hidl nvdata_file:file { getattr read open };
 
 # Purpose : EM MCF search vendor dir
 allow em_hidl mnt_vendor_file:dir search;
-allow em_hidl vendor_default_prop:file read;
 
 # Purpose : EM BT usage
 allow em_hidl stpbt_device:chr_file { read write open };
