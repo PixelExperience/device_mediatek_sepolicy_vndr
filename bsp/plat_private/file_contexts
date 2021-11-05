@@ -24,7 +24,6 @@
 /system/bin/batterywarning u:object_r:batterywarning_exec:s0
 /system/bin/mmp u:object_r:mmp_exec:s0
 /system/bin/GoogleOtaBinder u:object_r:GoogleOtaBinder_exec:s0
-/system/bin/resize2fs   u:object_r:fsck_exec:s0
 /system/bin/resize.f2fs   u:object_r:fsck_exec:s0
 
 # MTK MET
