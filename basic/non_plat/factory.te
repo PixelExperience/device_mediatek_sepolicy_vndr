@@ -349,7 +349,7 @@ allow factory vendor_nfc_socket:dir { write add_name remove_name search };
 allow factory vendor_nfc_socket:sock_file { create write unlink setattr };
 
 # Allow to get AOSP property persist.radio.multisim.config
-get_prop(factory, exported3_radio_prop)
+get_prop(factory, radio_control_prop)
 
 # Purpose: Allow clear eMMC
 set_prop(factory, ctl_mdlogger_prop);
