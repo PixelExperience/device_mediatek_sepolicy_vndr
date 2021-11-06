@@ -69,7 +69,7 @@ binder_call(radio,mtk_hal_audio)
 
 # TODO : Will move to plat_private when SEPolicy split done
 # Purpose : Allow EM set usb property
-set_prop(radio, system_radio_prop)
+set_prop(radio, usb_prop)
 
 # Purpose: NFC EM
 allow radio hal_nfc_hwservice:hwservice_manager find;

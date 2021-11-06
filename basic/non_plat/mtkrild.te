@@ -16,7 +16,7 @@ allow mtkrild cgroup:dir create_dir_perms;
 # Property service
 # allow set RIL related properties (radio./net./system./etc)
 auditallow mtkrild net_radio_prop:property_service set;
-auditallow mtkrild system_radio_prop:property_service set;
+auditallow mtkrild usb_prop:property_service set;
 set_prop(mtkrild, ril_active_md_prop)
 
 # allow set muxreport control properties

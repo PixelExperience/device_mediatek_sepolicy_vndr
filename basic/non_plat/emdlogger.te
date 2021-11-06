@@ -1,7 +1,7 @@
 # allow emdlogger to set property
 allow emdlogger debug_prop:property_service set;
 allow emdlogger persist_mtklog_prop:property_service set;
-allow emdlogger system_radio_prop:property_service set;
+allow emdlogger usb_prop:property_service set;
 
 # ccci device for internal modem
 allow emdlogger ccci_device:chr_file { rw_file_perms };
@@ -110,7 +110,7 @@ set_prop(emdlogger, persist_mdlog_prop)
 set_prop(emdlogger, vendor_mdl_pulllog_prop)
 set_prop(emdlogger, usb_control_prop)
 set_prop(emdlogger, debug_prop)
-set_prop(emdlogger, system_radio_prop)
+set_prop(emdlogger, usb_prop)
 
 allow emdlogger vendor_configs_file:file map;
 
