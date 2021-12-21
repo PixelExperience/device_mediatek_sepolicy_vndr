@@ -5,6 +5,7 @@ init_daemon_domain(mtk_hal_neuralnetworks)
 
 hal_server_domain(mtk_hal_neuralnetworks, hal_neuralnetworks)
 hal_client_domain(mtk_hal_neuralnetworks, hal_graphics_allocator)
+allow mtk_hal_neuralnetworks mtk_hal_neuralnetworks_hwservice:hwservice_manager { find add };
 allow mtk_hal_neuralnetworks hal_neuralnetworks_hwservice:hwservice_manager find;
 allow mtk_hal_neuralnetworks hidl_base_hwservice:hwservice_manager add;
 allow mtk_hal_neuralnetworks ion_device:chr_file r_file_perms;

@@ -76,3 +76,6 @@ allow mtk_hal_camera vendor_camera_dump_file:file create_file_perms;
 # Operation: For shading
 allow mtk_hal_camera vendor_shading_file:dir create_dir_perms;
 allow mtk_hal_camera vendor_shading_file:file create_file_perms;
+
+# mtk neuralnetworks
+allow mtk_hal_camera mtk_hal_neuralnetworks_hwservice:hwservice_manager find;

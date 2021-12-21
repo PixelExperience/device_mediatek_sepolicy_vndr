@@ -65,6 +65,6 @@ vendor.trustonic.tee.tui::ITui                    u:object_r:hal_tee_hwservice:s
 vendor.trustonic.teeregistry::ITeeRegistry        u:object_r:hal_teeregistry_hwservice:s0
 
 # Purpose: Add for MTK NeuralNetworks HIDL
-vendor.mediatek.hardware.apuware.apusys::INeuronApusys u:object_r:hal_neuralnetworks_hwservice:s0
-vendor.mediatek.hardware.apuware.utils::IApuwareUtils  u:object_r:hal_neuralnetworks_hwservice:s0
-vendor.mediatek.hardware.apuware.xrp::INeuronXrp       u:object_r:hal_neuralnetworks_hwservice:s0
+vendor.mediatek.hardware.apuware.apusys::INeuronApusys u:object_r:mtk_hal_neuralnetworks_hwservice:s0
+vendor.mediatek.hardware.apuware.utils::IApuwareUtils  u:object_r:mtk_hal_neuralnetworks_hwservice:s0
+vendor.mediatek.hardware.apuware.xrp::INeuronXrp       u:object_r:mtk_hal_neuralnetworks_hwservice:s0

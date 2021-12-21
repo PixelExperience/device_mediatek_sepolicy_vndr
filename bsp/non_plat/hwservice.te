@@ -44,3 +44,6 @@ type mtk_mdm_hidl_server, hwservice_manager_type;
 
 # client API HIDL
 type volte_clientapi_ua_hwservice, hwservice_manager_type;
+
+# mtk neuralnetworks
+type mtk_hal_neuralnetworks_hwservice, hwservice_manager_type;
