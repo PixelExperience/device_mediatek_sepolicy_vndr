@@ -108,7 +108,7 @@ set_prop(radio, mtk_selfreg_prop)
 set_prop(radio, mtk_ctmslot_prop)
 
 # Purpose : Allow radio to set vendor prop in core domain
-set_prop(radio, vendor_cdma_prop)
+set_prop(radio, system_cdma_prop)
 
 # Purpose : Allow Phone process to set ECBM property
 set_prop(radio, mtk_cdma_ecm_prop);
@@ -164,3 +164,10 @@ set_prop(radio, config_prop);
 # Purpose : for setting ims nr enable property
 get_prop(radio, mtk_vonr_prop)
 get_prop(radio, mtk_vinr_prop)
+
+get_prop(radio, mtk_dynims_prop)
+get_prop(radio, mtk_mobile_management_prop)
+get_prop(radio, mtk_telephony_addon_prop)
+get_prop(radio, mtk_vilte_support_prop)
+get_prop(radio, vendor_vt_prop)
+get_prop(radio, mtk_mims_prop)

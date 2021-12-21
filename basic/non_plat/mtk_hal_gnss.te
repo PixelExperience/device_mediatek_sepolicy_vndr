@@ -14,3 +14,5 @@ allow mtk_hal_gnss mnld_data_file:dir create_file_perms;
 allow mtk_hal_gnss mnld_data_file:dir rw_dir_perms;
 
 allow mtk_hal_gnss mnld:unix_dgram_socket sendto;
+
+get_prop(mtk_hal_gnss, wmt_prop)

@@ -30,3 +30,6 @@ allow fuelgauged nvcfg_file:file { read write getattr open create };
 
 # Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
 allow fuelgauged mnt_vendor_file:dir search;
+
+# Purpose: Allow for nvram init
+get_prop(fuelgauged, service_nvram_init_prop)

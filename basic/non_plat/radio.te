@@ -163,3 +163,5 @@ allow radio debugfs_ion:dir search;
 allow radio adb_data_file:file r_file_perms;
 
 get_prop(radio, telephony_prop)
+get_prop(radio, vendor_radio_prop)
+get_prop(radio, mtk_ril_mode_prop)

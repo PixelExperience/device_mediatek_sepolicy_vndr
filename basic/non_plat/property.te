@@ -212,7 +212,7 @@ system_internal_prop(atm_ipaddr_prop)
 system_internal_prop(vendor_connsysfw_prop)
 
 #=============radio group property=============
-vendor_internal_prop(vendor_radio_prop)
+vendor_public_prop(vendor_radio_prop)
 
 #=============allow bluetooth==============
 system_internal_prop(vendor_bluetooth_prop)
@@ -224,7 +224,7 @@ vendor_public_prop(vendor_debug_prop)
 vendor_internal_prop(mtk_ct_volte_prop)
 
 #=============mtk ril mode property=============
-vendor_internal_prop(mtk_ril_mode_prop)
+vendor_public_prop(mtk_ril_mode_prop)
 vendor_public_prop(mtk_ss_vendor_prop)
 
 #=============GPS support properties==============

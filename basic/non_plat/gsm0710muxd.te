@@ -27,3 +27,5 @@ allow gsm0710muxd sysfs:file r_file_perms;
 # Allow read to sys/kernel/ccci/* files
 allow gsm0710muxd sysfs_ccci:dir search;
 allow gsm0710muxd sysfs_ccci:file r_file_perms;
+
+get_prop(gsm0710muxd, tel_switch_prop)

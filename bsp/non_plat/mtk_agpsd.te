@@ -8,3 +8,7 @@ allow mtk_agpsd sysfs_ccci:file { read open };
 # Allow to connect APM HIDL server
 hal_client_domain(mtk_agpsd, mtk_hal_apm)
 get_prop(mtk_agpsd, mtk_dmc_prop)
+
+get_prop(mtk_agpsd, mtk_md_prop)
+get_prop(mtk_agpsd, mtk_ims_prop)
+get_prop(mtk_agpsd, mtk_ril_mode_prop)

@@ -18,16 +18,16 @@ vendor_restricted_prop(vendor_logmuch_prop)
 vendor_internal_prop(appdetection_prop)
 
 #=============allow radio to set mtk_volte_support property==============
-vendor_internal_prop(mtk_volte_support_prop)
+vendor_public_prop(mtk_volte_support_prop)
 
 #=============allow radio to set mtk_wfc_support_prop property==============
 vendor_internal_prop(mtk_wfc_support_prop)
 
 #=============allow radio to set mtk_vilte_support_prop property==============
-vendor_internal_prop(mtk_vilte_support_prop)
+vendor_public_prop(mtk_vilte_support_prop)
 
 #=============allow radio to set mtk_viwifi_support_prop property==============
-vendor_internal_prop(mtk_viwifi_support_prop)
+vendor_public_prop(mtk_viwifi_support_prop)
 
 #=============allow radio to set mtk_rcs_ua_support property==============
 vendor_internal_prop(mtk_rcs_ua_support_prop)
@@ -99,7 +99,7 @@ vendor_internal_prop(mtk_network_prop)
 
 #=============allow CTA property===========
 vendor_internal_prop(mtk_cta_log_prop)
-vendor_internal_prop(mtk_mobile_management_prop)
+vendor_public_prop(mtk_mobile_management_prop)
 
 #=============allow vendor_init to set ro.vendor.mtk_wfd_support==============
 vendor_internal_prop(ro_vendor_mtk_wfd_support_prop)
@@ -109,10 +109,10 @@ vendor_internal_prop(mtk_duraspeed_prop)
 system_internal_prop(mtk_duraspeed_drop_caches)
 
 #=============allow Multiple IMS property===========
-vendor_internal_prop(mtk_mims_prop)
+vendor_public_prop(mtk_mims_prop)
 
 #=============allow Multiple IMS property===========
-vendor_internal_prop(mtk_dynims_prop)
+vendor_public_prop(mtk_dynims_prop)
 
 #=============allow IMS/EIMS pdn info property===========
 vendor_internal_prop(mtk_ims_eims_pdn_prop)
@@ -224,7 +224,7 @@ system_internal_prop(mtk_opt_in_url_prop)
 system_internal_prop(mtk_apptoken_required_prop)
 
 #=============allow radio to set cdma property===========
-system_internal_prop(vendor_cdma_prop)
+system_internal_prop(system_cdma_prop)
 
 #=============ECBM property==============
 system_internal_prop(mtk_cdma_ecm_prop)
@@ -263,7 +263,7 @@ system_internal_prop(mtk_subsidylock_prop_connect)
 system_internal_prop(atci_sys_prop)
 
 #=============allow PMS to read ro.vendor.mtk_telephony_add_on_policy===========
-vendor_internal_prop(mtk_telephony_addon_prop)
+vendor_public_prop(mtk_telephony_addon_prop)
 
 #=============allow get ro.vendor.mtk_cta_support===============
 vendor_public_prop(mtk_cta_support_prop)
@@ -285,3 +285,6 @@ vendor_restricted_prop(ro_vendor_mtk_microtrust_tee_prop)
 system_internal_prop(mtk_acs_version_prop)
 system_internal_prop(mtk_acs_url_prop)
 system_internal_prop(mtk_acs_support_prop)
+
+# GSM
+vendor_internal_prop(mtk_gsm_neting_prop)

@@ -68,3 +68,5 @@ allow ccci_fsd sysfs_mmcblk:file { read getattr open };
 
 # ccci_fsd kernel modules
 allow ccci_fsd kernel:system module_request;
+
+get_prop(ccci_fsd, mtk_md_prop)
