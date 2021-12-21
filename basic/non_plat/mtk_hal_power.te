@@ -95,6 +95,8 @@ allow mtk_hal_power sysfs_dm:dir r_dir_perms;
 allow mtk_hal_power sysfs_dm:file rw_file_perms;
 allow mtk_hal_power sysfs_mmcblk:dir r_dir_perms;
 allow mtk_hal_power sysfs_mmcblk:file rw_file_perms;
+allow mtk_hal_power sysfs_mtk_power_boost:dir r_dir_perms;
+allow mtk_hal_power sysfs_mtk_power_boost:file rw_file_perms;
 
 allow mtk_hal_power debugfs_eara_thermal:dir search;
 allow mtk_hal_power debugfs_eara_thermal:file { getattr open write read };

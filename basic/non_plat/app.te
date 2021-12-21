@@ -24,6 +24,3 @@ allowxperm appdomain appdomain:fifo_file ioctl SNDCTL_TMR_START;
 # Allow appdomain to get exported_default_prop
 get_prop(appdomain, vendor_camera_prop)
 get_prop(appdomain, exported_default_prop)
-
-# allow apps to read battery status
-r_dir_file(untrusted_app, sysfs_usb_supply)

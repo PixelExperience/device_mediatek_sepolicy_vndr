@@ -1,2 +1,2 @@
-allow hal_health_default sysfs_usb_supply:dir r_dir_perms;
-allow hal_health_default sysfs_usb_supply:file rw_file_perms;
+allow hal_health_default sysfs_power_supply:file rw_file_perms;
+allow hal_health_default sysfs_power_supply:dir r_dir_perms;

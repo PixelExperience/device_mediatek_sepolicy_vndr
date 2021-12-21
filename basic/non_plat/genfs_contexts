@@ -143,6 +143,14 @@ genfscon sysfs /devices/platform/externdevice/mmc_host/mmc0 u:object_r:sysfs_dev
 genfscon sysfs /devices/platform/externdevice/mmc_host/mmc1 u:object_r:sysfs_devices_block:s0
 genfscon sysfs /devices/mtk-msdc.0/11240000.msdc1/mmc_host/mmc1 u:object_r:sysfs_devices_block:s0
 
+# Purpose: power chown access
+genfscon sysfs /kernel/fpsgo/common                           u:object_r:sysfs_mtk_power_boost:s0
+genfscon sysfs /kernel/fpsgo/fbt                              u:object_r:sysfs_mtk_power_boost:s0
+genfscon sysfs /kernel/fpsgo/fstb                             u:object_r:sysfs_mtk_power_boost:s0
+genfscon sysfs /kernel/fpsgo/eara                             u:object_r:sysfs_mtk_power_boost:s0
+genfscon sysfs /kernel/ged/hal                                u:object_r:sysfs_mtk_power_boost:s0
+genfscon sysfs /module/xgf                                    u:object_r:sysfs_mtk_power_boost:s0
+
 # Purpose : mrdump_tool(copy_process by aee_aedv) need to write data to lbaooo
 genfscon sysfs /module/mrdump/parameters/lbaooo u:object_r:sysfs_mrdump_lbaooo:s0
 
@@ -256,3 +264,13 @@ genfscon proc /ion/clients/clients_summary u:object_r:proc_ion_clients_summary:s
 
 # Purpose : idletime timer
 genfscon proc /displowpower/idletime    u:object_r:proc_idletime:s0
+
+# Purpose : Power supply
+genfscon sysfs /devices/platform/1101b000.i2c8/i2c-8/8-001d/power_supply/wireless           u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/1101b000.i2c8/i2c-8/8-001d/power_supply/parallel           u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/battery/power_supply/battery                               u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/mt_charger/power_supply/usb                                u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/mt_charger/power_supply/ac                                 u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/battery/power_supply/bms                                   u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/mt_charger/power_supply/main                               u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/mt_charger/power_supply/charger                            u:object_r:sysfs_power_supply:s0

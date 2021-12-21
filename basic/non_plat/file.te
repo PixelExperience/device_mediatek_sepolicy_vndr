@@ -114,7 +114,7 @@ type mediacodec_data_file, file_type, data_file_type;
 type connsyslog_data_vendor_file, file_type, data_file_type;
 type firmware_file, file_type, contextmount_type, vendor_file_type;
 type nfc_vendor_data_file, file_type, data_file_type;
-type sysfs_usb_supply, sysfs_type, fs_type;
+type sysfs_power_supply, sysfs_type, fs_type;
 type sysfsts_novatek, sysfs_type, fs_type;
 type sysfs_emi_ctrl, sysfs_type, fs_type;
 type sysfs_mtkfb, sysfs_type, fs_type;
@@ -369,6 +369,8 @@ type key_install_data_file, file_type, data_file_type;
 # Purpose: Android Migration
 type sysfs_mmcblk, fs_type, sysfs_type;
 type sysfs_mmcblk1, fs_type, sysfs_type;
+
+type sysfs_mtk_power_boost, fs_type, sysfs_type;
 
 type aee_dipdebug_vendor_file, file_type, data_file_type;
 
