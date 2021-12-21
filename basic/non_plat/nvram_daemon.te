@@ -70,3 +70,6 @@ allow nvram_daemon sysfs_dt_firmware_android:file r_file_perms;
 
 # Purpose: Allow to search metadata files
 allow nvram_daemon metadata_file:dir search;
+
+# GSI
+allow nvram_daemon gsi_metadata_file:dir search;

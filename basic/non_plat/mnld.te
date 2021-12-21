@@ -107,3 +107,6 @@ get_prop(mnld, wmt_prop)
 get_prop(mnld, mtk_default_prop)
 get_prop(mnld, mtk_gps_support_prop)
 get_prop(mnld, service_nvram_init_prop)
+
+# GSI
+allow mnld gsi_metadata_file:dir search;
