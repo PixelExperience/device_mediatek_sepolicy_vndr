@@ -1,0 +1,11 @@
+type hal_kmsetkey_ca, domain;
+type hal_kmsetkey_ca_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(hal_kmsetkey_ca)
+
+allow hal_kmsetkey_ca hal_kmsetkey_ca_exec:file execute_no_trans;
+allow hal_kmsetkey_ca init:unix_stream_socket connectto;
+allow hal_kmsetkey_ca property_socket:sock_file write;
+allow hal_kmsetkey_ca teei_client_device:chr_file rw_file_perms;
+
+set_prop(hal_kmsetkey_ca, soter_teei_prop)

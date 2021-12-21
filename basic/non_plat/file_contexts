@@ -603,6 +603,9 @@
 # hidl process merging
 /(system\/vendor|vendor)/bin/hw/merged_hal_service          u:object_r:merged_hal_service_exec:s0
 
+#
+/(system\/vendor|vendor)/bin/bp_kmsetkey_ca          u:object_r:hal_kmsetkey_ca_exec:s0
+
 ###############################################
 # same-process HAL files and their dependencies
 #
