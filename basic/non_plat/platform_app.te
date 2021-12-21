@@ -89,6 +89,7 @@ binder_call(mtk_hal_camera, platform_app)
 # Render Props
 get_prop(platform_app, exported_default_prop)
 get_prop(platform_app, render_prop)
+get_prop(platform_app, vendor_debug_prop)
 
 allow platform_app sysfs:dir read;
 allow platform_app sysfs_switch:dir search;

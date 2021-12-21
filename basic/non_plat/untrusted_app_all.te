@@ -1,5 +1,6 @@
 get_prop(untrusted_app_all, exported_default_prop)
 get_prop(untrusted_app_all, render_prop)
+get_prop(untrusted_app_all, vendor_debug_prop)
 
 # Executing files from an application home directory violates
 # W^X (https://en.wikipedia.org/wiki/W%5EX) constraints (loading executable code

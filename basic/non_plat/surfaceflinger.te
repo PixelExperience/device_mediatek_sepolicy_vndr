@@ -62,3 +62,4 @@ get_prop(surfaceflinger, graphics_hwc_hdr_prop)
 # allows surfaceflinger access render files
 allow surfaceflinger sysfs_boot_mode:file r_file_perms;
 get_prop(surfaceflinger, render_prop)
+get_prop(surfaceflinger, vendor_debug_prop)

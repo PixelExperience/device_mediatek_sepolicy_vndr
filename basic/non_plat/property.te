@@ -218,7 +218,7 @@ vendor_internal_prop(vendor_radio_prop)
 system_internal_prop(vendor_bluetooth_prop)
 
 #=============em camera property==============
-vendor_internal_prop(vendor_debug_prop)
+vendor_public_prop(vendor_debug_prop)
 
 #=============allow ct volte==============
 vendor_internal_prop(mtk_ct_volte_prop)

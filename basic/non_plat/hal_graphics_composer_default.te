@@ -51,3 +51,4 @@ binder_call(hal_graphics_composer_default, hal_graphics_allocator_default)
 
 # allow hal_graphics_composer_default access hal_graphics_allocator
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
+get_prop(hal_graphics_composer_default, vendor_debug_prop)

@@ -50,3 +50,6 @@ get_prop(system_app, render_prop)
 
 # MTK FM Radio
 allow system_app fm_device:chr_file rw_file_perms;
+
+# Allow to get debug props
+get_prop(system_app, vendor_debug_prop)

@@ -28,3 +28,6 @@ allow bootanim system_data_file:dir read;
 
 # Allow to read audio props
 get_prop(bootanim, vendor_audio_prop)
+
+# Allow to get debug props
+get_prop(bootanim, vendor_debug_prop)
