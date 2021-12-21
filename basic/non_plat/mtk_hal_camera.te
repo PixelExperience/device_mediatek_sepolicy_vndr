@@ -324,3 +324,7 @@ set_prop(mtk_hal_camera, vendor_video_prop)
 get_prop(mtk_hal_camera, render_prop)
 set_prop(mtk_hal_camera, render_prop)
 get_prop(mtk_hal_camera, vendor_debug_prop)
+get_prop(mtk_hal_camera, mtk_emcamera_prop)
+
+# Allow to call neuralnetworks hal
+allow mtk_hal_camera mtk_hal_neuralnetworks:binder call;

@@ -237,8 +237,8 @@ vendor_internal_prop(mtk_rat_config_prop)
 vendor_internal_prop(mtk_aal_ro_prop)
 
 #=============mtk pq property=============
-vendor_internal_prop(mtk_pq_ro_prop)
-vendor_internal_prop(mtk_pq_prop)
+vendor_public_prop(mtk_pq_ro_prop)
+vendor_public_prop(mtk_pq_prop)
 
 #=============mtk emmc property=============
 vendor_internal_prop(mtk_emmc_support_prop)
@@ -262,7 +262,7 @@ vendor_internal_prop(mtk_appresolutiontuner_prop)
 vendor_internal_prop(mtk_fullscreenswitch_prop)
 
 # MTK Antutu feature
-system_internal_prop(mtk_antutu_prop)
+vendor_public_prop(mtk_antutu_prop)
 
 #=============mtk malloc debug switch unwind backtrace property=============
 vendor_internal_prop(mtk_malloc_debug_backtrace_prop)

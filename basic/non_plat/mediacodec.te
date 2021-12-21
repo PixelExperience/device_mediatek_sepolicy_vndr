@@ -123,4 +123,12 @@ allow mediacodec vcodec_file:dir r_dir_perms;
 
 # Purpose : Boot mode
 allow mediacodec sysfs_boot_mode:file r_file_perms;
+
+get_prop(mediacodec, mtk_default_prop)
+get_prop(mediacodec, mtk_omx_log_prop)
+get_prop(mediacodec, mtk_pq_prop)
+get_prop(mediacodec, mtk_pq_ro_prop)
+get_prop(mediacodec, mtk_vdectlc_log_prop)
+get_prop(mediacodec, ro_vendor_mtk_microtrust_tee_prop)
+get_prop(mediacodec, ro_vendor_mtk_trustonic_tee_prop)
 get_prop(mediacodec, vendor_debug_prop)

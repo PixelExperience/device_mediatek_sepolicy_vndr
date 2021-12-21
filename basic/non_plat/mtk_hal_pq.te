@@ -28,3 +28,5 @@ allow mtk_hal_pq fwk_sensor_hwservice:hwservice_manager find;
 
 # Purpose : Allow permission to set pq property
 set_prop(mtk_hal_pq, mtk_pq_prop)
+
+get_prop(mtk_hal_pq, mtk_aal_ro_prop)

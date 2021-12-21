@@ -269,6 +269,7 @@ persist.vendor.sys.pq. u:object_r:mtk_pq_prop:s0
 vendor.debug.pq. u:object_r:mtk_pq_prop:s0
 persist.vendor.sys.isp. u:object_r:mtk_pq_prop:s0
 persist.vendor.sys.mtkaal. u:object_r:mtk_pq_prop:s0
+vendor.sys.pq.mdp.vp.aispq. u:object_r:mtk_pq_prop:s0
 ro.vendor.mtk_pq_color_mode u:object_r:mtk_pq_ro_prop:s0
 ro.vendor.mtk_blulight_def_support u:object_r:mtk_pq_ro_prop:s0
 ro.vendor.mtk_chameleon_support u:object_r:mtk_pq_ro_prop:s0
@@ -374,6 +375,7 @@ vendor.audio.mic.                    u:object_r:vendor_audio_prop:s0
 vendor.audio.chk.                    u:object_r:vendor_audio_prop:s0
 vendor.audio.nfc.                    u:object_r:vendor_audio_prop:s0
 vendor.audio.spkcal.                 u:object_r:vendor_audio_prop:s0
+ro.vendor.qti.va_aosp.               u:object_r:vendor_audio_prop:s0
 
 # BT
 vendor.bt.                           u:object_r:vendor_bt_prop:s0

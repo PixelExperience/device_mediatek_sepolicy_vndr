@@ -30,3 +30,6 @@ get_prop(vpud_native, hwservicemanager_prop)
 set_prop(vpud_native, vendor_video_prop)
 
 allow vpud_native sysfs_boot_mode:file rw_file_perms;
+
+# Aee props by OMX blobs
+get_prop(vpud_native, ro_mtk_aee_prop)
