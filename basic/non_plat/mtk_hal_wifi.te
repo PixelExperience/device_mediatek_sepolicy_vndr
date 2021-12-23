@@ -5,3 +5,4 @@ type mtk_hal_wifi_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(mtk_hal_wifi)
 
 set_prop(mtk_hal_wifi, wlan_fw_prop)
+get_prop(mtk_hal_wifi, mtk_wifi_hotspot_prop)
