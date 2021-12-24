@@ -22,3 +22,4 @@ hal_client_domain(hal_drm_widevine, hal_capi)
 hal_client_domain(hal_drm_widevine, hal_allocator)
 allow hal_drm_widevine teei_client_device:chr_file rw_file_perms;
 get_prop(hal_drm_widevine, ro_vendor_mtk_trustonic_tee_prop)
+get_prop(hal_drm_widevine, ro_vendor_mtk_microtrust_tee_prop)
