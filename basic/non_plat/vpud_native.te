@@ -27,6 +27,8 @@ MTK_M4U_T_CACHE_SYNC
 };
 
 get_prop(vpud_native, hwservicemanager_prop)
+get_prop(vpud_native, vendor_debug_prop)
+get_prop(vpud_native, mtk_default_prop)
 set_prop(vpud_native, vendor_video_prop)
 
 allow vpud_native sysfs_boot_mode:file rw_file_perms;
