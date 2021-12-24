@@ -51,6 +51,7 @@ allow mtk_hal_bluetooth wmt_prop:property_service set;
 
 # Purpose: Allow to search metadata files
 allow mtk_hal_bluetooth metadata_file:dir search;
+allow mtk_hal_bluetooth gsi_metadata_file:dir search;
 
 # Purpose: Allow connsys props
 get_prop(mtk_hal_bluetooth, wmt_prop)
