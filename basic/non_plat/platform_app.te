@@ -1,5 +1,3 @@
-typeattribute platform_app mlstrustedsubject;
-
 # Purpose : get/set agps configuration via mtk_hal_lbs
 hal_client_domain(platform_app, mtk_hal_lbs)
 
