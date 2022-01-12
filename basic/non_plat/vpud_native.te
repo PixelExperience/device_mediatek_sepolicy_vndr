@@ -35,3 +35,6 @@ allow vpud_native sysfs_boot_mode:file rw_file_perms;
 
 # Aee props by OMX blobs
 get_prop(vpud_native, ro_mtk_aee_prop)
+
+# Mtk video encoder
+get_prop(vpud_native, mtk_venc_h264_showlog_prop)
