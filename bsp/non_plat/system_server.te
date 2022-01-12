@@ -97,7 +97,7 @@ allow system_server netd:process signal;
 # Date: W17.42
 # Operation : Migration
 # Purpose : for WFD functionality
-allow system_server media_wfd_prop:property_service set;
+allow system_server vendor_media_wfd_prop:property_service set;
 allow system_server wifi_prop:property_service set;
 
 # Date:W17.47

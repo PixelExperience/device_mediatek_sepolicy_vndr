@@ -82,7 +82,7 @@ allow mediaserver system_app_data_file:file { read getattr };
 set_prop(mediaserver,system_prop)
 
 # Purpose: Allow ioctl and property operations
-get_prop(mediaserver, media_wfd_prop)
+get_prop(mediaserver, vendor_media_wfd_prop)
 allowxperm mediaserver proc_perfmgr:file ioctl {
   PERFMGR_FPSGO_QUEUE
   PERFMGR_FPSGO_DEQUEUE

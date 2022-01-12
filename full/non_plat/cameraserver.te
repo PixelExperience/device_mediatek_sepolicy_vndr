@@ -27,7 +27,7 @@ allow cameraserver mtk_rrc_device:chr_file { read write ioctl open };
 allow cameraserver MJC_device:chr_file { read write ioctl open };
 
 # Purpose : WFD and MET Latency measurement
-allow cameraserver media_wfd_prop:property_service set;
+allow cameraserver vendor_media_wfd_prop:property_service set;
 
 # Purpose : Dump camera buffer to sdcard for debug
 #============= cameraserver ==============

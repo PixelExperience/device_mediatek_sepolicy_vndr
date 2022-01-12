@@ -64,7 +64,7 @@ system_internal_prop(vendor_vt_prop)
 system_internal_prop(mtk_update_prop)
 
 #=============allow system_server to set media.wfd.*==============
-system_internal_prop(media_wfd_prop)
+system_internal_prop(vendor_media_wfd_prop)
 
 #=============allow telephony modules to set mtk_vsim_prop==============
 vendor_public_prop(mtk_vsim_prop)

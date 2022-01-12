@@ -96,7 +96,7 @@ persist.vendor.update_finished u:object_r:mtk_update_prop:s0
 persist.vendor.previous_slot u:object_r:mtk_update_prop:s0
 
 #=============allow system_server to set vendor.media.wfd.*==============
-vendor.media.wfd. u:object_r:media_wfd_prop:s0
+vendor.media.wfd. u:object_r:vendor_media_wfd_prop:s0
 
 #=======================allow vsim===========================
 vendor.gsm.disable.sim.dialog     u:object_r:mtk_vsim_sys_prop:s0

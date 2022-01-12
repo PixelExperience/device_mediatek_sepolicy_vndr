@@ -28,7 +28,7 @@ allow mediaserver MJC_device:chr_file { read write ioctl open };
 allow mediaserver audio_ipi_device:chr_file { read write ioctl open };
 
 # Purpose : WFD and MET Latency measurement
-allow mediaserver media_wfd_prop:property_service set;
+allow mediaserver vendor_media_wfd_prop:property_service set;
 
 # Purpose : Play tone for alert
 allow mediaserver custom_file:file {read getattr};

@@ -62,7 +62,7 @@ allow radio st21nfc_device:chr_file { read write getattr ioctl open };
 set_prop(radio,hwservicemanager_prop);
 
 # Purpose : for engineermode WFD IOT property
-set_prop(radio,media_wfd_prop);
+set_prop(radio,vendor_media_wfd_prop);
 
 # Purpose : Allow to use HAL rcs
 hal_client_domain(radio, hal_rcs);
