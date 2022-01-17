@@ -328,3 +328,6 @@ get_prop(mtk_hal_camera, mtk_emcamera_prop)
 
 # Allow to call neuralnetworks hal
 allow mtk_hal_camera mtk_hal_neuralnetworks:binder call;
+
+# PQ
+get_prop(mtk_hal_camera, mtk_pq_prop)
