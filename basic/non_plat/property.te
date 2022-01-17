@@ -1,5 +1,5 @@
 # MTK properties, allow all system/vendor processes to read.
-vendor_internal_prop(mtk_default_prop)
+vendor_restricted_prop(mtk_default_prop)
 
 #=============allow ccci_mdinit to start gsm0710muxd==============
 vendor_internal_prop(ctl_gsm0710muxd_prop)
@@ -79,7 +79,7 @@ vendor_public_prop(tel_switch_prop)
 system_internal_prop(bootani_prop)
 
 #=============allow mnld_prop==============
-vendor_internal_prop(mnld_prop)
+vendor_restricted_prop(mnld_prop)
 
 #=============allow audiohal==============
 vendor_internal_prop(audiohal_prop)
@@ -231,10 +231,10 @@ vendor_public_prop(mtk_ss_vendor_prop)
 vendor_internal_prop(mtk_gps_support_prop)
 
 #=============mtk rat config property=============
-vendor_internal_prop(mtk_rat_config_prop)
+vendor_restricted_prop(mtk_rat_config_prop)
 
 #=============mtk aal property=============
-vendor_internal_prop(mtk_aal_ro_prop)
+vendor_restricted_prop(mtk_aal_ro_prop)
 
 #=============mtk pq property=============
 vendor_public_prop(mtk_pq_ro_prop)

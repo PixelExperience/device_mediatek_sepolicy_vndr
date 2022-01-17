@@ -102,7 +102,7 @@ vendor_internal_prop(mtk_cta_log_prop)
 vendor_public_prop(mtk_mobile_management_prop)
 
 #=============allow vendor_init to set ro.vendor.mtk_wfd_support==============
-vendor_internal_prop(ro_vendor_mtk_wfd_support_prop)
+vendor_restricted_prop(ro_vendor_mtk_wfd_support_prop)
 
 #=============allow mtk duraspeed property==============
 vendor_internal_prop(mtk_duraspeed_prop)
@@ -121,10 +121,10 @@ vendor_internal_prop(mtk_ims_eims_pdn_prop)
 vendor_internal_prop(mtk_extsim_prop)
 
 #=============allow Modem Monitor property===========
-vendor_internal_prop(mtk_mdm_prop)
+vendor_restricted_prop(mtk_mdm_prop)
 
 #=============allow Modem World Mode property===========
-vendor_internal_prop(mtk_mdworldmode_prop)
+vendor_restricted_prop(mtk_mdworldmode_prop)
 
 # OMA DRM
 vendor_internal_prop(mtk_oma_drm_support_prop)
@@ -142,7 +142,7 @@ vendor_internal_prop(mtk_active_noise_cancel_prop)
 vendor_internal_prop(mtk_wapi_support_prop)
 
 #=============allow FastDormancy support property===============
-vendor_internal_prop(mtk_fd_support_prop)
+vendor_restricted_prop(mtk_fd_support_prop)
 
 #=============allow wappush property===========
 vendor_internal_prop(mtk_wappush_prop)
