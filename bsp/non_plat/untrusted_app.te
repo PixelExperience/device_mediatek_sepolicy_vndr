@@ -38,3 +38,10 @@ allow untrusted_app debugfs_ion:dir search;
 # Purpose: Allow untrusted_app to access mdlactl_device and vpu_device
 allow untrusted_app mdla_device:chr_file { rw_file_perms };
 allow untrusted_app vpu_device:chr_file { rw_file_perms };
+
+# Purpose: Netflix Widevine
+allow untrusted_app proc_atf_log:dir search;
+allow untrusted_app proc_m4u:dir search;
+get_prop(tkcore_prop, untrusted_app)
+get_prop(ro_vendor_mtk_trustonic_tee_prop, untrusted_app)
+get_prop(ro_vendor_mtk_microtrust_tee_prop, untrusted_app)

@@ -100,3 +100,6 @@ allow surfaceflinger mtk_dfrc_device:chr_file rw_file_perms;
 
 # purpose: Allow to SF communicate with HAL GPU
 hal_client_domain(surfaceflinger, hal_gpu)
+
+# Purpose: Netflix Widevine
+allow surfaceflinger teei_client_device:chr_file rw_file_perms;
