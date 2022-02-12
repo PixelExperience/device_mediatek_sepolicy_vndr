@@ -426,9 +426,10 @@ net.dns4                          u:object_r:net_dn_prop:s0
 persist.factoryota.                  u:object_r:factor_prop:s0
 
 # RenderThread
-ro.vendor.globalpq.       u:object_r:render_prop:s0
-persist.vendor.dp.        u:object_r:render_prop:s0
-vendor.dp.                u:object_r:render_prop:s0
+ro.vendor.globalpq.                     u:object_r:render_prop:s0
+persist.vendor.dp.                      u:object_r:render_prop:s0
+vendor.dp.                              u:object_r:render_prop:s0
+ro.vendor.mtk_hdr_video_support         u:object_r:render_prop:s0
 
 # RIL
 ro.vendor.ril              u:object_r:public_vendor_default_prop:s0
