@@ -42,6 +42,6 @@ allow untrusted_app vpu_device:chr_file { rw_file_perms };
 # Purpose: Netflix Widevine
 allow untrusted_app proc_atf_log:dir search;
 allow untrusted_app proc_m4u:dir search;
-get_prop(tkcore_prop, untrusted_app)
-get_prop(ro_vendor_mtk_trustonic_tee_prop, untrusted_app)
-get_prop(ro_vendor_mtk_microtrust_tee_prop, untrusted_app)
+get_prop(untrusted_app, tkcore_prop)
+get_prop(untrusted_app, ro_vendor_mtk_trustonic_tee_prop)
+get_prop(untrusted_app, ro_vendor_mtk_microtrust_tee_prop)
