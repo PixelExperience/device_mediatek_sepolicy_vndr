@@ -9,7 +9,7 @@ type tkcore_log_file, file_type, data_file_type;
 
 type tkcore_systa_file, file_type, vendor_file_type;
 
-vendor_internal_prop(tkcore_prop)
+vendor_public_prop(tkcore_prop)
 type tkcore_block_device, dev_type;
 
 init_daemon_domain(tkcore)
