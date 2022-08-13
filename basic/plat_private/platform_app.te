@@ -8,6 +8,3 @@ hal_client_domain(platform_app, hal_power)
 # Package: com.debug.loggerui
 allow platform_app debuglog_data_file:dir create_dir_perms;
 allow platform_app debuglog_data_file:file create_file_perms;
-
-# allow systemui to set boot animation colors
-set_prop(platform_app, bootanim_system_prop);
