@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : 2021/07/16
+# Purpose : Allow HMP custom api request
+allow untrusted_app_29 data_vendor_hmp_file:dir { rw_dir_perms };
+allow untrusted_app_29 data_vendor_hmp_file:file { rw_file_perms };

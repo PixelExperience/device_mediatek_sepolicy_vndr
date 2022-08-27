@@ -1,0 +1,13 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# HwBinder IPC from clients into server, and callbacks
+binder_call(hal_mtk_mms_client, hal_mtk_mms_server)
+binder_call(hal_mtk_mms_server, hal_mtk_mms_client)
+
+# add/find permission rule to hwservicemanager
+add_hwservice(hal_mtk_mms_server, mtk_hal_mms_hwservice)
+
+# give permission for hal client
+allow hal_mtk_mms_client mtk_hal_mms_hwservice:hwservice_manager find;

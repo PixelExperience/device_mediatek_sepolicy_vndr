@@ -1,64 +1,50 @@
-type ccci_mdinit_exec , exec_type, file_type, vendor_file_type;
-type ccci_mdinit ,domain;
+type ccci_mdinit, domain;
+type ccci_mdinit_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(ccci_mdinit)
 wakelock_use(ccci_mdinit)
 
-#=============allow ccci_mdinit to start gsm0710muxd==============
-set_prop(ccci_mdinit, ctl_gsm0710muxd_prop)
-
-#=============allow ccci_mdinit to start emcsmdlogger==============
-set_prop(ccci_mdinit, ctl_mdlogger_prop)
-
 #=============allow ccci_mdinit to start c2krild==============
-set_prop(ccci_mdinit, ctl_viarild_prop)
+set_prop(ccci_mdinit, vendor_mtk_ctl_viarild_prop)
 
 #=============allow ccci_mdinit to start/stop rild, mdlogger==============
-set_prop(ccci_mdinit, ctl_mdlogger_prop)
-set_prop(ccci_mdinit, ctl_emdlogger1_prop)
-set_prop(ccci_mdinit, ctl_emdlogger2_prop)
-set_prop(ccci_mdinit, ctl_emdlogger3_prop)
-set_prop(ccci_mdinit, ctl_dualmdlogger_prop)
-set_prop(ccci_mdinit, ctl_gsm0710muxd_prop)
-set_prop(ccci_mdinit, ctl_gsm0710muxd-s_prop)
-set_prop(ccci_mdinit, ctl_gsm0710muxd-d_prop)
-set_prop(ccci_mdinit, ctl_ril-daemon-mtk_prop)
-set_prop(ccci_mdinit, ctl_fusion_ril_mtk_prop)
-set_prop(ccci_mdinit, ctl_ril-daemon-s_prop)
-set_prop(ccci_mdinit, ctl_ril-daemon-d_prop)
-set_prop(ccci_mdinit, ctl_ril-proxy_prop)
-set_prop(ccci_mdinit, ril_active_md_prop)
-set_prop(ccci_mdinit, mtk_md_prop)
-#set_prop(ccci_mdinit, radio_prop)
-set_prop(ccci_mdinit, net_cdma_mdmstat)
+set_prop(ccci_mdinit, system_mtk_ctl_mdlogger_prop)
+set_prop(ccci_mdinit, system_mtk_ctl_emdlogger1_prop)
+set_prop(ccci_mdinit, system_mtk_ctl_emdlogger2_prop)
+set_prop(ccci_mdinit, system_mtk_ctl_emdlogger3_prop)
+set_prop(ccci_mdinit, vendor_mtk_ctl_gsm0710muxd_prop)
+set_prop(ccci_mdinit, vendor_mtk_ctl_ril-daemon-mtk_prop)
+set_prop(ccci_mdinit, vendor_mtk_ctl_fusion_ril_mtk_prop)
+set_prop(ccci_mdinit, vendor_mtk_ctl_ril-proxy_prop)
+set_prop(ccci_mdinit, vendor_mtk_ril_active_md_prop)
+set_prop(ccci_mdinit, vendor_mtk_md_prop)
+set_prop(ccci_mdinit, vendor_mtk_net_cdma_mdmstat_prop)
 set_prop(ccci_mdinit, ctl_start_prop)
-
-#=============allow ccci_mdinit to get tel_switch_prop==============
-get_prop(ccci_mdinit, tel_switch_prop)
+get_prop(ccci_mdinit, vendor_mtk_tel_switch_prop)
 
 #=============allow ccci_mdinit to start/stop fsd==============
-set_prop(ccci_mdinit, ctl_ccci_fsd_prop)
-set_prop(ccci_mdinit, ctl_ccci2_fsd_prop)
-set_prop(ccci_mdinit, ctl_ccci3_fsd_prop)
+set_prop(ccci_mdinit, vendor_mtk_ctl_ccci_fsd_prop)
+set_prop(ccci_mdinit, vendor_mtk_ctl_ccci2_fsd_prop)
+set_prop(ccci_mdinit, vendor_mtk_ctl_ccci3_fsd_prop)
 
-get_prop(ccci_mdinit, init_svc_emdlogger1_prop)
-get_prop(ccci_mdinit, init_svc_aee_aedv_prop)
+get_prop(ccci_mdinit, system_mtk_init_svc_emdlogger1_prop)
 
 allow ccci_mdinit ccci_device:chr_file rw_file_perms;
 allow ccci_mdinit ccci_monitor_device:chr_file rw_file_perms;
 
+allow ccci_mdinit ccci_ccb_device:chr_file rw_file_perms;
+
 #=============allow ccci_mdinit to access MD NVRAM==============
 allow ccci_mdinit nvram_data_file:dir rw_dir_perms;
 allow ccci_mdinit nvram_data_file:file create_file_perms;
-allow ccci_mdinit nvram_data_file:lnk_file read;
-allow ccci_mdinit nvdata_file:lnk_file read;
-allow ccci_mdinit nvdata_file:dir rw_dir_perms;
+allow ccci_mdinit nvram_data_file:lnk_file r_file_perms;
+allow ccci_mdinit nvdata_file:lnk_file r_file_perms;
 allow ccci_mdinit nvdata_file:file create_file_perms;
 allow ccci_mdinit nvram_device:chr_file rw_file_perms;
-allow ccci_mdinit system_data_file:lnk_file read;
+read_fstab(ccci_mdinit)
+get_prop(ccci_mdinit, vendor_mtk_rat_config_prop)
 
 #=============allow ccci_mdinit to access ccci config==============
-allow ccci_mdinit protect_f_data_file:dir rw_dir_perms;
 allow ccci_mdinit protect_f_data_file:file create_file_perms;
 
 #=============allow ccci_mdinit to property==============
@@ -67,7 +53,7 @@ allow ccci_mdinit protect_s_data_file:file create_file_perms;
 allow ccci_mdinit nvram_device:blk_file rw_file_perms;
 allow ccci_mdinit nvdata_device:blk_file rw_file_perms;
 
-set_prop(ccci_mdinit, ril_mux_report_case_prop)
+set_prop(ccci_mdinit, vendor_mtk_ril_mux_report_case_prop)
 
 allow ccci_mdinit ccci_cfg_file:dir create_dir_perms;
 allow ccci_mdinit ccci_cfg_file:file create_file_perms;
@@ -94,8 +80,7 @@ allow ccci_mdinit sysfs_ccci:dir search;
 allow ccci_mdinit sysfs_ccci:file rw_file_perms;
 allow ccci_mdinit sysfs_ssw:dir search;
 allow ccci_mdinit sysfs_ssw:file r_file_perms;
-allow ccci_mdinit sysfs:file r_file_perms;
-allow ccci_mdinit sysfs_boot_mode:file { read open };
+allow ccci_mdinit sysfs_boot_info:file r_file_perms;
 
 # Purpose : Allow ccci_mdinit to open and read/write /proc/bootprof
 allow ccci_mdinit proc_bootprof:file rw_file_perms;
@@ -105,13 +90,78 @@ allow ccci_mdinit mnt_vendor_file:dir search;
 
 # Purpose : Allow ccci_mdinit call sysenv_get and sysenv_set
 allow ccci_mdinit block_device:dir search;
-allow ccci_mdinit metadata_file:dir search;
 allow ccci_mdinit proc_cmdline:file r_file_perms;
 allow ccci_mdinit sysfs_dt_firmware_android:dir { open read search };
 allow ccci_mdinit sysfs_dt_firmware_android:file { getattr open read };
 
-get_prop(ccci_mdinit, mtk_cxp_vendor_prop)
-get_prop(ccci_mdinit, service_nvram_init_prop)
+get_prop(ccci_mdinit, vendor_mtk_cxp_vendor_prop)
+get_prop(ccci_mdinit, vendor_mtk_service_nvram_init_prop)
 
 # GSI
 allow ccci_mdinit gsi_metadata_file:dir search;
+
+# ==============================================
+# Policy File of /vendor/bin/ccci_fs Executable File
+
+#============= ccci_fsd MD NVRAM==============
+allow ccci_mdinit nvram_data_file:dir create_dir_perms;
+allow ccci_mdinit nvdata_file:dir create_dir_perms;
+
+#============= ccci_fsd MD Data==============
+allow ccci_mdinit protect_f_data_file:dir create_dir_perms;
+allow ccci_mdinit protect_s_data_file:dir create_dir_perms;
+
+#============= ccci_fsd MD3 related==============
+allow ccci_mdinit c2k_file:dir create_dir_perms;
+allow ccci_mdinit c2k_file:file create_file_perms;
+allow ccci_mdinit otp_part_block_device:blk_file rw_file_perms;
+allow ccci_mdinit otp_device:chr_file rw_file_perms;
+allow ccci_mdinit sysfs_boot_type:file r_file_perms;
+
+#============= ccci_fsd MD block data==============
+#restore>NVM_GetDeviceInfo>open  /dev/block/by-name/nvram
+allow ccci_mdinit nvcfg_file:dir create_dir_perms;
+allow ccci_mdinit nvcfg_file:file create_file_perms;
+
+#============= ccci_fsd cryption related ==============
+allow ccci_mdinit rawfs:dir create_dir_perms;
+allow ccci_mdinit rawfs:file create_file_perms;
+
+# Purpose: for fstab parser
+allow ccci_mdinit kmsg_device:chr_file w_file_perms;
+
+#============= ccci_fsd MD Low Power Monitor Related ==============
+allow ccci_mdinit ccci_data_md1_file:dir create_dir_perms;
+allow ccci_mdinit ccci_data_md1_file:file create_file_perms;
+allow ccci_mdinit sysfs_devices_block:dir search;
+allow ccci_mdinit sysfs_devices_block:file r_file_perms;
+
+#============= ccci_fsd access vendor/etc/md file ==============
+allow ccci_mdinit vendor_etc_md_file:dir search;
+allow ccci_mdinit vendor_etc_md_file:file r_file_perms;
+
+#============= ccci_fsd access data/vendor_de/md file ==============
+allow ccci_mdinit data_vendor_de_md_file:dir create_dir_perms;
+allow ccci_mdinit data_vendor_de_md_file:file create_file_perms;
+
+allow ccci_mdinit unlabeled:dir rw_dir_perms;
+allow ccci_mdinit unlabeled:file rw_file_perms;
+
+# Purpose: allow ccci_mdinit to access ccci_dump
+allow ccci_mdinit proc_ccci_dump:file w_file_perms;
+
+# Allow ReadDefaultFstab().
+read_fstab(ccci_mdinit)
+
+allow ccci_mdinit mcf_ota_block_device:dir search;
+
+# Purpose : change sepolicy for MCF3.0
+allow ccci_mdinit sysfs_dt_firmware_android:file r_file_perms;
+allow ccci_mdinit proc_version:file r_file_perms;
+allow ccci_mdinit mcf_ota_file:dir { getattr search };
+allow ccci_mdinit mcf_ota_file:file rw_file_perms;
+
+# Purpose : access boot mode
+allow ccci_mdinit sysfs_boot_mode:file r_file_perms;
+
+get_prop(ccci_mdinit, vendor_mtk_debug_md_reset_prop)

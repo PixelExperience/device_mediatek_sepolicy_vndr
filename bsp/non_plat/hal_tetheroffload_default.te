@@ -1,0 +1,36 @@
+# ==============================================
+# Policy File of /vendor/bin/hw/tetheroffloadservice Executable File
+
+
+# ==============================================
+# New design
+# ==============================================
+# associate netdomain to use for accessing internet sockets
+net_domain(hal_tetheroffload_default)
+
+# Register to hwbinder service
+add_hwservice(hal_tetheroffload_default, hal_tetheroffload_hwservice)
+
+allow hal_tetheroffload_default self:{
+    netlink_socket
+    netlink_generic_socket
+} create_socket_perms_no_ioctl;
+
+#============= for binder call ==============
+allow hal_tetheroffload_default system_server:binder call;
+allow hal_tetheroffload_default netdagent:binder call;
+
+#============= mddp device ==============
+allow hal_tetheroffload_default mddp_device:chr_file rw_file_perms;
+
+#============= proc ==============
+allow hal_tetheroffload_default proc_net:file r_file_perms;
+
+#=============for other hild services==============
+hal_client_domain(hal_tetheroffload_default,mtk_hal_netdagent);
+
+#============= other rules ==============
+allow hal_tetheroffload_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow hal_tetheroffload_default self:netlink_route_socket create_socket_perms_no_ioctl;
+allow hal_tetheroffload_default system_server:netlink_netfilter_socket {read write};
+allow hal_tetheroffload_default system_server:fd use;

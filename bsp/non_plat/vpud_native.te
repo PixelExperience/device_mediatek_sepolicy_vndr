@@ -1,2 +1,11 @@
-get_prop(vpud_native, ro_vendor_mtk_trustonic_tee_prop)
-get_prop(vpud_native, ro_vendor_mtk_microtrust_tee_prop)
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+allow vpud_native teei_client_device:chr_file rw_file_perms;
+allow vpud_native mobicore_user_device:chr_file rw_file_perms;
+
+# Date: 2021/04/30
+# Operation : SVP Migration
+# Purpose :allow to access vendor_mtk_sec_video_path_support_prop
+get_prop(vpud_native, vendor_mtk_sec_video_path_support_prop)

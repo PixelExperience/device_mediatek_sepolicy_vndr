@@ -1,0 +1,6 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Read ro.vendor.mtk_mapi_support
+get_prop(mdi_redirector, vendor_mtk_dmc_prop)

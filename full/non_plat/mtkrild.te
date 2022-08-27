@@ -1,4 +1,0 @@
-typeattribute mtkrild mtkimsapdomain;
-
-#=============allow Rild (NetAgent) call ip command=============
-domain_auto_trans(mtkrild, netutils_wrapper_exec, netutils_wrapper)

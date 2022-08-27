@@ -1,1 +1,7 @@
-type boot_logo_updater ,domain;
+# ==============================================
+# Policy File of /system/bin/boot_logo_updater Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type boot_logo_updater, domain;

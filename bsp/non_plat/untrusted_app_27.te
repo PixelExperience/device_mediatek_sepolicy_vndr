@@ -1,4 +1,14 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date: 2019/06/17
+# Operation : Migration
 # Purpose :allow untrusted_app_27 to get props
-get_prop(untrusted_app_27, apexd_prop)
-get_prop(untrusted_app_27, atci_sys_prop)
-get_prop(untrusted_app_27, atm_ipaddr_prop)
+get_prop(untrusted_app_27, vendor_mtk_atci_sys_prop)
+get_prop(untrusted_app_27, vendor_mtk_atm_ipaddr_prop)
+
+# Date: 2020/06/29
+# Operation : eMBMS Migration
+# Purpose :allow EXPWAY middleware to access the socket
+allow untrusted_app_27 radio:unix_stream_socket connectto;

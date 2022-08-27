@@ -1,0 +1,19 @@
+# ==============================================================================
+# Type Declaration
+# ==============================================================================
+type mtk_hal_memtrack, domain;
+type mtk_hal_memtrack_exec, exec_type, file_type, vendor_file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+init_daemon_domain(mtk_hal_memtrack)
+
+hal_server_domain(mtk_hal_memtrack, hal_memtrack)
+
+# Date : 2021/08/24
+# Operation: S migration
+# Purpose: Add permission for access /proc/dmaheap/*
+allow mtk_hal_memtrack proc_dmaheap:dir r_dir_perms;
+allow mtk_hal_memtrack proc_dmaheap:file rw_file_perms;

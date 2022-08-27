@@ -1,6 +1,12 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
 # HwBinder IPC from clients into server, and callbacks
 binder_call(hal_clientapi_client, hal_clientapi_server)
 binder_call(hal_clientapi_server, hal_clientapi_client)
+
+add_hwservice(hal_clientapi_server, volte_clientapi_ua_hwservice)
 
 # give permission for hal client
 allow hal_clientapi_client volte_clientapi_ua_hwservice:hwservice_manager find;

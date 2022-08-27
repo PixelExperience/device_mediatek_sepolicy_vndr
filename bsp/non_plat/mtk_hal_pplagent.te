@@ -2,5 +2,8 @@
 binder_call(mtk_hal_pplagent_client, mtk_hal_pplagent_server)
 binder_call(mtk_hal_pplagent_server, mtk_hal_pplagent_client)
 
+
+add_hwservice(mtk_hal_pplagent, mtk_hal_pplagent_hwservice)
+
 add_hwservice(mtk_hal_pplagent_server, mtk_hal_pplagent_hwservice)
 allow mtk_hal_pplagent_client mtk_hal_pplagent_hwservice:hwservice_manager find;

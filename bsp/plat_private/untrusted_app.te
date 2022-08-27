@@ -1,3 +1,13 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : 2017/12/21
+# Operation: IT
 # Purpose : For hongbao optimization
-allow untrusted_app    mtk_connmetrics_service:service_manager find;
-allow untrusted_app_25 mtk_connmetrics_service:service_manager find;
+allow untrusted_app mtk_connmetrics_service:service_manager find;
+
+# Date: 2018/07/09
+# Operator: New feature for VSIM SQC
+# Purpose: allow vendor's osi to use tcp socket
+allow untrusted_app osi:tcp_socket create_socket_perms_no_ioctl;

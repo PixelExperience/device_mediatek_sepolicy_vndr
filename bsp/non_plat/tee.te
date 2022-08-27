@@ -1,0 +1,83 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : 2016/06/01
+# Operation: TEEI integration
+# Purpose: Microtrust teei_daemon service
+allow tee self:capability { sys_module setuid setgid sys_rawio };
+
+allow tee teei_config_device:chr_file rw_file_perms;
+allow tee teei_client_device:chr_file { create setattr unlink rw_file_perms };
+allow tee teei_vfs_device:chr_file rw_file_perms;
+allow tee teei_rpmb_device:chr_file rw_file_perms;
+allow tee teei_data_file:dir create_dir_perms;
+allow tee teei_data_file:file create_file_perms;
+
+allow tee teei_control_file:dir r_dir_perms;
+allow tee teei_control_file:file rw_file_perms;;
+allow tee teei_control_file:lnk_file rw_file_perms;;
+
+# allow teei_daemon access /persist section
+allow tee mnt_vendor_file:dir create_dir_perms;
+allow tee mnt_vendor_file:file create_file_perms;
+allow tee persist_data_file:dir create_dir_perms;
+allow tee persist_data_file:file create_file_perms;
+
+# enable access android property
+set_prop(tee, vendor_mtk_soter_teei_prop)
+
+# for debug only
+allow tee kmsg_device:chr_file w_file_perms;
+
+# allow tee read ut_keymaster data
+allow tee ut_keymaster_device:chr_file rw_file_perms;
+
+# allow load teei drm drivers
+allow tee block_device:dir search;
+allow tee teei_rpmb_device:blk_file rw_file_perms;
+allow tee nvram_device:blk_file rw_file_perms;
+
+# kernel device
+allow tee tkcore_admin_device:chr_file rw_file_perms;
+
+# sfs
+allow tee tkcore_data_file:dir create_dir_perms;
+allow tee tkcore_data_file:file { create_file_perms link };
+
+# persist
+allow tee protect_f_data_file:dir search;
+allow tee tkcore_protect_data_file:dir create_dir_perms;
+allow tee tkcore_protect_data_file:file { create_file_perms link };
+
+#rpmb
+allow tee self:capability sys_rawio;
+allow tee block_device:dir search;
+set_prop(tee, vendor_mtk_rpmb_ready_prop)
+
+allow tee rpmb_block_device:blk_file rw_file_perms;
+allowxperm tee rpmb_block_device:blk_file ioctl { MMC_IOCTLCMD MMC_IOC_MULTI_CMD UFS_IOCTLCMD UFS_IOCTL_RPMB };
+allow tee rpmb_device:chr_file rw_file_perms;
+allowxperm tee rpmb_device:chr_file ioctl { MMC_IOCTLCMD MMC_IOC_MULTI_CMD UFS_IOCTLCMD UFS_IOCTL_RPMB };
+
+# systa loading
+allow tee tkcore_systa_file:dir r_dir_perms;
+allow tee tkcore_systa_file:file r_file_perms;
+
+# spta mgmt/loading
+allow tee tkcore_spta_file:dir create_dir_perms;
+allow tee tkcore_spta_file:file create_file_perms;
+
+# logging
+allow tee tkcore_log_file:file create_file_perms;
+
+# allow tkcore to read/write vendor.trustkernel.* properties
+set_prop(tee, vendor_mtk_trustkernel_tee_prop);
+
+# maintaining version through /proc fs
+allow tee proc_tkcore:file rw_file_perms;
+allow tee proc_tkcore:dir search;
+
+allow tee bootdevice_block_device:blk_file rw_file_perms;
+allowxperm tee bootdevice_block_device:blk_file ioctl { MMC_IOC_MULTI_CMD UFS_IOCTL_RPMB};
+allow tee tee_data_file:dir create_dir_perms;

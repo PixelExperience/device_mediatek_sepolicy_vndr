@@ -1,8 +1,10 @@
-type mtk_hal_dfps, domain;
+# ==============================================
+# Type Declaration
+# ==============================================
 type mtk_hal_dfps_exec, exec_type, file_type, vendor_file_type;
 
 # ==============================================
-# MTK Policy Rule
+# Common SEPolicy Rule
 # ==============================================
 init_daemon_domain(mtk_hal_dfps)
 
@@ -14,7 +16,6 @@ hal_server_domain(mtk_hal_dfps, hal_dfps)
 add_hwservice(hal_dfps_server, mtk_hal_dfps_hwservice)
 
 # sysfs access.
-r_dir_file(mtk_hal_dfps, sysfs_type)
 r_dir_file(mtk_hal_dfps, proc_net);
 
 get_prop(mtk_hal_dfps, hwservicemanager_prop)

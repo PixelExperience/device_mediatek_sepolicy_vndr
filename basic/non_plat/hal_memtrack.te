@@ -1,0 +1,28 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : WK16.52
+# Operation : HIDL Migration
+# Purpose : For memtrack related service access
+allow hal_memtrack procfs_gpu_img:dir search;
+allow hal_memtrack procfs_gpu_img:file r_file_perms;
+
+# Date : 2020/06/29
+# Operation: R migration
+# Purpose: Add permission for access /proc/ion/*
+allow hal_memtrack proc_ion:dir r_dir_perms;
+allow hal_memtrack proc_ion:file r_file_perms;
+
+# Date : 2020/11/10
+# Operation: R migration replace debug node with proc node
+# Purpose: Add permission for access /proc/mali/memory_usage
+allow hal_memtrack proc_memory_usage:file r_file_perms;
+
+# Date : 2021/05/14
+# Operation: GPU DDK migration rename proc node
+# Purpose: Add permission for access /proc/mtk_mali/gpu_memory
+allow hal_memtrack proc_gpu_memory:file r_file_perms;
+
+# Purpose: Add permission for access proc/ion/clients/clients_summary
+allow hal_memtrack_default proc_ion_clients_summary:file r_file_perms;

@@ -1,6 +1,5 @@
 get_prop(untrusted_app_all, exported_default_prop)
-get_prop(untrusted_app_all, render_prop)
-get_prop(untrusted_app_all, vendor_debug_prop)
+get_prop(untrusted_app_all, vendor_render_prop)
 
 # Executing files from an application home directory violates
 # W^X (https://en.wikipedia.org/wiki/W%5EX) constraints (loading executable code
@@ -10,6 +9,15 @@ auditallow untrusted_app_all app_data_file:file { execute execute_no_trans };
 
 # Untrusted apps are not allowed to use cgroups.
 dontaudit untrusted_app_all cgroup:file *;
+
+# Date: 2020/06/08
+# Purpose: Allow untrusted app to access mtk jpeg
+allow untrusted_app_all proc_mtk_jpeg:file rw_file_perms;
+allowxperm untrusted_app_all proc_mtk_jpeg:file ioctl {
+      JPG_BRIDGE_DEC_IO_LOCK
+      JPG_BRIDGE_DEC_IO_WAIT
+      JPG_BRIDGE_DEC_IO_UNLOCK
+};
 
 allow untrusted_app_all proc_zoneinfo:file r_file_perms;
 allow untrusted_app_all input_device:chr_file getattr;
@@ -23,7 +31,6 @@ allow untrusted_app_all proc_vmstat:file { getattr map };
 allow untrusted_app_all sysfs_therm:dir r_dir_perms;
 allow untrusted_app_all sysfs_therm:file r_file_perms;
 allow untrusted_app_all cache_file:lnk_file r_file_perms;
-allow untrusted_app_all proc_battery_cmd:dir r_dir_perms;
 allow untrusted_app_all proc_cpufreq:dir r_dir_perms;
 allow untrusted_app_all proc_mtkcooler:dir r_dir_perms;
 allow untrusted_app_all dalvikcache_data_file:file execute;
@@ -36,6 +43,8 @@ allow untrusted_app_all proc_cm_mgr:dir r_dir_perms;
 allow untrusted_app_all proc_isp_p2:dir r_dir_perms;
 allow untrusted_app_all proc_thermal:dir r_dir_perms;
 allow untrusted_app_all hal_graphics_allocator_default_tmpfs:file r_file_perms;
-allow untrusted_app_all hal_mms_hwservice:hwservice_manager find;
+allow untrusted_app_all mtk_hal_mms_hwservice:hwservice_manager find;
 allow untrusted_app_all mtk_hal_mms:binder call;
-allow untrusted_app_all proc_devices:file r_file_perms;
+allow untrusted_app_all proc_bus_input:file r_file_perms;
+
+get_prop(untrusted_app_all, vendor_mtk_gpu_prop)

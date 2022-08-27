@@ -1,2 +1,18 @@
-# Purpose : access gpu hal
-hal_client_domain(cameraserver, hal_gpu)
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : WK15.32
+# Operation : Migration
+# Purpose : for control CPU during camera working flow
+allow cameraserver mtk_perf_service:service_manager find;
+
+# Date : WK16.30
+# Operation : Migration
+set_prop(cameraserver, debug_prop)
+set_prop(cameraserver, system_prop)
+
+# Date : WK16.35
+# Operation : Migration
+# Purpose : allow camera to access log too much detect property
+set_prop(cameraserver, system_mtk_logmuch_prop)

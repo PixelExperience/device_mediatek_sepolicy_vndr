@@ -1,0 +1,24 @@
+# ==============================================
+# Policy File of /vendor/bin/xgff_test Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type xgff_test_native_exec, exec_type, file_type, vendor_file_type;
+type xgff_test_native, domain;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+init_daemon_domain(xgff_test_native)
+
+allow xgff_test_native self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow xgff_test_native sysfs_boot_mode:file r_file_perms;
+hal_client_domain(xgff_test_native, hal_power)
+
+allow xgff_test_native proc_perfmgr:dir r_dir_perms;
+allow xgff_test_native proc_perfmgr:file rw_file_perms;
+allowxperm xgff_test_native proc_perfmgr:file ioctl {
+ PERFMGR_XGFFRAME_START
+ PERFMGR_XGFFRAME_END
+};

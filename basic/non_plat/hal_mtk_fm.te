@@ -1,0 +1,10 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_mtk_fm, mtk_hal_fm_hwservice)
+
+binder_call(hal_mtk_fm_client, hal_mtk_fm_server)
+binder_call(hal_mtk_fm_server, hal_mtk_fm_client)
+
+vndbinder_use(hal_mtk_fm)

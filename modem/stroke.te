@@ -1,0 +1,8 @@
+type stroke, domain;
+type stroke_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(stroke)
+
+allow stroke init:unix_stream_socket rw_socket_perms_no_ioctl;
+allow stroke self:capability2 block_suspend;
+allow stroke sysfs_wake_lock:file rw_file_perms;

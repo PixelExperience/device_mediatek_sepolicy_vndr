@@ -1,0 +1,76 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# IMCB
+allow mtkimsmddomain ccci_device:chr_file { read write open };
+allow mtkimsmddomain fwmarkd_socket:sock_file write;
+allow mtkimsmddomain sysfs_ccci:dir search;
+allow mtkimsmddomain sysfs_ccci:file r_file_perms;
+allow mtkimsmddomain self:capability2 wake_alarm;
+set_prop(mtkimsmddomain, vendor_mtk_ril_mux_report_case_prop)
+allow mtkimsmddomain self:capability { setuid setgid chown net_raw } ;
+
+# Date : 2017/02/17
+# Purpose : ptty
+allow mtkimsmddomain devpts:chr_file { rw_file_perms setattr };
+
+# UA
+allow mtkimsmddomain volte_vt_socket:sock_file write;
+
+# IMSM
+allow mtkimsmddomain rild_imsm_socket:sock_file write;
+allow mtkimsmddomain mtkrild:unix_stream_socket connectto;
+allow mtkimsmddomain rild_mal_socket:sock_file write;
+allow mtkimsmddomain rild_mal_at_socket:sock_file write;
+allow mtkimsmddomain rild_mal_md2_socket:sock_file write;
+allow mtkimsmddomain rild_mal_at_md2_socket:sock_file write;
+unix_socket_send(mtkimsmddomain, wpa, wpa)
+allow mtkimsmddomain wpa:unix_dgram_socket sendto;
+
+# ePDG
+allow mtkimsmddomain dnsproxyd_socket:sock_file write;
+allow mtkimsmddomain ccci_device:chr_file { read write ioctl open };
+allow mtkimsmddomain devpts:chr_file { read write open };
+
+# MAL
+allow mtkimsmddomain tmpfs:lnk_file read;
+
+# VzW APN table
+allow mtkimsmddomain mal_data_file:dir create_dir_perms;
+allow mtkimsmddomain mal_data_file:file create_file_perms;
+
+# ATCP
+allow mtkimsmddomain devpts:chr_file { open read write ioctl };
+allow mtkimsmddomain devpts:chr_file { getattr setattr };
+
+# Netlink
+allow mtkimsmddomain self:netlink_route_socket { bind create write nlmsg_read };
+
+# RILD connection
+allow mtkimsmddomain mtkrild:unix_stream_socket connectto;
+allow mtkimsmddomain rild_mal_socket:sock_file write;
+allow mtkimsmddomain rild_mal_at_socket:sock_file write;
+allow mtkimsmddomain rild_mal_md2_socket:sock_file write;
+allow mtkimsmddomain rild_mal_at_md2_socket:sock_file write;
+
+# for RAN access wpa
+unix_socket_send(mtkimsmddomain, wpa, wpa)
+allow mtkimsmddomain wpa:unix_dgram_socket sendto;
+
+# RILPROXY
+allow mtkimsmddomain rild:unix_stream_socket connectto;
+
+set_prop(mtkimsmddomain, vendor_mtk_operator_id_prop)
+
+# Set permission for MAL
+vndbinder_use(mtkimsmddomain)
+
+# ViLTE
+allow mtkimsmddomain vtservice_hidl:unix_stream_socket connectto;
+
+# MD-AP
+set_prop(mtkimsmddomain, vendor_mtk_radio_prop)
+set_prop(mtkimsmddomain, vendor_mtk_ril_mux_report_case_prop)
+set_prop(mtkimsmddomain, vendor_mtk_md_version_prop)
+set_prop(mtkimsmddomain, vendor_mtk_network_prop)

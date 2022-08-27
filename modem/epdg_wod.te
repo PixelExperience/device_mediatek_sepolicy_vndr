@@ -1,0 +1,118 @@
+# ==============================================
+# Policy File of /system/bin/epdg_wod Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type epdg_wod_exec, exec_type, file_type, vendor_file_type;
+type epdg_wod, domain, mtkimsmddomain;
+
+
+#20141222 Add EPDG socket usage
+type wod_ipsec_conf_file, file_type, data_file_type;
+type wod_apn_conf_file, file_type, data_file_type;
+type wod_action_socket, file_type;
+type wod_sim_socket, file_type;
+type wod_ipsec_socket, file_type;
+type wod_dns_socket, file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+init_daemon_domain(epdg_wod)
+net_domain(epdg_wod)
+
+domain_auto_trans(epdg_wod, starter_exec, ipsec)
+domain_auto_trans(epdg_wod, charon_exec, ipsec)
+domain_auto_trans(epdg_wod, starter_exec, ipsec)
+domain_auto_trans(epdg_wod, stroke_exec, ipsec)
+
+# Date: WK14.52
+# Operation : Feature for ePDG
+# Purpose :  handle tunnel interface
+allow epdg_wod self:tun_socket { relabelfrom relabelto create };
+allow epdg_wod tun_device:chr_file { read write ioctl open getattr };
+allow epdg_wod self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+allow epdg_wod self:capability { net_admin sys_admin net_raw kill };
+allow epdg_wod self:capability2 { block_suspend wake_alarm };
+
+# Purpose :  update ipsec deamon
+allow epdg_wod ipsec_exec:file { read getattr open execute execute_no_trans lock};
+
+# Purpose : send signal to process (ipsec/charon)
+allow epdg_wod ipsec:process { signal sigkill signull };
+
+# Purpose :  set property for debug messages
+set_prop(epdg_wod, vendor_mtk_wod_prop)
+set_prop(epdg_wod, vendor_mtk_persist_wod_prop)
+
+# Purpose :  create strongswan config file for IKEv2 Tunnel
+allow epdg_wod wod_apn_conf_file:dir { write read open add_name remove_name search };
+allow epdg_wod wod_apn_conf_file:file { write read create unlink open getattr };
+allow epdg_wod wod_ipsec_conf_file:file { write read create unlink open getattr };
+allow epdg_wod wod_ipsec_conf_file:dir { write read open add_name remove_name search };
+
+# tear_xfrm_policy
+allow epdg_wod self:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+
+# Purpose : check tun device is ready
+allow epdg_wod self:udp_socket create_socket_perms_no_ioctl;
+
+# Purpose: Kill Process, removed these permissions as security concerns
+#allow epdg_wod system_server:process { signal signull };
+#allow epdg_wod kernel:process signal;
+
+# Purpose: access iptables for mss
+allow epdg_wod self:rawip_socket { getopt create setopt };
+
+# Purpose: communicate with NETD
+unix_socket_connect(epdg_wod,netd,netd);
+allow netd epdg_wod:fd use;
+allow netd epdg_wod:tcp_socket { read write setopt getopt };
+allow netd epdg_wod:udp_socket { read write setopt getopt };
+
+# Purpose: use netutils-wrapper
+domain_auto_trans(epdg_wod, netutils_wrapper_exec, netutils_wrapper)
+allow netutils_wrapper epdg_wod:fd use;
+allow netutils_wrapper epdg_wod:unix_stream_socket { read write };
+
+#Purpose: use ccci device
+allow epdg_wod ccci_device:chr_file rw_file_perms;
+
+# Purpose :  starter daemon charon
+allow epdg_wod starter_exec:file { read getattr open execute execute_no_trans lock};
+
+# Purpose :  stroke daemon charon
+allow epdg_wod stroke_exec:file { read getattr open execute execute_no_trans lock};
+
+# Purpose :  starter invoke charon
+allow epdg_wod charon_exec:file { read getattr open execute execute_no_trans lock};
+
+# silent self capability dac_override
+dontaudit epdg_wod self:capability dac_override;
+
+allow epdg_wod vendor_data_file:dir rw_dir_perms;
+allow epdg_wod vendor_data_file:file create_file_perms;
+allow epdg_wod vendor_data_file:sock_file create_file_perms;
+allow epdg_wod vendor_configs_file:file r_file_perms;
+allow epdg_wod vendor_file:file x_file_perms;
+allow epdg_wod vendor_shell_exec:file x_file_perms;
+allow epdg_wod vendor_toolbox_exec:file x_file_perms;
+
+allow epdg_wod sysfs_wake_lock:file rw_file_perms;
+
+allow epdg_wod dnsproxyd_socket:unix_stream_socket connectto;
+allow epdg_wod dnsproxyd_socket:sock_file write;
+
+allow epdg_wod epdg_wod:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+
+allow epdg_wod netd:unix_stream_socket connectto;
+
+allow epdg_wod proc_modules:file r_file_perms;
+allow epdg_wod proc_net:file rw_file_perms;
+
+get_prop(epdg_wod, vendor_mtk_md_version_prop)
+get_prop(epdg_wod, vendor_mtk_wfc_serv_prop)
+get_prop(epdg_wod, vendor_mtk_ril_mux_report_case_prop)
+get_prop(epdg_wod, vendor_mtk_num_md_protocol_prop)
+get_prop(epdg_wod, vendor_mtk_wfc_support_prop)

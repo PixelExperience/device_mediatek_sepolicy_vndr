@@ -1,0 +1,2 @@
+# "mtkimsapdomain" is for IMS repo phase 3, mean all permiton for IMCB/UA
+type vtservice_hidl, domain, mtkimsapdomain;

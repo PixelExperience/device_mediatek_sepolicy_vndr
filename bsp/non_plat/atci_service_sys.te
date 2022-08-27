@@ -1,13 +1,22 @@
-allow atci_service_sys mt6605_device:chr_file { read write ioctl open getattr };
-allow atci_service_sys nfc_socket:dir { write add_name remove_name search };
-allow atci_service_sys nfc_socket:sock_file { create write unlink setattr };
+# ==============================================
+# Policy File of /system/bin/atci_service_sys Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+allow atci_service_sys nfc_socket_file:dir w_dir_perms;
 allow atci_service_sys system_file:file execute_no_trans;
 
+# Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
 allow atci_service_sys proc_ged:file rw_file_perms;
 
+# Date : WK17.01
+# Operation : Migration
 # Purpose : Update AT_Command NFC function
 allow atci_service_sys factory_data_file:sock_file write;
 
-hwbinder_use(atci_service_sys)
-hal_client_domain(atci_service_sys, hal_atci)
+# Date : WK18.21
+# Purpose: Allow to use HIDL
+hal_client_domain(atci_service_sys, hal_mtk_atci)

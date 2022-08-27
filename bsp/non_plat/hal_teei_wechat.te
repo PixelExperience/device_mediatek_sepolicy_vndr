@@ -1,0 +1,8 @@
+# ==============================================
+# Microtrust SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_teei_wechat, teei_hal_wechat_hwservice)
+
+binder_call(hal_teei_wechat_client, hal_teei_wechat_server)
+binder_call(hal_teei_wechat_server, hal_teei_wechat_client)

@@ -1,32 +1,27 @@
-# Purpose : VP/VR
-allow mediacodec devmap_device:chr_file { ioctl };
-
 # Purpose : VDEC/VENC device node
 allow mediacodec Vcodec_device:chr_file rw_file_perms;
 
 # Purpose : VP & VR dump and debug
 allow mediacodec M4U_device_device:chr_file rw_file_perms;
-allow mediacodec proc:file r_file_perms;
 allow mediacodec sysfs:file {read write open};
-allow mediacodec debugfs_binder:dir search;
-allow mediacodec MTK_SMI_device:chr_file { ioctl read open };
-allow mediacodec storage_file:lnk_file {read write open};
+allow mediacodec MTK_SMI_device:chr_file r_file_perms;
+allow mediacodec storage_file:lnk_file rw_file_perms;
 allow mediacodec tmpfs:dir search;
-allow mediacodec mnt_user_file:dir {write read search};
-allow mediacodec mnt_user_file:lnk_file {read write};
-allow mediacodec sdcard_type:dir {write read search add_name remove_name};
-allow mediacodec sdcard_type:file {getattr write read create open append unlink};
+allow mediacodec mnt_user_file:dir rw_dir_perms;
+allow mediacodec mnt_user_file:lnk_file rw_file_perms;
+allow mediacodec sdcard_type:dir rw_dir_perms;
+allow mediacodec sdcard_type:file create_file_perms;
 allow mediacodec nvram_data_file:dir w_dir_perms;
 allow mediacodec nvram_data_file:file create_file_perms;
-allow mediacodec nvram_data_file:lnk_file read;
-allow mediacodec nvdata_file:lnk_file read;
+allow mediacodec nvram_data_file:lnk_file r_file_perms;
+allow mediacodec nvdata_file:lnk_file r_file_perms;
 allow mediacodec nvdata_file:dir w_dir_perms;
 allow mediacodec nvdata_file:file create_file_perms;
 allow mediacodec devmap_device:chr_file r_file_perms;
-allow mediacodec proc_meminfo:file {read getattr open};
+allow mediacodec proc_meminfo:file r_file_perms;
 
 # Purpose : for SW codec VP/VR
-allow mediacodec mtk_sched_device:chr_file { read write ioctl open };
+allow mediacodec mtk_sched_device:chr_file rw_file_perms;
 
 # Purpose : HW encrypt SW codec
 allow mediacodec mediacodec_data_file:file create_file_perms;
@@ -37,28 +32,23 @@ allow mediacodec sec_device:chr_file r_file_perms;
 allow mediacodec surfaceflinger:file getattr;
 
 # Purpose : for low SD card latency issue
-allow mediacodec sysfs_lowmemorykiller:file { read open };
+allow mediacodec sysfs_lowmemorykiller:file r_file_perms;
 
 # Purpose : for change thermal policy when needed
 allow mediacodec proc_mtkcooler:dir search;
+allow mediacodec proc_mtkcooler:file rw_file_perms;
 allow mediacodec proc_mtktz:dir search;
+allow mediacodec proc_mtktz:file rw_file_perms;
 allow mediacodec proc_thermal:dir search;
-allow mediacodec proc_mtkcooler:file { read write open };
-allow mediacodec proc_mtktz:file { read write open getattr };
-allow mediacodec proc_thermal:file { read write open getattr};
+allow mediacodec proc_thermal:file rw_file_perms;
 allow mediacodec thermal_manager_data_file:file create_file_perms;
 allow mediacodec thermal_manager_data_file:dir { rw_dir_perms setattr };
-allow mediacodec thermal_manager_data_file:dir search;
 
 # Purpose : cts search strange app
 allow mediacodec untrusted_app:dir search;
 
 # Purpose : MJC Driver
-allow mediacodec MJC_device:chr_file { read write ioctl open };
-
-# Purpose : for APE file playback
-allow mediacodec MtkCodecService:binder call;
-allow mediacodec MtkCodecService:binder transfer;
+allow mediacodec MJC_device:chr_file rw_file_perms;
 
 # Purpose: Allow to access ged for gralloc_extra functions
 allow mediacodec proc_ged:file rw_file_perms;
@@ -80,34 +70,43 @@ allow mediacodec system_file:dir r_dir_perms;
 allow mediacodec debugfs_ion:dir search;
 
 # Purpose: Allow mediacodec to access cmdq driver
-allow mediacodec mtk_cmdq_device:chr_file { read ioctl open };
-allow mediacodec mtk_mdp_device:chr_file rw_file_perms;
-allow mediacodec sw_sync_device:chr_file rw_file_perms;
+allow mediacodec mtk_cmdq_device:chr_file r_file_perms;
+allow mediacodec mtk_mdp_device:chr_file r_file_perms;
+allow mediacodec mtk_mdp_sync_device:chr_file r_file_perms;
+allow mediacodec sw_sync_device:chr_file r_file_perms;
 
 # Purpose : For Power Hal
-allow mediacodec mtk_hal_power_hwservice:hwservice_manager find;
-allow mediacodec mtk_hal_power:binder call;
-allow mediacodec mtk_hal_power:unix_stream_socket connectto;
+hal_client_domain(mediacodec, hal_power)
 
 # Purpose : Change thermal config
-set_prop(mediacodec, mtk_thermal_config_prop)
+set_prop(mediacodec, vendor_mtk_thermal_config_prop)
 
 # Purpose : DISP access
-allow mediacodec graphics_device:chr_file { ioctl open read };
+allow mediacodec graphics_device:chr_file r_file_perms;
 allow mediacodec graphics_device:dir search;
 
 # Purpose: Android Migration for SVP
 allow mediacodec proc_m4u:file r_file_perms;
-allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_SEC_INIT;
-
-# Purpose: Android Migration for Hybrid Encoder
-allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_CONFIG_PORT;
-allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_CACHE_SYNC;
-allowxperm mediacodec proc_m4u:file ioctl MTK_M4U_T_CONFIG_PORT_ARRAY;
+allowxperm mediacodec proc_m4u:file ioctl {
+ MTK_M4U_T_SEC_INIT
+ MTK_M4U_T_CONFIG_PORT
+ MTK_M4U_T_CACHE_SYNC
+ MTK_M4U_T_CONFIG_PORT_ARRAY
+};
 
 # Purpose : allow media sources to access /sys/bus/platform/drivers/mem_bw_ctrl/*
 allow mediacodec sysfs_concurrency_scenario:file rw_file_perms;
 allow mediacodec sysfs_concurrency_scenario:dir search;
+
+# Date : 2020/07/10
+# Purpose : allow media sources to access /sys/bus/platform/drivers/emi_ctrl/*
+allow mediacodec sysfs_emi_ctrl_concurrency_scenario:file rw_file_perms;
+allow mediacodec sysfs_emi_ctrl_concurrency_scenario:dir search;
+
+# Date : WK20.16
+# # Operation: SQC
+# # Purpose : Allow medicodec to control video mode property
+set_prop(mediacodec, vendor_mtk_video_prop)
 
 # Purpose : vendor_video config
 get_prop(mediacodec, vendor_video_prop)
@@ -116,7 +115,7 @@ get_prop(mediacodec, vendor_video_prop)
 get_prop(mediacodec, omx_core_prop)
 get_prop(mediacodec, mtk_crossmount_support_prop)
 get_prop(mediacodec, mtk_deinterlace_support_prop)
-get_prop(mediacodec, render_prop)
+get_prop(mediacodec, vendor_render_prop)
 
 # Purpose : Allow mediacodec to use vcodec_file data
 allow mediacodec vcodec_file:dir r_dir_perms;
@@ -124,11 +123,11 @@ allow mediacodec vcodec_file:dir r_dir_perms;
 # Purpose : Boot mode
 allow mediacodec sysfs_boot_mode:file r_file_perms;
 
-get_prop(mediacodec, mtk_default_prop)
-get_prop(mediacodec, mtk_omx_log_prop)
-get_prop(mediacodec, mtk_pq_prop)
-get_prop(mediacodec, mtk_pq_ro_prop)
-get_prop(mediacodec, mtk_vdectlc_log_prop)
-get_prop(mediacodec, ro_vendor_mtk_microtrust_tee_prop)
-get_prop(mediacodec, ro_vendor_mtk_trustonic_tee_prop)
-get_prop(mediacodec, vendor_debug_prop)
+get_prop(mediacodec, vendor_mtk_default_prop)
+get_prop(mediacodec, vendor_mtk_omx_log_prop)
+get_prop(mediacodec, vendor_mtk_pq_prop)
+get_prop(mediacodec, vendor_mtk_pq_ro_prop)
+get_prop(mediacodec, vendor_mtk_vdectlc_log_prop)
+get_prop(mediacodec, vendor_mtk_microtrust_tee_prop)
+get_prop(mediacodec, vendor_mtk_trustonic_tee_prop)
+get_prop(mediacodec, vendor_mtk_mdp_debug_log_prop)

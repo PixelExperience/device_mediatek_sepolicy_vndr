@@ -15,3 +15,7 @@ dontaudit lmkd platform_app:fd use;
 allow lmkd system_server:unix_stream_socket connectto;
 
 allow lmkd self:capability2 block_suspend;
+
+# Data : 2021/04/20
+# Operation : Add for powerhal mem index
+hal_client_domain(lmkd, hal_power)

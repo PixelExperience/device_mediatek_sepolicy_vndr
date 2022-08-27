@@ -1,0 +1,17 @@
+type init_insmod_sh, domain;
+type init_insmod_sh_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(init_insmod_sh)
+
+allow init_insmod_sh vendor_toolbox_exec:file rx_file_perms;
+allow init_insmod_sh self:capability sys_module;
+allow init_insmod_sh vendor_file:system module_load;
+allow init_insmod_sh kernel:key search;
+
+# Date : WK20.46
+# Purpose : modprobe need proc_modules
+allow init_insmod_sh proc_modules:file r_file_perms;
+
+# Date : WK20.46
+# Purpose : Set the vendor.all.modules.ready property
+set_prop(init_insmod_sh, vendor_mtk_device_prop)

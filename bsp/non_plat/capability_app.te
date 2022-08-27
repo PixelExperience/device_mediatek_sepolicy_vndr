@@ -1,0 +1,9 @@
+# ==============================================
+# Policy File of /system/priv-app/CapabilityTest/CapabilityTest.apk Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+allow capability_app sysfs_boot_mode:file r_file_perms;
+allow capability_app debugfs_ion:dir search;

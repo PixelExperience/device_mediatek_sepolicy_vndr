@@ -1,4 +1,9 @@
-set_prop(vendor_init, terservice_prop)
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
 
-#=============netflix HD property==============
+# netflix HD property
 set_prop(vendor_init, netflix_bsp_rev_prop)
+
+# set fuse property
+set_prop(vendor_init, system_prop)

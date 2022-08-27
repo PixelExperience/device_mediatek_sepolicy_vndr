@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_mtk_md_dbfilter, mtk_hal_md_dbfilter_hwservice)
+
+binder_call(hal_mtk_md_dbfilter_client, hal_mtk_md_dbfilter_server)
+binder_call(hal_mtk_md_dbfilter_server, hal_mtk_md_dbfilter_client)

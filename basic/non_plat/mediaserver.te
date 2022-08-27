@@ -2,9 +2,13 @@
 allow mediaserver camera_isp_device:chr_file rw_file_perms;
 allow mediaserver ccu_device:chr_file rw_file_perms;
 allow mediaserver vpu_device:chr_file rw_file_perms;
+allow mediaserver mdla_device:chr_file rw_file_perms;
+allow mediaserver apusys_device:chr_file rw_file_perms;
+allow mediaserver sysfs_apusys_queue:dir r_dir_perms;
+allow mediaserver sysfs_apusys_queue:file r_file_perms;
 allow mediaserver kd_camera_hw_device:chr_file rw_file_perms;
 allow mediaserver seninf_device:chr_file rw_file_perms;
-allow mediaserver self:capability { setuid ipc_lock sys_nice };
+allow mediaserver self:capability { setuid ipc_lock sys_nice net_admin };
 allow mediaserver sysfs_wake_lock:file rw_file_perms;
 allow mediaserver MTK_SMI_device:chr_file r_file_perms;
 allow mediaserver camera_pipemgr_device:chr_file r_file_perms;
@@ -12,22 +16,13 @@ allow mediaserver kd_camera_flashlight_device:chr_file rw_file_perms;
 allow mediaserver lens_device:chr_file rw_file_perms;
 
 # Purpose : Set audio driver permission to access SD card for debug purpose and accss NVRam.
-allow mediaserver sdcard_type:dir { w_dir_perms create };
-allow mediaserver sdcard_type:file create;
+allow mediaserver sdcard_type:dir create_dir_perms;
+allow mediaserver sdcard_type:file create_file_perms;
 allow mediaserver nvram_data_file:lnk_file read;
 allow mediaserver nvdata_file:lnk_file read;
-allow mediaserver sdcard_type:dir remove_name;
-allow mediaserver sdcard_type:file unlink;
 
 # Purpose : nvram access (dumchar case for nand and legacy chip)
 allow mediaserver nvram_device:chr_file rw_file_perms;
-allow mediaserver self:capability { net_admin };
-
-# Purpose : VP/VR
-allow mediaserver devmap_device:chr_file { ioctl };
-
-# Purpose : Smartcard Service
-allow mediaserver system_data_file:file open;
 
 # Purpose : media server and bt process communication for A2DP data.and other control flow
 allow mediaserver bluetooth:unix_dgram_socket sendto;
@@ -41,7 +36,6 @@ allow mediaserver camera_sysram_device:chr_file r_file_perms;
 allow mediaserver Vcodec_device:chr_file rw_file_perms;
 
 # Purpose :  access nvram, otp, ccci cdoec devices.
-allow mediaserver MtkCodecService:binder call;
 allow mediaserver ccci_device:chr_file rw_file_perms;
 allow mediaserver eemcs_device:chr_file rw_file_perms;
 allow mediaserver devmap_device:chr_file r_file_perms;
@@ -52,14 +46,10 @@ allow mediaserver bootdevice_block_device:blk_file rw_file_perms;
 # Purpose : for SW codec VP/VR
 allow mediaserver mtk_sched_device:chr_file rw_file_perms;
 
-# Purpose : NVRam access
-allow mediaserver block_device:dir { write search };
-
 # Purpose : FM driver access
 allow mediaserver fm_device:chr_file rw_file_perms;
 
 # Purpose : for VP/VR
-allow mediaserver block_device:dir search;
 allow mediaserver FM50AF_device:chr_file rw_file_perms;
 allow mediaserver AD5820AF_device:chr_file rw_file_perms;
 allow mediaserver DW9714AF_device:chr_file rw_file_perms;
@@ -73,20 +63,17 @@ allow mediaserver DW9718AF_device:chr_file rw_file_perms;
 allow mediaserver BU64745GWZAF_device:chr_file rw_file_perms;
 allow mediaserver MAINAF_device:chr_file rw_file_perms;
 allow mediaserver MAIN2AF_device:chr_file rw_file_perms;
+allow mediaserver MAIN3AF_device:chr_file rw_file_perms;
+allow mediaserver MAIN4AF_device:chr_file rw_file_perms;
 allow mediaserver SUBAF_device:chr_file rw_file_perms;
+allow mediaserver SUB2AF_device:chr_file rw_file_perms;
 
 # Purpose : for boot animation.
-allow mediaserver bootanim:binder { transfer call };
-allow mediaserver mtkbootanimation:binder { transfer call };
-
-# Purpose : dump for debug
-allow mediaserver sdcard_type:file append;
+binder_call(mediaserver, bootanim)
+binder_call(mediaserver, mtkbootanimation)
 
 # Purpose : FDVT Driver
 allow mediaserver camera_fdvt_device:chr_file rw_file_perms;
-
-# Purpose : APE PLAYBACK
-binder_call(mediaserver,MtkCodecService)
 
 # Purpose : HDMI driver access
 allow mediaserver graphics_device:chr_file rw_file_perms;
@@ -95,8 +82,7 @@ allow mediaserver graphics_device:chr_file rw_file_perms;
 allow mediaserver smartpa_device:chr_file rw_file_perms;
 
 # Purpose : permit 'call' by audio tunning tool audiocmdservice_atci
-allow mediaserver audiocmdservice_atci:binder call;
-binder_call(mediaserver,audiocmdservice_atci)
+binder_call(mediaserver, audiocmdservice_atci)
 
 # Purpose : mtk_jpeg
 allow mediaserver mtk_jpeg_device:chr_file r_file_perms;
@@ -108,6 +94,8 @@ allow mediaserver uhid_device:chr_file rw_file_perms;
 allow mediaserver CAM_CAL_DRV_device:chr_file rw_file_perms;
 allow mediaserver CAM_CAL_DRV1_device:chr_file rw_file_perms;
 allow mediaserver CAM_CAL_DRV2_device:chr_file rw_file_perms;
+allow mediaserver camera_eeprom_device:chr_file rw_file_perms;
+allow mediaserver seninf_n3d_device:chr_file rw_file_perms;
 
 # Purpose : VOW
 allow mediaserver vow_device:chr_file rw_file_perms;
@@ -120,7 +108,7 @@ allow mediaserver ttySDIO_device:chr_file rw_file_perms;
 allow mediaserver surfaceflinger:file getattr;
 
 # Purpose : for low SD card latency issue
-allow mediaserver sysfs_lowmemorykiller:file { read open };
+allow mediaserver sysfs_lowmemorykiller:file r_file_perms;
 
 # Purpose : for change thermal policy when needed
 allow mediaserver proc_mtkcooler:dir search;
@@ -131,18 +119,15 @@ allow mediaserver proc_thermal:dir search;
 allow mediaserver qemu_pipe_device:chr_file rw_file_perms;
 
 # Purpose : for camera init
-allow mediaserver system_server:unix_stream_socket { read write };
+allow mediaserver system_server:unix_stream_socket rw_socket_perms_no_ioctl;
 
 # Purpose : for SMS app
 allow mediaserver radio_data_file:dir search;
 allow mediaserver radio_data_file:file open;
 
 # Purpose : Music as ringtone
-allow mediaserver radio:dir { search read };
+allow mediaserver radio:dir r_dir_perms;
 allow mediaserver radio:file r_file_perms;
-
-# Purpose : Camcorder
-allow mediaserver radio_data_file:file open;
 
 # Purpose : cts search strange app
 allow mediaserver untrusted_app:dir search;
@@ -154,13 +139,12 @@ allow mediaserver offloadservice_device:chr_file rw_file_perms;
 allow mediaserver sensorservice_service:service_manager find;
 
 # Purpose: for camera middleware dump image buffer to sdcard & audio frameworks dump
-allow mediaserver system_data_file:dir write;
-allow mediaserver storage_file:lnk_file {read write};
-allow mediaserver mnt_user_file:dir {write read search};
-allow mediaserver mnt_user_file:lnk_file {read write};
+allow mediaserver storage_file:lnk_file rw_file_perms;
+allow mediaserver mnt_user_file:dir rw_dir_perms;
+allow mediaserver mnt_user_file:lnk_file rw_file_perms;
 
 # Purpose: Allow mediaserver to read binder from surfaceflinger
-allow mediaserver surfaceflinger:fifo_file {read write};
+allow mediaserver surfaceflinger:fifo_file rw_file_perms;
 
 # Purpose : DPE Driver
 allow mediaserver camera_dpe_device:chr_file rw_file_perms;
@@ -181,9 +165,6 @@ allow mediaserver camera_gepf_device:chr_file rw_file_perms;
 # Purpose : Update camera flashlight driver device file
 allow mediaserver flashlight_device:chr_file rw_file_perms;
 
-# Purpose: call surfaceflinger due to powervr
-allow dumpstate surfaceflinger:fifo_file rw_file_perms;
-
 # Purpose : WPE Driver
 allow mediaserver camera_wpe_device:chr_file rw_file_perms;
 allow mediaserver gpu_device:dir search;
@@ -193,11 +174,12 @@ allow mediaserver sw_sync_device:chr_file rw_file_perms;
 allow mediaserver camera_owe_device:chr_file rw_file_perms;
 
 # Purpose: Allow to access cmdq driver
-allow mediaserver mtk_cmdq_device:chr_file { read ioctl open };
-allow mediaserver mtk_mdp_device:chr_file rw_file_perms;
+allow mediaserver mtk_cmdq_device:chr_file r_file_perms;
+allow mediaserver mtk_mdp_device:chr_file r_file_perms;
+allow mediaserver mtk_mdp_sync_device:chr_file r_file_perms;
+hal_client_domain(mediaserver, hal_mtk_mms)
 
 # Purpose : DISP access
-allow mediaserver graphics_device:chr_file { ioctl open read };
 allow mediaserver graphics_device:dir search;
 
 # Purpose : DIP Driver
@@ -207,7 +189,7 @@ allow mediaserver camera_dip_device:chr_file rw_file_perms;
 allow mediaserver camera_mfb_device:chr_file rw_file_perms;
 
 # Purpose : Allow permgr access
-allow mediaserver proc_perfmgr:dir {read search};
+allow mediaserver proc_perfmgr:dir r_dir_perms;
 allow mediaserver proc_perfmgr:file r_file_perms;
 allowxperm mediaserver proc_perfmgr:file ioctl {
  PERFMGR_FPSGO_DEQUEUE
@@ -218,11 +200,18 @@ allowxperm mediaserver proc_perfmgr:file ioctl {
 
 # Purpose : wifidisplay hdcp
 # DRM Key Manage HIDL
-allow mediaserver  mtk_hal_keymanage:binder call;
+binder_call(mediaserver, mtk_hal_keymanage)
+
+# Date : WK21.25
+# Operation : Migration
+# Purpose : PDA Driver
+allow mediaserver camera_pda_device:chr_file rw_file_perms;
 
 # Purpose : Allow mediadrmserver  to call vendor.mediatek.hardware.keymanage@1.0-service.
-hal_client_domain(mediaserver , hal_keymaster)
-allow mediaserver mtk_hal_keymanage_hwservice:hwservice_manager find;
+hal_client_domain(mediaserver, hal_keymaster)
+hal_client_domain(mediaserver, hal_power)
+
+allow mediaserver vpud_device:chr_file rw_file_perms;
 
 # to read video props
 get_prop(mediaserver, vendor_video_prop)

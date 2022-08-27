@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date      : 2016/11/10
+# Operation : SQC
+# Purpose   : Allow NFC to use gas service
+allow nfc gas_srv_service:service_manager find;

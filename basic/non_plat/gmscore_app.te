@@ -6,5 +6,7 @@ allow gmscore_app mtk_cmdq_device:chr_file rw_file_perms;
 allow gmscore_app mtk_mdp_device:chr_file rw_file_perms;
 allow gmscore_app aac_drc_prop:file { getattr open };
 
-get_prop(gmscore_app, render_prop)
-get_prop(gmscore_app, vendor_debug_prop)
+get_prop(gmscore_app, vendor_render_prop)
+get_prop(gmscore_app, vendor_mtk_gpu_prop)
+get_prop(gmscore_app, aac_drc_prop)
+get_prop(gmscore_app, ab_update_gki_prop)

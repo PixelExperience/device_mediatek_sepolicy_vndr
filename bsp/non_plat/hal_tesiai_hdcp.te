@@ -1,0 +1,6 @@
+# add/find permission rule to hwservicemanager
+hal_attribute_hwservice(hal_tesiai_hdcp, tesiai_hal_hdcp_hwservice)
+
+# Allow client domain to perform hwbinder IPC to server domain, and callbacks
+binder_call(hal_tesiai_hdcp_client, hal_tesiai_hdcp_server)
+binder_call(hal_tesiai_hdcp_server, hal_tesiai_hdcp_client)

@@ -1,8 +1,7 @@
-# Purpose: Allow app GPU library to use MDP HIDL
-hal_client_domain(ephemeral_app, hal_mms)
-
-# Executing files from an application home directory violates
-# W^X (https://en.wikipedia.org/wiki/W%5EX) constraints (loading executable code
-# from a writable file) and is an unsafe application behavior. Test to see if we
-# can get rid of it.
-auditallow ephemeral_app app_data_file:file execute;
+# Purpose: Allow ephemeral app to access mtk jpeg
+allow ephemeral_app proc_mtk_jpeg:file rw_file_perms;
+allowxperm ephemeral_app proc_mtk_jpeg:file ioctl {
+  JPG_BRIDGE_DEC_IO_LOCK
+  JPG_BRIDGE_DEC_IO_WAIT
+  JPG_BRIDGE_DEC_IO_UNLOCK
+};

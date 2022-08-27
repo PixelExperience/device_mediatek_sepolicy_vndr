@@ -1,3 +1,0 @@
-# Purpose: Need to obtain permission to access ged
-# for fence monitoring and DVFS
-allow surfaceflinger proc_ged:file {open read write ioctl getattr};

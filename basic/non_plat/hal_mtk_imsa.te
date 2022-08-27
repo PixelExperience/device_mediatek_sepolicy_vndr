@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_mtk_imsa, mtk_hal_imsa_hwservice)
+
+binder_call(hal_mtk_imsa_client, hal_mtk_imsa_server)
+binder_call(hal_mtk_imsa_server, hal_mtk_imsa_client)

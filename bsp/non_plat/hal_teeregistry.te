@@ -1,3 +1,7 @@
+##
+# Trustonic TeeService
+#
+
 binder_call(hal_teeregistry_client, hal_teeregistry_server)
 binder_call(hal_teeregistry_server, hal_teeregistry_client)
 

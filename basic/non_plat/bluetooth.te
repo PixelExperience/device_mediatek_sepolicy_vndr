@@ -3,15 +3,23 @@ binder_call(bluetooth, mtk_hal_bluetooth)
 
 allow bluetooth storage_stub_file:dir getattr;
 
-set_prop(bluetooth, vendor_bluetooth_prop)
-set_prop(bluetooth, debug_prop)
-
 # Add dir create perms for bluetooth on /data/misc/bluetooth/logs
 allow bluetooth bluetooth_logs_data_file:dir { create_dir_perms relabelto };
-allow bluetooth bluetooth_logs_data_file:fifo_file { create_file_perms };
+allow bluetooth bluetooth_logs_data_file:fifo_file create_file_perms;
 
-# Operation : Migration
-get_prop(bluetooth, mtk_amslog_prop)
+allow bluetooth mtk_hal_bluetooth_audio_hwservice:hwservice_manager find;
+
+# Operation : allow bt native process to access driver debug node and set kernel thread priority
+# Purpose: allow bt native process to access driver debug node and set kernel thread priority
+allow bluetooth proc_btdbg:file rw_file_perms;
+allow bluetooth kernel:process setsched;
+
+get_prop(bluetooth, vendor_mtk_bt_perf_prop)
+
+# Operation : allow bluetooth to access mediametrics
+# Purpose: This operation will block A2DP Sink playback
+allow bluetooth mediametrics_service:service_manager find;
+
 get_prop(bluetooth, vendor_bt_prop)
 
 allow bluetooth hal_btconfigstore_hwservice:hwservice_manager { add find };

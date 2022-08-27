@@ -1,0 +1,11 @@
+#####################################
+# Common groupings of permissions without map.
+#
+define(`x_file_perms_no_map', `{ getattr execute execute_no_trans }')
+define(`r_file_perms_no_map', `{ getattr open read ioctl lock watch watch_reads }')
+define(`w_file_perms_no_map', `{ open append write lock }')
+define(`rx_file_perms_no_map', `{ getattr open read ioctl lock watch watch_reads execute execute_no_trans }')
+define(`ra_file_perms_no_map', `{ getattr open read ioctl lock watch watch_reads append }')
+define(`rw_file_perms_no_map', `{ getattr open read ioctl lock watch watch_reads append write }')
+define(`rwx_file_perms_no_map', `{ getattr open read ioctl lock watch watch_reads append write execute execute_no_trans }')
+define(`create_file_perms_no_map', `{ create rename setattr unlink getattr open read ioctl lock watch watch_reads append write }')

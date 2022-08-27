@@ -1,24 +1,57 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : WK14.41
+# Operation : Migration
 # Purpose :  ipv6 Tethering Test
-#============= netd ==============
-allow netd dhcp_data_file:dir { read search write add_name remove_name };
-allow netd dhcp_data_file:file { read write create open getattr unlink};
+allow netd dhcp_data_file:dir rw_dir_perms;
+allow netd dhcp_data_file:file create_file_perms;
 allow netd self:capability { setuid net_bind_service setgid };
 
+# Date : W15.39
+# Operation :  CAT6 T-put
 # Purpose :  CAT6 T-put
-allow netd servicemanager:binder call;
-allow netd system_server:binder call;
+# Owner : Kang ouyang
+allow netd mtk_perf_service:service_manager find;
+
+# Date : W15.39
+# Operation :  CAT6 T-put
+# Purpose :  CAT6 T-put
+# Owner : Kang ouyang
+binder_call(netd, servicemanager)
+binder_call(netd, system_server)
 binder_use(netd)
 
+# Date : W16.27
+# Operation : nsiot set property(Only for Android N)
 # Purpose : nsiot set property
-allow netd system_prop:property_service set;
+# Owner : kang ouyang
+set_prop(netd, system_prop)
 
+# Date : W16.38
+# Operation : MD direct Tethering Test
 # Purpose : For support MDT
 allowxperm netd self:unix_stream_socket ioctl {SIOCSIFBR SIOCBRADDBR SIOCBRADDIF SIOCDEVPRIVATE};
 
+# Data : W18.38
+# Operation : Migration
+# Purpose : Trustonic TEE
+allow netd teeregistryd_app:fd use;
+allow netd teeregistryd_app:tcp_socket rw_socket_perms_no_ioctl;
+
+# Data : W19.24
+# Operation : Android Q DMC Migration
 # Purpose : To allow MAPI to create socket and submit data to PC
 allow netd mdi_redirector:fd use;
-allow netd mdi_redirector:tcp_socket { rw_socket_perms_no_ioctl };
+allow netd mdi_redirector:tcp_socket rw_socket_perms_no_ioctl;
 
+# Data : W19.25
+# Operation : Android Q DMC Migration
 # Purpose : To allow MDMI to create socket as a test tool
 allow netd mdmi_redirector:fd use;
-allow netd mdmi_redirector:tcp_socket { rw_socket_perms_no_ioctl };
+allow netd mdmi_redirector:tcp_socket rw_socket_perms_no_ioctl;
+
+# Purpose: For EngineerMode communication with mnld
+allow netd em_app:fd use;
+allow netd em_app:tcp_socket rw_socket_perms_no_ioctl;

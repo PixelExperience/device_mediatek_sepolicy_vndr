@@ -1,5 +1,12 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+allow untrusted_app_all tee_service:service_manager find;
+
+# Date: W1920
 # Purpose: Make app can get phoneEx
 allow untrusted_app_all mtk_radio_service:service_manager find;
 
-#=============netflix HD property==============
+# netflix HD property
 get_prop(untrusted_app_all, netflix_bsp_rev_prop)

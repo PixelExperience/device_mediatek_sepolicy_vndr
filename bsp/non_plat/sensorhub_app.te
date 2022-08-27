@@ -1,4 +1,9 @@
-type sensorhub_app, domain;
+# ==============================================
+# Policy File of /vendor/app/sensorhub Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
 app_domain(sensorhub_app)
 
 allow sensorhub_app activity_service:service_manager find;
@@ -12,6 +17,8 @@ allow sensorhub_app mediaextractor_service:service_manager find;
 allow sensorhub_app mediaserver_service:service_manager find;
 allow sensorhub_app mediametrics_service:service_manager find;
 
+# Date : 2019/03/25
+# Operation : IT
 # Purpose : for engineermode sensor can work normal
 allow sensorhub_app als_ps_device:chr_file r_file_perms;
 allow sensorhub_app gsensor_device:chr_file r_file_perms;

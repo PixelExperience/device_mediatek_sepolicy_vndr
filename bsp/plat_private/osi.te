@@ -1,0 +1,31 @@
+# ==============================================
+# Policy File of /system/bin/osi Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+typeattribute osi coredomain;
+type osi_exec, system_file_type, exec_type, file_type;
+
+userdebug_or_eng(`
+permissive osi;
+')
+
+# Date : WK15.45
+# Operation : create
+# Purpose : Start osi
+init_daemon_domain(osi)
+net_domain(osi)
+
+userdebug_or_eng(`
+allow osi media_rw_data_file:file r_file_perms;
+allow osi sdcardfs:file rw_file_perms;
+allow osi self:capability net_raw;
+allow osi self:udp_socket ioctl;
+allow osi shell_exec:file x_file_perms;
+allow osi sysfs:dir r_dir_perms;
+allow osi sysfs_android_usb:dir search;
+allow osi sysfs_android_usb:file r_file_perms;
+allow osi toolbox_exec:file x_file_perms;
+')

@@ -1,6 +1,5 @@
-type fuelgauged ,domain;
-type fuelgauged_exec , exec_type, file_type, vendor_file_type;
-type fuelgauged_file, file_type, data_file_type;
+type fuelgauged, domain;
+type fuelgauged_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(fuelgauged)
 
@@ -15,9 +14,8 @@ allow fuelgauged mtk-adc-cali_device:chr_file rw_file_perms;
 allow fuelgauged kmsg_device:chr_file w_file_perms;
 
 # Purpose : For fg daemon can comminucate with kernel
-allow fuelgauged self:netlink_socket create;
 allow fuelgauged self:netlink_socket create_socket_perms_no_ioctl;
-allow fuelgauged self:netlink_route_socket { bind create getattr write nlmsg_read read nlmsg_write };
+allow fuelgauged self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
 
 allow fuelgauged self:capability { chown fsetid };
 
@@ -25,11 +23,11 @@ allow fuelgauged self:capability { chown fsetid };
 allow fuelgauged kernel:system module_request;
 
 # Purpose : add fuelgauged to nvcfg read write permit
-allow fuelgauged nvcfg_file:dir { search write open read add_name create getattr};
-allow fuelgauged nvcfg_file:file { read write getattr open create };
+allow fuelgauged nvcfg_file:dir create_dir_perms;
+allow fuelgauged nvcfg_file:file create_file_perms;
 
 # Purpose: Allow to search /mnt/vendor/nvdata for fstab when using NVM_Init()
 allow fuelgauged mnt_vendor_file:dir search;
 
 # Purpose: Allow for nvram init
-get_prop(fuelgauged, service_nvram_init_prop)
+get_prop(fuelgauged, vendor_mtk_service_nvram_init_prop)

@@ -1,0 +1,10 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_mtk_lbs, mtk_hal_lbs_hwservice)
+
+binder_call(hal_mtk_lbs_client, hal_mtk_lbs_server)
+binder_call(hal_mtk_lbs_server, hal_mtk_lbs_client)
+
+vndbinder_use(hal_mtk_lbs)

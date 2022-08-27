@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# =============================================
+
+# Date : 2020/10/30
+# Operation: IMS Config NR force value
+# Purpose: Allow vendor_shell to force set IMS NR feature
+set_prop(vendor_shell, vendor_mtk_vonr_force_prop)

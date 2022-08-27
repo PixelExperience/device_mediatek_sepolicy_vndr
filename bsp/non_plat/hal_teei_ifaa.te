@@ -1,0 +1,8 @@
+# ==============================================
+# Microtrust SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_teei_ifaa, teei_hal_ifaa_hwservice)
+
+binder_call(hal_teei_ifaa_client, hal_teei_ifaa_server)
+binder_call(hal_teei_ifaa_server, hal_teei_ifaa_client)

@@ -1,20 +1,31 @@
+# Device types
 type devmap_device, dev_type;
 type ttyMT_device, dev_type;
 type ttyS_device, dev_type;
 type ttySDIO_device, dev_type;
 type vmodem_device, dev_type;
 type stpwmt_device, dev_type;
+type conninfra_device, dev_type;
+type conn_pwr_device, dev_type;
+type conn_scp_device, dev_type;
 type wmtdetect_device, dev_type;
 type wmtWifi_device, dev_type;
 type stpbt_device, dev_type;
 type fw_log_bt_device, dev_type;
 type stpant_device, dev_type;
-type fm_device, dev_type;
+type fm_device, dev_type, mlstrustedobject;
+type gps_emi_device, dev_type;
 type stpgps_device, dev_type;
+type gps2scp_device, dev_type;
+type gps_pwr_device, dev_type;
 type gpsdl_device, dev_type;
+type connfem_device, dev_type;
 type fw_log_gps_device, dev_type;
 type fw_log_wmt_device, dev_type;
 type fw_log_wifi_device, dev_type;
+type fw_log_ics_device, dev_type;
+type fw_log_wifimcu_device, dev_type;
+type fw_log_btmcu_device, dev_type;
 type pmem_multimedia_device, dev_type;
 type mt6516_isp_device, dev_type;
 type mt6516_IDP_device, dev_type;
@@ -33,12 +44,16 @@ type DW9718AF_device, dev_type;
 type BU64745GWZAF_device, dev_type;
 type MAINAF_device, dev_type;
 type MAIN2AF_device, dev_type;
+type MAIN3AF_device, dev_type;
+type MAIN4AF_device, dev_type;
 type SUBAF_device, dev_type;
+type SUB2AF_device, dev_type;
 type M4U_device_device, dev_type;
 type Vcodec_device, dev_type;
 type MJC_device, dev_type;
 type smartpa_device, dev_type;
 type smartpa1_device, dev_type;
+type tahiti_device, dev_type;
 type uio0_device, dev_type;
 type xt_qtaguid_device, dev_type;
 type rfkill_device, dev_type;
@@ -50,6 +65,7 @@ type uinput_device, dev_type;
 type TV_out_device, dev_type;
 type gz_device, dev_type;
 type camera_sysram_device, dev_type;
+type camera_mem_device, dev_type;
 type camera_isp_device, dev_type;
 type camera_dip_device, dev_type;
 type camera_dpe_device, dev_type;
@@ -60,10 +76,18 @@ type camera_gepf_device, dev_type;
 type camera_wpe_device, dev_type;
 type camera_owe_device, dev_type;
 type camera_mfb_device, dev_type;
+type camera_pda_device, dev_type;
 type camera_pipemgr_device, dev_type;
+type mtk_hcp_device, dev_type;
+type mtk_ccd_device, dev_type;
+type mtk_v4l2_media_device, dev_type;
 type ccu_device, dev_type;
+type gpueb_device, dev_type;
+type vcp_device, dev_type;
+type mvpu_algo_device, dev_type;
 type vpu_device, dev_type, mlstrustedobject;
 type mdla_device, dev_type, mlstrustedobject;
+type apusys_device, dev_type;
 type mtk_jpeg_device, dev_type;
 type kd_camera_hw_device, dev_type;
 type seninf_device, dev_type;
@@ -82,9 +106,14 @@ type ttyGS_device, dev_type;
 type CAM_CAL_DRV_device, dev_type;
 type CAM_CAL_DRV1_device, dev_type;
 type CAM_CAL_DRV2_device, dev_type;
+type camera_eeprom_device, dev_type;
+type seninf_n3d_device, dev_type;
 type MTK_SMI_device, dev_type;
 type mtk_cmdq_device, dev_type;
 type mtk_mdp_device, dev_type;
+type mtk_mdp_sync_device, dev_type;
+type mtk_fmt_sync_device, dev_type;
+type mtk_fmt_device, dev_type;
 type mtk_rrc_device, dev_type;
 type ebc_device, dev_type;
 type vow_device, dev_type;
@@ -94,16 +123,13 @@ type MT6516_MM_QUEUE_device, dev_type;
 type MT6516_MP4_DEC_device, dev_type;
 type MT6516_MP4_ENC_device, dev_type;
 type sensor_device, dev_type;
-type aed_device, dev_type;
 type ccci_device, dev_type;
 type ccci_monitor_device, dev_type;
 type gsm0710muxd_device, dev_type;
 type eemcs_device, dev_type;
 type emd_device, dev_type;
-type mt6605_device, dev_type;
 type st21nfc_device, dev_type;
 type st54spi_device, dev_type;
-type exm0_device, dev_type;
 type mmcblk_device, dev_type;
 type BOOT_device, dev_type;
 type MT_pmic_device, dev_type;
@@ -181,6 +207,7 @@ type ttyACM_device, dev_type;
 type hrm_device, dev_type;
 type lens_device, dev_type;
 type nvdata_device, dev_type;
+type mcf_ota_block_device,dev_type;
 type nvcfg_device, dev_type;
 type expdb_block_device, dev_type;
 type misc2_block_device, dev_type;
@@ -230,9 +257,14 @@ type mdp_device, dev_type;
 type mrdump_device, dev_type;
 type kb_block_device,dev_type;
 type dkb_block_device,dev_type;
+type mtk_radio_device, dev_type;
+type dpm_block_device, dev_type;
+type audio_dsp_block_device, dev_type;
+type gz_block_device, dev_type;
+type pi_img_device, dev_type;
 type vpud_device, dev_type;
 type vcu_device, dev_type;
-type SUB2AF_device, dev_type;
+type mml_pq_device, dev_type;
 
 ##########################
 # Sensor common Devices Start
@@ -246,6 +278,7 @@ type barometer_device,dev_type;
 type humidity_device,dev_type;
 type biometric_device,dev_type;
 type sensorlist_device,dev_type;
+type hf_manager_device,dev_type;
 
 ##########################
 # Sensor Devices Start
@@ -271,3 +304,64 @@ type m_bio_misc_device, dev_type;
 
 # Purpose : Add permission for gpu access
 type dri_device, dev_type, mlstrustedobject;
+
+# Operation : S Migration
+# Purpose : Add permission for ABOTA
+type postinstall_block_device, dev_type;
+
+# Operation : S Migration
+# Purpose : Add permission for wifi proxy
+type ccci_wifi_proxy_device, dev_type;
+
+# Operation: TEEI integration
+# Purpose: access for fp device and client device of TEEI
+type teei_fp_device, dev_type;
+type teei_client_device, dev_type, mlstrustedobject;
+type teei_config_device, dev_type;
+type utr_tui_device, dev_type;
+type teei_vfs_device, dev_type;
+type teei_rpmb_device, dev_type;
+type ut_keymaster_device, dev_type;
+
+# Operation : Add newwork optimization feature
+# Purpose : Add permission for nwk
+type nwkopt_device, dev_type;
+type tx_device, dev_type;
+
+# Operation : Add thp feature
+# Purpose : Add permission for thp
+type gdix_mt_wrapper_device, dev_type, fs_type;
+type gdix_thp_device, dev_type, fs_type;
+
+type mddp_device, dev_type;
+
+type tkcore_admin_device, dev_type, mlstrustedobject;
+type tkcore_block_device, dev_type;
+
+# mobicore device type
+type mobicore_admin_device, dev_type;
+type mobicore_user_device, dev_type, mlstrustedobject;
+type mobicore_tui_device, dev_type;
+
+# teeperf device type
+type teeperf_device, dev_type, mlstrustedobject;
+
+type rpmb_block_device, dev_type;
+type rpmb_device, dev_type;
+
+type fingerprint_device, dev_type;
+
+# widevine device type
+type widevine_drv_device, dev_type;
+
+# Purpose: permission for audioserver to use ccci node
+type ccci_aud_device, dev_type;
+
+# Purpose: permission for CCB user
+type ccci_ccb_device, dev_type;
+# Purpose: permission for md_monitor
+type ccci_mdmonitor_device, dev_type;
+
+# Operator: S migration
+# Purpose: Add permission for vilte
+type ccci_vts_device, dev_type;

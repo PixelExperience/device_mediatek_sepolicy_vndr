@@ -1,15 +1,25 @@
+# ==============================================
+# Policy File of /system/bin/GoogleOtaBinder Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
 type GoogleOtaBinder_exec, system_file_type, exec_type, file_type;
 typeattribute GoogleOtaBinder coredomain;
 
-# permissive GoogleOtaBinder;
 init_daemon_domain(GoogleOtaBinder)
 
+# Date : 2014/09/10
+# Operation : Migration
 # Purpose : allow Binder IPC
 binder_use(GoogleOtaBinder)
 binder_service(GoogleOtaBinder)
 
 # to get offset
 allow GoogleOtaBinder ota_package_file:dir search;
-allow GoogleOtaBinder ota_package_file:file { getattr open read write };
-allow GoogleOtaBinder mota_proc_file:file read;
-allow GoogleOtaBinder sysfs_dt_firmware_android:file read;
+allow GoogleOtaBinder ota_package_file:file rw_file_perms;
+allow GoogleOtaBinder mota_proc_file:file rw_file_perms;;
+allow GoogleOtaBinder sysfs_dt_firmware_android:file r_file_perms;;
+
+allow GoogleOtaBinder ota_agent_service:service_manager add;

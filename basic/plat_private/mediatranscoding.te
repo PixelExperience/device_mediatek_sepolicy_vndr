@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : WK21.31
+# Operation : Migration
+# Purpose : Allow mediatranscoding service to access the GPU
+allow mediatranscoding gpu_device:chr_file rw_file_perms;

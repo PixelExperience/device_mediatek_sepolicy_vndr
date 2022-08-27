@@ -1,6 +1,5 @@
 # Purpose : Video playback
-allow surfaceflinger sw_sync_device:chr_file { rw_file_perms };
-allow surfaceflinger debug_prop:property_service set;
+allow surfaceflinger sw_sync_device:chr_file rw_file_perms;
 
 # Purpose: Allow to access ged for gralloc_extra functions
 allow surfaceflinger proc_ged:file rw_file_perms;
@@ -15,9 +14,13 @@ allow surfaceflinger proc_bootprof:file r_file_perms;
 
 #============= surfaceflinger ==============
 allow surfaceflinger debugfs_ion:dir search;
+allow surfaceflinger kernel:dir search;
 
 # Purpose: Allow to access cmdq driver
-allow surfaceflinger mtk_cmdq_device:chr_file { read ioctl open };
+allow surfaceflinger mtk_cmdq_device:chr_file r_file_perms;
+allow surfaceflinger mtk_mdp_device:chr_file r_file_perms;
+allow surfaceflinger mtk_mdp_sync_device:chr_file r_file_perms;
+allow surfaceflinger sysfs_boot_mode:file r_file_perms;
 
 # Perform Binder IPC.
 binder_use(surfaceflinger)
@@ -26,43 +29,60 @@ binder_call(surfaceflinger, appdomain)
 binder_call(surfaceflinger, mtkbootanimation)
 binder_service(surfaceflinger)
 
+binder_call(surfaceflinger, mtk_hal_camera)
+
 allow surfaceflinger mtkbootanimation:dir search;
-allow surfaceflinger mtkbootanimation:file { read getattr open };
+allow surfaceflinger mtkbootanimation:file r_file_perms;
 
 # Purpose: Allow to access perfmgr
-allow surfaceflinger proc_perfmgr:dir {read search};
-allow surfaceflinger proc_perfmgr:file {open read ioctl};
+allow surfaceflinger proc_perfmgr:dir r_dir_perms;
 allowxperm surfaceflinger proc_perfmgr:file ioctl {
   PERFMGR_FPSGO_QUEUE
   PERFMGR_FPSGO_DEQUEUE
   PERFMGR_FPSGO_QUEUE_CONNECT
   PERFMGR_FPSGO_BQID
   PERFMGR_FPSGO_VSYNC
+  PERFMGR_XGFFRAME_START
+  PERFMGR_XGFFRAME_END
 };
 
 # Purpose: Allow to dump HWC backtrace
-get_prop(surfaceflinger, graphics_hwc_pid_prop)
-get_prop(surfaceflinger, graphics_hwc_latch_unsignaled_prop)
+get_prop(surfaceflinger, vendor_mtk_graphics_hwc_pid_prop)
+get_prop(surfaceflinger, vendor_mtk_graphics_hwc_validate_separate_prop)
 allow surfaceflinger hal_graphics_composer_default:dir search;
-allow surfaceflinger hal_graphics_composer_default:lnk_file read;
-
-# Purpose: Allow to dump buffer queue
-get_prop(surfaceflinger, debug_bq_dump_prop)
+allow surfaceflinger hal_graphics_composer_default:lnk_file r_file_perms;
+dontaudit surfaceflinger hal_graphics_composer_default:file r_file_perms;
 
 # Purpose: Allow to access /dev/mdp_device driver
 allow surfaceflinger mdp_device:chr_file rw_file_perms;
 
-# Purpose: Allow to access property dev/mdp_sync
-#============= surfaceflinger ==============
-allow surfaceflinger mtk_mdp_device:chr_file rw_file_perms;
-
 # Purpose: Allow to skip aosp hdr solution
-get_prop(surfaceflinger, graphics_hwc_hdr_prop)
+get_prop(surfaceflinger, vendor_mtk_graphics_hwc_hdr_prop)
+
+# Date: WK21.14
+# Purpose: allow to check AppGamePQ is supported or not
+get_prop(surfaceflinger, vendor_mtk_pq_ro_prop);
+
+# Date: WK21.33
+# Purpose: allow surfaceflinger to use PowerHAL API
+allow surfaceflinger proc_perfmgr:file rw_file_perms;
+
+# Data: 2021/09/18
+# Purpose: adjust the uclamp for HWComposer
+allow surfaceflinger hal_graphics_composer_default:process { getsched setsched };
+
+# Data: 2021/10/12
+# Purpose: adjust the cpu policy for HWComposer
+allow surfaceflinger hal_graphics_composer_default:file w_file_perms;
+
+# Data: 2021/12/07
+# Purpose: adjust the cpu policy config
+get_prop(surfaceflinger, vendor_mtk_debug_sf_cpupolicy_prop)
 
 # allows surfaceflinger access render files
 allow surfaceflinger sysfs_boot_mode:file r_file_perms;
-get_prop(surfaceflinger, render_prop)
+get_prop(surfaceflinger, vendor_render_prop)
 
-get_prop(surfaceflinger, mtk_pq_prop)
-get_prop(surfaceflinger, mtk_pq_ro_prop)
-get_prop(surfaceflinger, vendor_debug_prop)
+get_prop(surfaceflinger, vendor_mtk_pq_prop)
+get_prop(surfaceflinger, vendor_mtk_gpu_prop)
+get_prop(surfaceflinger, vendor_mtk_mdp_debug_log_prop)

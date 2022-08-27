@@ -1,5 +1,3 @@
-type mtk_hal_keyinstall, domain;
-
 # Set mtk_hal_keyinstall as server domain of hal_keymaster
 hal_server_domain(mtk_hal_keyinstall, hal_keymaster)
 
@@ -8,12 +6,6 @@ type mtk_hal_keyinstall_exec, exec_type, file_type, vendor_file_type;
 
 # Setup for domain transition
 init_daemon_domain(mtk_hal_keyinstall)
-
-# Associate mtk_hal_keyinstall_hwservice with all server domain
-add_hwservice(hal_keymaster_server, mtk_hal_keyinstall_hwservice)
-
-# Give permission for hal_keymaster_client to find mtk_hal_keyinstall_hwservice via hwservice_manager
-allow hal_keymaster_client mtk_hal_keyinstall_hwservice:hwservice_manager find;
 
 # Allow mtk_hal_keyinstall to communicate with mobicore
 allow mtk_hal_keyinstall mobicore:unix_stream_socket connectto;

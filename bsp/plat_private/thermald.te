@@ -1,9 +1,28 @@
+# ==============================================
+# Policy File of /system/bin/thermald Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
 type thermald_exec, system_file_type, exec_type, file_type;
 typeattribute thermald coredomain;
 
 init_daemon_domain(thermald)
 
+# Date : WK17.28
+# Operation : SQC
 # Purpose : for thermal management to shutdown the phone
 binder_use(thermald)
-allow thermald system_server:binder call;
+binder_call(thermald, system_server)
 allow thermald activity_service:service_manager find;
+
+# for wifi throttle
+allow thermald sysfs_net:dir search;
+allow thermald sysfs_thermald:file r_file_perms;
+allow thermald shell_exec:file rx_file_perms;
+allow thermald toolbox_exec:file rx_file_perms;
+allow thermald proc_net:file r_file_perms;
+allow thermald devpts:chr_file rw_file_perms;
+allow thermald self:netlink_route_socket { create setopt bind getattr write nlmsg_read read nlmsg_write };
+allow thermald self:capability net_admin;

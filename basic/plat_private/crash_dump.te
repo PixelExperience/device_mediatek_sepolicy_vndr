@@ -1,1 +1,97 @@
-allow crash_dump aee_aed:unix_stream_socket connectto;
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+typeattribute crash_dump mlstrustedsubject;
+
+# /porc/pid/
+allow crash_dump appdomain:dir r_dir_perms;
+allow crash_dump coredomain:dir r_dir_perms;
+
+# AED start: /dev/block/expdb
+allow crash_dump block_device:dir search;
+
+#data/anr
+allow crash_dump anr_data_file:dir create_dir_perms;
+allow crash_dump anr_data_file:file create_file_perms;
+
+allow crash_dump domain:process { getattr getsched };
+
+#core-pattern
+allow crash_dump usermodehelper:file r_file_perms;
+
+#allow crash_dump call binaries labeled "system_file" under /system/bin/
+allow crash_dump system_file:file x_file_perms;
+
+allow crash_dump init:process getsched;
+allow crash_dump kernel:process getsched;
+
+# Date: W15.34
+# Operation: Migration
+# Purpose: For pagemap & pageflags information in NE DB
+userdebug_or_eng(`allow crash_dump self:capability sys_admin;')
+
+# Purpose: allow crash_dump to access toolbox
+allow crash_dump toolbox_exec:file rx_file_perms;
+
+# Purpose: mnt/user/*
+allow crash_dump mnt_user_file:dir search;
+allow crash_dump mnt_user_file:lnk_file r_file_perms;
+
+allow crash_dump storage_file:dir search;
+allow crash_dump storage_file:lnk_file r_file_perms;
+
+userdebug_or_eng(`
+  allow crash_dump su:dir r_dir_perms;
+  allow crash_dump su:file r_file_perms;
+')
+
+# /data/tombstone
+allow crash_dump tombstone_data_file:dir w_dir_perms;
+allow crash_dump tombstone_data_file:file create_file_perms;
+
+# /proc/pid/
+allow crash_dump self:capability { fowner chown fsetid sys_nice sys_resource net_admin sys_module setgid setuid kill };
+
+# PROCESS_FILE_STATE
+allow crash_dump dumpstate:unix_stream_socket rw_socket_perms;
+allow crash_dump dumpstate:dir search;
+allow crash_dump dumpstate:file r_file_perms;
+
+allow crash_dump logdr_socket:sock_file w_file_perms;
+allow crash_dump logd:unix_stream_socket connectto;
+
+# vibrator
+allow crash_dump sysfs_vibrator:file w_file_perms;
+
+# Data : 2017/03/22
+# Operation : add NE flow rule for Android O
+# Purpose : make crash_dump can get specific process NE info
+allow crash_dump domain:dir r_dir_perms;
+allow crash_dump domain:{ file lnk_file } r_file_perms;
+
+allow crash_dump dalvikcache_data_file:dir r_dir_perms;
+
+# Data : 2017/04/06
+# Operation : add selinux rule for crash_dump notify crash_dump
+# Purpose : make crash_dump can get notify from crash_dump
+allow crash_dump crash_dump:dir search;
+allow crash_dump crash_dump:file r_file_perms;
+
+# Purpose : allow crash_dump to read /proc/version
+allow crash_dump proc_version:file r_file_perms;
+
+# Purpose: Allow crash_dump to write /sys/kernel/debug/tracing/snapshot
+userdebug_or_eng(`allow crash_dump debugfs_tracing_debug:file rw_file_perms;')
+
+# Purpose: receive dropbox message
+allow crash_dump dropbox_data_file:file { getattr read };
+allow crash_dump dropbox_service:service_manager find;
+allow crash_dump servicemanager:binder call;
+allow crash_dump system_server:binder call;
+
+# Purpose: allow crash_dump to read packages.list
+allow crash_dump packages_list_file:file r_file_perms;
+
+# Purpose: Allow crash_dump to read /proc/*/exe
+allow crash_dump system_file_type:file r_file_perms;

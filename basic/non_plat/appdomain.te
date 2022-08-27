@@ -1,2 +1,0 @@
-# Purpose: call surfaceflinger due to powervr
-allow appdomain surfaceflinger:fifo_file rw_file_perms;
