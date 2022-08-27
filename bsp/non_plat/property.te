@@ -1,290 +1,218 @@
-#=============allow ccci_mdinit to start ccci_rpcd==============
-vendor_internal_prop(ctl_ccci_rpcd_prop)
-vendor_internal_prop(ctl_ccci2_rpcd_prop)
-
-#=============allow statusd==============
-vendor_internal_prop(cdma_prop)
-
-#=============allow teei deamon and init_thh daemon to set property ==============
-vendor_internal_prop(soter_teei_prop)
-
-#=============allow log filter property==============
-vendor_internal_prop(logfilter_prop)
-
-#=============allow android log much property==============
-vendor_restricted_prop(vendor_logmuch_prop)
-
-#=============allow system server to set appdetection property  ==============
-vendor_internal_prop(appdetection_prop)
-
-#=============allow radio to set mtk_volte_support property==============
-vendor_public_prop(mtk_volte_support_prop)
-
-#=============allow radio to set mtk_wfc_support_prop property==============
-vendor_internal_prop(mtk_wfc_support_prop)
-
-#=============allow radio to set mtk_vilte_support_prop property==============
-vendor_public_prop(mtk_vilte_support_prop)
-
-#=============allow radio to set mtk_viwifi_support_prop property==============
-vendor_public_prop(mtk_viwifi_support_prop)
-
-#=============allow radio to set mtk_rcs_ua_support property==============
-vendor_internal_prop(mtk_rcs_ua_support_prop)
-
-#=============allow radio to set mtk_wfc_enable property==============
-vendor_public_prop(mtk_wfc_prop)
-
-#=============allow radio to set mtk_vilte_enable property==============
-vendor_public_prop(mtk_vilte_prop)
-
-#=============allow radio to set mtk_viwifi_enable property==============
-vendor_public_prop(mtk_viwifi_prop)
-
-#=============allow radio to set mtk_vt_enable property==============
-vendor_public_prop(mtk_vt_prop)
-
-#=============allow radio to set mtk_vonr_enable property==============
-vendor_public_prop(mtk_vonr_prop)
-
-#=============allow radio to set mtk_vinr_enable property==============
-vendor_public_prop(mtk_vinr_prop)
-
-#=============allow wifi offload deamon to set system property  ==============
-vendor_internal_prop(mtk_epdg_prop)
-vendor_internal_prop(persist_epdg_prop)
-
-#=============allow netdagent to set prop  ==============
-vendor_internal_prop(netdagent_prop)
-
-#=============allow EM set vt test mode property=============
-system_internal_prop(vendor_vt_prop)
-
-#=============allow system update to set prop=============
-system_internal_prop(mtk_update_prop)
-
-#=============allow system_server to set media.wfd.*==============
-system_internal_prop(vendor_media_wfd_prop)
-
-#=============allow telephony modules to set mtk_vsim_prop==============
-vendor_public_prop(mtk_vsim_prop)
-
-#=============allow system partition to acess mtk_vsim_sys_prop==============
-system_internal_prop(mtk_vsim_sys_prop)
-
-#=============allow EM set ims xcap property=============
-system_internal_prop(vendor_ims_xcap_prop)
-
-#============= allow supplementary service property ===============
-system_internal_prop(vendor_supp_serv_prop)
-
-#=============allow bluetooth to set mtk_bluetooth_prop==============
-system_internal_prop(mtk_bluetooth_prop)
-
-#=============allow EM set moms property===========
-vendor_internal_prop(mtk_moms_prop)
-
-#=============allow EM set tel log property===========
-vendor_public_prop(mtk_log_tel_dbg_prop)
-system_internal_prop(mtk_em_tel_log_prop)
-
-#=============allow IMS property===========
-vendor_public_prop(mtk_ims_prop)
-
-#=============allow ims config property=============
-system_internal_prop(vendor_imsconfig_prop)
-
-#=============allow ipsec_mon to set mtk_network_prop==============
-vendor_internal_prop(mtk_network_prop)
-
-#=============allow CTA property===========
-vendor_internal_prop(mtk_cta_log_prop)
-vendor_public_prop(mtk_mobile_management_prop)
-
-#=============allow vendor_init to set ro.vendor.mtk_wfd_support==============
-vendor_restricted_prop(ro_vendor_mtk_wfd_support_prop)
-
-#=============allow mtk duraspeed property==============
-vendor_internal_prop(mtk_duraspeed_prop)
-system_internal_prop(mtk_duraspeed_drop_caches)
-
-#=============allow Multiple IMS property===========
-vendor_public_prop(mtk_mims_prop)
-
-#=============allow Multiple IMS property===========
-vendor_public_prop(mtk_dynims_prop)
-
-#=============allow IMS/EIMS pdn info property===========
-vendor_internal_prop(mtk_ims_eims_pdn_prop)
-
-#=============allow External SIM property===========
-vendor_internal_prop(mtk_extsim_prop)
-
-#=============allow Modem Monitor property===========
-vendor_restricted_prop(mtk_mdm_prop)
-
-#=============allow Modem World Mode property===========
-vendor_restricted_prop(mtk_mdworldmode_prop)
-
-# OMA DRM
-vendor_internal_prop(mtk_oma_drm_support_prop)
-vendor_internal_prop(mtk_drm_fwd_lock_only_prop)
-
-#=============allow settings to get relevant property===========
-vendor_internal_prop(mtk_miravision_support_prop)
-vendor_internal_prop(mtk_aod_support_prop)
-vendor_internal_prop(mtk_default_write_disk_prop)
-vendor_internal_prop(mtk_bg_power_saving_support_prop)
-vendor_internal_prop(mtk_bg_power_saving_ui_prop)
-vendor_internal_prop(mtk_besloudness_support_prop)
-vendor_internal_prop(mtk_hifiaudio_support_prop)
-vendor_internal_prop(mtk_active_noise_cancel_prop)
-vendor_internal_prop(mtk_wapi_support_prop)
-
-#=============allow FastDormancy support property===============
-vendor_restricted_prop(mtk_fd_support_prop)
-
-#=============allow wappush property===========
-vendor_internal_prop(mtk_wappush_prop)
-
-#=============allow MD Number Protocol===============
-vendor_internal_prop(num_md_protocol_prop)
-
-#=============allow NFC related property===========
-vendor_internal_prop(mtk_st_nfc_gsma_support_prop)
-vendor_internal_prop(mtk_st_nfc_ignore_modem_prop)
-vendor_internal_prop(mtk_nfc_addon_support_prop)
-vendor_internal_prop(mtk_nfc_uicc_clf_prop)
-vendor_internal_prop(mtk_radio_seapi_off_prop)
-vendor_internal_prop(mtk_nxp_nfc_gsma_support_prop)
-
-#=============MTK operator property===========
-vendor_internal_prop(mtk_operator_prop)
-
-#=============allow vendor_init to ro.vendor.mtk_system_update_support==============
-system_internal_prop(mtk_system_update_support_prop)
-
-#=============allow vendor_init to ro.vendor.mtk_omacp_support==============
-vendor_internal_prop(mtk_omacp_support_prop)
-
-#=============allow libudf property===========
-vendor_internal_prop(mtk_libudf_prop)
-
-#=============allow printk property===========
-vendor_internal_prop(mtk_printk_prop)
-
-#=============MTK camera property=============
-vendor_public_prop(mtk_camera_prop)
-
-#=============MTK gallery property=============
-vendor_internal_prop(mtk_gallery_prop)
-
-#=============MTK media property=============
-vendor_internal_prop(mtk_media_prop)
-
-#=============MTK RSC property===========
-vendor_internal_prop(mtk_rsc_prop)
-
-#=============allow AMS-aal dynamic property===========
-system_internal_prop(mtk_amsaal_prop)
-
-#=============allow common data property===========
-system_internal_prop(mtk_common_data_prop)
-
-#=============MTK PMS property===========
-vendor_internal_prop(mtk_pms_prop)
-
-#=============MTK PMS property===========
-system_internal_prop(mtk_selfreg_prop)
-
-#=============MTK CDMA Less property===========
-system_internal_prop(persist_vendor_vzw_device_type)
-
-#=============MTK RTT property==============
-system_internal_prop(mtk_rtt_prop)
-
-#=============MTK CTM property===========
-system_internal_prop(mtk_ctmslot_prop)
-
-#=============MTK UCE property===========
-system_internal_prop(mtk_uce_support_prop)
-
-#=============USB CBA property===========
-system_internal_prop(mtk_cba_activation)
-
-#=============allow adb to set wfc mccmnc property===========
-system_internal_prop(mtk_wfc_mccmnc_prop)
-
-#=============allow adb to set wfc entitlement property===========
-system_internal_prop(mtk_wfc_entitlement_prop)
-
-#=============allow system_app to get opt-in property===========
-system_internal_prop(mtk_wfc_opt_in_prop)
-system_internal_prop(mtk_opt_in_url_prop)
-system_internal_prop(mtk_apptoken_required_prop)
-
-#=============allow radio to set cdma property===========
-system_internal_prop(system_cdma_prop)
-
-#=============ECBM property==============
-system_internal_prop(mtk_cdma_ecm_prop)
-
-#=============MTK RCS property==============
-system_internal_prop(mtk_rcs_support_prop)
-vendor_internal_prop(service_rcs_prop)
-
-#=============MTK CLIENTAPI property===========
-system_internal_prop(mtk_clientapi_support_prop)
-
-#=============MTK World Phone property===========
-system_internal_prop(mtk_world_phone_prop)
-
-#=============MTK Capability Switch property===========
-system_internal_prop(mtk_capability_switch_prop)
-
-#=============allow data shaping property==============
-vendor_internal_prop(mtk_datashaping_prop)
-
-#=============MTK IMS Config Provision property===========
-vendor_internal_prop(mtk_provision_prop)
-
-#=============MTK NeuroPilot  property===========
-vendor_internal_prop(mtk_nn_quant_preferred_prop)
-vendor_internal_prop(mtk_tflite_fuse_pad_prop)
-
-#=============MTK CAM Security property===========
-vendor_restricted_prop(mtk_cam_security_prop)
-
-#=============SubsidyLock Property==============
-vendor_public_prop(mtk_subsidylock_prop)
-system_internal_prop(mtk_subsidylock_prop_connect)
-
-#=============mtk to set atci property=============
-system_internal_prop(atci_sys_prop)
-
-#=============allow PMS to read ro.vendor.mtk_telephony_add_on_policy===========
-vendor_public_prop(mtk_telephony_addon_prop)
-
-#=============allow get ro.vendor.mtk_cta_support===============
-vendor_public_prop(mtk_cta_support_prop)
-
-#=============allow mtk heavy loading property==============
-system_internal_prop(mtk_heavy_loading_prop)
-
-#=============allow mtk emcamera set roperty==============
-vendor_internal_prop(mtk_emcamera_prop)
-
-#=============jpeg decode sw opt. property============
-vendor_internal_prop(mtk_jpeg_opt_prop)
-
-#=============allow TEE property===========
-vendor_restricted_prop(ro_vendor_mtk_trustonic_tee_prop)
-vendor_restricted_prop(ro_vendor_mtk_microtrust_tee_prop)
-
-#=============ACS property================
-system_internal_prop(mtk_acs_version_prop)
-system_internal_prop(mtk_acs_url_prop)
-system_internal_prop(mtk_acs_support_prop)
-
-# GSM
-vendor_internal_prop(mtk_gsm_neting_prop)
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# system_internal_prop      -- Properties used only in /system
+# system_restricted_prop    -- Properties which can't be written outside system
+# system_public_prop        -- Properties with no restrictions
+# system_vendor_config_prop -- Properties which can be written only by vendor_init
+# vendor_internal_prop      -- Properties used only in /vendor
+# vendor_restricted_prop    -- Properties which can't be written outside vendor
+# vendor_public_prop        -- Properties with no restrictions
+
+# Properties used only in /vendor
+vendor_internal_prop(vendor_mtk_ctl_ccci_rpcd_prop)
+vendor_internal_prop(vendor_mtk_ctl_ccci2_rpcd_prop)
+vendor_internal_prop(vendor_mtk_rpmb_ready_prop)
+
+# Properties which can't be written outside vendor
+vendor_restricted_prop(vendor_mtk_active_noise_cancel_prop)
+vendor_restricted_prop(vendor_mtk_atci_sys_prop)
+vendor_restricted_prop(vendor_mtk_besloudness_support_prop)
+vendor_restricted_prop(vendor_mtk_bg_power_saving_support_prop)
+vendor_restricted_prop(vendor_mtk_bg_power_saving_ui_prop)
+vendor_restricted_prop(vendor_mtk_camera_prop)
+vendor_restricted_prop(vendor_mtk_cam_security_prop)
+vendor_restricted_prop(vendor_mtk_cdma_prop)
+vendor_restricted_prop(vendor_mtk_cta_log_prop)
+vendor_restricted_prop(vendor_mtk_cta_support_prop)
+vendor_restricted_prop(vendor_mtk_boostfwk_log_prop)
+vendor_restricted_prop(vendor_mtk_boostfwk_scrollidentify_prop)
+vendor_restricted_prop(vendor_mtk_boostfwk_display60_prop)
+vendor_restricted_prop(vendor_mtk_boostfwk_frameidentify_prop)
+vendor_restricted_prop(vendor_mtk_boostfwk_prop)
+vendor_restricted_prop(vendor_mtk_datashaping_prop)
+vendor_restricted_prop(vendor_mtk_default_write_disk_prop)
+vendor_restricted_prop(vendor_mtk_dmc_prop)
+vendor_restricted_prop(vendor_mtk_drm_fwd_lock_only_prop)
+vendor_restricted_prop(vendor_mtk_duraspeed_prop)
+vendor_restricted_prop(vendor_mtk_dx_hdcp_support_prop)
+vendor_restricted_prop(vendor_mtk_dynims_prop)
+vendor_restricted_prop(vendor_mtk_emcamera_prop)
+vendor_restricted_prop(vendor_mtk_extsim_prop)
+vendor_restricted_prop(vendor_mtk_fd_support_prop)
+vendor_restricted_prop(vendor_mtk_gallery_prop)
+vendor_restricted_prop(vendor_mtk_hifiaudio_support_prop)
+vendor_restricted_prop(vendor_mtk_ims_eims_pdn_prop)
+vendor_restricted_prop(vendor_mtk_ims_prop)
+vendor_restricted_prop(vendor_mtk_jpeg_opt_prop)
+vendor_restricted_prop(vendor_mtk_libudf_prop)
+vendor_restricted_prop(vendor_mtk_logmuch_prop)
+vendor_restricted_prop(vendor_mtk_log_tel_dbg_prop)
+vendor_restricted_prop(vendor_mtk_mdm_prop)
+vendor_restricted_prop(vendor_mtk_mdworldmode_prop)
+vendor_restricted_prop(vendor_mtk_media_prop)
+vendor_restricted_prop(vendor_mtk_microtrust_tee_prop)
+vendor_restricted_prop(vendor_mtk_mims_prop)
+vendor_restricted_prop(vendor_mtk_miravision_support_prop)
+vendor_restricted_prop(vendor_mtk_mobile_management_prop)
+vendor_restricted_prop(vendor_mtk_moms_prop)
+vendor_restricted_prop(vendor_mtk_netdagent_prop)
+vendor_restricted_prop(vendor_mtk_network_prop)
+vendor_restricted_prop(vendor_mtk_nfc_addon_support_prop)
+vendor_restricted_prop(vendor_mtk_nfc_uicc_clf_prop)
+vendor_restricted_prop(vendor_mtk_nfc_nfcstackp_enable_prop)
+vendor_restricted_prop(vendor_mtk_nn_quant_preferred_prop)
+vendor_restricted_prop(vendor_mtk_num_md_protocol_prop)
+vendor_restricted_prop(vendor_mtk_nxp_nfc_gsma_support_prop)
+vendor_restricted_prop(vendor_mtk_omacp_support_prop)
+vendor_restricted_prop(vendor_mtk_oma_drm_support_prop)
+vendor_restricted_prop(vendor_mtk_operator_prop)
+vendor_restricted_prop(vendor_mtk_persist_epdg_prop)
+vendor_restricted_prop(vendor_mtk_pms_prop)
+vendor_restricted_prop(vendor_mtk_pppd_gprs_prop)
+vendor_restricted_prop(vendor_mtk_printk_prop)
+vendor_restricted_prop(vendor_mtk_provision_prop)
+vendor_restricted_prop(vendor_mtk_radio_seapi_off_prop)
+vendor_restricted_prop(vendor_mtk_rcs_ua_support_prop)
+vendor_restricted_prop(vendor_mtk_rsc_prop)
+vendor_restricted_prop(vendor_mtk_secure_venc_prop)
+vendor_restricted_prop(vendor_mtk_service_rcs_prop)
+vendor_restricted_prop(vendor_mtk_soter_teei_prop)
+vendor_restricted_prop(vendor_mtk_st_nfc_gsma_support_prop)
+vendor_restricted_prop(vendor_mtk_st_nfc_ignore_modem_prop)
+vendor_restricted_prop(vendor_mtk_telephony_addon_prop)
+vendor_restricted_prop(vendor_mtk_trustkernel_tee_prop)
+vendor_restricted_prop(vendor_mtk_trustonic_tee_prop)
+vendor_restricted_prop(vendor_mtk_vendor_vt_prop)
+vendor_restricted_prop(vendor_mtk_vilte_prop)
+vendor_restricted_prop(vendor_mtk_vilte_support_prop)
+vendor_restricted_prop(vendor_mtk_vinr_prop)
+vendor_restricted_prop(vendor_mtk_viwifi_prop)
+vendor_restricted_prop(vendor_mtk_viwifi_support_prop)
+vendor_restricted_prop(vendor_mtk_volte_support_prop)
+vendor_restricted_prop(vendor_mtk_vonr_support_prop)
+vendor_restricted_prop(vendor_mtk_vonr_prop)
+vendor_restricted_prop(vendor_mtk_vsim_prop)
+vendor_restricted_prop(vendor_mtk_vt_prop)
+vendor_restricted_prop(vendor_mtk_wapi_support_prop)
+vendor_restricted_prop(vendor_mtk_wappush_prop)
+vendor_restricted_prop(vendor_mtk_wfc_prop)
+vendor_restricted_prop(vendor_mtk_wfc_support_prop)
+vendor_restricted_prop(vendor_mtk_wfd_support_prop)
+vendor_restricted_prop(vendor_mtk_em_dy_debug_ctrl_prop)
+vendor_restricted_prop(vendor_mtk_hvolte_indicator)
+vendor_restricted_prop(vendor_mtk_md_c2k_cap_dep_check_prop)
+vendor_restricted_prop(vendor_mtk_gwsd_capability_prop)
+vendor_restricted_prop(vendor_mtk_netdagent_gameserver_prop)
+vendor_restricted_prop(vendor_mtk_apuware_debug_prop)
+vendor_restricted_prop(vendor_mtk_nwk_opt_prop)
+vendor_restricted_prop(vendor_mtk_wfd_enable_prop)
+vendor_restricted_prop(vendor_mtk_vonr_force_prop)
+vendor_restricted_prop(vendor_mtk_em_mtu_prop)
+vendor_restricted_prop(vendor_mtk_fast_charging_support_prop)
+vendor_restricted_prop(vendor_mtk_call_drop_prop)
+vendor_restricted_prop(vendor_mtk_mcf_prop)
+vendor_restricted_prop(vendor_mtk_subsidy_lock_support_prop)
+vendor_restricted_prop(vendor_mtk_gwsd_prop)
+
+# Properties with no restriction
+vendor_public_prop(vendor_mtk_sec_video_path_support_prop)
+vendor_public_prop(vendor_mtk_svp_on_mtee_support_prop)
+
+# Properties with can be read by all domains
+typeattribute vendor_mtk_active_noise_cancel_prop     mtk_core_property_type;
+typeattribute vendor_mtk_besloudness_support_prop     mtk_core_property_type;
+typeattribute vendor_mtk_bg_power_saving_support_prop mtk_core_property_type;
+typeattribute vendor_mtk_bg_power_saving_ui_prop      mtk_core_property_type;
+typeattribute vendor_mtk_camera_prop                  mtk_core_property_type;
+typeattribute vendor_mtk_cam_security_prop            mtk_core_property_type;
+typeattribute vendor_mtk_cdma_prop                    mtk_core_property_type;
+typeattribute vendor_mtk_cta_log_prop                 mtk_core_property_type;
+typeattribute vendor_mtk_cta_support_prop             mtk_core_property_type;
+typeattribute vendor_mtk_boostfwk_log_prop            mtk_core_property_type;
+typeattribute vendor_mtk_boostfwk_scrollidentify_prop mtk_core_property_type;
+typeattribute vendor_mtk_boostfwk_display60_prop      mtk_core_property_type;
+typeattribute vendor_mtk_boostfwk_frameidentify_prop  mtk_core_property_type;
+typeattribute vendor_mtk_boostfwk_prop                mtk_core_property_type;
+typeattribute vendor_mtk_datashaping_prop             mtk_core_property_type;
+typeattribute vendor_mtk_default_write_disk_prop      mtk_core_property_type;
+typeattribute vendor_mtk_drm_fwd_lock_only_prop       mtk_core_property_type;
+typeattribute vendor_mtk_duraspeed_prop               mtk_core_property_type;
+typeattribute vendor_mtk_dx_hdcp_support_prop         mtk_core_property_type;
+typeattribute vendor_mtk_dynims_prop                  mtk_core_property_type;
+typeattribute vendor_mtk_emcamera_prop                mtk_core_property_type;
+typeattribute vendor_mtk_extsim_prop                  mtk_core_property_type;
+typeattribute vendor_mtk_fd_support_prop              mtk_core_property_type;
+typeattribute vendor_mtk_gallery_prop                 mtk_core_property_type;
+typeattribute vendor_mtk_hifiaudio_support_prop       mtk_core_property_type;
+typeattribute vendor_mtk_ims_eims_pdn_prop            mtk_core_property_type;
+typeattribute vendor_mtk_ims_prop                     mtk_core_property_type;
+typeattribute vendor_mtk_jpeg_opt_prop                mtk_core_property_type;
+typeattribute vendor_mtk_libudf_prop                  mtk_core_property_type;
+typeattribute vendor_mtk_logmuch_prop                 mtk_core_property_type;
+typeattribute vendor_mtk_log_tel_dbg_prop             mtk_core_property_type;
+typeattribute vendor_mtk_mdm_prop                     mtk_core_property_type;
+typeattribute vendor_mtk_mdworldmode_prop             mtk_core_property_type;
+typeattribute vendor_mtk_media_prop                   mtk_core_property_type;
+typeattribute vendor_mtk_microtrust_tee_prop          mtk_core_property_type;
+typeattribute vendor_mtk_mims_prop                    mtk_core_property_type;
+typeattribute vendor_mtk_miravision_support_prop      mtk_core_property_type;
+typeattribute vendor_mtk_mobile_management_prop       mtk_core_property_type;
+typeattribute vendor_mtk_moms_prop                    mtk_core_property_type;
+typeattribute vendor_mtk_netdagent_prop               mtk_core_property_type;
+typeattribute vendor_mtk_network_prop                 mtk_core_property_type;
+typeattribute vendor_mtk_nfc_addon_support_prop       mtk_core_property_type;
+typeattribute vendor_mtk_nfc_uicc_clf_prop            mtk_core_property_type;
+typeattribute vendor_mtk_nn_quant_preferred_prop      mtk_core_property_type;
+typeattribute vendor_mtk_num_md_protocol_prop         mtk_core_property_type;
+typeattribute vendor_mtk_nxp_nfc_gsma_support_prop    mtk_core_property_type;
+typeattribute vendor_mtk_omacp_support_prop           mtk_core_property_type;
+typeattribute vendor_mtk_oma_drm_support_prop         mtk_core_property_type;
+typeattribute vendor_mtk_operator_prop                mtk_core_property_type;
+typeattribute vendor_mtk_persist_epdg_prop            mtk_core_property_type;
+typeattribute vendor_mtk_pms_prop                     mtk_core_property_type;
+typeattribute vendor_mtk_pppd_gprs_prop               mtk_core_property_type;
+typeattribute vendor_mtk_printk_prop                  mtk_core_property_type;
+typeattribute vendor_mtk_provision_prop               mtk_core_property_type;
+typeattribute vendor_mtk_radio_seapi_off_prop         mtk_core_property_type;
+typeattribute vendor_mtk_rcs_ua_support_prop          mtk_core_property_type;
+typeattribute vendor_mtk_rsc_prop                     mtk_core_property_type;
+typeattribute vendor_mtk_secure_venc_prop             mtk_core_property_type;
+typeattribute vendor_mtk_service_rcs_prop             mtk_core_property_type;
+typeattribute vendor_mtk_soter_teei_prop              mtk_core_property_type;
+typeattribute vendor_mtk_st_nfc_gsma_support_prop     mtk_core_property_type;
+typeattribute vendor_mtk_st_nfc_ignore_modem_prop     mtk_core_property_type;
+typeattribute vendor_mtk_telephony_addon_prop         mtk_core_property_type;
+typeattribute vendor_mtk_trustkernel_tee_prop         mtk_core_property_type;
+typeattribute vendor_mtk_trustonic_tee_prop           mtk_core_property_type;
+typeattribute vendor_mtk_vendor_vt_prop               mtk_core_property_type;
+typeattribute vendor_mtk_vilte_prop                   mtk_core_property_type;
+typeattribute vendor_mtk_vilte_support_prop           mtk_core_property_type;
+typeattribute vendor_mtk_vinr_prop                    mtk_core_property_type;
+typeattribute vendor_mtk_viwifi_prop                  mtk_core_property_type;
+typeattribute vendor_mtk_viwifi_support_prop          mtk_core_property_type;
+typeattribute vendor_mtk_volte_support_prop           mtk_core_property_type;
+typeattribute vendor_mtk_vonr_support_prop            mtk_core_property_type;
+typeattribute vendor_mtk_vonr_prop                    mtk_core_property_type;
+typeattribute vendor_mtk_vsim_prop                    mtk_core_property_type;
+typeattribute vendor_mtk_vt_prop                      mtk_core_property_type;
+typeattribute vendor_mtk_wapi_support_prop            mtk_core_property_type;
+typeattribute vendor_mtk_wappush_prop                 mtk_core_property_type;
+typeattribute vendor_mtk_wfc_prop                     mtk_core_property_type;
+typeattribute vendor_mtk_wfc_support_prop             mtk_core_property_type;
+typeattribute vendor_mtk_wfd_support_prop             mtk_core_property_type;
+typeattribute vendor_mtk_em_dy_debug_ctrl_prop        mtk_core_property_type;
+typeattribute vendor_mtk_hvolte_indicator             mtk_core_property_type;
+typeattribute vendor_mtk_md_c2k_cap_dep_check_prop    mtk_core_property_type;
+typeattribute vendor_mtk_gwsd_capability_prop         mtk_core_property_type;
+typeattribute vendor_mtk_netdagent_gameserver_prop    mtk_core_property_type;
+typeattribute vendor_mtk_apuware_debug_prop           mtk_core_property_type;
+typeattribute vendor_mtk_nwk_opt_prop                 mtk_core_property_type;
+typeattribute vendor_mtk_wfd_enable_prop              mtk_core_property_type;
+typeattribute vendor_mtk_vonr_force_prop              mtk_core_property_type;
+typeattribute vendor_mtk_em_mtu_prop                  mtk_core_property_type;
+typeattribute vendor_mtk_fast_charging_support_prop    mtk_core_property_type;
+typeattribute vendor_mtk_sec_video_path_support_prop    mtk_core_property_type;
+typeattribute vendor_mtk_subsidy_lock_support_prop    mtk_core_property_type;
+typeattribute vendor_mtk_gwsd_prop                    mtk_core_property_type;

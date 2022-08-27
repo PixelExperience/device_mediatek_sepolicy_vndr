@@ -1,0 +1,3 @@
+# ==============================================
+# Policy File of /system/priv-app/RsuService/RsuService.apk etc. Executable File
+hal_client_domain(rsu_app, hal_telephony)

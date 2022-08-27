@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+binder_call(hal_mtk_dmc_client, hal_mtk_dmc_server)
+binder_call(hal_mtk_dmc_server, hal_mtk_dmc_client)
+add_hwservice(hal_mtk_dmc_server, mtk_hal_dmc_hwservice)
+allow hal_mtk_dmc_client mtk_hal_dmc_hwservice:hwservice_manager find;

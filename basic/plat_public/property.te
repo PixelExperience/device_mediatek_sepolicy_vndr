@@ -1,13 +1,18 @@
-# ccci_mdinit
-system_public_prop(ctl_mdlogger_prop)
-system_public_prop(ctl_emdlogger1_prop)
-system_public_prop(ctl_emdlogger2_prop)
-system_public_prop(ctl_emdlogger3_prop)
-system_public_prop(ctl_dualmdlogger_prop)
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
 
-# init_svc
-system_public_prop(init_svc_emdlogger1_prop)
-system_public_prop(init_svc_aee_aedv_prop)
+# system_internal_prop      -- Properties used only in /system
+# system_restricted_prop    -- Properties which can't be written outside system
+# system_public_prop        -- Properties with no restrictions
+# system_vendor_config_prop -- Properties which can be written only by vendor_init
+# vendor_internal_prop      -- Properties used only in /vendor
+# vendor_restricted_prop    -- Properties which can't be written outside vendor
+# vendor_public_prop        -- Properties with no restrictions
 
-# DNS property
-system_public_prop(net_dn_prop)
+# Properties with no restrictions
+system_public_prop(system_mtk_ctl_emdlogger1_prop)
+system_public_prop(system_mtk_ctl_emdlogger2_prop)
+system_public_prop(system_mtk_ctl_emdlogger3_prop)
+system_public_prop(system_mtk_ctl_mdlogger_prop)
+system_public_prop(system_mtk_init_svc_emdlogger1_prop)

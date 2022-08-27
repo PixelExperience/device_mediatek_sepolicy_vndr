@@ -16,6 +16,8 @@ define(`GED_BRIDGE_IO_QUERY_TARGET_FPS', `0x670b')
 define(`GED_BRIDGE_IO_VSYNC_WAIT', `0x670c')
 define(`GED_BRIDGE_IO_GPU_HINT_TO_CPU', `0x670d')
 define(`GED_BRIDGE_IO_HINT_FORCE_MDP', `0x670e')
+define(`GED_BRIDGE_IO_QUERY_DVFS_FREQ_PRED', `0x670f')
+define(`GED_BRIDGE_IO_QUERY_GPU_DVFS_INFO', `0x6710')
 
 define(`GED_BRIDGE_IO_GE_ALLOC', `0x6764')
 define(`GED_BRIDGE_IO_GE_GET', `0x6765')
@@ -24,26 +26,63 @@ define(`GED_BRIDGE_IO_GPU_TIMESTAMP', `0x6767')
 define(`GED_BRIDGE_IO_TARGET_FPS', `0x6768')
 define(`GED_BRIDGE_IO_GE_INFO', `0x6769')
 define(`GED_BRIDGE_IO_GPU_TUNER_STATUS', `0x676a')
+define(`GED_BRIDGE_IO_DMABUF_SET_NAME', `0x676b')
 
-#####################################
+define(`GED_BRIDGE_IO_CREATE_TIMELINE', `0x67c8')
+
+######################
 # perf_ioctl.h : FPSGO
 #
 define(`PERFMGR_FPSGO_QUEUE', `0x6701')
 define(`PERFMGR_FPSGO_DEQUEUE', `0x6703')
 define(`PERFMGR_FPSGO_VSYNC', `0x6705')
 define(`PERFMGR_FPSGO_TOUCH', `0x670a')
+define(`PERFMGR_FPSGO_SWAP_BUFFER', `0x670e')
 define(`PERFMGR_FPSGO_QUEUE_CONNECT', `0x670f')
 define(`PERFMGR_FPSGO_BQID', `0x6710')
+define(`PERFMGR_FPSGO_GET_FPS', `0x6711')
+define(`PERFMGR_FPSGO_GET_CMD', `0x6712')
+define(`PERFMGR_FPSGO_GBE_GET_CMD', `0x6713')
+define(`PERFMGR_FPSGO_GET_FSTB_ACTIVE', `0x6714')
+define(`PERFMGR_FPSGO_WAIT_FSTB_ACTIVE', `0x6715')
+define(`PERFMGR_FPSGO_SBE_RESCUE', `0x6716')
 
 # perf_ioctl.h : EARA
 define(`PERFMGR_EARA_NN_BEGIN', `0x6701')
 define(`PERFMGR_EARA_NN_END', `0x6702')
 define(`PERFMGR_EARA_GETUSAGE', `0x6703')
 
+define(`PERFMGR_EARA_GETINDEX', `0x6701')
+define(`PERFMGR_EARA_COLLECT', `0x6702')
+
+# perf_ioctl.h : EARA
+define(`PERFMGR_EARA_ENABLE', `0x6701')
+define(`PERFMGR_EARA_GETINFO', `0x6702')
+define(`PERFMGR_EARA_TDIFF', `0x6703')
+
 # perf_ioctl.h : others
 define(`PERFMGR_CPU_PREFER', `0x6701')
 
-#####################################
+# perf_ioctl.h : EAS
+define(`EAS_SYNC_SET', `0x6701')
+define(`EAS_PERTASK_LS_SET', `0x6703')
+define(`CORE_CTL_FORCE_PAUSE_CPU', `0x6707')
+define(`CORE_CTL_SET_OFFLINE_THROTTLE_MS', `0x6708')
+define(`CORE_CTL_SET_LIMIT_CPUS', `0x6709')
+define(`CORE_CTL_SET_NOT_PREFERRED', `0x670a')
+define(`CORE_CTL_SET_BOOST', `0x670b')
+define(`CORE_CTL_SET_UP_THRES', `0x670c')
+define(`CPUQOS_V3_SET_CPUQOS_MODE', `0x670e')
+define(`CPUQOS_V3_SET_CT_TASK', `0x670f')
+define(`CPUQOS_V3_SET_CT_GROUP', `0x6710')
+define(`EAS_NEWLY_IDLE_BALANCE_INTERVAL_SET', `0x6711')
+define(`EAS_GET_THERMAL_HEADROOM_INTERVAL_SET', `0x6713')
+
+# perf_ioctl.h : XGFF
+define(`PERFMGR_XGFFRAME_START', `0x6701')
+define(`PERFMGR_XGFFRAME_END', `0x6702')
+
+#################
 #
 #
 define(`MMC_IOCTLCMD', `0xb300')
@@ -51,7 +90,7 @@ define(`MMC_IOC_MULTI_CMD', `0xb301')
 define(`UFS_IOCTLCMD', `0x5388')
 define(`UFS_IOCTL_RPMB', `0x5391')
 
-#####################################
+#################
 #
 #
 define(`JPG_BRIDGE_ENC_IO_INIT', `0x780b')
@@ -59,8 +98,13 @@ define(`JPG_BRIDGE_ENC_IO_CONFIG', `0x780c')
 define(`JPG_BRIDGE_ENC_IO_WAIT', `0x780d')
 define(`JPG_BRIDGE_ENC_IO_DEINIT', `0x780e')
 define(`JPG_BRIDGE_ENC_IO_START', `0x780f')
-#####################################
+define(`JPG_BRIDGE_DEC_IO_LOCK', `0x7812')
+define(`JPG_BRIDGE_DEC_IO_WAIT', `0x7813')
+define(`JPG_BRIDGE_DEC_IO_UNLOCK', `0x7814')
+
+############
 # m4u_priv.h
+#
 define(`MTK_M4U_T_ALLOC_MVA', `0x6704')
 define(`MTK_M4U_T_DEALLOC_MVA', `0x6705')
 define(`MTK_M4U_T_CONFIG_PORT', `0x670b')
@@ -68,3 +112,4 @@ define(`MTK_M4U_T_DMA_OP', `0x671d')
 define(`MTK_M4U_T_SEC_INIT', `0x6732')
 define(`MTK_M4U_T_CONFIG_PORT_ARRAY', `0x671a')
 define(`MTK_M4U_T_CACHE_SYNC', `0x670a')
+define(`MTK_M4U_GZ_SEC_INIT', `0x673c')

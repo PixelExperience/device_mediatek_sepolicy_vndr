@@ -1,3 +1,9 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : WK14.34
+# Operation : Migration
 # Purpose : Move app to phone storage
 # 1. Enter Settings->Apps
 # 2. Select Downloaded tab
@@ -6,20 +12,25 @@
 allow installd apk_tmp_file:dir getattr;
 allow installd vfat:file getattr;
 
+# Date : WK14.34
+# Operation : Development GMO Feature "Move OAT to SD Card"
 # Purpose : for GMO ROM Size Slim
-allow installd dalvikcache_data_file:lnk_file { read getattr setattr unlink create };
-allow installd sdcard_type:dir { write read remove_name search create add_name getattr setattr };
-allow installd sdcard_type:file { write getattr setattr read create unlink open };
+allow installd dalvikcache_data_file:lnk_file create_file_perms;
+allow installd sdcard_type:dir create_dir_perms;
+allow installd sdcard_type:file create_file_perms;
 
+# Date : WK14.40
+# Operation : SQC1
 # Purpose : for access .android_secure
 allow installd vfat:dir search;
 
-# Purpose : MOTA update KK to L, workaround for access /data/.layout_version
-allow installd system_data_file:file open;
-
+# Date : WK15.02
+# Operation : SQC0
 # Purpose : ALPS01889518 (MTK MTBF)
 allow installd platform_app:fd use;
 
+# Date : WK16.09
+# Operation : Migration
 # Purpose : copy the content in /data/media/0 to /data/media
-allow installd media_rw_data_file:file { read write create open setattr };
-allow installd shell_exec:file { read execute open execute_no_trans };
+allow installd media_rw_data_file:file create_file_perms;
+allow installd shell_exec:file rx_file_perms;

@@ -2,17 +2,22 @@
 allow appdomain proc_ged:file rw_file_perms;
 allowxperm appdomain proc_ged:file ioctl { proc_ged_ioctls };
 
+# Purpose: call surfaceflinger due to powervr
+allow appdomain surfaceflinger:fifo_file rw_file_perms;
+
 # Purpose : DRM / DRI GPU driver required
 allow appdomain gpu_device:dir search;
 
 # Purpose : Allow HWUI to access perfmgr
 allow appdomain proc_perfmgr:dir search;
-allow appdomain proc_perfmgr:file { getattr open read ioctl};
+allow appdomain proc_perfmgr:file r_file_perms;
 allowxperm appdomain proc_perfmgr:file ioctl {
   PERFMGR_FPSGO_QUEUE
   PERFMGR_FPSGO_DEQUEUE
   PERFMGR_FPSGO_QUEUE_CONNECT
   PERFMGR_FPSGO_BQID
+  PERFMGR_FPSGO_SWAP_BUFFER
+  PERFMGR_FPSGO_SBE_RESCUE
 };
 
 # Purpose : For platform app com.android.gallery3d
@@ -24,3 +29,13 @@ allowxperm appdomain appdomain:fifo_file ioctl SNDCTL_TMR_START;
 # Allow appdomain to get exported_default_prop
 get_prop(appdomain, vendor_camera_prop)
 get_prop(appdomain, exported_default_prop)
+
+# Purpose : For apps other than isolated_app call hidl
+hwbinder_use({ appdomain -isolated_app })
+get_prop({ appdomain -isolated_app }, hwservicemanager_prop)
+allow { appdomain -isolated_app } hidl_manager_hwservice:hwservice_manager find;
+binder_call({ appdomain -isolated_app }, mtk_safe_halserverdomain_type)
+allow { appdomain -isolated_app } mtk_safe_hwservice_manager_type:hwservice_manager find;
+
+# Purpose: Get the variable value of touch report rate
+get_prop(appdomain, vendor_mtk_input_report_rate_prop)

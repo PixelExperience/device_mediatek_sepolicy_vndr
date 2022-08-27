@@ -2,7 +2,6 @@
 allow ueventd proc_net:file r_file_perms;
 
 # Purpose : Add for A/B system
-allow ueventd device:chr_file { relabelfrom relabelto };
 allow ueventd m_acc_misc_device:chr_file { relabelfrom relabelto };
 allow ueventd m_mag_misc_device:chr_file { relabelfrom relabelto };
 

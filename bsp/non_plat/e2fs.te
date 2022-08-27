@@ -1,4 +1,7 @@
-#============= e2fs ==============
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
 allow e2fs cache_block_device:blk_file getattr;
 allow e2fs devpts:chr_file { getattr ioctl };
 allow e2fs sysfs_fs_ext4_features:dir search;

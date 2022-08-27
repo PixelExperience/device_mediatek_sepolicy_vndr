@@ -1,5 +1,11 @@
-# Purpose: Allow app GPU library to use MDP HIDL
-hal_client_domain(priv_app, hal_mms)
+# Date: 2020/06/08
+# Purpose: Allow private app to access mtk jpeg
+allow priv_app proc_mtk_jpeg:file rw_file_perms;
+allowxperm priv_app proc_mtk_jpeg:file ioctl {
+      JPG_BRIDGE_DEC_IO_LOCK
+      JPG_BRIDGE_DEC_IO_WAIT
+      JPG_BRIDGE_DEC_IO_UNLOCK
+};
 
 allow priv_app mtk_cmdq_device:chr_file rw_file_perms;
 allow priv_app mtk_mdp_device:chr_file rw_file_perms;
@@ -14,9 +20,9 @@ allow priv_app adb_data_file:dir r_dir_perms;
 allow priv_app adb_data_file:file rx_file_perms;
 
 get_prop(priv_app, exported_default_prop)
-get_prop(priv_app, render_prop)
+get_prop(priv_app, vendor_render_prop)
 get_prop(priv_app, apexd_prop)
-get_prop(priv_app, atci_sys_prop)
-get_prop(priv_app, atm_ipaddr_prop)
-get_prop(priv_app, vendor_debug_prop)
-get_prop(priv_app, net_dn_prop)
+get_prop(priv_app, vendor_mtk_atci_sys_prop)
+get_prop(priv_app, vendor_mtk_atm_ipaddr_prop)
+get_prop(priv_app, vendor_net_dn_prop)
+get_prop(priv_app, vendor_mtk_gpu_prop)

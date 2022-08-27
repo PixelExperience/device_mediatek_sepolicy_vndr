@@ -20,8 +20,6 @@ hal_client_domain(mtk_hal_gpu, hal_allocator)
 # Purpose : Allow to use kernel driver
 allow mtk_hal_gpu graphics_device:chr_file rw_file_perms;
 
-allow mtk_hal_gpu debugfs_ged:dir rw_dir_perms;
-allow mtk_hal_gpu debugfs_ged:file rw_file_perms;
 allow mtk_hal_gpu proc_ged:file rw_file_perms;
 allowxperm mtk_hal_gpu proc_ged:file ioctl { proc_ged_ioctls };
 

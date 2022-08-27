@@ -1,42 +1,88 @@
+# ==============================================
+# Policy File of /system/bin/mtkfusionrild Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
 typeattribute rild mtkimsapdomain;
 
-# Purpose: Allow rild to get/set mtk_vsim_prop
-set_prop(rild, mtk_vsim_prop)
+# Date : WK18.16
+# Operation: P migration
+# Purpose: Allow rild to get/set vendor_mtk_vsim_prop
+set_prop(rild, vendor_mtk_vsim_prop)
 
+# Date : 2018/05/28
+# Operation: Ims config TelephonyWare dev
 allow rild mtk_radio_data_file:dir { read remove_name write search add_name open };
 allow rild mtk_radio_data_file:file { read write create open getattr lock unlink };
 
+# Date : WK18.22
+# Operation: Ims config TelephonyWare dev
 # Purpose: Allow rild to set ims feature
-set_prop(rild, mtk_volte_prop)
-set_prop(rild, mtk_wfc_prop)
-set_prop(rild, mtk_vilte_prop)
-set_prop(rild, mtk_viwifi_prop)
+set_prop(rild, vendor_mtk_volte_prop)
+set_prop(rild, vendor_mtk_wfc_prop)
+set_prop(rild, vendor_mtk_vilte_prop)
+set_prop(rild, vendor_mtk_viwifi_prop)
 
-# Purpose: Allow rild to get/set mtk_ims_prop
-set_prop(rild, mtk_ims_prop)
+# Date : WK18.25
+# Operation: P migration
+# Purpose: Allow rild to get/set vendor_mtk_ims_prop
+set_prop(rild, vendor_mtk_ims_prop)
 
+# Date : WK18.26
+# Operation: P migration
 # Purpose: Allow rild to set ims support property
-set_prop(rild, mtk_volte_support_prop)
-set_prop(rild, mtk_wfc_support_prop)
-set_prop(rild, mtk_vilte_support_prop)
-set_prop(rild, mtk_viwifi_support_prop)
-set_prop(rild, mtk_rcs_ua_support_prop)
+set_prop(rild, vendor_mtk_volte_support_prop)
+set_prop(rild, vendor_mtk_wfc_support_prop)
+set_prop(rild, vendor_mtk_vilte_support_prop)
+set_prop(rild, vendor_mtk_viwifi_support_prop)
+set_prop(rild, vendor_mtk_rcs_ua_support_prop)
 
-# Purpose: Allow mtkrild to get/set mtk_provision_prop
-set_prop(rild, mtk_provision_prop)
+# Date : WK18.29
+# Operation: Ims config TelephonyWare dev
+# Purpose: Allow mtkrild to get/set vendor_mtk_provision_prop
+set_prop(rild, vendor_mtk_provision_prop)
 
-# Purpose : Allow rild to set subsidylock property
-set_prop(rild, mtk_subsidylock_prop)
+# Date : 2019/01/29
+# Operation: IMS/EIMS pdn info
+# Purpose: Allow mtkrild to get/set vendor_mtk_ims_eims_pdn_prop
+set_prop(rild, vendor_mtk_ims_eims_pdn_prop)
 
-# Purpose: Allow mtkrild to get/set mtk_ims_eims_pdn_prop
-set_prop(rild, mtk_ims_eims_pdn_prop)
-
+# Date : 2019/06/27
+# Operation : rild need to read vendor_mtk_cta_support_prop property
 # Purpose : allow to get mtk_cta_support property
-get_prop(rild, mtk_cta_support_prop);
+get_prop(rild, vendor_mtk_cta_support_prop)
 
+# Date : WK19.29
+# Operation: IMS Config NR dev
 # Purpose: Allow rild to set IMS NR feature
-set_prop(rild, mtk_vonr_prop)
-set_prop(rild, mtk_vinr_prop)
+set_prop(rild, vendor_mtk_vonr_prop)
+set_prop(rild, vendor_mtk_vinr_prop)
 
+# Date : 2019/07/17
+# Operation: Game SDK
 # Purpose: Allow rild to write phantom packet
 allow rild nlop_device:chr_file rw_file_perms;
+
+# Date : 2020/02/17
+# Purpose: Allow rild to access netlink_xfrm_socket
+allow rild self:netlink_xfrm_socket {create setopt bind getattr write read nlmsg_read nlmsg_write};
+
+# Date : 2020/05/19
+# Purpose: Allow mtkrild to get/set vendor_mtk_hvolte_indicator
+set_prop(rild, vendor_mtk_hvolte_indicator)
+
+# Date : 2020/06/08
+# Purpose: Allow rild have 'wake_alarm' capability
+allow rild self:capability2 wake_alarm;
+
+# Date : 2020/10/30
+# Operation: IMS Config NR force value
+# Purpose: Allow rild to force set IMS NR feature
+set_prop(rild, vendor_mtk_vonr_force_prop)
+
+# Date : 2021/09/17
+# Operation: vonr setting
+# Purpose: Allow rild to set vonr support property
+set_prop(rild, vendor_mtk_vonr_support_prop)

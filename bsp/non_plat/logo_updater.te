@@ -1,0 +1,7 @@
+type logo_updater, domain, mlstrustedsubject;
+type logo_updater_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(logo_updater)
+
+allow logo_updater logo_block_device:blk_file rw_file_perms;
+allow logo_updater vendor_file:file r_file_perms;
+allow logo_updater block_device:dir search;

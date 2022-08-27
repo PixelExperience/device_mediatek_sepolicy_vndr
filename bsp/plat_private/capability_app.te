@@ -1,0 +1,20 @@
+# ==============================================
+# Policy File of /system/priv-app/CapabilityTest/CapabilityTest.apk Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+typeattribute capability_app mlstrustedobject;
+app_domain(capability_app)
+
+allow capability_app activity_service:service_manager find;
+allow capability_app activity_task_service:service_manager find;
+allow capability_app gpu_service:service_manager find;
+allow capability_app surfaceflinger_service:service_manager find;
+allow capability_app autofill_service:service_manager find;
+allow capability_app textservices_service:service_manager find;
+allow capability_app audio_service:service_manager find;
+binder_call(capability_app, gpuservice)
+
+hal_client_domain(capability_app, hal_power)

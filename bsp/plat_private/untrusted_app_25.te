@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : 2017/12/21
+# Operation: IT
+# Purpose : For hongbao optimization
+allow untrusted_app_25 mtk_connmetrics_service:service_manager find;

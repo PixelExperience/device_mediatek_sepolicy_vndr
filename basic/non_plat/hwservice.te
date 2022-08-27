@@ -14,10 +14,13 @@ type mtk_hal_lbs_hwservice, hwservice_manager_type;
 type mtk_hal_imsa_hwservice, hwservice_manager_type;
 
 # NVRAM HIDL
-type nvram_agent_binder_hwservice, hwservice_manager_type;
+type mtk_hal_nvramagent_hwservice, hwservice_manager_type;
 
 # PQ HIDL
 type mtk_hal_pq_hwservice, hwservice_manager_type;
+
+# GPU HIDL
+type mtk_hal_gpu_hwservice, hwservice_manager_type;
 
 # keymaster attestation hidl
 type mtk_hal_keyattestation_hwservice, hwservice_manager_type;
@@ -32,12 +35,14 @@ type mtk_hal_log_hwservice, hwservice_manager_type;
 type mtk_hal_em_hwservice, hwservice_manager_type;
 
 # MMS HIDL
-type hal_mms_hwservice, hwservice_manager_type;
-type hal_atci_hwservice, hwservice_manager_type;
-type mtk_hal_keymanage_hwservice, hwservice_manager_type;
+type mtk_hal_mms_hwservice, hwservice_manager_type, mtk_safe_hwservice_manager_type;
+type mtk_hal_atci_hwservice, hwservice_manager_type;
 
-# GPU HIDL
-type mtk_hal_gpu_hwservice, hwservice_manager_type;
+# Date: 2020/12/02
+# MMAgent HIDL
+type mtk_hal_mmagent_hwservice, hwservice_manager_type;
+
+type mtk_hal_keymanage_hwservice, hwservice_manager_type;
 
 # modem db filter hidl
 type mtk_hal_md_dbfilter_hwservice, hwservice_manager_type;
@@ -47,9 +52,6 @@ type mtk_hal_hdmi_hwservice, hwservice_manager_type;
 
 # BGService HIDL
 type mtk_hal_bgs_hwservice, hwservice_manager_type;
-
-# Soter
-type soter_hwservice, hwservice_manager_type;
 
 # Configstore
 type hal_configstore_hwservice, hwservice_manager_type;
@@ -62,3 +64,11 @@ type dms_hwservice, hwservice_manager_type;
 
 # NFC
 type nxpnfc_hwservice, hwservice_manager_type;
+
+# Date: 2019/07/04
+# bluetooth audio hidl
+type mtk_hal_bluetooth_audio_hwservice,hwservice_manager_type;
+
+# Date: 2021/06/30
+# composer extension HIDL
+type mtk_hal_composer_ext_hwservice, hwservice_manager_type, protected_hwservice;

@@ -1,17 +1,28 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : WK15.49
+# Operation : Migration
 # Purpose: Trustonic HW-backed Gatekeeper
 allow hal_gatekeeper_default mobicore:unix_stream_socket { connectto read write };
 allow hal_gatekeeper_default mobicore_user_device:chr_file { read write open ioctl};
 
-#============= hal_gatekeeper_default ==============
 allow hal_gatekeeper_default debugfs_tracing:file write;
 allow hal_gatekeeper_default mnt_vendor_file:dir search;
 allow hal_gatekeeper_default persist_data_file:dir { write search add_name remove_name};
 allow hal_gatekeeper_default persist_data_file:file { write read getattr open create unlink};
 
+# Date : 2016/06/01
+# Operation: TEEI integration
 # Purpose: Microtrust HW-backed Gatekeeper
-hal_client_domain(hal_gatekeeper_default, hal_capi)
+hal_client_domain(hal_gatekeeper_default, hal_teei_capi)
 hal_client_domain(hal_gatekeeper_default, hal_allocator)
 allow hal_gatekeeper_default teei_client_device:chr_file rw_file_perms;
 
 # Purpose: TrustKernel HW-backed Gatekeeper
 allow hal_gatekeeper_default tkcore_admin_device:chr_file { read write open ioctl };
+
+# Allow hal_gatekeeper_default to access /data/key_provisioning
+allow hal_gatekeeper_default key_install_data_file:dir w_dir_perms;
+allow hal_gatekeeper_default key_install_data_file:file create_file_perms;

@@ -1,0 +1,57 @@
+# ==============================================
+# Policy File of /system/bin/volte_ua Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type volte_ua, domain, mtkimsmddomain;
+type volte_ua_exec, exec_type, file_type, vendor_file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+#permissive volte_ua;
+init_daemon_domain(volte_ua)
+net_domain(volte_ua)
+
+# Date : WK14.42
+# Operation : Migration
+# Purpose : for VoLTE L early bring up and first call
+allow volte_ua node:udp_socket node_bind;
+allow volte_ua self:udp_socket { bind create };
+allow volte_ua self:udp_socket read;
+allow volte_ua self:capability { setuid setgid sys_admin };
+
+# Date : 2015/8/5
+# Operation : M Migration
+# Purpose : For ua connect to stack by local socke
+unix_socket_connect(volte_ua, volte_stack, volte_stack)
+
+allow volte_ua volte_ua_socket:sock_file write;
+
+# Date : 2015/09/30
+# Operation: Permission to use unix domain soccket
+# Purpose: change socket between vtservice and volte_ua
+allow volte_ua self:udp_socket setopt;
+
+#for timer
+allow volte_ua self:capability2 wake_alarm;
+
+# Date: 2016/12/02
+# purpose: allow volte to access aee socket
+
+# to NETD
+allow volte_ua netd:unix_stream_socket connectto;
+allow volte_ua netd_socket:sock_file write;
+allow netd volte_ua:fd use;
+allow netd volte_ua:tcp_socket { read write setopt getopt };
+allow netd volte_ua:udp_socket { read write setopt getopt };
+
+#for wfca socket
+unix_socket_connect(volte_ua, wfca, wfca)
+
+allow volte_ua volte_stack_socket:sock_file rw_file_perms;
+allow volte_ua volte_stack:unix_stream_socket connectto;
+allow volte_ua wfca_socket:sock_file rw_file_perms;
+allow volte_ua volte_vt_socket:sock_file rw_file_perms;
+allow volte_ua wfca:unix_stream_socket { connectto create_socket_perms_no_ioctl };

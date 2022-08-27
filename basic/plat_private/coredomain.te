@@ -1,0 +1,7 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Operation : DEBUG
+# Purpose : Allow to get system_mtk_audio_prop
+get_prop(coredomain, system_mtk_audio_prop)

@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_mtk_atci, mtk_hal_atci_hwservice)
+
+binder_call(hal_mtk_atci_client, hal_mtk_atci_server)
+binder_call(hal_mtk_atci_server, hal_mtk_atci_client)

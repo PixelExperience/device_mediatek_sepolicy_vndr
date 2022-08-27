@@ -1,0 +1,10 @@
+# ==============================================
+# Policy File of /system/priv-app/ApmService/ApmService.apk Executable File
+# This is a workaround for Google bug, put apmsrv_app in non_platform
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Allow to get DMC properties
+get_prop(apmsrv_app, vendor_mtk_dmc_prop)

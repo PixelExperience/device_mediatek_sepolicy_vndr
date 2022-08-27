@@ -1,1 +1,7 @@
+# ==============================================
+# Policy File of /system/bin/mtkbootanimation Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
 type mtkbootanimation, domain;

@@ -1,0 +1,29 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+typeattribute teeregistryd_app coredomain;
+
+app_domain(teeregistryd_app)
+
+binder_service(teeregistryd_app)
+binder_use(teeregistryd_app)
+
+add_service(teeregistryd_app, teeregistry_service)
+
+hal_client_domain(teeregistryd_app, hal_teeregistry)
+hal_client_domain(teeregistryd_app, hal_allocator)
+
+allow teeregistryd_app activity_service:service_manager find;
+allow teeregistryd_app connectivity_service:service_manager find;
+allow teeregistryd_app display_service:service_manager find;
+allow teeregistryd_app network_management_service:service_manager find;
+allow teeregistryd_app tee_service:service_manager find;
+allow teeregistryd_app fwmarkd_socket:sock_file write;
+allow teeregistryd_app netd:unix_stream_socket connectto;
+allow teeregistryd_app node:udp_socket node_bind;
+allow teeregistryd_app port:udp_socket name_bind;
+allow teeregistryd_app port:tcp_socket name_connect;
+allow teeregistryd_app self:tcp_socket { create setopt read getopt getattr write connect };
+allow teeregistryd_app dnsproxyd_socket:sock_file write;
+allow teeregistryd_app self:udp_socket { create bind setattr };

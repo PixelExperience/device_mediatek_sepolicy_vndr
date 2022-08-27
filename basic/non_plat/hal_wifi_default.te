@@ -1,0 +1,18 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+allow hal_wifi_default self:capability sys_module;
+allow hal_wifi_default vendor_file:system module_load;
+allow hal_wifi_default kernel:system module_request;
+
+# allow hal service to manage AP bridge
+allowxperm hal_wifi_default self:udp_socket ioctl {
+    SIOCBRADDBR
+    SIOCBRADDIF
+    SIOCBRDELBR
+    SIOCBRDELIF
+    SIOCDEVPRIVATE_1
+};
+
+set_prop(hal_wifi_default, vendor_mtk_wifi_hal_prop)

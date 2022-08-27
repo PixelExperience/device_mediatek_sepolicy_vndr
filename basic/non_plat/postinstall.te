@@ -1,0 +1,7 @@
+allow postinstall dm_device:chr_file rw_file_perms;
+allow postinstall preloader_block_device:blk_file rw_file_perms;
+allow postinstall postinstall_block_device:blk_file rw_file_perms;
+allow postinstall sysfs_devices_block:dir search;
+allowxperm postinstall preloader_block_device:blk_file ioctl  BLKROSET;
+allow postinstall block_device:dir search;
+allow postinstall self:capability sys_admin;

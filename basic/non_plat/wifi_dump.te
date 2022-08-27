@@ -1,0 +1,27 @@
+# ==============================================
+# Policy File of /vendor/bin/wifi_dump Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type wifi_dump_exec, vendor_file_type, exec_type, file_type;
+type wifi_dump, domain;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+init_daemon_domain(wifi_dump)
+allow wifi_dump self:capability net_admin;
+allow wifi_dump self:netlink_socket create_socket_perms_no_ioctl;
+allow wifi_dump self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow wifi_dump conninfra_device:chr_file rw_file_perms;
+allow wifi_dump stpwmt_device:chr_file rw_file_perms;
+allow wifi_dump tmpfs:lnk_file r_file_perms;
+allow wifi_dump mnt_user_file:dir search;
+allow wifi_dump mnt_user_file:lnk_file r_file_perms;
+allow wifi_dump storage_file:lnk_file r_file_perms;
+allow wifi_dump stp_dump_data_file:dir create_dir_perms;
+allow wifi_dump stp_dump_data_file:file create_file_perms;
+allow wifi_dump connsyslog_data_vendor_file:dir create_dir_perms;
+allow wifi_dump connsyslog_data_vendor_file:file create_file_perms;
+get_prop(wifi_dump, vendor_mtk_coredump_prop)

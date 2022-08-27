@@ -4,13 +4,12 @@ allow vold iso9660:filesystem unmount;
 # Purpose : vold will traverse /proc when remountUid().
 #           It will trigger violation if mtk customize some label in /proc.
 #           However, we should ignore the violation if the processes never access the storage.
-dontaudit vold proc_battery_cmd:dir { read open };
-dontaudit vold proc_mtkcooler:dir { read open };
-dontaudit vold proc_mtktz:dir { read open };
-dontaudit vold proc_thermal:dir { read open };
+dontaudit vold proc_mtkcooler:dir r_dir_perms;
+dontaudit vold proc_mtktz:dir r_dir_perms;
+dontaudit vold proc_thermal:dir r_dir_perms;
 
 # Purpose : vold create mdlog folder in data for meta mode.
-allow vold mdlog_data_file:dir { create_dir_perms };
+allow vold mdlog_data_file:dir create_dir_perms;
 
 allow vold mtd_device:blk_file rw_file_perms;
 
@@ -31,6 +30,8 @@ allow vold nvdata_device:blk_file getattr;
 allow vold proc_swaps:file r_file_perms;
 allow vold protect1_block_device:blk_file getattr;
 allow vold protect2_block_device:blk_file getattr;
-allow vold proc_swaps:file getattr;
 allow vold swap_block_device:blk_file getattr;
-allow vold sysfs_mmcblk:file write;
+allow vold sysfs_devices_block:file write;
+
+# trigger udisk uevent
+allow vold sysfs_usb_nonplat:file w_file_perms;

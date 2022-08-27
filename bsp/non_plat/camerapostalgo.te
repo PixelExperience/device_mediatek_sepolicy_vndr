@@ -1,3 +1,10 @@
+# ==============================================
+# Policy File of /system/bin/camerapostalgo Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
 allow camerapostalgo proc_perfmgr:dir r_dir_perms;
 allow camerapostalgo proc_perfmgr:file r_file_perms;
 allowxperm camerapostalgo proc_perfmgr:file ioctl {
@@ -9,14 +16,10 @@ allowxperm camerapostalgo proc_perfmgr:file ioctl {
 
 allow camerapostalgo proc_ged:file r_file_perms;
 allowxperm camerapostalgo proc_ged:file ioctl { proc_ged_ioctls };
-get_prop(camerapostalgo, debug_bq_dump_prop)
 allow camerapostalgo debugfs_ion:dir search;
 
 # ipc call
-allow camerapostalgo hal_mms_hwservice:hwservice_manager find;
-allow camerapostalgo mtk_hal_gpu_hwservice:hwservice_manager find;
-hal_client_domain(camerapostalgo, hal_graphics_allocator);
+hal_client_domain(camerapostalgo, hal_mtk_mms)
+hal_client_domain(camerapostalgo, hal_graphics_allocator)
 allow camerapostalgo hal_graphics_mapper_hwservice:hwservice_manager find;
-allow camerapostalgo mtk_hal_mms:binder call;
-allow camerapostalgo mtk_hal_gpu:binder call;
 allow camerapostalgo hal_configstore_default:binder call;

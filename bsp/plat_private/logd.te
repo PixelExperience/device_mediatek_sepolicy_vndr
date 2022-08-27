@@ -1,0 +1,10 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+set_prop(logd, logd_prop)
+set_prop(logd, log_tag_prop)
+
+# Date : W18.26
+# Allow logmuch related property
+set_prop(logd, system_mtk_logmuch_prop)

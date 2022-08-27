@@ -1,0 +1,50 @@
+# ==============================================
+# Policy File of /system/bin/wfca Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type wfca, domain, mtkimsmddomain;
+type wfca_exec, exec_type, file_type, vendor_file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+# permissive wfca;
+init_daemon_domain(wfca)
+net_domain(wfca)
+
+# Date : WK14.42
+# Operation : Migration
+# Purpose : for WFCA send RTP/RTCP
+allow wfca self:capability { net_raw setuid setgid net_admin};
+allow wfca self:udp_socket create_socket_perms_no_ioctl;
+allow wfca node:udp_socket { node_bind create_socket_perms_no_ioctl };
+allow wfca port:udp_socket name_bind;
+allow wfca fwmarkd_socket:sock_file write;
+
+# Date : 2015/03/27
+# Operation : Migration
+# Purpose : for access ccci device
+allow wfca ccci_device:chr_file rw_file_perms;
+
+# Purpose : for WakeUpLock
+allow wfca sysfs_wake_lock:file rw_file_perms;
+
+# Purpose : for raw socket
+allow wfca self:rawip_socket create_socket_perms_no_ioctl;
+allow wfca node:rawip_socket { node_bind create_socket_perms_no_ioctl };
+
+# Date : 2015/06/25
+# Purpose : for UA socket pass
+allow wfca volte_ua:fd use;
+allow wfca volte_ua:udp_socket create_socket_perms_no_ioctl;
+
+# Purpose : For Ping ICMP feature
+allow wfca self:packet_socket { read create setopt };
+
+# Purpose : add Vinson permission
+dontaudit wfca self:capability dac_override;
+allow wfca self:capability2 block_suspend;
+
+allow wfca wfca_socket:sock_file write;

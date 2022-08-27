@@ -1,0 +1,2 @@
+# allow hal_graphics_composer domain to get mtk_hal_composer_ext_hwservice
+hal_attribute_hwservice(hal_graphics_composer, mtk_hal_composer_ext_hwservice)

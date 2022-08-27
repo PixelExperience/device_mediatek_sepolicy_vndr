@@ -1,0 +1,28 @@
+# ==============================================
+# Policy File of /vendor/bin/bt_dump Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type bt_dump, domain;
+type bt_dump_exec, vendor_file_type, exec_type, file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+init_daemon_domain(bt_dump)
+
+allow bt_dump self:capability net_admin;
+allow bt_dump self:netlink_socket create_socket_perms_no_ioctl;
+allow bt_dump self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow bt_dump conninfra_device:chr_file rw_file_perms;
+allow bt_dump stpwmt_device:chr_file rw_file_perms;
+allow bt_dump tmpfs:lnk_file r_file_perms;
+allow bt_dump mnt_user_file:dir search;
+allow bt_dump mnt_user_file:lnk_file r_file_perms;
+allow bt_dump storage_file:lnk_file r_file_perms;
+allow bt_dump stp_dump_data_file:dir create_dir_perms;
+allow bt_dump stp_dump_data_file:file create_file_perms;
+allow bt_dump connsyslog_data_vendor_file:dir create_dir_perms;
+allow bt_dump connsyslog_data_vendor_file:file create_file_perms;
+get_prop(bt_dump, vendor_mtk_coredump_prop)

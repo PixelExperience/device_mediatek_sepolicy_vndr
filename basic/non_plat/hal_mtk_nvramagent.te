@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_mtk_nvramagent, mtk_hal_nvramagent_hwservice)
+
+binder_call(hal_mtk_nvramagent_client, hal_mtk_nvramagent_server)
+binder_call(hal_mtk_nvramagent_server, hal_mtk_nvramagent_client)

@@ -1,5 +1,37 @@
-# Purpose : access gpu hal
-hal_client_domain(priv_app, hal_gpu)
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
 
+# Date : WK17.23
+# Stage: O Migration, SQC
+# Purpose: Allow to use mtk telephony APIs (phoneEx)
+allow priv_app mtk_radio_service:service_manager find;
+
+# Date : WK17.23
+# Stage: O Migration, SQC
+# Purpose: Allow to use HAL PQ
+hal_client_domain(priv_app, hal_mtk_pq)
+
+# Date : WK17.23
+# Stage: O Migration, SQC
+# Purpose: Allow to use shared memory for HAL PQ
+hal_client_domain(priv_app, hal_allocator)
+
+# Date : WK19.46
 # Purpose : access cta prop
-get_prop(priv_app, mtk_cta_set_prop)
+get_prop(priv_app, system_mtk_cta_set_prop)
+
+# Date: 2020/04/03
+# Operation : Network data controller feature
+# Purpose :allow priv_app to find cta_networkdatacontroller_service
+allow priv_app cta_networkdatacontroller_service:service_manager find;
+
+# Date: 2020/04/30
+# Operation : SQC
+# Purpose :allow priv_app to read write system_app_data_file
+allow priv_app system_app_data_file:file { read write };
+
+# Date: 2021/03/03
+# Operation : Migration
+# Purpose :allow priv_app Gallery to access drm service config property
+get_prop(priv_app, drm_service_config_prop)

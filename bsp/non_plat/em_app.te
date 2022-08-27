@@ -1,0 +1,124 @@
+# ==============================================
+# Policy File of /system/priv-app/EngineerMode/EngineerMode.apk Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# For Rild hidl connection
+binder_call(em_app, rild)
+
+# For lbs hidl usage
+hal_client_domain(em_app, hal_mtk_lbs)
+
+# Allow to get vendor_mtk_dmc_prop
+get_prop(em_app, vendor_mtk_dmc_prop)
+
+# Date: 2020/03/25
+# Purpose : Allow get USB Current Speed in Engineer Mode
+get_prop(em_app, vendor_mtk_usb_prop)
+
+# Date: 2020/04/30
+# Purose: telephony -> Vilte
+get_prop(em_app, vendor_mtk_vendor_vt_prop)
+
+# Purose: SIM Switch
+get_prop(em_app, vendor_mtk_simswitch_emmode_prop)
+
+# Date: 2020/04/30
+# Purpose: telephony ->IMS
+get_prop(em_app, vendor_mtk_mims_prop)
+get_prop(em_app, vendor_mtk_smsformat_prop)
+get_prop(em_app, vendor_mtk_imstestmode_prop)
+get_prop(em_app, vendor_mtk_dsbp_support_prop)
+
+# Date: 2020/04/30
+# Purpose: telephony ->MobileDataPreferred %%em_hidl
+get_prop(em_app, vendor_mtk_gprs_prefer_prop)
+
+# Date: 2020/04/30
+# Purpose: telephony ->RatConfiguration
+get_prop(em_app, vendor_mtk_rat_config_prop)
+get_prop(em_app, vendor_mtk_tel_switch_prop)
+
+# Date : 2020/04/30
+# Purpose: FeatureSupport
+get_prop(em_app, vendor_mtk_default_prop)
+get_prop(em_app, vendor_mtk_mdm_prop)
+get_prop(em_app, vendor_mtk_aal_ro_prop)
+get_prop(em_app, vendor_mtk_fd_support_prop)
+get_prop(em_app, vendor_mtk_wfd_support_prop)
+get_prop(em_app, vendor_mtk_vilte_support_prop)
+get_prop(em_app, vendor_mtk_mdworldmode_prop)
+get_prop(em_app, vendor_mtk_log_tel_dbg_prop)
+get_prop(em_app, vendor_mtk_ril_mode_prop)
+get_prop(em_app, vendor_mtk_wfc_support_prop)
+get_prop(em_app, vendor_mtk_telephony_addon_prop)
+get_prop(em_app, vendor_mtk_ims_prop)
+
+# Date : 2020/04/30
+# Purpose: PrefsFragment
+get_prop(em_app, vendor_mtk_cxp_vendor_prop)
+
+# Date: 2020/04/30
+# Purpose: telephony ->IMS ,ModemCategory
+get_prop(em_app, vendor_mtk_radio_prop)
+
+# Date : 2021/01/27
+# Purpose: Allow EM to read  persist.vendor.sys.mtkaal.xx
+get_prop(em_app, vendor_mtk_pq_prop)
+# Purpose: Allow EM to read persist.vendor.ss.xx
+get_prop(em_app, vendor_mtk_ss_vendor_prop)
+# Purpose: Allow EM to read persist.vendor.connsys.xx
+get_prop(em_app, vendor_mtk_wmt_prop)
+# Purpose: Allow EM to read persist.vendor.em.dy.debug
+get_prop(em_app, vendor_mtk_em_dy_debug_ctrl_prop)
+# Purpose: Allow EM to read persist.vendor.em.hidl.xx
+get_prop(em_app, vendor_mtk_em_hidl_prop)
+# Purpose: Allow EM to read persist.vendor.usb.otg.switch
+get_prop(em_app, vendor_mtk_usb_otg_switch_prop)
+# Purpose: Allow EM to read vendor.debug.gps.xx
+get_prop(em_app, vendor_mtk_mnld_prop)
+# Purpose: Allow EM to read vendor.mtk.omx.xx
+get_prop(em_app, vendor_mtk_omx_log_prop)
+# Purpose: Allow EM to read vendor.mtk.vdec.log
+get_prop(em_app, vendor_mtk_vdec_log_prop)
+# Purpose: Allow EM to read vendor.mtk.vdectlc.log
+get_prop(em_app, vendor_mtk_vdectlc_log_prop)
+# Purpose: Allow EM to read vendor.mtk.venc.h264.showlog
+get_prop(em_app, vendor_mtk_venc_h264_showlog_prop)
+# Purpose: Allow EM to read vendor.usb.xx
+get_prop(em_app, vendor_mtk_usb_prop)
+# Purpose: Allow EM to read vendor.usb.port.mode
+get_prop(em_app, vendor_mtk_em_usb_prop)
+# Purpose: Allow EM to read vendor.net.xx
+get_prop(em_app, vendor_mtk_network_prop)
+# Purpose: Allow EM to endor.mediatek.debug.md.reset.wait
+get_prop(em_app, vendor_mtk_debug_md_reset_prop)
+
+# Data : 2021/4/21
+# Purpose : add permission for /proc/mtk_usb
+allow em_app proc_usb_plat:dir search;
+allow em_app proc_usb_plat:file rw_file_perms;
+
+# Data : 2021/6/4
+# Purpose : add permission for /sys/class/udc/xxx/current_speed
+allow em_app sysfs_usb_nonplat:dir search;
+allow em_app sysfs_usb_nonplat:file rw_file_perms;
+
+# Date : 2021/05/07
+# Purpose : AOL test in EngineerMode
+allow em_app self:netlink_generic_socket { read write getattr bind create setopt };
+allow em_app conn_scp_device:chr_file rw_file_perms;
+
+# Date: 2021/08/17
+# Purpose: Allow EM to ro.vendor.mcf_support
+get_prop(em_app, vendor_mtk_mcf_prop)
+
+# Date:2021/10/29
+# Purpose: Allow EM PMU search extdev
+allow em_app sysfs_extdev:dir search;
+
+# Date : 2021/01/07
+# Purpose : Allow EM to read ro.vendor.mtk_gwsd_support
+get_prop(em_app, vendor_mtk_gwsd_prop)

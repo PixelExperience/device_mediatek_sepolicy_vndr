@@ -1,0 +1,8 @@
+# ==============================================
+# Microtrust SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_teei_tui, teei_hal_tui_hwservice)
+
+binder_call(hal_teei_tui_client, hal_teei_tui_server)
+binder_call(hal_teei_tui_server, hal_teei_tui_client)

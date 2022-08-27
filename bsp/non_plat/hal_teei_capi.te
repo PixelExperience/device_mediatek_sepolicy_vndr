@@ -1,0 +1,8 @@
+# ==============================================
+# Microtrust SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_teei_capi, teei_hal_capi_hwservice)
+
+binder_call(hal_teei_capi_client, hal_teei_capi_server)
+binder_call(hal_teei_capi_server, hal_teei_capi_client)

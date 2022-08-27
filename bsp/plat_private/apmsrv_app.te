@@ -1,0 +1,22 @@
+# ==============================================
+# Policy File of /system/priv-app/ApmService/ApmService.apk Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+typeattribute apmsrv_app mlstrustedsubject;
+app_domain(apmsrv_app)
+
+# Allow to use HAL APM
+hal_client_domain(apmsrv_app, hal_mtk_apm)
+
+# Allow to start Android service component
+allow apmsrv_app activity_service:service_manager find;
+
+# Used by LocationMessageKpiMonitor to get location info
+allow apmsrv_app location_service:service_manager find;
+
+# Used by NetworkServiceStateKpiMonitor to get Network info
+allow apmsrv_app radio_service:service_manager find;
+allow apmsrv_app registry_service:service_manager find;

@@ -5,12 +5,7 @@ binder_call(cameraserver, mtk_hal_camera)
 binder_call(cameraserver, hal_graphics_allocator)
 
 # Purpose: adb shell dumpsys media.camera --unreachable
-allow cameraserver self:process { ptrace };
-
-# -----------------------------------
-# Purpose: property access
-# -----------------------------------
-allow cameraserver mtkcam_prop:file { open read getattr };
+allow cameraserver self:process ptrace;
 
 # Purpose : HDMI driver access
 allow cameraserver graphics_device:chr_file rw_file_perms;
@@ -19,13 +14,13 @@ allow cameraserver graphics_device:chr_file rw_file_perms;
 allow cameraserver tmpfs:dir search;
 
 # Purpose : EGL file access
-allow cameraserver system_file:dir { read open };
+allow cameraserver system_file:dir r_dir_perms;
 allow cameraserver gpu_device:chr_file rw_file_perms;
 allow cameraserver gpu_device:dir search;
 
 # Purpose: Allow to access ged for gralloc_extra functions
 allow cameraserver proc_ged:file rw_file_perms;
-allowxperm cameraserver proc_ged:file ioctl { proc_ged_ioctls };
+allowxperm cameraserver proc_ged:file ioctl proc_ged_ioctls;
 
 # Purpose: Allow to access debugfs_ion dir.
 allow cameraserver system_data_file:lnk_file read;
@@ -34,7 +29,7 @@ allow cameraserver system_data_file:lnk_file read;
 allow cameraserver debugfs_ion:dir search;
 
 # Purpose: Allow permgr access
-allow cameraserver proc_perfmgr:dir {read search};
+allow cameraserver proc_perfmgr:dir r_dir_perms;
 allow cameraserver proc_perfmgr:file r_file_perms;
 allowxperm cameraserver proc_perfmgr:file ioctl {
   PERFMGR_FPSGO_QUEUE
@@ -42,3 +37,6 @@ allowxperm cameraserver proc_perfmgr:file ioctl {
   PERFMGR_FPSGO_QUEUE_CONNECT
   PERFMGR_FPSGO_BQID
 };
+
+# Purpose : PDA Driver
+allow cameraserver camera_pda_device:chr_file rw_file_perms;

@@ -1,0 +1,16 @@
+# ==============================================
+# Policy File of /system/priv-app/RsuService/RsuService.apk etc. Executable File
+
+typeattribute rsu_app mlstrustedobject;
+app_domain(rsu_app)
+
+# Common
+allow rsu_app activity_service:service_manager find;
+allow rsu_app activity_task_service:service_manager find;
+allow rsu_app gpu_service:service_manager find;
+allow rsu_app surfaceflinger_service:service_manager find;
+allow rsu_app autofill_service:service_manager find;
+allow rsu_app textservices_service:service_manager find;
+
+#Purpose:For wakelock get power manager service
+allow rsu_app thermal_service:service_manager find;

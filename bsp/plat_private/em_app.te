@@ -1,0 +1,260 @@
+# ==============================================
+# Policy File of /system/priv-app/EngineerMode/EngineerMode.apk Executable File
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+typeattribute em_app mlstrustedsubject;
+app_domain(em_app)
+
+# Common
+allow em_app activity_service:service_manager find;
+allow em_app activity_task_service:service_manager find;
+allow em_app gpu_service:service_manager find;
+allow em_app surfaceflinger_service:service_manager find;
+allow em_app autofill_service:service_manager find;
+allow em_app textservices_service:service_manager find;
+
+# Sub menu start
+allow em_app audio_service:service_manager find;
+
+# Allow to use HAL em
+hal_client_domain(em_app, hal_mtk_em)
+
+# Allow for BT # Main activity start
+allow em_app bluetooth_manager_service:service_manager find;
+
+# Allow for GPS manager usage
+allow em_app location_service:service_manager find;
+
+# Allow for Wifi manager usage
+allow em_app wifi_service:service_manager find;
+
+# For Wifi
+allow em_app self:udp_socket { create ioctl };
+allowxperm em_app self:udp_socket ioctl { SIOCIWFIRSTPRIV_0B SIOCIWFIRSTPRIV_0F SIOCSIWMODE SIOCIWFIRSTPRIV_01 SIOCIWFIRSTPRIV_09 SIOCDEVPRIVATE_2 };
+
+#For clk tool and gnssat tool to access camera manager
+allow em_app cameraserver_service:service_manager find;
+
+# For debug utils
+allow em_app crash_dump:unix_stream_socket connectto;
+
+# For simulate input action
+allow em_app input_service:service_manager find;
+
+# For get keyguard
+allow em_app trust_service:service_manager find;
+
+# For connect to em_svr
+allow em_app em_svr:unix_stream_socket connectto;
+
+#For usb acm
+set_prop(em_app, system_mtk_atci_sys_prop)
+
+#For atci
+set_prop(em_app, system_mtk_ctl_atcid_daemon_u_prop)
+set_prop(em_app, ctl_start_prop)
+set_prop(em_app, ctl_stop_prop)
+
+#For voice application
+allow em_app audioserver_service:service_manager find;
+
+#For mnld connect
+allow em_app self:tcp_socket create_socket_perms_no_ioctl;
+
+#For tel log settings
+set_prop(em_app, log_tag_prop)
+
+#For mnld connection
+allow em_app fwmarkd_socket:sock_file write;
+allow em_app port:tcp_socket name_connect;
+allow em_app netd:unix_stream_socket connectto;
+
+#For telecom service
+#allow EM app to change vibration behavior by property.
+set_prop(em_app, system_mtk_telecom_vibrate_prop)
+
+#For wfd iot property settings
+set_prop(em_app, system_mtk_media_wfd_prop)
+
+#For setting md power off property
+set_prop(em_app, system_mtk_power_off_md_prop)
+
+#For video log
+set_prop(em_app, system_mtk_logmuch_prop)
+
+#For tel log
+set_prop(em_app, system_mtk_em_tel_log_prop)
+
+# For background_data_select
+set_prop(em_app, system_mtk_bgdata_disabled_prop)
+
+# For uce service
+get_prop(em_app, system_mtk_uce_support_prop)
+
+allow em_app radio_service:service_manager find;
+
+# Date: 2020/03/25
+# For power pmu register
+allow em_app sysfs_pmu:dir search;
+
+# Date: 2020/03/25
+# For usb test
+allow em_app sysfs_usb_plat:dir search;
+allow em_app sysfs_usb_plat:file r_file_perms;
+
+# Date: 2020/03/25
+# Purpose: Allow EM USB/UART switch
+allow em_app sysfs_android0_usb:dir search;
+allow em_app sysfs_android0_usb:file r_file_perms;
+allow em_app sysfs_android_usb:dir search;
+allow em_app sysfs_android_usb:file r_file_perms;
+
+# Date : 2020/03/25
+#For usb test
+set_prop(em_app, usb_prop)
+
+# Date: 2020/03/25
+# For PMU reading
+allow em_app sysfs_pmu:dir search;
+allow em_app sysfs_pmu:file r_file_perms;
+allow em_app sysfs_pmu:lnk_file r_file_perms;
+
+# Date: 2020/03/25
+# Purpose: EM battery temprature setting
+allow em_app sysfs_batteryinfo:dir search;
+
+# Date: 2020/03/25
+# For power battery info
+allow em_app sysfs_vbus:file r_file_perms;
+
+# Date: 2020/03/25
+# Purpose: EM power ChargeBattery
+allow em_app sysfs_battery_consumption:file r_file_perms;
+allow em_app sysfs_power_on_vol:file r_file_perms;
+allow em_app sysfs_power_off_vol:file r_file_perms;
+allow em_app sysfs_fg_disable:file r_file_perms;
+allow em_app sysfs_dis_nafg:file r_file_perms;
+
+# Date: 2020/03/25
+# Purpose:For wakelock get power manager service
+allow em_app thermal_service:service_manager find;
+
+# Date : 2020/03/25
+# Purpose: Allow EM detect Audio headset status
+allow em_app sysfs_headset:file r_file_perms;
+
+# Operation: Support GWSD
+allow em_app mtk_gwsd_service:service_manager find;
+allow em_app tethering_service:service_manager find;
+
+# For supplementary service's CFU to get IccCard type through MtkTelephonyManagerEx
+allow em_app mtk_radio_service:service_manager find;
+
+# For background_data_select
+hal_client_domain(em_app, mtk_hal_netdagent)
+
+# Date : 2020/04/13
+# Purpose: Allow EM get/set CT Register system property
+set_prop(em_app, system_mtk_selfreg_prop)
+
+# Date : 2020/04/14
+# Purpose: Allow EM get/set USB tethering system property for auto test
+set_prop(em_app, system_mtk_usb_tethering_prop)
+
+# Date: 2020/04/20
+# Purpose: Allow EM write MD log filter config file in /data
+allow em_app debuglog_data_file:dir r_dir_perms;
+allow em_app debuglog_data_file:file rw_file_perms;
+
+# Date: 2020/04/20
+# Purpose: Allow EM access mediaserver
+allow em_app media_session_service:service_manager find;
+allow em_app mediaserver_service:service_manager find;
+
+# Date : 2020/04/28
+# Purpose : STMicro NFC integration for Engineering mode
+allow em_app nfc_service:service_manager find;
+
+# Date : 2020/04/30
+# Purpose: EmRadioHidlAosp get AospRadioProxy
+hal_client_domain(em_app, hal_telephony)
+
+# Date : 2020/04/30
+# Purpose: getSystemService(TELEPHONY_SERVICE)
+allow em_app registry_service:service_manager find;
+binder_call(em_app, gpuservice)
+
+# Date : 2020/04/30
+# Purpose: telephony->npt, ccm hopping get serial
+get_prop(em_app, radio_prop)
+
+# Date : 2020/04/30
+# Purpose: FeatureSupport ro.build.type, ro.board.platform
+get_prop(em_app, exported_default_prop)
+
+# Date: 2020/04/30
+#Purpose: telephony ->WifiCalling.EntitlementConfigActivity
+set_prop(em_app, system_mtk_wfc_entitlement_prop)
+
+# Date: 2020/04/30
+#Purpose: telephony ->networkinfotc1.MDMCoreOperation
+set_prop(em_app, config_prop)
+
+# Date: 2020/04/30
+# For uce related access
+set_prop(em_app, system_mtk_uce_support_prop)
+allow em_app uce_service:service_manager find;
+
+# Date: 2020/05/08
+# For OTA airplane mode
+get_prop(em_app,system_mtk_init_svc_md_monitor_prop)
+hal_client_domain(em_app, md_monitor_hal)
+
+# Date: 2020/05/15
+# Purpose: Fix the exception for long pressing operation
+allow em_app clipboard_service:service_manager find;
+
+# Date: 2020/06/03
+# Operation: DEBUG
+# Purpose: Allow EM search usb_rawbulk
+allow em_app sys_usb_rawbulk:dir r_dir_perms;
+allow em_app usb_service:service_manager find;
+
+# Date : 2020/06/03
+# Operation : DEBUG
+# Purpose : Allow to use system_mtk_gprs_attach_type_prop
+set_prop(em_app, system_mtk_gprs_attach_type_prop)
+
+# Date: 2020/06/30
+allow em_app mtk_vodata_service:service_manager find;
+
+# Date: 2020/07/29
+# Purpose: Allow EM using search service for monkey bug fix
+allow em_app search_service:service_manager find;
+
+# Date: 2020/08/14
+# Purpose: Allow EM using uimode service for monkey bug fix
+allow em_app uimode_service:service_manager find;
+
+# Date : 2020/11/03
+# Operation : DEBUG
+# Purpose : Allow EM to set system_mtk_common_data_prop
+set_prop(em_app, system_mtk_common_data_prop)
+
+# Date: 2021/01/27
+# Purpose: Allow EM to read/set sys.usb.config
+set_prop(em_app, usb_control_prop)
+
+# Purpose: Allow EM to ro.build.type
+get_prop(em_app, build_prop)
+
+# Purpose: Allow EM to ro.vendor.vodata_support
+get_prop(em_app, system_mtk_vodata_prop)
+
+# Date: 2021/04/27
+# Purpose: Allow EM to access shared preference data
+allow em_app em_app_data_file:dir create_dir_perms;
+allow em_app em_app_data_file:file create_file_perms;

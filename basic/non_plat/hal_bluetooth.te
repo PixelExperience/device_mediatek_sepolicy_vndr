@@ -1,0 +1,1 @@
+allow hal_bluetooth_client mtk_hal_bluetooth_hwservice:hwservice_manager find;

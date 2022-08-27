@@ -1,0 +1,2 @@
+allow netutils_wrapper epdg_wod:fd use;
+allow netutils_wrapper epdg_wod:unix_stream_socket { read getattr write setattr lock append bind getopt setopt shutdown map };

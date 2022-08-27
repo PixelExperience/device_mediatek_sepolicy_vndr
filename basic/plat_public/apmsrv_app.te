@@ -1,0 +1,9 @@
+# ==============================================
+# Policy File of /system/priv-app/ApmService/ApmService.apk Executable File
+# ==============================================
+
+# ==============================================
+# Type Declaration
+# ==============================================
+
+type apmsrv_app, domain, coredomain;

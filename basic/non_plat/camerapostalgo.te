@@ -1,0 +1,2 @@
+allow camerapostalgo mtk_hal_gpu_hwservice:hwservice_manager find;
+binder_call(camerapostalgo, mtk_hal_gpu)

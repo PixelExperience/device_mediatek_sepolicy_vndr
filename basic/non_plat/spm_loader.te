@@ -1,9 +1,5 @@
-type spm_loader_exec , exec_type, file_type, vendor_file_type;
-type spm_loader ,domain;
-
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+type spm_loader_exec, exec_type, file_type, vendor_file_type;
+type spm_loader, domain;
 
 # purpose: load spm firmware
 # ==============================================

@@ -1,0 +1,31 @@
+# ==============================================================================
+# Type Declaration
+# ==============================================================================
+type eara_io, domain;
+type eara_io_exec, vendor_file_type, exec_type, file_type;
+# ==============================================================================
+# Common SEPolicy Rules
+# ==============================================================================
+init_daemon_domain(eara_io)
+
+allow eara_io eara_io_data_file:dir rw_dir_perms;
+allow eara_io eara_io_data_file:fifo_file create_file_perms;
+allow eara_io eara_io_data_file:file create_file_perms;
+allow eara_io proc_earaio:file r_file_perms;
+allow eara_io proc_earaio:dir r_dir_perms;
+allow eara_io proc_perfmgr:file r_file_perms;
+allow eara_io proc_perfmgr:dir r_dir_perms;
+allow eara_io proc_version:file r_file_perms;
+allow eara_io self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow eara_io self:perf_event { open kernel };
+allow eara_io sysfs_boot_mode:file r_file_perms;
+hal_client_domain(eara_io, hal_power)
+allowxperm eara_io proc_earaio:file ioctl {
+    PERFMGR_EARA_GETINDEX
+    PERFMGR_EARA_COLLECT
+};
+allowxperm eara_io proc_perfmgr:file ioctl {
+    PERFMGR_EARA_GETINDEX
+    PERFMGR_EARA_COLLECT
+};
+set_prop(eara_io, vendor_mtk_eara_io_prop)

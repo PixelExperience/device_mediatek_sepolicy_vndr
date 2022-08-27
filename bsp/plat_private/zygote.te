@@ -1,2 +1,8 @@
-# Purpose : allow to get mtk_rsc_sys_prop
-get_prop(zygote, mtk_rsc_sys_prop);
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : 2019/11/19
+# Operation : Q Migration split build
+# Purpose : allow to get system_mtk_rsc_sys_prop
+get_prop(zygote, system_mtk_rsc_sys_prop)

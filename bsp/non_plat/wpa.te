@@ -1,0 +1,9 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+allow wpa mtkimsmddomain:unix_stream_socket connectto;
+allow wpa mtkimsmddomain:unix_dgram_socket sendto;
+allow wpa init:unix_dgram_socket sendto;
+allow wpa mtkimsmddomain:unix_stream_socket connectto;
+allow wpa mtkimsmddomain:unix_dgram_socket sendto;

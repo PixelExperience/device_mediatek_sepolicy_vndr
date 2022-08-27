@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date: 2019/06/17
+# Operation : Migration
+# Purpose :allow untrusted_app_27 to get props
+get_prop(untrusted_app_27, apexd_prop)

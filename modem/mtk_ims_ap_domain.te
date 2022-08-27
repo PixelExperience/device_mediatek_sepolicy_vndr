@@ -1,0 +1,10 @@
+unix_socket_connect(mtkimsapdomain, volte_imsvt, volte_imcb)
+allow mtkimsapdomain volte_vt_socket:dir { read write ioctl open remove_name add_name };
+allow mtkimsapdomain volte_vt_socket:dir write;
+allow mtkimsapdomain volte_vt_socket:sock_file { create unlink read write };
+allow mtkimsapdomain volte_ua:fd use;
+#allow mtkimsapdomain volte_ua:udp_socket {connect read write setopt getattr getopt shutdown};
+allow mtkimsapdomain volte_stack:unix_stream_socket connectto;
+
+unix_socket_connect(mtkimsapdomain, volte_stack, volte_stack)
+unix_socket_connect(mtkimsapdomain, volte_imsa, volte_imcb)

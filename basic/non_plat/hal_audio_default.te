@@ -1,0 +1,5 @@
+# Purpose: permission for hal_audio_default to use ccci node
+allow hal_audio_default ccci_aud_device:chr_file rw_file_perms;
+
+# Add for control PowerHAL
+hal_client_domain(hal_audio_default, hal_power)

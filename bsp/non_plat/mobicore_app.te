@@ -1,6 +1,9 @@
-type mobicore_app, domain;
 app_domain(mobicore_app)
 net_domain(mobicore_app)
+
+# ==============================================
+# Rules between mobicore_app and mobicore
+# ==============================================
 
 # For RootPA (TA installation OTAv1) + RSU daemon
 allow mobicore_app mobicore_user_device:chr_file { getattr read write ioctl open };

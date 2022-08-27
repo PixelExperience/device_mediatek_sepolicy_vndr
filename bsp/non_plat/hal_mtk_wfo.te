@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+hal_attribute_hwservice(hal_mtk_wfo, mtk_hal_wfo_hwservice)
+
+binder_call(hal_mtk_wfo_client, hal_mtk_wfo_server)
+binder_call(hal_mtk_wfo_server, hal_mtk_wfo_client)

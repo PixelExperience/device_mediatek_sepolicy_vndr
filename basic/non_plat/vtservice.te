@@ -1,1 +1,7 @@
+# Read the property of audio props
 get_prop(vtservice, vendor_audio_prop)
+
+# Read the property of mtk ril props
+get_prop(vtservice, vendor_mtk_vilte_support_prop)
+get_prop(vtservice, vendor_mtk_viwifi_support_prop)
+get_prop(vtservice, vendor_mtk_volte_support_prop)

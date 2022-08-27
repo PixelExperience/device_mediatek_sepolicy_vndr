@@ -1,0 +1,8 @@
+# ==============================================
+# Policy File of /system/bin/GoogleOtaBinder Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+
+type GoogleOtaBinder, domain;

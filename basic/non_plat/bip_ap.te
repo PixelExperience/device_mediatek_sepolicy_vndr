@@ -1,0 +1,26 @@
+type bip_ap, domain, mtkimsmddomain;
+type bip_ap_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(bip_ap)
+net_domain(bip_ap)
+
+# Date : WK14.42
+# Operation : Migration
+# Purpose : for bip_ap send RTP/RTCP
+allow bip_ap self:udp_socket create_socket_perms;
+allow bip_ap node:udp_socket node_bind;
+allow bip_ap port:udp_socket name_bind;
+allow bip_ap fwmarkd_socket:sock_file write;
+allow bip_ap self:tcp_socket create_stream_socket_perms;
+allow bip_ap port:tcp_socket name_connect;
+allow bip_ap self:netlink_route_socket read;
+
+# Purpose : for access ccci device
+allow bip_ap ccci_device:chr_file rw_file_perms;
+
+# Purpose : for raw socket
+allow bip_ap self:rawip_socket { create write bind setopt read getattr};
+allow bip_ap node:rawip_socket node_bind;
+
+allow bip_ap netd:unix_stream_socket connectto;
+allow bip_ap netd_socket:sock_file write;

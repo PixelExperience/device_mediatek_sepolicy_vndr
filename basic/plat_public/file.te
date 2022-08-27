@@ -1,2 +1,17 @@
-# lbs debug file
-type lbs_dbg_data_file, file_type, data_file_type, core_data_file_type;
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+##########################
+# Filesystem types
+#
+##########################
+# Sys Filesystem types
+
+# Date : 2020/03/25
+# Purpose : mtk Audio headset detect
+type sysfs_headset, fs_type, sysfs_type;
+
+# Date : WK20.20
+# Operation: R migration
+# Purpose : read vbus voltage
+type sysfs_vbus, fs_type, sysfs_type;

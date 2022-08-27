@@ -10,24 +10,28 @@ allow hal_fingerprint_default {
 }: chr_file rw_file_perms;
 
 allow hal_fingerprint_default {
-  sysfs_mtkfb
   sysfs_pmu
-  sysfs_spm
   sysfs_net
   debugfs_fb
   sysfs_mtkfb
+  sysfs_clk
+  sysfs_irq
+  sysfs_fp_wakeup
+  sysfs_authen_fd
   sysfsts_novatek
   mtee_trusty_file
   sysfs_batteryinfo
 }: dir r_dir_perms;
 
 allow hal_fingerprint_default {
-  sysfs_mtkfb
   sysfs_pmu
-  sysfs_spm
   sysfs_net
   debugfs_fb
   sysfs_mtkfb
+  sysfs_clk
+  sysfs_irq
+  sysfs_fp_wakeup
+  sysfs_authen_fd
   sysfsts_novatek
   mtee_trusty_file
   sysfs_batteryinfo

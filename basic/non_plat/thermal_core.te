@@ -1,0 +1,84 @@
+# ==============================================
+# Policy File of /vendor/bin/thermal_core Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type thermal_core_exec , exec_type, file_type, vendor_file_type;
+type thermal_core ,domain;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+init_daemon_domain(thermal_core)
+
+# call PowerHal
+hal_client_domain(thermal_core, hal_power)
+
+#thermal socket file, policy setting file
+allow thermal_core thermal_core_data_file:file create_file_perms;
+allow thermal_core thermal_core_data_file:dir { rw_dir_perms setattr};
+allow thermal_core thermal_core_data_file:sock_file create;
+allow thermal_core thermal_socket:dir { rw_dir_perms setattr};
+allow thermal_core thermal_socket:sock_file create_file_perms;
+
+#send notification to thermal hal
+allow thermal_core hal_thermal_default:unix_stream_socket connectto;
+allow thermal_core thermal_hal_socket:sock_file write;
+
+
+allow thermal_core mediaserver:fd use;
+allow thermal_core mediaserver:fifo_file { rw_file_perms };
+allow thermal_core mediaserver:tcp_socket { read write };
+
+# Date : WK16.30
+# Operation : Migration
+# Purpose :
+allow thermal_core camera_isp_device:chr_file { rw_file_perms };
+allow thermal_core cameraserver:fd use;
+allow thermal_core kd_camera_hw_device:chr_file { rw_file_perms };
+allow thermal_core MTK_SMI_device:chr_file r_file_perms;
+allow thermal_core surfaceflinger:fd use;
+set_prop(thermal_core, vendor_mtk_thermal_config_prop)
+
+#for thermal sysfs
+allow thermal_core sysfs_therm:file rw_file_perms;
+allow thermal_core sysfs_therm:dir search;
+
+
+#for md_on/md_off control
+allow thermal_core rild:unix_stream_socket connectto;
+allow thermal_core rild_oem_socket:sock_file write;
+
+#for sysfs thermal sram
+allow thermal_core sysfs_thermal_sram:file rw_file_perms;
+allow thermal_core sysfs_thermal_sram:dir search;
+
+#for fps cool interface
+set_prop(thermal_core, vendor_mtk_frs_prop)
+allow thermal_core self:netlink_socket { read write bind create };
+
+
+# To find a service from hwservice_manager
+allow thermal_core fwk_sensor_hwservice:hwservice_manager find;
+allow thermal_core nvram_data_file:lnk_file create_file_perms;
+allow thermal_core nvdata_file:lnk_file create_file_perms;
+hal_client_domain(thermal_core, hal_graphics_allocator)
+
+# To read gpu opp table
+allow thermal_core proc_gpufreqv2:file r_file_perms;
+allow thermal_core proc_gpufreqv2:dir search;
+
+#for sysfs charger cooler
+allow thermal_core sysfs_charger_cooler:file r_file_perms;
+allow thermal_core sysfs_charger_cooler:dir search;
+
+# To read modem boot status
+allow thermal_core sysfs_ccci:dir search;
+allow thermal_core sysfs_ccci:file r_file_perms;
+
+# To init mipc
+allow thermal_core gsm0710muxd_device:chr_file rw_file_perms;
+
+# To read connsys node
+allow thermal_core conn_pwr_device:chr_file rw_file_perms_no_map;

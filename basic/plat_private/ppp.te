@@ -1,2 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+# Date : WK14.53
+# Operation : check in
 # Purpose: for warning kernel API
-allow ppp mtp:file read;
+allow ppp mtp:file r_file_perms;

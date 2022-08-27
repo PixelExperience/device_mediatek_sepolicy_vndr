@@ -1,2 +1,0 @@
-allow mtk_hal_power debugfs_tracing:file write;
-allow mtk_hal_power proc_thermal:dir search;

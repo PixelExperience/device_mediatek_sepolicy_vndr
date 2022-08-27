@@ -1,0 +1,25 @@
+# ==============================================
+# Policy File of volte_md_status Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type volte_md_status, domain, mtkimsmddomain;
+type volte_md_status_exec, exec_type, file_type, vendor_file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+# permissive volte_md_status;
+init_daemon_domain(volte_md_status)
+
+allow volte_md_status self:capability sys_admin;
+
+# Purpose: CCCI device
+allow volte_md_status ccci_device:chr_file rw_file_perms;
+
+# Purpose: get set property
+allow volte_md_status property_socket:sock_file write;
+set_prop(volte_md_status, vendor_mtk_md_status_prop)
+
+allow volte_md_status init:unix_stream_socket connectto;

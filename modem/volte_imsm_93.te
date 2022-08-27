@@ -1,0 +1,41 @@
+# ==============================================
+# Policy File of volte_imsm_93 Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type volte_imsm_93, domain, mtkimsmddomain;
+type volte_imsm_93_exec, exec_type, file_type, vendor_file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+# permissive volte_imsm_93;
+init_daemon_domain(volte_imsm_93)
+net_domain(volte_imsm_93)
+
+allow volte_imsm_93 self:capability { setuid setgid net_admin sys_admin chown};
+
+allow volte_imsm_93 self:udp_socket create_socket_perms_no_ioctl;
+
+# Prupose: IMCB connection
+allow volte_imsm_93 volte_imcb:unix_stream_socket connectto;
+allow volte_imsm_93 volte_imsa_socket:sock_file write;
+
+# Purpose: CCCI device
+allow volte_imsm_93 ccci_device:chr_file rw_file_perms;
+
+# Purpose: Routing
+allow volte_imsm_93 self:netlink_route_socket { connect write getattr setopt read bind create nlmsg_read nlmsg_write };
+
+# Purpose: Property
+set_prop(volte_imsm_93, vendor_mtk_md_volte_prop)
+set_prop(volte_imsm_93, vendor_mtk_ril_mux_report_case_prop)
+allow volte_imsm_93 mtk_radio_device:dir w_dir_perms;
+allow volte_imsm_93 mtk_radio_device:lnk_file create_file_perms;
+allow volte_imsm_93 devpts:chr_file { rw_file_perms setattr };
+allow volte_imsm_93 self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow volte_imsm_93 volte_imsm_93:udp_socket rw_socket_perms;
+
+allow volte_imsm_93 socket_device:sock_file rw_file_perms;
+allow volte_imsm_93 volte_imsm_93:netlink_route_socket { nlmsg_write nlmsg_read create_socket_perms_no_ioctl };

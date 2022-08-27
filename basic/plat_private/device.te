@@ -1,0 +1,6 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+type tll_device, dev_type;
+type mcupm_device, dev_type;

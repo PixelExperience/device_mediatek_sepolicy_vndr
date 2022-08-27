@@ -1,2 +1,5 @@
-#============= boot_logo_updater ==============
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
 allow boot_logo_updater sysfs:dir open;

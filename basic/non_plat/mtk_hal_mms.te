@@ -1,34 +1,30 @@
-type mtk_hal_mms, domain;
+type mtk_hal_mms, domain, mtk_safe_halserverdomain_type;
 type mtk_hal_mms_exec, exec_type, file_type, vendor_file_type;
 
 # Setup for domain transition
 init_daemon_domain(mtk_hal_mms)
 
-# Allow to use HWBinder IPC
-hwbinder_use(mtk_hal_mms);
-
 # Allow a set of permissions required for a domain to be a server which provides a HAL implementation over HWBinder.
-typeattribute mtk_hal_mms untrusted_app_visible_halserver_violators;
+hal_server_domain(mtk_hal_mms, hal_mtk_mms)
 
 # add/find permission rule to hwservicemanager
-add_hwservice(hal_mms_server, hal_mms_hwservice)
-hal_server_domain(mtk_hal_mms, hal_mms)
-add_hwservice(mtk_hal_mms, hal_mms_hwservice)
-allow mtk_hal_mms hal_mms_hwservice:hwservice_manager find;
+allow mtk_hal_mms mtk_hal_mms_hwservice:hwservice_manager find;
 allow mtk_hal_mms hidl_base_hwservice:hwservice_manager add;
 
 # Purpose : Allow to use kernel driver
-allow mtk_hal_mms graphics_device:chr_file { read write open ioctl };
-allow mtk_hal_mms ion_device:chr_file { read open ioctl };
-allow mtk_hal_mms mtk_cmdq_device:chr_file { read open ioctl };
-allow mtk_hal_mms mtk_mdp_device:chr_file rw_file_perms;
-allow mtk_hal_mms sw_sync_device:chr_file rw_file_perms;
-allow mtk_hal_mms proc:file r_file_perms;
+allow mtk_hal_mms graphics_device:chr_file rw_file_perms;
+allow mtk_hal_mms ion_device:chr_file r_file_perms;
+allow mtk_hal_mms mtk_cmdq_device:chr_file r_file_perms;
+allow mtk_hal_mms mtk_mdp_device:chr_file r_file_perms;
+allow mtk_hal_mms mtk_mdp_sync_device:chr_file r_file_perms;
+allow mtk_hal_mms sw_sync_device:chr_file r_file_perms;
+allow mtk_hal_mms proc_ged:file r_file_perms;
+allowxperm mtk_hal_mms proc_ged:file ioctl { proc_ged_ioctls };
 
 # Purpose : Allow to use allocator for JPEG
 hal_client_domain(mtk_hal_mms, hal_allocator)
-hal_client_domain(mtk_hal_mms, hal_graphics_allocator);
-hal_client_domain(mtk_hal_mms, hal_pq)
+hal_client_domain(mtk_hal_mms, hal_graphics_allocator)
+hal_client_domain(mtk_hal_mms, hal_mtk_pq)
 
 # Purpose : Allow to use graphics allocator fd for gralloc_extra
 allow mtk_hal_mms hal_graphics_allocator_default:fd use;
@@ -56,9 +52,9 @@ allow mtk_hal_mms system_app:fd use;
 allow mtk_hal_mms untrusted_app_all:fd use;
 
 # Purpose : Allow MMS hals to read render props
-get_prop(mtk_hal_mms, render_prop)
-get_prop(mtk_hal_mms, mtk_pq_prop)
-get_prop(mtk_hal_mms, mtk_pq_ro_prop)
+get_prop(mtk_hal_mms, vendor_render_prop)
+get_prop(mtk_hal_mms, vendor_mtk_pq_prop)
+get_prop(mtk_hal_mms, vendor_mtk_pq_ro_prop)
 
 # Allow binder calls from gmscore_app to mtk_hal_mms and vice versa
 binder_call(gmscore_app, mtk_hal_mms)
@@ -66,6 +62,9 @@ binder_call(mtk_hal_mms, gmscore_app)
 
 # Allow gmscore_app to use fd
 allow mtk_hal_mms gmscore_app:fd use;
+
+# Purpose : Allow to set property for AIPQ
+allow mtk_hal_mms apusys_device:chr_file rw_file_perms;
 
 # Boot Mode
 allow mtk_hal_mms sysfs_boot_mode:file r_file_perms;

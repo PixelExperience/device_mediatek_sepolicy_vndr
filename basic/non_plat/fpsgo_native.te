@@ -1,0 +1,52 @@
+# ==============================================
+# Policy File of /vendor/bin/fpsgo Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type fpsgo_native_exec, exec_type, file_type, vendor_file_type;
+type fpsgo_native, domain, mlstrustedsubject;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+init_daemon_domain(fpsgo_native)
+
+allow fpsgo_native self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow fpsgo_native sysfs_boot_mode:file r_file_perms;
+hal_client_domain(fpsgo_native, hal_power)
+allow fpsgo_native proc_perfmgr:dir r_dir_perms;
+allow fpsgo_native proc_perfmgr:file rw_file_perms;
+
+allow fpsgo_native audioserver:process setsched;
+allow fpsgo_native dumpstate:process setsched;
+allow fpsgo_native hal_graphics_allocator_default:process setsched;
+allow fpsgo_native init:process setsched;
+allow fpsgo_native logd:process setsched;
+allow fpsgo_native mediaserver:process setsched;
+allow fpsgo_native mediaswcodec:process setsched;
+allow fpsgo_native mediaextractor:process setsched;
+allow fpsgo_native mtk_hal_audio:process setsched;
+allow fpsgo_native mtk_hal_sensors:process setsched;
+allow fpsgo_native mtk_hal_c2:process setsched;
+allow fpsgo_native mtk_hal_gnss:process setsched;
+allow fpsgo_native mtk_hal_power:process setsched;
+allow fpsgo_native netd:process setsched;
+allow fpsgo_native platform_app:process setsched;
+allow fpsgo_native priv_app:process setsched;
+allow fpsgo_native radio:process setsched;
+allow fpsgo_native self:capability sys_nice;
+allow fpsgo_native servicemanager:process setsched;
+allow fpsgo_native surfaceflinger:process setsched;
+allow fpsgo_native system_app:process setsched;
+allow fpsgo_native system_server:process setsched;
+allow fpsgo_native untrusted_app_all:process setsched;
+allow fpsgo_native vpud_native:process setsched;
+allow fpsgo_native wificond:process setsched;
+
+
+
+
+allowxperm fpsgo_native proc_perfmgr:file ioctl {
+ PERFMGR_FPSGO_GET_CMD
+};

@@ -1,0 +1,3 @@
+# TEE SEPolicy Rule
+# Set a new domain
+type teei_hal_capi, domain;

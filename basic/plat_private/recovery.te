@@ -1,4 +1,9 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
 # Purpose : Nand device policy
 allow recovery mtd_device:dir search;
-allow recovery mtd_device:chr_file { read write open ioctl getattr };
-allow recovery self:capability sys_resource;
+allow recovery mtd_device:chr_file rw_file_perms;
+allow recovery self:capability { sys_resource sys_rawio fsetid };
+set_prop(recovery, boottime_prop)

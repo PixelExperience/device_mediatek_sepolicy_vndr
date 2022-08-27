@@ -1,0 +1,8 @@
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+#Date : W17.18
+#Purpose: Treble SEpolicy denied clean up
+add_hwservice(hal_telephony_server, mtk_hal_rild_hwservice)
+allow hal_telephony_client mtk_hal_rild_hwservice:hwservice_manager find;

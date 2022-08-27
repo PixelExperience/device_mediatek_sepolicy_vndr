@@ -1,18 +1,39 @@
-# Purpose : Allow access logo block
+# ==============================================
+# Policy File of /system/bin/kpoc_charger Executable File
+
+
 allow kpoc_charger logo_block_device:blk_file { read open };
 
+# Date : WK15.45
+# Operation : Migration
 # Purpose : add sepolicy for kpoc_charger
 allow kpoc_charger logo_device:chr_file read;
 allow kpoc_charger logo_device:chr_file open;
 allow kpoc_charger bootdevice_block_device:blk_file read;
 allow kpoc_charger bootdevice_block_device:blk_file open;
 
+# Date : WK18.20
+# Operation : Android P migration
 # Purpose : access boot mode
 allow kpoc_charger sysfs_boot_mode:file r_file_perms;
 
-# Purpose : access vbus and pump_express
-allow kpoc_charger sysfs_vbus:file r_file_perms;
+# Purpose : access pump_express
 allow kpoc_charger sysfs_pump_express:file r_file_perms;
 
-# Purpose : read /sys/kernel/debug/wakeup_sources
-allow kpoc_charger debugfs_wakeup_sources:file r_file_perms;
+# Purpose: ioctl operation on /dev/RT_Monitor to enable hang detect
+allow kpoc_charger RT_Monitor_device:chr_file r_file_perms;
+
+# Purpose: Add permission to access metadata_file and sysfs to
+#          enable fast charging algorithm
+allow kpoc_charger metadata_file:file r_file_perms;
+allow kpoc_charger sysfs_fs_chg_file:file rw_file_perms;
+
+allow kpoc_charger gsi_metadata_file:dir search;
+allow kpoc_charger self:capability2 block_suspend;
+
+#Purpose: Add permission for DRM in animation
+allow kpoc_charger dri_device:chr_file rw_file_perms;
+
+# Date : WK21.31
+# Purpose: Add permission to access new bootmode file
+allow kpoc_charger sysfs_boot_info:file r_file_perms;

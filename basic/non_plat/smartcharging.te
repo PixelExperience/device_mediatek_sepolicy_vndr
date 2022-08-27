@@ -1,0 +1,39 @@
+# ==============================================
+# Policy File of /vendor/bin/smartcharging Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type smartcharging, domain;
+type smartcharging_exec, exec_type, file_type, vendor_file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+
+init_daemon_domain(smartcharging)
+
+# Data : WK14.43
+# Operation : Migration
+# Purpose : smartcharging daemon for access driver node
+allow smartcharging input_device:dir r_dir_perms;
+allow smartcharging input_device:file r_file_perms;
+
+# Data : WK14.43
+# Operation : Migration
+# Purpose : For smartcharging log can be printed with kernel log
+allow smartcharging kmsg_device:chr_file w_file_perms;
+
+# Data : WK14.43
+# Operation : Migration
+# Purpose : For smartcharging daemon can comminucate with kernel
+allow smartcharging self:netlink_socket create_socket_perms_no_ioctl;
+allow smartcharging self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+
+# Data : WK16.39
+allow smartcharging self:capability { fsetid };
+
+# Date: W18.17
+# Operation : add label for /sys/devices/platform/battery(/.*)
+# Purpose : add smartcharging could access
+r_dir_file(smartcharging, sysfs_batteryinfo)

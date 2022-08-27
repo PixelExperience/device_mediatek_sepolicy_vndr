@@ -16,13 +16,44 @@ allow update_engine loader_ext_block_device:blk_file rw_file_perms;
 allow update_engine cam_vpu_block_device:blk_file rw_file_perms;
 allow update_engine para_block_device:blk_file rw_file_perms;
 allow update_engine vbmeta_block_device:blk_file rw_file_perms;
+allow update_engine audio_dsp_block_device:blk_file rw_file_perms;
+allow update_engine gz_block_device:blk_file rw_file_perms;
 allow update_engine proc_filesystems:file r_file_perms;
+allow update_engine dpm_block_device:blk_file rw_file_perms;
+allow update_engine pi_img_device:blk_file rw_file_perms;
+allow update_engine apusys_device:blk_file rw_file_perms_no_map;
+allow update_engine ccu_device:blk_file rw_file_perms_no_map;
+allow update_engine gpueb_device:blk_file rw_file_perms_no_map;
+allow update_engine mcf_ota_block_device:blk_file rw_file_perms_no_map;
+allow update_engine vcp_device:blk_file rw_file_perms_no_map;
+allow update_engine mvpu_algo_device:blk_file rw_file_perms_no_map;
 
 # Add for update_engine call by system_app
 allow update_engine system_app:binder { call transfer };
 
 # Add for update_engine with postinstall
-allow update_engine postinstall_mnt_dir:dir { search getattr open read write search unlink};
+allow update_engine postinstall_mnt_dir:dir { rw_dir_perms unlink};
 
 # Add for AVB20
-allow update_engine tmpfs:lnk_file read;
+allow update_engine tmpfs:lnk_file r_file_perms;
+
+allow update_engine metadata_file:dir { getattr mounton };
+allow update_engine devpts:chr_file rw_file_perms;
+allow update_engine kmsg_device:chr_file w_file_perms;
+
+# Date: 2020/09/02
+# Operation: R migration
+# Purpose: Add permission for pl path utilities to add symlink to raw pl
+allow update_engine sysfs_devices_block:dir search;
+
+# Date: 2021/07/15
+# Operation: S migration
+# Purpose: Add permission for pl path utilities
+allow update_engine postinstall_block_device:dir w_dir_perms;
+allow update_engine postinstall_block_device:lnk_file create_file_perms;
+allow update_engine proc_bootconfig:file r_file_perms;
+
+# Date : 2022/02/07
+# Operation : T migration
+# Purpose : Add permission for pl path utilities
+allow update_engine sysfs_block:dir search;

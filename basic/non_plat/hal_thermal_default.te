@@ -1,7 +1,14 @@
 # Purpose : add grant permission for Thermal HAL mtktz and proc
 allow hal_thermal_default proc_mtktz:dir search;
-allow hal_thermal_default proc_mtktz:file {open read getattr};
-allow hal_thermal_default proc_stat:file {open read getattr };
+allow hal_thermal_default proc_mtktz:file r_file_perms;
+allow hal_thermal_default proc_stat:file r_file_perms;
+
+#for uevent handle
+allow hal_thermal_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+#for thermal hal socket
+allow hal_thermal_default thermal_hal_socket:dir { rw_dir_perms setattr};
+allow hal_thermal_default thermal_hal_socket:sock_file create_file_perms;
 
 # Purpose : Mtk thermal hal
 allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
@@ -9,8 +16,7 @@ allow hal_thermal_default sysfs_thermal:file rw_file_perms;
 allow hal_thermal_default sysfs_therm:dir r_dir_perms;
 allow hal_thermal_default sysfs_therm:file rw_file_perms;
 allow hal_thermal_default proc_stat:file r_file_perms;
-allow hal_thermal_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 hal_client_domain(hal_thermal_default, hal_power);
 
 # Purpose : Read thermal_config
-get_prop(hal_thermal_default, mtk_thermal_config_prop)
+get_prop(hal_thermal_default, vendor_mtk_thermal_config_prop)

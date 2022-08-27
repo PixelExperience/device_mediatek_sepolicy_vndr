@@ -1,0 +1,52 @@
+# ==============================================
+# Policy File of /system/bin/bip Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type bip, domain, mtkimsmddomain, netdomain;
+type bip_exec, exec_type, file_type, vendor_file_type;
+
+# ==============================================
+# Common SEPolicy Rule
+# ==============================================
+# permissive bip;
+init_daemon_domain(bip)
+net_domain(bip)
+
+# Date : WK14.42
+# Operation : Migration
+# Purpose : for bip send RTP/RTCP
+allow bip self:capability { net_raw setuid setgid net_admin};
+allow bip self:udp_socket { create write bind read setopt ioctl getattr shutdown connect };
+allow bip node:udp_socket node_bind;
+allow bip port:udp_socket name_bind;
+allow bip fwmarkd_socket:sock_file write;
+allow bip self:tcp_socket { create setopt ioctl bind listen accept read write connect };
+allow bip port:tcp_socket name_connect;
+allow bip self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_readpriv };
+allow bip bip_socket:sock_file write;
+allow bip vendor_bip_socket:sock_file write;
+
+#get_prop(bip, net_radio_prop)
+set_prop(bip, vendor_mtk_ril_mux_report_case_prop)
+set_prop(bip, vendor_mtk_ctl_muxreport-daemon_prop)
+
+# Purpose : for access ccci device
+allow bip ccci_device:chr_file rw_file_perms;
+
+# Purpose : for raw socket
+allow bip self:rawip_socket { create write bind setopt read getattr};
+allow bip node:rawip_socket {node_bind};
+
+allow bip netd:unix_stream_socket connectto;
+allow bip netd_socket:sock_file write;
+
+allow netd bip:fd use;
+allow netd bip:tcp_socket { read write setopt getopt };
+allow netd bip:udp_socket {read write setopt getopt};
+
+allow bip property_socket:sock_file write;
+allow bip init:unix_stream_socket connectto;
+
+get_prop(bip, vendor_net_dn_prop)
