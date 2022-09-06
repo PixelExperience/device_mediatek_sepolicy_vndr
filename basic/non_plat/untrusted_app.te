@@ -1,0 +1,3 @@
+# Purpose :allow Netflix to search ion/mgq
+allow untrusted_app proc_ion:dir search;
+allow untrusted_app proc_mgq:dir search;
