@@ -16,7 +16,7 @@ allow ipsec_mon self:key_socket { write read create setopt };
 # Purpose: ipsec_mon fulfill 3x solution
 allow ipsec_mon self:capability { net_admin net_raw };
 allow ipsec_mon self:udp_socket { create ioctl };
-allow ipsec_mon self:netlink_route_socket { write read create nlmsg_read bind connect nlmsg_write};
+allow ipsec_mon self:netlink_route_socket { write read create nlmsg_read bind connect nlmsg_write nlmsg_readpriv };
 allowxperm ipsec_mon self:udp_socket ioctl { SIOCDEVPRIVATE_2 };
 allow ipsec_mon devpts:chr_file rw_file_perms;
 allow ipsec_mon proc_net:file w_file_perms;
