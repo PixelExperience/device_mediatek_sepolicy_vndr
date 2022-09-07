@@ -1,0 +1,7 @@
+(typeattribute aee_aed)
+(typeattribute dm_agent_binder_service)
+(typeattribute lbs_dbg_data_file)
+(typeattribute mtk_hdmi_service)
+(typeattribute sysfs_boot_info)
+(typeattribute vpuservice_service)
+;; This file can't be empty.

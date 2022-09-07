@@ -33,8 +33,3 @@ allow recovery proc_filesystems:file r_file_perms;
 
 # Seen during 'Wipe data/factory reset'
 allow recovery devpts:chr_file rw_file_perms;
-
-# Date : WK36.02
-# Operation : OTA-SIU
-# Purpose : Android Migration for Google issue
-allow recovery sysfs_block:dir search;

@@ -511,9 +511,6 @@ allow factory device:dir r_dir_perms;
 # Date: 2021/07/30
 # Operation : To access camera control daemon driver
 allow factory mtk_ccd_device:chr_file rw_file_perms;
-# Date: 2021/08/27
-# Operation : add permission for storage
-allow factory sysfs_block:dir search;
 
 # Date: 2022/01/24
 allow factory mnt_vendor_file:dir search;

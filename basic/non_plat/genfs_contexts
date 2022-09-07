@@ -24,7 +24,6 @@ genfscon proc /driver/wmt_dbg                u:object_r:proc_wmtdbg:s0
 genfscon proc /zraminfo                      u:object_r:proc_zraminfo:s0
 genfscon proc /gpulog                        u:object_r:proc_gpulog:s0
 genfscon proc /gpufreqv2                     u:object_r:proc_gpufreqv2:s0
-genfscon proc /cpu/alignment                 u:object_r:proc_cpu_alignment:s0
 genfscon proc /sched_debug                   u:object_r:proc_sched_debug:s0
 genfscon proc /chip                          u:object_r:proc_chip:s0
 genfscon proc /atf_log                       u:object_r:proc_atf_log:s0
@@ -140,10 +139,6 @@ genfscon proc /mcdi/ u:object_r:proc_mcdi:s0
 # Purpose: Add permission for /proc/driver/conninfra_dbg
 genfscon proc /driver/conninfra_dbg u:object_r:proc_conninfradbg:s0
 
-# Date : 2021/04/20
-# Purpose : write /proc/sys/vm/watermark_scale_factor
-genfscon proc /sys/vm/watermark_scale_factor u:object_r:proc_watermark_scale_factor:s0
-
 # Data : 2021/4/21
 # Purpose : read/write /proc/mtk_usb, /proc/mtk_typec
 genfscon proc /mtk_usb u:object_r:proc_usb_plat:s0
@@ -156,10 +151,6 @@ genfscon proc /sys/kernel/sched_migration_cost_ns u:object_r:proc_sched_migratio
 # 2021/8/25
 # allow powerhal to access /proc/cpuhvfs/cpufreq_cci_mode
 genfscon proc /cpuhvfs/cpufreq_cci_mode u:object_r:proc_cpuhvfs:s0
-
-# Date : 2021/11/12
-# Purpose : write /proc/sys/vm/watermark_boost_factor
-genfscon proc /sys/vm/watermark_boost_factor u:object_r:proc_watermark_boost_factor:s0
 
 ##########################
 # sysfs files

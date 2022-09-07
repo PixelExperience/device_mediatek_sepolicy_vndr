@@ -23,7 +23,7 @@ neverallow mtk_hal_audio { file_type fs_type }:file execute_no_trans;
 
 # mtk_hal_audio should never need network access.
 # Disallow network sockets.
-neverallow mtk_hal_audio domain:{ tcp_socket udp_socket rawip_socket } *;
+neverallow mtk_hal_audio domain:{ udp_socket rawip_socket } *;
 
 # Purpose : Set audio driver permission to access SD card for debug purpose and accss NVRam.
 allow mtk_hal_audio sdcard_type:dir create_dir_perms;

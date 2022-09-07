@@ -13,7 +13,6 @@ type proc_mtk_jpeg, fs_type, proc_type, mlstrustedobject;
 type proc_perfmgr, fs_type, proc_type;
 type proc_wmtdbg, fs_type, proc_type;
 type proc_zraminfo, fs_type, proc_type;
-type proc_cpu_alignment, fs_type, proc_type;
 type proc_gpulog, fs_type, proc_type;
 type proc_gpufreqv2, fs_type, proc_type;
 type proc_sched_debug, fs_type, proc_type;
@@ -128,10 +127,6 @@ type proc_swappiness, fs_type, proc_type;
 # Purpose: Add permission for /proc/driver/conninfra_dbg
 type proc_conninfradbg, fs_type, proc_type;
 
-# Date: 2021/04/20
-# Purpose : add permission for proc/sys/vm/watermark_scale_factor
-type proc_watermark_scale_factor, fs_type, proc_type;
-
 # Data : 2021/4/21
 # Purpose : add permission for /proc/mtk_usb, /proc/mtk_typec
 type proc_usb_plat, fs_type, proc_type;
@@ -203,10 +198,6 @@ type sysfs_usb_nonplat, fs_type, sysfs_type;
 # Purpose : for charger to access pump_express
 type sysfs_pump_express, fs_type, sysfs_type;
 type sysfs_chg2_present, fs_type, sysfs_type;
-
-# Date : 2018/10/25
-# Purpose : mtk GPU drvb permission setting
-type sysfs_gpu, fs_type, sysfs_type, mlstrustedobject;
 
 # Touch parameters file
 type sysfs_tpd_setting, fs_type, sysfs_type;
@@ -646,10 +637,6 @@ type thermal_socket, file_type;
 # Operaton: S development
 # Purpose: Add permission for node /proc/dma_heap
 type proc_dmaheap, fs_type, proc_type;
-
-# Date : 2021/11/12
-# Purpose: add permission for /proc/sys/vm/watermark_boost_factor
-type proc_watermark_boost_factor, fs_type, proc_type;
 
 # Date: 2021/12/24
 # Purpose: add new label for /proc/mgq

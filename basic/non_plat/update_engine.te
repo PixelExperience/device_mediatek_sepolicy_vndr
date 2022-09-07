@@ -52,8 +52,3 @@ allow update_engine sysfs_devices_block:dir search;
 allow update_engine postinstall_block_device:dir w_dir_perms;
 allow update_engine postinstall_block_device:lnk_file create_file_perms;
 allow update_engine proc_bootconfig:file r_file_perms;
-
-# Date : 2022/02/07
-# Operation : T migration
-# Purpose : Add permission for pl path utilities
-allow update_engine sysfs_block:dir search;
