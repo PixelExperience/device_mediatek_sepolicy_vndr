@@ -164,4 +164,5 @@ allow ccci_mdinit mcf_ota_file:file rw_file_perms;
 # Purpose : access boot mode
 allow ccci_mdinit sysfs_boot_mode:file r_file_perms;
 
+get_prop(ccci_mdinit, vendor_mtk_wmt_prop)
 get_prop(ccci_mdinit, vendor_mtk_debug_md_reset_prop)
