@@ -40,4 +40,5 @@ allow fuelgauged_nvram metadata_file:dir search;
 # GSI
 allow fuelgauged_nvram gsi_metadata_file:dir search;
 
+get_prop(fuelgauged_nvram, vendor_mtk_wmt_prop)
 get_prop(fuelgauged_nvram, vendor_mtk_service_nvram_init_prop)
