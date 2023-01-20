@@ -416,7 +416,7 @@ type mediaserver_data_file, file_type, data_file_type;
 type mediacodec_data_file, file_type, data_file_type;
 type connsyslog_data_vendor_file, file_type, data_file_type;
 type firmware_file, file_type, contextmount_type, vendor_file_type;
-type nfc_vendor_data_file, file_type, data_file_type;
+type nfc_data_vendor_file, file_type, data_file_type;
 type sysfsts_novatek, sysfs_type, fs_type;
 type sysfs_mtkfb, sysfs_type, fs_type;
 type audio_socket, file_type;
